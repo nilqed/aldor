@@ -371,6 +371,13 @@ tpossUnique(TPoss tp)
 	return utformConstOrFail(car(tp->possl));
 }
 
+UTForm
+tpossUniqueUTForm(TPoss tp)
+{
+	car(tp->possl) = utformFollowOnly(car(tp->possl));
+	return car(tp->possl);
+}
+
 Bool
 tpossHas(TPoss tp, TForm t)
 {
@@ -516,7 +523,9 @@ tpossHasMapType(TPoss tp)
 		return false;
 
 	for (tpossITER(tit, tp); tpossMORE(tit); tpossSTEP(tit)) {
-		TForm tf = tpossELT(tit);
+		UTForm utf = tpossUELT(tit);
+		TForm tf = utformTForm(utf);
+		/* Should also accept 'Ax, x' here */
 		tf = tfDefineeType(tf);
 		if (tfIsAnyMap(tf) || tfIsMapSyntax(tf))
 			return true;

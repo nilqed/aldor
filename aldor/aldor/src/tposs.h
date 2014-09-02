@@ -27,8 +27,8 @@ extern TPoss	tpossFrSymes		(SymeList);
 extern TPoss	tpossDeclare		(Syme, TPoss);
 extern TPoss	tpossMulti		(Length, Pointer, TPossGetter);
 extern TPoss	tpossAdd1		(TPoss, TForm);
-extern TPoss    tpossFrUTPoss           (UTFormList);
-extern TPoss    tpossFrTheUTFormList	(UTFormList l);
+extern TPoss    tpossFrTheUTFormList	(UTFormList);
+extern UTForm   tpossUniqueUTForm	(TPoss);
 
 
 extern TPoss	tpossRefer		(TPoss);
@@ -107,5 +107,6 @@ typedef struct {
 #define tpossMORE(ip)   ((ip).possl)
 #define tpossSTEP(ip)	((ip).possl = cdr((ip).possl))
 #define tpossELT(ip)	utformConstOrFail(car((ip).possl))
+#define tpossUELT(ip)	(car((ip).possl))
 
 #endif /* !_TPOSS_H_ */
