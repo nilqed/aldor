@@ -77,11 +77,17 @@ utformFree(UTForm utform)
 TForm
 utformConstOrFail(UTForm utform)
 {
-	if (utform->vars == listNil(Syme))
+	if (utformIsConst(utform))
 		return utform->tf;
 	else
 		bug("Expected a constant type form here");
 	return 0;
+}
+
+Bool
+utformIsConst(UTForm utform)
+{
+	return utform->vars == listNil(Syme);
 }
 
 UTForm

@@ -29,6 +29,7 @@ UTForm utformNew	(SymeList freevars, TForm tform);
 UTForm utformNewConstant(TForm tform);
 void   utformFree	(UTForm utform);
 TForm  utformConstOrFail (UTForm);
+Bool   utformIsConst	(UTForm utform);
 
 TForm utformTForm(UTForm utf);
 SymeList utformVars(UTForm utf);
