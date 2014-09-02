@@ -40,6 +40,7 @@ local int symbolFormatter(OStream stream, Pointer p);
 local int errorSetFormatter(OStream stream, Pointer p);
 
 local int utypeFormatter(OStream stream, Pointer p);
+local int utformFormatter(OStream stream, Pointer p);
 local int utypeResultFormatter(OStream stream, Pointer p);
 
 void
@@ -74,6 +75,7 @@ fmttsInit()
 
 	fmtRegister("UType", utypeFormatter);
 	fmtRegister("UTypeResult", utypeResultFormatter);
+	fmtRegister("UTForm", utformFormatter);
 }
 
 
@@ -254,15 +256,21 @@ local int
 utypeFormatter(OStream ostream, Pointer p)
 {
 	UType utype = (UType) p;
-	return ostreamPrintf(ostream, "[UT: %pSymeList %pSefo]", utypeVars(utype), utypeSefo(utype));
+	return ostreamPrintf(ostream, "[ForAll %pSymeList %pSefo]",
+			     utypeVars(utype), utypeSefo(utype));
+}
+
+local int
+utformFormatter(OStream ostream, Pointer p)
+{
+	UTForm utf = (UTForm) p;
+	return ostreamPrintf(ostream, "<ForAll: %pSymeList %pTForm>",
+			     utformVars(utf), utformTForm(utf));
 }
 
 local int
 utypeResultFormatter(OStream ostream, Pointer p)
 {
-	UTypeResult utypeResult = (UTypeResult) p;
-	if (utypeResultIsFail(utypeResult))
-		return ostreamPrintf(ostream, "[UTR: Fail]");
-	return ostreamPrintf(ostream, "[UTR: %pSymeList %pSefoList]", 
-			     utypeResult->symes, utypeResult->sefos);
+	UTypeResult result = (UTypeResult) p;
+	return utypeResultOStreamPrint(ostream, result);
 }

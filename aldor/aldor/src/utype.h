@@ -30,8 +30,12 @@ UTForm utformNewConstant(TForm tform);
 void   utformFree	(UTForm utform);
 TForm  utformConstOrFail (UTForm);
 
+TForm utformTForm(UTForm utf);
+SymeList utformVars(UTForm utf);
 
 Bool utfSatisfies(UTForm S, UTForm t);
+Bool utfIsUnknown(UTForm S);
+Bool utfIsConstant(UTForm S);
 UTForm utformFollowOnly(UTForm);
 Bool utformEqual(UTForm, UTForm);
 int utformPrint(FILE *, UTForm);
@@ -48,5 +52,6 @@ Sefo utypeSefo(UType utype);
 
 Bool utypeResultIsFail(UTypeResult res);
 Bool utypeResultIsEmpty(UTypeResult res);
+int utypeResultOStreamPrint(OStream ostream, UTypeResult utypeResult);
 
 #endif
