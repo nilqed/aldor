@@ -27,7 +27,8 @@
 #include "comsg.h"
 #include "strops.h"
 #include "table.h"
-
+#include "utype.h"
+#include "uti_bup.h"
 
 /*****************************************************************************
  *
@@ -654,6 +655,11 @@ tibup0ApplyFTypeTPoss(Stab stab, AbSyn absyn, TForm type,
 		      TPoss *popTypes, TPoss *pretTypes);
 
 local void
+tibup0ApplyFTypeUTPoss(Stab stab, AbSyn absyn, TForm type,
+		      TPoss opTypes, Length argc, AbSynGetter argf,
+		      TPoss *popTypes, TPoss *pretTypes);
+
+local void
 tibup0ApplyFType(Stab stab, AbSyn absyn, TForm type,
 		 AbSyn op, Length argc, AbSynGetter argf)
 {
@@ -672,12 +678,12 @@ tibup0ApplyFType(Stab stab, AbSyn absyn, TForm type,
 		tibup(stab, argf(absyn, i), tfUnknown);
 
 	/* Filter opTypes based on the argument and return types. */
-	if (!tpossHasUTForm(opTypes)) {
+	if (!tpossHasAnyUTForm(opTypes)) {
 		tibup0ApplyFTypeTPoss(stab, absyn, type, opTypes, argc, argf,
 				      &nopTypes, &retTypes);
 	}
 	else {
-		tibupApplyFTypeUTPoss(stab, absyn, type, opTypes, argc, argf,
+		tibup0ApplyFTypeUTPoss(stab, absyn, type, opTypes, argc, argf,
 				      &nopTypes, &retTypes);
 	}
 
@@ -750,33 +756,43 @@ tibup0ApplyFTypeTPoss(Stab stab, AbSyn absyn, TForm type,
 }
 
 local void
-tibup0ApplyFTypeTPoss(Stab stab, AbSyn absyn, TForm type,
+tibup0ApplyFTypeUTPoss(Stab stab, AbSyn absyn, TForm type,
 		      TPoss opTypes, Length argc, AbSynGetter argf,
 		      TPoss *pnopTypes, TPoss *pretTypes)
 {
-	SatMask		mask = tfSatBupMask(), result;
+	SatMask		mask = tfSatBupMask();
 	TPossIterator	it;
 	TPoss		nopTypes = tpossEmpty();
 	TPoss		retTypes = tpossEmpty();
 
 	for (tpossITER(it, opTypes); tpossMORE(it); tpossSTEP(it)) {
-		TForm	opType = tpossELT(it), retType;
+		UTForm	opType = tpossUELT(it);
+		UTForm   retType;
 		AbSub	sigma;
+		USatMask result;
 
-		opType = tfDefineeType(opType);
-		if (!tfIsAnyMap(opType)) continue;
+		opType = utfDefineeType(opType);
 
-		retType = tfMapRet(opType);
+		if (!utformIsAnyMap(opType)) continue;
+
 		sigma	= absNew(stab);
 
-		result = tfSatMapArgs(mask, sigma, opType, absyn, argc, argf);
+		result = utfSatMapArgs(mask, sigma, opType, absyn, argc, argf);
 
-		if (tfSatSucceed(result)) {
-			retType = tformSubst(sigma, retType);
-			result = tfSat(mask, retType, type);
-			if (tfSatSucceed(result)) {
-				nopTypes = tpossAdd1(nopTypes, opType);
-				retTypes = tpossAdd1(retTypes, retType);
+		if (utfSatSucceed(result)) {
+			UTForm retType;
+
+			retType = utfMapRet(opType);
+			retType = utformSubst(sigma, retType);
+			retType = utypeResultApplyTForm(result->result, retType);
+			opType = utypeResultApplyTForm(result->result, opType);
+
+			result = utfSat(mask, retType, utformNewConstant(type));
+			if (utfSatSucceed(result)) {
+				opType = utypeResultApplyTForm(result->result, opType);
+				retType = utypeResultApplyTForm(result->result, retType);
+				nopTypes = tpossAdd1UTForm(nopTypes, opType);
+				retTypes = tpossAdd1UTForm(retTypes, retType);
 			}
 		}
 
@@ -890,6 +906,9 @@ tibupId(Stab stab, AbSyn absyn, TForm type)
 		 * for export symes that may not be applicable.
 		 */
 		tp = stabGetTypes(stab, abCondKnown, absyn->abId.sym);
+		utp = utibupId(stab, absyn, type);
+
+		tp = tpossUnion(tp, utp);
 	}
 
 	/*

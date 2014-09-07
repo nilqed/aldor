@@ -32,6 +32,7 @@
 #include "comsg.h"
 #include "strops.h"
 #include "table.h"
+#include "uti_bup.h"
 
 /*****************************************************************************
  *
@@ -715,6 +716,17 @@ tiGetMeaning(Stab stab, AbSyn absyn, TForm type)
 			psyme = syme;
 		}
 
+	}
+
+	if (psymec == 0) {
+		SymeList symes = utibupGetMeanings(stab, absyn, type);
+		if (listLength(Syme)(symes) == 1) {
+			nsymes = listCons(Syme)(car(symes), nsymes);
+			nsyme = car(symes);
+			psyme = nsyme;
+			psymec++;
+			nsymec++;
+		}
 	}
 
 	syme = NULL;

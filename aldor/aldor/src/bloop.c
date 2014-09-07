@@ -17,6 +17,7 @@
 #include "doc.h"
 #include "comsg.h"
 #include "sexpr.h"
+#include "utype.h"
 
 /*
  * :: External state control

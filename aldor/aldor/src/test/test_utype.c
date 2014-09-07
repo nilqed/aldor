@@ -7,10 +7,14 @@
 #include "absub.h"
 #include "debug.h"
 #include "testall.h"
+#include "uti_bup.h"
 
 local void test0();
 local void test1();
+local void test2();
 extern Bool utypeDebug;
+extern Bool tipBupDebug;
+extern Bool tipTdnDebug;
 
 void
 utypeTestSuite(void)
@@ -18,6 +22,7 @@ utypeTestSuite(void)
 	init();
 	TEST(test0);
 	TEST(test1);
+	TEST(test2);
 	fini();
 }
 
@@ -117,4 +122,36 @@ test1() {
 	tfqTypeInfer(stabFile(), "Alg(T: Monoid): with { lift: T -> %; } == add { lift(a: T): % == never}");
 
 	finiFile();
+}
+
+local void
+test2()
+{
+	Sefo sefo1, sefo2;
+	Syme param, listSyme, paramSyme, paramCopy1, paramCopy2 ;
+	AbSub sigma;
+	UTypeResult res;
+	Sefo lsefo;
+
+	initFile();
+	stdscope(stabFile());
+
+	tfqTypeInfer(stabFile(), "List(T: with): with { one: T -> %; cons: (T, %) -> %} == add { one(t: T): % == never; cons(x: T, l: %): % == never}");
+	tfqTypeInfer(stabFile(), "Monoid: Category == with { 1: %; *: (%, %) -> % }");
+	tfqTypeInfer(stabFile(), "Int: Monoid == add { 1: % == never; (a: %) * (b: %): % == never}");
+	tfqTypeInfer(stabFile(), "import from Int");
+
+	lsefo = tfqTypeInfer(stabFile(), "List");
+	utibupAddImportedTForm(lsefo);
+	tipTdnDebug = tipBupDebug = utypeDebug = 1;
+	tfqTypeInfer(stabFile(), "import from Int;");
+	tfqTypeInfer(stabFile(), "f(x: Int): () == one(x)");
+	tfqTypeInfer(stabFile(), "f(x: Int): List Int == one(x)");
+
+	tfqTypeInfer(stabFile(), "f(x: Int): () == one(one(x))");
+	tfqTypeInfer(stabFile(), "f(x: Int): () == cons(x, one(x))");
+
+	tipTdnDebug = tipBupDebug = utypeDebug = 0;
+	finiFile();
+
 }

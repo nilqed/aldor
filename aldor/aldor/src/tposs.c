@@ -181,6 +181,20 @@ tpossAdd1(TPoss tp, TForm t)
 	return tp;
 }
 
+Bool
+tpossHasUTForm(TPoss tp, UTForm t)
+{
+	return false;
+}
+
+TPoss
+tpossAdd1UTForm(TPoss tp, UTForm t)
+{
+	if (!tpossHasUTForm(tp, t))
+		tpossCons(tp, t);
+	return tp;
+}
+
 TPoss
 tpossRefer(TPoss tp)
 {
@@ -534,7 +548,7 @@ tpossHasMapType(TPoss tp)
 }
 
 Bool
-tpossHasUTForm(TPoss tp)
+tpossHasAnyUTForm(TPoss tp)
 {
 	TPossIterator	tit;
 

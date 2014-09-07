@@ -7,6 +7,8 @@
 #include "store.h"
 #include "format.h"
 #include "ablogic.h"
+#include "absub.h"
+#include "stab.h"
 #include "util.h"
 
 Bool utypeDebug = false;
@@ -47,11 +49,7 @@ CREATE_LIST(UTForm);
 
 static struct utypeResult empty = { listNil(Syme), listNil(Sefo) };
 
-/* External API */
-Bool utypeIsVar(UType utype, Syme syme);
-
 /* Local */
-local UTypeResult utypeResultMerge(UTypeResult res1, UTypeResult res2);
 local UTypeResult utypeResultExtend(UTypeResult result, Syme symeToAdd, Sefo sefoToAdd);
 local UTypeResult utypeUnifySefo(UType ut1, UType ut2, Sefo sefo1, Sefo sefo2);
 local UTypeResult utypeUnifyId(UType ut1, UType ut2, Syme syme1, Sefo sefo2);
@@ -124,6 +122,52 @@ utfIsConstant(UTForm utf)
 	return utf->vars == listNil(Syme);
 }
 
+UTForm
+utfDefineeType(UTForm utf)
+{
+	return utformNew(listCopy(Syme)(utformVars(utf)),
+			 tfDefineeType(utformTForm(utf)));
+}
+
+Syme
+utfDefineeSyme(UTForm utf)
+{
+	return tfDefineeSyme(utformTForm(utf));
+}
+
+Bool
+utformIsAnyMap(UTForm utf)
+{
+	if (tfIsAnyMap(utformTForm(utf)))
+		return true;
+
+	if (!tfIsId(utformTForm(utf)))
+		return false;
+	/* "Ax, x" could be a map, but let's not worry about that yet */
+	return false;
+}
+
+UTForm
+utfMapRet(UTForm utf)
+{
+	return utformNew(listCopy(Syme)(utformVars(utf)),
+			 tfMapRet(utformTForm(utf)));
+}
+
+UTForm
+utfMapArg(UTForm utf)
+{
+	return utformNew(listCopy(Syme)(utformVars(utf)),
+			 tfMapArg(utformTForm(utf)));
+}
+
+Bool
+utfIsMulti(UTForm utf)
+{
+	return tfIsMulti(utformTForm(utf));
+}
+
+
 SymeList
 utformVars(UTForm utf)
 {
@@ -152,6 +196,45 @@ utformEqual(UTForm utf1, UTForm utf2)
 		       utformConstOrFail(utf2));
 }
 
+UTForm
+utformSubst(AbSub sigma, UTForm utf)
+{
+	return utformNew(utformVars(utf), tformSubst(sigma, utformTForm(utf)));
+}
+
+UTForm
+utfAsMultiArgN(UTForm utf, Length argc, Length n)
+{
+	return utformNew(utformVars(utf),
+			 tfAsMultiArgN(utformTForm(utf), argc, n));
+}
+
+AbSyn
+utfAsMultiSelectArg(AbSyn ab, Length argc, Length n, AbSynGetter argf,
+		    UTForm utfi, Bool * def, Length * pos)
+{
+	return tfAsMultiSelectArg(ab, argc, n, argf, utformTForm(utfi), def, pos);
+}
+
+Bool
+utfIsPending(UTForm utf)
+{
+	return tfIsPending(utformTForm(utf));
+}
+
+UType
+utfExpr(UTForm utf)
+{
+	return utypeNew(listCopy(Syme)(utformVars(utf)), tfExpr(utformTForm(utf)));
+}
+
+
+UTypeResult
+utformUnify(UTForm ut1, UTForm ut2)
+{
+	return utypeUnify(utfExpr(ut1), utfExpr(ut2));
+}
+
 
 UType
 utypeNew(SymeList freevars, Sefo sefo)
@@ -176,9 +259,15 @@ utypeSefo(UType utype)
 }
 
 Bool
-utypeIsVar(UType utype, Syme syme)
+utypeHasVar(UType utype, Syme syme)
 {
 	return listMember(Syme)(utype->vars, syme, symeEqual);
+}
+
+Bool
+utypeIsConstant(UType utype)
+{
+	return utype->vars == listNil(Syme);
 }
 
 UType
@@ -194,7 +283,8 @@ utypeNewVar(Syme syme)
 }
 
 UTypeResult 
-utypeResultFailed(void) {
+utypeResultFailed()
+{
 	return NULL;
 }
 
@@ -254,8 +344,10 @@ utypeResultFree(UTypeResult result)
 	if (utypeResultIsFail(result)) {
 		return;
 	}
-
-	listFreeDeeply(Syme)(result->symes, symeFree);
+	if (result == &empty) {
+		return;
+	}
+	listFree(Syme)(result->symes);
 	/*listFreeDeeply(Sefo)(result->sefos, abFree);*/
 	stoFree(result);
 }
@@ -306,7 +398,7 @@ utypeUnify(UType ut1, UType ut2)
 }
 
 /* NB: Destructive in both res1 and res2 */
-local UTypeResult 
+UTypeResult
 utypeResultMerge(UTypeResult res1, UTypeResult res2) 
 {
 	SymeList symeList2;
@@ -322,7 +414,6 @@ utypeResultMerge(UTypeResult res1, UTypeResult res2)
 	sefoList2 = res2->sefos;
 	while (symeList2 != listNil(Syme)) {
 		UTypeResult nextResult;
-
 		Syme syme = car(symeList2);
 		Sefo sefo = car(sefoList2);
 		res1 = utypeResultExtend(res1, syme, sefo);
@@ -330,6 +421,8 @@ utypeResultMerge(UTypeResult res1, UTypeResult res2)
 			utypeResultFree(res2);
 			return res1;
 		}
+		symeList2 = cdr(symeList2);
+		sefoList2 = cdr(sefoList2);
 		
 	}
 	utypeResultFree(res2);
@@ -345,8 +438,14 @@ utypeResultExtend(UTypeResult result, Syme symeToAdd, Sefo sefoToAdd)
 	while (symeList != listNil(Syme)) {
 		Syme syme = car(symeList);
 		Sefo sefo = car(sefoList);
+		symeList = cdr(symeList);
+		sefoList = cdr(sefoList);
+
 		if (symeEqual(symeToAdd, syme)) {
-			afprintf(dbOut, "Want to merge %pSyme ++ %pSefo ++ %pSefo ++\n", symeToAdd, sefo, sefoToAdd);
+			afprintf(dbOut, "Want to merge %pSyme ++ %pSefo ++ %pSefo ++\n",
+				 symeToAdd, sefo, sefoToAdd);
+			if (sefoEqual(sefo, sefoToAdd))
+				continue;
 			utypeResultFree(result);
 			return utypeResultFailed();
 		}
@@ -364,10 +463,10 @@ utypeUnifySefo(UType ut1, UType ut2, Sefo sefo1, Sefo sefo2)
  	int i;
 	utypeDEBUG(dbOut, "Unify: %pAbSyn %pAbSyn\n", sefo1, sefo2);
 
-	if (!(abIsId(sefo1) && utypeIsVar(ut1, abSyme(sefo1)))
-	    && abIsId(sefo2) && utypeIsVar(ut2, abSyme(sefo2)))
+	if (!(abIsId(sefo1) && utypeHasVar(ut1, abSyme(sefo1)))
+	    && abIsId(sefo2) && utypeHasVar(ut2, abSyme(sefo2)))
 		return utypeUnifySefo(ut2, ut1, sefo2, sefo1);
-	if (abIsId(sefo1) && utypeIsVar(ut1, abSyme(sefo1))) {
+	if (abIsId(sefo1) && utypeHasVar(ut1, abSyme(sefo1))) {
 		return utypeUnifyId(ut1, ut2, abSyme(sefo1), sefo2);
 	}
 	if (abIsId(sefo1)) {
@@ -394,8 +493,8 @@ utypeUnifySefo(UType ut1, UType ut2, Sefo sefo1, Sefo sefo2)
 local UTypeResult
 utypeUnifyId(UType ut1, UType ut2, Syme syme1, Sefo sefo2)
 {
-	assert(utypeIsVar(ut1, syme1));
-	if (abIsId(sefo2) && utypeIsVar(ut2, abSyme(sefo2))) {
+	assert(utypeHasVar(ut1, syme1));
+	if (abIsId(sefo2) && utypeHasVar(ut2, abSyme(sefo2))) {
 		Syme syme3 = symeClone(syme1);
 		afprintf(dbOut, "UnifyId: %pSyme %pSefo\n", syme1, sefo2);
 		return utypeResultTwo(syme1, abFrSyme(syme3),
@@ -404,6 +503,69 @@ utypeUnifyId(UType ut1, UType ut2, Syme syme1, Sefo sefo2)
 	else {
 		return utypeResultOne(syme1, sefo2);
 	}
+}
+
+UType
+utypeResultApply(UTypeResult result, UType utype)
+{
+	SymeList freevars;
+	AbSub sigma;
+	SymeList symes;
+	assert(!utypeResultIsFail(result));
+
+	if (utypeIsConstant(utype))
+		return utype;
+
+	sigma = utypeResultSigma(result);
+
+	freevars = listNil(Syme);
+	symes = utypeVars(utype);
+
+	while (symes != listNil(Syme)) {
+		if (!listMemq(Syme)(result->symes, car(symes)))
+			freevars = listCons(Syme)(car(symes), freevars);
+		symes = cdr(symes);
+	}
+
+	return utypeNew(freevars, sefoSubst(sigma, utypeSefo(utype)));
+}
+
+AbSub
+utypeResultSigma(UTypeResult result)
+{
+	AbSub sigma;
+	SymeList symes;
+	SefoList sefos;
+
+	sigma = absNew(stabFile());
+	symes = result->symes;
+	sefos = result->sefos;
+	while (symes != listNil(Syme)) {
+		Syme syme = car(symes);
+		Sefo sefo = car(sefos);
+		symes = cdr(symes);
+		sefos = cdr(sefos);
+
+		sigma = absExtend(syme, sefo, sigma);
+	}
+
+	return sigma;
+}
+
+UTForm
+utformFromType(UType type)
+{
+	return utformNew(listCopy(Syme)(utypeVars(type)),
+			 tfFullFrAbSyn(stabFile(), utypeSefo(type)));
+}
+
+
+UTForm
+utypeResultApplyTForm(UTypeResult result, UTForm utf)
+{
+	UType usefo = utypeResultApply(result, utfExpr(utf));
+
+	return utformFromType(usefo);
 }
 
 

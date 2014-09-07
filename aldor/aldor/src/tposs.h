@@ -11,7 +11,6 @@
 
 #include "axlobs.h"
 #include "tform.h"
-#include "utype.h"
 
 struct tposs {
 	UTFormList	possl;
@@ -27,6 +26,7 @@ extern TPoss	tpossFrSymes		(SymeList);
 extern TPoss	tpossDeclare		(Syme, TPoss);
 extern TPoss	tpossMulti		(Length, Pointer, TPossGetter);
 extern TPoss	tpossAdd1		(TPoss, TForm);
+extern TPoss	tpossAdd1UTForm		(TPoss, UTForm);
 extern TPoss    tpossFrTheUTFormList	(UTFormList);
 extern UTForm   tpossUniqueUTForm	(TPoss);
 
@@ -90,7 +90,7 @@ extern Bool	tpossIsHaving		(TPoss tp, TFormPredicate pred);
 		 * Is there any type form in tp which satisfies the predicate?
 		 */
 
-extern Bool	tpossHasUTForm(TPoss tp);
+extern Bool	tpossHasAnyUTForm(TPoss tp);
 		/*
 		 * Are any types in tp universally qualified
 		 */
