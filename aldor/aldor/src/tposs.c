@@ -579,3 +579,8 @@ tpossIsHaving(TPoss tp, TFormPredicate pred)
 	return false;
 }
 
+TForm
+tpossELT_(TPossIterator *ip)
+{
+	return utformConstOrFail(car(ip->possl));
+}
