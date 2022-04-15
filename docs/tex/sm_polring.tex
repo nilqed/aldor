@@ -1,0 +1,38 @@
+\thistype{PolynomialRing}
+\History{Marc Moreno Maza}{08/07/01}{created}
+\Usage{\this~(R,V): Category}
+\Params{
+{\em R} & \altype{ArithmeticType} & The coefficient domain \\
+        & \altype{ExpressionType} &\\
+{\em V} & \altype{TotallyOrderedType} & The variable domain \\
+         & \altype{ExpressionType} &\\
+}
+\Descr{\this~(R,V) is a category which inherits from \altype{PolynomialRing0}(R,V)
+and exports some additionnal operations related to differentiation, evaluation
+and polynomial type conversion.}
+\begin{exports}
+\category{\altype{PolynomialRing0}(R,V)} \\
+\alexp{eval}: &  (\%, V, R) $\to$ \%
+           &  \alexp{eval}$(x,v,r)$ evaluates $x$ at $v = r$\\
+\alexp{eval}: &  (\%, V, \%) $\to$ \% 
+            &  \alexp{eval}$(x,v,y)$ evaluates $x$ at $v = y$\\ 
+\end{exports}
+\begin{alwhere}
+GEN &==& \altype{Generator}\\
+PZ &==& \albuiltin{Cross}(\%, \altype{Integer})\\
+\end{alwhere}
+\begin{exports}[if {\em R} has \altype{CommutativeRing} then]
+\alexp{differentiate}: & (\%, V) $\to$ \% 
+           &  Differentiation w.r.t. a variable\\
+\alexp{differentiate}: &  (\%, V, \altype{Integer}) $\to$ \% 
+          &  Iterated differentiation w.r.t. a variable \\
+\end{exports}
+\begin{exports}[if {\em R} has \altype{CommutativeRing} then]
+\category{\altype{CommutativeRing}}\\
+\end{exports}
+\begin{exports}[if {\em R} has \altype{IntegralDomain} then]
+\category{\altype{IntegralDomain}}\\
+\end{exports}
+\begin{exports}[if {\em R} has \altype{GcdDomain} then]
+\category{\altype{GcdDomain}}\\
+\end{exports}

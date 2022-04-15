@@ -1,0 +1,18 @@
+\thistype{DistributedMultivariatePolynomial0}
+\History{Marc Moreno Maza}{08/07/01}{created}
+\Usage{import from \this~(R,E)}
+\Params{
+{\em R} & \astype{ArithmeticType} & The coefficient domain \\
+        & \astype{ExpressionType} \\
+{\em E} & \altype{GeneralExponentCategory} V & The exponent domain \\
+}
+\Descr{\this~(R,E) provides an implementation of the free module over $R$ with basis $E$.
+Roughly speaking, the elements of \this~(R,E) are polynomials that can be multiplied
+only by a constant from $R$.
+Each of these {\em polynomials} $x$ is coded
+as a list of term $(r,e)$ with $r \in R, r\neq 0$ and $e \in E$
+such that $x$ is the sum of these terms.}
+\begin{exports}
+\category{\astype{CopyableType}} \\
+\category{\astype{IndexedFreeModule}(R,E)} \\
+\end{exports}

@@ -1,0 +1,66 @@
+\thistype{Automorphism}
+\History{Manuel Bronstein}{4/11/94}{created}
+\Usage{import from \this~R}
+\Params{
+{\em R} & \astype{Ring} & The ring on which the automorphisms operate\\
+}
+\Descr{\this~R provides automorphims on $R$.}
+\begin{exports}
+\category{\astype{Group}}\\
+\asexp{apply}:
+& (\%, R, \astype{Integer}) $\to$ R & Apply a morphism to an element of $R$\\
+\asexp{function}: & \% $\to$ (R $\to$ R) & Action of a morphism\\
+\asexp{morphism}: & (R $\to$ R) $\to$ \% & Create a morphism\\
+                  & (R $\to$ R, R $\to$ R) $\to$ \% & \\
+                  & ((R, \astype{Integer}) $\to$ R) $\to$ \% & \\
+\end{exports}
+\aspage{apply}
+\Usage{ $\sigma x$\\ $\sigma(x, n)$\\
+\name($\sigma$, x)\\ \name($\sigma$, x, n) }
+\Signature{(\%, R, n:\astype{Integer} == 1)}{R}
+\Params{
+$\sigma$ & \% & An automorphism of $R$\\
+{\em x} & R & An element of $R$\\
+{\em n} & \astype{Integer} & The number of times to apply (optional)\\
+}
+\Retval{Returns $\sigma^n x$.}
+\aspage{function}
+\Usage{\name~$\sigma$}
+\Signature{\%}{(R $\to$ R)}
+\Params{ $\sigma$ & \% & An automorphism of $R$\\ }
+\Retval{Returns the map corresponding to the action of $\sigma$ on the ring.}
+\aspage{morphism}
+\Usage{ \name~f\\ \name($f, f^{-1}$)\\ \name~g }
+\Signatures{
+\name: & (R $\to$ R) $\to$ \%\\
+\name: & (R $\to$ R, R $\to$ R) $\to$ \%\\
+\name: & ((R, \astype{Integer}) $\to$ R) $\to$ \%\\
+}
+\Params{
+{\em f} & R $\to$ R & A function\\
+$f^{-1}$ & R $\to$ R & The inverse function of $f$\\
+{\em g} & (R, \astype{Integer}) $\to$ R & A function\\
+}
+\Descr{
+\name~f creates the morphism $\sigma$ on $R$ given by
+$$
+\sigma x = f(x)
+$$
+for any $x \in R$. The morphism is not necessarily invertible, so any attempt
+to use its inverse causes an error.\\
+\name($f, f^{-1}$) creates the invertible morphism $\sigma$ on $R$ given by
+$$
+\sigma x = f(x)\qquad \sigma^{-1} x = f^{-1}(x)
+$$
+for any $x \in R$.\\
+\name~g creates the morphism $\sigma$ on $R$ given by
+$$
+\sigma^n x = g(x, n)
+$$
+for any $x \in R$. This morphism is considered invertible, so $g$ must also
+be defined for negative integers.}
+\Remarks{The maps passed as arguments must be ring morphisms, and the
+maps $f$ and $f^{-1}$ must be inverses of each other. When an efficient
+algorithm for computing $\sigma^n$ is known, for example for $\sigma = 1_R$,
+then the form \name~g with g:~(R, Integer) $\to$ R should be used to
+avoid repeated iterations of $\sigma$, which is the default behavior.}

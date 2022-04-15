@@ -1,0 +1,14 @@
+\thistype{DirectProduct}
+\History{Marc Moreno Maza}{08/07/01}{created}
+\Usage{import from \this~(n,T)}
+\Params{
+{\em n} & \altype{MachineInteger} & The dimension of the direct product \\
+{\em T} & \altype{ExpressionType} & The type of the factors \\
+}
+\Descr{\this~(n,T) provides $n$-ary direct products
+ of elements from $T.$ Such a product is represented by
+ a primitive array of elements from $T$ with size $n.$ 
+ The indices of its components are in the range $0 \cdots n-1.$}
+\begin{exports}
+\category{\astype{DirectProductCategory}~(n,T)} \\
+\end{exports}

@@ -1,0 +1,49 @@
+\thistype{UnivariateTaylorSeriesNewtonSolver}
+\History{Manuel Bronstein}{21/1/2002}{created}
+\Usage{ import from \this(R, Rx, RxY)\\ import from \this(R, Rx, RX, RXY) }
+\Params{
+{\em R} & \altype{ExpressionType} & The coefficient domain\\
+        & \altype{ArithmeticType} &\\
+{\em Rx} & \altype{UnivariateTaylorSeriesType} R & Series over \emph{R}\\
+{\em RxY}&\altype{UnivariatePolynomialAlgebra} Rx& Polynomials over \emph{Rx}\\
+{\em RX} & \altype{UnivariatePolynomialAlgebra} R & Polynomials over \emph{R}\\
+{\em RXY}&\altype{UnivariatePolynomialAlgebra} RX& Polynomials over \emph{RX}\\
+}
+\Descr{\this{} provides a Newton solver for computing roots in $R[[x]]$ of
+polynomials in either $R[x,y]$ or $R[[x]][y]$.}
+\begin{exports}[if \emph{R} has \altype{CommutativeRing} then]
+\alexp{differentiate}: & RxY $\to$ RxY & Differentiation\\
+\alexp{root}: & (RXY, R) $\to$ Rx & Root of a polynomial\\
+               & (RxY, R) $\to$ Rx & \\
+\end{exports}
+\begin{exports}[if \emph{R} has \altype{FloatType} then]
+\alexp{root}: & (RXY, RXY, R) $\to$ Rx & Root of a polynomial\\
+              & (RxY, RxY, R) $\to$ Rx & \\
+\end{exports}
+\alpage{differentiate}
+\Usage{\name~p}
+\Signature{RxY}{RxY}
+\Params{\emph{p} & RxY & a polynomial\\}
+\Retval{Returns $\frac{dp}{dy}$.}
+
+\alpage{root}
+\Usage{\name($p, s_0$)\\ \name($p, p', s_0$)}
+\Signatures{
+\name: & (RXY, R) $\to$ Rx\\
+\name: & (RxY, R) $\to$ Rx\\
+\name: & (RXY, RXY, R) $\to$ Rx\\
+\name: & (RxY, RxY, R) $\to$ Rx\\
+}
+\Params{
+\emph{p} & RXY & a nonzero polynomial\\
+         & RxY & \\
+$p'$ & RXY & the derivative of \emph{p} with respect to \emph{y}\\
+     & RxY & \\
+$s_0$ & R & a simple root of $p(0,y)$\\
+}
+\Descr{Returns a series $s(x)$ such that $p(x,s(x)) = 0$ and $s(0) = s_0$.
+The initial value $s_0$ must satisfy $p(0,s_0) = 0$, and in addition,
+$\frac{dp}{dy}(0, s_0)$ must be a unit in \emph{R}.}
+\Remarks{The parameter $p'$ must be given only when \emph{R} has
+\altype{FloatType}, since differentiation is not available for
+polynomials over such rings.}

@@ -1,0 +1,35 @@
+\thistype{Ring}
+\History{Manuel Bronstein}{21/11/94}{created}
+\Usage{\this: Category}
+\Descr{ \this~is the category of rings, not necessarily commutative.}
+\begin{exports}
+\category{\altype{AbelianGroup}}\\
+\category{\altype{ArithmeticType}}\\
+\category{\altype{Monoid}}\\
+\alexp{characteristic}: & \altype{Integer} & characteristic\\
+\alexp{coerce}: & \altype{Integer} $\to$ \% & embedding of the integers\\
+\alexp{factorial}:
+& (\%, \%, \altype{MachineInteger}) $\to$ \% & Generalized factorial\\
+\alexp{random}: & () $\to$ \% & Get a random element\\
+\end{exports}
+\alpage{characteristic}
+\Usage{\name}
+\alconstant{\altype{Integer}}
+\Retval{Returns the characteristic of the ring.}
+\alpage{coerce}
+\Usage{\name~n\\n::\%}
+\Signature{\altype{Integer}}{\%}
+\Params{ {\em n} & \altype{Integer} & an integer }
+\Retval{Returns $n$ seen as an element of the ring.}
+\alpage{factorial}
+\Usage{\name(a, s, n)}
+\Signature{(\%, \%, \altype{MachineInteger})}{\%}
+\Params{
+{\em a, s} & \% & Elements of the ring\\
+{\em n} & \altype{MachineInteger} & A nonnegative integer\\
+}
+\Retval{Returns the generalized factorial $\prod_{i=0}^{n-1} (a + i s)$.}
+\alpage{random}
+\Usage{\name()}
+\Signature{()}{\%}
+\Retval{Returns a random element.}

@@ -1,0 +1,31 @@
+\thistype{PartialRing}
+\History{Manuel Bronstein}{10/01/96}{created}
+\Usage{\this: Category}
+\Descr{\this~is the category of rings where all the arithmetic operations
+are partial, \ie~they are allowed to fail. Typical examples are matrices
+of different sizes, or unions of several true rings.}
+\begin{exports}
+\category{\altype{ExpressionType}}\\
+\alexp{0}: & \% & Additive identity\\
+\alexp{1}: & \% & Multiplicative identity \\
+\alexp{-}: &  \% $\to$ \altype{Partial} \% & Negation \\
+\alexp{-}: &  (\%, \%) $\to$ \altype{Partial} \% & Substraction \\
+\alexp{+}: &  (\%, \%) $\to$ \altype{Partial} \% & Addition \\
+\alexp{*}: &  (\%, \%) $\to$ \altype{Partial} \% & Multiplication \\
+\alexp{/}: &  (\%, \%) $\to$ \altype{Partial} \% & Exact division \\
+\alexp{$\land$}: &  (\%, \%) $\to$ \altype{Partial} \% & Exponentiation \\
+\alexp{<}: &  (\%, \%) $\to$ \altype{Partial} \% & Comparison \\
+\alexp{>}: &  (\%, \%) $\to$ \altype{Partial} \% & Comparison \\
+\alexp{$\le$}: &  (\%, \%) $\to$ \altype{Partial} \% & Comparison \\
+\alexp{$\ge$}: &  (\%, \%) $\to$ \altype{Partial} \% & Comparison \\
+\alexp{$[]$}:
+& \builtin{Tuple} \% $\to$ \altype{Partial} \% & Construct a structure\\
+\alexp{coerce}:
+& \altype{Boolean} $\to$ \% & Convert a boolean to a ring element\\
+\alexp{coerce}:
+&  \altype{Integer} $\to$ \% & Convert an integer to a ring element\\
+\alexp{integer}:
+& \% $\to$ \altype{Partial} \altype{Integer} & Convert to an integer\\
+\alexp{product}: &  List \% $\to$ \altype{Partial} \% & Multiplication \\
+\alexp{sum}: &  List \% $\to$ \altype{Partial} \% & Addition \\
+\end{exports}

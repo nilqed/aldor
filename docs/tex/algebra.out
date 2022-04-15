@@ -1,0 +1,15 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{User Guide}{}% 2
+\BOOKMARK [2][-]{section*.5}{Basic algebraic categories}{section.2}% 3
+\BOOKMARK [2][-]{section*.6}{Arithmetic}{section.2}% 4
+\BOOKMARK [2][-]{section*.7}{Data structures}{section.2}% 5
+\BOOKMARK [2][-]{section*.8}{Input/Output}{section.2}% 6
+\BOOKMARK [2][-]{section*.9}{Linear algebra}{section.2}% 7
+\BOOKMARK [2][-]{section*.10}{Univariate polynomials and series}{section.2}% 8
+\BOOKMARK [2][-]{section*.11}{Multivariate polynomials}{section.2}% 9
+\BOOKMARK [2][-]{section*.12}{Compatibility with C types}{section.2}% 10
+\BOOKMARK [2][-]{section*.13}{Using GMP}{section.2}% 11
+\BOOKMARK [2][-]{section*.14}{Exceptions}{section.2}% 12
+\BOOKMARK [2][-]{section*.15}{Profiling and debugging}{section.2}% 13
+\BOOKMARK [1][-]{section.3}{Reference Manual}{}% 14
+\BOOKMARK [1][-]{section.4}{libaldor Reference Manual}{}% 15

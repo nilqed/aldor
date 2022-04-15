@@ -1,0 +1,29 @@
+\thistype{UnivariatePolynomialDiophantineSolver}
+\History{Manuel Bronstein}{29/7/2004}{created}
+\Usage{import from \this(R, RX)}
+\Params{
+\emph{R} & \alexttype{IntegralDomain}{} & the coefficient ring\\
+\emph{RX}
+& \alexttype{UnivariatePolynomialAlgebra}{} R & polynomials over {\em R}\\
+}
+\Descr{\this(R, RX) implements diophantine equation solving in \emph{RX}.}
+\begin{exports}
+\alexp{pseudoDiophantine}: &
+(RX, RX, RX) $\to$ \alexttype{Partial}{} \builtin{Cross}(R, RX, RX) &
+equation solver\\
+\end{exports}
+\alpage{pseudoDiophantine}
+\Usage{\name(a, b, c)}
+\Signature{(RX, RX, RX)}{\alexttype{Partial}{} \builtin{Cross}(R, RX, RX)}
+\Params{ {\em a,b,c} & RX & Polynomials\\ }
+\Retval{
+Returns either $(r, x, y)$ such that $a x + b y = r c$ and
+$x=0$ or $\deg(x) < \deg(b)$, or \failed.}
+\Remarks{If \name{} returns \failed,
+then the equation $a x + b y = r c$ has no solution
+whenever \emph{R} is a field or $\gcd(a,b) \in R$.
+If those two conditions are not met, then
+a solution could have been missed.
+Therefore, \name{} is
+complete only when \emph{R} is a field or when
+\emph{a} and \emph{b} have no common root.}

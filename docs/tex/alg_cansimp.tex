@@ -1,0 +1,25 @@
+\thistype{CanonicalSimplification}
+\History{Marc Moreno Maza}{1999}{created}
+\Usage{\this: Category}
+\Descr{\this~is the category  of domains supporting a canonical simplifier.
+This means that for any $p$ such that $p$ equals its canonical associate
+and for any $a$, the element $a \ {\rm mod} \ p$ is a canonical representative of the residue
+class of $a$ by $p$. That is,  for any $b$ the relation $a \ {\rm mod} \ p = b \ {\rm mod} \ p$ is
+equivalent to $p$ divides $b -a$. In addition $a \ {\rm mod} \ p$ equals
+its canonical associate.
+If the domain is Euclidean, then it must support also a symmetric canonical simplifier.
+See the paper {\em On the genericity of the Modular Gcd Algorithm}
+by Kaltofen and Monagan in the proc. of ISSAC 1999.}
+\begin{exports}
+\category{\altype{CommutativeRing}} \\
+\alexp{mod}: &  (\%, \%) $\to$ \%    &  residue class representative \\
+\alexp{mod\_+}: &  (\%, \%) $\to$ \%    &  modular sum \\
+\alexp{mod\_+}: &  (\%, \%) $\to$ \%    &  modular difference \\
+\alexp{mod\_*}: &  (\%, \%) $\to$ \%    &  modular product \\
+%% \alexp{mod\_^}: &  (\%, \altype{Integer}, \%) $\to$ \%    &  modular exponentiation \\
+%% \alexp{mod\_prime\_^}: &  (\%, \altype{Integer}, \%) $\to$ \%    &  modular exponentiation with prime exponent \\
+\alexp{recipMod} &  (\%, \%) $\to$ \astype{Partial} \%  & modular reciprocal \\
+\end{exports}
+\begin{exports}[if \% has \altype{EuclideanDomain} then]
+\alexp{symmetricMod}: &  (\%, \%) $\to$ \%    & symmetric residue class representative \\
+\end{exports}

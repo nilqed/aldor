@@ -1,0 +1,61 @@
+\thistype{PrimeFieldUnivariateFactorizer}
+\History{Laurent Bernardin}{8/6/95}{created}
+\History{Manuel Bronstein}{27/7/98}{added Shoup's distinct degree factorization}
+\Usage{import from \this(F, P)}
+\Params{
+{\em F} & \altype{PrimeFieldCategory0} & Coefficient ring of the polynomials\\
+{\em P} & \altype{UnivariatePolynomialAlgebra} F & A polynomial ring\\
+}
+\Descr{\this~provides implementations of various univariate factorization
+algorithms over a prime field.}
+\begin{exports}
+\alexp{berlekamp}: & P $\to$ \altype{List} P & Berlekamp's algorithm\\
+\alexp{cantorZassenhaus}:
+& P $\to$ \altype{List} P & Cantor-Zassenhaus algorithm\\
+\alexp{factor}: & P $\to$ (F, PROD) & Factor (default algorithm)\\
+\alexp{factor}: & (P $\to$ \altype{List} P) $\to$ (P $\to$ (F, PROD)) &
+Factor (given algorithm)\\
+\alexp{roots}:
+& (P, \altype{Boolean}) $\to$ \altype{Generator} FR F & Roots of a polynomial\\
+\end{exports}
+\begin{aswhere}
+FR &==& \altype{FractionalRoot}\\
+PROD & == & \altype{Product} P\\
+\end{aswhere}
+\alpage{berlekamp}
+\Usage{\name~p}
+\Signature{P}{List P}
+\Params{ {\em p} & P & The square free and monic polynomial to factor.\\ }
+\Retval{Returns the list of irreducible factors of $p$.}
+\alpage{cantorZassenhaus}
+\Usage{\name~p}
+\Signature{P}{List P}
+\Params{ {\em p} & P & The square free and monic polynomial to factor.\\ }
+\Retval{Returns the list of irreducible factors of $p$.}
+\alpage{roots}
+\Usage{\name(p, sqrfree?)}
+\Signature{(P, \altype{Boolean}}{\altype{Generator} \altype{FractionalRoot} F}
+\Params{
+{\em p} & P & A polynomial.\\
+{\em sqfree?} & \altype{Boolean} & Indicates whether p is squarefree\\
+}
+\Retval{Returns the roots of $p$ in F with their multiplicities. Assumes
+that $p$ is squarefree if $sqrfree?$ is \true.}
+\alpage{factor}
+\Usage{\name~p\\ \name(e)(p)}
+\Signatures{
+\name: & P $\to$ (F, Product P)\\
+\name: & (P $\to$ List P) $\to$ (P $\to$ (F, Product P))\\
+}
+\Params{
+{\em p} & P & The polynomial to factor.\\
+{\em e} & P $\to$ List P & The factorization engine to use. 
+}
+\Retval{Returns $(c, p_1^{e_1} \cdots p_n^{e_n})$ such that
+each $p_i$ is irreducible, the $p_i$'s have no common factors, and
+$$
+p = c\;\prod_{i=1}^n p_i^{e_i}\,.
+$$
+}
+\Remarks{Uses the factorizer {\em e} for factoring the monic squarefree
+factors of $p$.}

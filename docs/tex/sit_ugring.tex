@@ -1,0 +1,34 @@
+\thistype{UnivariateGcdRing}
+\History{Manuel Bronstein}{20/9/95}{created}
+\Usage{\this: Category}
+\Descr{\this~is the category of rings which export a gcd algorithm for
+univariate polynomials over themselves.}
+\begin{exports}
+\category{\astype{GcdDomain}}\\
+\asexp{gcdUP}:
+& (P:\astype{UnivariatePolynomialAlgebra0}) $\to$ (P, P) $\to$ P & Gcd\\
+\asexp{gcdUP!}:
+& (P:\astype{UnivariatePolynomialAlgebra0}) $\to$ (P, P) $\to$ P & Gcd\\
+\asexp{gcdquoUP}:
+& (P:\astype{UnivariatePolynomialAlgebra0}) $\to$ (P, P) $\to$ (P,P,P) & Gcd\\
+\end{exports}
+\aspage{gcdUP}
+\astarget{\name!}
+\Usage{ \name(P)(p, q) \\ \name!(P)(p, q) }
+\Signature{(P: \astype{UnivariatePolynomialAlgebra0} \%) $\to$ (P, P)}{P}
+\Params{
+{\em P} & \astype{UnivariatePolynomialAlgebra0} \% & A polynomial type\\
+{\em p,q} & P & Polynomials\\
+}
+\Retval{Both function return $\gcd(p, q)$. When \name! is used, the
+storage used by $x_1$ and $x_2$ is allowed to be destroyed or reused,
+so $p$ and $q$ are lost after this call.}
+\aspage{gcdquoUP}
+\Usage{ \name(P)(p, q) }
+\Signature{(P: \astype{UnivariatePolynomialAlgebra0} \%) $\to$ (P,P)}{(P,P,P)}
+\Params{
+{\em P} & \astype{UnivariatePolynomialAlgebra0} \% & A polynomial type\\
+{\em p,q} & P & Polynomials\\
+}
+\Retval{Returns $(g, y, z)$ such that $g = \gcd(p, q)$, $p = g y$ and
+$q = g z$.}

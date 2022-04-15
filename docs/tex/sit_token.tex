@@ -1,0 +1,122 @@
+\thistype{Token}
+\History{Manuel Bronstein}{21/11/95}{created}
+\Usage{import from \this}
+\Descr{\this~is a type whose elements are parser tokens.}
+\begin{exports}
+\category{\altype{OutputType}}\\
+\category{\altype{PrimitiveType}}\\
+\alexp{float}:
+& (\altype{List} \altype{Character}, \altype{List} \altype{Character}) $\to$ \% & Create a float token\\
+\alexp{integer}:
+& \altype{List} \altype{Character} $\to$ \% & Create an integer token\\
+\alexp{leaf}: &	\% $\to$ \altype{ExpressionTreeLeaf} & Conversion to a leaf\\
+\alexp{leaf?}: & \% $\to$ \altype{Boolean} & Test for a leaf\\
+\alexp{name}:
+& \altype{List} \altype{Character} $\to$ \% & Create a constant name token\\
+\alexp{operator}:
+& \% $\to$ \altype{ExpressionTreeOperator} & Conversion to an operator\\
+\alexp{operator?}: & \% $\to$ \altype{Boolean} & Test for an operator\\
+\alexp{prefix}:
+& \altype{List} \altype{Character} $\to$ \% & Create a prefix function token\\
+\alexp{special}:
+& \% $\to$ \altype{MachineInteger} & Conversion to a special token\\
+\alexp{special?}: & \% $\to$ \altype{Boolean} & Test for a special token\\
+\alexp{string}: & \altype{List} \altype{Character} $\to$ \% & Create a string\\
+\alexp{token}: & \altype{Character} $\to$ \altype{Partial} \% &
+Create a single character token\\
+\end{exports}
+\alpage{float}
+\Usage{\name($l_1,l_2$)}
+\Signature{(\altype{List} \altype{Character}, \altype{List} \altype{Character})}{\%}
+\Params{
+$[d_0,\dots,d_n]$ & \altype{List} \altype{Character} & A list of digits\\
+$[e_0,\dots,e_m]$ & \altype{List} \altype{Character} & A list of digits\\
+}
+\Retval{\name($[d_0,\dots,d_n], [e_0,\dots,e_m]$) returns the float
+$d_n d_{n-1} \dots d_0 . e_m e_{m-1} \dots e_0$ as a token.}
+\alseealso{\alexp{integer}}
+\alpage{integer}
+\Usage{\name~l}
+\Signature{\altype{List} \altype{Character}}{\%}
+\Params{
+$[d_0,\dots,d_n]$ & \altype{List} \altype{Character} & A list of digits\\ }
+\Retval{\name($[d_0,\dots,d_n]$) returns the integer
+$d_0 + 10 d_1 + \dots + 10^n d_n$ as a token.}
+\alseealso{\alexp{float}}
+\alpage{leaf}
+\altarget{\name?}
+\Usage{ \name~t\\ \name?~t }
+\Signatures{
+\name: & \% $\to$ \altype{ExpressionTreeLeaf}\\
+\name?: & \% $\to$ \altype{Boolean}\\
+}
+\Params{ {\em t} & \% & A token\\ }
+\Retval{
+\name~a returns $a$ as a leaf is $a$ is a leaf.
+\name?~a returns \true~if a is a leaf, \false~otherwise.
+}
+\alseealso{\alexp{operator}, \alexp{special}}
+\alpage{name}
+\Usage{\name~l}
+\Signature{\altype{List} \altype{Character}}{\%}
+\Params{
+$[c_0,\dots,c_n]$ & \altype{List} \altype{Character} & A list of characters\\ }
+\Retval{\name($[c_0,\dots,c_n]$) returns the name $c_n c_{n-1} \dots c_0$
+as a token representing a constant symbol.}
+\alseealso{\alexp{prefix}, \alexp{string}}
+\alpage{operator}
+\altarget{\name?}
+\Usage{ \name~t\\ \name?~t }
+\Signatures{
+\name: & \% $\to$ \altype{ExpressionTreeOperator}\\
+\name?: & \% $\to$ \altype{Boolean}\\
+}
+\Params{ {\em t} & \% & A token\\ }
+\Retval{
+\name~a returns $a$ as an operator is $a$ is an operator.
+\name?~a returns \true~if a is an operator, \false~otherwise.
+}
+\alseealso{\alexp{leaf}, \alexp{special}}
+\alpage{prefix}
+\Usage{\name~l}
+\Signature{\altype{List} \altype{Character}}{\%}
+\Params{
+$[c_0,\dots,c_n]$ & \altype{List} \altype{Character} & A list of characters\\ }
+\Retval{\name($[c_0,\dots,c_n]$) returns the name $``c_n c_{n-1} \dots c_0''$
+as a token representing a prefix function.}
+\alseealso{\alexp{name}}
+\alpage{special}
+\altarget{\name?}
+\Usage{ \name~t\\ \name?~t }
+\Signatures{
+\name: & \% $\to$ \altype{MachineInteger}\\
+\name?: & \% $\to$ \altype{Boolean}\\
+}
+\Params{ {\em t} & \% & A token\\ }
+\Retval{
+\name~a returns $a$ as a special token is $a$ is a special token.
+\name?~a returns \true~if a is a special token, \false~otherwise.
+}
+\alseealso{\alexp{leaf}, \alexp{special}}
+\alpage{string}
+\Usage{\name~l}
+\Signature{\altype{List} \altype{Character}}{\%}
+\Params{
+$[c_0,\dots,c_n]$ & \altype{List} \altype{Character} & A list of characters\\ }
+\Retval{\name($[c_0,\dots,c_n]$) returns the string $``c_n c_{n-1} \dots c_0''$
+as a token representing a constant.}
+\alseealso{\alexp{name}, \alexp{prefix}}
+\alpage{token}
+\Usage{\name~a}
+\Signatures{
+\name: & \altype{Character} $\to$ \altype{Partial} \%\\
+\name: & \altype{ExpressionTreeOperator} $\to$ \altype{Partial} \%\\
+\name: & \altype{MachineInteger} $\to$ \altype{Partial} \%\\
+}
+\Params{
+{\em a} & \altype{Character} & A single character token\\
+        & \altype{ExpressionTreeOperator} & An operator\\
+        & \altype{MachineInteger} & A code of a special token\\
+}
+\Retval{Returns the token corresponding to the single character $a$,
+\failed if there is none.}

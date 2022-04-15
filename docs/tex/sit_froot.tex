@@ -1,0 +1,62 @@
+\thistype{FractionalRoot}
+\History{Manuel Bronstein}{11/12/96}{created RationalRoot}
+\History{Manuel Bronstein}{17/8/2000}{added the parameter R, changed type name}
+\Usage{import from \this}
+\Descr{\this(R) provides fractions of R with multiplicities.}
+\Params{ {\em R} & \altype{CommutativeRing} & A ring\\ }
+\begin{exports}
+\category{\altype{ExpressionType}}\\
+\alexp{fractionalRoot}: & (R, R, \altype{Integer}) $\to$ \% & Create a root\\
+\alexp{integral?}:
+& \% $\to$ \altype{Boolean} & Test whether root is integral\\
+\alexp{integralRoot}: & (R, \altype{Integer}) $\to$ \% & Create a root\\
+\alexp{integralValue}: & \% $\to$ R & Value of an integral root\\
+\alexp{multiplicity}: & \% $\to$ \altype{Integer} & Multiplicity of a root\\
+\alexp{setMultiplicity!}:
+& (\%, \altype{Integer}) $\to$ \% & Change a multiplicity\\
+\alexp{value}: &  \% $\to$ (R, R) & Value of a root\\
+\end{exports}
+\alpage{integral?}
+\Signature{\%}{\altype{Boolean}}
+\Usage{\name~r}
+\Params{ {\em r} & \% & A root\\ }
+\Retval{Return \true~if r is in R, \false~otherwise.}
+\alpage{fractionalRoot,integralRoot}
+\altarget{fractionalRoot}
+\altarget{integralRoot}
+\Usage{fractionalRoot(a, b, n)\\ integralRoot(a, n)}
+\Signatures{
+fractionalRoot: & (R, R, \altype{Integer}) $\to$ \%\\
+integralRoot: & (R, \altype{Integer}) $\to$ \%\\
+}
+\Params{
+{\em a} & R & A numerator\\
+{\em b} & R & A denominator\\
+{\em n} & \altype{Integer} & A multiplicity\\
+}
+\Retval{Return the root $a$ or $a/b$ with multiplicity $n$.}
+\alpage{integralValue}
+\Usage{ \name~r }
+\Signature{\%}{\altype{Integer}}
+\Params{ {\em r} & \% & A root\\ }
+\Retval{Returns the value of the integral root $r$, ignoring its multiplicity.}
+\alseealso{\alexp{value}}
+\alpage{multiplicity}
+\Usage{ \name~r }
+\Signature{\%}{\altype{Integer}}
+\Params{ {\em r} & \% & A root\\ }
+\Retval{Return the multiplicity of $r$.}
+\alpage{setMultiplicity!}
+\Usage{ \name(r, m) }
+\Signature{(\%, \altype{Integer})}{\altype{Integer}}
+\Params{
+{\em r} & \% & A root\\
+{\em m} & \altype{Integer} & Its new multiplicity\\
+}
+\Descr{Sets the multiplicity of $r$ to $m$ and returns $r$.}
+\alpage{value}
+\Usage{ (n, d) := \name~r }
+\Signature{\%}{(\altype{Integer}, \altype{Integer})}
+\Params{ {\em r} & \% & A root\\ }
+\Retval{Return $(n, d)$ such that the value of $r$ is $n/d$.}
+\alseealso{\alexp{integralValue}}

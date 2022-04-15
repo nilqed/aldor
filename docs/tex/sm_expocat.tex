@@ -1,0 +1,29 @@
+\thistype{ExponentCategory}
+\History{Marc Moreno Maza}{08/07/01}{created}
+\Usage{\this~V: Category}
+\Params{
+{\em V} & \astype{VariableType} & The domain of variables \\
+}
+\Descr{\this~V provides multivariate monomials
+(i.e. products of variables from V) looked as an addtive
+ordered monoid (with cancellation) by associating to
+every product of variables its sequence of degrees.}
+\begin{exports}
+\category{\astype{GeneralExponentCategory}} \\
+\alexp{exponent}: & V $\to$ \%   &  The exponent of a variable \\
+\alexp{exponent}: & (V, Z) $\to$ \%   &  The exponent of a power of a variable  \\
+\alexp{exponent}: & \astype{Generator} \astype{Cross} (V, Z) $\to$ \%   &  The exponent of a power product \\
+\alexp{exponent}: & (\astype{List} V,  \astype{List} Z) $\to$ \%  &  The exponent of a power product \\
+\alexp{terms}: & \%  $\to$  \astype{Generator} \astype{Cross} (V, Z) &  Inverse map of \alexp{exponent} \\
+\alexp{mainVariable}: & \%  $\to$  \astype{Partial} V  &  The biggest variable, if any \\
+\alexp{variables}: & \%  $\to$  \astype{List} V & The list of variables of a monomial  \\ 
+\alexp{degree}:  & (\%, V) $\to$  Z &  The degree w.r.t.~a variable   \\
+\alexp{totalDegree}: & \%  $\to$ Z  & The sum of the degrees of an exponent \\
+\alexp{totalDegree}: &  (\%,  \astype{List} V) $\to$ Z & The sum of the degrees w.r.t.~a list \\
+\alexp{gcd}: & (\%, \%)  $\to$ \% & Monomial gcd  \\
+\alexp{lcm}: & (\%, \%)  $\to$ \%  & Monomial lcm \\
+\alexp{syzygy}: & (\%, \%)  $\to$ (\%, \%)   & Cofactors w.r.t.~lcm \\
+\end{exports}
+\begin{aswhere}
+Z &==& \altype{Integer}\\
+\end{aswhere}

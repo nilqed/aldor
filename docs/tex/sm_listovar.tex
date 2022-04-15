@@ -1,0 +1,21 @@
+\thistype{OrderedVariableList}
+\History{Marc Moreno Maza}{08/07/01}{created}
+\Usage{import from \this~t}
+\Params{
+{\em t} & \astype{List}~\astype{Symbol} & The symbols defining the variables of the type \\
+}
+\Descr{\this~{\em t} implements the finite set of ordered variables given by {\em t}.
+This set has $n$ elements numbered from to $1$ to $n$, where $n$ is the size of the {\em t.}
+For $i = 1 \cdots n$ the $i$-th variable of the type is \asfunc{FiniteVariableType}{variable}~$i$
+and uses  the output form of the $i$-th item in {\em t.}
+For $i, \, j = 1 \cdots n$  \asfunc{FiniteVariableType}{variable}~$i$ 
+$>$ \asfunc{FiniteVariableType}{variable}~$j$ holds
+iff $i < j$ holds.
+Elements of \this~{\em t} are internally represented as machine integers.
+The input list {\em t} may contain duplicates since {\em t} is only used for
+output forms matter.
+Operations from \astype{ExpressionType}, \astype{Parsable}, \astype{HashType} and \astype{SerializableType}
+are taken from \astype{MachineInteger}.}
+\begin{exports}
+\category{\astype{FiniteVariableType}} \\
+\end{exports}

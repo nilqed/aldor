@@ -1,0 +1,27 @@
+\thistype{DifferentialRing}
+\History{Manuel Bronstein}{21/12/94}{created}
+\Usage{\this: Category}
+\Descr{\this~is the category of commutative differential rings.}
+\begin{exports}
+\category{\astype{CommutativeRing}}\\
+\asexp{derivation}: & $\to$ \astype{Derivation} \% & The derivation\\
+\asexp{differentiate}:
+& (\%, \astype{Integer}) $\to$ \% & Differentiate an element\\
+\end{exports}
+\aspage{derivation}
+\Usage{\name}
+\alconstant{\astype{Derivation} \%}
+\Retval{Returns the derivation of the ring.}
+\alseealso{differentiate(\this)}
+\aspage{differentiate}
+\Usage{\name~x\\\name(x, n)}
+\Signature{(\%, \astype{Integer})}{\%}
+\Params{
+{\em x} & \% & The element to differentiate\\
+{\em n} & \astype{Integer} & The order of differentiation (optional)\\
+}
+\Retval{
+\name~x returns $x'$, the derivative of $x$.\\
+\name(x, n) returns $x^{(n)}$, the \Th{n} derivative of $x$.
+}
+\alseealso{derivation(\this)}

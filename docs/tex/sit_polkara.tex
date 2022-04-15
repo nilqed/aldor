@@ -1,0 +1,16 @@
+\thistype{UnivariatePolynomialKaratsuba}
+\History{Manuel Bronstein}{6/12/96}{created}
+\Usage{ import from \this~R }
+\Params{
+{\em R} & \altype{CommutativeRing} & The coefficient ring of the polynomials\\
+}
+\Descr{\this~R implements Karatsuba multiplication for dense univariate
+polynomials with coefficients in R.}
+\begin{exports}
+\alexp{karatsuba!}: & (A, A, Z, A, Z, Z, (A, A, Z, A, Z) $\to$ ()) $\to$ () &
+Karatsuba multiplication\\
+\end{exports}
+\begin{aswhere}
+A &==& \altype{PrimitiveArray} R\\
+Z &==& \altype{MachineInteger}\\
+\end{aswhere}

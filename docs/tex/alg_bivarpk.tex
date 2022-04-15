@@ -1,0 +1,33 @@
+\thistype{BivariateUtilitiesPackage}
+\History{Yuzhen Xie and Marc Moreno Maza}{Mars 2003}{created}
+\Usage{import from \this~(U,V)}
+\Params{
+{\em U} & \altype{UnivariatePolynomialAlgebra} \altype{Integer} \\
+{\em V} & \altype{UnivariatePolynomialAlgebra} {U} \\
+}
+\Descr{\this~(U,V) provides basic operations for bivariate polynomials
+       over the integer numbers.  
+       In particular, it provides support for modular methods.
+       In the above description, the smallest variable of a polynomial
+       from V refers to the variable of U
+       and its degree refers to the its degree as a univariate polynomial
+       w.r.t. the variable of V.
+}
+\begin{exports}
+\alexp{maxNorm}:   & U $\to$ Z & maximum absolute value of a coefficient \\
+\alexp{maxNorm}:   & V $\to$ Z & maximum absolute  value of a coefficient \\
+\alexp{degree\_U}: & V $\to$ Z & degree w.r.t. the smallest variable \\
+\alexp{resultantCoefficientBound}: 
+                   & (V, V) $\to$ Z & upper bound for the  resultant maxNorm \\
+\alexp{resultantDegreeBound}:
+                   & (V, V) $\to$ Z & degree bound for the resultant \\
+\alexp{primeBad?}: 
+                   & (V, V, I) $\to$ B &
+                                                   true iff the degree of one of the two \\
+                   &                               & polynomials drops modulo the number \\
+\end{exports}                                              
+\begin{aswhere}
+I &==& \altype{MachineInteger}\\
+Z &==& \altype{Integer}\\
+B &==& \altype{Boolean}\\
+\end{aswhere}

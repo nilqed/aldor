@@ -1,0 +1,67 @@
+\thistype{PrimeCollection}
+\History{Manuel Bronstein}{26/4/96}{created}
+\Usage{\this: Category}
+\Descr{\this~is the category of collections of primes with various
+properties and various sizes.}
+\begin{exports}
+\alexp{allPrimes}: & () $\to$ \altype{Generator} Z & Generate all the primes\\
+\alexp{fourierPrime}: & Z $\to$ (Z, Z) & Fourier prime\\
+\alexp{maxPrime}: & $\to$ Z & Largest prime\\
+\alexp{nextPrime:} & Z $\to$ Z & First prime above a given number\\
+\alexp{previousPrime:} & Z $\to$ Z & First prime below a given number\\
+\alexp{primeInCollection?:} & Z $\to$ \altype{Boolean} & Check a prime\\
+\alexp{primRoot:} & Z $\to$ Z & Modular primitive root\\
+\alexp{randomPrime:} & () $\to$ Z & Random prime\\
+\end{exports}
+\begin{alwhere}
+Z & == & \altype{MachineInteger}\\
+\end{alwhere}
+\alpage{allPrimes}
+\Usage{ for p in \name() repeat \{ \dots \} }
+\Signature{()}{\altype{Generator} \altype{MachineInteger}}
+\Descr{This function allows a loop to iterate over all the primes
+provided by the collection.}
+\alpage{fourierPrime}
+\Usage{\name~n}
+\Signature{\altype{MachineInteger}}
+{(\altype{MachineInteger},\altype{MachineInteger})}
+\Retval{Returns $(p,\omega)$ such that $p$ is a prime of the form
+$p = 2^n k + 1$ with $k$ odd, and $\omega$ is a primitive $\sth{2^n}$
+root of unity in $\mathbbm{F}_p$. Returns $(0,0)$ if $n$ is too large.}
+\alpage{maxPrime}
+\Usage{\name}
+\alconstant{\altype{MachineInteger}}
+\Retval{Returns the largest prime in the collection.}
+\alpage{nextPrime}
+\Usage{\name~n}
+\Signature{\altype{MachineInteger}}{\altype{MachineInteger}}
+\Params{ {\em n} & \altype{MachineInteger} & An integer\\ }
+\Retval{Returns the smallest prime $p$ in the collection with $n < p$,
+$0$ if there are none.}
+\alseealso{previousPrime(\this), randomPrime(\this)}
+\alpage{previousPrime}
+\Usage{\name~n}
+\Signature{\altype{MachineInteger}}{\altype{MachineInteger}}
+\Params{ {\em n} & \altype{MachineInteger} & An integer\\ }
+\Retval{Returns the largest prime $p$ in the collection with $n > p$,
+$0$ if there are none.}
+\alseealso{nextPrime(\this), randomPrime(\this)}
+\alpage{primeInCollection?}
+\Usage{\name~n}
+\Signature{\altype{MachineInteger}}{\altype{Boolean}}
+\Params{ {\em n} & \altype{MachineInteger} & An integer\\ }
+\Retval{Returns \true{} if \emph{n} is a prime in the collection,
+\false{} otherwise (\emph{n} could still be prime in that case).}
+\alpage{primRoot}
+\Usage{\name~p}
+\Signature{\altype{MachineInteger}}{\altype{MachineInteger}}
+\Params{ {\em p} & \altype{MachineInteger} & A prime\\ }
+\Retval{Returns a generator of the multiplicative group
+$(\ZZ/p \ZZ)^\ast$ or $0$ if $p$ is not a prime in the table,
+or is no primitive root is stored.}
+\alseealso{primitiveRoot(\altype{PrimitiveRoots})}
+\alpage{randomPrime}
+\Usage{\name()}
+\Signature{()}{\altype{MachineInteger}}
+\Retval{Returns a random prime in the collection.}
+\alseealso{nextPrime(\this), previousPrime(\this)}

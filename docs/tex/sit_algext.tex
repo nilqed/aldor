@@ -1,0 +1,162 @@
+\thistype{UnivariatePolynomialQuotient}
+\History{Manuel Bronstein}{27/12/96}{created}
+\History{Manuel Bronstein}{30/6/2003}{split UnivariatePolynomialQuotientSqfr}
+\History{Manuel Bronstein}{30/6/2003}{added newtonSeries}
+\Usage{ \this(R, Rx):Category }
+\Params{
+{\em R} & \altype{CommutativeRing} & The coefficient ring of the polynomials\\
+{\em Rx} & \altype{UnivariatePolynomialAlgebra} R & A polynomial type over R\\
+}
+\Descr{\this(R, Rx) is the category of extensions of $R$ of the form
+$Rx / (p)$ for some $p \in Rx$, where \emph{p} is assumed to be monic,
+but with no other restrictions.
+Use instead the categories \altype{UnivariatePolynomialQuotientSqfr}
+when \emph{p} is also known to
+be squarefree, and \altype{SimpleAlgebraicExtensionCategory}
+when \emph{p} is also known to be irreducible.}
+\begin{exports}
+\category{\altype{Algebra} R}\\
+\category{\altype{CommutativeRing}}\\
+\alfunc{IndexedFreeLinearCombinationType}{coefficient}:
+& (\%, Z) $\to$ R & Extraction of a coefficient\\
+\alexp{compose}: & \% $\to$ \% $\to$ \% & Modular composition\\
+\alexp{definingPolynomial}: & Rx & Defining polynomial\\
+\alfunc{IndexedFreeModule}{generator}:
+& \% $\to$ \altype{Generator} \albuiltin{Cross}(R, Z) &
+iterate through all the terms\\
+\alexp{knownIrreducible?}: & \altype{Boolean} & Irreducible modulus?\\
+\alexp{lift}: & \% $\to$ Rx & Conversion to a polynomial\\
+\alfunc{FreeLinearCombinationType}{map}:
+& (R $\to$ R) $\to$ \% $\to$ \% & Lift a mapping\\
+\alfunc{FreeLinearCombinationType}{map!}:
+& (R $\to$ R) $\to$ \% $\to$ \% & Lift a mapping\\
+\alexp{monom}: & \% & Generator of the algebra\\
+\alexp{reduce}: & Rx $\to$ \% & Reduction of a polynomial\\
+\alexp{value}:
+& (P:POLY \%) $\to$ (P, Z, Z) $\to$ \% & Evaluation at a rational number\\
+\end{exports}
+\begin{alwhere}
+Z &==& \altype{Integer}\\
+POLY &==& \altype{UnivariatePolynomialAlgebra}\\
+\end{alwhere}
+\begin{exports}[if R has \altype{CharacteristicZero} then]
+\category{\altype{CharacteristicZero}}\\
+\end{exports}
+\begin{exports}[if R has \altype{FiniteCharacteristic} then]
+\category{\altype{FiniteCharacteristic}}\\
+\end{exports}
+\begin{exports}[if R has \altype{FiniteSet} then]
+\category{\altype{FiniteSet}}\\
+\end{exports}
+\alpage{compose}
+\Usage{\name(p)(q)}
+\Params{ {\em p, q} & \% & Polynomials\\ }
+\Retval{Returns
+$$
+q(p) = \sum_{i=0}^n a_i p^i
+$$
+where $q = \sum_{i=0}^n a_i x^i$.}
+\Remarks{If you want to compute
+$q_1(p),\dots,q_k(p)$ for several $q_i$'s, use the curried version
+as follows: {\tt f := compose p; for i in 1..k repeat r.i := f(q.i); },
+since the various calls to {\tt f} will share a table of powers of $p$.}
+\alpage{definingPolynomial}
+\Usage{\name}
+\alconstant{Rx}
+\Retval{Returns the polynomial $p$ such that the extension is $Rx/(p)$.}
+\alpage{knownIrreducible?}
+\Usage{\name}
+\alconstant{\altype{Boolean}}
+\Retval{Returns \true{} if the modulus is known to be irreducible,
+\false{} otherwise. Note that the modulus could be irreducible, even
+if \name{} is \false.}
+\alpage{lift}
+\Usage{\name~q}
+\Signature{\%}{Rx}
+\Params{ {\em q} & \% & An element of the algebraic extension\\ }
+\Retval{Returns $q$ as an element of $Rx$.}
+\alpage{monom}
+\Usage{\name}
+\alconstant{\%}
+\Retval{Returns the image in the quotient of the term \emph{x} from \emph{Rx}.
+That element generates this type as an algebra over \emph{R}.}
+\alseealso{\alfunc{UnivariateFreeLinearArithmeticType}{monom}}
+\alpage{reduce}
+\Usage{\name~q}
+\Signature{Rx}{\%}
+\Params{ {\em q} & Rx & A polynomial\\ }
+\Retval{Returns the remainder of $q$ modulo $p$ as an element of $Rx / (p)$.}
+\alpage{value}
+\Usage{\name(P)(p, n, d)}
+\Signature{(P:\altype{UnivariatePolynomialAlgebra} \%)}
+{(P, \altype{Integer}, \altype{Integer}) $\to$ \%}
+\Params{
+{\em P} & \altype{UnivariatePolynomialAlgebra} \% & A polynomial type\\
+{\em p} & P & A polynomial\\
+{\em n} & \altype{Integer} & A numerator\\
+{\em d} & \altype{Integer} & A nonzero denominator\\
+}
+\Retval{Returns $d^e p(n/d)$ where $e$ is the smallest nonnegative exponent
+such that $d^e p(n/d)$ is an element of the extension.}
+\thistype{UnivariatePolynomialQuotientSqfr}
+\History{Manuel Bronstein}{30/6/2003}{created}
+\Usage{ \this(R, Rx):Category }
+\Params{
+{\em R} & \altype{CommutativeRing} & The coefficient ring of the polynomials\\
+{\em Rx} & \altype{UnivariatePolynomialAlgebra} R & The type of the modulus\\
+}
+\Descr{\this(R, Rx) is the category of extensions of $R$ of the form
+$Rx / (p)$ for some $p \in Rx$, where \emph{p} is assumed to be monic
+and squarefree, but not not necessarily irreducible.
+Use instead the categories \altype{UnivariatePolynomialQuotient}
+when \emph{p} is not squarefree,
+and \altype{SimpleAlgebraicExtensionCategory}
+when \emph{p} is known to be irreducible.}
+\begin{exports}
+\category{\altype{UnivariatePolynomialQuotient}(R, Rx)}\\
+\alexp{newtonSeries}: & Rxx & Newton series of the generator\\
+\alexp{norm}: & \% $\to$ R & Norm\\
+              & (P:POLY \%) $\to$ P $\to$ Rx & \\
+\alexp{trace}: & \% $\to$ R & Trace\\
+               & (P:POLY \%) $\to$ P $\to$ Rx & \\
+\end{exports}
+\begin{alwhere}
+POLY &==& \altype{UnivariatePolynomialAlgebra}\\
+Rxx &==& \altype{DenseUnivariateTaylorSeries} R\\
+\end{alwhere}
+\begin{exports}[if R has \altype{RationalRootRing} then]
+\category{\altype{RationalRootRing}}\\
+\end{exports}
+\begin{exports}
+[if R has \altype{CharacteristicZero} and R has \altype{Field} then]
+\category{\altype{DifferentialExtension} R}\\
+\end{exports}
+\alpage{newtonSeries}
+\Usage{\name}
+\alconstant{\altype{DenseUnivariateTaylorSeries} R}
+\Retval{Returns the series
+$$
+\sum_{n\ge 0} Tr(\alpha^n) x^n
+$$
+where $\alpha$ is the image in the quotient of the term \emph{x} from \emph{Rx},
+and $Tr$ is the trace from the quotient into \emph{R}.}
+\alseealso{\alfunc{UnivariatePolynomialQuotient}{monom},\alexp{trace}}
+\alpage{norm,trace}
+\altarget{norm}
+\altarget{trace}
+\Usage{norm~q\\trace~q\\norm~P\\trace~P\\norm(P)(p)\\trace(P)(p)}
+\Signatures{
+\name: & \% $\to$ R\\
+\name: & (P:\altype{UnivariatePolynomialAlgebra} \%) $\to$ P $\to$ Rx\\
+}
+\Params{
+{\em q} & \% & An element of the algebraic extension\\
+{\em P} & \altype{UnivariatePolynomialAlgebra} \% & A polynomial type\\
+{\em p} & P & A polynomial\\
+}
+\Descr{norm($q(\alpha)$) and trace($q(\alpha)$) return respectively
+the product and sum of the $q(\alpha)$ over all the roots
+of the polynomial defining the extension,
+while norm(P)($p(\alpha,x)$) and trace(P)($p(\alpha,x)$) return respectively
+the product and sum of the $p(\alpha,x)$ over all the roots
+of the polynomial defining the extension.}

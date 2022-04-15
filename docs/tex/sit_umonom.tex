@@ -1,0 +1,101 @@
+\thistype{UnivariateMonomial}
+\History{Manuel Bronstein}{20/5/94}{created}
+\Usage{import from \this~R\\ import from \this(R, x)}
+\Params{
+{\em R} & \altype{ExpressionType} & Coefficients of the monomials\\
+        & \altype{ArithmeticType} &\\
+{\em x} & \altype{Symbol} & The variable name (optional)\\
+}
+\Descr{This type implements univariate monomials with coefficients in R.}
+\begin{exports}
+%\category{\altype{Order}}\\
+\category{\altype{ExpressionType}}\\
+\alexp{apply}: & (\%, TREE) $\to$ TREE & Applies a monomial to a tree\\
+\alexp{coefficient}: & \% $\to$ R & Extraction of the coefficient\\
+\alexp{degree}: & \% $\to$ \altype{Integer} & The degree of a monomial\\
+\alexp{map}: & (R $\to$ R) $\to$ \% $\to$ \% & Lift a map\\
+\alexp{map!}: & (R $\to$ R) $\to$ \% $\to$ \% & Lift a map\\
+\alexp{monomial}: & (R, \altype{Integer}) $\to$ \% & Creation of a monomial\\
+\alexp{setCoefficient!}:
+& (\%, R) $\to$ R & In--place coefficient modification\\
+\alexp{setDegree!}: & (\%, Z) $\to$ Z & In-place degree modification\\
+\end{exports}
+\begin{exports}[if $R$ has \altype{FiniteCharacteristic} then]
+\alexp{pthPower}: & \% $\to$ \% & Exponentiation to the characteristic\\
+\alexp{pthPower!}:
+& \% $\to$ \% & In--place exponentiation to the characteristic\\
+\end{exports}
+\begin{aswhere}
+TREE &==& \altype{ExpressionTree}\\
+\end{aswhere}
+\alpage{apply}
+\Usage{\name(p, t)}
+\Signature{(\%, \altype{ExpressionTree})}{\altype{ExpressionTree}}
+\Params{
+{\em p} & \% & A monomial\\
+{\em t} & \altype{ExpressionTree} & An expression tree\\
+}
+\Retval{Returns p as an expression tree using t as root variable name.}
+\alpage{coefficient}
+\Usage{\name~p}
+\Signature{\%}{R}
+\Params{ {\em p} & \% & A monomial\\ }
+\Retval{Returns the coefficient of $p$, \ie $c$ where $p = c\; x^n$.}
+\alseealso{\alexp{degree}, \alexp{setCoefficient!}}
+\alpage{degree}
+\Usage{\name~p}
+\Signature{\%}{\altype{Integer}}
+\Params{ {\em p} & \% & A monomial\\ }
+\Retval{Returns the degree of $p$, \ie $n$ where $p = c\; x^n$.}
+\alseealso{\alexp{coefficient}}
+\alpage{map}
+\altarget{\name!}
+\Usage{\name~f\\\name!~f\\\name(f)(p)\\\name!(f)(p)}
+\Signature{(R $\to$ R) $\to$ \%}{\%}
+\Params{
+{\em f} & R $\to$ R & A map\\
+{\em p} & \% & A monomial\\
+}
+\Descr{\name(f)(p) returns $f(a) x^n$ where $p = a x^n$,
+while \name(f) returns the mapping $p \to f(p)$.
+In both cases, \name!~does not make a copy of $p$ but modifies it in place.}
+\alpage{monomial}
+\Usage{\name(c, n)}
+\Signature{(R, \altype{Integer})}{\%}
+\Params{
+{\em c} & R & A scalar\\
+{\em n} & \altype{Integer} & An exponent\\
+}
+\Retval{Returns the monomial $c\; x^n$.}
+\alpage{pthPower}
+\altarget{\name!}
+\Usage{ \name~p\\ \name!~p }
+\Signature{\%}{\%}
+\Params{ {\em p} & \% & A monomial\\ }
+\Retval{Returns $p^{\mbox{characteristic}}$.}
+\Remarks{\name!~does not make a copy of $p$, which is therefore
+modified after the call. It is unsafe to use the variable $p$
+after the call, unless it has been assigned to the result
+of the call, as in {\tt p := pthPower!~p}.}
+\alpage{setCoefficient!}
+\Usage{\name(p, c)}
+\Signature{(\%, R)}{R}
+\Params{
+{\em p} & \% & A monomial\\
+{\em c} & R & A scalar\\
+}
+\Descr{Sets the coefficient of $p$ to $c$,\ie changes $p = d\; x^n$ into
+$c\; x^n$}
+\Retval{Returns the new coefficient $c$.}
+\alseealso{\alexp{coefficient}}
+\alpage{setDegree!}
+\Usage{\name(p, c)}
+\Signature{(\%, \altype{Integer})}{\altype{Integer}}
+\Params{
+{\em p} & \% & A monomial\\
+{\em n} & \altype{Integer} & An exponent\\
+}
+\Descr{Sets the degree of $p$ to $n$,\ie changes $p = c\; x^m$ into
+$c\; x^n$}
+\Retval{Returns the new degree $n$.}
+\alseealso{\alexp{degree}}

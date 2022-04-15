@@ -1,0 +1,32 @@
+\thistype{RationalRootRing}
+\History{Manuel Bronstein}{10/12/96}{created}
+\Usage{\this: Category}
+\Descr{\this~is the category of gcd domains that export an algorithm for
+finding the rational roots of univariate polynomials over themselves.}
+\begin{exports}
+\category{\astype{Ring}}\\
+\asexp{integerRoots}:
+& (P:POL \%) $\to$ P $\to$ \astype{Generator} FR \astype{Integer} &
+Integer roots\\
+\asexp{rationalRoots}:
+& (P:POL \%) $\to$ P $\to$ \astype{Generator} FR \astype{Integer}&
+Rational roots\\
+\end{exports}
+\begin{aswhere}
+FR &==& \astype{FractionalRoot}\\
+POL &==& \astype{UnivariatePolynomialAlgebra0}\\
+\end{aswhere}
+\aspage{integerRoots,rationalRoots}
+\astarget{integerRoots}
+\astarget{rationalRoots}
+\Usage{ integerRoots(P)(p)\\ rationalRoots(P)(p) }
+\Signature{(P: POL \%)}{P $\to$ \astype{Generator} \astype{RationalRoot}}
+\begin{aswhere}
+POL &==& \astype{UnivariatePolynomialAlgebra0}\\
+\end{aswhere}
+\Params{
+{\em P} & \astype{UnivariatePolynomialAlgebra0} \% & A polynomial type\\
+{\em p} & P & A polynomial\\
+}
+\Retval{Return $[(r_1,e_1),\dots,(r_n,e_n)]$ where the $r_i$'s are
+the integer or rational roots of $p$ and have multiplicity $e_i$.}

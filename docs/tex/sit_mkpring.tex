@@ -1,0 +1,18 @@
+\thistype{MakePartialRing}
+\History{Manuel Bronstein}{15/04/98}{created}
+\Usage{import from \this(R, f)}
+\Params{
+R & \astype{Ring} & A ring\\
+f & R $\to$ \astype{Partial} \astype{Integer} & A retraction to the integers\\
+}
+\Descr{\this(R, f) is a partial ring isomorphic to R. The function $f$
+is used to retract elements of this partial ring to integers whenever
+possible. This type can be used in order to build an evaluator that
+interprets expression trees into R.}
+\begin{exports}
+\category{\astype{PartialRing}}\\
+\asexp{coerce}:
+& R $\to$ \% & Convert an element of R to one of the partial ring\\
+\asexp{coerce}:
+& \% $\to$ R & Convert an element of the partial ring to one of R\\
+\end{exports}

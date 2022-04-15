@@ -1,0 +1,41 @@
+\thistype{UnivariateIntegralFactorizer}
+\History{Laurent Bernardin}{4/12/95}{created}
+\History{Manuel Bronstein}{22/07/98}
+{factortryprime: added combinations of factors}
+\History{Manuel Bronstein}{9/03/2004}{fixed bug in factor}
+\Usage{import from \this(Z, P)}
+\Params{
+{\em Z} & \altype{IntegerCategory} & An integer-like ring\\
+{\em P} & \altype{UnivariatePolynomialAlgebra0} Z & A polynomial type over Z\\
+}
+\Descr{\this(Z, P) implements a factorizer for polynomials with
+integer coefficients.}
+\begin{exports}
+\alexp{factor}: & P $\to$ (Z, \altype{Product} P) & Factor\\
+\alexp{integerRoots}:
+& P $\to$ \altype{Generator} \altype{FractionalRoot} \altype{Integer} &
+Integer roots\\
+\alexp{rationalRoots}:
+& P $\to$ \altype{Generator} \altype{FractionalRoot} \altype{Integer} &
+Rational roots\\
+\end{exports}
+\alpage{factor}
+\Usage{\name~p}
+\Signature{P}{(Z,\altype{Product} P)}
+\Params{ {\em p} & P & A polynomial with integer coefficients\\ }
+\Retval{Returns $(c, p_1^{e_1} \cdots p_n^{e_n})$ such that
+each $p_i$ is irreducible, the $p_i$'s have no common factors, and
+$$
+p = c\;\prod_{i=1}^n p_i^{e_i}\,.
+$$
+}
+\alseealso{\alfunc{UnivariatePolynomialAlgebra0}{squareFree}}
+\alpage{integerRoots,rationalRoots}
+\altarget{integerRoots}
+\altarget{rationalRoots}
+\Usage{integerRoots~p\\rationalRoots~p}
+\Signature{P}{\altype{Generator} \altype{FractionalRoot} \altype{Integer}}
+\Params{ {\em p} & P & A polynomial with integer coefficients\\ }
+\Retval{integerRoots(p) (resp.~rationalRoots(p)) return
+$[(r_1,e_1),\dots,(r_n,e_n)]$ where the $r_i$'s are
+the integer (resp.~rational) roots of $p$ and have multiplicity $e_i$.}

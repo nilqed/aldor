@@ -1,0 +1,62 @@
+\thistype{UnivariateFactorialPolynomial}
+\History{Manuel Bronstein}{16/6/2000}{created}
+\Usage{ import from \this(R, Rx)}
+\Params{
+{\em R} & \altype{Ring} & The coefficient domain\\
+{\em Rx} & \altype{UnivariatePolynomialAlgebra} R & A polynomial type over R\\
+}
+\Descr{\this(R, Rx) implements univariate factorial polynomials with
+coefficients in $R$.
+Those are polynomials with respect to the basis
+of the descending factorials $(x^{{\underline n}})_{n \ge 0}$,
+where $x^{{\underline n}} = x (x-1) \dots (x-n+1)$.
+Rx is used for representing
+the factorial polynomials, so you can choose between sparse and dense
+representations.}
+\begin{exports}
+\category{\altype{UnivariateFreeRing} R}\\
+\alexp{coerce}: & Rx $\to$ \% & Conversion to a factorial polynomial\\
+\alexp{expand}: & \% $\to$ Rx & Conversion from a factorial polynomial\\
+\alexp{trailExpand}:
+& \% $\to$ (\altype{Integer}, Rx) & Conversion from a factorial polynomial\\
+\end{exports}
+\begin{exports}[if $R$ has \altype{CommutativeRing} then]
+\category{\altype{CommutativeRing}}\\
+\end{exports}
+\begin{exports}[if $R$ has \altype{IntegralDomain} then]
+\category{\altype{IntegralDomain}}\\
+\end{exports}
+\begin{exports}[if $R$ has \altype{RationalRootRing} then]
+\alexp{integerRoots}:
+& \% $\to$ \altype{List} \altype{FractionalRoot} \altype{Integer} &
+Integer roots\\
+\alexp{rationalRoots}:
+& \% $\to$ \altype{List} \altype{FractionalRoot} \altype{Integer} &
+Rational roots\\
+\end{exports}
+\alpage{coerce,expand,trailExpand}
+\altarget{coerce}
+\altarget{expand}
+\altarget{trailExpand}
+\Usage{p::\%\\ coerce~p\\ expand~q\\ (n, h) := trailExpand~q}
+\Signatures{
+coerce: & Rx $\to$ \%\\
+expand: & \% $\to$ Rx\\
+trailExpand: & \% $\to$ (\altype{Integer}, Rx)\\
+}
+\Params{
+{\em p} & Rx & A polynomial\\
+{\em q} & \% & A factorial polynomial\\
+}
+\Descr{p::\% converts {\em p} from the power basis $(x^n)_{n \ge 0}$ to
+the factorial basis $(x^{{\underline n}})_{n \ge 0}$, while expand(q)
+performs the reverse conversion and trailExpand(q) returns $(n, h)$
+such that $q = x^{{\underline n}} h$.}
+\alpage{integerRoots,rationalRoots}
+\altarget{integerRoots}
+\altarget{rationalRoots}
+\Usage{ integerRoots~p\\ rationalRoots~p }
+\Signature{\%}{\altype{List} \altype{FractionalRoot} \altype{Integer}}
+\Params{ {\em p} & \% & A factorial polynomial\\ }
+\Retval{Return $[(r_1,e_1),\dots,(r_n,e_n)]$ where the $r_i$'s are
+the integer or rational roots of $p$ and have multiplicity $e_i$.}

@@ -1,0 +1,201 @@
+%
+% Describes also the exports of UnivariatePolynomialAlgebra0, which is
+% not documented separately.
+%
+\thistype{UnivariatePolynomialAlgebra}
+\History{Manuel Bronstein}{20/5/94}{created}
+\History{Manuel Bronstein}{21/9/95}{added Zippel's multiple gcd (upolc0)}
+\History{Manuel Bronstein}{20/9/95}{added check for UnivariateGcdRing}
+\History{Thom Mulders}{27/5/97}{added bidirectional exact quotient (upolc0)}
+\History{Manuel Bronstein}{18/6/2002}{added LinearAlgebraRing over FiniteField}
+\Usage{\this~R: Category}
+\Params{
+{\em R} & \altype{ExpressionType} & The coefficient domain\\
+        & \altype{ArithmeticType} &\\
+}
+\Descr{\this~is the category of univariate polynomials with coefficients in
+an arbitrary domain R and with respect to the power basis $(x^n)_{n \ge 0}$.}
+
+\begin{exports}
+\category{\altype{UnivariatePolynomialRing} R}\\
+\category{\altype{IndexedFreeAlgebra}(R, \altype{Integer})}\\
+\alexp{apply}: & (\%, R) $\to$ R & Evaluate a polynomial\\
+\alexp{apply}: & (\%, \%) $\to$ \% & Evaluate a polynomial\\
+\alexp{equal?}:
+& (\%, \%, \%, \altype{Integer}) $\to$ \altype{Boolean} & Truncated equality\\
+\alexp{Horner}: & (\%, R) $\to$ (\%, R) & Horner division by $x - a$\\
+\end{exports}
+
+\begin{exports}[if R has \altype{CharacteristicZero} then]
+\alexp{ordinaryPoint}:
+& \% $\to$ \altype{Integer} & Point where a polynomial is nonzero\\
+\end{exports}
+
+\begin{exports}[if R has \altype{CommutativeRing} then]
+\category{\altype{DifferentialRing}}\\
+\alexp{lift}: & (\altype{Derivation} R, \%) $\to$ \altype{Derivation} \% &
+Extend a derivation\\
+\alexp{monicDivide}: & (\%, \%) $\to$ (\%, \%) & Polynomial division\\
+\alexp{monicDivide!}: & (\%, \%) $\to$ (\%, \%) & Polynomial division\\
+\alexp{monicDivideBy}: & \% $\to$ \% $\to$ (\%, \%) & Polynomial division\\
+\alexp{monicDivideBy!}: & \% $\to$ \% $\to$ (\%, \%) & Polynomial division\\
+\alexp{monicQuotient}: & (\%, \%) $\to$ \% & Quotient\\
+\alexp{monicQuotient!}: & (\%, \%) $\to$ \% & Quotient\\
+\alexp{monicQuotientBy}: & \% $\to$ \% $\to$ \% & Quotient\\
+\alexp{monicQuotientBy!}: & \% $\to$ \% $\to$ \% & Quotient\\
+\alexp{monicRemainder}: & (\%, \%) $\to$ \% & Remainder\\
+\alexp{monicRemainder!}: & (\%, \%) $\to$ \% & Remainder\\
+\alexp{monicRemainderBy}: & \% $\to$ \% $\to$ \% & Remainder\\
+\alexp{monicRemainderBy!}: & \% $\to$ \% $\to$ \% & Remainder\\
+\end{exports}
+
+\begin{exports}
+[if R has \altype{CommutativeRing} and R has \altype{RittRing} then]
+\alexp{integrate}: & \% $\to$ \% & Integration\\
+& (\%, \altype{Integer}) $\to$ \% & \\
+\end{exports}
+
+\begin{exports}[if R has \altype{FactorizationRing} then]
+\alexp{factor}:
+& \% $\to$ (R, \altype{Product} \%) & Factorisation into irreducibles\\
+\alexp{fractionalRoots}:
+& \% $\to$ \altype{Generator} \altype{FractionalRoot} R &
+Roots in the fraction field\\
+\alexp{roots}:
+& \% $\to$ \altype{Generator} \altype{FractionalRoot} R &
+Roots in the coefficient ring\\
+\end{exports}
+
+\begin{exports}[if R has \altype{Field} then]
+\category{\altype{EuclideanDomain}}\\
+\alexp{rationalReconstruction}:
+& \% $\to$ \% $\to$ \altype{Partial} \builtin{Cross}(\%, \%) &
+Rational reconstruction\\
+\alexp{sparseMultiple}:
+& (\%, \altype{Integer}) $\to$ \% & Multiple in $k[x^n]$\\
+\end{exports}
+
+\begin{exports}[if R has \altype{FiniteField} then]
+\category{LinearAlgebraRing}\\
+\end{exports}
+
+\begin{exports}[if R has \altype{GcdDomain} then]
+\category{\altype{DecomposableRing}}\\
+\category{\altype{GcdDomain}}\\
+\alexp{squareFree}:
+& \% $\to$ (R, \altype{Product} \%) & Squarefree factorisation\\
+\alexp{squareFreePart}: & \% $\to$ \% & Squarefree part\\
+\end{exports}
+
+\begin{exports}
+[if R has \altype{GcdDomain} and R has \altype{RationalRootRing} then]
+\alexp{dispersion}: & \% $\to$ \altype{Integer} & Dispersion\\
+                    & (\%, \%) $\to$ \altype{Integer} & \\
+\alexp{integerDistances}:
+& \% $\to$ \altype{List} \altype{Integer} & Integer spread\\
+& (\%, \%) $\to$ \altype{List} \altype{Integer} & \\
+\alexp{universalBound}:
+& (\%,\%) $\to$ \altype{List} \builtin{Cross}(\%, \altype{Integer}) &
+Universal bound\\
+\end{exports}
+
+\begin{exports}[if R has \altype{IntegralDomain} then]
+\category{\altype{IntegralDomain}}\\
+\alexp{pseudoDivide}: & (\%, \%) $\to$ (\%, \%) & Polynomial pseudo--division\\
+\alexp{pseudoRemainder}: & (\%, \%) $\to$ \% & Pseudo--remainder\\
+\alexp{pseudoRemainder!}: & (\%, \%) $\to$ \% & Pseudo--remainder\\
+\alexp{resultant}: & (\%, \%) $\to$ R & Resultant of 2 polynomials\\
+\end{exports}
+
+\begin{exports}[if R has \altype{OrderedArithmeticType} then]
+\alexp{height}: & \% $\to$ R & Max norm over all the coefficients\\
+\end{exports}
+
+\begin{exports}[if R has \altype{RationalRootRing} then]
+\category{\altype{RationalRootRing}}\\
+\alexp{integerRoots}:
+& \% $\to$ \altype{Generator} \altype{FractionalRoot} \altype{Integer} &
+Integer roots\\
+\alexp{rationalRoots}:
+& \% $\to$ \altype{Generator} \altype{FractionalRoot} \altype{Integer} &
+Rational roots\\
+\end{exports}
+
+\begin{exports}[if R has \altype{Ring} then]
+\alexp{values}:
+& (\%, R) $\to$ \altype{Generator} R & Generate values of a polynomial\\
+\end{exports}
+
+\begin{exports}[if R has \altype{Specializable} then]
+\category{\altype{Specializable}}\\
+\end{exports}
+
+% This loads the alpage's for UnivariatePolynomialAlgebra0
+\input sit_upolc0.tex
+\alpage{factor}
+\Usage{ \name~p }
+\Signature{\%}{(R, \altype{Product} \%)}
+\Params{ {\em p} & \% & A polynomial\\ }
+\Retval{Returns $(c, p_1^{e_1} \cdots p_n^{e_n})$ such that
+each $p_i$ is irreducible, the $p_i$'s have no common factors, and
+$$
+p = c\;\prod_{i=1}^n p_i^{e_i}\,.
+$$
+}
+\alpage{fractionalRoots,roots}
+\altarget{fractionalRoots}
+\altarget{roots}
+\Usage{ fractionalRoots~p\\ roots~p }
+\Signature{\%}{\altype{Generator} \altype{FractionalRoot} \%}
+\Params{ {\em p} & \% & A polynomial\\ }
+\Retval{Returns a generator that produces all the roots $p$
+either in the ring or in its fraction field.}
+\alpage{dispersion,integerDistances}
+\altarget{dispersion}
+\altarget{integerDistances}
+\Usage{ dispersion~p\\ dispersion(p, q)\\
+integerDistances~p\\ integerDistances(p, q)}
+\Signatures{
+dispersion: & \% $\to$ \altype{Integer}\\
+dispersion: & (\%,\%) $\to$ \altype{Integer}\\
+integerDistances: & \% $\to$ \altype{List} \altype{Integer}\\
+integerDistances: & (\%,\%) $\to$ \altype{List} \altype{Integer}\\
+}
+\Params{
+{\em p} & \% & A nonzero polynomial\\
+{\em q} & \% & A nonzero polynomial (optional)\\
+}
+\Retval{integerDistances(p, q) returns
+all the integers $e \in \ZZ$ such that for each such $e$
+there exists $\alpha$ in an algebraic closure of the fraction
+field of {\em R} such that $p(\alpha) = q(\alpha + e) = 0$,
+while dispersion(p, q) returns $-1$ if
+integerDistances(p, q) contains only elements strictly smaller than $0$,
+its maximal nonnegative element otherwise.}
+\Remarks{The parameter $q$ is optional for both functions,
+its default value being $p$.}
+\alpage{integerRoots,rationalRoots}
+\altarget{integerRoots}
+\altarget{rationalRoots}
+\Usage{ integerRoots~p\\ rationalRoots~p }
+\Signature{\%}{\altype{Generator} \altype{FractionalRoot} \altype{Integer}}
+\Params{ {\em p} & \% & A polynomial\\ }
+\Retval{Return $[(r_1,e_1),\dots,(r_n,e_n)]$ where the $r_i$'s are
+the integer or rational roots of $p$ and have multiplicity $e_i$.}
+\alpage{minIntegerRoot,maxIntegerRoot}
+\altarget{minIntegerRoot}
+\altarget{maxIntegerRoot}
+\Usage{ minIntegerRoot~p\\ maxIntegerRoot~p }
+\Signature{\%}{\altype{Partial} \altype{Integer}}
+\Params{ {\em p} & \% & A polynomial\\ }
+\Retval{ Return \failed if $p$ has no integer root, its smallest (resp.~largest)
+one otherwise.}
+\alpage{universalBound}
+\Usage{\name(a, b)}
+\Signature{(\%,\%)}{\altype{List} \builtin{Cross}(\%, \altype{Integer})}
+\Params{ {\em a, b} & \% & Nonzero polynomials\\ }
+\Retval{Return $[(p_1,e_1),\dots,(p_n,e_n)]$ such that any polynomial
+bounded by $a$ and $b$ (in the sense of S.A.~Abramov,
+{\em Rational solutions of linear difference and $q$--difference equations
+with polynomial coefficients}, Proceedings of ISSAC'95)
+must be a factor of $u = \prod_{i=1}^n \prod_{j=0}^{e_i} p_i(x-j)$.}

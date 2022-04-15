@@ -1,0 +1,44 @@
+\thistype{UnivariatePolynomialMod}
+\History{Manuel Bronstein}{22/6/94}{created}
+\History{Manuel Bronstein}{27/7/98}{added Brent-Kung modular composition}
+\History{Manuel Bronstein}{30/6/2003}{change the trace to use Newton series}
+\Usage{
+import from \this(R, Rx, p)\\
+import from \this(R, Rx, p, x)\\
+}
+\Params{
+{\em R} & \altype{CommutativeRing} & The coefficient ring of the polynomials\\
+{\em Rx} & \altype{UnivariatePolynomialAlgebra} R & The type of the modulus\\
+{\em p} & Rx & The modulus\\
+{\em x} & \altype{Symbol} & The generator name (optional)\\
+}
+\Descr{\this(R, Rx, p) implements the univariate polynomials
+modulo $p$, \ie{} the ring $Rx / (p)$, where \emph{p} is assumed to be monic,
+but with no other restrictions.
+Use instead the types \altype{UnivariatePolynomialModSqfr} when \emph{p}
+is also known to be squarefree, and \altype{SimpleAlgebraicExtension}
+when \emph{p} is also known to be irreducible.}
+\begin{exports}
+\category{\altype{UnivariatePolynomialQuotient}(R, Rx)}\\
+\end{exports}
+\thistype{UnivariatePolynomialModSqfr}
+\History{Manuel Bronstein}{30/6/2003}{created}
+\Usage{
+import from \this(R, Rx, p)\\
+import from \this(R, Rx, p, x)\\
+}
+\Params{
+{\em R} & \altype{CommutativeRing} & The coefficient ring of the polynomials\\
+{\em Rx} & \altype{UnivariatePolynomialAlgebra} R & The type of the modulus\\
+{\em p} & Rx & The modulus\\
+{\em x} & \altype{Symbol} & The generator name (optional)\\
+}
+\Descr{\this(R, Rx, p) implements the univariate polynomials
+modulo $p$, \ie{} the ring $Rx / (p)$, where \emph{p} is assumed to be monic
+and squarefree, but not not necessarily irreducible.
+Use instead the types \altype{UnivariatePolynomialMod} when \emph{p} is
+not squarefree, and \altype{SimpleAlgebraicExtension}
+when \emph{p} is known to be irreducible.}
+\begin{exports}
+\category{\altype{UnivariatePolynomialQuotientSqfr}(R, Rx)}\\
+\end{exports}

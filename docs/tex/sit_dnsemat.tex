@@ -1,0 +1,17 @@
+\thistype{DenseMatrix}
+\History {Laurent Bernardin}{23 Nov 1994}{created.}
+\History {Marco Codutti}{10 May 1995}
+	 {Updated for new releases of A\#, \libalgebra and {\em aldoc}.} 
+\History{Manuel Bronstein}{1/12/1999}{redesigned for the new matrix category}
+\History{Manuel Bronstein}{19/7/2002}{added diagonal(a,n) and scalar?}
+\History{Manuel Bronstein}{30/8/2002}{fixed apply(r,c,n,m)}
+\Usage   {import from \this~R}
+\Params{
+{\em R} & \altype{ExpressionType} & The coefficient domain\\
+        & \altype{ArithmeticType} &\\
+}
+\Descr{\this~R provides dense mutable matrices with entries in R.
+They are $1$--indexed and do not bound check.}
+\begin{exports}
+\category{\altype{MatrixCategory} R}\\
+\end{exports}

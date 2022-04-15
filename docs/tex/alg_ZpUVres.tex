@@ -1,0 +1,27 @@
+\thistype{ResultantOfBivariatePolynomialsOverSmallPrimeField}
+\History{Yuzhen Xie and Marc Moreno Maza}{Mars 2003}{created}
+\Usage{import from \this~(Kp, Up, Vp)}
+\Params{
+{\em Kp} & \altype{SmallPrimeFieldCategory} \\
+{\em Up} & \altype{UnivariatePolynomialAlgebra}  {Kp} \\
+{\em Vp} & \altype{UnivariatePolynomialAlgebra} {Up} \\
+}
+\Descr{\this~(Kp, Up, Vp) provides resultant computations 
+       for two bivariate polynomials over a small prime field.
+}
+\begin{exports}
+\alexp{evaluationResultant}: & (Vp, Vp, Z)  $\to$ Up & resultant computed by an evaluation \\
+                             &                       & and interpolation scheme. \\
+                             &                                      & Arg 3 is a degree bound. \\
+\alexp{evaluationReduction}: & (Vp, Kp)  $\to$ Up                   & evaluation at a point \\
+\alexp{interpolation}:       & (A Kp, A Kp) $\to$ Up & Lagrange interpolant where the arrays give \\
+                             &                                      & points and values resp. \\
+\alexp{integerImage}:        & Up  $\to$ DUP
+                                          I  & conversion. \\
+\end{exports}                
+\begin{aswhere}
+DUP &==& \altype{DenseUnivariatePolynomial}\\
+I &==& \altype{MachineInteger}\\
+Z &==& \altype{Integer}\\
+A &==& \altype{Array} \\
+\end{aswhere}

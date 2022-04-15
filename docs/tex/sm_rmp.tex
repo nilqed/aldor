@@ -1,0 +1,24 @@
+\thistype{RecursiveMultivariatePolynomial0}
+\History{Marc Moreno Maza}{08/07/01}{created}
+\Usage{import from \this~(UP,R,V)}
+\Params{
+{\em UP} &
+(T: Join(\altype{ArithmeticType}, \altype{ExpressionType})) $\to$ POL~T &
+Univariate functor\\
+{\em R} & \altype{Ring} & The coefficient ring\\
+{\em V} & \altype{VariableType} & The variables\\
+}
+\begin{aswhere}
+POL &==& \altype{UnivariatePolynomialAlgebra}\\
+\end{aswhere}
+\Descr{\this~(UP,R,V) provides a basic domain for 
+multivariate polynomials with coefficients in {\em R} and variables 
+in {\em V}. The representation is recursive by means of {\em UP}.
+}
+\begin{exports}
+\category{\altype{RecursiveMultivariatePolynomialCategory0}(R,V)} \\
+\alexp{univariate}: & \% $\to$ UP \%  
+         & Convert to univariate w.r.t. the greatest variable  \\
+\alexp{multivariate}: & (UP(\%), V) $\to$ \%  
+         & Convert to multivariate with given variable  \\
+\end{exports}

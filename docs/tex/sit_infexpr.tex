@@ -1,0 +1,21 @@
+\thistype{InfixExpressionParser}
+\History{Niklaus Mannhart}{25/03/96}{created}
+\Usage{import from \this}
+\Descr{\this~implements infix expression parsers.}
+\begin{exports}
+\category{\altype{ParserReader}}\\
+\alexp{precedences!}:
+& (\%, \altype{MachineInteger}, \altype{MachineInteger}) $\to$ \% &
+Set operator precedences\\
+\end{exports}
+\alpage{precedences!}
+\Usage{\name(p, op, n)}
+\Signature{(\%, \altype{MachineInteger}, \altype{MachineInteger})}{\%}
+\Params{
+{\em p} & \% & A parser\\
+{\em op} & \altype{MachineInteger} & An operator code\\
+{\em n} & \altype{MachineInteger} & Its new precedence\\
+}
+\Descr{Sets the precedence of op to n and returns the new parser. op must
+be one of PARSER\_\_PLUS, PARSER\_\_MINUS, PARSER\_\_TIMES, PARSER\_\_DIVIDE or
+PARSER\_\_POWER.}

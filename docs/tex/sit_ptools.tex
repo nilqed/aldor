@@ -1,0 +1,37 @@
+\thistype{ParsingTools}
+\History{Manuel Bronstein}{30/08/99}{created}
+\Usage{import from \this~R}
+\Params{
+{\em R} & \altype{Parsable} & A parsable arithmetic system\\
+        & \altype{ArithmeticType} &\\
+}
+\Descr{\this~R provides tools for converting
+expression trees into elements of R.}
+\begin{exports}
+\alexp{evalArith}: & (Z, \altype{List}~TREE) $\to$ \builtin{Partial} R &
+Interpret an arithmetic expression\\
+\alexp{evalInt}: & TREE $\to$ \builtin{Partial} \altype{Integer} &
+Interpret an integer\\
+\end{exports}
+\begin{alwhere}
+TREE &==& \altype{ExpressionTree}\\
+Z &==& \altype{MachineInteger}\\
+\end{alwhere}
+\alpage{evalArith}
+\Usage{\name(op,[$e_1,\dots,e_n$])}
+\Signature{(\altype{MachineInteger}, \altype{List} \altype{ExpressionTree})}
+{\altype{Partial} R}
+\Params{
+{\em op} & \altype{MachineInteger} & Code for an operator\\
+$e_i$ & \altype{ExpressionTree} & Expression trees\
+}
+\Retval{Returns the result of evaluating $op(e_1,\dots,e_n)$ where
+$op$ is a code from {\tt include/algebrauid.as}. Provides support for
+the evaluation of the operators $+$, $-$, $\ast$ and $\land$,
+as well as $/$ when {\em R} has \altype{CommutativeRing} or \altype{FloatType}.}
+\alpage{evalInt}
+\Usage{\name~e}
+\Signature{\altype{ExpressionTree}}{\altype{Partial} \altype{Integer}}
+\Params{ {\em e} & \altype{ExpressionTree} & An expression tree\\ }
+\Retval{Returns the value of $e$ as an integer if it is an
+integer--valued leaf, \failed otherwise.}

@@ -1,0 +1,49 @@
+\thistype{FactorizationRing}
+\History{Manuel Bronstein}{27/4/98}{created}
+\Usage{\this: Category}
+\Descr{\this~is the category of rings that export an algorithm for
+factoring univariate polynomials over themselves into irreducibles.}
+\begin{exports}
+\category{\astype{GcdDomain}}\\
+\category{\astype{RationalRootRing}}\\
+\asexp{factor}:
+& (P:POL \%) $\to$ P $\to$ (\%, Product P) & Factorization into irreducibles\\
+\asexp{fractionalRoots}:
+& (P:POL \%) $\to$ P $\to$ \astype{Generator} FR \% &
+Roots in the fraction field\\
+\asexp{roots}:
+& (P:POL \%) $\to$ P $\to$ \astype{Generator} FR \% &
+Roots in the coefficient ring\\
+\end{exports}
+\begin{aswhere}
+FR &==& \astype{FractionalRoot}\\
+POL &==& \astype{UnivariatePolynomialAlgebra0}\\
+\end{aswhere}
+\aspage{factor}
+\Usage{ \name(P)(p) }
+\Signature{(P: \astype{UnivariatePolynomialAlgebra0} \%)}
+{P $\to$ (\%, \astype{Product} P)}
+\Params{
+{\em P} & \astype{UnivariatePolynomialAlgebra0} \% & A polynomial type\\
+{\em p} & P & A polynomial\\
+}
+\Retval{Returns $(c, p_1^{e_1} \cdots p_n^{e_n})$ such that
+each $p_i$ is irreducible, the $p_i$'s have no common factors, and
+$$
+p = c\;\prod_{i=1}^n p_i^{e_i}\,.
+$$
+}
+\aspage{fractionalRoots,roots}
+\astarget{fractionalRoots}
+\astarget{roots}
+\Usage{ fractionalRoots(P)(p)\\ roots(P)(p) }
+\Signature{(P: POL \%)}{P $\to$ \astype{Generator} \builtin{FractionalRoot} \%}
+\begin{aswhere}
+POL &==& \astype{UnivariatePolynomialAlgebra0}\\
+\end{aswhere}
+\Params{
+{\em P} & \astype{UnivariatePolynomialAlgebra0} \% & A polynomial type\\
+{\em p} & P & A polynomial\\
+}
+\Retval{Returns a generator that produces all the roots $p$
+either in the ring or in its fraction field.}

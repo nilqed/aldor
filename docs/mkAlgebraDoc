@@ -1,0 +1,33 @@
+#!/bin/bash
+TOOLS=../aldor/aldor/tools/unix
+LIBSRC=../aldor/lib/algebra/src
+LIBTEX=../aldor/lib/algebra/doc/tex
+
+mkdir -p ./as0
+mkdir -p ./as1
+mkdir -p ./tex
+
+cp -v $LIBSRC/*/*.as ./as0
+cp -v $LIBSRC/*/*/*.as ./as0
+cp -v $LIBSRC/*/*/*/*.as ./as0
+cp -v $LIBSRC/*/*/*/*/*.as ./as0
+
+cd ./as0
+for x in *.as; do 
+  f=$(basename $x .as); echo $f; 
+  ../$TOOLS/extract -v -m ALDOC -o ../tex/$f.tex  $x ;
+  ../$TOOLS/extract -v -m ALDOC -r -o ../as1/$f.as $x;
+done
+
+cd ..
+echo $(pwd) :: $(date)
+
+cp -v  $LIBTEX/*.* ./tex
+cd ./tex
+pdflatex algebra.tex
+
+
+
+
+
+

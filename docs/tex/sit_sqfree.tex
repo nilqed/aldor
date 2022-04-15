@@ -1,0 +1,35 @@
+\thistype{UnivariatePolynomialSquareFree}
+\History{Laurent Bernardin}{24/5/95}{created}
+\Usage{import from \this(R, P)}
+\Params{
+{\em R} & \astype{GcdDomain} & Coefficient ring of the polynomials\\
+{\em P} & \astype{UnivariatePolynomialAlgebra0} R & A polynomial ring\\
+}
+\Descr{\this~provides implementations of various squarefree factorization
+algorithms.}
+\begin{exports}
+\asexp{musser}: & P $\to$ (R, \astype{Product} P) & Musser's algorithm\\
+\asexp{yun}: & P $\to$ (R, \astype{Product} P) & Yun's algorithm\\
+\end{exports}
+\aspage{musser}
+\Usage{\name~p}
+\Signature{P}{(R, \astype{Product} P)}
+\Params{ {\em p} & P & The polynomial to factor\\ }
+\Retval{Returns $(c, p_1^{e_1} \cdots p_n^{e_n})$ such that
+each $p_i$ is squarefree, the $p_i$'s have no common factors, and
+$$
+p = c\;\prod_{i=1}^n p_i^{e_i}\,.
+$$
+}
+\alseealso{\asexp{yun}}
+\aspage{yun}
+\Usage{\name~p}
+\Signature{P}{(R, \astype{Product} P)}
+\Params{ {\em p} & P & The polynomial to factor\\ }
+\Retval{Returns $(c, p_1^{e_1} \cdots p_n^{e_n})$ such that
+each $p_i$ is squarefree, the $p_i$'s have no common factors, and
+$$
+p = c\;\prod_{i=1}^n p_i^{e_i}\,.
+$$
+}
+\alseealso{\asexp{musser}}

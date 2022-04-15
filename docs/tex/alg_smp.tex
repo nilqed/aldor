@@ -1,0 +1,21 @@
+\thistype{SparseMultivariatePolynomial}
+\History{Marc Moreno Maza}{08/07/01}{created}
+\Usage{import from \this~(R,V)}
+\Params{
+{\em R} & \altype{Ring} & The coefficient ring\\
+{\em V} & \altype{VariableType} & The variables\\
+}
+\Descr{\this~(R,V) provides a basic domain for 
+multivariate polynomials with coefficients in {\em R} and variables 
+in {\em V}. The representation is sparse and recursive by means of {\em SUP}.
+}
+\begin{exports}
+\category{\altype{RecursiveMultivariatePolynomialCategory0}(R,V)} \\
+\alexp{univariate}: & \% $\to$ SUP(\%)  
+         & Convert to univariate w.r.t. the greatest variable  \\
+\alexp{multivariate}: & (SUP(\%), V) $\to$ \%  
+         & Convert to multivariate with given variable  \\
+\end{exports}
+\begin{aswhere}
+SUP &==& \altype{SparseUnivariatePolynomial}\\
+\end{aswhere}

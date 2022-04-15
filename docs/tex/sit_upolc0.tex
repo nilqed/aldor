@@ -1,0 +1,197 @@
+\alpage{apply}
+\Usage{ \name(p, a)\\ \name(p, q)\\ p~a\\ p~q }
+\Signatures{
+\name: & (\%, R) $\to$ R\\
+\name: & (\%, \%) $\to$ \%\\
+}
+\Params{
+{\em p} & \% & A polynomial\\
+{\em q} & \% & A polynomial\\
+{\em a} & R & A scalar\\
+}
+\Retval{
+Returns
+$$
+p(a) = \sum_{i=0}^n a_i a^i
+$$
+or
+$$
+p(q) = \sum_{i=0}^n a_i q^i
+$$
+where $p = \sum_{i=0}^n a_i x^i$.}
+\alpage{equal?}
+\Usage{\name(a, b, c, n)}
+\Signature{(\%, \%, \%, \altype{Integer})}{\altype{Boolean}}
+\Params{
+{\em a, b, c} & \% & Polynomials \\
+{\em n} & \altype{Integer} & The order of truncation\\
+}
+\Retval{Returns \true~if $a = b c \pmod{x^n}$, \false~otherwise.}
+\alpage{height}
+\Usage{\name~p}
+\Signature{\%}{R}
+\Params{ {\em p} & \% & A polynomial\\ }
+\Retval{Returns
+$$
+\vert\vert p \vert\vert_\infty = \max_{i=0}^n\left(\vert a_i \vert\right)
+$$
+where $p = \sum_{i=0}^n a_i x^i$.}
+\alpage{Horner}
+\Usage{\name(p, a)}
+\Signature{(\%, R)}{(\%, R)}
+\Params{
+{\em p} & \% & A polynomial\\
+{\em a} & R & A point\\
+}
+\Retval{Returns $(q, p(a))$ such that $p = q (x - a) + p(a)$.}
+\alpage{integrate}
+\Usage{\name~p\\ \name(p, n)}
+\Signatures{
+\name: & \% $\to$ \%\\
+\name: & (\%, \altype{Integer}) $\to$ \%\\
+}
+\Params{
+{\em p} & \% & A polynomial\\
+{\em n} & \altype{Integer} & The order of integration\\
+}
+\Retval{\name(p) returns $\int p(x) dx$,
+while integrate(s, n) returns $\int \dots \int s(x) dx^n$.}
+\alpage{lift}
+\Usage{\name(D, x')}
+\Signature{(\altype{Derivation} R, \%)}{\altype{Derivation} \%}
+\Params{
+{\em D} & \altype{Derivation} R & A derivation on R\\
+{\em x'} & \% & The desired derivative of x\\
+}
+\Retval{Returns the unique extension of the derivation $D$ such that
+$D x = x'$.}
+\alpage{monicDivide,monicQuotient, monicRemainder}
+\altarget{monicDivide}
+\altarget{monicDivide!}
+\altarget{monicDivideBy}
+\altarget{monicDivideBy!}
+\altarget{monicQuotient}
+\altarget{monicQuotient!}
+\altarget{monicQuotientBy}
+\altarget{monicQuotientBy!}
+\altarget{monicRemainder}
+\altarget{monicRemainder!}
+\altarget{monicRemainderBy}
+\altarget{monicRemainderBy!}
+\Usage{monicXXX(a, b)\\ monicXXX!(a, b)\\ monicXXXBy(b)(a)\\ monicXXXBy!(b)(a)}
+\Signatures{
+monicDivide, monicDivide!: & (\%, \%) $\to$ (\%, \%)\\
+monicDivideBy, monicDivideBy!: & \% $\to$ \% $\to$ (\%, \%)\\
+monicQuotient, monicQuotient!: & (\%, \%) $\to$ \%\\
+monicRemainder, monicRemainder!: & (\%, \%) $\to$ \%\\
+monicQuotientBy, monicQuotientBy!: & \% $\to$ \% $\to$ \%\\
+monicRemainderBy, monicRemainderBy!: & \% $\to$ \% $\to$ \%\\
+}
+\Params{
+{\em a} & \% & A polynomial\\
+{\em b} & \% & A polynomial whose leading coefficient is a unit in {\em R}\\
+}
+\Retval{monicRemainder(a, b) returns {\em r} such that
+either $r = 0$ or $\deg(r) < \deg(b)$ or $a \equiv r \pmod b$,
+monicQuotient(a, b) returns {\em q} such that $a - bq = 0$ or
+$\deg(a - bq) < \deg(b)$, and monicDivide(a, b) returns
+$(q, r)$ such that $a = b q + r$ and either $r = 0$ or $\deg(r) < \deg(b)$.
+The functions monicDivide!, monicQuotient! and monicRemainder! return the
+same results but allow the storage used by {\em a} to be destroyed or reused.
+Finally, monicXXXBy(b) returns the map $a \to \mbox{monicXXX}(a, b)$, while
+monicXXXBy!(b) returns the map $a \to \mbox{monicXXX!}(a, b)$.}
+\Remarks{When using monicXXX!(a,b) or monicXXXBy!(b)(a),
+the storage used by a is allowed to be
+destroyed or reused, so a is lost after this call.
+This may cause a to be destroyed, so do not use this unless a has been locally
+allocated, and is thus guaranteed not to share space with other polynomials.}
+\alseealso{\alexp{pseudoRemainder}}
+\alpage{ordinaryPoint}
+\Usage{\name~p}
+\Signature{\%}{\altype{Integer}}
+\Params{ {\em p} & \% & A nonzero polynomial\\ }
+\Retval{Returns an integer $n$ such that $p(n) \ne 0$.}
+\alpage{pseudoDivide}
+\Usage{\name(a, b)}
+\Signature{(\%, \%)}{(\%, \%)}
+\Params{
+{\em a} & \% & A polynomial\\
+{\em b} & \% & A nonzero polynomial\\
+}
+\Retval{Returns $(q, r)$ such that $c^n a = b q + r$ and either $r = 0$
+or $\deg(r) < \deg(b)$, where $c$ is the leading coefficient of $b$ and
+$n = \deg(a) - \deg(b) + 1$.}
+\alseealso{\alexp{pseudoRemainder}}
+\alpage{pseudoRemainder}
+\altarget{\name!}
+\Usage{\name(a, b)\\ \name!(a, b)}
+\Signature{(\%, \%)}{\%}
+\Params{
+{\em a} & \% & A polynomial\\
+{\em b} & \% & A nonzero polynomial\\
+}
+\Retval{Returns $r$ such that $c^n a = b q + r$ and either $r = 0$
+or $\deg(r) < \deg(b)$, where $c$ is the leading coefficient of $b$ and
+$n = \deg(a) - \deg(b) + 1$.}
+\Remarks{When using \name!($a,b$), the storage used by a is allowed to be
+destroyed or reused, so a is lost after this call.
+This may cause a to be destroyed, so do not use this unless a has been locally
+allocated, and is thus guaranteed not to share space with other polynomials.}
+\alseealso{\alexp{pseudoDivide}}
+\alpage{rationalReconstruction}
+\Usage{\name~m\\ \name(m)(u)}
+\Signature{\%}{\% $\to$ \altype{Partial} \builtin{Cross}(\%, \%)}
+\Params{
+\emph{m} & \% & A modulus of positive degree\\
+\emph{u} & \% & A polynomial\\
+}
+\Retval{\name(m)(u) returns either $(a,b)$ such that $a/b = u \pmod m$,
+$\deg(a) \le (\deg(m)-1)/2$ and $\deg(b) \le (\deg(m)-1)/2$,
+or \failed~if no such $a,b$ exist.}
+\Remarks{The resulting $a$ and $b$ are guaranteed to be unique.}
+\alseealso{\alfunc{EuclideanDomain}{rationalReconstruction}}
+\alpage{resultant}
+\Usage{\name(p, q)}
+\Signature{(\%, \%)}{R}
+\Params{
+{\em p} & \% & A polynomial\\
+{\em q} & \% & A polynomial\\
+}
+\Retval{Returns the resultant of p and q.}
+\alpage{sparseMultiple}
+\Usage{\name(p, n)}
+\Signature{(\%, \altype{Integer})}{\%}
+\Params{
+{\em p} & \% & A polynomial\\
+{\em n} & \altype{Integer} & A positive integer\\
+}
+\Retval{Returns a nonzero polynomial $q = \sum_{i=0}^m a_i x^i$
+of minimal degree such that $q(x^n)$ is a multiple of $p(x)$.}
+\alpage{squareFree,squareFreePart}
+\altarget{squareFree}
+\altarget{squareFreePart}
+\Usage{squareFree~p\\ squareFreePart~p}
+\Signatures{
+squareFree: & \% $\to$ (R, \altype{Product} \%)\\
+squareFreePart: & \% $\to$ \%\\
+}
+\Params{ {\em p} & \% & A polynomial\\ }
+\Descr{squareFree(p) returns $(c, p_1^{e_1} \cdots p_n^{e_n})$ such that
+each $p_i$ is squarefree, the $p_i$'s have no common factors, and
+$$
+p = c\;\prod_{i=1}^n p_i^{e_i}\,,
+$$
+while squareFreePart(p) returns $p^\ast$ such that $p^\ast$ is squarefree,
+$p^\ast \mid p$ and every irreducible factor of $p$ divides $p^\ast$.
+}
+\alpage{values}
+\Usage{\name(p, a)}
+\Signature{(\%,R)}{\altype{Generator} R}
+\Params{
+{\em p} & \% & A polynomial\\
+{\em a} & R & A scalar\\
+}
+\Retval{Returns a generator generating the
+sequence $p(a), p(a+1), p(a+2),\ldots$}
+\Remarks{\name~uses arrays of differences and can be more efficient
+that repeated Horner evaluation.}

@@ -1,0 +1,219 @@
+\thistype{ExpressionTreeLeaf}
+\History{Manuel Bronstein}{24/11/94}{created}
+\History{Manuel Bronstein}{23/6/2003}{added infix}
+\Usage{import from \this}
+\Descr{\this~is a type whose elements are the leafs (atoms) of expression
+trees. It provides conversions to and from the basic atomic types.}
+\begin{exports}
+\category{\altype{OutputType}}\\
+\category{\altype{PrimitiveType}}\\
+\alexp{aldor}: & (TEXT, \%) $\to$ TEXT & Conversion to \aldor code\\
+\alexp{axiom}: & (TEXT, \%) $\to$ TEXT & Conversion to Axiom code\\
+\alexp{boolean}: & \% $\to$ \altype{Boolean} & Conversion to a boolean\\
+\alexp{boolean?}: & \% $\to$ \altype{Boolean} & Test for a boolean\\
+\alexp{C}: & (TEXT, \%) $\to$ TEXT & Conversion to C code\\
+\alexp{doubleFloat}:
+& \% $\to$ \altype{DoubleFloat} & Conversion to a double precision float\\
+\alexp{doubleFloat?}:
+& \% $\to$ \altype{Boolean} & Test for a double precision float\\
+\alexp{float}: & \% $\to$ \altype{Float} & Conversion to a software big float\\
+\alexp{float?}: & \% $\to$ \altype{Boolean} & Test for a software big float\\
+\alexp{fortran}: & TEXT, \%) $\to$ TEXT & Conversion to FORTRAN code\\
+\alexp{infix}: & (TEXT, \%) $\to$ TEXT & Conversion to one-dim infix output\\
+\alexp{integer}:
+& \% $\to$ \altype{Integer} & Conversion to a software big integer\\ 
+\alexp{integer?}:
+& \% $\to$ \altype{Boolean} & Test for a software big integer\\
+\alexp{leaf}: & \altype{Boolean} $\to$ \% & Conversion to a leaf\\
+\alexp{leaf}: & \altype{DoubleFloat} $\to$ \% & Conversion to a leaf\\
+\alexp{leaf}: & \altype{MachineInteger} $\to$ \% & Conversion to a leaf\\
+\alexp{leaf}: & \altype{Integer} $\to$ \% & Conversion to a leaf\\
+% \alexp{leaf}: & \altype{Float} $\to$ \% & Conversion to a leaf\\
+\alexp{leaf}: & \altype{SingleFloat} $\to$ \% & Conversion to a leaf\\
+\alexp{leaf}: & \altype{String} $\to$ \% & Conversion to a leaf\\
+\alexp{leaf}: & \altype{Symbol} $\to$ \% & Conversion to a leaf\\
+\alexp{lisp}: & (TEXT, \%) $\to$ TEXT & Conversion to Lisp code\\
+\alexp{singleFloat}:
+& \% $\to$ \altype{SingleFloat} & Conversion to a single precision float\\
+\alexp{singleFloat?}:
+& \% $\to$ \altype{Boolean} & Test for a single precision float\\
+\alexp{machineInteger}:
+& \% $\to$ \altype{MachineInteger} & Conversion to a machine integer\\
+\alexp{machineInteger?}:
+& \% $\to$ \altype{Boolean} & Test for a machine integer\\
+\alexp{maple}: & (TEXT, \%) $\to$ TEXT & Conversion to Maple code\\
+\alexp{string}: & \% $\to$ \altype{String} & Conversion to a string\\
+\alexp{string?}: & \% $\to$ \altype{Boolean} & Test for a string\\
+\alexp{symbol}: & \% $\to$ \altype{Symbol} & Conversion to a symbol\\
+\alexp{symbol?}: & \% $\to$ \altype{Boolean} & Test for a symbol\\
+\alexp{tex}: & (TEXT, \%) $\to$ TEXT & Conversion to \LaTeX\\
+\alexp{texParen?}: & \% $\to$ \altype{Boolean} & Check whether to parenthetize\\
+\end{exports}
+\begin{aswhere}
+TEXT &==& \altype{TextWriter}\\
+\end{aswhere}
+\alpage{aldor,axiom,C,fortran,infix,lisp,maple,tex}
+\altarget{aldor}
+\altarget{axiom}
+\altarget{C}
+\altarget{fortran}
+\altarget{infix}
+\altarget{lisp}
+\altarget{maple}
+\altarget{tex}
+\Usage{{\em format}(p, a)}
+\Signature{(\altype{TextWriter}, \%)}{\altype{TextWriter}}
+\Params{
+{\em p} & \altype{TextWriter} & The port to write to\\
+{\em a} & \% & A leaf\\
+}
+\Descr{Writes to $p$ the expression corresponding to the leaf $a$
+in the requested format.}
+\alpage{boolean}
+\altarget{\name?}
+\Usage{ \name~a\\ \name?~a }
+\Signatures{
+\name: & \% $\to$ \altype{Boolean}\\
+\name?: & \% $\to$ \altype{Boolean}\\
+}
+\Params{ {\em a} & \% & A leaf\\ }
+\Retval{
+\name~a returns the value of $a$ as a \altype{Boolean}
+if that is the type of $a$.\\
+\name?~a returns \true~if a is a \altype{Boolean}, \false~otherwise.
+}
+\alpage{doubleFloat}
+\altarget{\name?}
+\Usage{ \name~a\\ \name?~a }
+\Signatures{
+\name: & \% $\to$ \altype{DoubleFloat}\\
+\name?: & \% $\to$ \altype{Boolean}\\
+}
+\Params{ {\em a} & \% & A leaf\\ }
+\Retval{
+\name~a returns the value of $a$ as a \altype{DoubleFloat}
+if that is the type of $a$.\\
+\name?~a returns \true~if a is a \altype{DoubleFloat}, \false~otherwise.
+}
+\alpage{float}
+\altarget{\name?}
+\Usage{ \name~a\\ \name?~a }
+\Signatures{
+\name: & \% $\to$ \altype{Float}\\
+\name?: & \% $\to$ \altype{Boolean}\\
+}
+\Params{ {\em a} & \% & A leaf\\ }
+\Retval{
+\name~a returns the value of $a$ as a \altype{Float}
+if that is the type of $a$.\\
+\name?~a returns \true~if a is a \altype{Float}, \false~otherwise.
+}
+\alpage{integer}
+\altarget{\name?}
+\Usage{ \name~a\\ \name?~a }
+\Signatures{
+\name: & \% $\to$ \altype{Integer}\\
+\name?: & \% $\to$ \altype{Boolean}\\
+}
+\Params{ {\em a} & \% & A leaf\\ }
+\Retval{
+\name~a returns the value of $a$ as an \altype{Integer}
+if that is the type of $a$.\\
+\name?~a returns \true~if a is an \altype{Integer}, \false~otherwise.
+}
+\alpage{leaf}
+\Usage{\name~a}
+\Signatures{
+\name: & \altype{Boolean} $\to$ \%\\
+\name: & \altype{DoubleFloat} $\to$ \%\\
+\name: & \altype{Integer} $\to$ \%\\
+\name: & \altype{Float} $\to$ \%\\
+\name: & \altype{MachineInteger} $\to$ \%\\
+\name: & \altype{SingleFloat} $\to$ \%\\
+\name: & \altype{String} $\to$ \%\\
+\name: & \altype{Symbol} $\to$ \%\\
+}
+\Params{
+{\em a} & \altype{Boolean} & A constant\\
+& \altype{DoubleFloat} &\\
+& \altype{Float} &\\
+& \altype{Integer} &\\
+& \altype{MachineInteger} &\\
+& \altype{SingleFloat} &\\
+& \altype{String} &\\
+& \altype{Symbol} &\\
+}
+\Retval{\name~a returns $a$ as a leaf.}
+\Remarks{A string leaf prints with quotes,
+and should be used for string constants, while a symbol leaf prints without
+quotes, and should be used for names.}
+\alpage{negate}
+\Usage{\name~a}
+\Signature{\%}{\%}
+\Params{ {\em a} & \% & A leaf\\ }
+\Retval{Returns the leaf $-a$ if $a$ is a numerical leaf, $a$ otherwise.}
+\alseealso{\alexp{negative?}}
+\alpage{negative?}
+\Usage{\name~a}
+\Signature{\%}{\altype{Boolean}}
+\Params{ {\em a} & \% & A leaf\\ }
+\Retval{Returns \true~if $a$ is a numerical leaf and $a < 0$, \false~otherwise.}
+\alseealso{\alexp{negate}}
+\alpage{machineInteger}
+\altarget{\name?}
+\Usage{ \name~a\\ \name?~a }
+\Signatures{
+\name: & \% $\to$ \altype{MachineInteger}\\
+\name?: & \% $\to$ \altype{Boolean}\\
+}
+\Params{ {\em a} & \% & A leaf\\ }
+\Retval{
+\name~a returns the value of $a$ as a \altype{MachineInteger}
+if that is the type of $a$.\\
+\name?~a returns \true~if a is a \altype{MachineInteger}, \false~otherwise.
+}
+\alpage{singleFloat}
+\altarget{\name?}
+\Usage{ \name~a\\ \name?~a }
+\Signatures{
+\name: & \% $\to$ \altype{SingleFloat}\\
+\name?: & \% $\to$ \altype{Boolean}\\
+}
+\Params{ {\em a} & \% & A leaf\\ }
+\Retval{
+\name~a returns the value of $a$ as a \altype{SingleFloat}
+if that is the type of $a$.\\
+\name?~a returns \true~if a is a \altype{SingleFloat}, \false~otherwise.
+}
+\alpage{string}
+\altarget{\name?}
+\Usage{ \name~a\\ \name?~a }
+\Signatures{
+\name: & \% $\to$ \altype{String}\\
+\name?: & \% $\to$ \altype{Boolean}\\
+}
+\Params{ {\em a} & \% & A leaf\\ }
+\Retval{
+\name~a returns the value of $a$ as a \altype{String}
+if that is the type of $a$.\\
+\name?~a returns \true~if a is a \altype{String}, \false~otherwise.
+}
+\alpage{symbol}
+\altarget{\name?}
+\Usage{ \name~a\\ \name?~a }
+\Signatures{
+\name: & \% $\to$ \altype{Symbol}\\
+\name?: & \% $\to$ \altype{Boolean}\\
+}
+\Params{ {\em a} & \% & A leaf\\ }
+\Retval{
+\name~a returns the value of $a$ as a \altype{Symbol}
+if that is the type of $a$.\\
+\name?~a returns \true~if a is a \altype{Symbol}, \false~otherwise.
+}
+\alpage{texParen?}
+\Usage{\name~a}
+\Signature{\%}{\altype{Boolean}}
+\Params{ {\em a} & \% & A leaf\\ }
+\Retval{Returns \true~if the leaf $a$ should be parenthetized,
+\false~otherwise.}

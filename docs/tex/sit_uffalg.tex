@@ -1,0 +1,164 @@
+\thistype{UnivariateFreeRing}
+\History{Manuel Bronstein}{22/5/95}{created}
+\History{Thom Mulders}{27/5/97}{added partial add!}
+\History{Manuel Bronstein}{14/4/2000}{separated the common series/poly exports}
+\History{Manuel Bronstein}{26/4/2001}
+{extracted FreeModule and FreeAlgebra,
+ changed name from UnivariateFreeFiniteAlgebra to UnivariateFreeRing}
+\Usage{\this~R: Category}
+\Params{
+{\em R} & \altype{ExpressionType} & The coefficient domain\\
+        & \altype{ArithmeticType} &\\
+}
+\Descr{\this~is a common category for commutative and noncommutative
+univariate polynomials with coefficients in an arbitrary arithmetic
+system \emph{R} and with respect to an arbitrary basis $(P_n)_{n \ge 0}$.}
+\begin{exports}
+\category{\altype{CopyableType}}\\
+\category{\altype{IndexedFreeRRing}(R, \altype{Integer})}\\
+\category{\altype{UnivariateFreeLinearArithmeticType} R}\\
+\alexp{coerce}: & \altype{Vector} R $\to$ \% & Create a polynomial\\
+\alexp{companion}: & \% $\to$ \altype{DenseMatrix} R & Companion matrix\\
+\alexp{monomial!}: & (\%, R, Z) $\to$ \% & In-place monomial\\
+\alexp{random}: & (\altype{Integer}, () $\to$ R, \altype{Integer}) $\to$ \% &
+Creation of a random polynomial\\
+\alexp{revert}: & \% $\to$ \% & Left--Right reversion\\
+\alexp{revert!}: & \% $\to$ \% & In--place left--right reversion\\
+%\alexp{times}: & (\%, \%, Z, Z) $\to$ \% & Partial product\\
+\alexp{vectorize!}:
+& \altype{Vector} R $\to$ \% $\to$ \altype{Vector} R &
+Conversion to a vector\\
+\end{exports}
+\begin{alwhere}
+Z &==& \altype{Integer}\\
+\end{alwhere}
+\begin{exports}[if \emph{R} has \altype{HashType} then]
+\category{\altype{HashType}}\\
+\end{exports}
+\begin{exports}[if \emph{R} has \altype{Ring} then]
+\alexp{random}: & (\altype{Integer}, \altype{Integer}) $\to$ \% &
+Creation of a random polynomial\\
+\end{exports}
+\begin{exports}[if \emph{R} has \altype{SerializableType} then]
+\category{\altype{SerializableType}}\\
+\end{exports}
+\alpage{coerce,vectorize!}
+\altarget{coerce}
+\altarget{vectorize!}
+\Usage{v::\%\\ vectorize! v\\ vectorize!(v)(p)}
+\Signatures{
+coerce: & \altype{Vector} R $\to$ \%\\
+vectorize!: & \altype{Vector} R $\to$ \% $\to$ \altype{Vector} R\\
+}
+\Params{
+{\em p} & \% & A polynomial\\
+{\em v} & \altype{Vector} R & A coefficient vector\\
+}
+\Descr{$[v_1,\dots,v_n]$::\% returns the polynomial
+$\sum_{i=0}^{n-1} v_{i+1} P_i$, while
+vectorize!$(v)(\sum_{j=0}^d a_j P_j)$ fills $v$ with $[a_0,\dots,a_d,0,\dots]$
+and returns $v$.}
+\Remarks{If $d > \#v - 1$, then the high coefficients of $p$ are
+simply ignored.}
+\alpage{companion}
+\Usage{\name~p}
+\Signature{\%}{\altype{DenseMatrix} R}
+\Params{ {\em p} & \% & A polynomial\\ }
+\Retval{Returns the companion matrix
+$$
+\pmatrix{
+0   &        &   &     &  -a_0    \cr
+a_n & \ddots &   &     &  -a_1    \cr
+    & \ddots &   &     &  -a_2    \cr
+    &        &   &     & \vdots   \cr
+    &        &   & a_n &  -a_{n-1}\cr
+}
+$$
+where $p = \sum_{i=0}^n a_i P_i$.}
+\alpage{monomial!}
+\Usage{\name(p, c, n)}
+\Signature{(\%, R, \altype{Integer})}{\%}
+\Params{
+{\em p} & \% & A polynomial (to be destroyed)\\
+{\em c} & R & A scalar\\
+{\em n} & \altype{Integer} & An exponent\\
+}
+\Retval{Returns the monomial $c P_n$.}
+\Remarks{The storage used by $p$ is allowed to be destroyed or reused
+so $p$ is lost after this call.
+This may cause $p$ to be destroyed, so do not use this unless
+$p$ has been locally allocated, and is guaranteed not to share space
+with other elements. Some functions are not necessarily copying their
+arguments and can thus create memory aliases.}
+\alpage{random}
+\Usage{\name(n[, m])\\ \name(n, f[, m])}
+\Signatures{
+\name:& (\altype{Integer}, \altype{Integer}) $\to$ \%\\
+\name:& (\altype{Integer}, () $\to$ R, \altype{Integer}) $\to$ \%\\
+}
+\Params{
+{\em n} & \altype{Integer} & The desired degree\\
+{\em f} & () $\to$ R & A random generator for R\\
+{\em m} & \altype{Integer} & The desired number of terms (optional)\\
+}
+\Retval{Returns a monic random polynomial of degree
+{\em n} with at most {\em m} terms,
+($n+1$ terms if {\em m} is not present). Uses $f()$ to generate
+the coefficients if the parameter {\em f} is present, the \alfunc{Ring}{random}
+function otherwise.}
+\alpage{revert}
+\altarget{\name!}
+\Usage{\name~p\\ \name!~p}
+\Signature{\%}{\%}
+\Params{ {\em p} & \% & A polynomial\\ }
+\Retval{Returns
+$\sum_{i=0}^n a_i P_{n-i}$
+where
+$p = \sum_{i=0}^n a_i P_i$ and $a_n \ne 0$. Returns 0 if $p = 0$.}
+\Remarks{The storage used by {\em p} is allowed to be destroyed or reused
+when \name! is used,
+so {\em p} is lost after those calls.
+This may cause {\em p} to be destroyed, so do not use this unless
+{\em p} has been locally allocated, and is guaranteed not to share space
+with other elements. Some functions are not necessarily copying their
+arguments and can thus create memory aliases.}
+\alseealso{\alexp{terms}}
+\alpage{times}
+\Usage{\name(p, q, l, h)}
+\Signature{(\%, \%, \altype{Integer}, \altype{Integer})}{\%}
+\Params{
+{\em p, q} & \% & Polynomials\\
+{\em l, h} & \altype{Integer} &
+Lower and upper bound of coefficients to be computed\\
+}
+\Retval{\name(p, q, l, h) returns a polynomial $s$ containing some coefficients
+of the product $pq$. The $i$th coefficient of $s$ equals the $l+i$th
+coefficient of $pq$. Here $l\le h$ should hold.}
+\thistype{UnivariateFreeRing2}
+\History{Manuel Bronstein}{27/7/2000}{created}
+\Usage{import from \this(R,Rx,S,Sy)}
+\Params{
+{\em R, S} & \altype{ExpressionType} & Coefficient domains\\
+           & \altype{ArithmeticType} &\\
+{\em Rx}
+& \altype{UnivariateFreeRing} R & A monogenic algebra over $R$\\
+{\em Sy}
+& \altype{UnivariateFreeRing} S & A monogenic algebra over $R$\\
+}
+\Descr{\this(R,Rx,S,Sy) provides tools for lifting maps $R \to S$ to
+maps $Rx \to Sy$.}
+\begin{exports}
+\alexp{map}: & (R $\to$ S) $\to$ Rx $\to$ Sy & Lift a mapping\\
+\end{exports}
+\alpage{map}
+\Usage{\name~f\\\name(f)(p)}
+\Signature{(R $\to$ S) $\to$ Rx}{Sy}
+\Params{
+{\em f} & R $\to$ S & A map\\
+{\em p} & \% & A polynomial with coefficient in $R$\\
+}
+\Descr{\name(f)(p) returns
+$$
+f(p) = \sum_i f(a_i) y^i
+$$
+where $p = \sum_i a_i x^i$, while \name(f) returns the mapping $p \to f(p)$.}

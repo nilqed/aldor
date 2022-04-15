@@ -1,0 +1,38 @@
+\thistype{UnivariatePolynomialCRTLinearAlgebra}
+\History{Helene Prieto}{July 2000}{created}
+\Usage{import from \this(R, RX, M)}
+\Params{
+{\em R} & \altype{IntegralDomain} & The coefficient ring\\
+{\em RX} & \altype{UnivariatePolynomialAlgebra} R & Polynomials over $R$\\
+{\em M} & \altype{MatrixCategory} RX & A matrix type over $RX$\\
+}
+\Descr{\this(F, FX, M) provides basic linear algebra functionalities
+using the Chinese Remainder Theorem from $RX$ to $R$ for matrices over $RX$.}
+\begin{exports}
+\alexp{degreeBound}:
+& M $\to$ \altype{Integer}) & Degree bound for the determinant\\
+\alexp{determinant}: & M $\to$ RX & Determinant\\
+                     & (M, RX) $\to$ RX & \\
+                     & (M, RX, \altype{Integer}) $\to$ RX & \\
+\end{exports}
+\alpage{degreeBound}
+\Usage{\name~a}
+\Signature{M}{\altype{Integer}}
+\Params{ {\em a} & M & A matrix\\ }
+\Retval{Returns $n$ such that $\deg |a| \le n$.}
+\alpage{determinant}
+\Usage{\name~a\\ \name(a, d)\\ \name(a, d, n)}
+\Signatures{
+\name: & M $\to$ RX\\
+\name: & (M, RX) $\to$ RX\\
+\name: & (M, RX, \altype{Integer}) $\to$ RX\\
+}
+\Params{
+{\em a} & M & A matrix\\
+{\em d} & RX & A known factor of $|a|$ (optional)\\
+{\em n} & \altype{Integer} & A known degree bound on $|a|$ (optional)\\
+}
+\Retval{All calls to \name return the determinant of $a$.}
+\Remarks{ The extra parameters $d$ and $n$ are optional. If they are provided,
+then $d$ must divide $|a|$ exactly, and $n$ must be such that
+$\deg |a| \le n$. }

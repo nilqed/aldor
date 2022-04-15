@@ -1,0 +1,26 @@
+\thistype{SpecializationLinearAlgebra}
+\History{Manuel Bronstein}{4/10/2000}{created}
+\Usage{import from \this(R, M)}
+\Params{
+{\em R} & \astype{CommutativeRing} & The coefficient domain\\
+        & \astype{Specializable} & \\
+{\em M} & \astype{MatrixCategory} R & A matrix type\\
+}
+\Descr{\this(R, M) provides basic linear algebra functionalities
+using specializations for matrices over $R$.}
+\begin{exports}
+\asexp{rankLowerBound}:
+& M $\to$ \astype{Partial} \builtin{Cross}
+(\astype{Boolean}, \astype{MachineInteger}) &
+Probable rank\\
+\end{exports}
+\aspage{rankLowerBound}
+\Usage{\name~a}
+\Signature{M}
+{\astype{Partial} \builtin{Cross}(\astype{Boolean}, \astype{MachineInteger})}
+\Params{ {\em a} & M & A matrix\\ }
+\Retval{ Returns \failed if specialization failed,
+otherwise $(rank?, r)$ such that $r \le \mbox{rank}(a)$,
+and $r$ is exactly the rank of $a$ if $rank?$ is \true. }
+\Remarks{$r$ can also happen to be the rank of $a$ when $rank?$ is \false,
+but the algorithm was unable to prove it.}

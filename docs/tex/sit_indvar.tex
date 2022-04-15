@@ -1,0 +1,25 @@
+\thistype{IndexedVariable}
+\History{Manuel Bronstein}{10/3/2000}{created}
+\Usage{import from \this~S\\ import from \this(S, x)}
+\Params{
+{\em S} & \astype{ExpressionType} & The type of the indices\\
+        & \astype{TotallyOrderedType} & \\
+{\em x} & \astype{Symbol} & The root variable (optional)\\
+}
+\Descr{\this~provides sorted symbols of the form $x_s$ where $s \in S$.}
+\begin{exports}
+\category{\astype{ExpressionType}}\\
+\category{\astype{TotallyOrderedType}}\\
+\asexp{index}: & \% $\to$ S & Index of a variable\\
+\asexp{variable}: & S $\to$ \% & Create an indexed variable\\
+\end{exports}
+\aspage{index}
+\Usage{\name~v}
+\Signature{\%}{S}
+\Params{{\em v} & \% & An indexed variable\\ }
+\Retval{Returns the index of $v$.}
+\aspage{variable}
+\Usage{\name~s}
+\Signature{S}{\%}
+\Params{{\em s} & S & An index\\ }
+\Retval{Returns the variable $x_s$.}

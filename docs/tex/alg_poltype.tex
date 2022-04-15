@@ -1,0 +1,41 @@
+\thistype{PolynomialTypeRing}
+\History{Marc Moreno Maza}{08/07/2001}{created as part of PolynomialRing0}
+\History{Manuel Bronstein}{18/11/2004}{extracted from PolynomialRing0}
+\Usage{\this~(R,V): Category}
+\Params{
+{\em R} & \altype{ArithmeticType} & The coefficient domain \\
+        & \altype{ExpressionType} &\\
+{\em V} & \altype{ExpressionType} & The variable domain \\
+}
+\Descr{\this~(R,V) is the category of standard filtered rings generated over R
+by power products of the form $v_1^{e_1}\cdots v_n^{e_n}$ for $v_i \in V$
+and $e_i \in mathbb{N}$. No commutativity is assumed either between the
+variables in V, or between R and V.}
+\begin{exports}
+\category{\altype{StandardFilteredRing}(R, V)}\\
+\alexp{coefficient}: & (\%, V, Z) $\to$ \% & Coefficient w.r.t.~a power $v^n$.\\
+\alexp{coefficient}: &   (\%, L V, L Z) $\to$ \% 
+                     &  Coefficient w.r.t.~a power product \\
+\alexp{degree}: &  (\%, V)  $\to$ Z & Degree w.r.t. a variable \\
+\alexp{degrees}: &  \% $\to$ GEN VZ & Degrees w.r.t. all variables \\
+\alexp{leadingCoefficient}: &  (\%, V) $\to$ \%
+          &  Leading coefficient w.r.t. a variable \\
+\alexp{multivariate}: & (P:IFRR R) $\to$ (P, V) $\to$ \% &
+Conversion from univariate view\\
+                      & (P:IFRR P) $\to$ (P, V) $\to$ \% & \\
+\alexp{reductum}: & (\%, V) $\to$ \% & Reductum w.r.t.~a variable \\
+\alexp{univariate}: & (P:IFRR P) $\to$ (\%, V) $\to$ P & 
+Conversion to univariate view\\
+\end{exports}
+\begin{exports}[If V has \altype{TotallyOrderedType} then]
+\alexp{initial}: & \% $\to$ \% & Leading coefficient w.r.t.~main variable\\
+\alexp{univariate}: & (P:IFRR P) $\to$ \% $\to$ P &
+Conversion to univariate view\\
+\end{exports}
+\begin{alwhere}
+GEN &==& \altype{Generator}\\
+IFRR &==& \altype{IndexedFreeRRing}\\
+L &==& \altype{List}\\
+Z &==& \altype{Integer}\\
+VZ &==& \altype{Cross} (V, \altype{Integer})\\
+\end{alwhere}

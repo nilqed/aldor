@@ -1,0 +1,121 @@
+\thistype{Backsolve}
+\History{Thom Mulders}{8 July 96}{created}
+\Usage{import from \this(R,M)}
+\Params{
+{\em R} & \astype{IntegralDomain} & A coefficient ring\\
+{\em M} & \astype{MatrixCategory} R& A matrix type over R\\
+}
+\Descr{\name~(R,M) provides operations for backsolving triangular systems}
+\begin{exports}
+\asexp{backsolve}:
+& (M,Z $\to$ Z,ARR Z,Z,Z,R) $\to$ V R & Backsolve a triangular system\\
+\asexp{backsolve}:
+& (M,Z $\to$ Z,ARR Z,Z,M,R) $\to$ (M, V R) & Backsolve a triangular system\\
+\end{exports}
+\begin{exports}[if R has \astype{GcdDomain} then]
+\asexp{backsolve}:
+& (M,Z $\to$ Z,ARR Z,Z,Z) $\to$ V R & Backsolve a triangular system\\
+\asexp{backsolve}:
+& (M,Z $\to$ Z,ARR Z,Z,M) $\to$ (M, V R) & Backsolve a triangular system\\
+\asexp{backsolve2}:
+& (M,Z $\to$ Z,ARR Z,Z,Z,R) $\to$ V R & Backsolve a triangular system\\
+\asexp{backsolve2}:
+& (M,Z $\to$ Z,ARR Z,Z,M,R) $\to$ (M, V R) & Backsolve a triangular system\\
+\end{exports}
+\begin{aswhere}
+Z &==& \astype{MachineInteger}\\
+ARR &==& \astype{PrimitiveArray}\\
+V &==& \astype{Vector}\\
+\end{aswhere}
+\aspage{backsolve}
+\Usage{\name(a,p,st,r,c)\\ \name(a,p,st,r,b)\\
+\name(a,p,st,r,c,d)\\ \name(a,p,st,r,b,d)}
+\Signatures{
+\name:& (M,Z $\to$ Z,\astype{PrimitiveArray} Z,Z,Z) $\to$ \astype{Vector} R\\
+\name:& (M,Z $\to$ Z,\astype{PrimitiveArray} Z,Z,M) $\to$ (M,\astype{Vector} R)\\
+\name:& (M,Z $\to$ Z,\astype{PrimitiveArray} Z,Z,Z,R) $\to$ \astype{Vector} R\\
+\name:& (M,Z $\to$ Z,\astype{PrimitiveArray} Z,Z,M,R)$\to$(M,\astype{Vector} R)\\
+}
+\Params{
+{\em a} & M & A matrix representing a Row Echelon Form (REF)\\
+{\em p} & Z $\to$ Z & A permutation of the rows of {\em a}\\
+{\em st} & \astype{PrimitiveArray} Z & The stairs of the REF\\
+{\em r} & Z & The number of leading columns (before the $\sth{c}$ column)\\
+{\em c} & Z & The column to be backsolved\\
+{\em b} & M & A matrix whose columns have to be backsolved\\
+{\em d} & R & A maximal denominator needed for a dependence relation\\
+}
+\begin{aswhere}
+Z &==& \astype{MachineInteger}\\
+\end{aswhere}
+\Descr{
+Backsolves a triangular system.
+The triple $(a,p,st)$ represents a matrix in REF:
+for $j\ge st(i)$ entry (i,j) of the REF is stored in $a(p(i),j)$.
+The parameter $d$ may be omitted if $R$ is has \astype{GcdDomain},
+in which case the system is solved in a minimal way. Otherwise,
+$d$ must be such that $d$ times the $c$-th column of the REF
+(resp.~$d$ times the columns of $b$) is a linear combination of the
+first $r$ leading columns of the REF (the $\sth{j}$ column is called
+leading if $j=st(i)$ for some $i$).\\
+}
+\Retval{
+\name(a,p,st,r,c) returns a primitive vector $v$ such that $av=0$.\\
+\name(a,p,st,r,c,d) returns a vector $v$ such that $av=0$,
+the $\sth{c}$ coordinate of $v$ is $d$ and otherwise $v(j)\neq 0$
+only if $j\le r$ and the $j$-th column is leading.\\
+\name(a,p,st,r,b) returns a matrix $s$ and a vector $t$
+such that when $t(l)\neq 0$, then
+$a$ times the $\sth{l}$ column of $s$ equals $t(l)$ times the $\sth{l}$
+column of $b$,
+and when $t(l)=0$, then the $\sth{l}$ column of $b$ is not a linear
+combination of the columns of $a$. $s(j,l)\neq 0$ only if the $\sth{j}$ column
+is leading. Furthermore the gcd of all the entries in the $\sth{l}$ column
+of $s$ and $t(l)$ is $1$.\\
+\name(a,p,st,r,b,d) returns a matrix $s$ and a vector $t$
+such that when $t(l)\neq 0$, then
+$a$ times the $\sth{l}$ column of $s$ equals $d$ times the $\sth{l}$ column of
+$b$, and when $t(l)=0$, then the $\sth{l}$ column of $b$ is not a linear
+combination of the columns of $a$. $s(j,l)\neq 0$ only if the $\sth{j}$ column
+is leading.
+}
+\aspage{backsolve2}
+\Usage{\name(a,p,st,r,c,d)\\ \name(a,p,st,r,b,d)}
+\Signatures{
+\name:& (M,Z $\to$ Z,\astype{PrimitiveArray} Z,Z,Z,R) $\to$ \astype{Vector} R\\
+\name:& (M,Z$\to$ Z,\astype{PrimitiveArray} Z,Z,M,R)$\to$(M,\astype{Vector} R)\\
+}
+\Params{
+{\em a} & M & A matrix representing a Row Echelon Form (REF)\\
+{\em p} & Z $\to$ Z & A permutation of the rows of {\em a}\\
+{\em st} & \astype{PrimitiveArray} Z & The stairs of the REF\\
+{\em r} & Z & The number of leading columns (before the $\sth{c}$ column)\\
+{\em c} & Z & The column to be backsolved\\
+{\em b} & M & A matrix whose columns have to be backsolved\\
+{\em d} & R & A maximal denominator needed for a dependence relation\\
+}
+\begin{aswhere}
+Z &==& \astype{MachineInteger}\\
+\end{aswhere}
+\Descr{
+Backsolves a triangular system in a minimal way.
+The triple $(a,p,st)$ represents a matrix in REF:
+for $j\ge st(i)$ entry (i,j) of the REF is stored in $a(p(i),j)$.
+The parameter $d$
+must be such that $d$ times the $c$-th column of the REF
+(resp.~$d$ times the columns of $b$) is a linear combination of the
+first $r$ leading columns of the REF (the $\sth{j}$ column is called
+leading if $j=st(i)$ for some $i$).\\
+}
+\Retval{
+\name(a,p,st,r,c,d) returns a primitive vector $v$ such that $av=0$,
+and $v(j) \ne 0$ only if $j = c$ or $j \le r$ and the $\sth{j}$ column
+is leading.\\
+\name(a,p,st,r,b,d) returns a matrix $s$ and a vector $t$
+such that when $t(l)\neq 0$, then
+$a$ times the $\sth{l}$ column of $s$ equals $t(l)$
+times the $\sth{l}$ column of
+$b$, and when $t(l)=0$, then the $\sth{l}$ column of $b$ is not a linear
+combination of the columns of $a$. $s(j,l)\neq 0$ only if the $\sth{j}$ column
+is leading.
+}

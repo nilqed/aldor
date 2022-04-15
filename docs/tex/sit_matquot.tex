@@ -1,0 +1,74 @@
+\thistype{MatrixCategoryOverFraction}
+\History{Manuel Bronstein}{16/6/97}{created}
+\Usage{import from \this(R, MR, Q, MQ)}
+\Params{
+{\em R} & \altype{IntegralDomain} & an integral domain\\
+{\em MR} & \altype{MatrixCategory} R & a matrix type over R\\
+{\em Q} & \altype{FractionCategory} R & a fraction domain of R\\
+{\em MQ} & \altype{MatrixCategory} Q & a matrix type over Q\\
+}
+\Descr{\this(R, MR, Q, MQ) provides useful conversions between
+matrices with integral and rational coefficients.}
+\begin{exports}
+\category{\altype{LinearCombinationFraction}(R, MR, Q, MQ)}\\
+\alexp{makeColIntegral}:
+& (MQ, I) $\to$ (R, V R) & Convert to an integral column\\
+& MQ $\to$ (V R, MR) & Convert to an integral matrix column by column\\
+\alexp{makeRowIntegral}: & (MQ, I) $\to$ (R, V R) & Convert to an integral row\\
+               & MQ $\to$ (V R, MR) & Convert to an integral matrix row by row\\
+\end{exports}
+\begin{exports}[if Q has \altype{FractionByCategory0} R]
+\alexp{makeRowIntegralBy}:
+& MQ $\to$ (V Z, MR) & Convert to an integral matrix row by row\\
+\end{exports}
+\begin{alwhere}
+I &==& \altype{MachineInteger}\\
+Z &==& \altype{Integer}\\
+V &==& \altype{Vector}\\
+\end{alwhere}
+\alpage{makeColIntegral}
+\Usage{(v, A) := \name~B\\(a, v) := \name(B, i)}
+\Signatures{
+\name: & MQ $\to$ (\altype{Vector} R, MR)\\
+\name: & (MQ, \altype{MachineInteger}) $\to$ (R, \altype{Vector} R)\\
+}
+\Params{
+{\em B} & MQ & A matrix with rational coefficients\\
+{\em i} & \altype{MachineInteger} & A column index\\
+}
+\Retval{\name(B) returns $(v, A)$ such that $A$ has integral coefficients
+and the $\sth{j}$ column of $A$ is equal to $v.j$ times
+the $\sth{j}$ column of $B$ for each $j$, \ie
+$$
+A = B \pmatrix{ v_1 & & \cr  & \ddots & \cr & & v_n }
+$$
+\name(B, i) returns $(a, v)$ such that $v$ has integral coefficients
+and $v$ equals $a$ times the $\sth{i}$ column of $B$.
+If R is a \altype{GcdDomain}, then each column of $A$ (resp.~$v$) is primitive.}
+\alseealso{\alexp{makeRowIntegral}}
+\alpage{makeRowIntegral}
+\Usage{(v, A) := \name~B\\(a, v) := \name(B, i)}
+\Signatures{
+\name: & MQ $\to$ (\altype{Vector} R, MR)\\
+\name: & (MQ, \altype{MachineInteger}) $\to$ (R, \altype{Vector} R)\\
+}
+\Params{
+{\em B} & MQ & A matrix with rational coefficients\\
+{\em i} & \altype{MachineInteger} & A row index\\
+}
+\Retval{\name(B) returns $(v, A)$ such that $A$ has integral coefficients
+and the $\sth{j}$ row of $A$ is equal to $v.j$ times the $\sth{j}$ row of $B$
+for each $j$, \ie
+$$
+A = \pmatrix{ v_1 & & \cr  & \ddots & \cr & & v_n } B
+$$
+\name(B, i) returns $(a, v)$ such that $v$ has integral coefficients
+and $v$ equals $a$ times the $\sth{i}$ row of $B$.
+If R is a \altype{GcdDomain}, then each row of $A$ (resp.~$v$) is primitive.}
+\alseealso{\alexp{makeColIntegral}}
+\alpage{makeRowIntegralBy}
+\Usage{(v, A) := \name~B}
+\Params{ {\em B} & MQ & A matrix with rational coefficients\\ }
+\Retval{Returns $(v, A)$ such that $A$ has integral coefficients
+and the $\sth{j}$ row of $A$ is equal to the $\sth{j}$ row of $B$
+shifted by $v.j$.}

@@ -1,0 +1,24 @@
+\thistype{Evaluator}
+\History{Manuel Bronstein}{10/01/96}{created}
+\Usage{\this~R: Category}
+\Params{ R & \altype{PartialRing} & Resulting type of the evaluation\\ }
+\Descr{\this~R is a category of interpreters, \ie~types which convert
+expression trees into elements of R whenever possible.}
+\begin{exports}
+\alexp{eval!}: &
+(TEXT, TREE, SYM R) $\to \overline R$ & Interpret an arbitrary tree\\
+\alexp{evalLeaf!}: & (LEAF, SYM R) $\to \overline R$ & Interpret a leaf\\
+\alexp{evalOp!}:
+& (TEXT, TREE, SYM R) $\to \overline R$ & Interpret $op(args)$\\
+\alexp{evalPrefix!}:
+& (\altype{String}, Z, \altype{List} R, SYM R) $\to \overline R$ &
+Interpret $op(args)$, $op$ is prefix\\
+\end{exports}
+\begin{aswhere}
+Z &==& \altype{MachineInteger}\\
+LEAF &==& \altype{ExpressionTreeLeaf}\\
+$\overline R$ &==& \altype{Partial} R\\
+SYM &==& \altype{SymbolTable}\\
+TEXT &==& \altype{TextWriter}\\
+TREE &==& \altype{ExpressionTree}\\
+\end{aswhere}

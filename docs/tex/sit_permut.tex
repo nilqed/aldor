@@ -1,0 +1,59 @@
+\thistype{Permutation}
+\History{Manuel Bronstein}{9/12/1999}{created}
+\History{Manuel Bronstein}{30/01/2003}{bug fix: transpose! does not trash 1}
+\Usage{import from \this~n}
+\Params{{\em n} & \altype{MachineInteger} & The number of elements\\}
+\Descr{\this(n) implements the group of permutations on $n$ elements.}
+\begin{exports}
+\category{\altype{CopyableType}}\\
+\category{\altype{Group}}\\
+\alexp{apply}: & (\%, Z) $\to$ Z & Image of an element\\
+\alexp{mapping}: & \% $\to$ (Z $\to$ Z) & Action of a permutation\\
+\alexp{sign}: & \% $\to$ Z & Sign\\
+\alexp{transpose}: & (Z, Z) $\to$ \% & Transposition\\
+\alexp{transpose!}: & (\%, Z, Z) $\to$ \% & Compose with a transposition\\
+\end{exports}
+\begin{alwhere}
+Z &==& \altype{MachineInteger}\\
+\end{alwhere}
+\alpage{apply}
+\Usage{ \name($\sigma$, x) \\ $\sigma x$}
+\Signature{(\%, \altype{MachineInteger})}{\altype{MachineInteger}}
+\Params{
+{\em $\sigma$} & \% & A permutation\\
+{\em x} & \altype{MachineInteger} & An index\\
+}
+\Retval{Returns $\sigma x$.}
+\alpage{mapping}
+\Usage{\name~$\sigma$}
+\Signature{\%}{(\altype{MachineInteger} $\to$ \altype{MachineInteger})}
+\Params{ {\em $\sigma$} & \% & A permutation\\ }
+\Retval{Returns the map corresponding to $\sigma$.}
+\alseealso{\alexp{apply}}
+\alpage{sign}
+\Usage{\name~$\sigma$}
+\Signature{\%}{\altype{MachineInteger}}
+\Params{ {\em $\sigma$} & \% & A permutation\\ }
+\Retval{Returns the sign of $\sigma$, \ie $(-1)^\epsilon$
+where $\epsilon$ is the number of tranpositions in the factorization
+of $\sigma$.}
+\alpage{transpose}
+\altarget{\name!}
+\Usage{\name(x,y)\\ \name!($\sigma$,x,y)}
+\Signatures{
+\name: & (\altype{MachineInteger}, \altype{MachineInteger}) $\to$ \%\\
+\name!: & (\%, \altype{MachineInteger}, \altype{MachineInteger}) $\to$ \%\\
+}
+\Params{
+{\em $\sigma$} & \% & A permutation\\
+{\em x,y} & \altype{MachineInteger} & Indices\\
+}
+\Retval{\name(x,y) returns the transposition $(x y)$, while
+\name!($\sigma$,x,y) returns the composition $(x y) \circ \sigma$.}
+\Remarks{When using \name!, the storage used by $\sigma$ is allowed to
+be destroyed or reused, so do not use it unless $\sigma$ has been
+locally allocated, and is guaranteed not to share space
+with other elements. Some functions are not necessarily copying their
+arguments and can thus create memory aliases. Since there is no
+guarantee of reuse, you should always use the permutation returned
+by \name! rather than $\sigma$ after the call.}

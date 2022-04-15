@@ -1,0 +1,20 @@
+\thistype{FractionBy}
+\History{Manuel Bronstein}{7/6/96}{created}
+\Usage{import from \this(R, p, irr?)}
+\Params{
+{\em R} & \astype{IntegralDomain} & an integral domain\\
+{\em p} & R & a nonzero nonunit of R\\
+{\em irr?} & \astype{Boolean} &
+Indicates whether p is known to be irreducible in R\\
+}
+\Descr{
+\this(R, p, irr?) forms the fractions of the integral domain {\em R} by the
+nonzero nonunit {\em p}, \ie the set of all fractions whose denominator is a
+power of {\em p}. Fractions are normalized in the sense that {\em p}
+does not divide the numerators. Indicating whether {\em p} is
+irreducible if for efficiency purposes only, always use \false~when
+it is unknown.
+}
+\begin{exports}
+\category{\astype{FractionByCategory} R}\\
+\end{exports}

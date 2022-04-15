@@ -1,0 +1,42 @@
+\thistype{Parser}
+\History{Niklaus Mannhart}{25/03/96}{created}
+\History{Manuel Bronstein}{25/09/96}{turned into a category}
+\Usage{\this: Category}
+\Descr{\this~is the category for parser objects.}
+\begin{exports}
+\asexp{eof?}: & \% $\to$ \astype{Boolean} & Check for end of input\\
+\asexp{lastError}:
+& \% $\to$ \astype{MachineInteger} & Code for last parsing error\\
+\asexp{parse!}:
+& \% $\to$ \astype{Partial} \astype{ExpressionTree} & Parse one expression\\
+\end{exports}
+\aspage{eof?}
+\Usage{\name~p}
+\Signature{\%}{\astype{Boolean}}
+\Params{ {\em p} & \% & A parser \\ }
+\Retval{Returns \true~if the input is finished, \false~otherwise.}
+\aspage{lastError}
+\Usage{\name~p}
+\Signature{\%}{\astype{MachineInteger}}
+\Params{ {\em p} & \% & A parser \\ }
+\Retval{Returns the code for the last parsing error.}
+\aspage{parse!}
+\Usage{\name~p}
+\Signature{\%}{\astype{Partial} \astype{ExpressionTree}}
+\Params{ {\em p} & \% & A parser \\ }
+\Retval{Returns either an expression tree for the next parsed expression, or
+\failed in case of error or end of input.}
+\alseealso{lastError(\%)}
+\thistype{ParserReader}
+\History{Niklaus Mannhart}{25/03/96}{created}
+\History{Manuel Bronstein}{25/09/96}{turned into a category}
+\Usage{\this: Category}
+\Descr{\this~is the category for parser objects that parse text readers.}
+\begin{exports}
+\asexp{parser}: & \astype{TextReader} $\to$ \% & Create a parser\\
+\end{exports}
+\aspage{parser}
+\Usage{\name~r}
+\Signature{\astype{TextReader}}{\%}
+\Params{ {\em r} & \astype{TextReader} & The input stream to parse\\ }
+\Retval{Returns a parser that takes its input on r.}

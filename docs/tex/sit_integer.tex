@@ -1,0 +1,44 @@
+\thistype{IntegerCategory}
+\History{Manuel Bronstein}{16/11/2004}{added ModularComputation, SourceOfPrimes}
+\History{Marc Moreno Maza and Steve Wilson}{22/6/04}
+{added CanonicalSimplification}
+\History{Manuel Bronstein}{23/5/95}{created}
+\Usage{\this: Category}
+\Descr{\this~is the category of integer-like rings.}
+\begin{exports}
+\category{\altype{CharacteristicZero}}\\
+\category{\altype{EuclideanDomain}}\\
+\category{\altype{IntegerType}}\\
+\category{\altype{Parsable}}\\
+\category{\altype{Specializable}}\\
+\alexp{integer}: & \% $\to$ \altype{Integer} & Conversion to an integer\\
+\alexp{rationalReconstruction}:
+& \% $\to$ \% $\to$ \altype{Partial} \builtin{Cross}(\%, \%) &
+Rational reconstruction\\
+\end{exports}
+\alpage{binomial}
+\Usage{\name(n, m)}
+\Signature{(\%,\%)}{\%}
+\Params{ {\em n,m} & \% & Integers\\}
+\Retval{Returns
+$$
+{n \choose m} = \frac{n!}{m! (n-m)!}\,.
+$$
+Returns $0$ if either $m < 0$ or $n < m$.}
+\alpage{integer}
+\Usage{\name~n}
+\Signature{\%}{\altype{Integer}}
+\Params{ {\em n} & \% & An integer\\}
+\Retval{Returns n as an integer.}
+\alpage{rationalReconstruction}
+\Usage{\name~m\\ \name(m)(u)}
+\Signature{\%}{\% $\to$ \altype{Partial} \builtin{Cross}(\%, \%)}
+\Params{
+\emph{m} & \% & A nonzero modulus\\
+\emph{u} & \% & An Integer\\
+}
+\Retval{\name(m)(u) returns either $(a,b)$ such that $a/b = u \pmod m$,
+$|a| \le \sqrt{(m-1)/2}$ and $|b| \le \sqrt{(m-1)/2}$,
+or \failed~if no such $a,b$ exist.}
+\Remarks{The resulting $a$ and $b$ are guaranteed to be unique.}
+\alseealso{\alfunc{EuclideanDomain}{rationalReconstruction}}

@@ -1,0 +1,63 @@
+\thistype{Vector}
+\History {Marco Codutti}{10 May 1995}{created.}
+\History {Manuel Bronstein}{30/11/1999}{redesigned using Array}
+\Usage   {import from \this~R}
+\Params{
+{\em R} & \altype{ExpressionType} & The coefficient domain\\
+        & \altype{AdditiveType} &\\
+}
+\Descr   {\this~R provides vectors of arbitrary size with entries in R.
+They are 1--indexed and without bound checking.}
+\begin{exports}
+\category{\altype{AdditiveType}}\\
+\category{\altype{BoundedFiniteLinearStructureType} R}\\
+\category{\altype{ExpressionType}}\\
+\alexp{zero}: & \altype{MachineInteger} $\to$ \% & zero vector\\
+\alexp{zero!}: & \% $\to$ () & make all the entries zero\\
+\alexp{zero?}: & \% $\to$ \altype{Boolean} & test if all entries are zero\\
+\end{exports}
+\begin{exports}[if R has \altype{ArithmeticType} then]
+\category{\altype{LinearCombinationType} R}\\
+\alexp{dot}: & (\%, \%) $\to$ R & dot product\\
+\alexp{tensor}: & (\%, \%) $\to$ \% & tensor product\\
+\end{exports}
+\begin{exports}[if R has \altype{Ring} then]
+\alexp{random}: & () $\to$ \% & random vector\\
+ & \altype{MachineInteger} $\to$ \% & \\
+\end{exports}
+\alpage{dot}
+\Usage{\name(u,v)}
+\Signature{(\%,\%)}{R}
+\Params{{\em u, v} & \% & Vectors of the same size\\ }
+\Retval{Returns $u \cdot v = \sum_i u_i v_i$.}
+\alpage    {random}
+\Usage     {\name()\\ \name~n}
+\Signatures{
+\name: & () $\to$ \%\\
+\name: & \altype{MachineInteger} $\to$ \%\\
+}
+\Params  {{\em n} & \altype{MachineInteger} & The dimension of the new vector.}
+\Retval    {\name() returns a random vector of size at most 100, while
+\name(n) returns a random vector of size n.}
+\alpage{tensor}
+\Usage{\name(u,v)}
+\Signature{(\%,\%)}{\%}
+\Params{{\em u}, {\em v} & \% & Vectors with coefficients from R.}
+\Retval{Returns
+$u \otimes v = (u_1 v_1, u_1 v_2, \dots, u_1 v_m, u_2 v_1, \dots, u_n v_m)$.}
+\alpage{zero}
+\altarget{\name!}
+\altarget{\name?}
+\Usage     {\name~n\\ \name!~v\\ \name?~v}
+\Signatures{
+\name:  & \altype{MachineInteger}) $\to$ \%\\
+\name!: & \% $\to$ ()\\
+\name?: & \% $\to$ \altype{Boolean}\\
+}
+\Params{
+{\em n} & \altype{MachineInteger} & The dimension of the new vector\\
+{\em v} & \% & A vector with coefficients from R\\
+}
+\Descr{\name(n) returns a zero vector of size $n$, while
+\name!(v) fills $v$ with $0$'s and \name?(v)
+returns \true if all the entries of {\em v} are $0$, \false otherwise.}

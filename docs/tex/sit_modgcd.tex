@@ -1,0 +1,28 @@
+\thistype{ModularUnivariateGcd}
+\History{Laurent Bernardin}{17/8/95}{created}
+\History{Manuel Bronstein}{19/4/96}
+{Uses optimized CRT function with inverse caching and machine int modulis.
+Uses local gcd mod p function rather than instantiating prime fields.
+Makes trial divisions only after first try, and when lifted gcd stabilizes.}
+\Usage{import from \this(Z, P)}
+\Params{
+{\em Z} & \altype{IntegerCategory} & An integer-like ring\\
+{\em P} & \altype{UnivariatePolynomialAlgebra} Z & Polynomials over Z}
+\Descr{\this~provides an implementation of a modular GCD algorithm for
+univariate polynomials over the integer, using the Chinese Remainder Theorem.}
+\begin{exports}
+\alexp{modularGcd}: & (P, P) $\to$ (\altype{Partial} P, P, P) &
+The Modular Gcd algorithm\\
+\end{exports}
+\alpage{modularGcd}
+\Usage{\name($p_1, p_2$)}
+\Signatures{
+\name: & (P, P) $\to$ (\altype{Partial} P, P, P)\\
+}
+\Params{
+{\em $p_1, p_2$} & P & Polynomials over Z\\
+}
+\Retval{Returns $(g, y, z)$ such that $g = \gcd(p_1, p_2)$ or \failed,
+and if $g$ is not \failed, then $p = y g$ and $q = z g$.}
+\Remarks{This algorithm can fail because it runs out of primes. This will happen
+if the gcd has coefficients with more than around 3000 digits.}

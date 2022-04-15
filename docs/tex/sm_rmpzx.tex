@@ -1,0 +1,21 @@
+\thistype{SparseIntegerMultivariatePolynomial}
+\History{Marc Moreno Maza}{08/07/01}{created}
+\Usage{import from \this~(V)}
+\Params{
+{\em V} & \altype{VariableType} & The variables\\
+}
+\Descr{\this~(V) provides a basic domain for 
+multivariate polynomials with coefficients over the \altype{Integer} ring and variables 
+in {\em V}. The representation is sparse and recursive by means of {\em SUP}.
+}
+\begin{exports}
+\category{\altype{RecursiveMultivariatePolynomialCategory0}(Z,V)} \\
+\alexp{univariate}: & \% $\to$ SUP(\%)  
+         & Convert to univariate w.r.t. the greatest variable  \\
+\alexp{multivariate}: & (SUP(\%), V) $\to$ \%  
+         & Convert to multivariate with given variable  \\
+\end{exports}
+\begin{aswhere}
+Z &==& \altype{Integer} \\
+SUP &==& \altype{SparseUnivariatePolynomial}\\
+\end{aswhere}

@@ -1,0 +1,46 @@
+\thistype{HeuristicGcd}
+\History{Manuel Bronstein}{13/8/94}{created}
+\Usage{import from \this(Z, P)}
+\Params{
+{\em Z} & \astype{IntegerCategory} & An integer--like ring\\
+{\em P} & \astype{UnivariatePolynomialAlgebra0} Z & Polynomials over Z\\
+}
+\Descr{\this~provides an implementation of the HEUGCD algorithm for
+univariate polynomials over the integers.}
+\begin{exports}
+\asexp{balancedRemainder}: & (Z, Z) $\to$ Z & Symmetric Remainder\\
+\asexp{heuristicGcd}: & (P, P) $\to$ (\astype{Partial} P, P, P) &
+the Heuristic gcd algorithm\\
+\asexp{radixInterpolate}: & (Z, Z) $\to$ P & Radix interpolation\\
+\end{exports}
+\aspage{balancedRemainder}
+\Usage{\name(n, m)}
+\Signature{(Z, Z)}{Z}
+\Params{
+{\em n} & Z & An integer\\
+{\em m} & Z & An integer\\
+}
+\Retval{Returns $-m/2 \le r < m/2$ such that $n \equiv r \pmod m$.}
+\aspage{heuristicGcd}
+\Usage{\name($p_1, p_2$)}
+\Signature{(P, P)}{(\astype{Partial} P, P, P)}
+\Params{ {\em $p_1, p_2$} & P & Polynomials\\ }
+\Retval{Returns $(g, q_1, q_2)$ such that $g = \gcd(p_1, p_2)$,
+$p_1 = g q_1$ and $p_2 = g q_2$.}
+\Remarks{This heuristic can fail in theory, in which case
+(\failed, $p_1, p_2$) is returned, although this has never been reported.}
+\aspage{radixInterpolate}
+\Usage{\name(n, m)}
+\Signature{(Z, Z)}{P}
+\Params{
+{\em n} & Z & A point\\
+{\em m} & R & The value of the desired polynomial at n\\
+}
+\Retval{Returns the unique polynomial $p$ such that $p(n) = m$ and
+$$
+\vert\vert p \vert\vert_\infty \le \frac{n - 1}2\,.
+$$
+}
+\Remarks{The above bound is useful when an upper bound $M$
+on $\vert\vert p \vert\vert_\infty$ is known a priori,
+since it is then sufficient to take $n \ge 2 M + 1$.}

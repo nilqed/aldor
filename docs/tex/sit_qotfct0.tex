@@ -1,0 +1,33 @@
+\thistype{FractionFieldCategory0}
+\History{Laurent Bernardin}{1/12/94}{created}
+\History{Manuel Bronstein}{25/5/95}
+{extracted the category from the type in order to create RationalCategory}
+\History{Manuel Bronstein}{21/9/95}{added UnivariateGcdRing and gcd lifting}
+\Usage{\this~R: Category}
+\Params{ {\em R} & \altype{IntegralDomain} & an integral domain\\ }
+\Descr{\this~R is the category of the fraction fields of R.}
+\begin{exports}
+\category{\altype{Field}}\\
+\category{\altype{FractionCategory} R}\\
+\alexp{/}: & (R,R) $\to$ \% & Quotient of two ring elements\\
+\end{exports}
+\begin{exports}[if {\em R} has \altype{CharacteristicZero} then]
+\category{\altype{RittRing}}\\
+\end{exports}
+\begin{exports}[if {\em R} has \altype{Parsable} then]
+\category{\altype{Parsable}}\\
+\end{exports}
+\begin{exports}[if {\em R} has \altype{SerializableType} then]
+\category{\altype{SerializableType}}\\
+\end{exports}
+\begin{exports}[if {\em R} has \altype{TotallyOrderedType} then]
+\category{\altype{TotallyOrderedType}}\\
+\end{exports}
+\alpage{/}
+\Usage{n~\name~d}
+\Signature{(R,R)}{\%}
+\Params{
+{\em n} & R & An element of the ring.\\
+{\em d} & R & A nonzero element of the ring.\\
+}
+\Retval{Returns the quotient {\em n} over {\em d}.}

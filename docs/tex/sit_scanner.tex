@@ -1,0 +1,15 @@
+\thistype{Scanner}
+\History{Manuel Bronstein}{23/11/95}{created}
+\History{Manuel Bronstein}{20/09/96}{added /* */ and conversion ** --> ^}
+\History{Manuel Bronstein}{12/05/97}{added scanning of floats}
+\History{Manuel Bronstein}{15/12/97}{added scanning of < > <= >=}
+\Usage{import from \this}
+\Descr{\this~provides a simple scanner for mathematical expressions.}
+\begin{exports}
+\alexp{scan}: & \altype{TextReader} $\to$ \altype{Token} & Scan a token\\
+\end{exports}
+\alpage{scan}
+\Usage{\name~p}
+\Signature{\altype{TextReader}}{\altype{Token}}
+\Params{ {\em p} & \altype{TextReader} & Text to scan\\ }
+\Retval{Returns the next token read from the reader $p$.}

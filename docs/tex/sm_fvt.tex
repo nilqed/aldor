@@ -1,0 +1,24 @@
+\thistype{FiniteVariableType}
+\History{Marc Moreno Maza}{08/07/01}{created}
+\Usage{\this: Category}
+\Descr{\this~is a category for multivariate polynomial variables that belong to a finite set.
+Hence, a domain of this category implements a finite set of ordered variables.
+The operations \alexp{variable} and \alexp{index} define a one-to-one map
+from \% onto a range of (machine) integers.}
+\begin{exports}
+\category{\astype{VariableType}} \\
+\alexp{variable}: & \astype{MachineInteger}  $\to$  \% &  Retuns the $n$-th variable of the type, if any \\
+\alexp{index}: &  \% $\to$ \astype{MachineInteger} &  Retuns the associated machine integer \\
+\alexp{\#}: & \astype{MachineInteger}  & The number of elements of the type \\
+\alexp{max}: & \% & The greatest element of the type \\
+\alexp{min}: &  \% & The smallest element of the type   \\
+\alexp{minToMax}: & \astype{List} \% & The elements of the type sorted in increasing order  \\
+\alexp{maxToMin}: &  \astype{List} \%   & The elements of the type sorted in decreasing order  \\
+\end{exports}
+\alpage{variable}
+\Usage{\name~i}
+\Signature{\altype{MachineInteger}}{\%}
+\Params{{\em i} & \altype{MachineInteger} & an index \\ }
+\Retval{Returns the $i$-th variable of the type if $i$ is the range
+of indices associated with the type. Otherwise, an error or an exception is
+raised.}

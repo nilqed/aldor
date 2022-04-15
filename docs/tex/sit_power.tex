@@ -1,0 +1,30 @@
+\thistype{PthPowering}
+\History{Manuel Bronstein}{22/11/94}{created}
+\History{Manuel Bronstein}{7/9/98}{added small characteristic method}
+\Usage{import from \this~R}
+\Params{
+{\em R} & \astype{FiniteCharacteristic} & A finite characteristic ring\\
+}
+\Descr{\this~provides efficient exponentiation of elements of $R$.}
+\begin{exports}
+\asexp{pExponentiation}: & (T, \astype{Integer}) $\to$ T & $\sth p$--powering\\
+\asexp{pExponentiation!}:
+& (T, \astype{Integer}) $\to$ T & In--place $\sth p$--powering\\
+\end{exports}
+\aspage{pExponentiation}
+\astarget{\name!}
+\Usage{\name(a, n)\\ \name!(a, n)}
+\Signature{(R, \astype{Integer})}{R}
+\Params{
+{\em a} & R & The element to exponentiate\\
+{\em n} & \astype{Integer} & The exponent\\
+}
+\Retval{Returns $a^n$. The exponent $n$ must be nonnegative.
+When using \name!($a, n$),
+the storage used by a is allowed
+to be destroyed or reused, so a is lost after this call.}
+\Remarks{A call to \name!($a, n$) may cause a to be destroyed,
+so do not use it unless a has been locally allocated,
+and is guaranteed not to share space
+with other elements. Some functions are not necessarily copying their
+arguments and can thus create memory aliases.}

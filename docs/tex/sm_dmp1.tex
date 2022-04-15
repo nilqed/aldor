@@ -1,0 +1,20 @@
+\thistype{DistributedMultivariatePolynomial1}
+\History{Marc Moreno Maza}{08/07/01}{created}
+\Usage{import from \this~(R,V,E)}
+\Params{
+{\em R} & \astype{Ring} & The coefficient ring \\
+{\em V} & \astype{VariableType} & The variable type \\
+{\em E} & \altype{ExponentCategory} V & The exponent domain \\
+}
+\Descr{\this~(R,V,E) provides a basic domain for 
+multivariate polynomials with coefficients in $R$ and variables 
+in $V.$ 
+The monomials are coded by means of exponents
+ from $E.$
+Polynomials are represented in a sparse and distributed way.
+This means that each polynomial $x$ is coded
+as a list of term $(r,e)$ with $r \in R, r\neq 0$ and $e \in E$
+such that $x$ is the sum of these terms.}
+\begin{exports}
+\category{\astype{FiniteAbelianMonoidRing0}(R,V,E)} \\
+\end{exports}

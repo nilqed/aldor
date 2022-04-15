@@ -1,0 +1,20 @@
+\thistype{ModularComputation}
+\History{Marc Moreno Maza, Steve Wilson}{1999-2004}{created}
+\Usage{\this: Category}
+\Descr{\this~is the category of domains that support modular algorithm
+        such as the modular gcd algorithm.
+        More precisely, for every element $p$ of \% the 
+        operation {\tt residueClassRing} returns a domain 
+        implementing the residue class ring $R / p$.
+        In addition, if \% is an Eclidean domain,  
+        the operation  {\tt combine} implements the Chinese Remaindering algorithm.
+}
+\begin{exports}
+\category{\altype{CanonicalSimplification}} \\
+\alexp{residueClassRing}: &  (p: \%) $\to$  \altype{ResidueClassRing} (\%,p) &  Residue class ring  \\
+\end{exports}
+\begin{exports}[if \% has \altype{EuclideanDomain} then]
+\alexp{combine}: &  (\%, \%) $\to$  (\%, \%) $\to$ \% & Chinese remaindering algorithm \\
+\end{exports}
+
+

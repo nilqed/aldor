@@ -1,0 +1,30 @@
+\thistype{RecursiveMultivariatePolynomialCategory0}
+\History{Marc Moreno Maza}{08/07/01}{created}
+\Usage{\this~(R,V): Category}
+\Params{
+{\em R} & \astype{ArithmeticType} & The coefficient domain \\
+        & \astype{ExpressionType} &\\
+{\em V} & \astype{TotallyOrderedType} & The variable domain \\
+         & \astype{ExpressionType} &\\
+}
+\Descr{\this~(R,V) extends \astype{PolynomialRing}(R,V)
+with some additional operations related to the recurive vision of a
+multivariate polynomial (as a univariate polynomial w.r.t. its main variable). 
+}
+\begin{exports}
+\category{\astype{PolynomialRing}(R,V)} \\
+\alexp{variables}: &  \% $\to$ \astype{SortedSet}V
+        &  The sorted set of variables of a polynomial \\
+\alexp{mvar}: & \% $\to$ V
+         & Greatest variable of a polynomial  \\
+\alexp{mdeg}: &  \% $\to$ \astype{Integer}
+             &  Degree w.r.t. greatest variable \\
+\alexp{rank}: &  \% $\to$ \% 
+              &  Leading monomial as univariate w.r.t. greatest variable   \\
+\alexp{init}: &   \% $\to$ \% 
+             & Leading coefficient as univariate w.r.t. greatest variable  \\
+\alexp{tail}: &  \% $\to$ \% 
+               &  Reductum as univariate w.r.t. greatest variable \\
+\alexp{head}: & \% $\to$ \%  
+               &  Leading term as univariate w.r.t. greatest variable \\
+\end{exports}

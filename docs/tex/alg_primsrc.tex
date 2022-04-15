@@ -1,0 +1,17 @@
+\thistype{SourceOfPrimes}
+\History{Marc Moreno Maza}{1999}{created}
+\Usage{\this: Category}
+\Descr{\this~is the category  of domains supporting a (partial) primality test
+       and a source of primes (which may finite or infinite).}
+\begin{exports}
+\category{\altype{CommutativeRing}} \\
+\alexp{prime?}: & \% $\to$ \astype{Partial} Boolean & Primality test \\
+\alexp{prime?}: & \% $\to$  Boolean & Primality test \\
+\alexp{getPrime}: () $\to$ \astype{Partial} \% & Prime source seed \\
+\alexp{nextPrime}: () $\to$ \astype{Partial} \% & Prime source next \\
+\end{exports}
+\begin{exports}[if \% has \altype{EuclideanDomain}  then]
+\alexp{getPrimeOfSize}: () $\to$ \astype{Partial} \% & Prime source seed \\
+\end{exports}
+
+

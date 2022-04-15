@@ -1,0 +1,28 @@
+\thistype{FractionByCategory0}
+\History{Manuel Bronstein}{9/6/98}{created}
+\Usage{\this~R: Category}
+\Params{ {\em R} & \astype{IntegralDomain} & an integral domain\\ }
+\Descr{
+\this(R) is the category of fractions of the integral domain {\em R} by
+some nonzero nonunit $p \in R$,
+\ie the set of all fractions whose denominator is a power of {\em p}.
+}
+\begin{exports}
+\category{\astype{FractionCategory} R}\\
+\asexp{order}: & \% $\to$ \astype{Integer} & Valuation at p\\
+\asexp{shift}:
+& (\%, \astype{Integer}) $\to$ \% & Multiplication by a power of p\\
+\end{exports}
+\aspage{order}
+\Usage{\name~x}
+\Signature{\%}{\astype{Integer}}
+\Params{ {\em x} & \% & A fraction whose denominator is a power of p\\ }
+\Retval{Returns $n$ such that $x = a p^n$ and $a \in R$, $p \nodiv a$.}
+\aspage{shift}
+\Usage{\name(x, n)}
+\Signature{(\%, \astype{Integer})}{\%}
+\Params{
+{\em x} & \% & A fraction whose denominator is a power of p\\
+{\em n} & \astype{Integer} & An exponent\\
+}
+\Retval{Returns $x p^n$.}

@@ -1,0 +1,136 @@
+\thistype{EuclideanDomain}
+\History{Manuel Bronstein}{13/12/94}{created}
+\Usage{\this: Category}
+\Descr{\this~is the category of commutative Euclidean domains.}
+\begin{exports}
+\category{\altype{GcdDomain}}\\
+\alexp{diophantine}:
+& (\%, \%, \%) $\to \partial$ \% & Linear diophantine solver\\
+\alexp{divide}: & (\%, \%) $\to$ (\%, \%) & Euclidean division\\
+\alexp{divide!}: & (\%, \%, \%) $\to$ (\%, \%) & In--place Euclidean division\\
+\alexp{euclid}: & (\%, \%) $\to$ \% & Euclidean gcd\\
+\alexp{euclid!}: & (\%, \%) $\to$ \% & In--place Euclidean gcd\\
+\alexp{euclideanSize}:
+& \% $\to$ \altype{Integer} & Size function of the domain\\
+\alexp{extendedEuclidean}:
+& (\%, \%) $\to$ (\%, \%, \%) & Extended Euclidean Algorithm\\
+& (\%, \%, \%) $\to \partial$ \builtin{Cross}(\%, \%) &\\
+\alexp{quo}: & (\%, \%) $\to$ \% & Quotient\\
+\alexp{rem}: & (\%, \%) $\to$ \% & Remainder\\
+\alexp{remainder!}: & (\%, \%) $\to$ \% & In--place remainder\\
+\alexp{rationalReconstruction}:
+& (\%, \%, Z, Z) $\to \partial$ \builtin{Cross}(\%, \%) &
+Rational reconstruction\\
+\end{exports}
+\begin{alwhere}
+$\partial$ &==& \altype{Partial}\\
+Z &==& \altype{Integer}\\
+\end{alwhere}
+\alpage{diophantine}
+\Usage{\name(a, b, m)}
+\Signature{(\%, \%, \%)}{\altype{Partial} \%}
+\Params{
+{\em a} & \% & An element of the ring\\
+{\em b} & \% & The right hand side of the equation\\
+{\em m} & \% & The nonzero modulus\\
+}
+\Retval{If the diophantine equation $a x \equiv b \pmod m$ has solutions in
+the ring, returns a solution x such that either $x = 0$ or
+$\abs x < \abs m$. Returns \failed if the equation has no solution.}
+\alpage{divide,quo,rem}
+\altarget{divide}
+\altarget{quo}
+\altarget{rem}
+\Usage{divide(a, b)\\a quo b\\ a rem b}
+\Signatures{
+divide: & (\%,\%) $\to$ (\%, \%)\\
+quo,rem: & (\%,\%) $\to$ \%\\
+}
+\Params{ {\em a,b} & \% & Element of the ring, $y \ne 0$\\ }
+\Retval{$a$ rem $b$ returns $r$ such that either $r = 0$
+or $0 \le \abs r < \abs b$ and $a \equiv r \pmod b$,
+$a$ quo $b$ returns $q$ such that $a - b q = 0$
+or $0 \le \abs{a - bq} < \abs b$,
+and divide(a, b) returns the pair (a quo b, a rem b).}
+\alpage{divide!}
+\Usage{\name(x, y, z)}
+\Signature{(\%, \%, \%)}{(\%, \%)}
+\Params{
+{\em x} & \% & An element of the ring (to be destroyed)\\
+{\em y} & \% & An element of the ring\\
+{\em z} & \% & A placeholder for the quotient (to be destroyed)\\
+}
+\Retval{Returns $(q, r)$ such that $x = q y + r$ and either $r = 0$
+or $0 \le \abs r < \abs x$,
+where the storage used by x and z is allowed to be destroyed or reused,
+so x and z is lost after this call.}
+\Remarks{This function may cause x and z to be destroyed,
+so do not use it unless x and z have been locally allocated,
+and are guaranteed not to share space
+with other elements. Some functions are not necessarily copying their
+arguments and can thus create memory aliases.}
+\alseealso{\alexp{remainder!}}
+\alpage{euclid}
+\altarget{\name!}
+\Usage{\name(x, y)\\ \name!(x, y)}
+\Signature{(\%, \%)}{\%}
+\Params{ {\em x,y} & \% & Elements of the ring\\ }
+\Retval{Returns $\gcd(x, y)$ computed by the Euclidean algorithm.
+When using \name!(x, y), 
+the storage used by x and y is allowed
+to be destroyed or reused, so x and y are lost after this call.}
+\Remarks{The call \name!(x, y) may cause x and y to be destroyed,
+so do not use it unless
+x and y have been locally allocated, and are guaranteed not to share space
+with other elements. Some functions are not necessarily copying their
+arguments and can thus create memory aliases.}
+\alseealso{\alfunc{GcdDomain}{gcd}, \alfunc{GcdDomain}{gcd!}}
+\alpage{euclideanSize}
+\Usage{\name~x}
+\Signature{\%}{\altype{Integer}}
+\Params{ {\em x} & \% & A nonzero element of the ring\\ }
+\Retval{Returns $\abs x$, the euclidean size of x. It is connected
+to the Euclidean remainder, in that the remainder r of a by b is either 0,
+or satisfies $0 \le \abs r < \abs b$.}
+\alpage{extendedEuclidean}
+\Usage{\name(a, b)\\ \name(a, b, c)}
+\Signatures{
+\name: & (\%, \%) $\to$ (\%, \%, \%)\\
+\name: & (\%, \%, \%) $\to$ \altype{Partial}(\%, \%)\\
+}
+\Params{ {\em a,b,c} & \% & Elements of the ring\\ }
+\Retval{
+\name(a, b) returns $(g, x, y)$ such that $g = \gcd(a, b) = a x + b y$.\\
+\name(a, b, c) returns either a solution $(x, y)$ of the
+diophantine equation $a x + b y = c$, or \failed if it has
+no solution in the ring.\\
+For the values returned by both calls, either $x = 0$ or
+$\abs x < \abs b$.}
+\alpage{rationalReconstruction}
+\Usage{\name(u, m, n, d)}
+\Signature{(\%, \%, \altype{Integer}, \altype{Integer})}
+{\altype{Partial} \builtin{Cross}(\%, \%)}
+\Params{
+\emph{u} & \% & An element of the ring\\
+\emph{m} & \% & A nonzero modulus\\
+\emph{n,d} & \altype{Integer} & Bounds for the size of the result\\
+}
+\Retval{Returns either $(a,b)$ such that $a/b = u \pmod m$,
+$|a| \le n$ and $|b| \le d$, or \failed~if no such $a,b$ exist.}
+\Remarks{
+The resulting $a$ and $b$ might not be unique, depending on the
+values of the bounds $n$ and $d$.}
+\alpage{remainder!}
+\Usage{\name(x, y)}
+\Signature{(\%, \%)}{\%}
+\Params{
+{\em x} & \% & An element of the ring (to be destroyed)\\
+{\em y} & \% & An element of the ring\\
+}
+\Retval{Returns the remainder of x by y,
+where the storage used by x is allowed
+to be destroyed or reused, so x is lost after this call.}
+\Remarks{This function may cause x to be destroyed, so do not use it unless
+x has been locally allocated, and is guaranteed not to share space
+with other elements. Some functions are not necessarily copying their
+arguments and can thus create memory aliases.}

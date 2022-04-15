@@ -1,0 +1,73 @@
+\thistype{Sequence}
+\History{Manuel Bronstein}{30/5/2000}{created}
+\History{Manuel Bronstein}{31/1/2003}{added interlacing}
+\History{Manuel Bronstein}{22/7/2003}{added dot}
+\Usage{ import from \this~R}
+\Params{
+{\em R} & \altype{ExpressionType} & The coefficient domain\\
+        & \altype{ArithmeticType} &\\
+}
+\Descr{\this~R implements infinite sequences with coefficients in R.}
+\begin{exports}
+\category{\altype{LinearStructureType} R}\\
+\category{\altype{UnivariateFreeLinearArithmeticType} R}\\
+\alalias{\this}{size}{\#}: & \% $\to$ Z & number of computed elements\\
+\alexp{bound}:
+& \% $\to$ \altype{MachineInteger} & upper bound on the support size\\
+\alexp{dot}:
+& \altype{Vector} R $\to$ \altype{Vector} \% $\to$ \% &
+linear combination\\
+\alexp{finite?}:
+& \% $\to$ \altype{Boolean} & check whether the support is finite\\
+\alexp{interlacing}: & \altype{List} \% $\to$ \% & interlacing\\
+\alexp{sequence}: & \altype{Stream} R $\to$ \% & create a sequence\\
+\end{exports}
+\begin{exports}[if R has \altype{Ring} then]
+\alexp{random}: & () $\to$ \% & random sequence\\
+\end{exports}
+\alpage{size}
+\Usage{\#~s}
+\Signatures{ \#: & \% $\to$ \altype{MachineInteger}\\ }
+\Params{ {\em s} & \% & a sequence\\ }
+\Retval{Returns the number of elements of $s$ that have been computed.}
+\alpage{bound,finite?}
+\altarget{bound}
+\altarget{finite?}
+\Usage{bound~s\\finite?~s}
+\Signatures{
+bound: & \% $\to$ \altype{MachineInteger} \\
+finite?: & \% $\to$ \altype{Boolean}\\
+}
+\Params{ {\em s} & \% & a sequence\\ }
+\Retval{finite?(s) returns \true if s is known
+to have finite support and \false otherwise, while
+bound(s) returns $n \ge 0$ if s is known
+to have finite support and $s.m = 0$ for $m \ge n$, $-1$ otherwise.}
+\alpage{dot}
+\Usage{\name~[$r_1,\dots,r_n$]\\ \name([$r_1,\dots,r_n$])([$s_1,\dots,s_n$])}
+\Signature{\altype{Vector} R}{\altype{Vector} \% $\to$ \%}
+\Params{
+$r_i$ & R & coefficients\\
+$s_i$ & \% & sequences\\
+}
+\Retval{\name(r)(s) returns the sequence $\sum_{i=1}^n r_i s_i$,
+while \name(r) returns the map $[s_1,\dots,s_n] \to sum_{i=1}^n r_i s_i$.}
+\Remarks{Using \name{} is more efficient than building up the
+same linear combination via additions and multiplications, since
+the intermediate combinations are not storing their computed elements
+when using \name.}
+\alpage{interlacing}
+\Usage{\name~[$s_1,\dots,s_n$]}
+\Signature{\altype{List} \%}{\%}
+\Params{ $s_i$ & \% & sequences\\ }
+\Descr{Given $s_i = r_{i1},r_{i2},\dots$, returns the sequence
+$r_{11},r_{21},\dots,r_{n1},r_{12},r_{22},\dots,r_{n2},\dots$.}
+\alpage{random}
+\Usage{\name()}
+\Signature{()}{\%}
+\Retval{Returns a sequence with random entries.}
+\alpage{sequence}
+\Usage{\name~s}
+\Signature{\altype{Stream} R}{\%}
+\Params{ {\em s} & \altype{Stream} R & a stream\\ }
+\Retval{Returns $s$ viewed as a sequence.}

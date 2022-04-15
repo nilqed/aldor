@@ -1,0 +1,21 @@
+\thistype{ReducibleModulusException}
+\History{Manuel Bronstein}{15/11/99}{created}
+\Usage{
+throw \this(R, m, a)\\
+try \dots catch E in
+\{ E has \astype{ReducibleModulusExceptionType} R $=>$ \dots \}
+}
+\Params{
+{\em R} & \astype{CommutativeRing} & A commutative ring\\
+{\em m} & R & The modulus\\
+{\em a} & R & A proper factor of $m$\\
+}
+\Descr{\this(R, m, a) is an exception type thrown by inversion modulo
+a reducible element of R.}
+\thistype{ReducibleModulusExceptionType}
+\History{Manuel Bronstein}{15/11/99}{created}
+\Usage{\this~R: Category}
+\Params{ {\em R} & \astype{CommutativeRing} & A commutative ring\\ }
+\Descr{\this~R~is the category of exceptions thrown by inversion modulo
+a reducible element of R. The constants {\tt modulus} and {\tt factor}
+contain the modulus and a proper factor respectively.}

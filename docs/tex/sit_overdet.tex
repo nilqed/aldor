@@ -1,0 +1,23 @@
+\thistype{OverdeterminedLinearSystemSolver}
+\History{Manuel Bronstein}{8/6/98}{created}
+\Usage{import from \this(R, M)}
+\Params{
+{\em R} & \astype{IntegralDomain} & A domain\\
+{\em M} & \astype{MatrixCategory} R & A matrix type over R\\
+}
+\Descr{\this(R, M) provides a solver for overdetermined linear algebraic
+equations with coefficients in R.}
+\begin{exports}
+\asexp{kernel!} & (M, M $\to$ M) $\to$ M & Solve an overdetermined system\\
+\end{exports}
+\aspage{kernel!}
+\Usage{\name(m, f)}
+\Signature{(M, M $\to$ M)}{M}
+\Params{
+{\em m} & M & A matrix\\
+{\em f} & M $\to$ M & Computes a kernel\\
+}
+\Retval{Returns a basis for the kernel of m,
+uses a specialized algorithm if m is overdetermined,
+uses f when the system is no longer overdetermined.}
+\Remarks{Can destroy m.}

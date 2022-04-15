@@ -1,0 +1,15 @@
+\thistype{PrimeFieldCategory0}
+\History{Manuel Bronstein}{16/6/95}{created}
+\Usage{\this: Category}
+\Descr{\this~is the category for prime fields,\ie fields of the form
+$\ZZ / p \ZZ$ where $p \in \ZZ$ is a prime.}
+\begin{exports}
+\category{\altype{FiniteField}}\\
+\category{\altype{SerializableType}}\\
+\alexp{lift}: & \% $\to$ \altype{Integer} & Conversion to an integer\\
+\end{exports}
+\alpage{lift}
+\Usage{\name~x}
+\Signature{\%}{\altype{Integer}}
+\Params{ {\em x} & \% & an element of the field\\ }
+\Retval{Return x seen as an integer.}

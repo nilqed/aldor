@@ -1,0 +1,15 @@
+\thistype{GenericModularPolynomialGcdPackage}
+\History{Jinlong Cai and Marc Moreno Maza}{December 2003}{created}
+\Usage{import from \this~(R, U)}
+\Params{
+{\em R} & \altype{EuclideanDomain} \\
+        & \altype{SourceOfPrimes} \\
+        & \altype{ModularComputation} \\
+{\em U} &  \altype{UnivariatePolynomialAlgebra} (R) \\
+}
+\Descr{\this~(R, U) provides a generic modular gcd algorithm.
+See the paper {\em On the genericity of the Modular Gcd Algorithm}
+by Kaltofen and Monagan in the proc. of ISSAC 1999.}
+\begin{exports}
+\alexp{modularGcd}: & (U, U)  $\to$ \altype{Partial} (U) & gcd (failure if not enough primes) \\
+\end{exports}
