@@ -1,0 +1,263 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Data structures</TITLE>
+<META NAME="description" CONTENT="Data structures">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html446"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html440"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html434"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html442"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html444"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html447"
+  HREF="node9.html">Input/Output</A>
+<B> Up:</B> <A NAME="tex2html441"
+  HREF="node6.html">User's Guide</A>
+<B> Previous:</B> <A NAME="tex2html435"
+  HREF="node7.html">Arithmetic</A>
+ &nbsp <B>  <A NAME="tex2html443"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html445"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00032000000000000000">
+Data structures</A>
+</H2>
+S<SMALL>ALLI</SMALL> provides 4 data structures having very similar functionalities:
+<A HREF="node176.html#List"><TT>List</TT></A>&nbsp;<TT>T</TT> provides linked lists whose entries are of type <TT>T</TT>,
+<A HREF="node136.html#Array"><TT>Array</TT></A>&nbsp;<TT>T</TT> and <A HREF="node153.html#CheckingArray"><TT>CheckingArray</TT></A>&nbsp;<TT>T</TT> both provide
+arrays whose entries are of type <TT>T</TT>,
+and <A HREF="node195.html#Set"><TT>Set</TT></A>&nbsp;<TT>T</TT> provides finite sets whose entries are of type <TT>T</TT>,
+all of them of category <A HREF="node147.html#BoundedFiniteLinearStructureType"><TT>BoundedFiniteLinearStructureType</TT></A>&nbsp;<TT>T</TT>.
+In addition, a less rich data structure is <A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A>&nbsp;<TT>T</TT>,
+which provides C-like arrays whose entries are of type <TT>T</TT> and is of
+category <A HREF="node187.html#PrimitiveArrayType"><TT>PrimitiveArrayType</TT></A>&nbsp;<TT>T</TT>.
+All of those data structures can be created by explicitly listing a
+finite number of elements, for example
+<BR>
+<DIV ALIGN="CENTER">
+<TT>l:<A HREF="node176.html#List"><TT>List</TT></A> <A HREF="node207.html#String"><TT>String</TT></A> := ["hello", "world"] </TT></DIV>
+or by bracketing a generator, for example
+<BR>
+<DIV ALIGN="CENTER">
+ <TT>a:<A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> <A HREF="node64.html#MachineInteger"><TT>MachineInteger</TT></A> :=
+[n for n in 1..100 | odd?&nbsp;n]</TT>.</DIV>
+In addition, the function <A HREF="node159.html#FiniteLinearStructureType:new"><TT>new</TT></A>
+also allows structures to be created, and the constant
+<A HREF="node158.html#FiniteLinearStructureType:empty"><TT>empty</TT></A>
+returns an empty structure. The individual elements can
+be accessed via <TT>s.n</TT> where <TT>s</TT> is a data structure and
+<TT>n</TT> an index. The indexing scheme and the bound-checking scheme
+both depend on the structure:
+<A HREF="node176.html#List"><TT>List</TT></A> and <A HREF="node195.html#Set"><TT>Set</TT></A> are 1-indexed, while
+<A HREF="node136.html#Array"><TT>Array</TT></A>, <A HREF="node153.html#CheckingArray"><TT>CheckingArray</TT></A> and <A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A>
+are 0-indexed. In addition,
+<A HREF="node153.html#CheckingArray"><TT>CheckingArray</TT></A> checks whether the index is within the range
+of the array, while <A HREF="node176.html#List"><TT>List</TT></A>, <A HREF="node195.html#Set"><TT>Set</TT></A>, <A HREF="node136.html#Array"><TT>Array</TT></A> and
+<A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> do
+not perform this check. If you need to know the indexing scheme at runtime,
+or want to write index-independent code, the <TT>firstIndex</TT> constant
+returns the index of the first element of a structure.
+The general form for iterating efficiently over a
+<A HREF="node147.html#BoundedFiniteLinearStructureType"><TT>BoundedFiniteLinearStructureType</TT></A> is
+<BR>
+<DIV ALIGN="CENTER">
+ <TT>for</TT> <EM>variable</EM> <TT>in</TT> <EM>structure</EM>
+| <EM>condition</EM> <TT>repeat { ...&nbsp;}</TT> </DIV>
+where ``| <EM>condition</EM>'' is optional. This is available
+for <A HREF="node176.html#List"><TT>List</TT></A>, <A HREF="node195.html#Set"><TT>Set</TT></A>, <A HREF="node136.html#Array"><TT>Array</TT></A> and <A HREF="node153.html#CheckingArray"><TT>CheckingArray</TT></A>
+but not for <A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A>.
+Aliases to substructures can be created via the
+<A HREF="#FiniteLinearStructureType:+"><TT>+</TT></A> operation,
+which shifts the start of any structure without copying, and for
+an array <TT>a</TT>, <TT>a(n,m)</TT> returns the subarray <TT>a.n</TT>
+through <TT>a.m</TT> without copying.
+
+<P>
+There are classical trade-offs between the various array types:
+the only difference between <A HREF="node136.html#Array"><TT>Array</TT></A> and <A HREF="node153.html#CheckingArray"><TT>CheckingArray</TT></A>
+is that the latter checks each access and the former does not. Since
+they both offer the same exports, you can use one during the development
+and testing phase, and then switch to the other for releasing your code.
+Those two types, being of category <A HREF="node139.html#ArrayType"><TT>ArrayType</TT></A> are
+significantly richer than <A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A>.
+The latter is however compatible with C arrays and
+generates more efficient code when accessing its elements.
+In order to benefit from the advantages of all those types,
+S<SMALL>ALLI</SMALL> provides the <A HREF="node143.html#ArrayType:data"><TT>data</TT></A> function,
+which returns the data of an <A HREF="node136.html#Array"><TT>Array</TT></A> or <A HREF="node153.html#CheckingArray"><TT>CheckingArray</TT></A>
+as a <A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> without copying.
+It is thus possible to use <A HREF="node136.html#Array"><TT>Array</TT></A> or <A HREF="node153.html#CheckingArray"><TT>CheckingArray</TT></A>
+in your code, making sure to
+apply <A HREF="node143.html#ArrayType:data"><TT>data</TT></A> to it before accessing elements in a loop.
+For example, the following function efficiently computes the sum
+of all the elements with even indices of an array of machine integers:
+<PRE>
+evenSum(a:Array MachineInteger):MachineInteger == {
+    import from MachineInteger;               -- for the index i
+    import from PrimitiveArray MachineInteger;-- for accessing the elements of p
+    p := data a;                              -- for efficiency (optimized code)
+    sum:MachineInteger := 0;
+    for i in 0..#a by 2 repeat sum := sum + p.i;
+    sum;
+}
+</PRE>
+Conversely, the function <A HREF="node141.html#ArrayType:array"><TT>array</TT></A>
+creates an <A HREF="node136.html#Array"><TT>Array</TT></A> or <A HREF="node153.html#CheckingArray"><TT>CheckingArray</TT></A>
+from a <A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> without copying.
+Note that the
+<A HREF="node150.html#BoundedFiniteLinearStructureType:generator"><TT>generator</TT></A> functions
+in <A HREF="node136.html#Array"><TT>Array</TT></A> and <A HREF="node153.html#CheckingArray"><TT>CheckingArray</TT></A> use the <A HREF="node143.html#ArrayType:data"><TT>data</TT></A>
+function, so iterating an <A HREF="node136.html#Array"><TT>Array</TT></A> or <A HREF="node153.html#CheckingArray"><TT>CheckingArray</TT></A> <TT>a</TT> via
+<BR>
+<DIV ALIGN="CENTER">
+<TT>for x in a repeat { ...&nbsp;}</TT></DIV>
+is as efficient as using a <A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A>.
+Note that the debug version of S<SMALL>ALLI</SMALL> performs bound checking on
+accesses into all 3 types of arrays
+(see the subsection on debugging for more
+information on using the debug library).
+
+<P>
+Since <A HREF="node207.html#String"><TT>String</TT></A> has the category
+<A HREF="node147.html#BoundedFiniteLinearStructureType"><TT>BoundedFiniteLinearStructureType</TT></A>&nbsp;<A HREF="node101.html#Character"><TT>Character</TT></A>,
+the above functionalities
+are also applicable to strings. For example,
+<BR>
+<DIV ALIGN="CENTER">
+<TT>for c in "hello" repeat { ...&nbsp;}</TT></DIV>
+assigns successively the characters 'h', 'e', 'l', 'l' and 'o' to <TT>c</TT>,
+and strings can be created from <TT>Generator</TT> <A HREF="node101.html#Character"><TT>Character</TT></A>.
+Note that <A HREF="node207.html#String"><TT>String</TT></A> and <A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> <A HREF="node101.html#Character"><TT>Character</TT></A>
+are not interchangeable, since the former is packed and not the latter.
+Similarly, chunks of memory viewed as byte arrays are provided by
+either one of <A HREF="node193.html#PrimitiveMemoryBlock"><TT>PrimitiveMemoryBlock</TT></A>,
+<A HREF="node185.html#MemoryBlock"><TT>MemoryBlock</TT></A> or <A HREF="node154.html#CheckingMemoryBlock"><TT>CheckingMemoryBlock</TT></A>. Those types
+are to be used for buffers rather that <A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> <A HREF="node97.html#Byte"><TT>Byte</TT></A>,
+which is not interchangeable with <A HREF="node193.html#PrimitiveMemoryBlock"><TT>PrimitiveMemoryBlock</TT></A>.
+
+<P>
+Infinite linear structures are provided by the type
+<A HREF="node200.html#Stream"><TT>Stream</TT></A>&nbsp;<TT>T</TT>, of category <A HREF="node169.html#LinearStructureType"><TT>LinearStructureType</TT></A>&nbsp;<TT>T</TT>.
+There are several ways to create streams, the easier ones being via an
+unbounded iterator, or via a function that computes its <!-- MATH
+ ${n}^{{\rm th}}$
+ -->
+<IMG
+ WIDTH="26" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="${n}^{{\rm th}}$"> element.
+For example,
+<PRE>
+    import from MachineInteger, Stream MachineInteger;
+    sqr1 := [n^2 for n in 0..];
+    sqr2 := stream(0, (n:MachineInteger):MachineInteger +-&gt; n^2);
+</PRE>
+are two different ways to create the infinite stream <!-- MATH
+ $[0^2, 1^2, 2^2, \dots]$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$[0^2, 1^2, 2^2, \dots]$">.
+Streams can be iterated, yielding loops whose duration cannot be predicted
+in advance, so using a parallel finite iterator or a termination condition
+inside the loop is advisable. Finally, streams are lazy in that <IMG
+ WIDTH="81" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$s.0,\dots,s.n$">
+are computed only when <IMG
+ WIDTH="26" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.gif"
+ ALT="$s.n$"> has been specifically resquested, and elements
+are never recomputed a second time.
+
+<P>
+Hash tables are provided by the <A HREF="node160.html#HashTable"><TT>HashTable</TT></A> type and are created
+via the <A HREF="node166.html#HashTable:table"><TT>table</TT></A> function, as in
+<BR>
+<DIV ALIGN="CENTER">
+<TT>t:HashTable(String, MachineInteger) := table 1000;</TT></DIV>
+The hash function defaults to the one provided by the type of the keys
+if it has <A HREF="node167.html#HashType"><TT>HashType</TT></A>, but can be overridden by providing your
+own as last argument to the hash table type constructor, as in
+<BR>
+<DIV ALIGN="CENTER">
+<TT>t:HashTable(SingleFloat, MachineInteger, h) := table 1000;</TT></DIV>
+where <TT>h</TT> any function producing machine integers from machine
+floats. Providing the hash function is required when the type of
+the keys does not have <A HREF="node167.html#HashType"><TT>HashType</TT></A>.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html446"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html440"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html434"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html442"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html444"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html447"
+  HREF="node9.html">Input/Output</A>
+<B> Up:</B> <A NAME="tex2html441"
+  HREF="node6.html">User's Guide</A>
+<B> Previous:</B> <A NAME="tex2html435"
+  HREF="node7.html">Arithmetic</A>
+ &nbsp <B>  <A NAME="tex2html443"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html445"
+  HREF="node240.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

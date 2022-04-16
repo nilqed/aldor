@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>generator</TITLE>
+<META NAME="description" CONTENT="generator">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="next" HREF="node204.html">
+<LINK REL="previous" HREF="node202.html">
+<LINK REL="up" HREF="node200.html">
+<LINK REL="next" HREF="node204.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3430"
+  HREF="node204.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html3424"
+  HREF="node200.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html3418"
+  HREF="node202.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html3426"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html3428"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3431"
+  HREF="node204.html">map!</A>
+<B> Up:</B> <A NAME="tex2html3425"
+  HREF="node200.html">Stream</A>
+<B> Previous:</B> <A NAME="tex2html3419"
+  HREF="node202.html">constant</A>
+ &nbsp <B>  <A NAME="tex2html3427"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html3429"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000718300000000000000"></A>
+<A NAME="Stream:generator"></A>
+<BR>
+generator
+</H3> <A NAME="12625"></A>
+<BR>
+<IMG
+ WIDTH="269" HEIGHT="69" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.gif"
+ ALT="\begin{usage}
+for x in s repeat \{ \dots \}\\ for x in generator~s repeat \{ \dots \}
+\end{usage}">
+<BR>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    
+<UL>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">generator:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> <A HREF="node223.html#Generator"><TT>Generator</TT></A> T</TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<BR>
+<IMG
+ WIDTH="275" HEIGHT="33" ALIGN="BOTTOM" BORDER="0"
+ SRC="img230.gif"
+ ALT="\begin{params}
+{\em s} &amp; \% &amp; a stream\\
+\end{params}">
+<BR>
+<BR>
+<IMG
+ WIDTH="461" HEIGHT="48" ALIGN="BOTTOM" BORDER="0"
+ SRC="img548.gif"
+ ALT="\begin{descr}
+This function allows the elements of a stream to be iterated.
+\end{descr}">
+<BR>
+
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="86" ALIGN="BOTTOM" BORDER="0"
+ SRC="img549.gif"
+ ALT="\begin{remarks}
+Since those generators are infinite, you should have
+a terminat...
+...in parallel with
+the generator in order to guarantee termination.
+\end{remarks}">
+<BR>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Example</B><P>
+      
+<UL>
+<LI>The following code creates the stream of all the squares for <IMG
+ WIDTH="43" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img550.gif"
+ ALT="$n \ge 0$"> and
+prints those of them that are smaller than <IMG
+ WIDTH="36" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img551.gif"
+ ALT="$1000$">:
+<PRE>
+	import from MachineInteger, Stream MachineInteger;
+	s := stream(0, (n:MachineInteger):MachineInteger +-&gt; n^2);
+	for x in s while x &lt; 1000 repeat { stdout &lt;&lt; x &lt;&lt; newline; }
+</PRE>
+</LI>
+</UL>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

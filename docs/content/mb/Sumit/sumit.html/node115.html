@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>leftDivide</TITLE>
+<META NAME="description" CONTENT="leftDivide">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node116.html">
+<LINK REL="previous" HREF="node114.html">
+<LINK REL="up" HREF="node113.html">
+<LINK REL="next" HREF="node116.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2052"
+  HREF="node116.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2046"
+  HREF="node113.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2040"
+  HREF="node114.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2048"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2050"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2053"
+  HREF="node116.html">leftExactQuotient</A>
+<B> Up:</B> <A NAME="tex2html2047"
+  HREF="node113.html">UnivariateSkewPolynomialCategoryTools</A>
+<B> Previous:</B> <A NAME="tex2html2041"
+  HREF="node114.html">apply</A>
+ &nbsp <B>  <A NAME="tex2html2049"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2051"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000721200000000000000"></A>
+<A NAME="UnivariateSkewPolynomialCategoryTools:leftDivide"></A>
+<BR>
+leftDivide
+</H3> <A NAME="11114"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+leftDivide(a, b, <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$\sigma$">, <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$\delta$">)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">leftDivide:</TD>
+<TD ALIGN="LEFT">(C, C, <TT>Automorphism</TT> R, R <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> R) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (C, C)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>a </EM></TD>
+<TD ALIGN="LEFT">C</TD>
+<TD ALIGN="LEFT">The skew-polynomial to be divided</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>b </EM></TD>
+<TD ALIGN="LEFT">C</TD>
+<TD ALIGN="LEFT">The skew-polynomial to divide by</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$\sigma$"></EM></TD>
+<TD ALIGN="LEFT"><TT>Automorphism</TT> R</TD>
+<TD ALIGN="LEFT">The automorphism to use</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$\delta$"></EM></TD>
+<TD ALIGN="LEFT">R <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> R</TD>
+<TD ALIGN="LEFT">The <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$\sigma$">-derivation to use</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+Returns <IMG
+ WIDTH="39" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img183.png"
+ ALT="$(q, r)$"> such that <IMG
+ WIDTH="75" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img169.png"
+ ALT="$a = b q + r$"> and either <IMG
+ WIDTH="41" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img170.png"
+ ALT="$r = 0$">
+or <!-- MATH
+ $\deg(r) < \deg(b)$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img171.png"
+ ALT="$\deg(r) &lt; \deg(b)$">.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>See Also</B><P>
+    <BLOCKQUOTE>
+<A HREF="node116.html#UnivariateSkewPolynomialCategoryTools:leftExactQuotient"><TT>leftExactQuotient</TT></A>, <A HREF="node117.html#UnivariateSkewPolynomialCategoryTools:monicLeftDivide"><TT>monicLeftDivide</TT></A>,
+<A HREF="node119.html#UnivariateSkewPolynomialCategoryTools:rightDivide"><TT>rightDivide</TT></A>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

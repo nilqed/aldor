@@ -1,0 +1,292 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>exponentialPart</TITLE>
+<META NAME="description" CONTENT="exponentialPart">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node51.html">
+<LINK REL="previous" HREF="node49.html">
+<LINK REL="up" HREF="node49.html">
+<LINK REL="next" HREF="node51.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1053"
+  HREF="node51.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1047"
+  HREF="node49.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1041"
+  HREF="node49.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1049"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1051"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1054"
+  HREF="node51.html">series</A>
+<B> Up:</B> <A NAME="tex2html1048"
+  HREF="node49.html">NewtonPolygonEquations</A>
+<B> Previous:</B> <A NAME="tex2html1042"
+  HREF="node49.html">NewtonPolygonEquations</A>
+ &nbsp <B>  <A NAME="tex2html1050"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1052"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00063100000000000000"></A>
+<A NAME="NewtonPolygonEquations:exponentialPart"></A>
+<BR>
+exponentialPart
+</H3> <A NAME="8335"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+exponentialPart(L, a, m, <IMG
+ WIDTH="14" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.png"
+ ALT="$\mu$">, c, <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img83.png"
+ ALT="$\iota$">)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">exponentialPart:</TD>
+<TD ALIGN="LEFT">(Rxy, E, <TT>Integer</TT>, <TT>Integer</TT>, E, R <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> E) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> Ex</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><I>L</I></TD>
+<TD ALIGN="LEFT">Rxy</TD>
+<TD ALIGN="LEFT">A linear ordinary differential operator</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><I>a</I></TD>
+<TD ALIGN="LEFT">E</TD>
+<TD ALIGN="LEFT">A point such that <IMG
+ WIDTH="43" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img84.png"
+ ALT="$x=a$"> is an irregular singularity of <I>L</I></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><I>m</I></TD>
+<TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="LEFT">A slope of the algebraic newton polygon of <I>L</I> at <IMG
+ WIDTH="43" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img84.png"
+ ALT="$x=a$"></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="14" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.png"
+ ALT="$\mu$"></TD>
+<TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="LEFT">An integer such that <!-- MATH
+ $\mu \ge i m - \nu_a(a_i)$
+ -->
+<IMG
+ WIDTH="115" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img85.png"
+ ALT="$\mu \ge i m - \nu_a(a_i)$"> for all <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$i$"></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><I>c</I></TD>
+<TD ALIGN="LEFT">E</TD>
+<TD ALIGN="LEFT">An invertible simple root of
+the characteristic equation for the slope <I>m</I></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img83.png"
+ ALT="$\iota$"></TD>
+<TD ALIGN="LEFT"><IMG
+ WIDTH="54" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img86.png"
+ ALT="$R \to E$"></TD>
+<TD ALIGN="LEFT">Injection from R into E</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+Returns <IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img87.png"
+ ALT="$q(x)$"> of degree at most <IMG
+ WIDTH="45" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img88.png"
+ ALT="$m-2$"> such that <IMG
+ WIDTH="61" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img89.png"
+ ALT="$q(a) = c$"> and
+the <IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$p$">-adic expansion of the solution of the associated Riccati equation
+starting with <!-- MATH
+ $u = c/(x-a)^m + \cdots$
+ -->
+<IMG
+ WIDTH="149" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img90.png"
+ ALT="$u = c/(x-a)^m + \cdots$"> must be of the form
+</BLOCKQUOTE>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+u = \frac{q(x)}{(x-a)^m} + \frac{\lambda}{(x-a)} + \cdots
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="206" HEIGHT="44" BORDER="0"
+ SRC="img91.png"
+ ALT="\begin{displaymath}
+u = \frac{q(x)}{(x-a)^m} + \frac{\lambda}{(x-a)} + \cdots
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+van Hoeij's <I>generalized exponent</I> <IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img92.png"
+ ALT="$e(x)$"> is related to
+our exponent <IMG
+ WIDTH="33" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img87.png"
+ ALT="$q(x)$"> by
+</BLOCKQUOTE>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+e(x) = \frac{q(x)}{(x-a)^{m-1}} + \lambda\,.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="167" HEIGHT="44" BORDER="0"
+ SRC="img93.png"
+ ALT="\begin{displaymath}
+e(x) = \frac{q(x)}{(x-a)^{m-1}} + \lambda\,.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P><BLOCKQUOTE>
+Note that the constant <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img94.png"
+ ALT="$\lambda$"> is not computed by exponentialPart,
+and that there could be several <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img94.png"
+ ALT="$\lambda$">'s corresponding to
+a given exponent.
+</BLOCKQUOTE>
+<P></P>
+
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1053"
+  HREF="node51.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1047"
+  HREF="node49.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1041"
+  HREF="node49.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1049"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1051"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1054"
+  HREF="node51.html">series</A>
+<B> Up:</B> <A NAME="tex2html1048"
+  HREF="node49.html">NewtonPolygonEquations</A>
+<B> Previous:</B> <A NAME="tex2html1042"
+  HREF="node49.html">NewtonPolygonEquations</A>
+ &nbsp <B>  <A NAME="tex2html1050"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1052"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

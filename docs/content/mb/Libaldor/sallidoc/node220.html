@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>flag</TITLE>
+<META NAME="description" CONTENT="flag">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="previous" HREF="node219.html">
+<LINK REL="up" HREF="node217.html">
+<LINK REL="next" HREF="node221.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3693"
+  HREF="node221.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html3687"
+  HREF="node217.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html3683"
+  HREF="node219.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html3689"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html3691"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3694"
+  HREF="node221.html">CopyableType</A>
+<B> Up:</B> <A NAME="tex2html3688"
+  HREF="node217.html">CommandLine</A>
+<B> Previous:</B> <A NAME="tex2html3684"
+  HREF="node219.html">command</A>
+ &nbsp <B>  <A NAME="tex2html3690"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html3692"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00082300000000000000"></A>
+<A NAME="CommandLine:flag"></A>
+<BR>
+flag
+</H3> <A NAME="13241"></A>
+<A NAME="CommandLine:flag_"></A> <A NAME="13244"></A>
+<BR>
+<IMG
+ WIDTH="106" HEIGHT="107" ALIGN="BOTTOM" BORDER="0"
+ SRC="img597.gif"
+ ALT="\begin{usage}
+flag~c\\ flag(c, s)\\ flag?~c\\ flag?(c, s)
+\end{usage}">
+<BR>
+
+<BR>
+<IMG
+ WIDTH="352" HEIGHT="107" ALIGN="BOTTOM" BORDER="0"
+ SRC="img598.gif"
+ ALT="\begin{signatures}
+flag:&amp; \htmlref{\texttt{Character}}{Character} $\to$\ \html...
+...ring}}{String}) $\to$\ \htmlref{\texttt{Boolean}}{Boolean}\\\end{signatures}">
+<BR>
+<BR>
+<IMG
+ WIDTH="411" HEIGHT="55" ALIGN="BOTTOM" BORDER="0"
+ SRC="img599.gif"
+ ALT="\begin{params}
+{\em c} &amp; \htmlref{\texttt{Character}}{Character} &amp; flag code t...
+...mlref{\texttt{String}}{String} &amp; special flag codes (optional)\\\end{params}">
+<BR>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="146" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="\begin{retval}
+flag(c) returns all the values of the flag c each time it is pr...
+...of
+flag codes which cause the rest of the argument to be skipped.\end{retval}">
+<BR>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Example</B><P>
+      
+<UL>
+<LI>If the command line to the program was <TT>myprog -lsalli -l gmp -v</TT>, then
+<TT>flag?(char "a")</TT> and <TT>flag?(char "v")</TT> both return <I>true</I>, while
+<TT>flag?(char "b")</TT> and <TT>flag?(char "a", "l")</TT> both return <I>false</I>.
+In addition, <TT>flag(char "l")</TT> returns the list <TT>[``salli'', ``gmp'']</TT>.
+</LI>
+</UL>
+<P></P>
+
+  <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

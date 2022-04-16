@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>changeVariable</TITLE>
+<META NAME="description" CONTENT="changeVariable">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node80.html">
+<LINK REL="previous" HREF="node78.html">
+<LINK REL="up" HREF="node78.html">
+<LINK REL="next" HREF="node80.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1535"
+  HREF="node80.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1529"
+  HREF="node78.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1523"
+  HREF="node78.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1531"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1533"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1536"
+  HREF="node80.html">makeNonSingular</A>
+<B> Up:</B> <A NAME="tex2html1530"
+  HREF="node78.html">LinearOrdinaryFirstOrderSystem</A>
+<B> Previous:</B> <A NAME="tex2html1524"
+  HREF="node78.html">LinearOrdinaryFirstOrderSystem</A>
+ &nbsp <B>  <A NAME="tex2html1532"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1534"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000710100000000000000"></A>
+<A NAME="LinearOrdinaryFirstOrderSystem:changeVariable"></A>
+<BR>
+changeVariable
+</H3> <A NAME="9551"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+changeVariable(<!-- MATH
+ $L,T,\sigma,\delta$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img134.png"
+ ALT="$L,T,\sigma,\delta$">)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">changeVariable:</TD>
+<TD ALIGN="LEFT">(%, <TT>DenseMatrix</TT> R, <TT>Automorphism</TT> R, R <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> R)
+<IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">changeVariable:</TD>
+<TD ALIGN="LEFT">(%, <TT>DenseMatrix</TT> Q, <TT>Automorphism</TT> Q, Q <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> Q)
+<IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">Q</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>Fraction</TT> R</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>L</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">A system</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>T</EM></TD>
+<TD ALIGN="LEFT"><TT>DenseMatrix</TT> R</TD>
+<TD ALIGN="LEFT">An invertible matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><TT>DenseMatrix</TT> <TT>Fraction</TT> R</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$\sigma$"></TD>
+<TD ALIGN="LEFT"><TT>Automorphism</TT> R</TD>
+<TD ALIGN="LEFT">The automorphism to use</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><TT>Automorphism</TT> <TT>Fraction</TT> R</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$\delta$"></TD>
+<TD ALIGN="LEFT">R <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> R</TD>
+<TD ALIGN="LEFT">The <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$\sigma$">-derivation to use</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><TT>Fraction</TT> R <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Fraction</TT> R</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+Returns a new system <!-- MATH
+ $\theta Z = M Z$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img135.png"
+ ALT="$\theta Z = M Z$"> equivalent to
+the original system <!-- MATH
+ $\theta Y = A Y$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img136.png"
+ ALT="$\theta Y = A Y$"> under the change of variable 
+<IMG
+ WIDTH="62" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img137.png"
+ ALT="$Y = T Z$">.
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

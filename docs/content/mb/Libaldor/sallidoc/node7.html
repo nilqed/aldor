@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Arithmetic</TITLE>
+<META NAME="description" CONTENT="Arithmetic">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="next" HREF="node8.html">
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html432"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html426"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html420"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html428"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html430"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html433"
+  HREF="node8.html">Data structures</A>
+<B> Up:</B> <A NAME="tex2html427"
+  HREF="node6.html">User's Guide</A>
+<B> Previous:</B> <A NAME="tex2html421"
+  HREF="node6.html">User's Guide</A>
+ &nbsp <B>  <A NAME="tex2html429"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html431"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00031000000000000000">
+Arithmetic</A>
+</H2>
+S<SMALL>ALLI</SMALL> contains 3 sorts of integers: <A HREF="node64.html#MachineInteger"><TT>MachineInteger</TT></A> provides
+the full-word signed machine integers, while <A HREF="node16.html#AldorInteger"><TT>AldorInteger</TT></A> and
+<A HREF="node44.html#GMPInteger"><TT>GMPInteger</TT></A> both provide ``infinite'' precision software
+integers. <A HREF="node44.html#GMPInteger"><TT>GMPInteger</TT></A> is an interface to the GMP 3.1 package
+and requires <TT>libgmp.a</TT> 3.0 or 3.1 to run, while the actual
+implementation of <A HREF="node16.html#AldorInteger"><TT>AldorInteger</TT></A> can be selected at link-time
+to be either the built-in software integers or also the GMP package.
+All 3 are of category <A HREF="node53.html#IntegerType"><TT>IntegerType</TT></A>, so exactly the same functions
+can be applied to them. Using <A HREF="node44.html#GMPInteger"><TT>GMPInteger</TT></A> will generally produce
+more efficient programs if you are computing with large integers. In addition,
+it gives you access to the the in-place operations of GMP, which are
+not available with <A HREF="node16.html#AldorInteger"><TT>AldorInteger</TT></A>.
+On the other hand, <A HREF="node44.html#GMPInteger"><TT>GMPInteger</TT></A> cannot be used from inside the
+compiler interactive loop.
+In addition, <A HREF="node64.html#MachineInteger"><TT>MachineInteger</TT></A> exports 3 useful
+constants: <A HREF="node65.html#MachineInteger:min"><TT>min</TT></A>
+and <A HREF="node65.html#MachineInteger:max"><TT>max</TT></A>, whose values are the smallest and
+greatest machine integers,
+and <A HREF="node65.html#MachineInteger:bytes"><TT>bytes</TT></A>, whose values is the
+machine wordsize in bytes.
+The <A HREF="node65.html#MachineInteger:bytes"><TT>bytes</TT></A> constant allows you to write
+wordsize-dependent code, for example when generating half-word-size prime
+numbers. A <A HREF="node64.html#MachineInteger"><TT>MachineInteger</TT></A> value <TT>n</TT>
+can be coerced to either an <A HREF="node16.html#AldorInteger"><TT>AldorInteger</TT></A> or <A HREF="node44.html#GMPInteger"><TT>GMPInteger</TT></A>
+via <TT>n::AldorInteger</TT> or <TT>n::GMPInteger</TT>, and the reverse
+conversion is provided via the <A HREF="node55.html#IntegerType:machine"><TT>machine</TT></A> function,
+<I>i.e.</I><TT>n := machine m</TT>. This last conversion can
+of course lose precision if <TT>m</TT> does not fit within a machine word.
+The general form for iterating over a range of integers is
+<BR>
+<DIV ALIGN="CENTER">
+ <TT>for</TT> <EM>variable</EM> <TT>in</TT> <EM>from</EM><TT>..</TT><EM>to</EM>
+<TT>by</TT> <EM>step</EM> | <EM>condition</EM> <TT>repeat { ...&nbsp;}</TT> </DIV>
+where the <EM>to</EM> parameter and the <TT>by</TT> and ``| <EM>condition</EM>''
+parts are optional.
+
+<P>
+Besides the integers, S<SMALL>ALLI</SMALL> also provides 3 sorts of floating point numbers:
+single-precision (<A HREF="node80.html#SingleFloat"><TT>SingleFloat</TT></A>), double-precision
+(<A HREF="node33.html#DoubleFloat"><TT>DoubleFloat</TT></A>) and ``infinite'' precision software floats
+(<A HREF="node40.html#GMPFloat"><TT>GMPFloat</TT></A>), the latter being an interface to GMP 3.1.
+All 3 are of category <A HREF="node36.html#FloatType"><TT>FloatType</TT></A>, which
+provides only a limited set of standard functions.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html432"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html426"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html420"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html428"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html430"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html433"
+  HREF="node8.html">Data structures</A>
+<B> Up:</B> <A NAME="tex2html427"
+  HREF="node6.html">User's Guide</A>
+<B> Previous:</B> <A NAME="tex2html421"
+  HREF="node6.html">User's Guide</A>
+ &nbsp <B>  <A NAME="tex2html429"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html431"
+  HREF="node240.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

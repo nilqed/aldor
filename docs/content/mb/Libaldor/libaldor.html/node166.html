@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>ArrayType</TITLE>
+<META NAME="description" CONTENT="ArrayType">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node173.html">
+<LINK REL="previous" HREF="node165.html">
+<LINK REL="up" HREF="node162.html">
+<LINK REL="next" HREF="node167.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3056"
+  HREF="node167.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3050"
+  HREF="node162.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3044"
+  HREF="node165.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3052"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html3054"
+  HREF="node315.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3057"
+  HREF="node167.html">array</A>
+<B> Up:</B> <A NAME="tex2html3051"
+  HREF="node162.html">Data Structures</A>
+<B> Previous:</B> <A NAME="tex2html3045"
+  HREF="node165.html">ArrayExceptionType</A>
+ &nbsp; <B>  <A NAME="tex2html3053"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3055"
+  HREF="node315.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00074000000000000000"></A><A NAME="13600"></A><A NAME="ArrayType"></A>
+<BR>
+ArrayType
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+ArrayType(T, P): Category
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>T</EM></TD>
+<TD ALIGN="LEFT">Type</TD>
+<TD ALIGN="LEFT">the type of the array entries</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>P</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node231.html#PrimitiveArrayType"><TT>PrimitiveArrayType</TT></A> T</TD>
+<TD ALIGN="LEFT">the type of the underlying data</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+ArrayType&nbsp;is the category of arrays whose entries are of type <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img37.png"
+ ALT="$T$"> and
+whose underlying data is of type <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img138.png"
+ ALT="$P$">.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node178.html#BoundedFiniteLinearStructureType"><TT>BoundedFiniteLinearStructureType</TT></A> T</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node167.html#ArrayType:array"><TT>array</TT></A>:</TD>
+<TD ALIGN="LEFT">(P, <A HREF="node82.html#MachineInteger"><TT>MachineInteger</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">construction of an array</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node169.html#ArrayType:data"><TT>data</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> P</TD>
+<TD ALIGN="LEFT">access to raw data</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node170.html#ArrayType:new"><TT>new</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node82.html#MachineInteger"><TT>MachineInteger</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">creation of an array</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node171.html#ArrayType:resize_"><TT>resize!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, <A HREF="node82.html#MachineInteger"><TT>MachineInteger</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">resize an array</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node172.html#ArrayType:sort_"><TT>sort!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, (T, T) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <A HREF="node31.html#Boolean"><TT>Boolean</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">sort an array</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img37.png"
+ ALT="$T$"> has <A HREF="node106.html#TotallyOrderedType"><TT>TotallyOrderedType</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node106.html#TotallyOrderedType"><TT>TotallyOrderedType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node168.html#ArrayType:binarySearch"><TT>binarySearch</TT></A>:</TD>
+<TD ALIGN="LEFT">(T, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (<A HREF="node31.html#Boolean"><TT>Boolean</TT></A>, <A HREF="node82.html#MachineInteger"><TT>MachineInteger</TT></A>)</TD>
+<TD ALIGN="LEFT">binary search</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node172.html#ArrayType:sort_"><TT>sort!</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">sort an array</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3058"
+  HREF="node167.html">array</A>
+<LI><A NAME="tex2html3059"
+  HREF="node168.html">binarySearch</A>
+<LI><A NAME="tex2html3060"
+  HREF="node169.html">data</A>
+<LI><A NAME="tex2html3061"
+  HREF="node170.html">new</A>
+<LI><A NAME="tex2html3062"
+  HREF="node171.html">resize!</A>
+<LI><A NAME="tex2html3063"
+  HREF="node172.html">sort!</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3056"
+  HREF="node167.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3050"
+  HREF="node162.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3044"
+  HREF="node165.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3052"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html3054"
+  HREF="node315.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3057"
+  HREF="node167.html">array</A>
+<B> Up:</B> <A NAME="tex2html3051"
+  HREF="node162.html">Data Structures</A>
+<B> Previous:</B> <A NAME="tex2html3045"
+  HREF="node165.html">ArrayExceptionType</A>
+ &nbsp; <B>  <A NAME="tex2html3053"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3055"
+  HREF="node315.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

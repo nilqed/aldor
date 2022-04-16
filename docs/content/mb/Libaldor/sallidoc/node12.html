@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Exceptions</TITLE>
+<META NAME="description" CONTENT="Exceptions">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="next" HREF="node13.html">
+<LINK REL="previous" HREF="node11.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node13.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html502"
+  HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html496"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html490"
+  HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html498"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html500"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html503"
+  HREF="node13.html">Debugging</A>
+<B> Up:</B> <A NAME="tex2html497"
+  HREF="node6.html">User's Guide</A>
+<B> Previous:</B> <A NAME="tex2html491"
+  HREF="node11.html">Profiling</A>
+ &nbsp <B>  <A NAME="tex2html499"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html501"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00036000000000000000">
+Exceptions</A>
+</H2>
+S<SMALL>ALLI</SMALL> can several different exceptions: <A HREF="node110.html#File:open"><TT>open</TT></A>
+throws the exception <A HREF="node113.html#FileException"><TT>FileException</TT></A> if the file cannot
+be opened in the desired mode, accessing a <A HREF="node153.html#CheckingArray"><TT>CheckingArray</TT></A>
+or <A HREF="node154.html#CheckingMemoryBlock"><TT>CheckingMemoryBlock</TT></A>
+out of bounds throws the exception <A HREF="node137.html#ArrayException"><TT>ArrayException</TT></A>,
+and calling <A HREF="node224.html#Generator:next_"><TT>next!</TT></A> on an empty
+generator throws the exception <A HREF="node225.html#GeneratorException"><TT>GeneratorException</TT></A>.
+Those exceptions are of type <A HREF="node114.html#FileExceptionType"><TT>FileExceptionType</TT></A>,
+<A HREF="node138.html#ArrayExceptionType"><TT>ArrayExceptionType</TT></A> and <A HREF="node226.html#GeneratorExceptionType"><TT>GeneratorExceptionType</TT></A>
+respectively.
+No function in S<SMALL>ALLI</SMALL> makes a call to <A HREF="node211.html#String:error"><TT>error</TT></A>.
+
+<P>
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

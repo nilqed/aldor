@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>HashTable</TITLE>
+<META NAME="description" CONTENT="HashTable">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node199.html">
+<LINK REL="previous" HREF="node194.html">
+<LINK REL="up" HREF="node162.html">
+<LINK REL="next" HREF="node197.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3482"
+  HREF="node197.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3476"
+  HREF="node162.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3470"
+  HREF="node195.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3478"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html3480"
+  HREF="node315.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3483"
+  HREF="node197.html">forget,remember</A>
+<B> Up:</B> <A NAME="tex2html3477"
+  HREF="node162.html">Data Structures</A>
+<B> Previous:</B> <A NAME="tex2html3471"
+  HREF="node195.html">dimension</A>
+ &nbsp; <B>  <A NAME="tex2html3479"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3481"
+  HREF="node315.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000714000000000000000"></A><A NAME="14822"></A><A NAME="HashTable"></A>
+<BR>
+HashTable
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from HashTable(K, V)
+<BR>
+import from HashTable(K, V, h)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>K</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node93.html#PrimitiveType"><TT>PrimitiveType</TT></A></TD>
+<TD ALIGN="LEFT">the type of the keys</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><A HREF="node203.html#HashType"><TT>HashType</TT></A></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>V</EM></TD>
+<TD ALIGN="LEFT">Type</TD>
+<TD ALIGN="LEFT">the type of the entries</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>h</EM></TD>
+<TD ALIGN="LEFT">K <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <A HREF="node82.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">the hash function to use</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+HashTable&nbsp;provides hash tables with keys of type <IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img158.png"
+ ALT="$K$">,
+entries of type <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img159.png"
+ ALT="$V$"> and that uses the hash-function <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img160.png"
+ ALT="$h$">.
+If <IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img158.png"
+ ALT="$K$"> has <A HREF="node203.html#HashType"><TT>HashType</TT></A>, then the parameter <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img160.png"
+ ALT="$h$"> is
+optional as the function <A HREF="node204.html#HashType:hash"><TT>hash</TT></A> is used
+by default in that case.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node270.html#TableType"><TT>TableType</TT></A>(K, V)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node197.html#HashTable:forget"><TT>forget</TT></A>:</TD>
+<TD ALIGN="LEFT">(K <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> V) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">creation of a table with default</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node197.html#HashTable:remember"><TT>remember</TT></A>:</TD>
+<TD ALIGN="LEFT">(K <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> V) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">creation of a table with default</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node198.html#HashTable:remove_"><TT>remove!</TT></A>:</TD>
+<TD ALIGN="LEFT">(K, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">removal of a key</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3484"
+  HREF="node197.html">forget,remember</A>
+<LI><A NAME="tex2html3485"
+  HREF="node198.html">remove!</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3482"
+  HREF="node197.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3476"
+  HREF="node162.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3470"
+  HREF="node195.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3478"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html3480"
+  HREF="node315.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3483"
+  HREF="node197.html">forget,remember</A>
+<B> Up:</B> <A NAME="tex2html3477"
+  HREF="node162.html">Data Structures</A>
+<B> Previous:</B> <A NAME="tex2html3471"
+  HREF="node195.html">dimension</A>
+ &nbsp; <B>  <A NAME="tex2html3479"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3481"
+  HREF="node315.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

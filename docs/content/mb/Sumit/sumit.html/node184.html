@@ -1,0 +1,355 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>factorDecomp</TITLE>
+<META NAME="description" CONTENT="factorDecomp">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node185.html">
+<LINK REL="previous" HREF="node183.html">
+<LINK REL="up" HREF="node182.html">
+<LINK REL="next" HREF="node185.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3080"
+  HREF="node185.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3074"
+  HREF="node182.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3068"
+  HREF="node183.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3076"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html3078"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3081"
+  HREF="node185.html">Loewy</A>
+<B> Up:</B> <A NAME="tex2html3075"
+  HREF="node182.html">UnivariateSkewPolynomialDecompositionCategory</A>
+<B> Previous:</B> <A NAME="tex2html3069"
+  HREF="node183.html">decompose</A>
+ &nbsp <B>  <A NAME="tex2html3077"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html3079"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000822200000000000000"></A>
+<A NAME="UnivariateSkewPolynomialDecompositionCategory:factorDecomp"></A>
+<BR>
+factorDecomp
+</H3> <A NAME="14814"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+factorDecomp&nbsp;L
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">factorDecomp:</TD>
+<TD ALIGN="LEFT">RXZ <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Union</TT>(ratRed:RAT, algRed:ALG)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">I</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>MachineInteger</TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT">RAT</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>Record</TT>
+(mode:<TT>MachineInteger</TT>, rat: <TT>Vector</TT> FxZ)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">ALG</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>Record</TT>(mode:I, modulus:FX, c0:<TT>Fraction</TT> FxY,
+ratpart: <TT>Vector</TT> Fx)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>L</EM></TD>
+<TD ALIGN="LEFT">RXZ</TD>
+<TD ALIGN="LEFT">A skew polynomial</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+Returns one of the following possible results:
+</BLOCKQUOTE><DL>
+<DT><STRONG>case <TT>rat</TT>:</STRONG></DT>
+<DD>&nbsp;returns <!-- MATH
+ $[m, [L_1,\dots,L_n]]$
+ -->
+<IMG
+ WIDTH="116" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img327.png"
+ ALT="$[m, [L_1,\dots,L_n]]$"> such that
+each <IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.png"
+ ALT="$L_i$"> is irreducible over <IMG
+ WIDTH="38" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img320.png"
+ ALT="$E(x)$">, where <I>E</I> is the algebraic
+closure of <I>F</I>, and <I>L</I> can be expressed in terms of the
+<IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.png"
+ ALT="$L_i$">'s depending on <I>m</I> as in the following table:
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER"><I>m</I></TD>
+<TD ALIGN="LEFT"><I>L</I></TD>
+</TR>
+<TR><TD ALIGN="CENTER">0</TD>
+<TD ALIGN="LEFT">LeftLcm(<IMG
+ WIDTH="77" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img323.png"
+ ALT="$L_1,\dots,L_n$">)</TD>
+</TR>
+<TR><TD ALIGN="CENTER">1</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $L_1 \cdots L_n$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img328.png"
+ ALT="$L_1 \cdots L_n$"></TD>
+</TR>
+<TR><TD ALIGN="CENTER">2</TD>
+<TD ALIGN="LEFT">LeftLcm(<IMG
+ WIDTH="65" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img329.png"
+ ALT="$L_1, L_2 L_3$">)</TD>
+</TR>
+<TR><TD ALIGN="CENTER">3</TD>
+<TD ALIGN="LEFT"><IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img330.png"
+ ALT="$L_1$"> LeftLcm(<IMG
+ WIDTH="47" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img331.png"
+ ALT="$L_2, L_3$">)</TD>
+</TR>
+<TR><TD ALIGN="CENTER">4</TD>
+<TD ALIGN="LEFT"><IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img330.png"
+ ALT="$L_1$"> LeftLcm(<IMG
+ WIDTH="47" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img331.png"
+ ALT="$L_2, L_3$">) <IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img332.png"
+ ALT="$L_4$"></TD>
+</TR>
+</TABLE>
+</DIV>
+Note that if <IMG
+ WIDTH="78" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img333.png"
+ ALT="$m = n = 1$">, then <I>L</I> is irreducible over <IMG
+ WIDTH="38" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img320.png"
+ ALT="$E(x)$">,
+where <I>E</I> is the algebraic closure of <I>F</I>. When <I>L</I>
+has order <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img158.png"
+ ALT="$2$">, then <IMG
+ WIDTH="76" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img334.png"
+ ALT="$m \in \{0,1\}$">.
+</DD>
+<DT><STRONG>case <TT>alg</TT>:</STRONG></DT>
+<DD>&nbsp;returns <!-- MATH
+ $[m, h(x), u(x,y), [L_1,\dots,L_n]]$
+ -->
+<IMG
+ WIDTH="206" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img335.png"
+ ALT="$[m, h(x), u(x,y), [L_1,\dots,L_n]]$"> such that
+each <IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.png"
+ ALT="$L_i$"> is irreducible over <IMG
+ WIDTH="38" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img320.png"
+ ALT="$E(x)$">, where <I>E</I> is the algebraic
+closure of <I>F</I>, and <I>L</I> can be expressed in terms of the
+<IMG
+ WIDTH="20" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.png"
+ ALT="$L_i$">'s depending on <I>m</I> as in the following table:
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER"><I>m</I></TD>
+<TD ALIGN="LEFT"><I>L</I></TD>
+</TR>
+<TR><TD ALIGN="CENTER">0</TD>
+<TD ALIGN="LEFT">LeftLcm(<!-- MATH
+ $D + u(\alpha, x), L_1,\dots,L_n$
+ -->
+<IMG
+ WIDTH="165" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img336.png"
+ ALT="$D + u(\alpha, x), L_1,\dots,L_n$">)</TD>
+</TR>
+<TR><TD ALIGN="CENTER">3</TD>
+<TD ALIGN="LEFT"><IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img330.png"
+ ALT="$L_1$"> LeftLcm(<!-- MATH
+ $D + u(\alpha, x)$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img326.png"
+ ALT="$D + u(\alpha, x)$">)</TD>
+</TR>
+<TR><TD ALIGN="CENTER">4</TD>
+<TD ALIGN="LEFT"><IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img330.png"
+ ALT="$L_1$"> LeftLcm(<!-- MATH
+ $D + u(\alpha, x)$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img326.png"
+ ALT="$D + u(\alpha, x)$">) <IMG
+ WIDTH="22" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img337.png"
+ ALT="$L_2$"></TD>
+</TR>
+</TABLE>
+</DIV>
+where <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img263.png"
+ ALT="$\alpha$"> ranges over all the roots of <IMG
+ WIDTH="35" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img316.png"
+ ALT="$h(x)$">.
+When <I>L</I> has order <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img158.png"
+ ALT="$2$">, then <IMG
+ WIDTH="47" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img338.png"
+ ALT="$m = 0$">.
+</DD>
+</DL>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>See Also</B><P>
+    <BLOCKQUOTE>
+<A HREF="node183.html#UnivariateSkewPolynomialDecompositionCategory:decompose"><TT>decompose</TT></A>,<A HREF="node185.html#UnivariateSkewPolynomialDecompositionCategory:Loewy"><TT>Loewy</TT></A>
+</BLOCKQUOTE>
+<P></P>
+
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3080"
+  HREF="node185.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3074"
+  HREF="node182.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3068"
+  HREF="node183.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3076"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html3078"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3081"
+  HREF="node185.html">Loewy</A>
+<B> Up:</B> <A NAME="tex2html3075"
+  HREF="node182.html">UnivariateSkewPolynomialDecompositionCategory</A>
+<B> Previous:</B> <A NAME="tex2html3069"
+  HREF="node183.html">decompose</A>
+ &nbsp <B>  <A NAME="tex2html3077"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html3079"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,161 @@
+\usepackage{fancyhdr, epsfig, makeidx, html}
+
+\newcommand{\astype}[1]{\altype{#1}}
+\newcommand{\astarget}[1]{\altarget{#1}}
+\newcommand{\aspage}[1]{\alpage{#1}}
+\newcommand{\asfunc}[2]{\alfunc{#1}{#2}}
+\newcommand{\asalias}[3]{\alalias{#1}{#2}{#3}}
+
+\newcommand{\alhtmltarget}[2]{\label{#1:#2}{} \index{#2!#1}}
+\newcommand{\altypes}[1]{\section*{#1}}
+\newcommand{\albuiltin}[1]{\texttt{#1}}%
+\newcommand{\alexttype}[2]{\texttt{#1}}%
+\newcommand{\altype}[1]{\htmlref{\texttt{#1}}{#1}}
+\newcommand{\alfunc}[2]{\alalias{#1}{#2}{#2}}
+\newcommand{\alalias}[3]{\htmlref{\texttt{#3}}{#1:#2}}
+\newcommand{\History}[3]{}
+\newcommand{\category}[1]{\multicolumn{3}{l}{#1}}
+
+\newenvironment{exports}{%
+    \pagebreak[2]
+    \par\bigskip\noindent
+    \textbf{Exports}\nopagebreak\par
+    \begin{quotation}
+    \begin{tabular}{lll}
+  }%
+  {\end{tabular}\end{quotation}\smallskip}
+
+\newenvironment{exports0}[1][]{%
+    \pagebreak[2]
+    \par\medskip\begin{quotation}
+    #1\par\nopagebreak
+    \begin{tabular}{lll}
+  }%
+  {\end{tabular}\end{quotation}\smallskip}
+
+\newenvironment{alwhere}{%
+    \medskip
+    \begin{quotation}
+      where\par\nopagebreak
+      \begin{tabular}{lcl}%
+  }%
+  {\end{tabular}\end{quotation}\smallskip}
+
+\newenvironment{aswhere}{%
+    \medskip
+    \begin{quotation}
+      where\par\nopagebreak
+      \begin{tabular}{lcl}%
+  }%
+  {\end{tabular}\end{quotation}\smallskip}
+
+\newcommand{\thistype}[1]{%
+  \newpage\clearpage
+  \subsection{#1}%
+  \index{#1}%
+  \label{#1}{}%
+}
+
+\newcommand{\thistypE}[2]{%
+  \newpage\clearpage
+  \subsection{#2}%
+  \index{#1|see{#2}}
+  \index{#2}%
+  \label{#2}{}%
+}
+
+\newcommand{\alpage}[1]{%
+    \newpage\clearpage
+    \subsubsection{#1}%
+  }
+
+\newenvironment{aldocpar}[1]{%
+    \pagebreak[2]\par\bigskip\noindent
+    \textbf{#1}\nopagebreak\par
+      \begin{quotation}
+  }%
+  {\end{quotation}\smallskip}
+
+\newcommand{\Aldocpar}[2]{%
+    \pagebreak[2]\par\bigskip\noindent
+    \textbf{#1}\nopagebreak\par
+      \begin{quotation}#2\end{quotation}\smallskip
+}
+
+\newenvironment{usage}{\begin{aldocpar}{Usage}}{\end{aldocpar}}
+\newenvironment{descr}{\begin{aldocpar}{Description}}{\end{aldocpar}}
+\newenvironment{retval}{\begin{aldocpar}{Returns}}{\end{aldocpar}}
+\newenvironment{remarks}{\begin{aldocpar}{Remarks}}{\end{aldocpar}}
+\newenvironment{errors}{\begin{aldocpar}{Errors}}{\end{aldocpar}}
+\newenvironment{asex}{\begin{aldocpar}{Example}}{\end{aldocpar}}
+\newenvironment{alex}{\begin{aldocpar}{Example}}{\end{aldocpar}}
+
+\newcommand{\Usage}[1]{\Aldocpar{Usage}{#1}}
+\newcommand{\Descr}[1]{\Aldocpar{Description}{#1}}
+\newcommand{\Retval}[1]{\Aldocpar{Returns}{#1}}
+\newcommand{\Remarks}[1]{\Aldocpar{Remarks}{#1}}
+\newcommand{\Errors}[1]{\Aldocpar{Errors}{#1}}
+\newcommand{\Asex}[1]{\Aldocpar{Example}{#1}}
+\newcommand{\Alex}[1]{\Aldocpar{Example}{#1}}
+
+\newcommand{\nsignature}[3]{\alsignature{#1}{{#2} $\to$ {#3}}}
+
+\newcommand{\alsignature}[2]{%
+    \pagebreak[2]\par\bigskip\noindent
+    \textbf{Signature}\nopagebreak\par
+    \begin{quotation}
+        \begin{tabular}{ll} 
+          {#1}: & {#2} \\
+        \end{tabular}
+    \end{quotation}%
+}%
+
+\newenvironment{signatures}{%
+    \pagebreak[2]\par\bigskip\noindent
+    \textbf{Signatures}\nopagebreak\par
+    \begin{quotation}
+        \begin{tabular}{ll}%
+  }%
+  {\end{tabular}\end{quotation}\smallskip}
+\newcommand{\Signatures}[1]{%
+    \pagebreak[2]\par\bigskip\noindent
+    \textbf{Signatures}\nopagebreak\par
+    \begin{quotation}
+        \begin{tabular}{ll}#1\end{tabular}\end{quotation}\smallskip
+}
+
+\newenvironment{params}{%
+    \par\bigskip\noindent
+    \pagebreak[2]
+    \begin{tabular}{lll}
+      \textbf{Parameter} & \textbf{Type} & \textbf{Description}\\ \hline
+  }%
+  {\end{tabular}\smallskip}
+\newcommand{\Params}[1]{%
+    \par\bigskip\noindent
+    \pagebreak[2]
+    \begin{tabular}{lll}
+      \textbf{Parameter} & \textbf{Type} & \textbf{Description}\\ \hline
+#1\end{tabular}\smallskip
+}
+
+\newenvironment{aloutput}{%
+    \pagebreak[2]
+    \begin{tabbing} \hspace{10ex}\= \kill%
+  }%
+  {\end{tabbing}
+}
+
+\newenvironment{asoutput}{%
+    \pagebreak[2]
+    \begin{tabbing} \hspace{10ex}\= \kill%
+  }%
+  {\end{tabbing}
+}
+
+\newcommand{\alseealso}[1]{%
+    \pagebreak[2]\par\bigskip\noindent
+    \textbf{See Also}\nopagebreak\par
+    \begin{quotation}#1\end{quotation}\smallskip%
+}%
+

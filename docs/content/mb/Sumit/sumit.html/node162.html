@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>LinearOrdinaryRecurrenceRationalSolutions</TITLE>
+<META NAME="description" CONTENT="LinearOrdinaryRecurrenceRationalSolutions">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node166.html">
+<LINK REL="previous" HREF="node159.html">
+<LINK REL="up" HREF="node122.html">
+<LINK REL="next" HREF="node163.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2771"
+  HREF="node163.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2765"
+  HREF="node122.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2759"
+  HREF="node161.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2767"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2769"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2772"
+  HREF="node163.html">kernel</A>
+<B> Up:</B> <A NAME="tex2html2766"
+  HREF="node122.html">Solutions of Differential and</A>
+<B> Previous:</B> <A NAME="tex2html2760"
+  HREF="node161.html">hypergeometricSolution</A>
+ &nbsp <B>  <A NAME="tex2html2768"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2770"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000814000000000000000"></A><A NAME="13465"></A><A NAME="LinearOrdinaryRecurrenceRationalSolutions"></A>
+<BR>
+LinearOrdinaryRecurrenceRationalSolutions
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from LinearOrdinaryRecurrenceRationalSolutions(R, F, <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img83.png"
+ ALT="$\iota$">, RX, RXE, FX)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><TT>GcdDomain</TT></TD>
+<TD ALIGN="LEFT">The coefficient ring</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><TT>RationalRootRing</TT></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>F</EM></TD>
+<TD ALIGN="LEFT"><TT>Field</TT></TD>
+<TD ALIGN="LEFT">A field containing R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img83.png"
+ ALT="$\iota$"></TD>
+<TD ALIGN="LEFT"><IMG
+ WIDTH="53" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img196.png"
+ ALT="$R \to F$"></TD>
+<TD ALIGN="LEFT">Injection from R into F</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>RX</EM></TD>
+<TD ALIGN="LEFT"><TT>UnivariatePolynomialCategory</TT> R</TD>
+<TD ALIGN="LEFT">Polynomials over R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>RXE</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node88.html#LinearOrdinaryRecurrenceCategory"><TT>LinearOrdinaryRecurrenceCategory</TT></A> RX</TD>
+<TD ALIGN="LEFT">Recurrences over RX</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>FX</EM></TD>
+<TD ALIGN="LEFT"><TT>UnivariatePolynomialCategory</TT> F</TD>
+<TD ALIGN="LEFT">Polynomials over F</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+LinearOrdinaryRecurrenceRationalSolutions(R, F, <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img83.png"
+ ALT="$\iota$">, RX, RXE, FX) provides a rational solver
+for linear ordinary recurrence operators with polynomial coefficients.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node163.html#LinearOrdinaryRecurrenceRationalSolutions:kernel"><TT>kernel</TT></A>:</TD>
+<TD ALIGN="LEFT">RXE <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (RX, V UFP)</TD>
+<TD ALIGN="LEFT">Rational solutions</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node164.html#LinearOrdinaryRecurrenceRationalSolutions:particularSolution"><TT>particularSolution</TT></A>:</TD>
+<TD ALIGN="LEFT">(RXE, Rx) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (RX, <TT>Partial</TT> UFP)</TD>
+<TD ALIGN="LEFT">A rational solution</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node165.html#LinearOrdinaryRecurrenceRationalSolutions:solve"><TT>solve</TT></A>:</TD>
+<TD ALIGN="LEFT">(RXE, Rx) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (RX, V UFP, <TT>Partial</TT> UFP)</TD>
+<TD ALIGN="LEFT">Rational solutions</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">Rx</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>Fraction</TT> RX</TD>
+</TR>
+<TR><TD ALIGN="LEFT">UFP</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>UnivariateFactorialPolynomial</TT>(F, FX)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">V</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>Vector</TT></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html2773"
+  HREF="node163.html">kernel</A>
+<LI><A NAME="tex2html2774"
+  HREF="node164.html">particularSolution</A>
+<LI><A NAME="tex2html2775"
+  HREF="node165.html">solve</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2771"
+  HREF="node163.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2765"
+  HREF="node122.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2759"
+  HREF="node161.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2767"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2769"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2772"
+  HREF="node163.html">kernel</A>
+<B> Up:</B> <A NAME="tex2html2766"
+  HREF="node122.html">Solutions of Differential and</A>
+<B> Previous:</B> <A NAME="tex2html2760"
+  HREF="node161.html">hypergeometricSolution</A>
+ &nbsp <B>  <A NAME="tex2html2768"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2770"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

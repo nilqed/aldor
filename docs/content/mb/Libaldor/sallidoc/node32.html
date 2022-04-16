@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>and,or,not,xor</TITLE>
+<META NAME="description" CONTENT="and,or,not,xor">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="previous" HREF="node31.html">
+<LINK REL="up" HREF="node31.html">
+<LINK REL="next" HREF="node33.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html852"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html846"
+  HREF="node31.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html842"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html848"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html850"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html853"
+  HREF="node33.html">DoubleFloat</A>
+<B> Up:</B> <A NAME="tex2html847"
+  HREF="node31.html">BooleanArithmeticType</A>
+<B> Previous:</B> <A NAME="tex2html843"
+  HREF="node31.html">BooleanArithmeticType</A>
+ &nbsp <B>  <A NAME="tex2html849"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html851"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00056100000000000000"></A>
+<A NAME="BooleanArithmeticType:and_or_not_xor"></A>
+<BR>
+and,or,not,xor
+</H3> <A NAME="6678"></A>
+<A NAME="BooleanArithmeticType:and"></A> <A NAME="6681"></A>
+<A NAME="BooleanArithmeticType:or"></A> <A NAME="6684"></A>
+<A NAME="BooleanArithmeticType:not"></A> <A NAME="6687"></A>
+<A NAME="BooleanArithmeticType:xor"></A> <A NAME="6690"></A>
+<BR>
+<IMG
+ WIDTH="100" HEIGHT="107" ALIGN="BOTTOM" BORDER="0"
+ SRC="img62.gif"
+ ALT="\begin{usage}
+\~~a\\ a $/\backslash$\ b\\ a $\backslash/$\ b\\ xor(a, b)\\
+\end{usage}">
+<BR>
+
+<BR>
+<IMG
+ WIDTH="220" HEIGHT="69" ALIGN="BOTTOM" BORDER="0"
+ SRC="img63.gif"
+ ALT="\begin{signatures}
+\~~: &amp; \% $\to$\ \%\\
+$/\backslash,\backslash/$,xor: &amp; (\%,\%) $\to$\ \%\\\end{signatures}">
+<BR>
+<BR>
+<IMG
+ WIDTH="324" HEIGHT="36" ALIGN="BOTTOM" BORDER="0"
+ SRC="img64.gif"
+ ALT="\begin{params}
+{\em a, b} &amp; \% &amp; elements of the type\\
+\end{params}">
+<BR>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="136" ALIGN="BOTTOM" BORDER="0"
+ SRC="img65.gif"
+ ALT="\begin{retval}
+$\tilde{}~a$\ returns $not(a)$, while $a \backslash/ b$\ returns...
+...nd $and$\ can be logical or bitwise,
+depending on the actual type.
+\end{retval}">
+<BR>
+
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="108" ALIGN="BOTTOM" BORDER="0"
+ SRC="img66.gif"
+ ALT="\begin{remarks}
+For the type \htmlref{\texttt{Boolean}}{Boolean}, the differenc...
+...
+similar difference between $a /\backslash b$\ and {\tt a and b}.
+\end{remarks}">
+<BR>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Example</B><P>
+      
+<UL>
+<LI>If a and b are the <A HREF="node64.html#MachineInteger"><TT>MachineInteger</TT></A> 5 and 7, then
+&nbsp;<!-- MATH
+ $\tilde{}~a = -6$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img67.gif"
+ ALT="$\tilde{}~a = -6$">, <!-- MATH
+ $a /\backslash b = 5$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.gif"
+ ALT="$a /\backslash b = 5$">, <!-- MATH
+ $a \backslash/ b = 7$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.gif"
+ ALT="$a \backslash/ b = 7$"> and
+<!-- MATH
+ $\mbox{xor}(a,b) = 2$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.gif"
+ ALT="$\mbox{xor}(a,b) = 2$">.
+</LI>
+</UL>
+<P></P>
+
+  <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

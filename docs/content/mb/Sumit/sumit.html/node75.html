@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>compose</TITLE>
+<META NAME="description" CONTENT="compose">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node76.html">
+<LINK REL="previous" HREF="node74.html">
+<LINK REL="up" HREF="node74.html">
+<LINK REL="next" HREF="node76.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1476"
+  HREF="node76.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1470"
+  HREF="node74.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1464"
+  HREF="node74.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1472"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1474"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1477"
+  HREF="node76.html">logarithmicDerivative</A>
+<B> Up:</B> <A NAME="tex2html1471"
+  HREF="node74.html">LinearOrdinaryDifferentialOperatorTools</A>
+<B> Previous:</B> <A NAME="tex2html1465"
+  HREF="node74.html">LinearOrdinaryDifferentialOperatorTools</A>
+ &nbsp <B>  <A NAME="tex2html1473"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1475"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00079100000000000000"></A>
+<A NAME="LinearOrdinaryDifferentialOperatorTools:compose"></A>
+<BR>
+compose
+</H3> <A NAME="9364"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+compose(p, a, b)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">compose:</TD>
+<TD ALIGN="LEFT">(L, R, R) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (R, L)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>p</EM></TD>
+<TD ALIGN="LEFT">L</TD>
+<TD ALIGN="LEFT">A differential operator</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>a</EM></TD>
+<TD ALIGN="LEFT">R</TD>
+<TD ALIGN="LEFT">An element of the coefficient ring</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>b</EM></TD>
+<TD ALIGN="LEFT">R</TD>
+<TD ALIGN="LEFT">A nonzero element of the coefficient ring</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+Returns <!-- MATH
+ $(\alpha, {\overline p})$
+ -->
+<IMG
+ WIDTH="42" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$(\alpha, {\overline p})$"> such that
+</BLOCKQUOTE>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\overline p} = \alpha p{\left({\partial + \frac ab}\right)} =
+\alpha \sum_{i=0}^n a_i {\left({\partial + \frac ab}\right)}^i
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="246" HEIGHT="53" BORDER="0"
+ SRC="img124.png"
+ ALT="\begin{displaymath}
+{\overline p} = \alpha p{\left({\partial + \frac ab}\right)} =
+\alpha \sum_{i=0}^n a_i {\left({\partial + \frac ab}\right)}^i
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P><BLOCKQUOTE>
+where <!-- MATH
+ $p = \sum_{i=0}^n a_i \partial^i$
+ -->
+<IMG
+ WIDTH="103" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$p = \sum_{i=0}^n a_i \partial^i$">,
+and <!-- MATH
+ $\alpha \in R\setminus\{0\}$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img126.png"
+ ALT="$\alpha \in R\setminus\{0\}$"> is chosen so that
+the result has coefficients in <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img127.png"
+ ALT="$R$">.
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

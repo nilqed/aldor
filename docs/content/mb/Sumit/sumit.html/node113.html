@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>UnivariateSkewPolynomialCategoryTools</TITLE>
+<META NAME="description" CONTENT="UnivariateSkewPolynomialCategoryTools">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node99.html">
+<LINK REL="up" HREF="node52.html">
+<LINK REL="next" HREF="node114.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2016"
+  HREF="node114.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2010"
+  HREF="node52.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2006"
+  HREF="node112.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2012"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2014"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2017"
+  HREF="node114.html">apply</A>
+<B> Up:</B> <A NAME="tex2html2011"
+  HREF="node52.html">Univariate Skew Polynomials and</A>
+<B> Previous:</B> <A NAME="tex2html2007"
+  HREF="node112.html">rightLcm</A>
+ &nbsp <B>  <A NAME="tex2html2013"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2015"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000721000000000000000"></A><A NAME="11019"></A><A NAME="UnivariateSkewPolynomialCategoryTools"></A>
+<BR>
+UnivariateSkewPolynomialCategoryTools
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from UnivariateSkewPolynomialCategoryTools(R, C)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><TT>Ring</TT></TD>
+<TD ALIGN="LEFT">The coefficient ring</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>C</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node99.html#UnivariateSkewPolynomialCategory"><TT>UnivariateSkewPolynomialCategory</TT></A> R</TD>
+<TD ALIGN="LEFT">A skew-polynomial type</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+UnivariateSkewPolynomialCategoryTools(R, C) provides the univariate skew polynomial arithmetic
+operations which depend on the <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$\sigma$"> and <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$\delta$"> functions determining
+the skew polynomial ring.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node114.html#UnivariateSkewPolynomialCategoryTools:apply"><TT>apply</TT></A>:</TD>
+<TD ALIGN="LEFT">(C, R, R, MOR, R <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> R) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> R</TD>
+<TD ALIGN="LEFT">Apply a skew-polynomial to a scalar</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node121.html#UnivariateSkewPolynomialCategoryTools:times"><TT>times</TT></A>:</TD>
+<TD ALIGN="LEFT">(C, C, MOR, R <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> R) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> C</TD>
+<TD ALIGN="LEFT">Product of skew-polynomials</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <TT>IntegralDomain</TT> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node116.html#UnivariateSkewPolynomialCategoryTools:leftExactQuotient"><TT>leftExactQuotient</TT></A>:</TD>
+<TD ALIGN="LEFT">(C, C, MOR, R <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> R) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Partial</TT> C</TD>
+<TD ALIGN="LEFT">Left exact quotient</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node117.html#UnivariateSkewPolynomialCategoryTools:monicLeftDivide"><TT>monicLeftDivide</TT></A>:</TD>
+<TD ALIGN="LEFT">(C, C, MOR, R <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> R) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (C, C)</TD>
+<TD ALIGN="LEFT">Left Euclidean division</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node118.html#UnivariateSkewPolynomialCategoryTools:monicRightDivide"><TT>monicRightDivide</TT></A>:</TD>
+<TD ALIGN="LEFT">(C, C, MOR, R <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> R) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (C, C)</TD>
+<TD ALIGN="LEFT">Right Euclidean division</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node120.html#UnivariateSkewPolynomialCategoryTools:rightExactQuotient"><TT>rightExactQuotient</TT></A>:</TD>
+<TD ALIGN="LEFT">(C, C, MOR, R <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> R) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Partial</TT> C</TD>
+<TD ALIGN="LEFT">Right exact quotient</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <TT>Field</TT> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node115.html#UnivariateSkewPolynomialCategoryTools:leftDivide"><TT>leftDivide</TT></A>:</TD>
+<TD ALIGN="LEFT">(C, C, MOR, R <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> R) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (C, C)</TD>
+<TD ALIGN="LEFT">Left Euclidean division</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node119.html#UnivariateSkewPolynomialCategoryTools:rightDivide"><TT>rightDivide</TT></A>:</TD>
+<TD ALIGN="LEFT">(C, C, MOR, R <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> R) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (C, C)</TD>
+<TD ALIGN="LEFT">Right Euclidean division</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">MOR</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>Automorphism</TT> R</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html2018"
+  HREF="node114.html">apply</A>
+<LI><A NAME="tex2html2019"
+  HREF="node115.html">leftDivide</A>
+<LI><A NAME="tex2html2020"
+  HREF="node116.html">leftExactQuotient</A>
+<LI><A NAME="tex2html2021"
+  HREF="node117.html">monicLeftDivide</A>
+<LI><A NAME="tex2html2022"
+  HREF="node118.html">monicRightDivide</A>
+<LI><A NAME="tex2html2023"
+  HREF="node119.html">rightDivide</A>
+<LI><A NAME="tex2html2024"
+  HREF="node120.html">rightExactQuotient</A>
+<LI><A NAME="tex2html2025"
+  HREF="node121.html">times</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2016"
+  HREF="node114.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2010"
+  HREF="node52.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2006"
+  HREF="node112.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2012"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2014"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2017"
+  HREF="node114.html">apply</A>
+<B> Up:</B> <A NAME="tex2html2011"
+  HREF="node52.html">Univariate Skew Polynomials and</A>
+<B> Previous:</B> <A NAME="tex2html2007"
+  HREF="node112.html">rightLcm</A>
+ &nbsp <B>  <A NAME="tex2html2013"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2015"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

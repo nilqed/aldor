@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>TableType</TITLE>
+<META NAME="description" CONTENT="TableType">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node269.html">
+<LINK REL="up" HREF="node162.html">
+<LINK REL="next" HREF="node271.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html4543"
+  HREF="node271.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4537"
+  HREF="node162.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4533"
+  HREF="node269.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4539"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html4541"
+  HREF="node315.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html4544"
+  HREF="node271.html">[]</A>
+<B> Up:</B> <A NAME="tex2html4538"
+  HREF="node162.html">Data Structures</A>
+<B> Previous:</B> <A NAME="tex2html4534"
+  HREF="node269.html">TableExceptionType</A>
+ &nbsp; <B>  <A NAME="tex2html4540"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html4542"
+  HREF="node315.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000737000000000000000"></A><A NAME="17873"></A><A NAME="TableType"></A>
+<BR>
+TableType
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+TableType(K, V): Category
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>K</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node93.html#PrimitiveType"><TT>PrimitiveType</TT></A></TD>
+<TD ALIGN="LEFT">the type of the keys</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>V</EM></TD>
+<TD ALIGN="LEFT">Type</TD>
+<TD ALIGN="LEFT">the type of the entries</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+TableType(K, V) is the category of tables, <I>i.e.</I>&nbsp;discrete
+many-to-one mappings from keys to entries. More precisely,
+every element of a domain of this category is a table
+whose slots contain elements from <EM>V</EM> and such that every
+slot is given by a unique key from <EM>K</EM>.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node173.html#BoundedFiniteDataStructureType"><TT>BoundedFiniteDataStructureType</TT></A> <TT>Cross</TT>(K, V)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node271.html#TableType:__"><TT>[]</TT></A>:</TD>
+<TD ALIGN="LEFT"><TT>Tuple</TT> <TT>Cross</TT>(K, V) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">creation of a table</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node272.html#TableType:apply"><TT>apply</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, K) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> V</TD>
+<TD ALIGN="LEFT">extraction of an entry</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node273.html#TableType:entries"><TT>entries</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <A HREF="node293.html#Generator"><TT>Generator</TT></A> V</TD>
+<TD ALIGN="LEFT">iterate through the entries</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node274.html#TableType:find"><TT>find</TT></A>:</TD>
+<TD ALIGN="LEFT">(K, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <A HREF="node299.html#Partial"><TT>Partial</TT></A> V</TD>
+<TD ALIGN="LEFT">search for an entry</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node273.html#TableType:keys"><TT>keys</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <A HREF="node293.html#Generator"><TT>Generator</TT></A> K</TD>
+<TD ALIGN="LEFT">iterate through the keys</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node275.html#TableType:numberOfEntries"><TT>numberOfEntries</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <A HREF="node82.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">number of entries</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node276.html#TableType:set_"><TT>set!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, K, V) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> V</TD>
+<TD ALIGN="LEFT">modification of an entry</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node277.html#TableType:table"><TT>table</TT></A>:</TD>
+<TD ALIGN="LEFT">() <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">creation of a table</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><A HREF="node82.html#MachineInteger"><TT>MachineInteger</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img158.png"
+ ALT="$K$"> has <A HREF="node139.html#InputType"><TT>InputType</TT></A> and <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img159.png"
+ ALT="$V$"> has <A HREF="node139.html#InputType"><TT>InputType</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node139.html#InputType"><TT>InputType</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img158.png"
+ ALT="$K$"> has <A HREF="node141.html#OutputType"><TT>OutputType</TT></A> and <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img159.png"
+ ALT="$V$"> has <A HREF="node141.html#OutputType"><TT>OutputType</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node141.html#OutputType"><TT>OutputType</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img158.png"
+ ALT="$K$"> has <A HREF="node143.html#SerializableType"><TT>SerializableType</TT></A> and <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img159.png"
+ ALT="$V$"> has <A HREF="node143.html#SerializableType"><TT>SerializableType</TT></A>
+then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node143.html#SerializableType"><TT>SerializableType</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4545"
+  HREF="node271.html">[]</A>
+<LI><A NAME="tex2html4546"
+  HREF="node272.html">apply</A>
+<LI><A NAME="tex2html4547"
+  HREF="node273.html">entries, keys</A>
+<LI><A NAME="tex2html4548"
+  HREF="node274.html">find</A>
+<LI><A NAME="tex2html4549"
+  HREF="node275.html">numberOfEntries</A>
+<LI><A NAME="tex2html4550"
+  HREF="node276.html">set!</A>
+<LI><A NAME="tex2html4551"
+  HREF="node277.html">table</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html4543"
+  HREF="node271.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4537"
+  HREF="node162.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4533"
+  HREF="node269.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4539"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html4541"
+  HREF="node315.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html4544"
+  HREF="node271.html">[]</A>
+<B> Up:</B> <A NAME="tex2html4538"
+  HREF="node162.html">Data Structures</A>
+<B> Previous:</B> <A NAME="tex2html4534"
+  HREF="node269.html">TableExceptionType</A>
+ &nbsp; <B>  <A NAME="tex2html4540"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html4542"
+  HREF="node315.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

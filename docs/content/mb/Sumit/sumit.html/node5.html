@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>How do I use in my programs?</TITLE>
+<META NAME="description" CONTENT="How do I use in my programs?">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html370"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html364"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html360"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html366"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html368"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html371"
+  HREF="node6.html">User Guide</A>
+<B> Up:</B> <A NAME="tex2html365"
+  HREF="node2.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html361"
+  HREF="node4.html">How do I get</A>
+ &nbsp <B>  <A NAME="tex2html367"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html369"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00023000000000000000">
+How do I use <!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\Sigma {}^{{\rm it}}$">  in my programs?</A>
+</H2>
+Once <!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\Sigma {}^{{\rm it}}$">  is properly built, you need to set the following environment
+variables before using it:
+
+<UL>
+<LI>the environment variables ALGEBRAROOT and SUMITROOT should be set
+respectively to
+the main <TT>algebra</TT> and <TT>sumit</TT> directories;
+</LI>
+<LI><TT>$ALGEBRAROOT/include</TT> and <TT>$SUMITROOT/include</TT>
+should be appended to your INCPATH environment variable;
+</LI>
+<LI><TT>$ALGEBRAROOT/lib</TT> and <TT>$SUMITROOT/lib</TT>
+should be appended to your LIBPATH environment variable;
+</LI>
+</UL>
+In your A<SMALL>LDOR</SMALL>  programs, use <TT>#include "sumit"</TT> <EM>instead of</EM>
+<TT>#include "aldor"</TT> or <TT>#include "algebra"</TT>.
+When building your final executable, add the
+options
+<DIV ALIGN="CENTER">
+<TT>-lsumit -lalgebra -laldor -y$SUMITROOT/lib -y$ALGEBRAROOT/lib</TT>
+
+</DIV>
+to your compiler command line, or
+<DIV ALIGN="CENTER">
+<TT>-lsumitd -lalgebrad -laldord -dDEBUG -y$SUMITROOT/lib -y$ALGEBRAROOT/lib</TT>
+
+</DIV>
+to link to the debug version of <!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\Sigma {}^{{\rm it}}$">.
+Check the subsection on&nbsp;<A HREF="node10.html#:sec:gmp"><TT>using GMP</TT></A>
+for the options required if you want to use the GMP library and the GMP
+version of <!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\Sigma {}^{{\rm it}}$">.
+As with any A<SMALL>LDOR</SMALL>  program, do not forget
+the <TT>-q</TT> option in order to optimize your programs, specially
+if performance is an issue.
+
+<P>
+Before using <!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\Sigma {}^{{\rm it}}$">  for the first time, please check your installation
+by running <TT>make</TT> in the <TT>sumit/test</TT> directory, followed by
+running <TT>testall</TT>.
+
+<P>
+Please report any installation problem or bugs you encounter
+to <TT>sumit@sophia.inria.fr</TT>.
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html370"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html364"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html360"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html366"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html368"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html371"
+  HREF="node6.html">User Guide</A>
+<B> Up:</B> <A NAME="tex2html365"
+  HREF="node2.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html361"
+  HREF="node4.html">How do I get</A>
+ &nbsp <B>  <A NAME="tex2html367"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html369"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Using GMP</TITLE>
+<META NAME="description" CONTENT="Using GMP">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node11.html">
+<LINK REL="previous" HREF="node9.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node11.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html446"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html440"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html434"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html442"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html444"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html447"
+  HREF="node11.html">Exceptions</A>
+<B> Up:</B> <A NAME="tex2html441"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html435"
+  HREF="node9.html">Compatibility with C types</A>
+ &nbsp <B>  <A NAME="tex2html443"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html445"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00034000000000000000"></A>
+<A NAME=":sec:gmp"></A>
+<BR>
+Using GMP
+</H2> <A NAME="6818"></A>
+As in <TT>libaldor</TT>  and <TT>Algebra</TT>, the type <TT>Integer</TT> is actually a macro,
+which defaults to <TT>AldorInteger</TT>, the software integers provided
+by the A<SMALL>LDOR</SMALL>  runtime. For efficiency or other reasons, you may prefer
+to use the GMP library, which is supported by <!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\Sigma {}^{{\rm it}}$">.
+The easiest way
+to use GMP is to compile all your source files with the option <TT>-dGMP</TT>
+and then to use the options
+<DIV ALIGN="CENTER">
+<TT>-lsumit-gmp -lalgebra-gmp -laldor -cruntime=foam-gmp,gmp</TT>
+<BR><TT>-y$SUMITROOT/lib/-y$ALGEBRAROOT/lib</TT>
+
+</DIV>
+when linking your final executable. All you need is GMP 3.0 or later
+installed in a file called <TT>libgmp.a</TT> to produce executables.
+Using GMP generally produces more efficient programs,
+but programs calling GMP cannot be interpreted by the A<SMALL>LDOR</SMALL> 
+compiler, nor can they run inside its interactive loop.
+
+<P>
+Using the <TT>-dGMP</TT> option allows you to compile the same sources
+either with or without GMP, which can be appreciable, but you must
+ensure that you do not mix files compiled with and without <TT>-dGMP</TT> since
+the macro <TT>Integer</TT> would then be expanded into two different types.
+
+<P>
+An additional advantage of using GMP, is that <TT>GMPInteger</TT>
+exports and uses internally several of the in-place or higher-level
+operations of GMP, which are not available with <TT>AldorInteger</TT>.
+In addition, variables of type <TT>GMPInteger</TT> are compatible
+with the C type <TT>mpz_t</TT> from GMP, so you can directly call
+C programs that use GMP from your A<SMALL>LDOR</SMALL>  code.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html446"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html440"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html434"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html442"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html444"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html447"
+  HREF="node11.html">Exceptions</A>
+<B> Up:</B> <A NAME="tex2html441"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html435"
+  HREF="node9.html">Compatibility with C types</A>
+ &nbsp <B>  <A NAME="tex2html443"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html445"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

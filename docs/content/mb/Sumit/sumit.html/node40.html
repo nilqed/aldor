@@ -1,0 +1,299 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>NewtonPolygon</TITLE>
+<META NAME="description" CONTENT="NewtonPolygon">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node49.html">
+<LINK REL="previous" HREF="node38.html">
+<LINK REL="up" HREF="node37.html">
+<LINK REL="next" HREF="node41.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html907"
+  HREF="node41.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html901"
+  HREF="node37.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html895"
+  HREF="node39.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html903"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html905"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html908"
+  HREF="node41.html">center</A>
+<B> Up:</B> <A NAME="tex2html902"
+  HREF="node37.html">Univariate Polynomials</A>
+<B> Previous:</B> <A NAME="tex2html896"
+  HREF="node39.html">balance</A>
+ &nbsp <B>  <A NAME="tex2html904"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html906"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00062000000000000000"></A><A NAME="7812"></A><A NAME="NewtonPolygon"></A>
+<BR>
+NewtonPolygon
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from NewtonPolygon(R, Rx, Rxy)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><TT>IntegralDomain</TT></TD>
+<TD ALIGN="LEFT">the ground ring</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>Rx</EM></TD>
+<TD ALIGN="LEFT"><TT>UnivariatePolynomialCategory</TT> R</TD>
+<TD ALIGN="LEFT">polynomials over <EM>R</EM></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>Rxy</EM></TD>
+<TD ALIGN="LEFT"><TT>UnivariatePolynomialAlgebra</TT> Rx</TD>
+<TD ALIGN="LEFT">polynomials over <EM>Rx</EM></TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+NewtonPolygon(R, Rx, Rxy) implements the algebraic Newton polygon
+for bivariate polynomials over <EM>R</EM>. When <EM>Rxy</EM> is
+a <A HREF="node68.html#LinearOrdinaryDifferentialOperatorCategory"><TT>LinearOrdinaryDifferentialOperatorCategory</TT></A> over <EM>Rx</EM>,
+the points of the algebraic Newton polygon are in bijective correspondence
+with the points of the differential Newton polygon, so NewtonPolygon(R, Rx, Rxy)
+also provides functions related to the differential Newton polygon.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node41.html#NewtonPolygon:center"><TT>center</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> Rx</TD>
+<TD ALIGN="LEFT">point of localisation</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node42.html#NewtonPolygon:degree"><TT>degree</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Integer</TT></TD>
+<TD ALIGN="LEFT">degree of polynomial used</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node43.html#NewtonPolygon:finite_"><TT>finite?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Boolean</TT></TD>
+<TD ALIGN="LEFT">test for a finite center</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node43.html#NewtonPolygon:infinite_"><TT>infinite?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Boolean</TT></TD>
+<TD ALIGN="LEFT">test for a center at infinity</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node46.html#NewtonPolygon:irregular_"><TT>irregular?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Boolean</TT></TD>
+<TD ALIGN="LEFT">test for an irregular singularity</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node44.html#NewtonPolygon:newtonPolygon"><TT>newtonPolygon</TT></A>:</TD>
+<TD ALIGN="LEFT">Rxy <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">creation of a Newton polygon</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(Rxy, Rx) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node46.html#NewtonPolygon:ordinary_"><TT>ordinary?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Boolean</TT></TD>
+<TD ALIGN="LEFT">test for an ordinary point</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node45.html#NewtonPolygon:orderDrop"><TT>orderDrop</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Integer</TT></TD>
+<TD ALIGN="LEFT">generic order drop</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node47.html#NewtonPolygon:points"><TT>points</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>List</TT> POINT</TD>
+<TD ALIGN="LEFT">points on lower enveloppe</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node46.html#NewtonPolygon:regular_"><TT>regular?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Boolean</TT></TD>
+<TD ALIGN="LEFT">test for a regular singularity</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node46.html#NewtonPolygon:singular_"><TT>singular?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Boolean</TT></TD>
+<TD ALIGN="LEFT">test for a singularity</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node48.html#NewtonPolygon:slopes"><TT>slopes</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>List</TT> <TT>Cross</TT>(Q, <TT>List</TT> POINT)</TD>
+<TD ALIGN="LEFT">slopes of lower enveloppe</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>Integer</TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Q</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>Fraction</TT> <TT>Integer</TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT">POINT</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>Cross</TT>(Z, Z, Rx)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html909"
+  HREF="node41.html">center</A>
+<LI><A NAME="tex2html910"
+  HREF="node42.html">degree</A>
+<LI><A NAME="tex2html911"
+  HREF="node43.html">finite?, infinite?</A>
+<LI><A NAME="tex2html912"
+  HREF="node44.html">newtonPolygon</A>
+<LI><A NAME="tex2html913"
+  HREF="node45.html">orderDrop</A>
+<LI><A NAME="tex2html914"
+  HREF="node46.html">ordinary?,singular?,regular?,irregular?</A>
+<LI><A NAME="tex2html915"
+  HREF="node47.html">points</A>
+<LI><A NAME="tex2html916"
+  HREF="node48.html">slopes</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html907"
+  HREF="node41.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html901"
+  HREF="node37.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html895"
+  HREF="node39.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html903"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html905"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html908"
+  HREF="node41.html">center</A>
+<B> Up:</B> <A NAME="tex2html902"
+  HREF="node37.html">Univariate Polynomials</A>
+<B> Previous:</B> <A NAME="tex2html896"
+  HREF="node39.html">balance</A>
+ &nbsp <B>  <A NAME="tex2html904"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html906"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

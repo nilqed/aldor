@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Skew polynomials and linear operators</TITLE>
+<META NAME="description" CONTENT="Skew polynomials and linear operators">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node8.html">
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html404"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html398"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html392"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html400"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html402"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html405"
+  HREF="node8.html">Solutions of differential and</A>
+<B> Up:</B> <A NAME="tex2html399"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html393"
+  HREF="node6.html">User Guide</A>
+ &nbsp <B>  <A NAME="tex2html401"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html403"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00031000000000000000">
+Skew polynomials and linear operators</A>
+</H2>
+<!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\Sigma {}^{{\rm it}}$">  provides several types for computing with univariate
+skew-polynomials or specific linear operators.
+The most general is <A HREF="node98.html#UnivariateSkewPolynomial"><TT>UnivariateSkewPolynomial</TT></A>,
+for which you provide the <TT>Automorphism</TT> <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$\sigma$">
+and the <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$\sigma$">-derivation <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$\delta$"> as parameters.
+In addition, you also provide a usual polynomial type
+that is meant to be used as internal representation for
+the skew-polynomials. This lets you choose between dense
+or sparse representation by selecting the appropriate
+representation type. As for polynomials, naming the
+variable is not necessary since the name is used only for output.
+If you want to name the variable, pass a polynomial type with
+a variable name as reprensentation type. There are several
+ways to create the <TT>Automorphism</TT> <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$\sigma$">:
+since <TT>Automorphism</TT> is of category <TT>Monoid</TT>,
+the constant <TT>1</TT> can be used for the identity
+map, while <TT>morphism</TT> is used for more general maps.
+
+<P>
+There are also types for common linear operators:
+
+<UL>
+<LI><A HREF="node67.html#LinearOrdinaryDifferentialOperator"><TT>LinearOrdinaryDifferentialOperator</TT></A> provides
+linear ordinary differential operators with respect
+to an arbitrary <TT>Derivation</TT> that is given as
+parameter. The derivation can be omitted if the coefficient
+type is a <TT>DifferentialRing</TT>.
+</LI>
+<LI><A HREF="node61.html#LinearOrdinaryDifferenceOperator"><TT>LinearOrdinaryDifferenceOperator</TT></A> provides
+linear ordinary generalized difference operators with respect
+to an arbitrary <TT>Automorphism</TT> that is given as
+parameter.
+</LI>
+<LI><A HREF="node86.html#LinearOrdinaryRecurrence"><TT>LinearOrdinaryRecurrence</TT></A> provides
+linear ordinary difference operators with coefficients
+in a polynomial ring <IMG
+ WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$R[x]$"> and with respect
+to the shift <IMG
+ WIDTH="74" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$x \to x + 1$">.
+<A HREF="node87.html#LinearOrdinaryRecurrenceQ"><TT>LinearOrdinaryRecurrenceQ</TT></A> provides
+the same operators but over the rational fraction field <IMG
+ WIDTH="38" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$R(x)$">.
+</LI>
+<LI><A HREF="node84.html#LinearOrdinaryQDifferenceOperator"><TT>LinearOrdinaryQDifferenceOperator</TT></A> provides
+linear ordinary <IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$q$">-difference operators with coefficients
+in a polynomial ring <IMG
+ WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$R[x]$"> and with respect
+to the shift <IMG
+ WIDTH="55" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$x \to q x$"> for a given <IMG
+ WIDTH="44" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$q \in R$">, which
+is given as parameter to the type.
+<A HREF="node85.html#LinearOrdinaryQDifferenceOperatorQ"><TT>LinearOrdinaryQDifferenceOperatorQ</TT></A> provides
+the same operators but over the rational fractions <IMG
+ WIDTH="38" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$R(x)$">.
+</LI>
+</UL>
+All of the above are implemented using a dense representation,
+and allow an optional <TT>Symbol</TT> as last parameter if you
+want to name the variable for output.
+
+<P>
+Finally, to manipulate and solve first order linear systems rather
+than scalar operators, use the <A HREF="node78.html#LinearOrdinaryFirstOrderSystem"><TT>LinearOrdinaryFirstOrderSystem</TT></A>
+type for both differential and generalized difference systems.
+
+<P>
+Because polynomials and skew-polynomials share
+many common operations, <!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\Sigma {}^{{\rm it}}$">  provides a
+category hierarchy for operators that fits within the
+polynomial hierarchy of <TT>libaldor</TT>  and <TT>Algebra</TT> , as
+shown in Figure&nbsp;<A HREF="node7.html#fig:sumitpolcat">1</A>.
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:sumitpolcat"></A><A NAME="5181"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1:</STRONG>
+The <!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$\Sigma{}^{{\rm it}}$">  univariate skew-polynomial category hierarchy</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="659" HEIGHT="861" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.png"
+ ALT="\includegraphics[]{sumitpolcat}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+Those categories make it possible to write functions
+that work for skew-polynomials at various levels of generality,
+and also to apply all the <TT>Algebra</TT>  functionalities designed
+for the category
+<TT>UnivariatePolynomialAlgebra</TT> to skew-polynomials.
+When writing generic code for manipulating
+skew-polynomials or operators, use a type parameter with the
+appropriate category selected from Figure&nbsp;<A HREF="node7.html#fig:sumitpolcat">1</A>.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html404"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html398"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html392"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html400"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html402"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html405"
+  HREF="node8.html">Solutions of differential and</A>
+<B> Up:</B> <A NAME="tex2html399"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html393"
+  HREF="node6.html">User Guide</A>
+ &nbsp <B>  <A NAME="tex2html401"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html403"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

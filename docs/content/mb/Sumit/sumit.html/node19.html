@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>increment</TITLE>
+<META NAME="description" CONTENT="increment">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node20.html">
+<LINK REL="previous" HREF="node18.html">
+<LINK REL="up" HREF="node17.html">
+<LINK REL="next" HREF="node20.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html597"
+  HREF="node20.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html591"
+  HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html585"
+  HREF="node18.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html593"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html595"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html598"
+  HREF="node20.html">incrementReplace</A>
+<B> Up:</B> <A NAME="tex2html592"
+  HREF="node17.html">DenseHomogeneousExteriorProduct</A>
+<B> Previous:</B> <A NAME="tex2html586"
+  HREF="node18.html">appears?</A>
+ &nbsp <B>  <A NAME="tex2html594"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html596"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00053200000000000000"></A>
+<A NAME="DenseHomogeneousExteriorProduct:increment"></A>
+<BR>
+increment
+</H3> <A NAME="7027"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+increment&nbsp;p
+<BR>
+increment(p, i) 
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">increment:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Partial</TT> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">increment:</TD>
+<TD ALIGN="LEFT">(%, <TT>MachineInteger</TT>) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Partial</TT> %</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>p</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">An exterior product</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>i</EM></TD>
+<TD ALIGN="LEFT"><TT>MachineInteger</TT></TD>
+<TD ALIGN="LEFT">A position</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+increment<!-- MATH
+ $(X_{e_1} \wedge \dots \wedge X_{e_n})$
+ -->
+<IMG
+ WIDTH="124" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$(X_{e_1} \wedge \dots \wedge X_{e_n})$"> returns
+<!-- MATH
+ $(X_{e_1 + 1} \wedge \dots \wedge X_{e_n + 1})$
+ -->
+<IMG
+ WIDTH="157" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$(X_{e_1 + 1} \wedge \dots \wedge X_{e_n + 1})$">
+if <IMG
+ WIDTH="55" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$e_n &lt; m$">, <I>failed</I>&nbsp;otherwise, while
+increment<!-- MATH
+ $(X_{e_1} \wedge \dots \wedge X_{e_n}, i)$
+ -->
+<IMG
+ WIDTH="137" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$(X_{e_1} \wedge \dots \wedge X_{e_n}, i)$"> returns
+<!-- MATH
+ $X_{e_1}\wedge\dots\wedge
+X_{e_{i-1}}\wedge X_{e_i+1}\wedge X_{e_{i+1}}\wedge\dots X_{e_n}$
+ -->
+<IMG
+ WIDTH="305" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$X_{e_1}\wedge\dots\wedge
+X_{e_{i-1}}\wedge X_{e_i+1}\wedge X_{e_{i+1}}\wedge\dots X_{e_n}$">
+if either <!-- MATH
+ $e_i + 1 < e_{i+1}$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$e_i + 1 &lt; e_{i+1}$"> or <IMG
+ WIDTH="40" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$i = n$"> and <IMG
+ WIDTH="55" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$e_n &lt; m$">, <I>failed</I>&nbsp;otherwise.
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

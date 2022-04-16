@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>IntegerSegment</TITLE>
+<META NAME="description" CONTENT="IntegerSegment">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="next" HREF="node53.html">
+<LINK REL="previous" HREF="node44.html">
+<LINK REL="up" HREF="node15.html">
+<LINK REL="next" HREF="node48.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1064"
+  HREF="node48.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1058"
+  HREF="node15.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1052"
+  HREF="node46.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1060"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1062"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1065"
+  HREF="node48.html">..</A>
+<B> Up:</B> <A NAME="tex2html1059"
+  HREF="node15.html">Arithmetic</A>
+<B> Previous:</B> <A NAME="tex2html1053"
+  HREF="node46.html">new</A>
+ &nbsp <B>  <A NAME="tex2html1061"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1063"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000511000000000000000"></A><A NAME="7171"></A><A NAME="IntegerSegment"></A>
+<BR>
+IntegerSegment
+</H2>
+
+<BR>
+<IMG
+ WIDTH="251" HEIGHT="50" ALIGN="BOTTOM" BORDER="0"
+ SRC="img109.gif"
+ ALT="\begin{usage}
+import from IntegerSegment~Z
+\end{usage}">
+<BR>
+
+<BR>
+<IMG
+ WIDTH="339" HEIGHT="36" ALIGN="BOTTOM" BORDER="0"
+ SRC="img110.gif"
+ ALT="\begin{params}
+{\em Z} &amp; \htmlref{\texttt{IntegerType}}{IntegerType} &amp; an integer type\\
+\end{params}">
+<BR>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="70" ALIGN="BOTTOM" BORDER="0"
+ SRC="img111.gif"
+ ALT="\begin{descr}
+IntegerSegment(Z) implements open and closed segments of Z, {\it ...
+... spaced integers in a range of the form $[a,b]$\ or $[a, +\infty)$.
+\end{descr}">
+<BR>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    
+<UL>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node70.html#PrimitiveType"><TT>PrimitiveType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node115.html#InputType"><TT>InputType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node117.html#OutputType"><TT>OutputType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node119.html#SerializableType"><TT>SerializableType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node48.html#IntegerSegment:.."><TT>..</TT></A>:</TD>
+<TD ALIGN="LEFT">Z <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">creation of a segment</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(Z, Z) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node49.html#IntegerSegment:by"><TT>by</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, Z) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">change the spacing</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node50.html#IntegerSegment:generator"><TT>generator</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> <A HREF="node223.html#Generator"><TT>Generator</TT></A> Z</TD>
+<TD ALIGN="LEFT">iterate over a segment</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node51.html#IntegerSegment:high"><TT>high</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> Z</TD>
+<TD ALIGN="LEFT">upper bound</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node51.html#IntegerSegment:low"><TT>low</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> Z</TD>
+<TD ALIGN="LEFT">lower bound</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node52.html#IntegerSegment:open_"><TT>open?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> <A HREF="node29.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">check whether a segment is open</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node49.html#IntegerSegment:step"><TT>step</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> Z</TD>
+<TD ALIGN="LEFT">spacing</TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1066"
+  HREF="node48.html">..</A>
+<LI><A NAME="tex2html1067"
+  HREF="node49.html">by,step</A>
+<LI><A NAME="tex2html1068"
+  HREF="node50.html">generator</A>
+<LI><A NAME="tex2html1069"
+  HREF="node51.html">high,low</A>
+<LI><A NAME="tex2html1070"
+  HREF="node52.html">open?</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

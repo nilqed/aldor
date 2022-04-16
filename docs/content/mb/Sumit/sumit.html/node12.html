@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Profiling and debugging</TITLE>
+<META NAME="description" CONTENT="Profiling and debugging">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node11.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node13.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html472"
+  HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html466"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html462"
+  HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html468"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html470"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html473"
+  HREF="node13.html">Reference Manual</A>
+<B> Up:</B> <A NAME="tex2html467"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html463"
+  HREF="node11.html">Exceptions</A>
+ &nbsp <B>  <A NAME="tex2html469"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html471"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00036000000000000000"></A>
+<A NAME=":sec:debug"></A>
+<BR>
+Profiling and debugging
+</H2> <A NAME="6836"></A>
+The macros TIME, TRACE and AGAT provided by <TT>libaldor</TT>  remain available
+in <!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\Sigma {}^{{\rm it}}$">. In addition,
+<!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\Sigma {}^{{\rm it}}$">  also comes with a debug version, which makes many assertions
+about the arguments of the functions called as well as their results.
+While those assertions slow down the code considerably they tend to
+be quite useful when chasing bugs since the release version of <!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\Sigma {}^{{\rm it}}$"> 
+does not make validity checks to most of its inputs.
+The debug version of <!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\Sigma {}^{{\rm it}}$">  must be used jointly with the debug
+versions of <TT>libaldor</TT>  and <TT>Algebra</TT>.
+To use them, just compile your application with the
+<DIV ALIGN="CENTER">
+<TT>-lsumitd -lalgebrad -laldord -dDEBUG</TT>
+
+</DIV>
+options rather than <TT>-lsumit -lalgebra -laldor</TT>.
+It is also preferable when debugging to add the <TT>-q1</TT> option
+in order to prevent inlining.
+
+<P>
+&nbsp;
+&nbsp;
+
+<P>
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

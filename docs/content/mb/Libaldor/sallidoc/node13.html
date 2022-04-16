@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Debugging</TITLE>
+<META NAME="description" CONTENT="Debugging">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="previous" HREF="node12.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node14.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html514"
+  HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html508"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html504"
+  HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html510"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html512"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html515"
+  HREF="node14.html">Reference Manual</A>
+<B> Up:</B> <A NAME="tex2html509"
+  HREF="node6.html">User's Guide</A>
+<B> Previous:</B> <A NAME="tex2html505"
+  HREF="node12.html">Exceptions</A>
+ &nbsp <B>  <A NAME="tex2html511"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html513"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00037000000000000000">
+Debugging</A>
+</H2>
+S<SMALL>ALLI</SMALL> comes with a debug version, which makes various assertions
+about the arguments of the functions called. Its most important debugging
+feature is probably the ability to bound check all accesses into
+<A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A>, <A HREF="node193.html#PrimitiveMemoryBlock"><TT>PrimitiveMemoryBlock</TT></A>
+and <A HREF="node207.html#String"><TT>String</TT></A> at runtime.
+To use the debug version of the
+library, just set your SALLIROOT variable to the <TT>salli/debug</TT>
+directory rather than <TT>salli</TT>, and make sure that your
+LIBPATH variable contains <TT>salli/debug/lib</TT> and not <TT>salli/lib</TT>.
+In addition, you must compile your application with the <TT>-q1</TT> option
+rather than <TT>-q2</TT> or <TT>-q3</TT> in order to prevent inlining.
+
+<P>
+S<SMALL>ALLI</SMALL> also provides a couple of macros to help you debug your applications:
+<DL>
+<DT><STRONG><TT>TRACE(message,value)</TT>:</STRONG></DT>
+<DD>has no effect on normal compilation,
+but sends <EM>message</EM> followed by <EM>value</EM> and a newline to
+<A HREF="node128.html#TextWriter:stderr"><TT>stderr</TT></A> when compiled with the <TT>-dTRACE</TT> option.
+</DD>
+<DT><STRONG><TT>AGAT(stream,value)</TT>:</STRONG></DT>
+<DD>has no effect on normal compilation,
+but sends <EM>value</EM> to the Agat stream <EM>stream</EM> when compiled with
+the <TT>-dAGAT</TT> option. This option is only available if you have
+Agat installed (see
+<TT><A NAME="tex2html3"
+  HREF="http://www-sop.inria.fr/cafe/Olivier.Arsac/agat/agat.html">http://www-sop.inria.fr/cafe/Olivier.Arsac/agat/agat.html</A></TT>).
+</DD>
+</DL>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html514"
+  HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html508"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html504"
+  HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html510"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html512"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html515"
+  HREF="node14.html">Reference Manual</A>
+<B> Up:</B> <A NAME="tex2html509"
+  HREF="node6.html">User's Guide</A>
+<B> Previous:</B> <A NAME="tex2html505"
+  HREF="node12.html">Exceptions</A>
+ &nbsp <B>  <A NAME="tex2html511"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html513"
+  HREF="node240.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

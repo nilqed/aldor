@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Set</TITLE>
+<META NAME="description" CONTENT="Set">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="next" HREF="node200.html">
+<LINK REL="previous" HREF="node193.html">
+<LINK REL="up" HREF="node135.html">
+<LINK REL="next" HREF="node196.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3310"
+  HREF="node196.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html3304"
+  HREF="node135.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html3298"
+  HREF="node194.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html3306"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html3308"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> 
+<B> Up:</B> <A NAME="tex2html3305"
+  HREF="node135.html">Data Structures</A>
+<B> Previous:</B> <A NAME="tex2html3299"
+  HREF="node194.html">coerce</A>
+ &nbsp <B>  <A NAME="tex2html3307"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html3309"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000717000000000000000"></A><A NAME="12339"></A><A NAME="Set"></A>
+<BR>
+Set
+</H2>
+
+<BR>
+<IMG
+ WIDTH="168" HEIGHT="50" ALIGN="BOTTOM" BORDER="0"
+ SRC="img525.gif"
+ ALT="\begin{usage}
+import from Set~T
+\end{usage}">
+<BR>
+
+<BR>
+<IMG
+ WIDTH="429" HEIGHT="36" ALIGN="BOTTOM" BORDER="0"
+ SRC="img526.gif"
+ ALT="\begin{params}
+{\em T} &amp; \htmlref{\texttt{PrimitiveType}}{PrimitiveType} &amp; the type of the set entries\\
+\end{params}">
+<BR>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="70" ALIGN="BOTTOM" BORDER="0"
+ SRC="img527.gif"
+ ALT="\begin{descr}
+Set~provides sets of entries of type $T$, $1$-indexed and without
+bound checking.
+\end{descr}">
+<BR>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    
+<UL>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node147.html#BoundedFiniteLinearStructureType"><TT>BoundedFiniteLinearStructureType</TT></A> T</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#Set:_tex2html_wrap_inline15716_"><TT><IMG
+ WIDTH="16" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$-$"></TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">set difference</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node197.html#Set:intersection"><TT>intersection</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">intersect two sets</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node197.html#Set:intersection_"><TT>intersection!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">intersect two sets</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node198.html#Set:minus_"><TT>minus!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">set difference</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node199.html#Set:union"><TT>union</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, T) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">add an element</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">add a set of elements</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node199.html#Set:union_"><TT>union!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, T) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">add an element</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">add a set of elements</TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3312"
+  HREF="node196.html"><IMG
+ WIDTH="16" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$-$"></A>
+<LI><A NAME="tex2html3313"
+  HREF="node197.html">intersection</A>
+<LI><A NAME="tex2html3314"
+  HREF="node198.html">minus!</A>
+<LI><A NAME="tex2html3315"
+  HREF="node199.html">union</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

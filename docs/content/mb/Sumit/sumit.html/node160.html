@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>allHypergeometricSolutions</TITLE>
+<META NAME="description" CONTENT="allHypergeometricSolutions">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node161.html">
+<LINK REL="previous" HREF="node159.html">
+<LINK REL="up" HREF="node159.html">
+<LINK REL="next" HREF="node161.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2745"
+  HREF="node161.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2739"
+  HREF="node159.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2733"
+  HREF="node159.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2741"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2743"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2746"
+  HREF="node161.html">hypergeometricSolution</A>
+<B> Up:</B> <A NAME="tex2html2740"
+  HREF="node159.html">LinearOrdinaryRecurrenceHypergeometricSolutions</A>
+<B> Previous:</B> <A NAME="tex2html2734"
+  HREF="node159.html">LinearOrdinaryRecurrenceHypergeometricSolutions</A>
+ &nbsp <B>  <A NAME="tex2html2742"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2744"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000813100000000000000"></A>
+<A NAME="LinearOrdinaryRecurrenceHypergeometricSolutions:allHypergeometricSolutions"></A>
+<BR>
+allHypergeometricSolutions
+</H3> <A NAME="13381"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+allHypergeometricSolutions&nbsp;L
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">allHypergeometricSolutions:</TD>
+<TD ALIGN="LEFT">RXE <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>List</TT> <TT>Cross</TT>(<TT>Fraction</TT> FX,
+<TT>Vector</TT> FX)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>L</EM></TD>
+<TD ALIGN="LEFT">RXE</TD>
+<TD ALIGN="LEFT">A linear ordinary recurrence operator</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+Returns <IMG
+ WIDTH="13" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img279.png"
+ ALT="$[]$"> if <IMG
+ WIDTH="53" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img154.png"
+ ALT="$L y = 0$"> has no hypergeometric solution over <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img127.png"
+ ALT="$R$">,
+<I>i.e.</I>a solution <IMG
+ WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img280.png"
+ ALT="$y(n)$"> such that <IMG
+ WIDTH="100" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img281.png"
+ ALT="$y(n+1)/y(n)$"> is a fraction of polynomials
+in <IMG
+ WIDTH="31" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img282.png"
+ ALT="$RX$">.
+Otherwise, it returns a list of pairs of the form
+<!-- MATH
+ $(\gamma(n), [p_1(n),\dots,p_m(n)])$
+ -->
+<IMG
+ WIDTH="178" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.png"
+ ALT="$(\gamma(n), [p_1(n),\dots,p_m(n)])$">
+such that the hypergeometric solutions of <IMG
+ WIDTH="53" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img154.png"
+ ALT="$L y = 0$"> are exactly all
+the <IMG
+ WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img280.png"
+ ALT="$y(n)$">'s such that
+</BLOCKQUOTE>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac{y(n+1)}{y(n)} =
+\gamma(n) \frac{\sum_{i=1}^m c_i p_i(n+1)}{\sum_{i=1}^m c_i p_i(n)}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="230" HEIGHT="46" BORDER="0"
+ SRC="img284.png"
+ ALT="\begin{displaymath}
+\frac{y(n+1)}{y(n)} =
+\gamma(n) \frac{\sum_{i=1}^m c_i p_i(n+1)}{\sum_{i=1}^m c_i p_i(n)}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P><BLOCKQUOTE>
+for some pair in the list, where the <IMG
+ WIDTH="16" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img285.png"
+ ALT="$c_i$">'s are arbitrary constants.
+In addition, if <IMG
+ WIDTH="75" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img286.png"
+ ALT="$p_1,\dots,p_m$"> are linearly independent over the constants
+in each pair of the list.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+A return value of <IMG
+ WIDTH="13" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img279.png"
+ ALT="$[]$"> proves that there
+are no hypergeometric solutions over <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img127.png"
+ ALT="$R$">, but there could be hypergeometric
+solutions over the algebraic closure of its fraction field.
+</BLOCKQUOTE>
+<P></P>
+
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2745"
+  HREF="node161.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2739"
+  HREF="node159.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2733"
+  HREF="node159.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2741"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2743"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2746"
+  HREF="node161.html">hypergeometricSolution</A>
+<B> Up:</B> <A NAME="tex2html2740"
+  HREF="node159.html">LinearOrdinaryRecurrenceHypergeometricSolutions</A>
+<B> Previous:</B> <A NAME="tex2html2734"
+  HREF="node159.html">LinearOrdinaryRecurrenceHypergeometricSolutions</A>
+ &nbsp <B>  <A NAME="tex2html2742"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2744"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

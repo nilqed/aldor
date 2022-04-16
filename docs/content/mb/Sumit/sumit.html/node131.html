@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>kernel</TITLE>
+<META NAME="description" CONTENT="kernel">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node132.html">
+<LINK REL="previous" HREF="node130.html">
+<LINK REL="up" HREF="node130.html">
+<LINK REL="next" HREF="node132.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2338"
+  HREF="node132.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2332"
+  HREF="node130.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2326"
+  HREF="node130.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2334"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2336"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2339"
+  HREF="node132.html">particularSolution</A>
+<B> Up:</B> <A NAME="tex2html2333"
+  HREF="node130.html">LinearOrdinaryDifferentialOperatorRationalSolutions</A>
+<B> Previous:</B> <A NAME="tex2html2327"
+  HREF="node130.html">LinearOrdinaryDifferentialOperatorRationalSolutions</A>
+ &nbsp <B>  <A NAME="tex2html2335"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2337"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00084100000000000000"></A>
+<A NAME="LinearOrdinaryDifferentialOperatorRationalSolutions:kernel"></A>
+<BR>
+kernel
+</H3> <A NAME="11940"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+kernel&nbsp;L
+<BR>
+kernel(L, p)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">kernel:</TD>
+<TD ALIGN="LEFT">EQ <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (<TT>Product</TT> RX, <TT>Vector</TT> FX)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">kernel:</TD>
+<TD ALIGN="LEFT">(EQ, RX) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (<TT>Product</TT> RX, <TT>Vector</TT> FX)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">kernel:</TD>
+<TD ALIGN="LEFT">RXD <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (<TT>Product</TT> RX, <TT>Vector</TT> FX)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">kernel:</TD>
+<TD ALIGN="LEFT">(RXD, RX) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (<TT>Product</TT> RX, <TT>Vector</TT> FX)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">EQ</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node60.html#LinearHolonomicDifferentialEquation"><TT>LinearHolonomicDifferentialEquation</TT></A>(R, RX, RXD)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>L</EM></TD>
+<TD ALIGN="LEFT">EQ</TD>
+<TD ALIGN="LEFT">A linear ordinary differential operator</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">RXD</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><I>p</I></TD>
+<TD ALIGN="LEFT">RX</TD>
+<TD ALIGN="LEFT">Allowed poles</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+kernel(L) returns <!-- MATH
+ $(d, [p_1,\dots,p_m])$
+ -->
+<IMG
+ WIDTH="111" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img217.png"
+ ALT="$(d, [p_1,\dots,p_m])$">
+such that <!-- MATH
+ $\{p_1/d,\dots,p_m/d\}$
+ -->
+<IMG
+ WIDTH="123" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img218.png"
+ ALT="$\{p_1/d,\dots,p_m/d\}$"> is
+a basis for all the rational solutions of <IMG
+ WIDTH="53" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img154.png"
+ ALT="$L y = 0$">.
+If a nonzero second argument <I>p</I> is present, then only the solutions
+having their poles among the roots of <I>p</I> (and at infinity) are
+computed.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+<I>d</I> is a ``universal denominator'' in the sense that any
+rational solution must be of the form <IMG
+ WIDTH="28" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img219.png"
+ ALT="$p/d$"> for a polynomial <I>p</I>.
+However, <I>d</I> is allowed to have negative exponents, hence it can
+be a fraction itself rather than a polynomial.
+Use <TT>expandFraction</TT> from <TT>Product</TT> to expand it properly.
+</BLOCKQUOTE>
+<P></P>
+
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2338"
+  HREF="node132.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2332"
+  HREF="node130.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2326"
+  HREF="node130.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2334"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2336"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2339"
+  HREF="node132.html">particularSolution</A>
+<B> Up:</B> <A NAME="tex2html2333"
+  HREF="node130.html">LinearOrdinaryDifferentialOperatorRationalSolutions</A>
+<B> Previous:</B> <A NAME="tex2html2327"
+  HREF="node130.html">LinearOrdinaryDifferentialOperatorRationalSolutions</A>
+ &nbsp <B>  <A NAME="tex2html2335"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2337"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

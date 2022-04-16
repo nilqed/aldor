@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>LinearOrdinaryDifferentialOperatorExponentialSolutions</TITLE>
+<META NAME="description" CONTENT="LinearOrdinaryDifferentialOperatorExponentialSolutions">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node127.html">
+<LINK REL="previous" HREF="node123.html">
+<LINK REL="up" HREF="node122.html">
+<LINK REL="next" HREF="node126.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2252"
+  HREF="node126.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2246"
+  HREF="node122.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2240"
+  HREF="node124.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2248"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2250"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2253"
+  HREF="node126.html">exponentialSolutions</A>
+<B> Up:</B> <A NAME="tex2html2247"
+  HREF="node122.html">Solutions of Differential and</A>
+<B> Previous:</B> <A NAME="tex2html2241"
+  HREF="node124.html">eigenring</A>
+ &nbsp <B>  <A NAME="tex2html2249"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2251"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00082000000000000000"></A><A NAME="11572"></A><A NAME="LinearOrdinaryDifferentialOperatorExponentialSolutions"></A>
+<BR>
+LinearOrdinaryDifferentialOperatorExponentialSolutions
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from LinearOrdinaryDifferentialOperatorExponentialSolutions(R, F, <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img83.png"
+ ALT="$\iota$">, RX, RXE, FX)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><TT>FactorizationRing</TT></TD>
+<TD ALIGN="LEFT">The coefficient ring</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>F</EM></TD>
+<TD ALIGN="LEFT"><TT>Field</TT></TD>
+<TD ALIGN="LEFT">A field containing R</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><TT>FactorizationRing</TT></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img83.png"
+ ALT="$\iota$"></TD>
+<TD ALIGN="LEFT"><IMG
+ WIDTH="53" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img196.png"
+ ALT="$R \to F$"></TD>
+<TD ALIGN="LEFT">Injection</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>RX</EM></TD>
+<TD ALIGN="LEFT"><TT>UnivariatePolynomialCategory</TT> R</TD>
+<TD ALIGN="LEFT">Polynomials over R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>RXD</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node68.html#LinearOrdinaryDifferentialOperatorCategory"><TT>LinearOrdinaryDifferentialOperatorCategory</TT></A> RX</TD>
+<TD ALIGN="LEFT">Differential operators</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>FX</EM></TD>
+<TD ALIGN="LEFT"><TT>UnivariatePolynomialCategory</TT> F</TD>
+<TD ALIGN="LEFT">Polynomials over F</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+LinearOrdinaryDifferentialOperatorExponentialSolutions(R, F, <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img83.png"
+ ALT="$\iota$">, RX, RXD, FX) provides an exponential solver
+for linear ordinary differential operators with polynomial coefficients.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node126.html#LinearOrdinaryDifferentialOperatorExponentialSolutions:exponentialSolutions"><TT>exponentialSolutions</TT></A>:</TD>
+<TD ALIGN="LEFT">EQ <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> EXPSOLS</TD>
+<TD ALIGN="LEFT">Exponential solutions</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">RXD <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> EXPSOLS</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">EQ</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node60.html#LinearHolonomicDifferentialEquation"><TT>LinearHolonomicDifferentialEquation</TT></A>(R, RX, RXD)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">EXPSOLS</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>List</TT> <TT>Cross</TT>(<TT>List</TT> <TT>Fraction</TT>
+FX, <TT>Product</TT> FX, <TT>Vector</TT> FX)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html2254"
+  HREF="node126.html">exponentialSolutions</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2252"
+  HREF="node126.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2246"
+  HREF="node122.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2240"
+  HREF="node124.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2248"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2250"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2253"
+  HREF="node126.html">exponentialSolutions</A>
+<B> Up:</B> <A NAME="tex2html2247"
+  HREF="node122.html">Solutions of Differential and</A>
+<B> Previous:</B> <A NAME="tex2html2241"
+  HREF="node124.html">eigenring</A>
+ &nbsp <B>  <A NAME="tex2html2249"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2251"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>How do I use libaldor in my programs?</TITLE>
+<META NAME="description" CONTENT="How do I use libaldor in my programs?">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html498"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html492"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html488"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html494"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html496"
+  HREF="node315.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html499"
+  HREF="node6.html">User Guide</A>
+<B> Up:</B> <A NAME="tex2html493"
+  HREF="node2.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html489"
+  HREF="node4.html">How do I get</A>
+ &nbsp; <B>  <A NAME="tex2html495"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html497"
+  HREF="node315.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00023000000000000000">
+How do I use <TT>libaldor</TT> in my programs?</A>
+</H2>
+To use <TT>libaldor</TT>, just add the line <TT>#include "aldor"</TT>
+in your A<SMALL>LDOR</SMALL> sources (if you were previously an axllib user,
+do <EM>not</EM> include <TT>"axllib"</TT> anymore).
+When building an executable, add the option
+<DIV ALIGN="CENTER">
+<TT>-laldor</TT>
+
+</DIV>
+to your compiler command line.
+Check the subsection on&nbsp;<A HREF="node11.html#:sec:gmp"><TT>using GMP</TT></A>
+for the options required if you want to use the GMP package,
+and the subsection on&nbsp;<A HREF="node14.html#:sec:debug"><TT>debugging</TT></A>
+for the options required if you want to use the debug version
+of <TT>libaldor</TT>.
+
+<P>
+If you are running <TT>libaldor</TT> inside the compiler interactive loop, then
+type the line
+<DIV ALIGN="CENTER">
+<TT>#include "aldorinterp"</TT>
+
+</DIV>
+immediately after <TT>#include "aldor"</TT>,
+which will import various things for interactive use and make the interpreter
+loop print values automatically.
+Note that <A HREF="node56.html#GMPInteger"><TT>GMPInteger</TT></A> and
+<A HREF="node50.html#GMPFloat"><TT>GMPFloat</TT></A> are not available in the interactive loop.
+As with any A<SMALL>LDOR</SMALL> program, do not forget
+the <TT>-q</TT> option in order to optimize your programs, specially
+if performance is an issue.
+
+<P>
+Please report any installation problem or bugs you encounter
+to <TT>salli@sophia.inria.fr</TT>.
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html498"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html492"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html488"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html494"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html496"
+  HREF="node315.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html499"
+  HREF="node6.html">User Guide</A>
+<B> Up:</B> <A NAME="tex2html493"
+  HREF="node2.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html489"
+  HREF="node4.html">How do I get</A>
+ &nbsp; <B>  <A NAME="tex2html495"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html497"
+  HREF="node315.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

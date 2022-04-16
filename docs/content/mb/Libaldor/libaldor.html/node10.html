@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Compatibility with C types</TITLE>
+<META NAME="description" CONTENT="Compatibility with C types">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node11.html">
+<LINK REL="previous" HREF="node9.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node11.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html576"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html570"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html564"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html572"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html574"
+  HREF="node315.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html577"
+  HREF="node11.html">Using GMP</A>
+<B> Up:</B> <A NAME="tex2html571"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html565"
+  HREF="node9.html">Input/Output</A>
+ &nbsp; <B>  <A NAME="tex2html573"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html575"
+  HREF="node315.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00034000000000000000">
+Compatibility with C types</A>
+</H2>
+Several of <TT>libaldor</TT>'s types are compatible with their C counterparts and
+can be passed as arguments to C functions.
+Table&nbsp;<A HREF="#tab:compatc">1</A>
+lists those types that can safely be exchanged with C functions.
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="5468"></A>
+<TABLE>
+<CAPTION><STRONG>Table 1:</STRONG>
+Compatibility between <TT>libaldor</TT>  and C types</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+<TR><TD ALIGN="LEFT"><TT>libaldor</TT></TD>
+<TD ALIGN="LEFT">C</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node31.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT"><TT>long </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node82.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT"><TT>long </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node103.html#SingleFloat"><TT>SingleFloat</TT></A></TD>
+<TD ALIGN="LEFT"><TT>float </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node123.html#Character"><TT>Character</TT></A></TD>
+<TD ALIGN="LEFT"><TT>char </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node257.html#String"><TT>String</TT></A></TD>
+<TD ALIGN="LEFT"><TT>char* </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node237.html#PrimitiveMemoryBlock"><TT>PrimitiveMemoryBlock</TT></A></TD>
+<TD ALIGN="LEFT"><TT>char* </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node229.html#PackedPrimitiveArray"><TT>PackedPrimitiveArray</TT></A> <A HREF="node119.html#Byte"><TT>Byte</TT></A></TD>
+<TD ALIGN="LEFT"><TT>char* </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node229.html#PackedPrimitiveArray"><TT>PackedPrimitiveArray</TT></A> <A HREF="node123.html#Character"><TT>Character</TT></A></TD>
+<TD ALIGN="LEFT"><TT>char* </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node229.html#PackedPrimitiveArray"><TT>PackedPrimitiveArray</TT></A> <A HREF="node103.html#SingleFloat"><TT>SingleFloat</TT></A></TD>
+<TD ALIGN="LEFT"><TT>float* </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node229.html#PackedPrimitiveArray"><TT>PackedPrimitiveArray</TT></A> <A HREF="node42.html#DoubleFloat"><TT>DoubleFloat</TT></A></TD>
+<TD ALIGN="LEFT"><TT>double* </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node303.html#Pointer"><TT>Pointer</TT></A></TD>
+<TD ALIGN="LEFT"><TT>void* </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node230.html#PrimitiveArray"><TT>PrimitiveArray</TT></A></TD>
+<TD ALIGN="LEFT"><TT>void** </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node230.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> <A HREF="node82.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT"><TT>long* </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node128.html#File"><TT>File</TT></A></TD>
+<TD ALIGN="LEFT"><TT>FILE* </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node50.html#GMPFloat"><TT>GMPFloat</TT></A></TD>
+<TD ALIGN="LEFT"><TT>mpf_t</TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node56.html#GMPInteger"><TT>GMPInteger</TT></A></TD>
+<TD ALIGN="LEFT"><TT>mpz_t</TT></TD>
+</TR>
+</TABLE>
+
+<A NAME="tab:compatc"></A>
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+Since A<SMALL>LDOR</SMALL> does not provide a type that is guaranteed to be compatible 
+with the C <TT>int</TT> type on all platforms, in order to use C functions
+having <TT>int</TT> in their parameters, you must first write a C wrapper that
+communicates only through the type <TT>long</TT>.
+Note that even though some type <TT>T</TT> can be compatible
+with a C type <TT>TC</TT>, it is not always the case that
+<A HREF="node230.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> <TT>T</TT> is compatible with <TT>TC*</TT>, for
+example <A HREF="node230.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> <A HREF="node123.html#Character"><TT>Character</TT></A> is not compatible
+with <TT>char*</TT> (nor is it compatible with <A HREF="node257.html#String"><TT>String</TT></A> in <TT>libaldor</TT>).
+It is always the case however that <A HREF="node229.html#PackedPrimitiveArray"><TT>PackedPrimitiveArray</TT></A> <TT>T</TT>
+is compatible with <TT>TC*</TT>.
+Note that <A HREF="node42.html#DoubleFloat"><TT>DoubleFloat</TT></A> is not compatible with
+the C type <TT>double</TT>, but with
+<TT>DFlo$Machine</TT> instead (there are coercions between
+<TT>DFlo$Machine</TT> and <A HREF="node42.html#DoubleFloat"><TT>DoubleFloat</TT></A>).
+On the other hand, <A HREF="node229.html#PackedPrimitiveArray"><TT>PackedPrimitiveArray</TT></A> <A HREF="node42.html#DoubleFloat"><TT>DoubleFloat</TT></A>
+is compatible with <TT>double*</TT>.
+When exchanging objects of type <A HREF="node230.html#PrimitiveArray"><TT>PrimitiveArray</TT></A>,
+<A HREF="node237.html#PrimitiveMemoryBlock"><TT>PrimitiveMemoryBlock</TT></A> or <A HREF="node257.html#String"><TT>String</TT></A>
+with C functions, always use the <A HREF="node232.html#PrimitiveArrayType:array"><TT>array</TT></A>,
+<A HREF="node232.html#PrimitiveArrayType:pointer"><TT>pointer</TT></A>, <A HREF="node263.html#String:string"><TT>string</TT></A> and
+<A HREF="node263.html#String:pointer"><TT>pointer</TT></A> functions. While those have no effect and
+no cost in the release version, they are necessary when linking with
+the debug version in order to use the bound-checking features.
+When doing this, you must use <A HREF="node303.html#Pointer"><TT>Pointer</TT></A> in the prototypes for
+the C functions rather than <A HREF="node230.html#PrimitiveArray"><TT>PrimitiveArray</TT></A>,
+<A HREF="node237.html#PrimitiveMemoryBlock"><TT>PrimitiveMemoryBlock</TT></A> or <A HREF="node257.html#String"><TT>String</TT></A>.
+For example, a function that uses the C-function <TT>unlink</TT> to
+remove a file could be written in the following way:
+<PRE>
+#include "aldor"
+remove(filename:String):() == {
+	import { unlink: Pointer -&gt; MachineInteger } from Foreign C;
+	unlink pointer filename;
+}
+</PRE>
+
+While a function that uses the C-function <TT>mktemp</TT> to get a
+temporary file name could be written in the following way:
+<PRE>
+#include "aldor"
+
+temporaryName():() == {
+	import { mktemp: Pointer -&gt; Pointer } from Foreign C;
+	string mktemp pointer("/tmp/XXXXXX");
+}
+</PRE>
+
+Note the use of <A HREF="node263.html#String:string"><TT>string</TT></A> even though the buffer was
+allocated within <TT>libaldor</TT>  and not within <TT>mktemp</TT>.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html576"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html570"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html564"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html572"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html574"
+  HREF="node315.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html577"
+  HREF="node11.html">Using GMP</A>
+<B> Up:</B> <A NAME="tex2html571"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html565"
+  HREF="node9.html">Input/Output</A>
+ &nbsp; <B>  <A NAME="tex2html573"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html575"
+  HREF="node315.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,316 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>recurrence</TITLE>
+<META NAME="description" CONTENT="recurrence">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node155.html">
+<LINK REL="up" HREF="node154.html">
+<LINK REL="next" HREF="node157.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2688"
+  HREF="node157.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2682"
+  HREF="node154.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2678"
+  HREF="node155.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2684"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2686"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2689"
+  HREF="node157.html">LinearOrdinaryRecurrenceEigenring</A>
+<B> Up:</B> <A NAME="tex2html2683"
+  HREF="node154.html">LinearOrdinaryOperatorToRecurrence</A>
+<B> Previous:</B> <A NAME="tex2html2679"
+  HREF="node155.html">drop</A>
+ &nbsp <B>  <A NAME="tex2html2685"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2687"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000811200000000000000"></A>
+<A NAME="LinearOrdinaryOperatorToRecurrence:recurrence"></A>
+<BR>
+recurrence
+</H3> <A NAME="13175"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+recurrence&nbsp;L
+<BR>
+recurrence&nbsp;S
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">recurrence:</TD>
+<TD ALIGN="LEFT">Rxy <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (Rxe, <TT>Integer</TT>)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">recurrence:</TD>
+<TD ALIGN="LEFT">SYS Rx <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$">
+(<TT>Array</TT> <TT>DenseMatrix</TT> Rx, <TT>Integer</TT>)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">SYS</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node78.html#LinearOrdinaryFirstOrderSystem"><TT>LinearOrdinaryFirstOrderSystem</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>L</EM></TD>
+<TD ALIGN="LEFT">Rxy</TD>
+<TD ALIGN="LEFT">A differential or difference operator</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>S</EM></TD>
+<TD ALIGN="LEFT">SYS Rx</TD>
+<TD ALIGN="LEFT">A first order differential or difference system</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+recurrence(L) returns
+<!-- MATH
+ $(R = \sum_i a_i E^i, m)$
+ -->
+<IMG
+ WIDTH="127" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img267.png"
+ ALT="$(R = \sum_i a_i E^i, m)$">
+such that for any formal series
+solution <!-- MATH
+ $\sum_{n >= 0} z_n P_n$
+ -->
+<IMG
+ WIDTH="93" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$\sum_{n &gt;= 0} z_n P_n$"> of <IMG
+ WIDTH="53" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img154.png"
+ ALT="$L y = 0$">
+the sequence <!-- MATH
+ $(z_0,z_1,\dots)$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$(z_0,z_1,\dots)$"> is a solution of
+</BLOCKQUOTE>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\left({\sum_i a_i E^{i+m}}\right)} z = R E^m z = 0\,,
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="211" HEIGHT="55" BORDER="0"
+ SRC="img270.png"
+ ALT="\begin{displaymath}
+{\left({\sum_i a_i E^{i+m}}\right)} z = R E^m z = 0\,,
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P><BLOCKQUOTE>
+while recurrence(S) returns <!-- MATH
+ $([A_0,\dots,A_d], m)$
+ -->
+<IMG
+ WIDTH="120" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img271.png"
+ ALT="$([A_0,\dots,A_d], m)$">
+such that for any formal series
+solution <!-- MATH
+ $\sum_{n >= 0} Z_n P_n$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img272.png"
+ ALT="$\sum_{n &gt;= 0} Z_n P_n$"> of <IMG
+ WIDTH="57" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img273.png"
+ ALT="$S Y = 0$">,
+the sequence <!-- MATH
+ $(Z_0,Z_1,\dots)$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img274.png"
+ ALT="$(Z_0,Z_1,\dots)$"> is a solution of
+</BLOCKQUOTE>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\left({\sum_i A_i E^{i+m}}\right)} Z = 0\,.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="152" HEIGHT="55" BORDER="0"
+ SRC="img275.png"
+ ALT="\begin{displaymath}
+{\left({\sum_i A_i E^{i+m}}\right)} Z = 0\,.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P><BLOCKQUOTE>
+In both cases,
+the basis <IMG
+ WIDTH="23" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img244.png"
+ ALT="$P_n$"> is <IMG
+ WIDTH="62" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img276.png"
+ ALT="$P_n = x^n$"> when <IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img144.png"
+ ALT="$L$"> or <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img277.png"
+ ALT="$S$"> is a differential operator,
+and <!-- MATH
+ $P_n = x^{{\underline n}} = x (x-1) \dots (x-n+1)$
+ -->
+<IMG
+ WIDTH="243" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img278.png"
+ ALT="$P_n = x^{{\underline n}} = x (x-1) \dots (x-n+1)$"> when <IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img144.png"
+ ALT="$L$"> or <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img277.png"
+ ALT="$S$"> is
+a recurrence operator.
+
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+Produces an error if <IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img144.png"
+ ALT="$L$"> or <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img277.png"
+ ALT="$S$">
+is neither a differential or recurrence operator.
+</BLOCKQUOTE>
+<P></P>
+
+  <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2688"
+  HREF="node157.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2682"
+  HREF="node154.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2678"
+  HREF="node155.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2684"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2686"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2689"
+  HREF="node157.html">LinearOrdinaryRecurrenceEigenring</A>
+<B> Up:</B> <A NAME="tex2html2683"
+  HREF="node154.html">LinearOrdinaryOperatorToRecurrence</A>
+<B> Previous:</B> <A NAME="tex2html2679"
+  HREF="node155.html">drop</A>
+ &nbsp <B>  <A NAME="tex2html2685"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2687"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

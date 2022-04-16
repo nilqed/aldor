@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>GMPFloat</TITLE>
+<META NAME="description" CONTENT="GMPFloat">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="next" HREF="node44.html">
+<LINK REL="previous" HREF="node36.html">
+<LINK REL="up" HREF="node15.html">
+<LINK REL="next" HREF="node41.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html965"
+  HREF="node41.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html959"
+  HREF="node15.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html953"
+  HREF="node39.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html961"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html963"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html966"
+  HREF="node41.html">precision,setPrecision!</A>
+<B> Up:</B> <A NAME="tex2html960"
+  HREF="node15.html">Arithmetic</A>
+<B> Previous:</B> <A NAME="tex2html954"
+  HREF="node39.html">fraction,truncate</A>
+ &nbsp <B>  <A NAME="tex2html962"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html964"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00059000000000000000"></A><A NAME="6922"></A><A NAME="GMPFloat"></A>
+<BR>
+GMPFloat
+</H2>
+<BR>
+<IMG
+ WIDTH="204" HEIGHT="50" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.gif"
+ ALT="\begin{usage}
+import from GMPFloat
+\end{usage}">
+<BR>
+
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="70" ALIGN="BOTTOM" BORDER="0"
+ SRC="img92.gif"
+ ALT="\begin{descr}
+GMPFloat~implements arbitrary precision floats with the float
+arithmetic provided by GMP.
+\end{descr}">
+<BR>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    
+<UL>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node221.html#CopyableType"><TT>CopyableType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node36.html#FloatType"><TT>FloatType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#GMPFloat:coerce"><TT>coerce</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node33.html#DoubleFloat"><TT>DoubleFloat</TT></A> <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">conversion</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node42.html#GMPFloat:limbs"><TT>limbs</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> <A HREF="node223.html#Generator"><TT>Generator</TT></A> <A HREF="node64.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">iteration</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node43.html#GMPFloat:new"><TT>new</TT></A>:</TD>
+<TD ALIGN="LEFT">() <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">initialization (for calling GMP)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node41.html#GMPFloat:precision"><TT>precision</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> <A HREF="node64.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">precision</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node41.html#GMPFloat:setPrecision_"><TT>setPrecision!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, <A HREF="node64.html#MachineInteger"><TT>MachineInteger</TT></A>) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">adjust precision</TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html967"
+  HREF="node41.html">precision,setPrecision!</A>
+<LI><A NAME="tex2html968"
+  HREF="node42.html">limbs</A>
+<LI><A NAME="tex2html969"
+  HREF="node43.html">new</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

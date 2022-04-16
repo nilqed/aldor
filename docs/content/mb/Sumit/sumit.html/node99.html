@@ -1,0 +1,356 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>UnivariateSkewPolynomialCategory</TITLE>
+<META NAME="description" CONTENT="UnivariateSkewPolynomialCategory">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node113.html">
+<LINK REL="previous" HREF="node98.html">
+<LINK REL="up" HREF="node52.html">
+<LINK REL="next" HREF="node100.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1811"
+  HREF="node100.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1805"
+  HREF="node52.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1799"
+  HREF="node98.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1807"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1809"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1812"
+  HREF="node100.html">apply</A>
+<B> Up:</B> <A NAME="tex2html1806"
+  HREF="node52.html">Univariate Skew Polynomials and</A>
+<B> Previous:</B> <A NAME="tex2html1800"
+  HREF="node98.html">UnivariateSkewPolynomial</A>
+ &nbsp <B>  <A NAME="tex2html1808"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1810"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000720000000000000000"></A><A NAME="10371"></A><A NAME="UnivariateSkewPolynomialCategory"></A>
+<BR>
+UnivariateSkewPolynomialCategory
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+UnivariateSkewPolynomialCategory&nbsp;R: Category
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><TT>Ring</TT></TD>
+<TD ALIGN="LEFT">The coefficient ring</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+UnivariateSkewPolynomialCategory&nbsp;is the category of univariate skew polynomials with coefficients
+in R.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><TT>UnivariatePolynomialAlgebra</TT> R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node100.html#UnivariateSkewPolynomialCategory:apply"><TT>apply</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, R, R) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> R</TD>
+<TD ALIGN="LEFT">Apply a skew-polynomial to a scalar</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <TT>CommutativeRing</TT> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node101.html#UnivariateSkewPolynomialCategory:companionSystem"><TT>companionSystem</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <A HREF="node78.html#LinearOrdinaryFirstOrderSystem"><TT>LinearOrdinaryFirstOrderSystem</TT></A> R</TD>
+<TD ALIGN="LEFT">Companion system</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <TT>Field</TT> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node102.html#UnivariateSkewPolynomialCategory:leftDivide"><TT>leftDivide</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (%, %)</TD>
+<TD ALIGN="LEFT">Left Euclidean division</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node103.html#UnivariateSkewPolynomialCategory:leftExtendedGcd"><TT>leftExtendedGcd</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (%, %, %)</TD>
+<TD ALIGN="LEFT">Left extended Euclidean algorithm</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node104.html#UnivariateSkewPolynomialCategory:leftGcd"><TT>leftGcd</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Greatest common left divisor</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node105.html#UnivariateSkewPolynomialCategory:leftLcm"><TT>leftLcm</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Least common left multiple</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node102.html#UnivariateSkewPolynomialCategory:leftQuotient"><TT>leftQuotient</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Left Euclidean quotient</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node102.html#UnivariateSkewPolynomialCategory:leftRemainder"><TT>leftRemainder</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Left Euclidean remainder</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node109.html#UnivariateSkewPolynomialCategory:rightDivide"><TT>rightDivide</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (%, %)</TD>
+<TD ALIGN="LEFT">Right Euclidean division</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node110.html#UnivariateSkewPolynomialCategory:rightExtendedGcd"><TT>rightExtendedGcd</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (%, %, %)</TD>
+<TD ALIGN="LEFT">Right extended Euclidean algorithm</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node111.html#UnivariateSkewPolynomialCategory:rightGcd"><TT>rightGcd</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Greatest common right divisor</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node112.html#UnivariateSkewPolynomialCategory:rightLcm"><TT>rightLcm</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Least common right multiple</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node109.html#UnivariateSkewPolynomialCategory:rightQuotient"><TT>rightQuotient</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Right Euclidean quotient</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node109.html#UnivariateSkewPolynomialCategory:rightRemainder"><TT>rightRemainder</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Right Euclidean remainder</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node108.html#UnivariateSkewPolynomialCategory:sparseLeftMultiple"><TT>sparseLeftMultiple</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, <TT>Integer</TT>) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Left-Multiple in <IMG
+ WIDTH="39" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img164.png"
+ ALT="$k[x^n]$"></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <TT>IntegralDomain</TT> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><TT>NonCommutativeIntegralDomain</TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node106.html#UnivariateSkewPolynomialCategory:monicLeftDivide"><TT>monicLeftDivide</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (%, %)</TD>
+<TD ALIGN="LEFT">Left Euclidean division</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node107.html#UnivariateSkewPolynomialCategory:monicRightDivide"><TT>monicRightDivide</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (%, %)</TD>
+<TD ALIGN="LEFT">Right Euclidean division</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node108.html#UnivariateSkewPolynomialCategory:monicSparseLeftMultiple"><TT>monicSparseLeftMultiple</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, <TT>Integer</TT>) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Left-Multiple in <IMG
+ WIDTH="39" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img164.png"
+ ALT="$k[x^n]$"></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1813"
+  HREF="node100.html">apply</A>
+<LI><A NAME="tex2html1814"
+  HREF="node101.html">companionSystem</A>
+<LI><A NAME="tex2html1815"
+  HREF="node102.html">leftDivide,leftQuotient,leftRemainder</A>
+<LI><A NAME="tex2html1816"
+  HREF="node103.html">leftExtendedGcd</A>
+<LI><A NAME="tex2html1817"
+  HREF="node104.html">leftGcd</A>
+<LI><A NAME="tex2html1818"
+  HREF="node105.html">leftLcm</A>
+<LI><A NAME="tex2html1819"
+  HREF="node106.html">monicLeftDivide</A>
+<LI><A NAME="tex2html1820"
+  HREF="node107.html">monicRightDivide</A>
+<LI><A NAME="tex2html1821"
+  HREF="node108.html">monicSparseLeftMultiple,sparseLeftMultiple</A>
+<LI><A NAME="tex2html1822"
+  HREF="node109.html">rightDivide,rightQuotient,rightRemainder</A>
+<LI><A NAME="tex2html1823"
+  HREF="node110.html">rightExtendedGcd</A>
+<LI><A NAME="tex2html1824"
+  HREF="node111.html">rightGcd</A>
+<LI><A NAME="tex2html1825"
+  HREF="node112.html">rightLcm</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1811"
+  HREF="node100.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1805"
+  HREF="node52.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1799"
+  HREF="node98.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1807"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1809"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1812"
+  HREF="node100.html">apply</A>
+<B> Up:</B> <A NAME="tex2html1806"
+  HREF="node52.html">Univariate Skew Polynomials and</A>
+<B> Previous:</B> <A NAME="tex2html1800"
+  HREF="node98.html">UnivariateSkewPolynomial</A>
+ &nbsp <B>  <A NAME="tex2html1808"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1810"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>LinearOrdinaryDifferentialSystemSeriesSolutions</TITLE>
+<META NAME="description" CONTENT="LinearOrdinaryDifferentialSystemSeriesSolutions">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node146.html">
+<LINK REL="previous" HREF="node140.html">
+<LINK REL="up" HREF="node122.html">
+<LINK REL="next" HREF="node144.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2504"
+  HREF="node144.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2498"
+  HREF="node122.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2492"
+  HREF="node142.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2500"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2502"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2505"
+  HREF="node144.html">kernel</A>
+<B> Up:</B> <A NAME="tex2html2499"
+  HREF="node122.html">Solutions of Differential and</A>
+<B> Previous:</B> <A NAME="tex2html2493"
+  HREF="node142.html">kernel</A>
+ &nbsp <B>  <A NAME="tex2html2501"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2503"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00088000000000000000"></A><A NAME="12498"></A><A NAME="LinearOrdinaryDifferentialSystemSeriesSolutions"></A>
+<BR>
+LinearOrdinaryDifferentialSystemSeriesSolutions
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from LinearOrdinaryDifferentialSystemSeriesSolutions(R, F, <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img83.png"
+ ALT="$\iota$">, RX, Fx)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><TT>IntegralDomain</TT></TD>
+<TD ALIGN="LEFT">An integral domain</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>F</EM></TD>
+<TD ALIGN="LEFT"><TT>Field</TT></TD>
+<TD ALIGN="LEFT">A field containing R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img83.png"
+ ALT="$\iota$"></TD>
+<TD ALIGN="LEFT"><IMG
+ WIDTH="53" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img196.png"
+ ALT="$R \to F$"></TD>
+<TD ALIGN="LEFT">Injection from R into F</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>RX</EM></TD>
+<TD ALIGN="LEFT"><TT>UnivariatePolynomialCategory</TT> R</TD>
+<TD ALIGN="LEFT">Polynomials over R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>Fx</EM></TD>
+<TD ALIGN="LEFT"><TT>UnivariateTaylorSeriesCategory</TT> F</TD>
+<TD ALIGN="LEFT">A series type over F</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+LinearOrdinaryDifferentialSystemSeriesSolutions(R, F, <IMG
+ WIDTH="10" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img83.png"
+ ALT="$\iota$">, RX, Fx) provides a series solver
+for linear ordinary differential systems with polynomial coefficients
+around an ordinary point.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node144.html#LinearOrdinaryDifferentialSystemSeriesSolutions:kernel"><TT>kernel</TT></A>:</TD>
+<TD ALIGN="LEFT">(SYS RX, R) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> V V Fx</TD>
+<TD ALIGN="LEFT">all the series solutions</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node145.html#LinearOrdinaryDifferentialSystemSeriesSolutions:solution"><TT>solution</TT></A>:</TD>
+<TD ALIGN="LEFT">(SYS RX, R) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> V F <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> V Fx <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> V Fx</TD>
+<TD ALIGN="LEFT">solve an initial value problem</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">SYS</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node78.html#LinearOrdinaryFirstOrderSystem"><TT>LinearOrdinaryFirstOrderSystem</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">V</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>Vector</TT></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html2506"
+  HREF="node144.html">kernel</A>
+<LI><A NAME="tex2html2507"
+  HREF="node145.html">solution</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2504"
+  HREF="node144.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2498"
+  HREF="node122.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2492"
+  HREF="node142.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2500"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2502"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2505"
+  HREF="node144.html">kernel</A>
+<B> Up:</B> <A NAME="tex2html2499"
+  HREF="node122.html">Solutions of Differential and</A>
+<B> Previous:</B> <A NAME="tex2html2493"
+  HREF="node142.html">kernel</A>
+ &nbsp <B>  <A NAME="tex2html2501"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2503"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

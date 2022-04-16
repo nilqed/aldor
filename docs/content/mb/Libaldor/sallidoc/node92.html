@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>BinaryWriter</TITLE>
+<META NAME="description" CONTENT="BinaryWriter">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="next" HREF="node97.html">
+<LINK REL="previous" HREF="node88.html">
+<LINK REL="up" HREF="node87.html">
+<LINK REL="next" HREF="node93.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1756"
+  HREF="node93.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1750"
+  HREF="node87.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1744"
+  HREF="node91.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1752"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1754"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1757"
+  HREF="node93.html">berr,bout</A>
+<B> Up:</B> <A NAME="tex2html1751"
+  HREF="node87.html">Input/Output</A>
+<B> Previous:</B> <A NAME="tex2html1745"
+  HREF="node91.html">read!</A>
+ &nbsp <B>  <A NAME="tex2html1753"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1755"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00062000000000000000"></A><A NAME="8702"></A><A NAME="BinaryWriter"></A>
+<BR>
+BinaryWriter
+</H2>
+
+<BR>
+<IMG
+ WIDTH="222" HEIGHT="50" ALIGN="BOTTOM" BORDER="0"
+ SRC="img232.gif"
+ ALT="\begin{usage}
+import from BinaryWriter
+\end{usage}">
+<BR>
+
+<BR>
+<IMG
+ WIDTH="414" HEIGHT="51" ALIGN="BOTTOM" BORDER="0"
+ SRC="img233.gif"
+ ALT="\begin{descr}
+BinaryWriter~provides various binary output streams.
+\end{descr}">
+<BR>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    
+<UL>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node93.html#BinaryWriter:berr"><TT>berr</TT></A>:</TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">the binary standard error stream</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node93.html#BinaryWriter:bout"><TT>bout</TT></A>:</TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">the binary standard output stream</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node94.html#BinaryWriter:binaryWriter"><TT>binaryWriter</TT></A>:</TD>
+<TD ALIGN="LEFT">(<A HREF="node97.html#Byte"><TT>Byte</TT></A> <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> ()) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">create a stream</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node94.html#BinaryWriter:binaryWriter"><TT>binaryWriter</TT></A>:</TD>
+<TD ALIGN="LEFT">(<A HREF="node97.html#Byte"><TT>Byte</TT></A> <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> (), () <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> ()) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">create a stream</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node95.html#BinaryWriter:flush_"><TT>flush!</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">flush a stream</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node96.html#BinaryWriter:write_"><TT>write!</TT></A>:</TD>
+<TD ALIGN="LEFT">(<A HREF="node97.html#Byte"><TT>Byte</TT></A>, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> ()</TD>
+<TD ALIGN="LEFT">write to a stream</TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1758"
+  HREF="node93.html">berr,bout</A>
+<LI><A NAME="tex2html1759"
+  HREF="node94.html">binaryWriter</A>
+<LI><A NAME="tex2html1760"
+  HREF="node95.html">flush!</A>
+<LI><A NAME="tex2html1761"
+  HREF="node96.html">write!</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

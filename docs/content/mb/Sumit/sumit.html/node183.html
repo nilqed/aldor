@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>decompose</TITLE>
+<META NAME="description" CONTENT="decompose">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node184.html">
+<LINK REL="previous" HREF="node182.html">
+<LINK REL="up" HREF="node182.html">
+<LINK REL="next" HREF="node184.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3066"
+  HREF="node184.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3060"
+  HREF="node182.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3054"
+  HREF="node182.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3062"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html3064"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3067"
+  HREF="node184.html">factorDecomp</A>
+<B> Up:</B> <A NAME="tex2html3061"
+  HREF="node182.html">UnivariateSkewPolynomialDecompositionCategory</A>
+<B> Previous:</B> <A NAME="tex2html3055"
+  HREF="node182.html">UnivariateSkewPolynomialDecompositionCategory</A>
+ &nbsp <B>  <A NAME="tex2html3063"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html3065"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000822100000000000000"></A>
+<A NAME="UnivariateSkewPolynomialDecompositionCategory:decompose"></A>
+<BR>
+decompose
+</H3> <A NAME="14756"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+decompose&nbsp;L
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">decompose:</TD>
+<TD ALIGN="LEFT">RXZ <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Union</TT>(ratRed:RAT, algRed:ALG)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">I</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>MachineInteger</TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT">RAT</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>Record</TT>
+(mode:<TT>MachineInteger</TT>, rat: <TT>Vector</TT> FxZ)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">ALG</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>Record</TT>(mode:I, modulus:FX, c0:<TT>Fraction</TT> FxY,
+ratpart: <TT>Vector</TT> Fx)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>L</EM></TD>
+<TD ALIGN="LEFT">RXZ</TD>
+<TD ALIGN="LEFT">A skew polynomial</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+Returns one of the following possible results:
+</BLOCKQUOTE><DL>
+<DT><STRONG>case <TT>rat</TT>:</STRONG></DT>
+<DD>&nbsp;returns <!-- MATH
+ $[0, [L_1,\dots,L_n]]$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img322.png"
+ ALT="$[0, [L_1,\dots,L_n]]$"> such that
+<I>L</I> is a least common left multiple of <IMG
+ WIDTH="77" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img323.png"
+ ALT="$L_1,\dots,L_n$">.
+If <IMG
+ WIDTH="43" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img324.png"
+ ALT="$n = 1$">, then <I>L</I> cannot be written as a
+least common left multiple of lower order operators
+(<I>L</I> can still be either reducible or irreducible in that case).
+</DD>
+<DT><STRONG>case <TT>alg</TT>:</STRONG></DT>
+<DD>&nbsp;returns <!-- MATH
+ $[0, h(x),u(x,y),[L_1,\dots,L_n]]$
+ -->
+<IMG
+ WIDTH="200" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img325.png"
+ ALT="$[0, h(x),u(x,y),[L_1,\dots,L_n]]$">,
+such that <IMG
+ WIDTH="35" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img316.png"
+ ALT="$h(x)$"> is irreducible over <I>F</I> and
+<I>L</I> is a least common left multiple of
+<IMG
+ WIDTH="77" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img323.png"
+ ALT="$L_1,\dots,L_n$"> and of <!-- MATH
+ $D + u(\alpha, x)$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img326.png"
+ ALT="$D + u(\alpha, x)$">
+where <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img263.png"
+ ALT="$\alpha$"> ranges over all the roots of <IMG
+ WIDTH="35" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img316.png"
+ ALT="$h(x)$">.
+</DD>
+</DL>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>See Also</B><P>
+    <BLOCKQUOTE>
+<A HREF="node184.html#UnivariateSkewPolynomialDecompositionCategory:factorDecomp"><TT>factorDecomp</TT></A>,<A HREF="node185.html#UnivariateSkewPolynomialDecompositionCategory:Loewy"><TT>Loewy</TT></A>
+</BLOCKQUOTE>
+<P></P>
+
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3066"
+  HREF="node184.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3060"
+  HREF="node182.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3054"
+  HREF="node182.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3062"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html3064"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3067"
+  HREF="node184.html">factorDecomp</A>
+<B> Up:</B> <A NAME="tex2html3061"
+  HREF="node182.html">UnivariateSkewPolynomialDecompositionCategory</A>
+<B> Previous:</B> <A NAME="tex2html3055"
+  HREF="node182.html">UnivariateSkewPolynomialDecompositionCategory</A>
+ &nbsp <B>  <A NAME="tex2html3063"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html3065"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

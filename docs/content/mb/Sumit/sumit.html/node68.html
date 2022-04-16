@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>LinearOrdinaryDifferentialOperatorCategory</TITLE>
+<META NAME="description" CONTENT="LinearOrdinaryDifferentialOperatorCategory">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node74.html">
+<LINK REL="previous" HREF="node67.html">
+<LINK REL="up" HREF="node52.html">
+<LINK REL="next" HREF="node69.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1372"
+  HREF="node69.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1366"
+  HREF="node52.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1360"
+  HREF="node67.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1368"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1370"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1373"
+  HREF="node69.html">adjoint</A>
+<B> Up:</B> <A NAME="tex2html1367"
+  HREF="node52.html">Univariate Skew Polynomials and</A>
+<B> Previous:</B> <A NAME="tex2html1361"
+  HREF="node67.html">LinearOrdinaryDifferentialOperator</A>
+ &nbsp <B>  <A NAME="tex2html1369"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1371"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00078000000000000000"></A><A NAME="9050"></A><A NAME="LinearOrdinaryDifferentialOperatorCategory"></A>
+<BR>
+LinearOrdinaryDifferentialOperatorCategory
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+LinearOrdinaryDifferentialOperatorCategory&nbsp;R: Category
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><TT>Ring</TT></TD>
+<TD ALIGN="LEFT">The coefficient ring of the operators</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+LinearOrdinaryDifferentialOperatorCategory&nbsp;R is the category of linear ordinary differential
+operators with coefficients in R.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node99.html#UnivariateSkewPolynomialCategory"><TT>UnivariateSkewPolynomialCategory</TT></A> R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node69.html#LinearOrdinaryDifferentialOperatorCategory:adjoint"><TT>adjoint</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Adjoint operator</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node70.html#LinearOrdinaryDifferentialOperatorCategory:apply"><TT>apply</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, R) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> R</TD>
+<TD ALIGN="LEFT">Applies an operator to an element of R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node71.html#LinearOrdinaryDifferentialOperatorCategory:derivation"><TT>derivation</TT></A>:</TD>
+<TD ALIGN="LEFT"><IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Derivation</TT> R</TD>
+<TD ALIGN="LEFT">The derivation used on R</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <TT>IntegralDomain</TT> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node72.html#LinearOrdinaryDifferentialOperatorCategory:exteriorPower"><TT>exteriorPower</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, <TT>Integer</TT>) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Exterior power</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node73.html#LinearOrdinaryDifferentialOperatorCategory:PowerSystem"><TT>symmetricPower</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, <TT>Integer</TT>) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Symmetric power</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node73.html#LinearOrdinaryDifferentialOperatorCategory:PowerSystem"><TT>exteriorPowerSystem</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, <TT>Integer</TT>) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (<TT>Vector</TT> R, M R)</TD>
+<TD ALIGN="LEFT">Exterior power</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node73.html#LinearOrdinaryDifferentialOperatorCategory:PowerSystem"><TT>symmetricPowerSystem</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, <TT>Integer</TT>) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (<TT>Vector</TT> R, M R)</TD>
+<TD ALIGN="LEFT">Symmetric power</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">M</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>DenseMatrix</TT></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1374"
+  HREF="node69.html">adjoint</A>
+<LI><A NAME="tex2html1375"
+  HREF="node70.html">apply</A>
+<LI><A NAME="tex2html1376"
+  HREF="node71.html">derivation</A>
+<LI><A NAME="tex2html1377"
+  HREF="node72.html">exteriorPower,symmetricPower</A>
+<LI><A NAME="tex2html1378"
+  HREF="node73.html">PowerSystem</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1372"
+  HREF="node69.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1366"
+  HREF="node52.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1360"
+  HREF="node67.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1368"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1370"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1373"
+  HREF="node69.html">adjoint</A>
+<B> Up:</B> <A NAME="tex2html1367"
+  HREF="node52.html">Univariate Skew Polynomials and</A>
+<B> Previous:</B> <A NAME="tex2html1361"
+  HREF="node67.html">LinearOrdinaryDifferentialOperator</A>
+ &nbsp <B>  <A NAME="tex2html1369"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1371"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

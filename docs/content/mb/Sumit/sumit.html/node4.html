@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>How do I get and install ?</TITLE>
+<META NAME="description" CONTENT="How do I get and install ?">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html358"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html352"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html346"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html354"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html356"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html359"
+  HREF="node5.html">How do I use</A>
+<B> Up:</B> <A NAME="tex2html353"
+  HREF="node2.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html347"
+  HREF="node3.html">What is ?</A>
+ &nbsp <B>  <A NAME="tex2html355"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html357"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00022000000000000000">
+How do I get and install <!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\Sigma {}^{{\rm it}}$">?</A>
+</H2>
+You can download <!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\Sigma {}^{{\rm it}}$">  by anonymous ftp from the C<SMALL>AF&#201;</SMALL> server at
+<BR>
+<BR>
+<DIV ALIGN="CENTER">
+<TT>ftp-sop.inria.fr</TT> in <TT>cafe/software/sumit</TT>
+
+</DIV>
+or from the URL:
+<BR>
+<BR>
+<DIV ALIGN="CENTER">
+<TT><A NAME="tex2html2"
+  HREF="http://www.inria.fr/cafe/Manuel.Bronstein/sumit/">http://www.inria.fr/cafe/Manuel.Bronstein/sumit/</A></TT>
+</DIV>
+After downloading the file <TT>sumit.tar.gz</TT>, issue
+``<TT>tar -xvzf sumit.tar.gz</TT>'' in order to unpack it.
+This will create the following directories:
+
+<UL>
+<LI><TT>sumit/doc</TT>: this user guide,
+</LI>
+<LI><TT>sumit/lib</TT>: the library,
+</LI>
+<LI><TT>sumit/include</TT>: the required include files,
+</LI>
+<LI><TT>sumit/test</TT>: some test files,
+</LI>
+<LI><TT>sumit/samples</TT>: <!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\Sigma {}^{{\rm it}}$">  programming samples,
+</LI>
+</UL>
+Once the above file is unpacked, do the following:
+
+<UL>
+<LI>add the option <TT>-csys=XXX</TT> to your ALDORARGS environment variable,
+where <TT>XXX</TT>
+depends on your hardware and operating system. Common values for <TT>XXX</TT>
+are <TT>axposf1v4</TT> for OSF1 V4.0 on a DEC Alpha, <TT>linux-486</TT> for linux on
+a 486 or above PC, and <TT>sun4os55g-v8</TT> for SunOS 5.5 on a SPARC v8 machine.
+See the file <TT>$ALDORROOT/include/axiomxl.conf</TT> for other values;
+</LI>
+<LI>go to the <TT>sumit/lib</TT> directory and execute <TT>source makesumit-csh</TT>
+or <TT>source makesumit-bash</TT> depending on your shell;
+</LI>
+<LI>if you want to build the GMP version of the library,
+execute <TT>source makesumit.gmp-csh</TT>
+or <TT>source makesumit.gmp-bash</TT> depending on your shell.
+See the subsection on&nbsp;<A HREF="node10.html#:sec:gmp"><TT>using GMP</TT></A>
+for more information about using the GMP version of <!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\Sigma {}^{{\rm it}}$">;
+</LI>
+<LI>if you want to build the debug version of the library,
+execute <TT>source makesumitd-csh</TT> or <TT>source makesumitd-bash</TT>
+depending on your shell;
+See the subsection on&nbsp;<A HREF="node12.html#:sec:debug"><TT>debugging</TT></A>
+for more information on using the debug library.
+</LI>
+</UL>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html358"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html352"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html346"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html354"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html356"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html359"
+  HREF="node5.html">How do I use</A>
+<B> Up:</B> <A NAME="tex2html353"
+  HREF="node2.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html347"
+  HREF="node3.html">What is ?</A>
+ &nbsp <B>  <A NAME="tex2html355"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html357"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

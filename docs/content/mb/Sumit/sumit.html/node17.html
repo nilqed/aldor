@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>DenseHomogeneousExteriorProduct</TITLE>
+<META NAME="description" CONTENT="DenseHomogeneousExteriorProduct">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node23.html">
+<LINK REL="previous" HREF="node16.html">
+<LINK REL="up" HREF="node14.html">
+<LINK REL="next" HREF="node18.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html564"
+  HREF="node18.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html558"
+  HREF="node14.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html552"
+  HREF="node16.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html560"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html562"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html565"
+  HREF="node18.html">appears?</A>
+<B> Up:</B> <A NAME="tex2html559"
+  HREF="node14.html">Dense Homogeneous Multivariate Polynomials</A>
+<B> Previous:</B> <A NAME="tex2html553"
+  HREF="node16.html">DenseHomogeneousExteriorPower</A>
+ &nbsp <B>  <A NAME="tex2html561"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html563"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00053000000000000000"></A><A NAME="6932"></A><A NAME="DenseHomogeneousExteriorProduct"></A>
+<BR>
+DenseHomogeneousExteriorProduct
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from DenseHomogeneousExteriorProduct(n, m)
+<BR>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>n</EM></TD>
+<TD ALIGN="LEFT"><TT>MachineInteger</TT></TD>
+<TD ALIGN="LEFT">The total degree</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>m</EM></TD>
+<TD ALIGN="LEFT"><TT>MachineInteger</TT></TD>
+<TD ALIGN="LEFT">The number of variables</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+DenseHomogeneousExteriorProduct(n, m) implements dense homogeneous exterior products
+of total degree <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$n$"> in <IMG
+ WIDTH="18" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$m$"> variables, <I>i.e.</I>&nbsp;exterior products of the form
+</BLOCKQUOTE>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+X_{e_1} \wedge X_{e_2} \wedge\dots \wedge X_{e_n}
+\quad\mbox{where}\quad 1 \le e_1 < e_2 < \dots < e_n \le m\,.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="423" HEIGHT="28" BORDER="0"
+ SRC="img17.png"
+ ALT="\begin{displaymath}
+X_{e_1} \wedge X_{e_2} \wedge\dots \wedge X_{e_n}
+\quad\mbox{where}\quad 1 \le e_1 &lt; e_2 &lt; \dots &lt; e_n \le m\,.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><TT>FiniteSet</TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node18.html#DenseHomogeneousExteriorProduct:appears_"><TT>appears?</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, I) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Boolean</TT></TD>
+<TD ALIGN="LEFT">Degree in a variable</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node19.html#DenseHomogeneousExteriorProduct:increment"><TT>increment</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Partial</TT> %</TD>
+<TD ALIGN="LEFT">Increment all the variables</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(%, I) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Partial</TT> %</TD>
+<TD ALIGN="LEFT">Increment one variable</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node20.html#DenseHomogeneousExteriorProduct:incrementReplace"><TT>incrementReplace</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, I, I) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (I, %)</TD>
+<TD ALIGN="LEFT">Increment all and replace one variable</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node21.html#DenseHomogeneousExteriorProduct:principalProduct"><TT>principalProduct</TT></A>:</TD>
+<TD ALIGN="LEFT"><IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT"><!-- MATH
+ $X_1 \wedge \dots \wedge X_n$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$X_1 \wedge \dots \wedge X_n$"></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node22.html#DenseHomogeneousExteriorProduct:replace"><TT>replace</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, I, I) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (I, %)</TD>
+<TD ALIGN="LEFT">Replace variable</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">I</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>MachineInteger</TT></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html566"
+  HREF="node18.html">appears?</A>
+<LI><A NAME="tex2html567"
+  HREF="node19.html">increment</A>
+<LI><A NAME="tex2html568"
+  HREF="node20.html">incrementReplace</A>
+<LI><A NAME="tex2html569"
+  HREF="node21.html">principalProduct</A>
+<LI><A NAME="tex2html570"
+  HREF="node22.html">replace</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html564"
+  HREF="node18.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html558"
+  HREF="node14.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html552"
+  HREF="node16.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html560"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html562"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html565"
+  HREF="node18.html">appears?</A>
+<B> Up:</B> <A NAME="tex2html559"
+  HREF="node14.html">Dense Homogeneous Multivariate Polynomials</A>
+<B> Previous:</B> <A NAME="tex2html553"
+  HREF="node16.html">DenseHomogeneousExteriorPower</A>
+ &nbsp <B>  <A NAME="tex2html561"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html563"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

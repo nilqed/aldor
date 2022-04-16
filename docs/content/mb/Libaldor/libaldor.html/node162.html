@@ -1,0 +1,373 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Data Structures</TITLE>
+<META NAME="description" CONTENT="Data Structures">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node278.html">
+<LINK REL="previous" HREF="node109.html">
+<LINK REL="up" HREF="html.html">
+<LINK REL="next" HREF="node163.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2885"
+  HREF="node163.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2879"
+  HREF="html.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2873"
+  HREF="node161.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2881"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2883"
+  HREF="node315.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2886"
+  HREF="node163.html">Array</A>
+<B> Up:</B> <A NAME="tex2html2880"
+  HREF="html.html">html</A>
+<B> Previous:</B> <A NAME="tex2html2874"
+  HREF="node161.html">flush</A>
+ &nbsp; <B>  <A NAME="tex2html2882"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2884"
+  HREF="node315.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00070000000000000000">
+Data Structures</A>
+</H1>
+
+  <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html2887"
+  HREF="node163.html">Array</A>
+<LI><A NAME="tex2html2888"
+  HREF="node164.html">ArrayException</A>
+<LI><A NAME="tex2html2889"
+  HREF="node165.html">ArrayExceptionType</A>
+<LI><A NAME="tex2html2890"
+  HREF="node166.html">ArrayType</A>
+<UL>
+<LI><A NAME="tex2html2891"
+  HREF="node167.html">array</A>
+<LI><A NAME="tex2html2892"
+  HREF="node168.html">binarySearch</A>
+<LI><A NAME="tex2html2893"
+  HREF="node169.html">data</A>
+<LI><A NAME="tex2html2894"
+  HREF="node170.html">new</A>
+<LI><A NAME="tex2html2895"
+  HREF="node171.html">resize!</A>
+<LI><A NAME="tex2html2896"
+  HREF="node172.html">sort!</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2897"
+  HREF="node173.html">BoundedFiniteDataStructureType</A>
+<UL>
+<LI><A NAME="tex2html2898"
+  HREF="node174.html">size</A>
+<LI><A NAME="tex2html2899"
+  HREF="node175.html">findAll</A>
+<LI><A NAME="tex2html2900"
+  HREF="node176.html">generator</A>
+<LI><A NAME="tex2html2901"
+  HREF="node177.html">member?</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2902"
+  HREF="node178.html">BoundedFiniteLinearStructureType</A>
+<UL>
+<LI><A NAME="tex2html2903"
+  HREF="node179.html">linearSearch</A>
+<LI><A NAME="tex2html2904"
+  HREF="node180.html">map</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2905"
+  HREF="node181.html">CheckingArray</A>
+<LI><A NAME="tex2html2906"
+  HREF="node182.html">CheckingList</A>
+<LI><A NAME="tex2html2907"
+  HREF="node183.html">CheckingMemoryBlock</A>
+<LI><A NAME="tex2html2908"
+  HREF="node184.html">DataStructureType</A>
+<UL>
+<LI><A NAME="tex2html2909"
+  HREF="node185.html">empty?</A>
+<LI><A NAME="tex2html2910"
+  HREF="node186.html">free!</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2911"
+  HREF="node187.html">DynamicDataStructureType</A>
+<UL>
+<LI><A NAME="tex2html2912"
+  HREF="node188.html">insert</A>
+<LI><A NAME="tex2html2913"
+  HREF="node189.html">remove,removeAll</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2914"
+  HREF="node190.html">FiniteLinearStructureType</A>
+<UL>
+<LI><A NAME="tex2html2915"
+  HREF="node191.html">[]</A>
+<LI><A NAME="tex2html2916"
+  HREF="node192.html">empty</A>
+<LI><A NAME="tex2html2917"
+  HREF="node193.html">new</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2918"
+  HREF="node194.html">Flags</A>
+<UL>
+<LI><A NAME="tex2html2919"
+  HREF="node195.html">dimension</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2920"
+  HREF="node196.html">HashTable</A>
+<UL>
+<LI><A NAME="tex2html2921"
+  HREF="node197.html">forget,remember</A>
+<LI><A NAME="tex2html2922"
+  HREF="node198.html">remove!</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2923"
+  HREF="node199.html">KeyEntry</A>
+<UL>
+<LI><A NAME="tex2html2924"
+  HREF="node200.html">[]</A>
+<LI><A NAME="tex2html2925"
+  HREF="node201.html">entry,explode,key</A>
+<LI><A NAME="tex2html2926"
+  HREF="node202.html">setEntry!,setKey!</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2927"
+  HREF="node203.html">HashType</A>
+<UL>
+<LI><A NAME="tex2html2928"
+  HREF="node204.html">hash</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2929"
+  HREF="node205.html">LinearStructureType</A>
+<UL>
+<LI><A NAME="tex2html2930"
+  HREF="node206.html">[]</A>
+<LI><A NAME="tex2html2931"
+  HREF="node207.html">apply</A>
+<LI><A NAME="tex2html2932"
+  HREF="node208.html">firstIndex</A>
+<LI><A NAME="tex2html2933"
+  HREF="node209.html">set!</A>
+<LI><A NAME="tex2html2934"
+  HREF="node210.html">equal?</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2935"
+  HREF="node211.html">List</A>
+<LI><A NAME="tex2html2936"
+  HREF="node212.html">ListException</A>
+<LI><A NAME="tex2html2937"
+  HREF="node213.html">ListExceptionType</A>
+<LI><A NAME="tex2html2938"
+  HREF="node214.html">ListType</A>
+<UL>
+<LI><A NAME="tex2html2939"
+  HREF="node215.html"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$+$"></A>
+<LI><A NAME="tex2html2940"
+  HREF="node216.html">append!</A>
+<LI><A NAME="tex2html2941"
+  HREF="node217.html">cons</A>
+<LI><A NAME="tex2html2942"
+  HREF="node218.html">delete!</A>
+<LI><A NAME="tex2html2943"
+  HREF="node219.html">find</A>
+<LI><A NAME="tex2html2944"
+  HREF="node220.html">first</A>
+<LI><A NAME="tex2html2945"
+  HREF="node221.html">merge!</A>
+<LI><A NAME="tex2html2946"
+  HREF="node222.html">rest</A>
+<LI><A NAME="tex2html2947"
+  HREF="node223.html">reverse</A>
+<LI><A NAME="tex2html2948"
+  HREF="node224.html">setFirst!</A>
+<LI><A NAME="tex2html2949"
+  HREF="node225.html">setRest!</A>
+<LI><A NAME="tex2html2950"
+  HREF="node226.html">sort!</A>
+<LI><A NAME="tex2html2951"
+  HREF="node227.html">split!</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2952"
+  HREF="node228.html">MemoryBlock</A>
+<LI><A NAME="tex2html2953"
+  HREF="node229.html">PackedPrimitiveArray</A>
+<LI><A NAME="tex2html2954"
+  HREF="node230.html">PrimitiveArray</A>
+<LI><A NAME="tex2html2955"
+  HREF="node231.html">PrimitiveArrayType</A>
+<UL>
+<LI><A NAME="tex2html2956"
+  HREF="node232.html">array,pointer</A>
+<LI><A NAME="tex2html2957"
+  HREF="node233.html">new</A>
+<LI><A NAME="tex2html2958"
+  HREF="node234.html">read,write</A>
+<LI><A NAME="tex2html2959"
+  HREF="node235.html">resize!</A>
+<LI><A NAME="tex2html2960"
+  HREF="node236.html">sort!</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2961"
+  HREF="node237.html">PrimitiveMemoryBlock</A>
+<UL>
+<LI><A NAME="tex2html2962"
+  HREF="node238.html">coerce</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2963"
+  HREF="node239.html">Queue</A>
+<UL>
+<LI><A NAME="tex2html2964"
+  HREF="node240.html">remove!</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2965"
+  HREF="node241.html">Set</A>
+<UL>
+<LI><A NAME="tex2html2966"
+  HREF="node242.html"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$-$"></A>
+<LI><A NAME="tex2html2967"
+  HREF="node243.html">intersection</A>
+<LI><A NAME="tex2html2968"
+  HREF="node244.html">minus!</A>
+<LI><A NAME="tex2html2969"
+  HREF="node245.html">union</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2970"
+  HREF="node246.html">SortedAssociationSet</A>
+<LI><A NAME="tex2html2971"
+  HREF="node247.html">SortedList</A>
+<LI><A NAME="tex2html2972"
+  HREF="node248.html">SortedSet</A>
+<LI><A NAME="tex2html2973"
+  HREF="node249.html">Stream</A>
+<UL>
+<LI><A NAME="tex2html2974"
+  HREF="node250.html">size</A>
+<LI><A NAME="tex2html2975"
+  HREF="node251.html">constant</A>
+<LI><A NAME="tex2html2976"
+  HREF="node252.html">generator</A>
+<LI><A NAME="tex2html2977"
+  HREF="node253.html">interlacing</A>
+<LI><A NAME="tex2html2978"
+  HREF="node254.html">map!</A>
+<LI><A NAME="tex2html2979"
+  HREF="node255.html">orbit</A>
+<LI><A NAME="tex2html2980"
+  HREF="node256.html">stream</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2981"
+  HREF="node257.html">String</A>
+<UL>
+<LI><A NAME="tex2html2982"
+  HREF="node258.html"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$+$"></A>
+<LI><A NAME="tex2html2983"
+  HREF="node259.html">char</A>
+<LI><A NAME="tex2html2984"
+  HREF="node260.html">coerce</A>
+<LI><A NAME="tex2html2985"
+  HREF="node261.html">error</A>
+<LI><A NAME="tex2html2986"
+  HREF="node262.html">new</A>
+<LI><A NAME="tex2html2987"
+  HREF="node263.html">pointer,string</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2988"
+  HREF="node264.html">StringBuffer</A>
+<UL>
+<LI><A NAME="tex2html2989"
+  HREF="node265.html">coerce</A>
+<LI><A NAME="tex2html2990"
+  HREF="node266.html">new</A>
+<LI><A NAME="tex2html2991"
+  HREF="node267.html">string</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2992"
+  HREF="node268.html">TableException</A>
+<LI><A NAME="tex2html2993"
+  HREF="node269.html">TableExceptionType</A>
+<LI><A NAME="tex2html2994"
+  HREF="node270.html">TableType</A>
+<UL>
+<LI><A NAME="tex2html2995"
+  HREF="node271.html">[]</A>
+<LI><A NAME="tex2html2996"
+  HREF="node272.html">apply</A>
+<LI><A NAME="tex2html2997"
+  HREF="node273.html">entries, keys</A>
+<LI><A NAME="tex2html2998"
+  HREF="node274.html">find</A>
+<LI><A NAME="tex2html2999"
+  HREF="node275.html">numberOfEntries</A>
+<LI><A NAME="tex2html3000"
+  HREF="node276.html">set!</A>
+<LI><A NAME="tex2html3001"
+  HREF="node277.html">table</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

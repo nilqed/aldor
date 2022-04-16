@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>NewtonPolygonEquations</TITLE>
+<META NAME="description" CONTENT="NewtonPolygonEquations">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node40.html">
+<LINK REL="up" HREF="node37.html">
+<LINK REL="next" HREF="node50.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1037"
+  HREF="node50.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1031"
+  HREF="node37.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1027"
+  HREF="node48.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1033"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1035"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1038"
+  HREF="node50.html">exponentialPart</A>
+<B> Up:</B> <A NAME="tex2html1032"
+  HREF="node37.html">Univariate Polynomials</A>
+<B> Previous:</B> <A NAME="tex2html1028"
+  HREF="node48.html">slopes</A>
+ &nbsp <B>  <A NAME="tex2html1034"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1036"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00063000000000000000"></A><A NAME="8285"></A><A NAME="NewtonPolygonEquations"></A>
+<BR>
+NewtonPolygonEquations
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from NewtonPolygonEquations(R, Rx, Rxy, E, Ex)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><TT>IntegralDomain</TT></TD>
+<TD ALIGN="LEFT">The coefficient ring</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>Rx</EM></TD>
+<TD ALIGN="LEFT"><TT>UnivariatePolynomialCategory</TT> R</TD>
+<TD ALIGN="LEFT">Polynomials over R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>Rxy</EM></TD>
+<TD ALIGN="LEFT"><TT>UnivariatePolynomialAlgebra</TT> Rx</TD>
+<TD ALIGN="LEFT">polynomials over <EM>Rx</EM></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>E</EM></TD>
+<TD ALIGN="LEFT"><TT>CommutativeRing</TT></TD>
+<TD ALIGN="LEFT">An extension of R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>Ex</EM></TD>
+<TD ALIGN="LEFT"><TT>UnivariatePolynomialCategory</TT> E</TD>
+<TD ALIGN="LEFT">Polynomials over E</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+NewtonPolygonEquations(R, Rx, Rxy, E, Ex) provides tools to compute
+exponents and indicial and characteristic equations associated
+with Newton polygons.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node50.html#NewtonPolygonEquations:exponentialPart"><TT>exponentialPart</TT></A>:</TD>
+<TD ALIGN="LEFT">(Rxy, E, <TT>Integer</TT>, <TT>Integer</TT>, E, R <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> E) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> Ex</TD>
+<TD ALIGN="LEFT">Exponential part</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node51.html#NewtonPolygonEquations:series"><TT>series</TT></A>:</TD>
+<TD ALIGN="LEFT">(Rxy, E, <TT>Integer</TT>, <TT>Integer</TT>, E, R <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> E)
+<IMG
+ WIDTH="64" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.png"
+ ALT="$\to E[[x]]$"></TD>
+<TD ALIGN="LEFT">Laurent series</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="44" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img81.png"
+ ALT="$E[[x]]$"></TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>DenseUnivariateTaylorSeries</TT> E</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1039"
+  HREF="node50.html">exponentialPart</A>
+<LI><A NAME="tex2html1040"
+  HREF="node51.html">series</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>HashTable</TITLE>
+<META NAME="description" CONTENT="HashTable">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="next" HREF="node167.html">
+<LINK REL="previous" HREF="node155.html">
+<LINK REL="up" HREF="node135.html">
+<LINK REL="next" HREF="node161.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2805"
+  HREF="node161.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2799"
+  HREF="node135.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2793"
+  HREF="node159.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2801"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2803"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2806"
+  HREF="node161.html">apply</A>
+<B> Up:</B> <A NAME="tex2html2800"
+  HREF="node135.html">Data Structures</A>
+<B> Previous:</B> <A NAME="tex2html2794"
+  HREF="node159.html">new</A>
+ &nbsp <B>  <A NAME="tex2html2802"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2804"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00079000000000000000"></A><A NAME="11021"></A><A NAME="HashTable"></A>
+<BR>
+HashTable
+</H2>
+
+<BR>
+<IMG
+ WIDTH="267" HEIGHT="50" ALIGN="BOTTOM" BORDER="0"
+ SRC="img417.gif"
+ ALT="\begin{usage}
+import from HashTable(K, V, h)
+\end{usage}">
+<BR>
+
+<BR>
+<IMG
+ WIDTH="466" HEIGHT="93" ALIGN="BOTTOM" BORDER="0"
+ SRC="img418.gif"
+ ALT="\begin{params}
+{\em K} &amp; \htmlref{\texttt{PrimitiveType}}{PrimitiveType} &amp; the...
+...tt{MachineInteger}}{MachineInteger} &amp; the hash function to use\\\end{params}">
+<BR>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="89" ALIGN="BOTTOM" BORDER="0"
+ SRC="img419.gif"
+ ALT="\begin{descr}
+HashTable~provides hash tables with keys of type $K$,
+entries of ...
+...lref{\texttt{hash}}{HashType:hash} is used
+by default in that case.
+\end{descr}">
+<BR>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    
+<UL>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node161.html#HashTable:apply"><TT>apply</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, K) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> V</TD>
+<TD ALIGN="LEFT">extraction of an entry</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(%, <A HREF="node64.html#MachineInteger"><TT>MachineInteger</TT></A>, <A HREF="node64.html#MachineInteger"><TT>MachineInteger</TT></A>) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> V</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node162.html#HashTable:find"><TT>find</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, K) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> <A HREF="node227.html#Partial"><TT>Partial</TT></A> V</TD>
+<TD ALIGN="LEFT">search for an entry</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node163.html#HashTable:free_"><TT>free!</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> ()</TD>
+<TD ALIGN="LEFT">memory disposal</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node164.html#HashTable:insert_"><TT>insert!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, K, V) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> (<A HREF="node64.html#MachineInteger"><TT>MachineInteger</TT></A>, <A HREF="node64.html#MachineInteger"><TT>MachineInteger</TT></A>)</TD>
+<TD ALIGN="LEFT">modification of an entry</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node165.html#HashTable:set_"><TT>set!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, K, V) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> V</TD>
+<TD ALIGN="LEFT">modification of an entry</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node166.html#HashTable:table"><TT>table</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node64.html#MachineInteger"><TT>MachineInteger</TT></A> <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">creation of a table</TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+
+<UL>
+<LI>if <IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img420.gif"
+ ALT="$K$"> has InputType and <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img421.gif"
+ ALT="$V$"> has InputType then <BR></LI>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node115.html#InputType"><TT>InputType</TT></A></TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+
+<UL>
+<LI>if <IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img420.gif"
+ ALT="$K$"> has OutputType and <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img421.gif"
+ ALT="$V$"> has OutputType then <BR></LI>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node117.html#OutputType"><TT>OutputType</TT></A></TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+
+<UL>
+<LI>if <IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img420.gif"
+ ALT="$K$"> has SerializableType and <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img421.gif"
+ ALT="$V$"> has SerializableType then <BR></LI>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node119.html#SerializableType"><TT>SerializableType</TT></A></TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html2807"
+  HREF="node161.html">apply</A>
+<LI><A NAME="tex2html2808"
+  HREF="node162.html">find</A>
+<LI><A NAME="tex2html2809"
+  HREF="node163.html">free!</A>
+<LI><A NAME="tex2html2810"
+  HREF="node164.html">insert!</A>
+<LI><A NAME="tex2html2811"
+  HREF="node165.html">set!</A>
+<LI><A NAME="tex2html2812"
+  HREF="node166.html">table</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2805"
+  HREF="node161.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2799"
+  HREF="node135.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2793"
+  HREF="node159.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2801"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2803"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2806"
+  HREF="node161.html">apply</A>
+<B> Up:</B> <A NAME="tex2html2800"
+  HREF="node135.html">Data Structures</A>
+<B> Previous:</B> <A NAME="tex2html2794"
+  HREF="node159.html">new</A>
+ &nbsp <B>  <A NAME="tex2html2802"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2804"
+  HREF="node240.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Using GMP</TITLE>
+<META NAME="description" CONTENT="Using GMP">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node12.html">
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node12.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html590"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html584"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html578"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html586"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html588"
+  HREF="node315.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html591"
+  HREF="node12.html">Profiling</A>
+<B> Up:</B> <A NAME="tex2html585"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html579"
+  HREF="node10.html">Compatibility with C types</A>
+ &nbsp; <B>  <A NAME="tex2html587"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html589"
+  HREF="node315.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00035000000000000000"></A>
+<A NAME=":sec:gmp"></A>
+<BR>
+Using GMP
+</H2> <A NAME="7677"></A>
+The type <TT>Integer</TT> described in this document is actually a macro,
+which defaults to <A HREF="node17.html#AldorInteger"><TT>AldorInteger</TT></A>, the software integers provided
+by the A<SMALL>LDOR</SMALL>  runtime. For efficiency or other reasons, you may prefer
+to use the GMP<A NAME="tex2html8"
+  HREF="footnode.html#foot5469"><SUP>3</SUP></A>library, which is supported by <TT>libaldor</TT>. The easiest way
+to use GMP is to compile all your source files with the options
+<DIV ALIGN="CENTER">
+<TT>-dGMP -cruntime=foam-gmp,gmp</TT>
+
+</DIV>
+The option <TT>-dGMP</TT> makes <TT>Integer</TT> point to the type
+<A HREF="node56.html#GMPInteger"><TT>GMPInteger</TT></A>, while the other option, which is necessary
+only when linking an executable, ensure that GMP makes use
+of the A<SMALL>LDOR</SMALL>  garbage collector. All you need is GMP 3.0 or later
+installed in a file called <TT>libgmp.a</TT> to produce executables.
+Using GMP generally produces more efficient programs,
+but programs calling GMP cannot be interpreted by the A<SMALL>LDOR</SMALL> 
+compiler, nor can they run inside its interactive loop.
+
+<P>
+Using the <TT>-dGMP</TT> option allows you to compile the same sources
+either with or without GMP, which can be appreciable, but you must
+ensure that you do mix files compiled with and without <TT>-dGMP</TT> since
+the macro <TT>Integer</TT> would then be expanded into two different types.
+
+<P>
+An additional advantage of using GMP, is that <A HREF="node56.html#GMPInteger"><TT>GMPInteger</TT></A>
+exports and uses internally several of the in-place or higher-level
+operations of GMP, which are not available with <A HREF="node17.html#AldorInteger"><TT>AldorInteger</TT></A>.
+In addition, variables of type <A HREF="node56.html#GMPInteger"><TT>GMPInteger</TT></A> are compatible
+with the C type <TT>mpz_t</TT> from GMP, so you can directly call
+C programs that use GMP from your A<SMALL>LDOR</SMALL>  code.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html590"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html584"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html578"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html586"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html588"
+  HREF="node315.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html591"
+  HREF="node12.html">Profiling</A>
+<B> Up:</B> <A NAME="tex2html585"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html579"
+  HREF="node10.html">Compatibility with C types</A>
+ &nbsp; <B>  <A NAME="tex2html587"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html589"
+  HREF="node315.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

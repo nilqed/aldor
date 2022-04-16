@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Compatibility with C types</TITLE>
+<META NAME="description" CONTENT="Compatibility with C types">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="next" HREF="node11.html">
+<LINK REL="previous" HREF="node9.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node11.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html474"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html468"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html462"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html470"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html472"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html475"
+  HREF="node11.html">Profiling</A>
+<B> Up:</B> <A NAME="tex2html469"
+  HREF="node6.html">User's Guide</A>
+<B> Previous:</B> <A NAME="tex2html463"
+  HREF="node9.html">Input/Output</A>
+ &nbsp <B>  <A NAME="tex2html471"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html473"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00034000000000000000">
+Compatibility with C types</A>
+</H2>
+Several of S<SMALL>ALLI</SMALL>'s types are compatible with their C counterparts and
+can be passed as arguments to C functions.
+Table&nbsp;1
+lists those types that can safely be exchanged with C functions.
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="645"></A>
+<TABLE>
+<CAPTION><STRONG>Table:</STRONG>
+Compatibility between  S<SMALL>ALLI</SMALL> and C types</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+<TR><TD ALIGN="LEFT">S<SMALL>ALLI</SMALL></TD>
+<TD ALIGN="LEFT">C</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node29.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT"><TT>long </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node64.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT"><TT>long </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node80.html#SingleFloat"><TT>SingleFloat</TT></A></TD>
+<TD ALIGN="LEFT"><TT>float </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node101.html#Character"><TT>Character</TT></A></TD>
+<TD ALIGN="LEFT"><TT>char </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node207.html#String"><TT>String</TT></A></TD>
+<TD ALIGN="LEFT"><TT>char* </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node193.html#PrimitiveMemoryBlock"><TT>PrimitiveMemoryBlock</TT></A></TD>
+<TD ALIGN="LEFT"><TT>char* </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node231.html#Pointer"><TT>Pointer</TT></A></TD>
+<TD ALIGN="LEFT"><TT>void* </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A></TD>
+<TD ALIGN="LEFT"><TT>void** </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> <A HREF="node64.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT"><TT>long* </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node106.html#File"><TT>File</TT></A></TD>
+<TD ALIGN="LEFT"><TT>FILE* </TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node40.html#GMPFloat"><TT>GMPFloat</TT></A></TD>
+<TD ALIGN="LEFT"><TT>mpf_t</TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node44.html#GMPInteger"><TT>GMPInteger</TT></A></TD>
+<TD ALIGN="LEFT"><TT>mpz_t</TT></TD>
+</TR>
+</TABLE>
+
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+Since A<SMALL>LDOR</SMALL> does not provide a type that is guaranteed to be compatible 
+with the C <TT>int</TT> type on all platforms, in order to use C functions
+having <TT>int</TT> in their parameters, you must first write a C wrapper that
+communicates only through the type <TT>long</TT>.
+Note that even though some type <TT>T</TT> can be compatible
+with a C type <TT>TC</TT>, it is not always the case that
+<A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> <TT>T</TT> is compatible with <TT>TC*</TT>, for
+example <A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> <A HREF="node101.html#Character"><TT>Character</TT></A> is not compatible
+with <TT>char*</TT> (nor is it compatible with <A HREF="node207.html#String"><TT>String</TT></A> in S<SMALL>ALLI</SMALL>).
+In addition, note that <A HREF="node33.html#DoubleFloat"><TT>DoubleFloat</TT></A> is not compatible with
+the C type <TT>double</TT>, but that type is compatible with
+<TT>DFlo$Machine</TT>, and there are coercions between
+<TT>DFlo$Machine</TT> and <A HREF="node33.html#DoubleFloat"><TT>DoubleFloat</TT></A>.
+
+<P>
+When exchanging objects of type <A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A>,
+<A HREF="node193.html#PrimitiveMemoryBlock"><TT>PrimitiveMemoryBlock</TT></A> or <A HREF="node207.html#String"><TT>String</TT></A>
+with C functions, always use the <A HREF="#PrimitiveArrayType:array"><TT>array</TT></A>,
+<A HREF="node188.html#PrimitiveArrayType:pointer"><TT>pointer</TT></A>, <A HREF="node213.html#String:string"><TT>string</TT></A> and
+<A HREF="node213.html#String:pointer"><TT>pointer</TT></A> functions. While those have no effect and
+no cost in the release version, they are necessary when linking with
+the debug version in order to use the bound-checking features.
+When doing this, you must use <A HREF="node231.html#Pointer"><TT>Pointer</TT></A> in the prototypes for
+the C functions rather than <A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A>,
+<A HREF="node193.html#PrimitiveMemoryBlock"><TT>PrimitiveMemoryBlock</TT></A> or <A HREF="node207.html#String"><TT>String</TT></A>.
+For example, a function that uses the C-function <TT>unlink</TT> to
+remove a file could be written in the following way:
+<PRE>
+#include "salli"
+
+remove(filename:String):() == {
+	import { unlink: Pointer -&gt; MachineInteger } from Foreign C;
+	unlink pointer filename;
+}
+</PRE>
+While a function that uses the C-function <TT>mktemp</TT> to get a
+temporary file name could be written in the following way:
+<PRE>
+#include "salli"
+
+temporaryName():() == {
+	import { mktemp: Pointer -&gt; Pointer } from Foreign C;
+	string mktemp pointer("/tmp/XXXXXX");
+}
+</PRE>
+Note the use of <A HREF="node213.html#String:string"><TT>string</TT></A> even though the buffer was
+allocated within S<SMALL>ALLI</SMALL> and not within <TT>mktemp</TT>.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html474"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html468"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html462"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html470"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html472"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html475"
+  HREF="node11.html">Profiling</A>
+<B> Up:</B> <A NAME="tex2html469"
+  HREF="node6.html">User's Guide</A>
+<B> Previous:</B> <A NAME="tex2html463"
+  HREF="node9.html">Input/Output</A>
+ &nbsp <B>  <A NAME="tex2html471"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html473"
+  HREF="node240.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

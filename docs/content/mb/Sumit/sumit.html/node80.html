@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>makeNonSingular</TITLE>
+<META NAME="description" CONTENT="makeNonSingular">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node81.html">
+<LINK REL="previous" HREF="node79.html">
+<LINK REL="up" HREF="node78.html">
+<LINK REL="next" HREF="node81.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1549"
+  HREF="node81.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1543"
+  HREF="node78.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1537"
+  HREF="node79.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1545"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1547"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1550"
+  HREF="node81.html">matrix</A>
+<B> Up:</B> <A NAME="tex2html1544"
+  HREF="node78.html">LinearOrdinaryFirstOrderSystem</A>
+<B> Previous:</B> <A NAME="tex2html1538"
+  HREF="node79.html">changeVariable</A>
+ &nbsp <B>  <A NAME="tex2html1546"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1548"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000710200000000000000"></A>
+<A NAME="LinearOrdinaryFirstOrderSystem:makeNonSingular"></A>
+<BR>
+makeNonSingular
+</H3> <A NAME="9612"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+(nonSing?, v, A, <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img138.png"
+ ALT="$L'$">) := makeNonSingular(L, <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$\sigma$">)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">makeNonSingular:</TD>
+<TD ALIGN="LEFT">(%, <TT>Automorphism</TT> R) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (<TT>Boolean</TT>, <TT>Vector</TT> R,
+<TT>DenseMatrix</TT> R, %)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>L</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">A difference system</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$\sigma$"></TD>
+<TD ALIGN="LEFT"><TT>Automorphism</TT> R</TD>
+<TD ALIGN="LEFT">The difference automorphism for <I>L</I></TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+Returns a flag <I>nonSing?</I>, a vector <!-- MATH
+ $[v_1,\dots, v_n]$
+ -->
+<IMG
+ WIDTH="80" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img139.png"
+ ALT="$[v_1,\dots, v_n]$">,
+a matrix <I>A</I> and a system <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img138.png"
+ ALT="$L'$">
+of the form <!-- MATH
+ $\sigma Z = B Z$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img140.png"
+ ALT="$\sigma Z = B Z$"> where <I>B</I> is nonsingular,
+such that the solutions of <I>L</I> are
+</BLOCKQUOTE>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+Y = \pmatrix{
+v_1^{-1} & & \cr & \ddots & \cr & & v_n^{-1}
+} A Z
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="195" HEIGHT="73" BORDER="0"
+ SRC="img141.png"
+ ALT="\begin{displaymath}
+Y = \pmatrix{
+v_1^{-1} &amp; &amp; \cr &amp; \ddots &amp; \cr &amp; &amp; v_n^{-1}
+} A Z
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P><BLOCKQUOTE>
+where <I>Z</I> ranges over the solutions of <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img138.png"
+ ALT="$L'$">. In <I>nonSing?</I>
+is <I>true</I>, then <I>L</I> already had a nonsingular matrix, each <IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.png"
+ ALT="$v_i$"> is
+<I>1</I> and <I>A</I> is the identity matrix.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+makeNonSingular is only applicable to (generalized) difference systems,
+not to differential systems.
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

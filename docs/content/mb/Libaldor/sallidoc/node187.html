@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>PrimitiveArrayType</TITLE>
+<META NAME="description" CONTENT="PrimitiveArrayType">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="next" HREF="node193.html">
+<LINK REL="previous" HREF="node186.html">
+<LINK REL="up" HREF="node135.html">
+<LINK REL="next" HREF="node188.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3196"
+  HREF="node188.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html3190"
+  HREF="node135.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html3184"
+  HREF="node186.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html3192"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html3194"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3197"
+  HREF="node188.html">array,pointer</A>
+<B> Up:</B> <A NAME="tex2html3191"
+  HREF="node135.html">Data Structures</A>
+<B> Previous:</B> <A NAME="tex2html3185"
+  HREF="node186.html">PrimitiveArray</A>
+ &nbsp <B>  <A NAME="tex2html3193"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html3195"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000715000000000000000"></A><A NAME="11991"></A><A NAME="PrimitiveArrayType"></A>
+<BR>
+PrimitiveArrayType
+</H2>
+
+<BR>
+<IMG
+ WIDTH="287" HEIGHT="50" ALIGN="BOTTOM" BORDER="0"
+ SRC="img500.gif"
+ ALT="\begin{usage}
+import from PrimitiveArrayType~T
+\end{usage}">
+<BR>
+
+<BR>
+<IMG
+ WIDTH="379" HEIGHT="36" ALIGN="BOTTOM" BORDER="0"
+ SRC="img342.gif"
+ ALT="\begin{params}
+{\em T} &amp; Type &amp; the type of the array entries\\
+\end{params}">
+<BR>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="70" ALIGN="BOTTOM" BORDER="0"
+ SRC="img501.gif"
+ ALT="\begin{descr}
+PrimitiveArrayType~is the category of primitive arrays whose entries are of type $T$.
+\end{descr}">
+<BR>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    
+<UL>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node155.html#FiniteLinearStructureType"><TT>FiniteLinearStructureType</TT></A> T</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#PrimitiveArrayType:array"><TT>array</TT></A>:</TD>
+<TD ALIGN="LEFT">(<A HREF="node231.html#Pointer"><TT>Pointer</TT></A>, Z) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">conversion from a C-array</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node189.html#PrimitiveArrayType:new"><TT>new</TT></A>:</TD>
+<TD ALIGN="LEFT">Z <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">creation of an array</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node188.html#PrimitiveArrayType:pointer"><TT>pointer</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> <A HREF="node231.html#Pointer"><TT>Pointer</TT></A></TD>
+<TD ALIGN="LEFT">conversion to a C-array</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node191.html#PrimitiveArrayType:resize_"><TT>resize!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, Z, Z) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">resize an array</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node192.html#PrimitiveArrayType:sort_"><TT>sort!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, Z, Z, (T, T) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> <A HREF="node29.html#Boolean"><TT>Boolean</TT></A>) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">sort an array</TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+
+<UL>
+<LI>if <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img351.gif"
+ ALT="$T$"> has <A HREF="node119.html#SerializableType"><TT>SerializableType</TT></A> then <BR></LI>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node190.html#PrimitiveArrayType:read"><TT>read</TT></A>:</TD>
+<TD ALIGN="LEFT">(<A HREF="node88.html#BinaryReader"><TT>BinaryReader</TT></A>, Z) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">read using binary encoding</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node190.html#PrimitiveArrayType:write"><TT>write</TT></A>:</TD>
+<TD ALIGN="LEFT">(<A HREF="node92.html#BinaryWriter"><TT>BinaryWriter</TT></A>, write using binary encoding</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+
+<UL>
+<LI>if <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img351.gif"
+ ALT="$T$"> has <A HREF="node83.html#TotallyOrderedType"><TT>TotallyOrderedType</TT></A> then <BR></LI>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node192.html#PrimitiveArrayType:sort_"><TT>sort!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, Z, Z) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">sort an array</TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+
+<P>
+<BR>
+    
+<UL>
+<LI>where</LI>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node64.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3198"
+  HREF="node188.html">array,pointer</A>
+<LI><A NAME="tex2html3199"
+  HREF="node189.html">new</A>
+<LI><A NAME="tex2html3200"
+  HREF="node190.html">read,write</A>
+<LI><A NAME="tex2html3201"
+  HREF="node191.html">resize!</A>
+<LI><A NAME="tex2html3202"
+  HREF="node192.html">sort!</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3196"
+  HREF="node188.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html3190"
+  HREF="node135.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html3184"
+  HREF="node186.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html3192"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html3194"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3197"
+  HREF="node188.html">array,pointer</A>
+<B> Up:</B> <A NAME="tex2html3191"
+  HREF="node135.html">Data Structures</A>
+<B> Previous:</B> <A NAME="tex2html3185"
+  HREF="node186.html">PrimitiveArray</A>
+ &nbsp <B>  <A NAME="tex2html3193"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html3195"
+  HREF="node240.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

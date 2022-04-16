@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MachineInteger</TITLE>
+<META NAME="description" CONTENT="MachineInteger">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="next" HREF="node67.html">
+<LINK REL="previous" HREF="node53.html">
+<LINK REL="up" HREF="node15.html">
+<LINK REL="next" HREF="node65.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1313"
+  HREF="node65.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1307"
+  HREF="node15.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1301"
+  HREF="node63.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1309"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1311"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1314"
+  HREF="node65.html">bytes,max,min</A>
+<B> Up:</B> <A NAME="tex2html1308"
+  HREF="node15.html">Arithmetic</A>
+<B> Previous:</B> <A NAME="tex2html1302"
+  HREF="node63.html">shift</A>
+ &nbsp <B>  <A NAME="tex2html1310"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1312"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000513000000000000000"></A><A NAME="7886"></A><A NAME="MachineInteger"></A>
+<BR>
+MachineInteger
+</H2>
+
+<BR>
+<IMG
+ WIDTH="237" HEIGHT="50" ALIGN="BOTTOM" BORDER="0"
+ SRC="img165.gif"
+ ALT="\begin{usage}
+import from MachineInteger
+\end{usage}">
+<BR>
+
+<BR>
+<IMG
+ WIDTH="500" HEIGHT="51" ALIGN="BOTTOM" BORDER="0"
+ SRC="img166.gif"
+ ALT="\begin{descr}
+MachineInteger~implements the full-word signed machine integers.
+\end{descr}">
+<BR>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    
+<UL>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node221.html#CopyableType"><TT>CopyableType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node53.html#IntegerType"><TT>IntegerType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node65.html#MachineInteger:bytes"><TT>bytes</TT></A>:</TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">machine word-size</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node65.html#MachineInteger:max"><TT>max</TT></A>:</TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">largest machine integer</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node65.html#MachineInteger:min"><TT>min</TT></A>:</TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">smallest machine integer</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node66.html#MachineInteger:modX"><TT>mod_+</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">modular addition</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node66.html#MachineInteger:modX"><TT>mod_-</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">modular substraction</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node66.html#MachineInteger:modX"><TT>mod_*</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">modular multiplication</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node66.html#MachineInteger:modX"><TT>mod_/</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">modular division</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node66.html#MachineInteger:modX"><TT>mod_<IMG
+ WIDTH="5" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img34.gif"
+ ALT="$\hat{}$"></TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">modular exponentiation</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node66.html#MachineInteger:modInverse"><TT>modInverse</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">modular inverse</TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+
+<P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1315"
+  HREF="node65.html">bytes,max,min</A>
+<LI><A NAME="tex2html1316"
+  HREF="node66.html">modX,modInverse</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>particularSolution</TITLE>
+<META NAME="description" CONTENT="particularSolution">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node153.html">
+<LINK REL="previous" HREF="node151.html">
+<LINK REL="up" HREF="node149.html">
+<LINK REL="next" HREF="node153.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2634"
+  HREF="node153.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2628"
+  HREF="node149.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2622"
+  HREF="node151.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2630"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2632"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2635"
+  HREF="node153.html">solve</A>
+<B> Up:</B> <A NAME="tex2html2629"
+  HREF="node149.html">LinearOrdinaryOperatorPolynomialSolutions</A>
+<B> Previous:</B> <A NAME="tex2html2623"
+  HREF="node151.html">parametricSolve</A>
+ &nbsp <B>  <A NAME="tex2html2631"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2633"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000810300000000000000"></A>
+<A NAME="LinearOrdinaryOperatorPolynomialSolutions:particularSolution"></A>
+<BR>
+particularSolution
+</H3> <A NAME="12937"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+particularSolution(L, g)
+<BR>
+particularSolution(L, n, g)
+<BR>
+particularSolution(L, [<IMG
+ WIDTH="74" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img245.png"
+ ALT="$g_1,\dots,g_m$">])
+<BR>
+particularSolution(L, n, [<IMG
+ WIDTH="74" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img245.png"
+ ALT="$g_1,\dots,g_m$">])
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">particularSolution:</TD>
+<TD ALIGN="LEFT">(RXY, FX) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Partial</TT> FX</TD>
+</TR>
+<TR><TD ALIGN="LEFT">particularSolution:</TD>
+<TD ALIGN="LEFT">(RXY, <TT>Integer</TT>) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Partial</TT> FX</TD>
+</TR>
+<TR><TD ALIGN="LEFT">particularSolution:</TD>
+<TD ALIGN="LEFT">(RXY, <TT>Vector</TT> FX) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Vector</TT> FX</TD>
+</TR>
+<TR><TD ALIGN="LEFT">particularSolution:</TD>
+<TD ALIGN="LEFT">(RXY, <TT>Integer</TT>, <TT>Vector</TT> FX) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$">
+<TT>Vector</TT> FX</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>L</EM></TD>
+<TD ALIGN="LEFT">RXY</TD>
+<TD ALIGN="LEFT">A linear ordinary differential or recurrence operator</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>n</EM></TD>
+<TD ALIGN="LEFT"><TT>Integer</TT></TD>
+<TD ALIGN="LEFT">A degree bound (optional)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="32" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img255.png"
+ ALT="$g, g_i$"></TD>
+<TD ALIGN="LEFT">FX</TD>
+<TD ALIGN="LEFT">polynomials</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+particularSolution(L, g) returns <I>failed</I> if <IMG
+ WIDTH="53" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.png"
+ ALT="$L y = g$"> has no polynomial solution,
+a solution otherwise, while
+particularSolution(L, n, g) returns <I>failed</I> if <IMG
+ WIDTH="53" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.png"
+ ALT="$L y = g$"> has no polynomial solution
+of degree at most <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$n$">, such a solution otherwise.
+particularSolution(L, [<IMG
+ WIDTH="74" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img245.png"
+ ALT="$g_1,\dots,g_m$">]) returns <IMG
+ WIDTH="74" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img256.png"
+ ALT="$y_1,\dots,y_m$"> such that <IMG
+ WIDTH="62" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img257.png"
+ ALT="$L y_i = g_i$">,
+except if <IMG
+ WIDTH="46" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img258.png"
+ ALT="$y_i = 0$"> and <IMG
+ WIDTH="46" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img259.png"
+ ALT="$g_i \ne 0$">, in which case <IMG
+ WIDTH="58" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img260.png"
+ ALT="$L y = g_i$"> has no
+polynomial solution. Finally particularSolution(L, n, [<IMG
+ WIDTH="74" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img245.png"
+ ALT="$g_1,\dots,g_m$">]) returns
+<IMG
+ WIDTH="74" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img256.png"
+ ALT="$y_1,\dots,y_m$"> all of degree at most <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$n$"> such that <IMG
+ WIDTH="62" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img257.png"
+ ALT="$L y_i = g_i$">,
+except if <IMG
+ WIDTH="46" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img258.png"
+ ALT="$y_i = 0$"> and <IMG
+ WIDTH="46" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img259.png"
+ ALT="$g_i \ne 0$">, in which case <IMG
+ WIDTH="58" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img260.png"
+ ALT="$L y = g_i$"> has no
+polynomial solution of degree at most <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$n$">.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+particularSolution(L, g) and particularSolution(L, [<IMG
+ WIDTH="74" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img245.png"
+ ALT="$g_1,\dots,g_m$">]) are available only
+when the ring R has <TT>RationalRootRing</TT>.
+Produces an error if <IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img144.png"
+ ALT="$L$"> is neither a differential or recurrence
+operator. The polynomials <IMG
+ WIDTH="18" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.png"
+ ALT="$g_j$"> and <IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img228.png"
+ ALT="$y_i$"> are expressed in terms of
+the basis <IMG
+ WIDTH="23" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img244.png"
+ ALT="$P_n$"> described in
+<A HREF="node156.html#LinearOrdinaryOperatorToRecurrence:recurrence"><TT>recurrence</TT></A>.
+Using the version with a vector of right-hand sides is more efficient
+than calling repeatedly the version with a single right-hand side.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>See Also</B><P>
+    <BLOCKQUOTE>
+<A HREF="node153.html#LinearOrdinaryOperatorPolynomialSolutions:solve"><TT>solve</TT></A>
+</BLOCKQUOTE>
+<P></P>
+
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2634"
+  HREF="node153.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2628"
+  HREF="node149.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2622"
+  HREF="node151.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2630"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2632"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2635"
+  HREF="node153.html">solve</A>
+<B> Up:</B> <A NAME="tex2html2629"
+  HREF="node149.html">LinearOrdinaryOperatorPolynomialSolutions</A>
+<B> Previous:</B> <A NAME="tex2html2623"
+  HREF="node151.html">parametricSolve</A>
+ &nbsp <B>  <A NAME="tex2html2631"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2633"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

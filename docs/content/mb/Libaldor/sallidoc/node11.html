@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Profiling</TITLE>
+<META NAME="description" CONTENT="Profiling">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="next" HREF="node12.html">
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node12.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html488"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html482"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html476"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html484"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html486"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html489"
+  HREF="node12.html">Exceptions</A>
+<B> Up:</B> <A NAME="tex2html483"
+  HREF="node6.html">User's Guide</A>
+<B> Previous:</B> <A NAME="tex2html477"
+  HREF="node10.html">Compatibility with C types</A>
+ &nbsp <B>  <A NAME="tex2html485"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html487"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00035000000000000000">
+Profiling</A>
+</H2>
+S<SMALL>ALLI</SMALL> provides a couple of tools to help you determine how much time is
+spent in various sections of your programs. The simplest way is to use
+the TIMESTART and TIME(...) macros in your code. Those macros have
+absolutely no effect when compiling normally, but if you add the option
+<TT>-dTIME</TT> in the compiler command line when making the <TT>.ao</TT>
+file, then a CPU stopwatch is started when TIMESTART is encountered,
+and read at each TIME(...) statement. Those readings are then written
+to <A HREF="node128.html#TextWriter:stderr"><TT>stderr</TT></A> together with whatever message appears inside
+the TIME macro. For example, if a computation has 3 major parts, then the
+following coding allows you to determine how much time is spent in each
+part:
+<PRE>
+myComputation(...):... == {
+    TIMESTART;                  -- has no effect on normal compilation
+    ... part 1 of the computation ...
+    TIME("myComputation: part one done at");
+    ... part 2 of the computation ...
+    TIME("myComputation: part two done at");
+    ... part 3 of the computation ...
+    TIME("myComputation: part three done at");
+    ...                         -- do not forget to return the result here
+}
+</PRE>
+When profiling sections of a multi-file library, simply recompile the
+desired <TT>.as</TT> files with the <TT>-dTIME -fo -q3</TT> options, then link
+your executable with the local <TT>.o</TT> files, which takes precedence over
+the ones in the library.
+
+<P>
+Finer profiling, including obtaining information on the garbage collection
+time, is possible via the use of the type <A HREF="node233.html#Timer"><TT>Timer</TT></A>, whose
+objects are stopwatches that can be started and stopped at will. See the
+reference section for more information on the use of timers.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html488"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html482"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html476"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html484"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html486"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html489"
+  HREF="node12.html">Exceptions</A>
+<B> Up:</B> <A NAME="tex2html483"
+  HREF="node6.html">User's Guide</A>
+<B> Previous:</B> <A NAME="tex2html477"
+  HREF="node10.html">Compatibility with C types</A>
+ &nbsp <B>  <A NAME="tex2html485"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html487"
+  HREF="node240.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

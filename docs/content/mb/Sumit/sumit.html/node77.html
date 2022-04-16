@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>twist</TITLE>
+<META NAME="description" CONTENT="twist">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node76.html">
+<LINK REL="up" HREF="node74.html">
+<LINK REL="next" HREF="node78.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1502"
+  HREF="node78.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1496"
+  HREF="node74.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1492"
+  HREF="node76.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1498"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1500"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1503"
+  HREF="node78.html">LinearOrdinaryFirstOrderSystem</A>
+<B> Up:</B> <A NAME="tex2html1497"
+  HREF="node74.html">LinearOrdinaryDifferentialOperatorTools</A>
+<B> Previous:</B> <A NAME="tex2html1493"
+  HREF="node76.html">logarithmicDerivative</A>
+ &nbsp <B>  <A NAME="tex2html1499"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1501"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00079300000000000000"></A>
+<A NAME="LinearOrdinaryDifferentialOperatorTools:twist"></A>
+<BR>
+twist
+</H3> <A NAME="9436"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+twist(p, q)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">twist:</TD>
+<TD ALIGN="LEFT">(L, <TT>Product</TT> R) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (R, L)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>p</EM></TD>
+<TD ALIGN="LEFT">L</TD>
+<TD ALIGN="LEFT">A differential operator</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>q</EM></TD>
+<TD ALIGN="LEFT"><TT>Product</TT> R</TD>
+<TD ALIGN="LEFT">A product of coefficients</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+Returns <!-- MATH
+ $(\alpha, {\overline p})$
+ -->
+<IMG
+ WIDTH="42" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$(\alpha, {\overline p})$"> such that
+<!-- MATH
+ $\deg({\overline p}) = \deg(p)$
+ -->
+<IMG
+ WIDTH="114" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img130.png"
+ ALT="$\deg({\overline p}) = \deg(p)$"> and
+</BLOCKQUOTE>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\overline p} = \alpha p{\left({\partial - \frac {q'}q}\right)} =
+\alpha \sum_{i=0}^n a_i {\left({\partial - \frac {q'}q}\right)}^i
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="262" HEIGHT="53" BORDER="0"
+ SRC="img131.png"
+ ALT="\begin{displaymath}
+{\overline p} = \alpha p{\left({\partial - \frac {q'}q}\righ...
+...pha \sum_{i=0}^n a_i {\left({\partial - \frac {q'}q}\right)}^i
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P><BLOCKQUOTE>
+where <!-- MATH
+ $p = \sum_{i=0}^n a_i \partial^i$
+ -->
+<IMG
+ WIDTH="103" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$p = \sum_{i=0}^n a_i \partial^i$">,
+and <!-- MATH
+ $\alpha \in R\setminus\{0\}$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img126.png"
+ ALT="$\alpha \in R\setminus\{0\}$"> is chosen so that
+the result has coefficients in <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img127.png"
+ ALT="$R$">.
+We have
+</BLOCKQUOTE>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\overline p}(y) = \alpha q p{\left({\frac yq}\right)}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="110" HEIGHT="45" BORDER="0"
+ SRC="img132.png"
+ ALT="\begin{displaymath}
+{\overline p}(y) = \alpha q p{\left({\frac yq}\right)}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P><BLOCKQUOTE>
+for any <IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.png"
+ ALT="$y$"> in any differential extension of <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img127.png"
+ ALT="$R$">,
+and in particular,
+</BLOCKQUOTE>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\overline p}(y) = 0 \iff p{\left({\frac yq}\right)} = 0\,.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="186" HEIGHT="45" BORDER="0"
+ SRC="img133.png"
+ ALT="\begin{displaymath}
+{\overline p}(y) = 0 \iff p{\left({\frac yq}\right)} = 0\,.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<P></P>
+
+  <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

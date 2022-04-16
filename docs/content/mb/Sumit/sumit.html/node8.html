@@ -1,0 +1,334 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Solutions of differential and difference equations</TITLE>
+<META NAME="description" CONTENT="Solutions of differential and difference equations">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html418"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html412"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html406"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html414"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html416"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html419"
+  HREF="node9.html">Compatibility with C types</A>
+<B> Up:</B> <A NAME="tex2html413"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html407"
+  HREF="node7.html">Skew polynomials and linear</A>
+ &nbsp <B>  <A NAME="tex2html415"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html417"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00032000000000000000">
+Solutions of differential and difference equations</A>
+</H2>
+<!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\Sigma {}^{{\rm it}}$">  provides efficient solvers for linear ordinary differential
+and difference equations and systems. All the rational solvers are
+usually called <TT>kernel</TT>, the exact functionality depends
+on the type used. The following tables indicate which solver to
+use depending on the type of equation and the desired type of solutions.
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="5182"></A>
+<TABLE>
+<CAPTION><STRONG>Table 1:</STRONG>
+<!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$\Sigma{}^{{\rm it}}$">  solvers for polynomial solutions</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+<TR><TD ALIGN="LEFT">Equation type</TD>
+<TD ALIGN="CENTER">Polynomial solver</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Differential equations</TD>
+<TD ALIGN="CENTER"><A HREF="node149.html#LinearOrdinaryOperatorPolynomialSolutions"><TT>LinearOrdinaryOperatorPolynomialSolutions</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Recurrence equations</TD>
+<TD ALIGN="CENTER"><A HREF="node149.html#LinearOrdinaryOperatorPolynomialSolutions"><TT>LinearOrdinaryOperatorPolynomialSolutions</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Differential systems</TD>
+<TD ALIGN="CENTER"><A HREF="node146.html#LinearOrdinaryFirstOrderSystemPolynomialSolutions"><TT>LinearOrdinaryFirstOrderSystemPolynomialSolutions</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Recurrence systems</TD>
+<TD ALIGN="CENTER"><A HREF="node146.html#LinearOrdinaryFirstOrderSystemPolynomialSolutions"><TT>LinearOrdinaryFirstOrderSystemPolynomialSolutions</TT></A></TD>
+</TR>
+</TABLE>
+
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+Note that the same types are used to compute
+the polynomial solutions of differential and difference equations
+and systems. However, the
+<I>RXY</I> and <I>FX</I> parameters to the polynomial solvers tell them
+which type of equation to solve.
+For differential equations and systems, <I>RXY</I> should be a type
+of category <A HREF="node68.html#LinearOrdinaryDifferentialOperatorCategory"><TT>LinearOrdinaryDifferentialOperatorCategory</TT></A>
+and <I>FX</I> should be a type of
+category <TT>UnivariatePolynomialCategory</TT>.
+For recurrence equations and systems, <I>RXY</I> should be a type
+of category <A HREF="node88.html#LinearOrdinaryRecurrenceCategory"><TT>LinearOrdinaryRecurrenceCategory</TT></A>
+and <I>FX</I> should be the type <TT>UnivariateFactorialPolynomial</TT>
+since the solutions are computed as factorial polynomials.
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="5183"></A>
+<TABLE>
+<CAPTION><STRONG>Table 2:</STRONG>
+<!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$\Sigma{}^{{\rm it}}$">  solvers for rational solutions</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+<TR><TD ALIGN="LEFT">Equation type</TD>
+<TD ALIGN="CENTER">Rational solver</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Differential equations</TD>
+<TD ALIGN="CENTER"><A HREF="node130.html#LinearOrdinaryDifferentialOperatorRationalSolutions"><TT>LinearOrdinaryDifferentialOperatorRationalSolutions</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Recurrence equations</TD>
+<TD ALIGN="CENTER"><A HREF="node162.html#LinearOrdinaryRecurrenceRationalSolutions"><TT>LinearOrdinaryRecurrenceRationalSolutions</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Differential systems</TD>
+<TD ALIGN="CENTER"><A HREF="node140.html#LinearOrdinaryDifferentialSystemRationalSolutions"><TT>LinearOrdinaryDifferentialSystemRationalSolutions</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Recurrence systems</TD>
+<TD ALIGN="CENTER"><A HREF="node166.html#LinearOrdinaryRecurrenceSystemRationalSolutions"><TT>LinearOrdinaryRecurrenceSystemRationalSolutions</TT></A></TD>
+</TR>
+</TABLE>
+
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+When solving systems, first create the system as
+an element of <A HREF="node78.html#LinearOrdinaryFirstOrderSystem"><TT>LinearOrdinaryFirstOrderSystem</TT></A>.
+That type does not specify whether its elements represent
+differential or difference equations, they are interpreted
+differently by the various solvers depending on the other
+parameters.
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="5184"></A>
+<TABLE>
+<CAPTION><STRONG>Table 3:</STRONG>
+<!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$\Sigma{}^{{\rm it}}$">  solvers for hyperexponential solutions</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+<TR><TD ALIGN="LEFT">Equation type</TD>
+<TD ALIGN="CENTER">Hyperexponential solver</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Differential equations</TD>
+<TD ALIGN="CENTER"><A HREF="node127.html#LinearOrdinaryDifferentialOperatorRegularSolutions"><TT>LinearOrdinaryDifferentialOperatorRegularSolutions</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="CENTER"><A HREF="node125.html#LinearOrdinaryDifferentialOperatorExponentialSolutions"><TT>LinearOrdinaryDifferentialOperatorExponentialSolutions</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Recurrence equations</TD>
+<TD ALIGN="CENTER"><A HREF="node159.html#LinearOrdinaryRecurrenceHypergeometricSolutions"><TT>LinearOrdinaryRecurrenceHypergeometricSolutions</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Differential systems</TD>
+<TD ALIGN="CENTER">N/A</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Recurrence systems</TD>
+<TD ALIGN="CENTER">N/A</TD>
+</TR>
+</TABLE>
+
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+Note that the above solvers find radical, regular or hyperexponential
+solutions over the constant field given as parameter, and not over
+its algebraic closure.
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="5185"></A>
+<TABLE>
+<CAPTION><STRONG>Table 4:</STRONG>
+<!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$\Sigma{}^{{\rm it}}$">  solvers for series solutions</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+<TR><TD ALIGN="LEFT">Equation type</TD>
+<TD ALIGN="CENTER">Series solver</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Differential equations</TD>
+<TD ALIGN="CENTER"><A HREF="node134.html#LinearOrdinaryDifferentialOperatorSeriesSolutions"><TT>LinearOrdinaryDifferentialOperatorSeriesSolutions</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Recurrence equations</TD>
+<TD ALIGN="CENTER">N/A</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Differential systems</TD>
+<TD ALIGN="CENTER"><A HREF="node143.html#LinearOrdinaryDifferentialSystemSeriesSolutions"><TT>LinearOrdinaryDifferentialSystemSeriesSolutions</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Recurrence systems</TD>
+<TD ALIGN="CENTER">N/A</TD>
+</TR>
+</TABLE>
+
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+Note that the series solver are meant for solving only around an ordinary point
+of the equation or system.
+
+<P>
+Finally, there are specialized solvers and factorizers for second and
+third order differential and difference equations.
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="5186"></A>
+<TABLE>
+<CAPTION><STRONG>Table 5:</STRONG>
+<!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$\Sigma{}^{{\rm it}}$">  solvers for second and third order equations</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+<TR><TD ALIGN="LEFT">Equation type</TD>
+<TD ALIGN="CENTER">Solver</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Second order differential equations</TD>
+<TD ALIGN="CENTER"><A HREF="node178.html#SecondOrderLinearOrdinaryDifferentialSolver"><TT>SecondOrderLinearOrdinaryDifferentialSolver</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Second order recurrence equations</TD>
+<TD ALIGN="CENTER"><A HREF="node175.html#SecondOrderLinearOrdinaryRecurrenceSolver"><TT>SecondOrderLinearOrdinaryRecurrenceSolver</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Third order differential equations</TD>
+<TD ALIGN="CENTER"><A HREF="node181.html#ThirdOrderLinearOrdinaryDifferentialSolver"><TT>ThirdOrderLinearOrdinaryDifferentialSolver</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Third order recurrence equations</TD>
+<TD ALIGN="CENTER"><A HREF="node177.html#ThirdOrderLinearOrdinaryRecurrenceSolver"><TT>ThirdOrderLinearOrdinaryRecurrenceSolver</TT></A></TD>
+</TR>
+</TABLE>
+
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html418"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html412"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html406"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html414"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html416"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html419"
+  HREF="node9.html">Compatibility with C types</A>
+<B> Up:</B> <A NAME="tex2html413"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html407"
+  HREF="node7.html">Skew polynomials and linear</A>
+ &nbsp <B>  <A NAME="tex2html415"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html417"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

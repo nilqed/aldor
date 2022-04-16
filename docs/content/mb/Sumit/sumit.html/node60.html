@@ -1,0 +1,260 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>LinearHolonomicDifferentialEquation</TITLE>
+<META NAME="description" CONTENT="LinearHolonomicDifferentialEquation">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node61.html">
+<LINK REL="previous" HREF="node57.html">
+<LINK REL="up" HREF="node52.html">
+<LINK REL="next" HREF="node61.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1258"
+  HREF="node61.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1252"
+  HREF="node52.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1246"
+  HREF="node59.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1254"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1256"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1259"
+  HREF="node61.html">LinearOrdinaryDifferenceOperator</A>
+<B> Up:</B> <A NAME="tex2html1253"
+  HREF="node52.html">Univariate Skew Polynomials and</A>
+<B> Previous:</B> <A NAME="tex2html1247"
+  HREF="node59.html">exteriorPowerSystem,symmetricPowerSystem</A>
+ &nbsp <B>  <A NAME="tex2html1255"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1257"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00074000000000000000"></A><A NAME="8758"></A><A NAME="LinearHolonomicDifferentialEquation"></A>
+<BR>
+LinearHolonomicDifferentialEquation
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from LinearHolonomicDifferentialEquation(R, RX, RXD)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><TT>GcdDomain</TT></TD>
+<TD ALIGN="LEFT">Coefficient domain</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><TT>RationalRootRing</TT></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>RX</EM></TD>
+<TD ALIGN="LEFT"><TT>UnivariatePolynomialCategory</TT> R</TD>
+<TD ALIGN="LEFT">Polynomials over R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>RXD</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node68.html#LinearOrdinaryDifferentialOperatorCategory"><TT>LinearOrdinaryDifferentialOperatorCategory</TT></A> RX</TD>
+<TD ALIGN="LEFT">Differential operators</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+LinearHolonomicDifferentialEquation(R, RX, RXD) provides a type that analyzes the local singularities
+of operators in <I>RXD</I> and stores the local information for eventual reuse.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><TT>allRationalExponents?</TT>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Boolean</TT></TD>
+<TD ALIGN="LEFT">check local exponents</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>allRegular?</TT>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Boolean</TT></TD>
+<TD ALIGN="LEFT">check singularities</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>analyze!</TT>:</TD>
+<TD ALIGN="LEFT">(%, RX) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>List</TT> SING</TD>
+<TD ALIGN="LEFT">singularity analysis</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>analyze!</TT>:</TD>
+<TD ALIGN="LEFT">(%, Product RX) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>List</TT> SING</TD>
+<TD ALIGN="LEFT">singularity analysis</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>analyzedSingularities</TT>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>List</TT> SING</TD>
+<TD ALIGN="LEFT">analyzed singularities</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>coerce</TT>:</TD>
+<TD ALIGN="LEFT">RXD <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Conversion</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>finiteSingularities!</TT>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>List</TT> SING</TD>
+<TD ALIGN="LEFT">affine singularities</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>operator</TT>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> RXD</TD>
+<TD ALIGN="LEFT">Underlying operator</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>order</TT>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Integer</TT></TD>
+<TD ALIGN="LEFT">Order</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>singularAtInfinity?</TT>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Boolean</TT></TD>
+<TD ALIGN="LEFT">check singularity at <IMG
+ WIDTH="50" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img105.png"
+ ALT="$x = \infty$"></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>singularityAtInfinity!</TT>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> SING</TD>
+<TD ALIGN="LEFT">singularity at <IMG
+ WIDTH="50" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img105.png"
+ ALT="$x = \infty$"></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">SING</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>PlaneSingularity</TT>(R, RX, RXD)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+  <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1258"
+  HREF="node61.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1252"
+  HREF="node52.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1246"
+  HREF="node59.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1254"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1256"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1259"
+  HREF="node61.html">LinearOrdinaryDifferenceOperator</A>
+<B> Up:</B> <A NAME="tex2html1253"
+  HREF="node52.html">Univariate Skew Polynomials and</A>
+<B> Previous:</B> <A NAME="tex2html1247"
+  HREF="node59.html">exteriorPowerSystem,symmetricPowerSystem</A>
+ &nbsp <B>  <A NAME="tex2html1255"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1257"
+  HREF="node209.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

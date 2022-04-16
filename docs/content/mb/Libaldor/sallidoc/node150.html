@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>generator</TITLE>
+<META NAME="description" CONTENT="generator">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="next" HREF="node151.html">
+<LINK REL="previous" HREF="node149.html">
+<LINK REL="up" HREF="node147.html">
+<LINK REL="next" HREF="node151.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2665"
+  HREF="node151.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2659"
+  HREF="node147.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2653"
+  HREF="node149.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2661"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2663"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2666"
+  HREF="node151.html">map</A>
+<B> Up:</B> <A NAME="tex2html2660"
+  HREF="node147.html">BoundedFiniteLinearStructureType</A>
+<B> Previous:</B> <A NAME="tex2html2654"
+  HREF="node149.html">find</A>
+ &nbsp <B>  <A NAME="tex2html2662"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2664"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00075300000000000000"></A>
+<A NAME="BoundedFiniteLinearStructureType:generator"></A>
+<BR>
+generator
+</H3> <A NAME="10697"></A>
+<BR>
+<IMG
+ WIDTH="271" HEIGHT="69" ALIGN="BOTTOM" BORDER="0"
+ SRC="img384.gif"
+ ALT="\begin{usage}
+for x in a repeat \{ \dots \}\\ for x in generator~a repeat \{ \dots \}
+\end{usage}">
+<BR>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    
+<UL>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">generator:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> <A HREF="node223.html#Generator"><TT>Generator</TT></A> T</TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<BR>
+<IMG
+ WIDTH="344" HEIGHT="33" ALIGN="BOTTOM" BORDER="0"
+ SRC="img378.gif"
+ ALT="\begin{params}
+{\em a} &amp; \% &amp; a finite linear structure\\
+\end{params}">
+<BR>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="70" ALIGN="BOTTOM" BORDER="0"
+ SRC="img385.gif"
+ ALT="\begin{descr}
+This function allows a structure to be iterated independently of ...
+...resentation. This generator yields the elements of a in succession.
+\end{descr}">
+<BR>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Example</B><P>
+      
+<UL>
+<LI>The following code computes the sum of all the elements
+of an array of machine integers:
+<PRE>
+sum(a:Array MachineInteger, n:MachineInteger):MachineInteger == {
+    s:MachineInteger := 0;
+    for x in a repeat s := s + x;
+    s;
+}
+</PRE>
+</LI>
+</UL>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

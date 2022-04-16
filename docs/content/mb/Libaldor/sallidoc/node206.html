@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>stream</TITLE>
+<META NAME="description" CONTENT="stream">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="previous" HREF="node205.html">
+<LINK REL="up" HREF="node200.html">
+<LINK REL="next" HREF="node207.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3470"
+  HREF="node207.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html3464"
+  HREF="node200.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html3460"
+  HREF="node205.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html3466"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html3468"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3471"
+  HREF="node207.html">String</A>
+<B> Up:</B> <A NAME="tex2html3465"
+  HREF="node200.html">Stream</A>
+<B> Previous:</B> <A NAME="tex2html3461"
+  HREF="node205.html">orbit</A>
+ &nbsp <B>  <A NAME="tex2html3467"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html3469"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000718600000000000000"></A>
+<A NAME="Stream:stream"></A>
+<BR>
+stream
+</H3> <A NAME="12714"></A>
+<BR>
+<IMG
+ WIDTH="163" HEIGHT="165" ALIGN="BOTTOM" BORDER="0"
+ SRC="img558.gif"
+ ALT="\begin{usage}
+stream~t\\ stream~f\\ stream~h\\ stream(n, g)\\ stream(n, g, m, t)\\
+stream(gen, t)\\ stream(gen, m, t)
+\end{usage}">
+<BR>
+
+<BR>
+<IMG
+ WIDTH="600" HEIGHT="165" ALIGN="BOTTOM" BORDER="0"
+ SRC="img559.gif"
+ ALT="\begin{signatures}
+stream: &amp; T $\to$\ \% \\
+stream: &amp; (() $\to$\ T) $\to$\ \%...
+...ef{\texttt{MachineInteger}}{MachineInteger}, T) $\to$\ \% \\\end{signatures}">
+<BR>
+<BR>
+<IMG
+ WIDTH="448" HEIGHT="132" ALIGN="BOTTOM" BORDER="0"
+ SRC="img560.gif"
+ ALT="\begin{params}
+{\em n, m} &amp; \htmlref{\texttt{MachineInteger}}{MachineInteger} ...
+...gen} &amp; \htmlref{\texttt{Generator}}{Generator} T &amp; a generator\\\end{params}">
+<BR>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="204" ALIGN="BOTTOM" BORDER="0"
+ SRC="img561.gif"
+ ALT="\begin{descr}
+stream(t) returns the constant stream $[t,t,t,\dots]$,
+while stre...
+... $[x \mbox{ for } x \mbox{ in } gen]$\ followed
+by $[t,t,t,\dots]$.
+\end{descr}">
+<BR>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>See Also</B><P>
+    
+<UL>
+<LI><A HREF="node205.html#Stream:orbit"><TT>orbit</TT></A>
+    
+</LI>
+</UL>
+<P></P>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="204" ALIGN="BOTTOM" BORDER="0"
+ SRC="img562.gif"
+ ALT="\begin{remarks}
+% latex2html id marker 12796The function $g$\ must be defined...
+...
+$n$\ times $0$\ when its ${n}^{{\rm th}}$\ element is requested.
+\end{remarks}">
+<BR>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Example</B><P>
+      
+<UL>
+<LI>The following code creates the stream of the Fibonnaci numbers and prints
+the first 10 of them:
+<PRE>
+	import from MachineInteger, AldorInteger, Stream AldorInteger;
+	fib(n:MachineInteger, f:Stream AldorInteger):AldorInteger == {
+		n = 0 or n = 1 =&gt; 1;
+		f(n-1) + f(n-2);
+	}
+	sfib := stream fib;
+	a := sfib.9;	-- computes sfib.0 to sfib.9
+	stdout &lt;&lt; a &lt;&lt; newline;
+</PRE>
+</LI>
+</UL>
+<P></P>
+
+  <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

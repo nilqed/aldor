@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>If</TITLE>
+<META NAME="description" CONTENT="If">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node205.html">
+<LINK REL="previous" HREF="node194.html">
+<LINK REL="up" HREF="node186.html">
+<LINK REL="next" HREF="node200.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3310"
+  HREF="node200.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3304"
+  HREF="node186.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3298"
+  HREF="node198.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3306"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html3308"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3311"
+  HREF="node200.html">bracket,if</A>
+<B> Up:</B> <A NAME="tex2html3305"
+  HREF="node186.html">Conditions</A>
+<B> Previous:</B> <A NAME="tex2html3299"
+  HREF="node198.html">split</A>
+ &nbsp <B>  <A NAME="tex2html3307"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html3309"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00094000000000000000"></A><A NAME="15426"></A><A NAME="If"></A>
+<BR>
+If
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from If(C,O)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>C</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node191.html#Condition"><TT>Condition</TT></A></TD>
+<TD ALIGN="LEFT">The kind of conditions</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>O</EM></TD>
+<TD ALIGN="LEFT"><TT>ExpressionType</TT></TD>
+<TD ALIGN="LEFT">The kind of objects</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+If&nbsp;implements a structure where a condition of type <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img347.png"
+ ALT="$C$"> is 
+          associated to an object of type <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img348.png"
+ ALT="$O$">.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><TT>ExpressionType</TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node200.html#If:bracket"><TT><IMG
+ WIDTH="13" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img279.png"
+ ALT="$[]$"></TT></A>:</TD>
+<TD ALIGN="LEFT">(C,O) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">build a conditional object</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node201.html#If:coerce"><TT>coerce</TT></A>:</TD>
+<TD ALIGN="LEFT">O <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">make an object with condition <A HREF="node192.html#Condition:Always"><TT>Always</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node202.html#If:condition"><TT>condition</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> C</TD>
+<TD ALIGN="LEFT">condition associated to an object</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node200.html#If:if"><TT>if</TT></A>:</TD>
+<TD ALIGN="LEFT">(C,O) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">build a conditional object</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node203.html#If:never_"><TT>never?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Boolean</TT></TD>
+<TD ALIGN="LEFT">test if it the condition is <A HREF="node192.html#Condition:Never"><TT>Never</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node204.html#If:object"><TT>object</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> O</TD>
+<TD ALIGN="LEFT">object associated to a condition</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3312"
+  HREF="node200.html">bracket,if</A>
+<LI><A NAME="tex2html3313"
+  HREF="node201.html">coerce</A>
+<LI><A NAME="tex2html3314"
+  HREF="node202.html">condition</A>
+<LI><A NAME="tex2html3315"
+  HREF="node203.html">never?</A>
+<LI><A NAME="tex2html3316"
+  HREF="node204.html">object</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

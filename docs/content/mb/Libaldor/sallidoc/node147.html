@@ -1,0 +1,306 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>BoundedFiniteLinearStructureType</TITLE>
+<META NAME="description" CONTENT="BoundedFiniteLinearStructureType">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="next" HREF="node153.html">
+<LINK REL="previous" HREF="node139.html">
+<LINK REL="up" HREF="node135.html">
+<LINK REL="next" HREF="node148.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2618"
+  HREF="node148.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2612"
+  HREF="node135.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2606"
+  HREF="node146.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2614"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2616"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2619"
+  HREF="node148.html">size</A>
+<B> Up:</B> <A NAME="tex2html2613"
+  HREF="node135.html">Data Structures</A>
+<B> Previous:</B> <A NAME="tex2html2607"
+  HREF="node146.html">sort!</A>
+ &nbsp <B>  <A NAME="tex2html2615"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2617"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00075000000000000000"></A><A NAME="10520"></A><A NAME="BoundedFiniteLinearStructureType"></A>
+<BR>
+BoundedFiniteLinearStructureType
+</H2>
+
+<BR>
+<IMG
+ WIDTH="378" HEIGHT="50" ALIGN="BOTTOM" BORDER="0"
+ SRC="img373.gif"
+ ALT="\begin{usage}
+BoundedFiniteLinearStructureType~T: Category
+\end{usage}">
+<BR>
+
+<BR>
+<IMG
+ WIDTH="337" HEIGHT="36" ALIGN="BOTTOM" BORDER="0"
+ SRC="img374.gif"
+ ALT="\begin{params}
+{\em T} &amp; Type &amp; the type of the entries\\
+\end{params}">
+<BR>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="70" ALIGN="BOTTOM" BORDER="0"
+ SRC="img375.gif"
+ ALT="\begin{descr}
+BoundedFiniteLinearStructureType~is the category of finite linear...
+...uctures whose entries are
+of type T and whose size is always known.
+\end{descr}">
+<BR>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    
+<UL>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node221.html#CopyableType"><TT>CopyableType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node155.html#FiniteLinearStructureType"><TT>FiniteLinearStructureType</TT></A> T</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node148.html#BoundedFiniteLinearStructureType:size"><TT>#</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> <A HREF="node64.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">number of entries</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node150.html#BoundedFiniteLinearStructureType:generator"><TT>generator</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> <A HREF="node223.html#Generator"><TT>Generator</TT></A> T</TD>
+<TD ALIGN="LEFT">iteration over a structure</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node151.html#BoundedFiniteLinearStructureType:map"><TT>map</TT></A>:</TD>
+<TD ALIGN="LEFT">(T <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> T) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">lift a mapping</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node151.html#BoundedFiniteLinearStructureType:map_"><TT>map!</TT></A>:</TD>
+<TD ALIGN="LEFT">(T <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> T) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">lift a mapping</TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+
+<UL>
+<LI>if <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img351.gif"
+ ALT="$T$"> has <A HREF="node70.html#PrimitiveType"><TT>PrimitiveType</TT></A> then <BR></LI>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node70.html#PrimitiveType"><TT>PrimitiveType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node149.html#BoundedFiniteLinearStructureType:find"><TT>find</TT></A>:</TD>
+<TD ALIGN="LEFT">(T, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> (%, <A HREF="node64.html#MachineInteger"><TT>MachineInteger</TT></A>)</TD>
+<TD ALIGN="LEFT">linear search</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node152.html#BoundedFiniteLinearStructureType:member_"><TT>member?</TT></A>:</TD>
+<TD ALIGN="LEFT">(T, %) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> <A HREF="node29.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">check for a value</TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+
+<UL>
+<LI>if <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img351.gif"
+ ALT="$T$"> has <A HREF="node167.html#HashType"><TT>HashType</TT></A> then <BR></LI>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node167.html#HashType"><TT>HashType</TT></A></TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+
+<UL>
+<LI>if <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img351.gif"
+ ALT="$T$"> has <A HREF="node115.html#InputType"><TT>InputType</TT></A> then <BR></LI>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node115.html#InputType"><TT>InputType</TT></A></TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+
+<UL>
+<LI>if <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img351.gif"
+ ALT="$T$"> has <A HREF="node117.html#OutputType"><TT>OutputType</TT></A> then <BR></LI>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node117.html#OutputType"><TT>OutputType</TT></A></TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+
+<UL>
+<LI>if <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img351.gif"
+ ALT="$T$"> has <A HREF="node119.html#SerializableType"><TT>SerializableType</TT></A> then <BR></LI>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node119.html#SerializableType"><TT>SerializableType</TT></A></TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html2620"
+  HREF="node148.html">size</A>
+<LI><A NAME="tex2html2621"
+  HREF="node149.html">find</A>
+<LI><A NAME="tex2html2622"
+  HREF="node150.html">generator</A>
+<LI><A NAME="tex2html2623"
+  HREF="node151.html">map</A>
+<LI><A NAME="tex2html2624"
+  HREF="node152.html">member?</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2618"
+  HREF="node148.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2612"
+  HREF="node135.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2606"
+  HREF="node146.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2614"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2616"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2619"
+  HREF="node148.html">size</A>
+<B> Up:</B> <A NAME="tex2html2613"
+  HREF="node135.html">Data Structures</A>
+<B> Previous:</B> <A NAME="tex2html2607"
+  HREF="node146.html">sort!</A>
+ &nbsp <B>  <A NAME="tex2html2615"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html2617"
+  HREF="node240.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

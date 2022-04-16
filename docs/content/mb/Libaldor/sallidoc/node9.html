@@ -1,0 +1,271 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Input/Output</TITLE>
+<META NAME="description" CONTENT="Input/Output">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="next" HREF="node10.html">
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node10.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html460"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html454"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html448"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html456"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html458"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html461"
+  HREF="node10.html">Compatibility with C types</A>
+<B> Up:</B> <A NAME="tex2html455"
+  HREF="node6.html">User's Guide</A>
+<B> Previous:</B> <A NAME="tex2html449"
+  HREF="node8.html">Data structures</A>
+ &nbsp <B>  <A NAME="tex2html457"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html459"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00033000000000000000">
+Input/Output</A>
+</H2>
+S<SMALL>ALLI</SMALL> provides an I/O model inspired from the stream model of C++.
+Data is written in text format on objects of type
+<A HREF="node126.html#TextWriter"><TT>TextWriter</TT></A>, in binary format on objects of type
+<A HREF="node92.html#BinaryWriter"><TT>BinaryWriter</TT></A>, read in text format from
+objects of type <A HREF="node121.html#TextReader"><TT>TextReader</TT></A>
+and read in binary format from objects of type <A HREF="node88.html#BinaryReader"><TT>BinaryReader</TT></A>.
+The standard streams <A HREF="node124.html#TextReader:stdin"><TT>stdin</TT></A>,
+<A HREF="node128.html#TextWriter:stdout"><TT>stdout</TT></A> and <A HREF="node128.html#TextWriter:stderr"><TT>stderr</TT></A>
+are constants exported
+by <A HREF="node121.html#TextReader"><TT>TextReader</TT></A> and <A HREF="node126.html#TextWriter"><TT>TextWriter</TT></A> respectively,
+while <A HREF="node89.html#BinaryReader:bin"><TT>bin</TT></A>, <A HREF="node93.html#BinaryWriter:bout"><TT>bout</TT></A>
+and <A HREF="node93.html#BinaryWriter:berr"><TT>berr</TT></A> are their binary
+counterparts.
+In addition, any <A HREF="node106.html#File"><TT>File</TT></A> can be coerced into either
+text or binary readers or writers, any <A HREF="node207.html#String"><TT>String</TT></A> can
+be coerced into text readers or writers, any <A HREF="node193.html#PrimitiveMemoryBlock"><TT>PrimitiveMemoryBlock</TT></A>
+can be coerced into binary readers or writers, and you can create
+custom streams via the <A HREF="node125.html#TextReader:textReader"><TT>textReader</TT></A>,
+<A HREF="node129.html#TextWriter:textWriter"><TT>textWriter</TT></A>,
+<A HREF="node90.html#BinaryReader:binaryReader"><TT>binaryReader</TT></A> and <A HREF="node94.html#BinaryWriter:binaryWriter"><TT>binaryWriter</TT></A>
+functions.
+
+<P>
+The function <TT><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$&lt;&lt;$"></TT> is used for both input and output:
+its binary version ``<EM>writer</EM> <A HREF="#OutputType:_tex2html_wrap_inline13940_"><TT><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$&lt;&lt;$"></TT></A> <EM>data</EM>''
+is for output,
+and its unary version ``<A HREF="#InputType:_tex2html_wrap_inline13944_"><TT><IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$&lt;&lt;$"></TT></A> <EM>reader</EM>'' is for input,
+in which
+case the return type must be specified, either via an assigment to a variable,
+<I>e.g.</I><TT>n:MachineInteger := <IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$&lt;&lt;$"> stdin</TT>, or via the <TT>@</TT> construct, or via
+the context. Whether you are reading/writing text or serializing data depends
+on the reader/writer type (text or binary).
+For example, a S<SMALL>ALLI</SMALL> version of the ``Hello world'' program is
+<PRE>
+#include "salli"
+
+import from TextWriter, String, Character;  -- Character needed for 'newline'
+stdout &lt;&lt; "Hello world!" &lt;&lt; newline;
+</PRE>
+Text and binary writers can be flushed, either via the
+<A HREF="node127.html#TextWriter:flush_"><TT>flush!</TT></A>
+function, or by sending the constant <A HREF="node134.html#WriterManipulator:flush"><TT>flush</TT></A>,
+exported by <A HREF="node131.html#WriterManipulator"><TT>WriterManipulator</TT></A>. Thus, the two lines
+<BR>
+<DIV ALIGN="CENTER">
+<TT>flush!(stdout <IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$&lt;&lt;$"> "Hello world" <IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$&lt;&lt;$"> newline);</TT></DIV>
+and
+<BR>
+<DIV ALIGN="CENTER">
+<TT>stdout <IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$&lt;&lt;$"> "Hello world" <IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$&lt;&lt;$"> newline <IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$&lt;&lt;$"> flush;</TT></DIV>
+are equivalent. The manipulator <A HREF="node133.html#WriterManipulator:endnl"><TT>endnl</TT></A>
+sends first a <A HREF="node104.html#Character:newline"><TT>newline</TT></A>
+and then flushes the stream, so another alternative for the above is
+<BR>
+<DIV ALIGN="CENTER">
+<TT>stdout <IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$&lt;&lt;$"> "Hello world" <IMG
+ WIDTH="29" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$&lt;&lt;$"> endnl;</TT></DIV>
+
+<P>
+When coercing strings and buffers to readers or writers, you should assign the
+resulting stream to a variable if you intend to read or write more than
+one value from the stream, since the coercion resets the stream
+to the beginning of the string. For example, if <TT>s</TT> is the <A HREF="node207.html#String"><TT>String</TT></A>
+``   12   56'', then
+<PRE>
+import from MachineInteger;
+a:MachineInteger := &lt;&lt; s::TextReader;             -- assigns 12 to a
+b:MachineInteger := &lt;&lt; s::TextReader;             -- assigns again 12 to b
+</PRE>
+while
+<PRE>
+import from MachineInteger;
+p := s::TextReader;
+a:MachineInteger := &lt;&lt; p;                         -- assigns 12 to a
+b:MachineInteger := &lt;&lt; p;                         -- assigns 56 to b
+</PRE>
+Similarly, if the file ``mydata''
+contains ``[1,2,3]  [4,5,6]'', then the way to read both structures is
+<PRE>
+import from List MachineInteger, Array MachineInteger, File, String;
+f := open("mydata", fileRead);
+s := f::TextReader;
+l:List MachineInteger := &lt;&lt; s;              -- assigns [1,2,3] to l
+v:Array MachineInteger := &lt;&lt; s;             -- assigns [4,5,6] to v
+close! f;
+</PRE>
+When coercing a <A HREF="node207.html#String"><TT>String</TT></A> to a text writer or a
+<A HREF="node193.html#PrimitiveMemoryBlock"><TT>PrimitiveMemoryBlock</TT></A> to a binary writer, you must ensure
+that the string or buffer is long enough to contain all the data
+that will be written to
+it, since S<SMALL>ALLI</SMALL> does not protect you against writing past the end of the
+string or buffer, which is not extended by the write operation. You can
+either use <A HREF="node159.html#FiniteLinearStructureType:new"><TT>new</TT></A>
+to create a large enough buffer,
+or write into an existing string or buffer.
+When writing to an existing string, you may have to
+send <A HREF="node104.html#Character:null"><TT>null</TT></A> (a constant exported by <A HREF="node101.html#Character"><TT>Character</TT></A>)
+to your string in order to terminate it after your data.
+Note that the debug version of S<SMALL>ALLI</SMALL> performs bound checking on
+accesses into <A HREF="node207.html#String"><TT>String</TT></A> and <A HREF="node193.html#PrimitiveMemoryBlock"><TT>PrimitiveMemoryBlock</TT></A>,
+so it can verify whether you are writing past
+the end of a string or buffer. See the subsection on debugging for more
+information on using the debug library.
+Coercing a <A HREF="node106.html#File"><TT>File</TT></A> to a reader or writer allocates memory, so it
+is advisable to assign the resulting stream to a variable. Unlike the ones
+for strings or buffers, those coercions do not reset the file to its beginning.
+
+<P>
+S<SMALL>ALLI</SMALL> provides 2 categories for text input/output: <A HREF="node115.html#InputType"><TT>InputType</TT></A>
+is for types whose elements can be read from a <A HREF="node121.html#TextReader"><TT>TextReader</TT></A>,
+and <A HREF="node117.html#OutputType"><TT>OutputType</TT></A> is for types whose elements can be written
+to a <A HREF="node126.html#TextWriter"><TT>TextWriter</TT></A>. In addition, the single category
+<A HREF="node119.html#SerializableType"><TT>SerializableType</TT></A> is for types whose elements can be serialized
+in binary format from a <A HREF="node88.html#BinaryReader"><TT>BinaryReader</TT></A> and to a <A HREF="node92.html#BinaryWriter"><TT>BinaryWriter</TT></A>.
+All the arithmetic types provided by S<SMALL>ALLI</SMALL>, as well as <A HREF="node97.html#Byte"><TT>Byte</TT></A>,
+<A HREF="node101.html#Character"><TT>Character</TT></A>, <A HREF="node207.html#String"><TT>String</TT></A>, <A HREF="node185.html#MemoryBlock"><TT>MemoryBlock</TT></A> and
+<A HREF="node154.html#CheckingMemoryBlock"><TT>CheckingMemoryBlock</TT></A>
+are <A HREF="node115.html#InputType"><TT>InputType</TT></A>, <A HREF="node117.html#OutputType"><TT>OutputType</TT></A> and <A HREF="node119.html#SerializableType"><TT>SerializableType</TT></A>,
+allowing you to read, write and serialize their elements. The data structures
+<A HREF="node176.html#List"><TT>List</TT></A> <TT>T</TT>, <A HREF="node136.html#Array"><TT>Array</TT></A> <TT>T</TT>, <A HREF="node186.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> <TT>T</TT>
+and <A HREF="node160.html#HashTable"><TT>HashTable</TT></A><TT>(K,V)</TT> inherit whatever input
+and output capabilities that their parameters have.
+
+<P>
+Programs that perform input or output tend to repeatedly import 
+the various stream types and accessories (manipulators, characters and
+strings). As an alternative to those imports,
+you can use <TT>#include "sallio"</TT> in
+addition to <TT>#include "salli"</TT>, which does a global import of
+all the following: <A HREF="node101.html#Character"><TT>Character</TT></A>, <A HREF="node207.html#String"><TT>String</TT></A>, <A HREF="node106.html#File"><TT>File</TT></A>,
+<A HREF="node121.html#TextReader"><TT>TextReader</TT></A>, <A HREF="node126.html#TextWriter"><TT>TextWriter</TT></A>, <A HREF="node88.html#BinaryReader"><TT>BinaryReader</TT></A>,
+<A HREF="node92.html#BinaryWriter"><TT>BinaryWriter</TT></A> and
+<A HREF="node131.html#WriterManipulator"><TT>WriterManipulator</TT></A>.
+So an alternative ``Hello world'' program would be:
+<PRE>
+#include "salli"                              -- performs no import
+#include "sallio"                             -- imports all the I/O types
+
+stdout &lt;&lt; "Hello world!" &lt;&lt; endnl;
+</PRE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html460"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html454"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html448"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html456"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html458"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html461"
+  HREF="node10.html">Compatibility with C types</A>
+<B> Up:</B> <A NAME="tex2html455"
+  HREF="node6.html">User's Guide</A>
+<B> Previous:</B> <A NAME="tex2html449"
+  HREF="node8.html">Data structures</A>
+ &nbsp <B>  <A NAME="tex2html457"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html459"
+  HREF="node240.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

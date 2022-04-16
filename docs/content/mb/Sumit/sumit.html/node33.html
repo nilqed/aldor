@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>apply</TITLE>
+<META NAME="description" CONTENT="apply">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node34.html">
+<LINK REL="previous" HREF="node32.html">
+<LINK REL="up" HREF="node31.html">
+<LINK REL="next" HREF="node34.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html798"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html792"
+  HREF="node31.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html786"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html794"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html796"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html799"
+  HREF="node34.html">coefficient</A>
+<B> Up:</B> <A NAME="tex2html793"
+  HREF="node31.html">FiniteFreeModule</A>
+<B> Previous:</B> <A NAME="tex2html787"
+  HREF="node32.html">add!</A>
+ &nbsp <B>  <A NAME="tex2html795"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html797"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00056200000000000000"></A>
+<A NAME="FiniteFreeModule:apply"></A>
+<BR>
+apply
+</H3> <A NAME="7596"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+apply(p, t)
+<BR>
+p&nbsp;t
+<BR>
+apply(port, p, x)
+<BR>
+port(p, x) 
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">apply:</TD>
+<TD ALIGN="LEFT">(%, <TT>ExpressionTree</TT>) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>ExpressionTree</TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT">apply:</TD>
+<TD ALIGN="LEFT">(<TT>TextWriter</TT>, %, <TT>Symbol</TT>)
+<IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>TextWriter</TT></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>p</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">An element of the type</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>t</EM></TD>
+<TD ALIGN="LEFT"><TT>ExpressionTree</TT></TD>
+<TD ALIGN="LEFT">An expression tree</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>x</EM></TD>
+<TD ALIGN="LEFT"><TT>Symbol</TT></TD>
+<TD ALIGN="LEFT">A name for the variables</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>port</EM></TD>
+<TD ALIGN="LEFT"><TT>TextWriter</TT></TD>
+<TD ALIGN="LEFT">An output port</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+apply(p, t) returns p as an expression tree, using t as root variable name.
+<BR>
+apply(port, p, x) sends p to port using x as root variable name,
+and returns the output port afterwards.
+
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

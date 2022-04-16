@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Partial</TITLE>
+<META NAME="description" CONTENT="Partial">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="next" HREF="node231.html">
+<LINK REL="previous" HREF="node226.html">
+<LINK REL="up" HREF="node214.html">
+<LINK REL="next" HREF="node228.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3789"
+  HREF="node228.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html3783"
+  HREF="node214.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html3777"
+  HREF="node226.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html3785"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html3787"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3790"
+  HREF="node228.html">[]</A>
+<B> Up:</B> <A NAME="tex2html3784"
+  HREF="node214.html">Utilities</A>
+<B> Previous:</B> <A NAME="tex2html3778"
+  HREF="node226.html">GeneratorExceptionType</A>
+ &nbsp <B>  <A NAME="tex2html3786"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html3788"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00087000000000000000"></A><A NAME="13409"></A><A NAME="Partial"></A>
+<BR>
+Partial
+</H2>
+
+<BR>
+<IMG
+ WIDTH="194" HEIGHT="50" ALIGN="BOTTOM" BORDER="0"
+ SRC="img618.gif"
+ ALT="\begin{usage}
+import from Partial~T
+\end{usage}">
+<BR>
+
+<BR>
+<IMG
+ WIDTH="275" HEIGHT="36" ALIGN="BOTTOM" BORDER="0"
+ SRC="img619.gif"
+ ALT="\begin{params}
+{\em T} &amp; Type &amp; a type\\
+\end{params}">
+<BR>
+<BR>
+<IMG
+ WIDTH="364" HEIGHT="51" ALIGN="BOTTOM" BORDER="0"
+ SRC="img620.gif"
+ ALT="\begin{descr}
+Partial(T) implements a union of T and {\it failed}\xspace .
+\end{descr}">
+<BR>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    
+<UL>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node228.html#Partial:__"><TT>[]</TT></A>:</TD>
+<TD ALIGN="LEFT">T <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">create an element</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node229.html#Partial:failed"><TT>failed</TT></A>:</TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">the element <I>failed</I></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node229.html#Partial:failed_"><TT>failed?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> <A HREF="node29.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">check for the element <I>failed</I></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node230.html#Partial:retract"><TT>retract</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\to$"> T</TD>
+<TD ALIGN="LEFT">convert to an element of T</TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+
+<UL>
+<LI>if <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img351.gif"
+ ALT="$T$"> has <A HREF="node70.html#PrimitiveType"><TT>PrimitiveType</TT></A> then <BR></LI>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node70.html#PrimitiveType"><TT>PrimitiveType</TT></A></TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+
+<UL>
+<LI>if <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img351.gif"
+ ALT="$T$"> has <A HREF="node167.html#HashType"><TT>HashType</TT></A> then <BR></LI>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node167.html#HashType"><TT>HashType</TT></A></TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+
+<UL>
+<LI>if <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img351.gif"
+ ALT="$T$"> has <A HREF="node115.html#InputType"><TT>InputType</TT></A> then <BR></LI>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node115.html#InputType"><TT>InputType</TT></A></TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+
+<UL>
+<LI>if <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img351.gif"
+ ALT="$T$"> has <A HREF="node117.html#OutputType"><TT>OutputType</TT></A> then <BR></LI>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node117.html#OutputType"><TT>OutputType</TT></A></TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+
+<UL>
+<LI>if <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img351.gif"
+ ALT="$T$"> has <A HREF="node119.html#SerializableType"><TT>SerializableType</TT></A> then <BR></LI>
+<LI><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node119.html#SerializableType"><TT>SerializableType</TT></A></TD>
+</TR>
+</TABLE>
+</LI>
+</UL>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3791"
+  HREF="node228.html">[]</A>
+<LI><A NAME="tex2html3792"
+  HREF="node229.html">failed</A>
+<LI><A NAME="tex2html3793"
+  HREF="node230.html">retract</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3789"
+  HREF="node228.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html3783"
+  HREF="node214.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html3777"
+  HREF="node226.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html3785"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html3787"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3790"
+  HREF="node228.html">[]</A>
+<B> Up:</B> <A NAME="tex2html3784"
+  HREF="node214.html">Utilities</A>
+<B> Previous:</B> <A NAME="tex2html3778"
+  HREF="node226.html">GeneratorExceptionType</A>
+ &nbsp <B>  <A NAME="tex2html3786"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html3788"
+  HREF="node240.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

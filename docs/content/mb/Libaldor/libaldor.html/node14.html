@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Debugging</TITLE>
+<META NAME="description" CONTENT="Debugging">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node13.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node15.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html630"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html624"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html620"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html626"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html628"
+  HREF="node315.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html631"
+  HREF="node15.html">Reference Manual</A>
+<B> Up:</B> <A NAME="tex2html625"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html621"
+  HREF="node13.html">Exceptions</A>
+ &nbsp; <B>  <A NAME="tex2html627"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html629"
+  HREF="node315.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00038000000000000000"></A>
+<A NAME=":sec:debug"></A>
+<BR>
+Debugging
+</H2> <A NAME="7763"></A>
+<TT>libaldor</TT>  comes with a debug version, which makes various assertions
+about the arguments of the functions called. Its most important debugging
+feature is probably the ability to bound check all accesses into
+<A HREF="node230.html#PrimitiveArray"><TT>PrimitiveArray</TT></A>,
+<A HREF="node229.html#PackedPrimitiveArray"><TT>PackedPrimitiveArray</TT></A>,
+<A HREF="node237.html#PrimitiveMemoryBlock"><TT>PrimitiveMemoryBlock</TT></A>,
+<A HREF="node211.html#List"><TT>List</TT></A>
+and <A HREF="node257.html#String"><TT>String</TT></A> at runtime.
+To use the debug version of the
+library, just compile all your files with the
+<DIV ALIGN="CENTER">
+<TT>-dDEBUG</TT>
+
+</DIV>
+option, and add the option
+<DIV ALIGN="CENTER">
+<TT>-laldord</TT>
+
+</DIV>
+rather than <TT>-laldor</TT> when building an executable.
+It is also preferable when debugging to add the <TT>-q1</TT> option
+in order to prevent inlining.
+
+<P>
+<TT>libaldor</TT>  also provides a couple of macros to help you debug your
+applications:
+<DL>
+<DT><STRONG><TT>TRACE(message,value)</TT>:</STRONG></DT>
+<DD>has no effect on normal compilation,
+but sends <EM>message</EM> followed by <EM>value</EM> and a newline to
+<A HREF="node155.html#TextWriter:stderr"><TT>stderr</TT></A> when compiled with the <TT>-dTRACE</TT> option.
+</DD>
+<DT><STRONG><TT>AGAT(stream,value)</TT>:</STRONG></DT>
+<DD>has no effect on normal compilation,
+but sends <EM>value</EM> to the Agat stream <EM>stream</EM> when compiled with
+the <TT>-dAGAT</TT> option. This option is only available if you have
+Agat installed (see
+<TT><A NAME="tex2html10"
+  HREF="http://www-sop.inria.fr/cafe/Olivier.Arsac/agat/agat.html">http://www-sop.inria.fr/cafe/Olivier.Arsac/agat/agat.html</A></TT>).
+</DD>
+</DL>
+
+<P>
+Another useful tracing feature is the <TT>-Wdebug</TT> option of the
+compiler, which is now supported by <TT>libaldor</TT>: if you compile
+any source file, say <TT>foo.as</TT>  with the <TT>-Wdebug</TT> option,
+and then call <A HREF="node314.html#Trace:traceActivate"><TT>traceActivate</TT></A> in your program,
+then any entry and exit of functions from <TT>foo.as</TT> will be
+traced, until you call <A HREF="node314.html#Trace:traceStop"><TT>traceStop</TT></A> in your program.
+See <A HREF="node314.html#Trace:traceActivate"><TT>traceActivate</TT></A> for an example.
+
+<P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html630"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html624"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html620"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html626"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html628"
+  HREF="node315.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html631"
+  HREF="node15.html">Reference Manual</A>
+<B> Up:</B> <A NAME="tex2html625"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html621"
+  HREF="node13.html">Exceptions</A>
+ &nbsp; <B>  <A NAME="tex2html627"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html629"
+  HREF="node315.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

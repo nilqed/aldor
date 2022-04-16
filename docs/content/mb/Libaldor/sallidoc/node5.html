@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>How do I use SALLI in my programs?</TITLE>
+<META NAME="description" CONTENT="How do I use SALLI in my programs?">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html397"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html391"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html387"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html393"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html395"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html398"
+  HREF="node6.html">User's Guide</A>
+<B> Up:</B> <A NAME="tex2html392"
+  HREF="node2.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html388"
+  HREF="node4.html">How do I get</A>
+ &nbsp <B>  <A NAME="tex2html394"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html396"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00023000000000000000">
+How do I use S<SMALL>ALLI</SMALL> in my programs?</A>
+</H2>
+Once S<SMALL>ALLI</SMALL> is properly built, you need to set the following environment
+variables before using it:
+
+<UL>
+<LI>the variable SALLIROOT should be set to the main <TT>salli</TT> directory,
+or to <TT>salli/debug</TT> if you want to use the debug version of the library;
+</LI>
+<LI><TT>$SALLIROOT/include</TT> should be appended to your INCPATH variable;
+</LI>
+<LI><TT>$SALLIROOT/lib</TT> should be appended to your LIBPATH variable;
+</LI>
+</UL>
+In your A<SMALL>LDOR</SMALL> programs, use <TT>#include "salli"</TT> instead of
+<TT>#include "axllib"</TT>. When building your final executable, add the
+options
+<DIV ALIGN="CENTER">
+<TT>-lsalli -y$SALLIROOT/lib</TT>
+
+</DIV>
+to your compiler command line. If you intend to make use
+of the <A HREF="node44.html#GMPInteger"><TT>GMPInteger</TT></A> or <A HREF="node40.html#GMPFloat"><TT>GMPFloat</TT></A> type,
+make sure to add the option
+<DIV ALIGN="CENTER">
+<TT>-cruntime=foam-gmp3,gmp-3</TT>
+
+</DIV>
+to your compiler command line. This will ensure that GMP makes use
+of the A<SMALL>LDOR</SMALL> garbage collector. Note that the GMP 3.0 or 3.1 library should
+then be in a file called <TT>libgmp-3.a</TT>.
+If you are running S<SMALL>ALLI</SMALL> inside the compiler interactive loop, then
+add the line <TT>#include "sallinterp"</TT> after <TT>#include "salli"</TT>,
+which will import various things for interactive use and make the interpreter
+loop print values automatically. Note that <A HREF="node44.html#GMPInteger"><TT>GMPInteger</TT></A> and
+<A HREF="node40.html#GMPFloat"><TT>GMPFloat</TT></A> are not available in the interactive loop.
+As with any A<SMALL>LDOR</SMALL> program, do not forget
+the <TT>-q3</TT> option in order to optimize your programs, specially
+if performance is an issue.
+
+<P>
+Before using S<SMALL>ALLI</SMALL> for the first time, please check your installation
+by running <TT>make</TT> in the <TT>salli/test</TT> directory, followed by
+running <TT>testall</TT>.
+
+<P>
+Please report any installation problem or bugs you encounter
+to <TT>salli@sophia.inria.fr</TT>.
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html397"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html391"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html387"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html393"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html395"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html398"
+  HREF="node6.html">User's Guide</A>
+<B> Up:</B> <A NAME="tex2html392"
+  HREF="node2.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html388"
+  HREF="node4.html">How do I get</A>
+ &nbsp <B>  <A NAME="tex2html394"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html396"
+  HREF="node240.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

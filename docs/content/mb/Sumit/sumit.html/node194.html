@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>EqualityCondition</TITLE>
+<META NAME="description" CONTENT="EqualityCondition">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node199.html">
+<LINK REL="previous" HREF="node191.html">
+<LINK REL="up" HREF="node186.html">
+<LINK REL="next" HREF="node195.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3238"
+  HREF="node195.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3232"
+  HREF="node186.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3226"
+  HREF="node193.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3234"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html3236"
+  HREF="node209.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> 
+<B> Up:</B> <A NAME="tex2html3233"
+  HREF="node186.html">Conditions</A>
+<B> Previous:</B> <A NAME="tex2html3227"
+  HREF="node193.html">always?,never?</A>
+ &nbsp <B>  <A NAME="tex2html3235"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html3237"
+  HREF="node209.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00093000000000000000"></A><A NAME="15224"></A><A NAME="EqualityCondition"></A>
+<BR>
+EqualityCondition
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+EqualityCondition&nbsp;T: Category
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+EqualityCondition&nbsp;T&nbsp;is a category for equality and inequality
+conditions on elements of T.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node191.html#Condition"><TT>Condition</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#EqualityCondition:_tex2html_wrap_inline18392_"><TT><IMG
+ WIDTH="16" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$=$"></TT></A> :</TD>
+<TD ALIGN="LEFT">(T,T) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">assert that two objects are equal</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#EqualityCondition:_tex2html_wrap_inline18398_"><TT><IMG
+ WIDTH="21" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img341.png"
+ ALT="$\tilde{}=$"></TT></A>:</TD>
+<TD ALIGN="LEFT">(T,T) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">assert that two objects are different</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node196.html#EqualityCondition:equalities"><TT>equalities</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Generator</TT> <TT>Cross</TT>(T, T)</TD>
+<TD ALIGN="LEFT">iterate through the equalities</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node196.html#EqualityCondition:inequalities"><TT>inequalities</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Generator</TT> <TT>Cross</TT>(T, T)</TD>
+<TD ALIGN="LEFT">iterate through the inequalities</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <I>R</I> has <TT>CommutativeRing</TT> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node197.html#EqualityCondition:nonzero"><TT>nonzero</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Generator</TT> T</TD>
+<TD ALIGN="LEFT">inequalities (to <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img49.png"
+ ALT="$0$">)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node198.html#EqualityCondition:split"><TT>split</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, T) <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> (%, %)</TD>
+<TD ALIGN="LEFT">split on whether <IMG
+ WIDTH="42" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img342.png"
+ ALT="$a=0$"> or <IMG
+ WIDTH="42" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img343.png"
+ ALT="$a\ne 0$"></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node197.html#EqualityCondition:zero"><TT>zero</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$\to$"> <TT>Generator</TT> T</TD>
+<TD ALIGN="LEFT">equalities (to <IMG
+ WIDTH="12" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img49.png"
+ ALT="$0$">)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3240"
+  HREF="node195.html"><IMG
+ WIDTH="16" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$=$"></A>
+<LI><A NAME="tex2html3241"
+  HREF="node196.html">equalities,inequalities</A>
+<LI><A NAME="tex2html3242"
+  HREF="node197.html">zero,nonzero</A>
+<LI><A NAME="tex2html3243"
+  HREF="node198.html">split</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2002-08-04
+</ADDRESS>
+</BODY>
+</HTML>

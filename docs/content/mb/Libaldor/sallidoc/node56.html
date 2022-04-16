@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>divide,mod,quo,rem</TITLE>
+<META NAME="description" CONTENT="divide,mod,quo,rem">
+<META NAME="keywords" CONTENT="sallidoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="sallidoc.css">
+
+<LINK REL="next" HREF="node57.html">
+<LINK REL="previous" HREF="node55.html">
+<LINK REL="up" HREF="node53.html">
+<LINK REL="next" HREF="node57.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1203"
+  HREF="node57.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1197"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1191"
+  HREF="node55.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1199"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1201"
+  HREF="node240.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1204"
+  HREF="node57.html">even?,odd?</A>
+<B> Up:</B> <A NAME="tex2html1198"
+  HREF="node53.html">IntegerType</A>
+<B> Previous:</B> <A NAME="tex2html1192"
+  HREF="node55.html">coerce,machine</A>
+ &nbsp <B>  <A NAME="tex2html1200"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp <B>  <A NAME="tex2html1202"
+  HREF="node240.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000512300000000000000"></A>
+<A NAME="IntegerType:divide_mod_quo_rem"></A>
+<BR>
+divide,mod,quo,rem
+</H3> <A NAME="7627"></A>
+<A NAME="IntegerType:divide"></A> <A NAME="7630"></A>
+<A NAME="IntegerType:mod"></A> <A NAME="7633"></A>
+<A NAME="IntegerType:quo"></A> <A NAME="7636"></A>
+<A NAME="IntegerType:rem"></A> <A NAME="7639"></A>
+<BR>
+<IMG
+ WIDTH="119" HEIGHT="123" ALIGN="BOTTOM" BORDER="0"
+ SRC="img139.gif"
+ ALT="\begin{usage}
+divide(a, b)\\ a mod n\\ a mod b\\ a quo b\\ a rem b
+\end{usage}">
+<BR>
+
+<BR>
+<IMG
+ WIDTH="454" HEIGHT="88" ALIGN="BOTTOM" BORDER="0"
+ SRC="img140.gif"
+ ALT="\begin{signatures}
+divide: &amp; (\%,\%) $\to$\ (\%, \%)\\
+mod,quo,rem: &amp; (\%,\%)...
+...) $\to$\ \htmlref{\texttt{MachineInteger}}{MachineInteger}\\\end{signatures}">
+<BR>
+<BR>
+<IMG
+ WIDTH="441" HEIGHT="55" ALIGN="BOTTOM" BORDER="0"
+ SRC="img141.gif"
+ ALT="\begin{params}
+{\em a,b} &amp; \% &amp; integers, $b \ne 0$\\
+{\em n} &amp; \htmlref{\texttt{MachineInteger}}{MachineInteger} &amp; a nonzero machine integer\\\end{params}">
+<BR>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="107" ALIGN="BOTTOM" BORDER="0"
+ SRC="img142.gif"
+ ALT="\begin{retval}
+$a$\ mod $b$\ (resp.~$a$\ mod $n$) returns $m$\ such that $0 \le...
+...m $b)) / b$,
+and divide(a, b) returns the pair (a quo b, a rem b).
+\end{retval}">
+<BR>
+
+<BR>
+<IMG
+ WIDTH="556" HEIGHT="108" ALIGN="BOTTOM" BORDER="0"
+ SRC="img143.gif"
+ ALT="\begin{remarks}
+mod returns a unique remainder modulo b, but is more expensive
+...
+...eger}}{MachineInteger} allows for more efficient implementations.
+\end{remarks}">
+<BR>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2000-12-12
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Arithmetic</TITLE>
+<META NAME="description" CONTENT="Arithmetic">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node8.html">
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html534"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html528"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html522"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html530"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html532"
+  HREF="node315.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html535"
+  HREF="node8.html">Data structures</A>
+<B> Up:</B> <A NAME="tex2html529"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html523"
+  HREF="node6.html">User Guide</A>
+ &nbsp; <B>  <A NAME="tex2html531"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html533"
+  HREF="node315.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00031000000000000000">
+Arithmetic</A>
+</H2>
+<TT>libaldor</TT>  contains several integer types:
+<A HREF="node82.html#MachineInteger"><TT>MachineInteger</TT></A> provides full-word signed machine integers,
+while <A HREF="node17.html#AldorInteger:Integer"><TT>Integer</TT></A>
+<A NAME="tex2html4"
+  HREF="footnode.html#foot5457"><SUP>1</SUP></A>provides ``infinite'' precision software integers.
+Both of them are of category <A HREF="node66.html#IntegerType"><TT>IntegerType</TT></A>,
+so the same functions can be applied to them.
+In addition, <A HREF="node82.html#MachineInteger"><TT>MachineInteger</TT></A> exports 3 useful
+constants: <A HREF="node83.html#MachineInteger:min"><TT>min</TT></A>
+and <A HREF="node83.html#MachineInteger:max"><TT>max</TT></A>, whose values are the smallest and
+greatest machine integers,
+and <A HREF="node83.html#MachineInteger:bytes"><TT>bytes</TT></A>, whose values is the
+machine wordsize in bytes.
+The <A HREF="node83.html#MachineInteger:bytes"><TT>bytes</TT></A> constant allows you to write
+wordsize-dependent code, for example when generating half-word-size prime
+numbers. A <A HREF="node82.html#MachineInteger"><TT>MachineInteger</TT></A> value <TT>n</TT>
+can be coerced to an <A HREF="node17.html#AldorInteger:Integer"><TT>Integer</TT></A> via <TT>n::Integer</TT>, and the reverse
+conversion is provided via the <A HREF="node68.html#IntegerType:machine"><TT>machine</TT></A> function,
+<I>i.e.</I>&nbsp;<TT>n := machine m</TT>. This last conversion can
+of course lose precision if <TT>m</TT> does not fit within a machine word.
+The general form for iterating over a range of integers is
+<BR>
+<DIV ALIGN="CENTER">
+ <TT>for</TT> <EM>variable</EM> <TT>in</TT> <EM>from</EM><TT>..</TT><EM>to</EM>
+<TT>by</TT> <EM>step</EM> | <EM>condition</EM> <TT>repeat { ...&nbsp;}</TT> </DIV>
+where the <EM>to</EM> parameter and the <TT>by</TT> and ``| <EM>condition</EM>''
+parts are optional.
+
+<P>
+Besides the integers, <TT>libaldor</TT>  also provides machine floating point numbers,
+both in single precision (<A HREF="node103.html#SingleFloat"><TT>SingleFloat</TT></A>) and double precision
+(<A HREF="node42.html#DoubleFloat"><TT>DoubleFloat</TT></A>). Finally, if you are linking with the
+GMP library, <TT>libaldor</TT>  provides <A HREF="node50.html#GMPFloat"><TT>GMPFloat</TT></A>, which is an interface
+to the ``infinite'' precision software floats of GMP.
+The above 3 type share the category <A HREF="node46.html#FloatType"><TT>FloatType</TT></A>.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html534"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html528"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html522"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html530"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html532"
+  HREF="node315.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html535"
+  HREF="node8.html">Data structures</A>
+<B> Up:</B> <A NAME="tex2html529"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html523"
+  HREF="node6.html">User Guide</A>
+ &nbsp; <B>  <A NAME="tex2html531"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html533"
+  HREF="node315.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>
