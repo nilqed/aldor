@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Shell</TITLE>
+<META NAME="description" CONTENT="Shell">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node560.html">
+<LINK REL="previous" HREF="node555.html">
+<LINK REL="up" HREF="node533.html">
+<LINK REL="next" HREF="node558.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html9718"
+  HREF="node558.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html9712"
+  HREF="node533.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html9706"
+  HREF="node556.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html9714"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html9716"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html9719"
+  HREF="node558.html">center</A>
+<B> Up:</B> <A NAME="tex2html9713"
+  HREF="node533.html">Shells</A>
+<B> Previous:</B> <A NAME="tex2html9707"
+  HREF="node556.html">scan</A>
+ &nbsp; <B>  <A NAME="tex2html9715"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html9717"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001212000000000000000"></A><A NAME="45154"></A><A NAME="Shell"></A>
+<BR>
+Shell
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from Shell(P, R, E)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT">P</TD>
+<TD ALIGN="LEFT"><A HREF="node545.html#Parser"><TT>Parser</TT></A></TD>
+<TD ALIGN="LEFT">A parser type for the input</TD>
+</TR>
+<TR><TD ALIGN="LEFT">R</TD>
+<TD ALIGN="LEFT"><A HREF="node554.html#PartialRing"><TT>PartialRing</TT></A></TD>
+<TD ALIGN="LEFT">Resulting type of the evaluation</TD>
+</TR>
+<TR><TD ALIGN="LEFT">E</TD>
+<TD ALIGN="LEFT"><A HREF="node534.html#Evaluator"><TT>Evaluator</TT></A> R</TD>
+<TD ALIGN="LEFT">An interpreter with target type R</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+Shell(P, R, E) provides a basic read-eval-loop that converts its input
+to expressions of type R.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node558.html#Shell:center"><TT>center</TT></A>:</TD>
+<TD ALIGN="LEFT">(TW, <A HREF="node845.html#String"><TT>String</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TW</TD>
+<TD ALIGN="LEFT">center a line of text</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node559.html#Shell:shell_"><TT>shell!</TT></A>:</TD>
+<TD ALIGN="LEFT">(P, TW, TW, <A HREF="node560.html#SymbolTable"><TT>SymbolTable</TT></A> R, <A HREF="node619.html#Boolean"><TT>Boolean</TT></A>, <A HREF="node619.html#Boolean"><TT>Boolean</TT></A>,
+<A HREF="node845.html#String"><TT>String</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Z</TD>
+<TD ALIGN="LEFT">Read-eval loop</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">TW</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node741.html#TextWriter"><TT>TextWriter</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html9720"
+  HREF="node558.html">center</A>
+<LI><A NAME="tex2html9721"
+  HREF="node559.html">shell!</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

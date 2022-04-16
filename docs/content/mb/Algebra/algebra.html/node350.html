@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>coerce,vectorize!</TITLE>
+<META NAME="description" CONTENT="coerce,vectorize!">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node351.html">
+<LINK REL="previous" HREF="node349.html">
+<LINK REL="up" HREF="node349.html">
+<LINK REL="next" HREF="node351.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html6644"
+  HREF="node351.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html6638"
+  HREF="node349.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html6632"
+  HREF="node349.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html6640"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html6642"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html6645"
+  HREF="node351.html">companion</A>
+<B> Up:</B> <A NAME="tex2html6639"
+  HREF="node349.html">MonogenicAlgebra</A>
+<B> Previous:</B> <A NAME="tex2html6633"
+  HREF="node349.html">MonogenicAlgebra</A>
+ &nbsp; <B>  <A NAME="tex2html6641"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html6643"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00098100000000000000"></A>
+<A NAME="MonogenicAlgebra:coerce_vectorize_"></A>
+<BR>
+coerce,vectorize!
+</H3> <A NAME="35744"></A>
+<A NAME="MonogenicAlgebra:coerce"></A> <A NAME="35747"></A>
+<A NAME="MonogenicAlgebra:vectorize_"></A> <A NAME="35750"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+v::%
+<BR>
+vectorize! v
+<BR>
+vectorize!(v)(p)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">coerce:</TD>
+<TD ALIGN="LEFT"><A HREF="node325.html#Vector"><TT>Vector</TT></A> R <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">vectorize!:</TD>
+<TD ALIGN="LEFT"><A HREF="node325.html#Vector"><TT>Vector</TT></A> R <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node325.html#Vector"><TT>Vector</TT></A> R</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>p</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">A polynomial</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>v</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node325.html#Vector"><TT>Vector</TT></A> R</TD>
+<TD ALIGN="LEFT">A coefficient vector</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+<!-- MATH
+ $[v_1,\dots,v_n]$
+ -->
+<IMG
+ WIDTH="80" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img425.png"
+ ALT="$[v_1,\dots,v_n]$">::% returns the polynomial
+<!-- MATH
+ $\sum_{i=0}^{n-1} v_{i+1} P_i$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img426.png"
+ ALT="$\sum_{i=0}^{n-1} v_{i+1} P_i$">, while
+vectorize!<!-- MATH
+ $(v)(\sum_{j=0}^d a_j P_j)$
+ -->
+<IMG
+ WIDTH="112" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img427.png"
+ ALT="$(v)(\sum_{j=0}^d a_j P_j)$"> fills <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="$v$"> with <!-- MATH
+ $[a_0,\dots,a_d,0,\dots]$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img428.png"
+ ALT="$[a_0,\dots,a_d,0,\dots]$">
+and returns <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="$v$">.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+If <IMG
+ WIDTH="83" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img429.png"
+ ALT="$d &gt; \char93 v - 1$">, then the high coefficients of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$p$"> are
+simply ignored.
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

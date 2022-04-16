@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>add!</TITLE>
+<META NAME="description" CONTENT="add!">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node402.html">
+<LINK REL="previous" HREF="node400.html">
+<LINK REL="up" HREF="node400.html">
+<LINK REL="next" HREF="node402.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html7370"
+  HREF="node402.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html7364"
+  HREF="node400.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html7358"
+  HREF="node400.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html7366"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html7368"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html7371"
+  HREF="node402.html">compose,translate</A>
+<B> Up:</B> <A NAME="tex2html7365"
+  HREF="node400.html">UnivariatePolynomialAlgebra</A>
+<B> Previous:</B> <A NAME="tex2html7359"
+  HREF="node400.html">UnivariatePolynomialAlgebra</A>
+ &nbsp; <B>  <A NAME="tex2html7367"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html7369"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000922100000000000000"></A>
+<A NAME="UnivariatePolynomialAlgebra:add_"></A>
+<BR>
+add!
+</H3> <A NAME="38001"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+add!(p, c, m, q, n, N)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">add!:</TD>
+<TD ALIGN="LEFT">(%,R,<A HREF="#Integer"><TT>Integer</TT></A>,%,<A HREF="#Integer"><TT>Integer</TT></A>,<A HREF="#Integer"><TT>Integer</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>p</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">A polynomial (to be destroyed)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>c</EM></TD>
+<TD ALIGN="LEFT">R</TD>
+<TD ALIGN="LEFT">A scalar</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>m</EM></TD>
+<TD ALIGN="LEFT"><A HREF="#Integer"><TT>Integer</TT></A></TD>
+<TD ALIGN="LEFT">The degree of the monomial to add</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>q</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">A polynomial to be multiplied by <IMG
+ WIDTH="33" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img477.png"
+ ALT="$c x^m$"> and added to p</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>n</EM></TD>
+<TD ALIGN="LEFT"><A HREF="#Integer"><TT>Integer</TT></A></TD>
+<TD ALIGN="LEFT">A lower threshold</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>N</EM></TD>
+<TD ALIGN="LEFT"><A HREF="#Integer"><TT>Integer</TT></A></TD>
+<TD ALIGN="LEFT">An upper treshold</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+add!(p, c, m, q, n, N) computes all the terms of degree at least <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img88.png"
+ ALT="$n$">
+and at most <IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img478.png"
+ ALT="$N$"> of
+</BLOCKQUOTE>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+p + c x^m q = \sum_{i=0}^{d+m} (a_i + c b_{i-m}) x^i\,,
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="220" HEIGHT="56" BORDER="0"
+ SRC="img479.png"
+ ALT="\begin{displaymath}
+p + c x^m q = \sum_{i=0}^{d+m} (a_i + c b_{i-m}) x^i\,,
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P><BLOCKQUOTE>
+where <!-- MATH
+ $p = \sum_{i=0}^d a_i x^i$
+ -->
+<IMG
+ WIDTH="103" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img480.png"
+ ALT="$p = \sum_{i=0}^d a_i x^i$"> and <!-- MATH
+ $q = \sum_{i=0}^d b_i x^i$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img481.png"
+ ALT="$q = \sum_{i=0}^d b_i x^i$">.
+Note that <IMG
+ WIDTH="18" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img97.png"
+ ALT="$m$"> is allowed to be negative.
+For efficiency reasons it is sometimes sufficient to compute some terms of
+that sum only. All other coefficients of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$p$"> are not changed.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+The storage used by p is allowed to be destroyed or reused, so p
+is lost after this call. This may cause p to be destroyed, so do not use
+this unless p has been locally allocated, and is thus guaranteed not to
+share space with other polynomials. Some functions, like <A HREF="#UnivariatePolynomialAlgebra:reductum"><TT>reductum</TT></A> are
+not necessarily copying their arguments and can thus create memory aliases.
+</BLOCKQUOTE>
+<P></P>
+
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html7370"
+  HREF="node402.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html7364"
+  HREF="node400.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html7358"
+  HREF="node400.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html7366"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html7368"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html7371"
+  HREF="node402.html">compose,translate</A>
+<B> Up:</B> <A NAME="tex2html7365"
+  HREF="node400.html">UnivariatePolynomialAlgebra</A>
+<B> Previous:</B> <A NAME="tex2html7359"
+  HREF="node400.html">UnivariatePolynomialAlgebra</A>
+ &nbsp; <B>  <A NAME="tex2html7367"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html7369"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

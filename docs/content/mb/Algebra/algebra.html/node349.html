@@ -1,0 +1,337 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MonogenicAlgebra</TITLE>
+<META NAME="description" CONTENT="MonogenicAlgebra">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node357.html">
+<LINK REL="previous" HREF="node347.html">
+<LINK REL="up" HREF="node331.html">
+<LINK REL="next" HREF="node350.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html6623"
+  HREF="node350.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html6617"
+  HREF="node331.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html6611"
+  HREF="node348.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html6619"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html6621"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html6624"
+  HREF="node350.html">coerce,vectorize!</A>
+<B> Up:</B> <A NAME="tex2html6618"
+  HREF="node331.html">Univariate Polynomials and Series</A>
+<B> Previous:</B> <A NAME="tex2html6612"
+  HREF="node348.html">gcd!</A>
+ &nbsp; <B>  <A NAME="tex2html6620"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html6622"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00098000000000000000"></A><A NAME="35595"></A><A NAME="MonogenicAlgebra"></A>
+<BR>
+MonogenicAlgebra
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+MonogenicAlgebra&nbsp;R: Category
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node129.html#ExpressionType"><TT>ExpressionType</TT></A></TD>
+<TD ALIGN="LEFT">The coefficient domain</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><A HREF="node611.html#ArithmeticType"><TT>ArithmeticType</TT></A></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+MonogenicAlgebra&nbsp;is a common category for commutative and noncommutative
+univariate polynomials with coefficients in an arbitrary arithmetic
+system <I>R</I> and with respect to an arbitrary basis <!-- MATH
+ $(P_n)_{n \ge 0}$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img424.png"
+ ALT="$(P_n)_{n \ge 0}$">.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node879.html#CopyableType"><TT>CopyableType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node84.html#IndexedFreeAlgebra"><TT>IndexedFreeAlgebra</TT></A>(R, <A HREF="#Integer"><TT>Integer</TT></A>)</TD>
+</TR>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node360.html#MonogenicLinearArithmeticType"><TT>MonogenicLinearArithmeticType</TT></A> R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node350.html#MonogenicAlgebra:coerce"><TT>coerce</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node325.html#Vector"><TT>Vector</TT></A> R <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Create a polynomial</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node351.html#MonogenicAlgebra:companion"><TT>companion</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node230.html#DenseMatrix"><TT>DenseMatrix</TT></A> R</TD>
+<TD ALIGN="LEFT">Companion matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node353.html#MonogenicAlgebra:monomial_"><TT>monomial!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, R, Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">In-place monomial</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node354.html#MonogenicAlgebra:random"><TT>random</TT></A>:</TD>
+<TD ALIGN="LEFT">(<A HREF="#Integer"><TT>Integer</TT></A>, () <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R, <A HREF="#Integer"><TT>Integer</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Creation of a random polynomial</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node355.html#MonogenicAlgebra:revert"><TT>revert</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Left-Right reversion</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node355.html#MonogenicAlgebra:revert_"><TT>revert!</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">In-place left-right reversion</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node350.html#MonogenicAlgebra:vectorize_"><TT>vectorize!</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node325.html#Vector"><TT>Vector</TT></A> R <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node325.html#Vector"><TT>Vector</TT></A> R</TD>
+<TD ALIGN="LEFT">Conversion to a vector</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="#Integer"><TT>Integer</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <I>R</I> has <A HREF="node78.html#GcdDomain"><TT>GcdDomain</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node352.html#MonogenicAlgebra:content"><TT>content</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, <A HREF="node133.html#Automorphism"><TT>Automorphism</TT></A> R) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R</TD>
+<TD ALIGN="LEFT">Polynomial content</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node352.html#MonogenicAlgebra:primitive"><TT>primitive</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, <A HREF="node133.html#Automorphism"><TT>Automorphism</TT></A> R) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (R, %)</TD>
+<TD ALIGN="LEFT">Content and primitive part</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node352.html#MonogenicAlgebra:primitivePart"><TT>primitivePart</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, <A HREF="node133.html#Automorphism"><TT>Automorphism</TT></A> R) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Primitive part</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <I>R</I> has <A HREF="node791.html#HashType"><TT>HashType</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node791.html#HashType"><TT>HashType</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <I>R</I> has <A HREF="node119.html#Ring"><TT>Ring</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node354.html#MonogenicAlgebra:random"><TT>random</TT></A>:</TD>
+<TD ALIGN="LEFT">(<A HREF="#Integer"><TT>Integer</TT></A>, <A HREF="#Integer"><TT>Integer</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Creation of a random polynomial</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <I>R</I> has <A HREF="node731.html#SerializableType"><TT>SerializableType</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node731.html#SerializableType"><TT>SerializableType</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html6625"
+  HREF="node350.html">coerce,vectorize!</A>
+<LI><A NAME="tex2html6626"
+  HREF="node351.html">companion</A>
+<LI><A NAME="tex2html6627"
+  HREF="node352.html">content,primitive,primitivePart</A>
+<LI><A NAME="tex2html6628"
+  HREF="node353.html">monomial!</A>
+<LI><A NAME="tex2html6629"
+  HREF="node354.html">random</A>
+<LI><A NAME="tex2html6630"
+  HREF="node355.html">revert</A>
+<LI><A NAME="tex2html6631"
+  HREF="node356.html">times</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html6623"
+  HREF="node350.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html6617"
+  HREF="node331.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html6611"
+  HREF="node348.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html6619"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html6621"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html6624"
+  HREF="node350.html">coerce,vectorize!</A>
+<B> Up:</B> <A NAME="tex2html6618"
+  HREF="node331.html">Univariate Polynomials and Series</A>
+<B> Previous:</B> <A NAME="tex2html6612"
+  HREF="node348.html">gcd!</A>
+ &nbsp; <B>  <A NAME="tex2html6620"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html6622"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

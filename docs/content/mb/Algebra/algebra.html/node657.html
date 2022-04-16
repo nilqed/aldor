@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>divide,mod,quo,rem</TITLE>
+<META NAME="description" CONTENT="divide,mod,quo,rem">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node658.html">
+<LINK REL="previous" HREF="node656.html">
+<LINK REL="up" HREF="node654.html">
+<LINK REL="next" HREF="node658.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html11280"
+  HREF="node658.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html11274"
+  HREF="node654.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html11268"
+  HREF="node656.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html11276"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html11278"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html11281"
+  HREF="node658.html">even?,odd?</A>
+<B> Up:</B> <A NAME="tex2html11275"
+  HREF="node654.html">IntegerType</A>
+<B> Previous:</B> <A NAME="tex2html11269"
+  HREF="node656.html">coerce,machine</A>
+ &nbsp; <B>  <A NAME="tex2html11277"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html11279"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION0001513300000000000000"></A>
+<A NAME="IntegerType:divide_mod_quo_rem"></A>
+<BR>
+divide,mod,quo,rem
+</H3> <A NAME="49429"></A>
+<A NAME="IntegerType:divide"></A> <A NAME="49432"></A>
+<A NAME="IntegerType:mod"></A> <A NAME="49435"></A>
+<A NAME="IntegerType:quo"></A> <A NAME="49438"></A>
+<A NAME="IntegerType:rem"></A> <A NAME="49441"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+divide(a, b)
+<BR>
+a mod n
+<BR>
+a mod b
+<BR>
+a quo b
+<BR>
+a rem b
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">divide:</TD>
+<TD ALIGN="LEFT">(%,%) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (%, %)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">mod,quo,rem:</TD>
+<TD ALIGN="LEFT">(%,%) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">mod:</TD>
+<TD ALIGN="LEFT">(%,<A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>a,b</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">integers, <IMG
+ WIDTH="40" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img707.png"
+ ALT="$b \ne 0$"></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>n</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">a nonzero machine integer</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+<IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img64.png"
+ ALT="$a$"> mod <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img65.png"
+ ALT="$b$"> (resp.&nbsp;<IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img64.png"
+ ALT="$a$"> mod <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img88.png"
+ ALT="$n$">) returns <IMG
+ WIDTH="18" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img97.png"
+ ALT="$m$"> such that <IMG
+ WIDTH="85" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img708.png"
+ ALT="$0 \le m &lt; \vert b\vert$">
+(resp.&nbsp;<IMG
+ WIDTH="87" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img709.png"
+ ALT="$0 \le m &lt; \vert n\vert$">) and <!-- MATH
+ $a \equiv m \pmod b$
+ -->
+<IMG
+ WIDTH="119" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img710.png"
+ ALT="$a \equiv m \pmod b$"> (resp <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img88.png"
+ ALT="$n$">),
+while <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img64.png"
+ ALT="$a$"> rem <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img65.png"
+ ALT="$b$"> returns <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img66.png"
+ ALT="$r$"> such that <!-- MATH
+ $-|b| < r < |b|$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img711.png"
+ ALT="$-\vert b\vert &lt; r &lt; \vert b\vert$"> and
+<!-- MATH
+ $a \equiv r \pmod b$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.png"
+ ALT="$a \equiv r \pmod b$">,
+<IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img64.png"
+ ALT="$a$"> quo <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img65.png"
+ ALT="$b$"> returns <IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img712.png"
+ ALT="$(a - (a$"> rem <IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img713.png"
+ ALT="$b)) / b$">,
+and divide(a, b) returns the pair (a quo b, a rem b).
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+mod returns a unique remainder modulo b, but is more expensive
+to compute than rem, and is not guaranteed to be compatible with the
+result of quo. The version whose second argument is a
+<A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A> allows for more efficient implementations.
+</BLOCKQUOTE>
+<P></P>
+
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html11280"
+  HREF="node658.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html11274"
+  HREF="node654.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html11268"
+  HREF="node656.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html11276"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html11278"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html11281"
+  HREF="node658.html">even?,odd?</A>
+<B> Up:</B> <A NAME="tex2html11275"
+  HREF="node654.html">IntegerType</A>
+<B> Previous:</B> <A NAME="tex2html11269"
+  HREF="node656.html">coerce,machine</A>
+ &nbsp; <B>  <A NAME="tex2html11277"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html11279"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

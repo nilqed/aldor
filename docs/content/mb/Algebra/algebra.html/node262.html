@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>subKernel</TITLE>
+<META NAME="description" CONTENT="subKernel">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node261.html">
+<LINK REL="up" HREF="node249.html">
+<LINK REL="next" HREF="node263.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html5258"
+  HREF="node263.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5252"
+  HREF="node249.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5248"
+  HREF="node261.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5254"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html5256"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html5259"
+  HREF="node263.html">LinearEliminationCategory</A>
+<B> Up:</B> <A NAME="tex2html5253"
+  HREF="node249.html">LinearAlgebraRing</A>
+<B> Previous:</B> <A NAME="tex2html5249"
+  HREF="node261.html">span</A>
+ &nbsp; <B>  <A NAME="tex2html5255"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html5257"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000871300000000000000"></A>
+<A NAME="LinearAlgebraRing:subKernel"></A>
+<BR>
+subKernel
+</H3> <A NAME="31011"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+subKernel(M)(a)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">subKernel:</TD>
+<TD ALIGN="LEFT">(M:<A HREF="node276.html#MatrixCategory"><TT>MatrixCategory</TT></A> %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> M <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (<A HREF="node619.html#Boolean"><TT>Boolean</TT></A>, M)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>M</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node276.html#MatrixCategory"><TT>MatrixCategory</TT></A> %</TD>
+<TD ALIGN="LEFT">A matrix type</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>a</EM></TD>
+<TD ALIGN="LEFT">M</TD>
+<TD ALIGN="LEFT">A matrix</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+Returns <IMG
+ WIDTH="69" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img311.png"
+ ALT="$(ker?, m)$"> such that the columns of <IMG
+ WIDTH="18" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img97.png"
+ ALT="$m$">, which are always
+linearly independent over R, generate a subspace of the kernel of <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img64.png"
+ ALT="$a$">,
+and generate the full kernel if <IMG
+ WIDTH="36" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img312.png"
+ ALT="$ker?$"> is <I>true</I>.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+<IMG
+ WIDTH="18" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img97.png"
+ ALT="$m$"> can also happen to generate the full kernel of <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img64.png"
+ ALT="$a$"> when <IMG
+ WIDTH="36" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img312.png"
+ ALT="$ker?$"> is
+<I>false</I>, but the algorithm was unable to prove it.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>See Also</B><P>
+    <BLOCKQUOTE>
+<A HREF="node254.html#LinearAlgebraRing:kernel"><TT>kernel</TT></A>
+</BLOCKQUOTE>
+<P></P>
+
+  <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>generator</TITLE>
+<META NAME="description" CONTENT="generator">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node841.html">
+<LINK REL="previous" HREF="node839.html">
+<LINK REL="up" HREF="node837.html">
+<LINK REL="next" HREF="node841.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html14052"
+  HREF="node841.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html14046"
+  HREF="node837.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html14040"
+  HREF="node839.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html14048"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html14050"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html14053"
+  HREF="node841.html">interlacing</A>
+<B> Up:</B> <A NAME="tex2html14047"
+  HREF="node837.html">Stream</A>
+<B> Previous:</B> <A NAME="tex2html14041"
+  HREF="node839.html">constant</A>
+ &nbsp; <B>  <A NAME="tex2html14049"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html14051"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION0001732300000000000000"></A>
+<A NAME="Stream:generator"></A>
+<BR>
+generator
+</H3> <A NAME="56591"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+for x in s repeat { ...}
+<BR>
+for x in generator&nbsp;s repeat { ...} 
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">generator:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node881.html#Generator"><TT>Generator</TT></A> T</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>s</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">a stream</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+This function allows the elements of a stream to be iterated.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+Since those generators are infinite, you should have
+a termination condition either inside the loop or in parallel with
+the generator in order to guarantee termination.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Example</B><P>
+      <BLOCKQUOTE>
+The following code creates the stream of all the squares for <IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img620.png"
+ ALT="$n \ge 0$"> and
+prints those of them that are smaller than <IMG
+ WIDTH="36" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img799.png"
+ ALT="$1000$">:
+</BLOCKQUOTE><PRE>
+	import from MachineInteger, Stream MachineInteger;
+	s := stream(0, (n:MachineInteger):MachineInteger +-&gt; n^2);
+	for x in s while x &lt; 1000 repeat { stdout &lt;&lt; x &lt;&lt; newline; }
+</PRE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

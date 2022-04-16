@@ -1,0 +1,343 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Univariate polynomials and series</TITLE>
+<META NAME="description" CONTENT="Univariate polynomials and series">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node13.html">
+<LINK REL="previous" HREF="node11.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node13.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1385"
+  HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1379"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1373"
+  HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1381"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1383"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1386"
+  HREF="node13.html">Multivariate polynomials</A>
+<B> Up:</B> <A NAME="tex2html1380"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html1374"
+  HREF="node11.html">Linear algebra</A>
+ &nbsp; <B>  <A NAME="tex2html1382"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1384"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00036000000000000000">
+Univariate polynomials and series</A>
+</H2>
+The basic types to use for computing with polynomials and
+series are <A HREF="node332.html#DenseUnivariatePolynomial"><TT>DenseUnivariatePolynomial</TT></A>
+and <A HREF="node333.html#DenseUnivariateTaylorSeries"><TT>DenseUnivariateTaylorSeries</TT></A> respectively.
+Both types are univariate but can be nested if needed to
+produce dense multivariate polynomials and series with
+a fixed number of variables. When the number of variables
+is too large for a dense representation, you can also use
+<A HREF="node381.html#SparseUnivariatePolynomial"><TT>SparseUnivariatePolynomial</TT></A> but be aware that for
+univariate or bivariate use, its arithmetic is much less 
+efficient than the one of <A HREF="node332.html#DenseUnivariatePolynomial"><TT>DenseUnivariatePolynomial</TT></A>.
+
+<P>
+As for matrices, the type of the coefficients of polynomials
+or series does not need to be a <A HREF="node119.html#Ring"><TT>Ring</TT></A>, it can be an
+<A HREF="node611.html#ArithmeticType"><TT>ArithmeticType</TT></A> instead.
+This allows types that do not have a full equality such
+as <A HREF="node691.html#SingleFloat"><TT>SingleFloat</TT></A> to be used as coefficients, but
+some polynomial functionalities are only available when
+the coefficient type is a <A HREF="node119.html#Ring"><TT>Ring</TT></A> or something stronger.
+The polynomial and series types take a <A HREF="node599.html#Symbol"><TT>Symbol</TT></A> as
+second argument. That symbol is used only for output when
+converting the polynomial or series to an <A HREF="node474.html#ExpressionTree"><TT>ExpressionTree</TT></A>,
+so it is not necessary to give one when you use polynomials
+or series inside a calculation. If you insist on naming the
+variable, use <A HREF="#Symbol:-"><TT>-</TT></A> with any string as argument
+to create a symbol. For example,
+<TT>DenseUnivariatePolynomial(Integer)</TT> and
+<TT>SparseUnivariatePolynomial(Fraction Integer, -"x")</TT>
+are both valid polynomial types.
+Whether you give a name for a variable or not, you
+can override that choice using <A HREF="node361.html#MonogenicLinearArithmeticType:apply"><TT>apply</TT></A>
+with a <A HREF="node599.html#Symbol"><TT>Symbol</TT></A> or <A HREF="node474.html#ExpressionTree"><TT>ExpressionTree</TT></A> as argument.
+For example, if <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$p$"> is a polynomial or series,
+<TT>stdout(p, -"z")</TT> writes <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$p$"> to <A HREF="node743.html#TextWriter:stdout"><TT>stdout</TT></A>
+using ``z'' as variable name, and <TT>p(extree leaf(-"y"))</TT>
+returns the <A HREF="node474.html#ExpressionTree"><TT>ExpressionTree</TT></A> corresponding to <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$p$"> with
+``y'' as variable name.
+
+<P>
+To write generic code for manipulating polynomials or series
+use a type parameter usually of category
+<A HREF="node403.html#UnivariatePolynomialCategory"><TT>UnivariatePolynomialCategory</TT></A>
+or <A HREF="node429.html#UnivariateTaylorSeriesCategory"><TT>UnivariateTaylorSeriesCategory</TT></A> respectively.
+Because polynomials, skew-polynomials and series share
+many common operations, <TT>Algebra</TT>  provides in fact a complete
+category hierarchy for them, shown in Figure&nbsp;<A HREF="#fig:stdpolcat">2</A>.
+
+<DIV ALIGN="CENTER"><A NAME="fig:stdpolcat"></A><A NAME="15372"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2:</STRONG>
+The <TT>Algebra</TT>  univariate polynomial category hierarchy</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="654" HEIGHT="563" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="\includegraphics{algpolcat}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Those categories make it possible to write functions
+that work for polynomials, skew-polynomials, series
+or any combination of them.
+<A HREF="node403.html#UnivariatePolynomialCategory"><TT>UnivariatePolynomialCategory</TT></A><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$(R)$"> is the category
+for types whose elements are usual polynomials of
+the form <!-- MATH
+ $\sum_n r_n x^n$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$\sum_n r_n x^n$"> with finite support. While
+<IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$"> is not assumed to be commutative, the generator <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.png"
+ ALT="$x$">
+is assumed to commute with coefficients in <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$">, <I>i.e.</I>&nbsp;<IMG
+ WIDTH="59" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img26.png"
+ ALT="$rx = xr$">.
+Similarly, <A HREF="node429.html#UnivariateTaylorSeriesCategory"><TT>UnivariateTaylorSeriesCategory</TT></A><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$(R)$">
+is the category for types whose elements are series of
+the form <!-- MATH
+ $\sum_n r_n x^n$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$\sum_n r_n x^n$">. Here also, <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$"> is not assumed
+to be commutative, but the generator <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.png"
+ ALT="$x$"> commutes with
+coefficients in <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$">. Those two categories are shown
+in blue in Figure&nbsp;<A HREF="#fig:stdpolcat">2</A>, as they are the only ones assuming
+that <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.png"
+ ALT="$x$"> commutes with <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$">.
+The more general category <A HREF="node400.html#UnivariatePolynomialAlgebra"><TT>UnivariatePolynomialAlgebra</TT></A><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$(R)$">
+is for types whose elements are sums of the form <!-- MATH
+ $\sum_n r_n x^n$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$\sum_n r_n x^n$"> with
+finite support, but where <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.png"
+ ALT="$x$"> does not necessarily commute with <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$">.
+Polynomials and skew-polynomials are both in that category.
+Even more general, <A HREF="node349.html#MonogenicAlgebra"><TT>MonogenicAlgebra</TT></A><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$(R)$">
+is for types whose elements are sums of the form <!-- MATH
+ $\sum_n r_n P_n$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$\sum_n r_n P_n$"> with
+finite support, but where the family <IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$P_n$"> is not necessarily the
+power basis <IMG
+ WIDTH="22" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.png"
+ ALT="$x^n$">. An example of such a type is
+<A HREF="node382.html#UnivariateFactorialPolynomial"><TT>UnivariateFactorialPolynomial</TT></A> for which
+<!-- MATH
+ $P_n = x(x-1)\dots(x-n+1)$
+ -->
+<IMG
+ WIDTH="204" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$P_n = x(x-1)\dots(x-n+1)$">. Finally, <A HREF="node360.html#MonogenicLinearArithmeticType"><TT>MonogenicLinearArithmeticType</TT></A><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$(R)$">
+is for types whose elements are potentially infinite sums of the form
+<!-- MATH
+ $\sum_n r_n P_n$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$\sum_n r_n P_n$">. Code written at that level works for polynomials, series
+and skew-polynomials as well.
+
+<P>
+The elements of <A HREF="node333.html#DenseUnivariateTaylorSeries"><TT>DenseUnivariateTaylorSeries</TT></A> are lazy series
+represented by their coefficient sequences, themselves of type
+<A HREF="node592.html#Sequence"><TT>Sequence</TT></A>. Those coefficient sequences are in turn represented
+as <A HREF="node837.html#Stream"><TT>Stream</TT></A> from <TT>libaldor</TT>. Therefore, the usual way to write a
+function producing a series is to produce first its coefficient stream <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$s$">,
+then call <A HREF="node598.html#Sequence:sequence"><TT>sequence</TT></A> on <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$s$"> to produce the
+coefficient sequence, and finally call
+<A HREF="node432.html#UnivariateTaylorSeriesCategory:series"><TT>series</TT></A> on the coefficient sequence
+to produce the series. Since streams are lazy, constructing a series
+does not compute any of its coefficients until they are
+specifically requested by another operation. There are several ways
+to create streams, all documented in the <TT>libaldor</TT>  reference manual,
+and you should become familiar with them before programming with series.
+For example, the following function takes constants
+<IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.png"
+ ALT="$a_0$"> and <IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img33.png"
+ ALT="$c$"> and produces the hypergeometric series
+<!-- MATH
+ $\sum_{n\ge 0} a_n x^n$
+ -->
+<IMG
+ WIDTH="84" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.png"
+ ALT="$\sum_{n\ge 0} a_n x^n$"> where <!-- MATH
+ $a_{n+1}/a_n = c$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="$a_{n+1}/a_n = c$">.
+<PRE>
+SeriesSample(R:CommutativeRing, Rx:UnivariateTaylorSeriesCategory R): with {
+         hypergeometricSeries: (R, R) -&gt; Rx;
+} == add {
+         hypergeometricSeries(a0:R, c:R):Rx == {
+                import from Sequence F;
+                zero? a0 =&gt; 0;
+                -- the following creates the stream [a0, c a0, c^2 a0, ... ]
+                coeffs:Stream R := orbit(a0, (x:R):R +-&gt; c * x);
+                series sequence coeffs;
+         }
+}
+</PRE>
+Finally, the type <A HREF="node433.html#UnivariateTaylorSeriesCategory2Poly"><TT>UnivariateTaylorSeriesCategory2Poly</TT></A> provides
+conversions between univariate polynomials and series.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1385"
+  HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1379"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1373"
+  HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1381"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1383"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1386"
+  HREF="node13.html">Multivariate polynomials</A>
+<B> Up:</B> <A NAME="tex2html1380"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html1374"
+  HREF="node11.html">Linear algebra</A>
+ &nbsp; <B>  <A NAME="tex2html1382"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1384"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

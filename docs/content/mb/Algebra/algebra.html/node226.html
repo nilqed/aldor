@@ -1,0 +1,323 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Linear Algebra</TITLE>
+<META NAME="description" CONTENT="Linear Algebra">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node331.html">
+<LINK REL="previous" HREF="node196.html">
+<LINK REL="up" HREF="html.html">
+<LINK REL="next" HREF="node227.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html4627"
+  HREF="node227.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4621"
+  HREF="html.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4615"
+  HREF="node225.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4623"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html4625"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html4628"
+  HREF="node227.html">Backsolve</A>
+<B> Up:</B> <A NAME="tex2html4622"
+  HREF="html.html">html</A>
+<B> Previous:</B> <A NAME="tex2html4616"
+  HREF="node225.html">ZechPrimeField</A>
+ &nbsp; <B>  <A NAME="tex2html4624"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html4626"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00080000000000000000">
+Linear Algebra</A>
+</H1>
+
+  <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4629"
+  HREF="node227.html">Backsolve</A>
+<UL>
+<LI><A NAME="tex2html4630"
+  HREF="node228.html">backsolve</A>
+<LI><A NAME="tex2html4631"
+  HREF="node229.html">backsolve2</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4632"
+  HREF="node230.html">DenseMatrix</A>
+<LI><A NAME="tex2html4633"
+  HREF="node231.html">DivisionFreeGaussElimination</A>
+<LI><A NAME="tex2html4634"
+  HREF="node232.html">FractionFreeGaussElimination</A>
+<LI><A NAME="tex2html4635"
+  HREF="node233.html">HermiteGaussElimination</A>
+<LI><A NAME="tex2html4636"
+  HREF="node234.html">LinearAlgebra</A>
+<UL>
+<LI><A NAME="tex2html4637"
+  HREF="node235.html">cycle</A>
+<LI><A NAME="tex2html4638"
+  HREF="node236.html">determinant</A>
+<LI><A NAME="tex2html4639"
+  HREF="node237.html">factorOfDeterminant</A>
+<LI><A NAME="tex2html4640"
+  HREF="node238.html">firstDependence</A>
+<LI><A NAME="tex2html4641"
+  HREF="node239.html">inverse</A>
+<LI><A NAME="tex2html4642"
+  HREF="node240.html">invertibleSubmatrix</A>
+<LI><A NAME="tex2html4643"
+  HREF="node241.html">kernel</A>
+<LI><A NAME="tex2html4644"
+  HREF="node242.html">maxInvertibleSubmatrix</A>
+<LI><A NAME="tex2html4645"
+  HREF="node243.html">particularSolution</A>
+<LI><A NAME="tex2html4646"
+  HREF="node244.html">rank</A>
+<LI><A NAME="tex2html4647"
+  HREF="node245.html">rankLowerBound</A>
+<LI><A NAME="tex2html4648"
+  HREF="node246.html">span</A>
+<LI><A NAME="tex2html4649"
+  HREF="node247.html">solve</A>
+<LI><A NAME="tex2html4650"
+  HREF="node248.html">subKernel</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4651"
+  HREF="node249.html">LinearAlgebraRing</A>
+<UL>
+<LI><A NAME="tex2html4652"
+  HREF="node250.html">determinant</A>
+<LI><A NAME="tex2html4653"
+  HREF="node251.html">factorOfDeterminant</A>
+<LI><A NAME="tex2html4654"
+  HREF="node252.html">inverse</A>
+<LI><A NAME="tex2html4655"
+  HREF="node253.html">invertibleSubmatrix</A>
+<LI><A NAME="tex2html4656"
+  HREF="node254.html">kernel</A>
+<LI><A NAME="tex2html4657"
+  HREF="node255.html">linearDependence</A>
+<LI><A NAME="tex2html4658"
+  HREF="node256.html">maxInvertibleSubmatrix</A>
+<LI><A NAME="tex2html4659"
+  HREF="node257.html">particularSolution</A>
+<LI><A NAME="tex2html4660"
+  HREF="node258.html">rank</A>
+<LI><A NAME="tex2html4661"
+  HREF="node259.html">rankLowerBound</A>
+<LI><A NAME="tex2html4662"
+  HREF="node260.html">solve</A>
+<LI><A NAME="tex2html4663"
+  HREF="node261.html">span</A>
+<LI><A NAME="tex2html4664"
+  HREF="node262.html">subKernel</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4665"
+  HREF="node263.html">LinearEliminationCategory</A>
+<UL>
+<LI><A NAME="tex2html4666"
+  HREF="node264.html">denominators</A>
+<LI><A NAME="tex2html4667"
+  HREF="node265.html">dependence</A>
+<LI><A NAME="tex2html4668"
+  HREF="node266.html">deter</A>
+<LI><A NAME="tex2html4669"
+  HREF="node267.html">determinant</A>
+<LI><A NAME="tex2html4670"
+  HREF="node268.html">extendedRowEchelon</A>
+<LI><A NAME="tex2html4671"
+  HREF="node269.html">extendedRowEchelonForm</A>
+<LI><A NAME="tex2html4672"
+  HREF="node270.html">maxInvertibleSubmatrix</A>
+<LI><A NAME="tex2html4673"
+  HREF="node271.html">pivot</A>
+<LI><A NAME="tex2html4674"
+  HREF="node272.html">rank</A>
+<LI><A NAME="tex2html4675"
+  HREF="node273.html">rowEchelon</A>
+<LI><A NAME="tex2html4676"
+  HREF="node274.html">rowEchelonForm</A>
+<LI><A NAME="tex2html4677"
+  HREF="node275.html">span</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4678"
+  HREF="node276.html">MatrixCategory</A>
+<UL>
+<LI><A NAME="tex2html4679"
+  HREF="node277.html"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$*$"></A>
+<LI><A NAME="tex2html4680"
+  HREF="node278.html">bracket</A>
+<LI><A NAME="tex2html4681"
+  HREF="node279.html">apply</A>
+<LI><A NAME="tex2html4682"
+  HREF="node280.html">colCombine!,rowCombine!</A>
+<LI><A NAME="tex2html4683"
+  HREF="node281.html">colSwap!,rowSwap!</A>
+<LI><A NAME="tex2html4684"
+  HREF="node282.html">column,row</A>
+<LI><A NAME="tex2html4685"
+  HREF="node283.html">columns,rows</A>
+<LI><A NAME="tex2html4686"
+  HREF="node284.html">companion</A>
+<LI><A NAME="tex2html4687"
+  HREF="node285.html">diagonal</A>
+<LI><A NAME="tex2html4688"
+  HREF="node286.html">dimensions</A>
+<LI><A NAME="tex2html4689"
+  HREF="node287.html">map</A>
+<LI><A NAME="tex2html4690"
+  HREF="node288.html">numberOfColumns,numberOfRows</A>
+<LI><A NAME="tex2html4691"
+  HREF="node289.html">one,one?</A>
+<LI><A NAME="tex2html4692"
+  HREF="node290.html">random</A>
+<LI><A NAME="tex2html4693"
+  HREF="node291.html">set!</A>
+<LI><A NAME="tex2html4694"
+  HREF="node292.html">setMatrix!</A>
+<LI><A NAME="tex2html4695"
+  HREF="node293.html">tensor</A>
+<LI><A NAME="tex2html4696"
+  HREF="node294.html">transpose</A>
+<LI><A NAME="tex2html4697"
+  HREF="node295.html">wronskian</A>
+<LI><A NAME="tex2html4698"
+  HREF="node296.html">zero</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4699"
+  HREF="node297.html">MatrixCategoryOverFraction</A>
+<UL>
+<LI><A NAME="tex2html4700"
+  HREF="node298.html">makeColIntegral</A>
+<LI><A NAME="tex2html4701"
+  HREF="node299.html">makeRowIntegral</A>
+<LI><A NAME="tex2html4702"
+  HREF="node300.html">makeRowIntegralBy</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4703"
+  HREF="node301.html">ModulopGaussElimination</A>
+<UL>
+<LI><A NAME="tex2html4704"
+  HREF="node302.html">deter</A>
+<LI><A NAME="tex2html4705"
+  HREF="node303.html">determinant!</A>
+<LI><A NAME="tex2html4706"
+  HREF="node304.html">extendedRowEchelon!</A>
+<LI><A NAME="tex2html4707"
+  HREF="node305.html">firstDependence!</A>
+<LI><A NAME="tex2html4708"
+  HREF="node306.html">inverse!</A>
+<LI><A NAME="tex2html4709"
+  HREF="node307.html">kernel</A>
+<LI><A NAME="tex2html4710"
+  HREF="node308.html">maxInvertibleSubmatrix!</A>
+<LI><A NAME="tex2html4711"
+  HREF="node309.html">particularSolution!</A>
+<LI><A NAME="tex2html4712"
+  HREF="node310.html">rank!</A>
+<LI><A NAME="tex2html4713"
+  HREF="node311.html">rowEchelon!</A>
+<LI><A NAME="tex2html4714"
+  HREF="node312.html">solve!</A>
+<LI><A NAME="tex2html4715"
+  HREF="node313.html">span!</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4716"
+  HREF="node314.html">OrdinaryGaussElimination</A>
+<LI><A NAME="tex2html4717"
+  HREF="node315.html">OverdeterminedLinearSystemSolver</A>
+<UL>
+<LI><A NAME="tex2html4718"
+  HREF="node316.html">kernel!</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4719"
+  HREF="node317.html">SpecializationLinearAlgebra</A>
+<UL>
+<LI><A NAME="tex2html4720"
+  HREF="node318.html">rankLowerBound</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4721"
+  HREF="node319.html">TwoStepFractionFreeGaussElimination</A>
+<LI><A NAME="tex2html4722"
+  HREF="node320.html">UnivariatePolynomialCRTLinearAlgebra</A>
+<UL>
+<LI><A NAME="tex2html4723"
+  HREF="node321.html">degreeBound</A>
+<LI><A NAME="tex2html4724"
+  HREF="node322.html">determinant</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4725"
+  HREF="node323.html">UnivariatePolynomialPopovLinearAlgebra</A>
+<UL>
+<LI><A NAME="tex2html4726"
+  HREF="node324.html">hermite</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4727"
+  HREF="node325.html">Vector</A>
+<UL>
+<LI><A NAME="tex2html4728"
+  HREF="node326.html">dot</A>
+<LI><A NAME="tex2html4729"
+  HREF="node327.html">random</A>
+<LI><A NAME="tex2html4730"
+  HREF="node328.html">tensor</A>
+<LI><A NAME="tex2html4731"
+  HREF="node329.html">zero</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4732"
+  HREF="node330.html">VectorOverFraction</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>denominators</TITLE>
+<META NAME="description" CONTENT="denominators">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node265.html">
+<LINK REL="previous" HREF="node263.html">
+<LINK REL="up" HREF="node263.html">
+<LINK REL="next" HREF="node265.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html5298"
+  HREF="node265.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5292"
+  HREF="node263.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5286"
+  HREF="node263.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5294"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html5296"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html5299"
+  HREF="node265.html">dependence</A>
+<B> Up:</B> <A NAME="tex2html5293"
+  HREF="node263.html">LinearEliminationCategory</A>
+<B> Previous:</B> <A NAME="tex2html5287"
+  HREF="node263.html">LinearEliminationCategory</A>
+ &nbsp; <B>  <A NAME="tex2html5295"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html5297"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00088100000000000000"></A>
+<A NAME="LinearEliminationCategory:denominators"></A>
+<BR>
+denominators
+</H3> <A NAME="31174"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+denominators(a,p,r,st)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">denominators:</TD>
+<TD ALIGN="LEFT">(M,Z <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Z,Z, <A HREF="node818.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node818.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> R</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>a</EM></TD>
+<TD ALIGN="LEFT">M</TD>
+<TD ALIGN="LEFT">A matrix in REF form</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>p</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">A permutation of the rows of <EM>a</EM></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>r</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">The number of stairs of the REF</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>st</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node818.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">The stairs of the REF</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+<EM>(a,p,r,st)</EM> must be the representation of a REF computed by
+<A HREF="node273.html#LinearEliminationCategory:rowEchelon"><TT>rowEchelon</TT></A>, <A HREF="node268.html#LinearEliminationCategory:extendedRowEchelon"><TT>extendedRowEchelon</TT></A> or their bang-versions. When
+<EM>d</EM> is returned then for <!-- MATH
+ $st(i)<j<st(i+1)$
+ -->
+<IMG
+ WIDTH="144" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.png"
+ ALT="$st(i)&lt;j&lt;st(i+1)$"> we have that <IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.png"
+ ALT="$d(i)$"> times the
+<IMG
+ WIDTH="12" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img93.png"
+ ALT="$j$">-th column of the REF is a linear combination of the first <IMG
+ WIDTH="10" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img258.png"
+ ALT="$i$">
+leading columns of the REF. (The <IMG
+ WIDTH="10" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img258.png"
+ ALT="$i$">-th column is called leading if
+<IMG
+ WIDTH="10" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img258.png"
+ ALT="$i$"> is a stair) 
+
+</BLOCKQUOTE>
+<P></P>
+
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html5298"
+  HREF="node265.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5292"
+  HREF="node263.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5286"
+  HREF="node263.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5294"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html5296"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html5299"
+  HREF="node265.html">dependence</A>
+<B> Up:</B> <A NAME="tex2html5293"
+  HREF="node263.html">LinearEliminationCategory</A>
+<B> Previous:</B> <A NAME="tex2html5287"
+  HREF="node263.html">LinearEliminationCategory</A>
+ &nbsp; <B>  <A NAME="tex2html5295"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html5297"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

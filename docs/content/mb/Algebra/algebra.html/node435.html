@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>expandFraction</TITLE>
+<META NAME="description" CONTENT="expandFraction">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node436.html">
+<LINK REL="previous" HREF="node434.html">
+<LINK REL="up" HREF="node433.html">
+<LINK REL="next" HREF="node436.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html7870"
+  HREF="node436.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html7864"
+  HREF="node433.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html7858"
+  HREF="node434.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html7866"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html7868"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html7871"
+  HREF="node436.html">polynomials</A>
+<B> Up:</B> <A NAME="tex2html7865"
+  HREF="node433.html">UnivariateTaylorSeriesCategory2Poly</A>
+<B> Previous:</B> <A NAME="tex2html7859"
+  HREF="node434.html">expand</A>
+ &nbsp; <B>  <A NAME="tex2html7867"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html7869"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000927200000000000000"></A>
+<A NAME="UnivariateTaylorSeriesCategory2Poly:expandFraction"></A>
+<BR>
+expandFraction
+</H3> <A NAME="39772"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+expandFraction&nbsp;a
+<BR>
+expandFraction(a)(f)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">expandFraction:</TD>
+<TD ALIGN="LEFT">R <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node145.html#Fraction"><TT>Fraction</TT></A> RX <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (<A HREF="#Integer"><TT>Integer</TT></A>, RXX)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>a</EM></TD>
+<TD ALIGN="LEFT">R</TD>
+<TD ALIGN="LEFT">the expansion point</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>f</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node145.html#Fraction"><TT>Fraction</TT></A> RX</TD>
+<TD ALIGN="LEFT">a rational function</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+expandFraction(a)(f) returns <IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img521.png"
+ ALT="$(n, s)$"> where <IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img522.png"
+ ALT="$n \le 0$"> and the series expansion
+of <IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img173.png"
+ ALT="$f$"> around <EM>a</EM> is <!-- MATH
+ $(x-a)^{n} s(x-a)$
+ -->
+<IMG
+ WIDTH="119" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img523.png"
+ ALT="$(x-a)^{n} s(x-a)$">.
+In addition, <IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img524.png"
+ ALT="$s(a) \ne 0$"> whenever <IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img525.png"
+ ALT="$n &lt; 0$">.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>See Also</B><P>
+    <BLOCKQUOTE>
+<A HREF="node434.html#UnivariateTaylorSeriesCategory2Poly:expand"><TT>expand</TT></A>,<A HREF="node438.html#UnivariateTaylorSeriesCategory2Poly:tryExpandFraction"><TT>tryExpandFraction</TT></A>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

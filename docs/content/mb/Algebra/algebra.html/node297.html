@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MatrixCategoryOverFraction</TITLE>
+<META NAME="description" CONTENT="MatrixCategoryOverFraction">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node301.html">
+<LINK REL="previous" HREF="node276.html">
+<LINK REL="up" HREF="node226.html">
+<LINK REL="next" HREF="node298.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html5776"
+  HREF="node298.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5770"
+  HREF="node226.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5764"
+  HREF="node296.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5772"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html5774"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html5777"
+  HREF="node298.html">makeColIntegral</A>
+<B> Up:</B> <A NAME="tex2html5771"
+  HREF="node226.html">Linear Algebra</A>
+<B> Previous:</B> <A NAME="tex2html5765"
+  HREF="node296.html">zero</A>
+ &nbsp; <B>  <A NAME="tex2html5773"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html5775"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000810000000000000000"></A><A NAME="33036"></A><A NAME="MatrixCategoryOverFraction"></A>
+<BR>
+MatrixCategoryOverFraction
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from MatrixCategoryOverFraction(R, MR, Q, MQ)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node99.html#IntegralDomain"><TT>IntegralDomain</TT></A></TD>
+<TD ALIGN="LEFT">an integral domain</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>MR</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node276.html#MatrixCategory"><TT>MatrixCategory</TT></A> R</TD>
+<TD ALIGN="LEFT">a matrix type over R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>Q</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node158.html#FractionCategory"><TT>FractionCategory</TT></A> R</TD>
+<TD ALIGN="LEFT">a fraction domain of R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>MQ</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node276.html#MatrixCategory"><TT>MatrixCategory</TT></A> Q</TD>
+<TD ALIGN="LEFT">a matrix type over Q</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+MatrixCategoryOverFraction(R, MR, Q, MQ) provides useful conversions between
+matrices with integral and rational coefficients.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node164.html#LinearCombinationFraction"><TT>LinearCombinationFraction</TT></A>(R, MR, Q, MQ)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node298.html#MatrixCategoryOverFraction:makeColIntegral"><TT>makeColIntegral</TT></A>:</TD>
+<TD ALIGN="LEFT">(MQ, I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (R, V R)</TD>
+<TD ALIGN="LEFT">Convert to an integral column</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">MQ <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (V R, MR)</TD>
+<TD ALIGN="LEFT">Convert to an integral matrix column by column</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node299.html#MatrixCategoryOverFraction:makeRowIntegral"><TT>makeRowIntegral</TT></A>:</TD>
+<TD ALIGN="LEFT">(MQ, I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (R, V R)</TD>
+<TD ALIGN="LEFT">Convert to an integral row</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">MQ <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (V R, MR)</TD>
+<TD ALIGN="LEFT">Convert to an integral matrix row by row</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if Q has <A HREF="node155.html#FractionByCategory0"><TT>FractionByCategory0</TT></A> R</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node300.html#MatrixCategoryOverFraction:makeRowIntegralBy"><TT>makeRowIntegralBy</TT></A>:</TD>
+<TD ALIGN="LEFT">MQ <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (V Z, MR)</TD>
+<TD ALIGN="LEFT">Convert to an integral matrix row by row</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">I</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="#Integer"><TT>Integer</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">V</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node325.html#Vector"><TT>Vector</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5778"
+  HREF="node298.html">makeColIntegral</A>
+<LI><A NAME="tex2html5779"
+  HREF="node299.html">makeRowIntegral</A>
+<LI><A NAME="tex2html5780"
+  HREF="node300.html">makeRowIntegralBy</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html5776"
+  HREF="node298.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5770"
+  HREF="node226.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5764"
+  HREF="node296.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5772"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html5774"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html5777"
+  HREF="node298.html">makeColIntegral</A>
+<B> Up:</B> <A NAME="tex2html5771"
+  HREF="node226.html">Linear Algebra</A>
+<B> Previous:</B> <A NAME="tex2html5765"
+  HREF="node296.html">zero</A>
+ &nbsp; <B>  <A NAME="tex2html5773"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html5775"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

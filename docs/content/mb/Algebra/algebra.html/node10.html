@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Input/Output</TITLE>
+<META NAME="description" CONTENT="Input/Output">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node11.html">
+<LINK REL="previous" HREF="node9.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node11.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1357"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1351"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1345"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1353"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1355"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1358"
+  HREF="node11.html">Linear algebra</A>
+<B> Up:</B> <A NAME="tex2html1352"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html1346"
+  HREF="node9.html">Data structures</A>
+ &nbsp; <B>  <A NAME="tex2html1354"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1356"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00034000000000000000"></A>
+<A NAME="sec:inputoutput"></A>
+<BR>
+Input/Output
+</H2>
+<TT>Algebra</TT>  inherits the stream I/O model provided by <TT>libaldor</TT>. In particular
+<A HREF="node129.html#ExpressionType"><TT>ExpressionType</TT></A> inherits <A HREF="node729.html#OutputType"><TT>OutputType</TT></A> from <TT>libaldor</TT>, which means
+that elements of a <A HREF="node129.html#ExpressionType"><TT>ExpressionType</TT></A> can be written in text format
+to any <A HREF="node741.html#TextWriter"><TT>TextWriter</TT></A> (in particular I/O streams, strings or files).
+Because it is desirable to output mathematical objects such as
+matrices and polynomials in more than one format depending on the
+context, <TT>Algebra</TT>  types do not in general define their own
+<A HREF="#OutputType:_tex2html_wrap_inline59088_"><TT><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$&lt;&lt;$"></TT></A> function. Rather, they implement
+the <A HREF="node130.html#ExpressionType:extree"><TT>extree</TT></A> function, that converts their elements
+into elements of <A HREF="node474.html#ExpressionTree"><TT>ExpressionTree</TT></A>. Expression trees,
+wich are similar to Lisp's S-expressions, are the unique layer
+between all the types in <TT>Algebra</TT>  and the outside world. When
+writing your own types, once you provide or inherit an implementation
+of <A HREF="node130.html#ExpressionType:extree"><TT>extree</TT></A>, your elements can then be written
+to any <A HREF="node741.html#TextWriter"><TT>TextWriter</TT></A> in any of the many formats that
+<A HREF="node474.html#ExpressionTree"><TT>ExpressionTree</TT></A> understands, for example using
+<A HREF="node475.html#ExpressionTree:lisp"><TT>lisp</TT></A> to produce Lisp output.
+In that case, the default behavior of the <A HREF="#OutputType:_tex2html_wrap_inline59092_"><TT><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$&lt;&lt;$"></TT></A>
+is to convert your objects to expression trees and then to
+use <A HREF="node475.html#ExpressionTree:tex"><TT>tex</TT></A> to produce T<SMALL>E</SMALL>Xoutput. You
+can override this default behaviour by providing your own
+implementation of <A HREF="#OutputType:_tex2html_wrap_inline59096_"><TT><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$&lt;&lt;$"></TT></A> if you choose.
+As with <TT>libaldor</TT>, you can use <TT>#include "aldorio"</TT> <EM>after</EM>
+<TT>#include "algebra"</TT> in order to import the types commonly used
+for input and output.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1357"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1351"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1345"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1353"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1355"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1358"
+  HREF="node11.html">Linear algebra</A>
+<B> Up:</B> <A NAME="tex2html1352"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html1346"
+  HREF="node9.html">Data structures</A>
+ &nbsp; <B>  <A NAME="tex2html1354"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1356"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

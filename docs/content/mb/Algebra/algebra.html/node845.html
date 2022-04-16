@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>String</TITLE>
+<META NAME="description" CONTENT="String">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node852.html">
+<LINK REL="previous" HREF="node837.html">
+<LINK REL="up" HREF="node750.html">
+<LINK REL="next" HREF="node846.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html14120"
+  HREF="node846.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html14114"
+  HREF="node750.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html14108"
+  HREF="node844.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html14116"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html14118"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> 
+<B> Up:</B> <A NAME="tex2html14115"
+  HREF="node750.html">Data Structures</A>
+<B> Previous:</B> <A NAME="tex2html14109"
+  HREF="node844.html">stream</A>
+ &nbsp; <B>  <A NAME="tex2html14117"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html14119"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001733000000000000000"></A><A NAME="56834"></A><A NAME="String"></A>
+<BR>
+String
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from String
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+String&nbsp;provides basic strings, null-terminated,
+<IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$0$">-indexed and without bound checking.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node754.html#ArrayType"><TT>ArrayType</TT></A>(<A HREF="node711.html#Character"><TT>Character</TT></A>,
+<A HREF="node817.html#PackedPrimitiveArray"><TT>PackedPrimitiveArray</TT></A> <A HREF="node711.html#Character"><TT>Character</TT></A>)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#String:_tex2html_wrap_inline68198_"><TT><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$+$"></TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">concatenation</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node847.html#String:char"><TT>char</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node711.html#Character"><TT>Character</TT></A></TD>
+<TD ALIGN="LEFT">first character</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node848.html#String:coerce"><TT>coerce</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node711.html#Character"><TT>Character</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">conversion to a string</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node848.html#String:coerce"><TT>coerce</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node735.html#TextReader"><TT>TextReader</TT></A></TD>
+<TD ALIGN="LEFT">conversion to a text input stream</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node848.html#String:coerce"><TT>coerce</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node741.html#TextWriter"><TT>TextWriter</TT></A></TD>
+<TD ALIGN="LEFT">conversion to a text output stream</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node849.html#String:error"><TT>error</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <TT>Exit</TT></TD>
+<TD ALIGN="LEFT">error exit</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node850.html#String:new"><TT>new</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">buffer allocation</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node851.html#String:pointer"><TT>pointer</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node891.html#Pointer"><TT>Pointer</TT></A></TD>
+<TD ALIGN="LEFT">conversion to a null-terminated C-string</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node851.html#String:string"><TT>string</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node891.html#Pointer"><TT>Pointer</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">conversion from a null-terminated C-string</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html14122"
+  HREF="node846.html"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$+$"></A>
+<LI><A NAME="tex2html14123"
+  HREF="node847.html">char</A>
+<LI><A NAME="tex2html14124"
+  HREF="node848.html">coerce</A>
+<LI><A NAME="tex2html14125"
+  HREF="node849.html">error</A>
+<LI><A NAME="tex2html14126"
+  HREF="node850.html">new</A>
+<LI><A NAME="tex2html14127"
+  HREF="node851.html">pointer,string</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

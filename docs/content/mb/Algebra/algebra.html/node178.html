@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>times!</TITLE>
+<META NAME="description" CONTENT="times!">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node177.html">
+<LINK REL="up" HREF="node170.html">
+<LINK REL="next" HREF="node179.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3923"
+  HREF="node179.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3917"
+  HREF="node170.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3913"
+  HREF="node177.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3919"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html3921"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3924"
+  HREF="node179.html">ReducibleModulusException</A>
+<B> Up:</B> <A NAME="tex2html3918"
+  HREF="node170.html">Product</A>
+<B> Previous:</B> <A NAME="tex2html3914"
+  HREF="node177.html">term</A>
+ &nbsp; <B>  <A NAME="tex2html3920"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3922"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000614800000000000000"></A>
+<A NAME="Product:times_"></A>
+<BR>
+times!
+</H3> <A NAME="27189"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+times!(p, r, n)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">times!:</TD>
+<TD ALIGN="LEFT">(%, R, <A HREF="#Integer"><TT>Integer</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>p</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">A product</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>r</EM></TD>
+<TD ALIGN="LEFT">R</TD>
+<TD ALIGN="LEFT">A ring element</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>n</EM></TD>
+<TD ALIGN="LEFT"><A HREF="#Integer"><TT>Integer</TT></A></TD>
+<TD ALIGN="LEFT">An exponent</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+Returns <IMG
+ WIDTH="31" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.png"
+ ALT="$p\; r^e$"> as a product, where the storage used by p is allowed
+to be destroyed or reused, so p is lost after this call.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+The storage used by p is allowed to be destroyed or reused, so p
+is lost after this call. This may cause p to be destroyed, so do not use
+this unless p has been locally allocated, and is thus guaranteed not
+to share space with other polynomials. Some functions are not necessarily
+copying their arguments and can thus create memory aliases.
+</BLOCKQUOTE>
+<P></P>
+
+  <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

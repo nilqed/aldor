@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>PolynomialRing</TITLE>
+<META NAME="description" CONTENT="PolynomialRing">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node466.html">
+<LINK REL="previous" HREF="node464.html">
+<LINK REL="up" HREF="node443.html">
+<LINK REL="next" HREF="node466.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html8314"
+  HREF="node466.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html8308"
+  HREF="node443.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html8302"
+  HREF="node464.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html8310"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html8312"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html8315"
+  HREF="node466.html">PolynomialRing0</A>
+<B> Up:</B> <A NAME="tex2html8309"
+  HREF="node443.html">Multivariate Polynomials</A>
+<B> Previous:</B> <A NAME="tex2html8303"
+  HREF="node464.html">OrderedVariableTuple</A>
+ &nbsp; <B>  <A NAME="tex2html8311"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html8313"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001019000000000000000"></A><A NAME="41250"></A><A NAME="PolynomialRing"></A>
+<BR>
+PolynomialRing
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+PolynomialRing&nbsp;(R,V): Category
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node611.html#ArithmeticType"><TT>ArithmeticType</TT></A></TD>
+<TD ALIGN="LEFT">The coefficient domain</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><A HREF="node129.html#ExpressionType"><TT>ExpressionType</TT></A></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>V</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node694.html#TotallyOrderedType"><TT>TotallyOrderedType</TT></A></TD>
+<TD ALIGN="LEFT">The variable domain</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><A HREF="node129.html#ExpressionType"><TT>ExpressionType</TT></A></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+PolynomialRing&nbsp;(R,V) is a category which inherits from <A HREF="node466.html#PolynomialRing0"><TT>PolynomialRing0</TT></A>(R,V)
+and exports some additionnal operations related to differentiation, evaluation
+and polynomial type conversion.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node466.html#PolynomialRing0"><TT>PolynomialRing0</TT></A>(R,V)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#PolynomialRing:leadingCoefficient"><TT>leadingCoefficient</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, V) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Leading coefficient w.r.t. a variable</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#PolynomialRing:reductum"><TT>reductum</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, V) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Reductum w.r.t. a variable</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#PolynomialRing:combine"><TT>combine</TT></A>:</TD>
+<TD ALIGN="LEFT">(%,V) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> GEN PZ</TD>
+<TD ALIGN="LEFT"><A HREF="#PolynomialRing:combine"><TT>combine</TT></A><IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img589.png"
+ ALT="$(x,v)$"> generates <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.png"
+ ALT="$x$"> as a univ. w.r.t. <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="$v$"></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">Pairs are sorted by decr. degree w.r.t. <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="$v$"></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#PolynomialRing:combine"><TT>combine</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> GEN PZ</TD>
+<TD ALIGN="LEFT"><A HREF="#PolynomialRing:combine"><TT>combine</TT></A><IMG
+ WIDTH="26" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img590.png"
+ ALT="$(x)$"> is <A HREF="#PolynomialRing:combine"><TT>combine</TT></A><IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img591.png"
+ ALT="$(x,$"><A HREF="#PolynomialRing:mainVariable"><TT>mainVariable</TT></A><IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.png"
+ ALT="$x$"><IMG
+ WIDTH="11" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.png"
+ ALT="$)$"></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#PolynomialRing:eval"><TT>eval</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, V, R) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT"><A HREF="#PolynomialRing:eval"><TT>eval</TT></A><IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img593.png"
+ ALT="$(x,v,r)$"> evaluates <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.png"
+ ALT="$x$"> at <IMG
+ WIDTH="42" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img594.png"
+ ALT="$v = r$"></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#PolynomialRing:eval"><TT>eval</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, V, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT"><A HREF="#PolynomialRing:eval"><TT>eval</TT></A><IMG
+ WIDTH="57" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img595.png"
+ ALT="$(x,v,y)$"> evaluates <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.png"
+ ALT="$x$"> at <IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img596.png"
+ ALT="$v = y$"></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">GEN</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node881.html#Generator"><TT>Generator</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">PZ</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><TT>Cross</TT>(%, <A HREF="#Integer"><TT>Integer</TT></A>)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <EM>R</EM> has <A HREF="node29.html#CommutativeRing"><TT>CommutativeRing</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="#PolynomialRing:differentiate"><TT>differentiate</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, V) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Differentiation w.r.t. a variable</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#PolynomialRing:differentiate"><TT>differentiate</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, V, <A HREF="#Integer"><TT>Integer</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Iterated differentiation w.r.t. a variable</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <EM>R</EM> has <A HREF="node29.html#CommutativeRing"><TT>CommutativeRing</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node29.html#CommutativeRing"><TT>CommutativeRing</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <EM>R</EM> has <A HREF="node99.html#IntegralDomain"><TT>IntegralDomain</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node99.html#IntegralDomain"><TT>IntegralDomain</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <EM>R</EM> has <A HREF="node28.html#CharacteristicZero"><TT>CharacteristicZero</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node28.html#CharacteristicZero"><TT>CharacteristicZero</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <EM>R</EM> has <A HREF="node56.html#FiniteCharacteristic"><TT>FiniteCharacteristic</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node56.html#FiniteCharacteristic"><TT>FiniteCharacteristic</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <EM>R</EM> has <A HREF="node543.html#Parsable"><TT>Parsable</TT></A> and em V has <A HREF="node543.html#Parsable"><TT>Parsable</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node543.html#Parsable"><TT>Parsable</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+  <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html8314"
+  HREF="node466.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html8308"
+  HREF="node443.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html8302"
+  HREF="node464.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html8310"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html8312"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html8315"
+  HREF="node466.html">PolynomialRing0</A>
+<B> Up:</B> <A NAME="tex2html8309"
+  HREF="node443.html">Multivariate Polynomials</A>
+<B> Previous:</B> <A NAME="tex2html8303"
+  HREF="node464.html">OrderedVariableTuple</A>
+ &nbsp; <B>  <A NAME="tex2html8311"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html8313"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

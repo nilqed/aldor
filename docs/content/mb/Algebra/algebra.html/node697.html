@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Input/Output</TITLE>
+<META NAME="description" CONTENT="Input/Output">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node750.html">
+<LINK REL="previous" HREF="node604.html">
+<LINK REL="up" HREF="html.html">
+<LINK REL="next" HREF="node698.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html11840"
+  HREF="node698.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html11834"
+  HREF="html.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html11828"
+  HREF="node696.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html11836"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html11838"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html11841"
+  HREF="node698.html">BinaryReader</A>
+<B> Up:</B> <A NAME="tex2html11835"
+  HREF="html.html">html</A>
+<B> Previous:</B> <A NAME="tex2html11829"
+  HREF="node696.html">max,min</A>
+ &nbsp; <B>  <A NAME="tex2html11837"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html11839"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION000160000000000000000">
+Input/Output</A>
+</H1>
+
+  <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html11842"
+  HREF="node698.html">BinaryReader</A>
+<UL>
+<LI><A NAME="tex2html11843"
+  HREF="node699.html">bin</A>
+<LI><A NAME="tex2html11844"
+  HREF="node700.html">binaryReader</A>
+<LI><A NAME="tex2html11845"
+  HREF="node701.html">read!</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html11846"
+  HREF="node702.html">BinaryWriter</A>
+<UL>
+<LI><A NAME="tex2html11847"
+  HREF="node703.html">berr,bout</A>
+<LI><A NAME="tex2html11848"
+  HREF="node704.html">binaryWriter</A>
+<LI><A NAME="tex2html11849"
+  HREF="node705.html">flush!</A>
+<LI><A NAME="tex2html11850"
+  HREF="node706.html">write!</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html11851"
+  HREF="node707.html">Byte</A>
+<UL>
+<LI><A NAME="tex2html11852"
+  HREF="node708.html">coerce</A>
+<LI><A NAME="tex2html11853"
+  HREF="node709.html">eof</A>
+<LI><A NAME="tex2html11854"
+  HREF="node710.html">lowByte</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html11855"
+  HREF="node711.html">Character</A>
+<UL>
+<LI><A NAME="tex2html11856"
+  HREF="node712.html">char,ord</A>
+<LI><A NAME="tex2html11857"
+  HREF="node713.html">digit?,letter?,space?</A>
+<LI><A NAME="tex2html11858"
+  HREF="node714.html">eof,newline,null,tab</A>
+<LI><A NAME="tex2html11859"
+  HREF="node715.html">lower,upper</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html11860"
+  HREF="node716.html">File</A>
+<UL>
+<LI><A NAME="tex2html11861"
+  HREF="node717.html">close!</A>
+<LI><A NAME="tex2html11862"
+  HREF="node718.html">coerce</A>
+<LI><A NAME="tex2html11863"
+  HREF="node719.html">fileAppend,fileBinary,fileRead,fileText,fileWrite</A>
+<LI><A NAME="tex2html11864"
+  HREF="node720.html">open</A>
+<LI><A NAME="tex2html11865"
+  HREF="node721.html">position</A>
+<LI><A NAME="tex2html11866"
+  HREF="node722.html">remove</A>
+<LI><A NAME="tex2html11867"
+  HREF="node723.html">setPosition!,setPositionFromEnd!,setRelativePosition!</A>
+<LI><A NAME="tex2html11868"
+  HREF="node724.html">uniqueName</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html11869"
+  HREF="node725.html">FileException</A>
+<LI><A NAME="tex2html11870"
+  HREF="node726.html">FileExceptionType</A>
+<LI><A NAME="tex2html11871"
+  HREF="node727.html">InputType</A>
+<UL>
+<LI><A NAME="tex2html11872"
+  HREF="node728.html"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$&lt;&lt;$"></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html11873"
+  HREF="node729.html">OutputType</A>
+<UL>
+<LI><A NAME="tex2html11874"
+  HREF="node730.html"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$&lt;&lt;$"></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html11875"
+  HREF="node731.html">SerializableType</A>
+<UL>
+<LI><A NAME="tex2html11876"
+  HREF="node732.html"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$&lt;&lt;$"></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html11877"
+  HREF="node733.html">SyntaxException</A>
+<LI><A NAME="tex2html11878"
+  HREF="node734.html">SyntaxExceptionType</A>
+<LI><A NAME="tex2html11879"
+  HREF="node735.html">TextReader</A>
+<UL>
+<LI><A NAME="tex2html11880"
+  HREF="node736.html">push!</A>
+<LI><A NAME="tex2html11881"
+  HREF="node737.html">read!</A>
+<LI><A NAME="tex2html11882"
+  HREF="node738.html">readUntil!,readWhile!,skipUntil!,skipWhile!</A>
+<LI><A NAME="tex2html11883"
+  HREF="node739.html">stdin</A>
+<LI><A NAME="tex2html11884"
+  HREF="node740.html">textReader</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html11885"
+  HREF="node741.html">TextWriter</A>
+<UL>
+<LI><A NAME="tex2html11886"
+  HREF="node742.html">flush!</A>
+<LI><A NAME="tex2html11887"
+  HREF="node743.html">stderr,stdout</A>
+<LI><A NAME="tex2html11888"
+  HREF="node744.html">textWriter</A>
+<LI><A NAME="tex2html11889"
+  HREF="node745.html">write!</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html11890"
+  HREF="node746.html">WriterManipulator</A>
+<UL>
+<LI><A NAME="tex2html11891"
+  HREF="node747.html"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$&lt;&lt;$"></A>
+<LI><A NAME="tex2html11892"
+  HREF="node748.html">endnl</A>
+<LI><A NAME="tex2html11893"
+  HREF="node749.html">flush</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>IndexedFreeLinearCombinationType</TITLE>
+<META NAME="description" CONTENT="IndexedFreeLinearCombinationType">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node91.html">
+<LINK REL="previous" HREF="node85.html">
+<LINK REL="up" HREF="node19.html">
+<LINK REL="next" HREF="node88.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2563"
+  HREF="node88.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2557"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2551"
+  HREF="node86.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2559"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2561"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2564"
+  HREF="node88.html">add!</A>
+<B> Up:</B> <A NAME="tex2html2558"
+  HREF="node19.html">Basic Categories</A>
+<B> Previous:</B> <A NAME="tex2html2552"
+  HREF="node86.html">add!</A>
+ &nbsp; <B>  <A NAME="tex2html2560"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2562"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000522000000000000000"></A><A NAME="23509"></A><A NAME="IndexedFreeLinearCombinationType"></A>
+<BR>
+IndexedFreeLinearCombinationType
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+IndexedFreeLinearCombinationType(R, E): Category
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node129.html#ExpressionType"><TT>ExpressionType</TT></A></TD>
+<TD ALIGN="LEFT">The coefficient domain</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><A HREF="node611.html#ArithmeticType"><TT>ArithmeticType</TT></A></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>E</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node129.html#ExpressionType"><TT>ExpressionType</TT></A></TD>
+<TD ALIGN="LEFT">The index domain</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+IndexedFreeLinearCombinationType(R, E) is the category of types containing linear
+combinations of their elements with coefficients in <EM>R</EM> with
+respect to a linearly independent generating set.
+Its elements are not assumed to have finite support, so this type
+cannot be asserted to be a <A HREF="node109.html#Module"><TT>Module</TT></A>&nbsp;R even when <EM>R</EM>
+is a <A HREF="node119.html#Ring"><TT>Ring</TT></A>.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node66.html#FreeLinearCombinationType"><TT>FreeLinearCombinationType</TT></A> R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node88.html#IndexedFreeLinearCombinationType:add_"><TT>add!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, R, E) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">In-place addition of a term</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node89.html#IndexedFreeLinearCombinationType:coefficient"><TT>coefficient</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, E) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R</TD>
+<TD ALIGN="LEFT">Extraction of a coefficient</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node90.html#IndexedFreeLinearCombinationType:monomial"><TT>monomial</TT></A>:</TD>
+<TD ALIGN="LEFT">E <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Creation of a monic term</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node90.html#IndexedFreeLinearCombinationType:term"><TT>term</TT></A>:</TD>
+<TD ALIGN="LEFT">(R, E) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Creation of a term</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html2565"
+  HREF="node88.html">add!</A>
+<LI><A NAME="tex2html2566"
+  HREF="node89.html">coefficient</A>
+<LI><A NAME="tex2html2567"
+  HREF="node90.html">monomial,term</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2563"
+  HREF="node88.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2557"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2551"
+  HREF="node86.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2559"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2561"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2564"
+  HREF="node88.html">add!</A>
+<B> Up:</B> <A NAME="tex2html2558"
+  HREF="node19.html">Basic Categories</A>
+<B> Previous:</B> <A NAME="tex2html2552"
+  HREF="node86.html">add!</A>
+ &nbsp; <B>  <A NAME="tex2html2560"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2562"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

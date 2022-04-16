@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>cancel,cancelIfCan</TITLE>
+<META NAME="description" CONTENT="cancel,cancelIfCan">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node455.html">
+<LINK REL="previous" HREF="node453.html">
+<LINK REL="up" HREF="node453.html">
+<LINK REL="next" HREF="node455.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html8162"
+  HREF="node455.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html8156"
+  HREF="node453.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html8150"
+  HREF="node453.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html8158"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html8160"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html8163"
+  HREF="node455.html">times</A>
+<B> Up:</B> <A NAME="tex2html8157"
+  HREF="node453.html">GeneralExponentCategory</A>
+<B> Previous:</B> <A NAME="tex2html8151"
+  HREF="node453.html">GeneralExponentCategory</A>
+ &nbsp; <B>  <A NAME="tex2html8159"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html8161"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000109100000000000000"></A>
+<A NAME="GeneralExponentCategory:cancel_cancelIfCan"></A>
+<BR>
+cancel,cancelIfCan
+</H3> <A NAME="40755"></A>
+<A NAME="GeneralExponentCategory:cancel"></A> <A NAME="40758"></A>
+<A NAME="GeneralExponentCategory:cancel_"></A> <A NAME="40761"></A>
+<A NAME="GeneralExponentCategory:cancelIfCan"></A> <A NAME="40764"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+cancel(x,y)
+<BR>
+cancel?(x,y)
+<BR>
+cancelIfCan(x,y)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">cancel:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">cancel?:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">cancelIfCan:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node887.html#Partial"><TT>Partial</TT></A> %</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>x,y</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">Elements of the type</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+cancelIfCan(x,y) returns <EM>z</EM> such that <IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img580.png"
+ ALT="$z + y = x$"> if
+there exist such a <EM>z</EM> in the type viewed as a monoid only,
+<I>failed</I>&nbsp;otherwise, while cancel?(x,y) returns whether cancelIfCan(x,y)
+would fail, and cancel(x,y) returns <EM>z</EM> such that <IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img580.png"
+ ALT="$z + y = x$">, assuming that
+cancelIfCan(x,y) would not fail.
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

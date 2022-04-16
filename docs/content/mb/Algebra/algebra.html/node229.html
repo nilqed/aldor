@@ -1,0 +1,363 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>backsolve2</TITLE>
+<META NAME="description" CONTENT="backsolve2">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node228.html">
+<LINK REL="up" HREF="node227.html">
+<LINK REL="next" HREF="node230.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html4773"
+  HREF="node230.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4767"
+  HREF="node227.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4763"
+  HREF="node228.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4769"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html4771"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html4774"
+  HREF="node230.html">DenseMatrix</A>
+<B> Up:</B> <A NAME="tex2html4768"
+  HREF="node227.html">Backsolve</A>
+<B> Previous:</B> <A NAME="tex2html4764"
+  HREF="node228.html">backsolve</A>
+ &nbsp; <B>  <A NAME="tex2html4770"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html4772"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00081200000000000000"></A>
+<A NAME="Backsolve:backsolve2"></A>
+<BR>
+backsolve2
+</H3> <A NAME="29159"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+backsolve2(a,p,st,r,c,d)
+<BR>
+backsolve2(a,p,st,r,b,d)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">backsolve2:</TD>
+<TD ALIGN="LEFT">(M,Z <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Z,<A HREF="node818.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> Z,Z,Z,R) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node325.html#Vector"><TT>Vector</TT></A> R</TD>
+</TR>
+<TR><TD ALIGN="LEFT">backsolve2:</TD>
+<TD ALIGN="LEFT">(M,Z<IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Z,<A HREF="node818.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> Z,Z,M,R)<IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$">(M,<A HREF="node325.html#Vector"><TT>Vector</TT></A> R)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>a</EM></TD>
+<TD ALIGN="LEFT">M</TD>
+<TD ALIGN="LEFT">A matrix representing a Row Echelon Form (REF)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>p</EM></TD>
+<TD ALIGN="LEFT">Z <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Z</TD>
+<TD ALIGN="LEFT">A permutation of the rows of <EM>a</EM></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>st</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node818.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> Z</TD>
+<TD ALIGN="LEFT">The stairs of the REF</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>r</EM></TD>
+<TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="LEFT">The number of leading columns (before the <!-- MATH
+ ${c}^{{\rm th}}$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img252.png"
+ ALT="${c}^{{\rm th}}$"> column)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>c</EM></TD>
+<TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="LEFT">The column to be backsolved</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>b</EM></TD>
+<TD ALIGN="LEFT">M</TD>
+<TD ALIGN="LEFT">A matrix whose columns have to be backsolved</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>d</EM></TD>
+<TD ALIGN="LEFT">R</TD>
+<TD ALIGN="LEFT">A maximal denominator needed for a dependence relation</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+Backsolves a triangular system in a minimal way.
+The triple <IMG
+ WIDTH="61" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.png"
+ ALT="$(a,p,st)$"> represents a matrix in REF:
+for <IMG
+ WIDTH="64" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img254.png"
+ ALT="$j\ge st(i)$"> entry (i,j) of the REF is stored in <IMG
+ WIDTH="66" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img255.png"
+ ALT="$a(p(i),j)$">.
+The parameter <IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img89.png"
+ ALT="$d$">
+must be such that <IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img89.png"
+ ALT="$d$"> times the <IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img33.png"
+ ALT="$c$">-th column of the REF
+(resp.&nbsp;<IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img89.png"
+ ALT="$d$"> times the columns of <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img65.png"
+ ALT="$b$">) is a linear combination of the
+first <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img66.png"
+ ALT="$r$"> leading columns of the REF (the <!-- MATH
+ ${j}^{{\rm th}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img256.png"
+ ALT="${j}^{{\rm th}}$"> column is called
+leading if <IMG
+ WIDTH="64" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img257.png"
+ ALT="$j=st(i)$"> for some <IMG
+ WIDTH="10" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img258.png"
+ ALT="$i$">).
+<BR>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+backsolve2(a,p,st,r,c,d) returns a primitive vector <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="$v$"> such that <IMG
+ WIDTH="50" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img259.png"
+ ALT="$av=0$">,
+and <IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$v(j) \ne 0$"> only if <IMG
+ WIDTH="40" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$j = c$"> or <IMG
+ WIDTH="41" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.png"
+ ALT="$j\le r$"> and the <!-- MATH
+ ${j}^{{\rm th}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img256.png"
+ ALT="${j}^{{\rm th}}$"> column
+is leading.
+<BR>
+backsolve2(a,p,st,r,b,d) returns a matrix <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$s$"> and a vector <IMG
+ WIDTH="10" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img262.png"
+ ALT="$t$">
+such that when <IMG
+ WIDTH="57" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img263.png"
+ ALT="$t(l)\neq 0$">, then
+<IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img64.png"
+ ALT="$a$"> times the <!-- MATH
+ ${l}^{{\rm th}}$
+ -->
+<IMG
+ WIDTH="22" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img264.png"
+ ALT="${l}^{{\rm th}}$"> column of <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$s$"> equals <IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img265.png"
+ ALT="$t(l)$">
+times the <!-- MATH
+ ${l}^{{\rm th}}$
+ -->
+<IMG
+ WIDTH="22" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img264.png"
+ ALT="${l}^{{\rm th}}$"> column of
+<IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img65.png"
+ ALT="$b$">, and when <IMG
+ WIDTH="57" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img266.png"
+ ALT="$t(l)=0$">, then the <!-- MATH
+ ${l}^{{\rm th}}$
+ -->
+<IMG
+ WIDTH="22" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img264.png"
+ ALT="${l}^{{\rm th}}$"> column of <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img65.png"
+ ALT="$b$"> is not a linear
+combination of the columns of <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img64.png"
+ ALT="$a$">. <IMG
+ WIDTH="72" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img267.png"
+ ALT="$s(j,l)\neq 0$"> only if the <!-- MATH
+ ${j}^{{\rm th}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img256.png"
+ ALT="${j}^{{\rm th}}$"> column
+is leading.
+
+</BLOCKQUOTE>
+<P></P>
+
+  <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html4773"
+  HREF="node230.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4767"
+  HREF="node227.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4763"
+  HREF="node228.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4769"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html4771"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html4774"
+  HREF="node230.html">DenseMatrix</A>
+<B> Up:</B> <A NAME="tex2html4768"
+  HREF="node227.html">Backsolve</A>
+<B> Previous:</B> <A NAME="tex2html4764"
+  HREF="node228.html">backsolve</A>
+ &nbsp; <B>  <A NAME="tex2html4770"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html4772"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

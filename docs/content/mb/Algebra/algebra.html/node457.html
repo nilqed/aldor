@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>IntegerPolynomial</TITLE>
+<META NAME="description" CONTENT="IntegerPolynomial">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node458.html">
+<LINK REL="previous" HREF="node456.html">
+<LINK REL="up" HREF="node443.html">
+<LINK REL="next" HREF="node458.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html8202"
+  HREF="node458.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html8196"
+  HREF="node443.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html8190"
+  HREF="node456.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html8198"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html8200"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html8203"
+  HREF="node458.html">MachineIntegerDegreeLexicographicalExponent</A>
+<B> Up:</B> <A NAME="tex2html8197"
+  HREF="node443.html">Multivariate Polynomials</A>
+<B> Previous:</B> <A NAME="tex2html8191"
+  HREF="node456.html">IntegerExponentVectorCategory</A>
+ &nbsp; <B>  <A NAME="tex2html8199"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html8201"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001011000000000000000"></A><A NAME="40908"></A><A NAME="IntegerPolynomial"></A>
+<BR>
+IntegerPolynomial
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from IntegerPolynomial
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+IntegerPolynomial&nbsp; provides a basic domain for 
+multivariate polynomials with <A HREF="#Integer"><TT>Integer</TT></A> coefficients and variables 
+from <A HREF="node462.html#OrderedSymbol"><TT>OrderedSymbol</TT></A>.
+The representation is sparse and recursive by means of the
+<A HREF="node381.html#SparseUnivariatePolynomial"><TT>SparseUnivariatePolynomial</TT></A> univariate polynomial domain constructor.
+
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node468.html#RecursiveMultivariatePolynomialCategory0"><TT>RecursiveMultivariatePolynomialCategory0</TT></A>(Z,OS)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#IntegerPolynomial:coerce"><TT>coerce</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node845.html#String"><TT>String</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Conversion.</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#IntegerPolynomial:univariate"><TT>univariate</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> SUP(%)</TD>
+<TD ALIGN="LEFT">Convert to univariate w.r.t. the greatest variable</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#IntegerPolynomial:multivariate"><TT>multivariate</TT></A>:</TD>
+<TD ALIGN="LEFT">(SUP(%), OS) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Convert to multivariate with given variable</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">OS</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node462.html#OrderedSymbol"><TT>OrderedSymbol</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="#Integer"><TT>Integer</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">SUP</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node381.html#SparseUnivariatePolynomial"><TT>SparseUnivariatePolynomial</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+  <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

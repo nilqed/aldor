@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>quotient,quotientBy</TITLE>
+<META NAME="description" CONTENT="quotient,quotientBy">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node104.html">
+<LINK REL="up" HREF="node99.html">
+<LINK REL="next" HREF="node106.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2822"
+  HREF="node106.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2816"
+  HREF="node99.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2812"
+  HREF="node104.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2818"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2820"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2823"
+  HREF="node106.html">LinearArithmeticType</A>
+<B> Up:</B> <A NAME="tex2html2817"
+  HREF="node99.html">IntegralDomain</A>
+<B> Previous:</B> <A NAME="tex2html2813"
+  HREF="node104.html">orderquo</A>
+ &nbsp; <B>  <A NAME="tex2html2819"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2821"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000525600000000000000"></A>
+<A NAME="IntegralDomain:quotient_quotientBy"></A>
+<BR>
+quotient,quotientBy
+</H3> <A NAME="24348"></A>
+<A NAME="IntegralDomain:quotient"></A> <A NAME="24351"></A>
+<A NAME="IntegralDomain:quotient_"></A> <A NAME="24354"></A>
+<A NAME="IntegralDomain:quotientBy"></A> <A NAME="24357"></A>
+<A NAME="IntegralDomain:quotientBy_"></A> <A NAME="24360"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+quotient(x, y)
+<BR>
+quotient!(x, y)
+<BR>
+quotientBy(y)
+<BR>
+quotientBy(y)(x)
+<BR>
+quotientBy!(y)
+<BR>
+quotientBy!(y)(x)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">quotient,quotient!:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">quotientBy, quotientBy!:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>x</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">The numerator</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>y</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">The denominator</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+quotient(x,y) and quotient!(x,y)
+return the unique <I>q</I> such that <IMG
+ WIDTH="54" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img144.png"
+ ALT="$x = q\, y$"> if such a <I>q</I> exists,
+while quotientBy(y) returns the map <!-- MATH
+ $x \to \mbox{quotient}(x,y)$
+ -->
+<IMG
+ WIDTH="133" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img156.png"
+ ALT="$x \to \mbox{quotient}(x,y)$">
+and quotientBy!(y) returns the map <!-- MATH
+ $x \to \mbox{quotient!}(x,y)$
+ -->
+<IMG
+ WIDTH="137" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$x \to \mbox{quotient!}(x,y)$">.
+When using quotient! or quotientBy!, the storage used by <EM>x</EM>
+is allowed to be destroyed or reused, so <EM>x</EM> is lost after this call.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+Use those functions only when it is guaranteed that
+<EM>y</EM> divides <EM>x</EM> exactly in the ring.
+If there is a nonzero remainder, this function may produce a wrong
+quotient instead of an error, so use <A HREF="node102.html#IntegralDomain:exactQuotient"><TT>exactQuotient</TT></A> when
+there is the possibility of a nonzero remainder. When however <EM>y</EM> is known
+to divide <EM>x</EM> exactly, then <TT>quotient</TT>
+can have better efficiency than the other divisions.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>See Also</B><P>
+    <BLOCKQUOTE>
+<A HREF="node102.html#IntegralDomain:exactQuotient"><TT>exactQuotient</TT></A>
+</BLOCKQUOTE>
+<P></P>
+
+  <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2822"
+  HREF="node106.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2816"
+  HREF="node99.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2812"
+  HREF="node104.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2818"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2820"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2823"
+  HREF="node106.html">LinearArithmeticType</A>
+<B> Up:</B> <A NAME="tex2html2817"
+  HREF="node99.html">IntegralDomain</A>
+<B> Previous:</B> <A NAME="tex2html2813"
+  HREF="node104.html">orderquo</A>
+ &nbsp; <B>  <A NAME="tex2html2819"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2821"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

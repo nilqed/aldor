@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>setPosition!,setPositionFromEnd!,setRelativePosition!</TITLE>
+<META NAME="description" CONTENT="setPosition!,setPositionFromEnd!,setRelativePosition!">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node724.html">
+<LINK REL="previous" HREF="node722.html">
+<LINK REL="up" HREF="node716.html">
+<LINK REL="next" HREF="node724.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html12270"
+  HREF="node724.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html12264"
+  HREF="node716.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html12258"
+  HREF="node722.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html12266"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html12268"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html12271"
+  HREF="node724.html">uniqueName</A>
+<B> Up:</B> <A NAME="tex2html12265"
+  HREF="node716.html">File</A>
+<B> Previous:</B> <A NAME="tex2html12259"
+  HREF="node722.html">remove</A>
+ &nbsp; <B>  <A NAME="tex2html12267"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html12269"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000165700000000000000"></A>
+<A NAME="File:setPosition__setPositionFromEnd__setRelativePosition_"></A>
+<BR>
+setPosition!,setPositionFromEnd!,setRelativePosition!
+</H3> <A NAME="52049"></A>
+<A NAME="File:setPosition_"></A> <A NAME="52052"></A>
+<A NAME="File:setPositionFromEnd_"></A> <A NAME="52055"></A>
+<A NAME="File:setRelativePosition_"></A> <A NAME="52058"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+setPosition!,setPositionFromEnd!,setRelativePosition!(f,n)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">setPosition!,setPositionFromEnd!,setRelativePosition!:</TD>
+<TD ALIGN="LEFT">(%,Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Z</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><I>f</I></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">a file</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><I>n</I></TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">a signed offset</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+setPosition!(f, n) sets the file position indicator of <I>f</I>
+to <I>n</I>, while setPositionFromEnd!(f, n) sets it to <I>n</I> from
+the end of file and setRelativePosition!(f, n) adds <I>n</I> to it.
+All three return 0 if no error occured,
+a nonzero error code (the value of <TT>errno</TT> from C) otherwise.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>See Also</B><P>
+    <BLOCKQUOTE>
+<A HREF="node721.html#File:position"><TT>position</TT></A>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

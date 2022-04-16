@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MakePartialRing</TITLE>
+<META NAME="description" CONTENT="MakePartialRing">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node539.html">
+<LINK REL="previous" HREF="node537.html">
+<LINK REL="up" HREF="node533.html">
+<LINK REL="next" HREF="node539.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html9453"
+  HREF="node539.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html9447"
+  HREF="node533.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html9441"
+  HREF="node537.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html9449"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html9451"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html9454"
+  HREF="node539.html">Maple</A>
+<B> Up:</B> <A NAME="tex2html9448"
+  HREF="node533.html">Shells</A>
+<B> Previous:</B> <A NAME="tex2html9442"
+  HREF="node537.html">LispExpressionParser</A>
+ &nbsp; <B>  <A NAME="tex2html9450"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html9452"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000124000000000000000"></A><A NAME="44350"></A><A NAME="MakePartialRing"></A>
+<BR>
+MakePartialRing
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from MakePartialRing(R, f)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT">R</TD>
+<TD ALIGN="LEFT"><A HREF="node119.html#Ring"><TT>Ring</TT></A></TD>
+<TD ALIGN="LEFT">A ring</TD>
+</TR>
+<TR><TD ALIGN="LEFT">f</TD>
+<TD ALIGN="LEFT">R <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node887.html#Partial"><TT>Partial</TT></A> <A HREF="#Integer"><TT>Integer</TT></A></TD>
+<TD ALIGN="LEFT">A retraction to the integers</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+MakePartialRing(R, f) is a partial ring isomorphic to R. The function <IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img173.png"
+ ALT="$f$">
+is used to retract elements of this partial ring to integers whenever
+possible. This type can be used in order to build an evaluator that
+interprets expression trees into R.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node554.html#PartialRing"><TT>PartialRing</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#MakePartialRing:coerce"><TT>coerce</TT></A>:</TD>
+<TD ALIGN="LEFT">R <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Convert an element of R to one of the partial ring</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#MakePartialRing:coerce"><TT>coerce</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R</TD>
+<TD ALIGN="LEFT">Convert an element of the partial ring to one of R</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+  <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

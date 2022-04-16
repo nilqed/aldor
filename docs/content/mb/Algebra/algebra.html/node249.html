@@ -1,0 +1,325 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>LinearAlgebraRing</TITLE>
+<META NAME="description" CONTENT="LinearAlgebraRing">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node263.html">
+<LINK REL="previous" HREF="node234.html">
+<LINK REL="up" HREF="node226.html">
+<LINK REL="next" HREF="node250.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html5065"
+  HREF="node250.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5059"
+  HREF="node226.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5053"
+  HREF="node248.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5061"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html5063"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html5066"
+  HREF="node250.html">determinant</A>
+<B> Up:</B> <A NAME="tex2html5060"
+  HREF="node226.html">Linear Algebra</A>
+<B> Previous:</B> <A NAME="tex2html5054"
+  HREF="node248.html">subKernel</A>
+ &nbsp; <B>  <A NAME="tex2html5062"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html5064"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00087000000000000000"></A><A NAME="30239"></A><A NAME="LinearAlgebraRing"></A>
+<BR>
+LinearAlgebraRing
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+LinearAlgebraRing: Category
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+LinearAlgebraRing&nbsp;is the category of rings that export algorithms for
+linear algebra for matrices over themselves.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node99.html#IntegralDomain"><TT>IntegralDomain</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node250.html#LinearAlgebraRing:determinant"><TT>determinant</TT></A>:</TD>
+<TD ALIGN="LEFT">(M:MC) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> M <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Determinant</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node251.html#LinearAlgebraRing:factorOfDeterminant"><TT>factorOfDeterminant</TT></A>:</TD>
+<TD ALIGN="LEFT">(M:MC) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> M <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (B, %)</TD>
+<TD ALIGN="LEFT">Probable determinant</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node253.html#LinearAlgebraRing:invertibleSubmatrix"><TT>invertibleSubmatrix</TT></A>:</TD>
+<TD ALIGN="LEFT">(M:MC) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> M <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (B, AZ, AZ)</TD>
+<TD ALIGN="LEFT">Probable maximal minor</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node252.html#LinearAlgebraRing:inverse"><TT>inverse</TT></A>:</TD>
+<TD ALIGN="LEFT">(M:MC) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> M <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (M, V)</TD>
+<TD ALIGN="LEFT">Inverse</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node254.html#LinearAlgebraRing:kernel"><TT>kernel</TT></A>:</TD>
+<TD ALIGN="LEFT">(M:MC) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> M <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> M</TD>
+<TD ALIGN="LEFT">Kernel</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node255.html#LinearAlgebraRing:linearDependence"><TT>linearDependence</TT></A>:</TD>
+<TD ALIGN="LEFT">(<A HREF="node881.html#Generator"><TT>Generator</TT></A> V, Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> V</TD>
+<TD ALIGN="LEFT">First dependence relation</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node256.html#LinearAlgebraRing:maxInvertibleSubmatrix"><TT>maxInvertibleSubmatrix</TT></A>:</TD>
+<TD ALIGN="LEFT">(M:MC) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> M <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (AZ, AZ)</TD>
+<TD ALIGN="LEFT">Maximal minor</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node257.html#LinearAlgebraRing:particularSolution"><TT>particularSolution</TT></A>:</TD>
+<TD ALIGN="LEFT">(M:MC) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (M, M) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (M, V)</TD>
+<TD ALIGN="LEFT">A solution</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node258.html#LinearAlgebraRing:rank"><TT>rank</TT></A>:</TD>
+<TD ALIGN="LEFT">(M:MC) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> M <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Z</TD>
+<TD ALIGN="LEFT">Rank</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node259.html#LinearAlgebraRing:rankLowerBound"><TT>rankLowerBound</TT></A>:</TD>
+<TD ALIGN="LEFT">(M:MC) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> M <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (B, Z)</TD>
+<TD ALIGN="LEFT">Probable rank</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node260.html#LinearAlgebraRing:solve"><TT>solve</TT></A>:</TD>
+<TD ALIGN="LEFT">(M:MC) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (M, M) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (M, M, V)</TD>
+<TD ALIGN="LEFT">All solutions</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node261.html#LinearAlgebraRing:span"><TT>span</TT></A>:</TD>
+<TD ALIGN="LEFT">(M:MC) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> M <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> AZ</TD>
+<TD ALIGN="LEFT">Span</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node262.html#LinearAlgebraRing:subKernel"><TT>subKernel</TT></A>:</TD>
+<TD ALIGN="LEFT">(M:MC) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> M <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (B, M)</TD>
+<TD ALIGN="LEFT">Subspace of the kernel</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">AZ</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node751.html#Array"><TT>Array</TT></A> <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">B</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">MC</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node276.html#MatrixCategory"><TT>MatrixCategory</TT></A> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">V</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node325.html#Vector"><TT>Vector</TT></A> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5067"
+  HREF="node250.html">determinant</A>
+<LI><A NAME="tex2html5068"
+  HREF="node251.html">factorOfDeterminant</A>
+<LI><A NAME="tex2html5069"
+  HREF="node252.html">inverse</A>
+<LI><A NAME="tex2html5070"
+  HREF="node253.html">invertibleSubmatrix</A>
+<LI><A NAME="tex2html5071"
+  HREF="node254.html">kernel</A>
+<LI><A NAME="tex2html5072"
+  HREF="node255.html">linearDependence</A>
+<LI><A NAME="tex2html5073"
+  HREF="node256.html">maxInvertibleSubmatrix</A>
+<LI><A NAME="tex2html5074"
+  HREF="node257.html">particularSolution</A>
+<LI><A NAME="tex2html5075"
+  HREF="node258.html">rank</A>
+<LI><A NAME="tex2html5076"
+  HREF="node259.html">rankLowerBound</A>
+<LI><A NAME="tex2html5077"
+  HREF="node260.html">solve</A>
+<LI><A NAME="tex2html5078"
+  HREF="node261.html">span</A>
+<LI><A NAME="tex2html5079"
+  HREF="node262.html">subKernel</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html5065"
+  HREF="node250.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5059"
+  HREF="node226.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5053"
+  HREF="node248.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5061"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html5063"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html5066"
+  HREF="node250.html">determinant</A>
+<B> Up:</B> <A NAME="tex2html5060"
+  HREF="node226.html">Linear Algebra</A>
+<B> Previous:</B> <A NAME="tex2html5054"
+  HREF="node248.html">subKernel</A>
+ &nbsp; <B>  <A NAME="tex2html5062"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html5064"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

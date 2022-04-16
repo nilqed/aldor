@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>ExponentCategory</TITLE>
+<META NAME="description" CONTENT="ExponentCategory">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node450.html">
+<LINK REL="previous" HREF="node448.html">
+<LINK REL="up" HREF="node443.html">
+<LINK REL="next" HREF="node450.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html8091"
+  HREF="node450.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html8085"
+  HREF="node443.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html8079"
+  HREF="node448.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html8087"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html8089"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html8092"
+  HREF="node450.html">FiniteAbelianMonoidRing0</A>
+<B> Up:</B> <A NAME="tex2html8086"
+  HREF="node443.html">Multivariate Polynomials</A>
+<B> Previous:</B> <A NAME="tex2html8080"
+  HREF="node448.html">DistributedMultivariatePolynomial1</A>
+ &nbsp; <B>  <A NAME="tex2html8088"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html8090"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000106000000000000000"></A><A NAME="40410"></A><A NAME="ExponentCategory"></A>
+<BR>
+ExponentCategory
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+ExponentCategory&nbsp;V: Category
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>V</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node472.html#VariableType"><TT>VariableType</TT></A></TD>
+<TD ALIGN="LEFT">The domain of variables</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+ExponentCategory&nbsp;V provides multivariate monomials
+(i.e. products of variables from V) looked as an addtive
+ordered monoid (with cancellation) by associating to
+every product of variables its sequence of degrees.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node453.html#GeneralExponentCategory"><TT>GeneralExponentCategory</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#ExponentCategory:exponent"><TT>exponent</TT></A>:</TD>
+<TD ALIGN="LEFT">V <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">The exponent of a variable</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#ExponentCategory:exponent"><TT>exponent</TT></A>:</TD>
+<TD ALIGN="LEFT">(V, Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">The exponent of a power of a variable</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#ExponentCategory:exponent"><TT>exponent</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node881.html#Generator"><TT>Generator</TT></A> <A HREF="#Cross"><TT>Cross</TT></A> (V, Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">The exponent of a power product</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#ExponentCategory:exponent"><TT>exponent</TT></A>:</TD>
+<TD ALIGN="LEFT">(<A HREF="node799.html#List"><TT>List</TT></A> V,  <A HREF="node799.html#List"><TT>List</TT></A> Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">The exponent of a power product</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#ExponentCategory:terms"><TT>terms</TT></A>:</TD>
+<TD ALIGN="LEFT">%  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node881.html#Generator"><TT>Generator</TT></A> <A HREF="#Cross"><TT>Cross</TT></A> (V, Z)</TD>
+<TD ALIGN="LEFT">Inverse map of <A HREF="#ExponentCategory:exponent"><TT>exponent</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#ExponentCategory:mainVariable"><TT>mainVariable</TT></A>:</TD>
+<TD ALIGN="LEFT">%  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node887.html#Partial"><TT>Partial</TT></A> V</TD>
+<TD ALIGN="LEFT">The biggest variable, if any</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#ExponentCategory:variables"><TT>variables</TT></A>:</TD>
+<TD ALIGN="LEFT">%  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node799.html#List"><TT>List</TT></A> V</TD>
+<TD ALIGN="LEFT">The list of variables of a monomial</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#ExponentCategory:degree"><TT>degree</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, V) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Z</TD>
+<TD ALIGN="LEFT">The degree w.r.t.&nbsp;a variable</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#ExponentCategory:totalDegree"><TT>totalDegree</TT></A>:</TD>
+<TD ALIGN="LEFT">%  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Z</TD>
+<TD ALIGN="LEFT">The sum of the degrees of an exponent</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#ExponentCategory:totalDegree"><TT>totalDegree</TT></A>:</TD>
+<TD ALIGN="LEFT">(%,  <A HREF="node799.html#List"><TT>List</TT></A> V) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Z</TD>
+<TD ALIGN="LEFT">The sum of the degrees w.r.t.&nbsp;a list</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#ExponentCategory:gcd"><TT>gcd</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %)  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Monomial gcd</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#ExponentCategory:lcm"><TT>lcm</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %)  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Monomial lcm</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#ExponentCategory:syzygy"><TT>syzygy</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %)  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Cofactors w.r.t.&nbsp;lcm</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="#Integer"><TT>Integer</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+  <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html8091"
+  HREF="node450.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html8085"
+  HREF="node443.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html8079"
+  HREF="node448.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html8087"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html8089"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html8092"
+  HREF="node450.html">FiniteAbelianMonoidRing0</A>
+<B> Up:</B> <A NAME="tex2html8086"
+  HREF="node443.html">Multivariate Polynomials</A>
+<B> Previous:</B> <A NAME="tex2html8080"
+  HREF="node448.html">DistributedMultivariatePolynomial1</A>
+ &nbsp; <B>  <A NAME="tex2html8088"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html8090"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

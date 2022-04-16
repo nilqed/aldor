@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Profiling and debugging</TITLE>
+<META NAME="description" CONTENT="Profiling and debugging">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node16.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node18.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1453"
+  HREF="node18.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1447"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1443"
+  HREF="node16.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1449"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1451"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1454"
+  HREF="node18.html">Reference Manual</A>
+<B> Up:</B> <A NAME="tex2html1448"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html1444"
+  HREF="node16.html">Exceptions</A>
+ &nbsp; <B>  <A NAME="tex2html1450"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1452"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000311000000000000000"></A>
+<A NAME=":sec:debug"></A>
+<BR>
+Profiling and debugging
+</H2> <A NAME="21020"></A>
+The macros TIME, TRACE and AGAT provided by <TT>libaldor</TT>  remain available
+in <TT>Algebra</TT>. In addition,
+<TT>Algebra</TT>  also comes with a debug version, which makes many assertions
+about the arguments of the functions called as well as their results.
+While those assertions slow down the code considerably they tend to
+be quite useful when chasing bugs since the release version of <TT>Algebra</TT> 
+does not make validity checks to most of its inputs.
+The debug version of <TT>Algebra</TT>  must be used jointly with the debug
+version of <TT>libaldor</TT>. To use them, just compile your application with the
+<DIV ALIGN="CENTER">
+<TT>-lalgebrad -laldord -dDEBUG</TT>
+
+</DIV>
+options rather than <TT>-lalgebra -laldor</TT>.
+It is also preferable when debugging to add the <TT>-q1</TT> option
+in order to prevent inlining.
+
+<P>
+&nbsp;
+&nbsp;
+
+<P>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

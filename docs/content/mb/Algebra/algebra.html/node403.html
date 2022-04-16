@@ -1,0 +1,720 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>UnivariatePolynomialCategory</TITLE>
+<META NAME="description" CONTENT="UnivariatePolynomialCategory">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node425.html">
+<LINK REL="previous" HREF="node400.html">
+<LINK REL="up" HREF="node331.html">
+<LINK REL="next" HREF="node404.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html7396"
+  HREF="node404.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html7390"
+  HREF="node331.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html7384"
+  HREF="node402.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html7392"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html7394"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html7397"
+  HREF="node404.html">apply</A>
+<B> Up:</B> <A NAME="tex2html7391"
+  HREF="node331.html">Univariate Polynomials and Series</A>
+<B> Previous:</B> <A NAME="tex2html7385"
+  HREF="node402.html">compose,translate</A>
+ &nbsp; <B>  <A NAME="tex2html7393"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html7395"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000923000000000000000"></A><A NAME="38094"></A><A NAME="UnivariatePolynomialCategory"></A>
+<BR>
+UnivariatePolynomialCategory
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+UnivariatePolynomialCategory&nbsp;R: Category
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node129.html#ExpressionType"><TT>ExpressionType</TT></A></TD>
+<TD ALIGN="LEFT">The coefficient domain</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><A HREF="node611.html#ArithmeticType"><TT>ArithmeticType</TT></A></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+UnivariatePolynomialCategory&nbsp;is the category of univariate polynomials with coefficients in
+an arbitrary domain R and with respect to the power basis <!-- MATH
+ $(x^n)_{n \ge 0}$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img463.png"
+ ALT="$(x^n)_{n \ge 0}$">.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+    
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node400.html#UnivariatePolynomialAlgebra"><TT>UnivariatePolynomialAlgebra</TT></A> R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node404.html#UnivariatePolynomialCategory:apply"><TT>apply</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, R) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R</TD>
+<TD ALIGN="LEFT">Evaluate a polynomial</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node404.html#UnivariatePolynomialCategory:apply"><TT>apply</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Evaluate a polynomial</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node405.html#UnivariatePolynomialCategory:equal_"><TT>equal?</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %, %, <A HREF="#Integer"><TT>Integer</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Truncated equality</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node407.html#UnivariatePolynomialCategory:Horner"><TT>Horner</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, R) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (%, R)</TD>
+<TD ALIGN="LEFT">Horner division by <IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img485.png"
+ ALT="$x - a$"></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <A HREF="node28.html#CharacteristicZero"><TT>CharacteristicZero</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node411.html#UnivariatePolynomialCategory:ordinaryPoint"><TT>ordinaryPoint</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="#Integer"><TT>Integer</TT></A></TD>
+<TD ALIGN="LEFT">Point where a polynomial is nonzero</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <A HREF="node29.html#CommutativeRing"><TT>CommutativeRing</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node40.html#DifferentialRing"><TT>DifferentialRing</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node409.html#UnivariatePolynomialCategory:lift"><TT>lift</TT></A>:</TD>
+<TD ALIGN="LEFT">(<A HREF="node141.html#Derivation"><TT>Derivation</TT></A> R, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node141.html#Derivation"><TT>Derivation</TT></A> %</TD>
+<TD ALIGN="LEFT">Extend a derivation</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node410.html#UnivariatePolynomialCategory:monicDivide"><TT>monicDivide</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (%, %)</TD>
+<TD ALIGN="LEFT">Polynomial division</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node410.html#UnivariatePolynomialCategory:monicDivide_"><TT>monicDivide!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (%, %)</TD>
+<TD ALIGN="LEFT">Polynomial division</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node410.html#UnivariatePolynomialCategory:monicDivideBy"><TT>monicDivideBy</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (%, %)</TD>
+<TD ALIGN="LEFT">Polynomial division</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node410.html#UnivariatePolynomialCategory:monicDivideBy_"><TT>monicDivideBy!</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (%, %)</TD>
+<TD ALIGN="LEFT">Polynomial division</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node410.html#UnivariatePolynomialCategory:monicQuotient"><TT>monicQuotient</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Quotient</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node410.html#UnivariatePolynomialCategory:monicQuotient_"><TT>monicQuotient!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Quotient</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node410.html#UnivariatePolynomialCategory:monicQuotientBy"><TT>monicQuotientBy</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Quotient</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node410.html#UnivariatePolynomialCategory:monicQuotientBy_"><TT>monicQuotientBy!</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Quotient</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node410.html#UnivariatePolynomialCategory:monicRemainder"><TT>monicRemainder</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Remainder</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node410.html#UnivariatePolynomialCategory:monicRemainder_"><TT>monicRemainder!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Remainder</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node410.html#UnivariatePolynomialCategory:monicRemainderBy"><TT>monicRemainderBy</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Remainder</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node410.html#UnivariatePolynomialCategory:monicRemainderBy_"><TT>monicRemainderBy!</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Remainder</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <A HREF="node29.html#CommutativeRing"><TT>CommutativeRing</TT></A> and R has <A HREF="node124.html#RittRing"><TT>RittRing</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node408.html#UnivariatePolynomialCategory:integrate"><TT>integrate</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Integration</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(%, <A HREF="#Integer"><TT>Integer</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <A HREF="node334.html#FactorizationRing"><TT>FactorizationRing</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node419.html#UnivariatePolynomialCategory:factor"><TT>factor</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (R, <A HREF="node170.html#Product"><TT>Product</TT></A> %)</TD>
+<TD ALIGN="LEFT">Factorisation into irreducibles</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node420.html#UnivariatePolynomialCategory:fractionalRoots"><TT>fractionalRoots</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node881.html#Generator"><TT>Generator</TT></A> <A HREF="node146.html#FractionalRoot"><TT>FractionalRoot</TT></A> R</TD>
+<TD ALIGN="LEFT">Roots in the fraction field</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node420.html#UnivariatePolynomialCategory:roots"><TT>roots</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node881.html#Generator"><TT>Generator</TT></A> <A HREF="node146.html#FractionalRoot"><TT>FractionalRoot</TT></A> R</TD>
+<TD ALIGN="LEFT">Roots in the coefficient ring</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <A HREF="node52.html#Field"><TT>Field</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node43.html#EuclideanDomain"><TT>EuclideanDomain</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node414.html#UnivariatePolynomialCategory:rationalReconstruction"><TT>rationalReconstruction</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node887.html#Partial"><TT>Partial</TT></A> <TT>Cross</TT>(%, %)</TD>
+<TD ALIGN="LEFT">Rational reconstruction</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node416.html#UnivariatePolynomialCategory:sparseMultiple"><TT>sparseMultiple</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, <A HREF="#Integer"><TT>Integer</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Multiple in <IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img486.png"
+ ALT="$k[x^n]$"></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <A HREF="node53.html#FiniteField"><TT>FiniteField</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3>LinearAlgebraRing</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <A HREF="node78.html#GcdDomain"><TT>GcdDomain</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node35.html#DecomposableRing"><TT>DecomposableRing</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node78.html#GcdDomain"><TT>GcdDomain</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node417.html#UnivariatePolynomialCategory:squareFree"><TT>squareFree</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (R, <A HREF="node170.html#Product"><TT>Product</TT></A> %)</TD>
+<TD ALIGN="LEFT">Squarefree factorisation</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node417.html#UnivariatePolynomialCategory:squareFreePart"><TT>squareFreePart</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Squarefree part</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <A HREF="node78.html#GcdDomain"><TT>GcdDomain</TT></A> and R has <A HREF="node371.html#RationalRootRing"><TT>RationalRootRing</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node421.html#UnivariatePolynomialCategory:dispersion"><TT>dispersion</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="#Integer"><TT>Integer</TT></A></TD>
+<TD ALIGN="LEFT">Dispersion</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="#Integer"><TT>Integer</TT></A></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node421.html#UnivariatePolynomialCategory:integerDistances"><TT>integerDistances</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node799.html#List"><TT>List</TT></A> <A HREF="#Integer"><TT>Integer</TT></A></TD>
+<TD ALIGN="LEFT">Integer spread</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node799.html#List"><TT>List</TT></A> <A HREF="#Integer"><TT>Integer</TT></A></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node424.html#UnivariatePolynomialCategory:universalBound"><TT>universalBound</TT></A>:</TD>
+<TD ALIGN="LEFT">(%,%) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node799.html#List"><TT>List</TT></A> <TT>Cross</TT>(%, <A HREF="#Integer"><TT>Integer</TT></A>)</TD>
+<TD ALIGN="LEFT">Universal bound</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <A HREF="node99.html#IntegralDomain"><TT>IntegralDomain</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node99.html#IntegralDomain"><TT>IntegralDomain</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node412.html#UnivariatePolynomialCategory:pseudoDivide"><TT>pseudoDivide</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (%, %)</TD>
+<TD ALIGN="LEFT">Polynomial pseudo-division</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node413.html#UnivariatePolynomialCategory:pseudoRemainder"><TT>pseudoRemainder</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Pseudo-remainder</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node413.html#UnivariatePolynomialCategory:pseudoRemainder_"><TT>pseudoRemainder!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Pseudo-remainder</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node415.html#UnivariatePolynomialCategory:resultant"><TT>resultant</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R</TD>
+<TD ALIGN="LEFT">Resultant of 2 polynomials</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <A HREF="node673.html#OrderedArithmeticType"><TT>OrderedArithmeticType</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node406.html#UnivariatePolynomialCategory:height"><TT>height</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R</TD>
+<TD ALIGN="LEFT">Max norm over all the coefficients</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <A HREF="node371.html#RationalRootRing"><TT>RationalRootRing</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node371.html#RationalRootRing"><TT>RationalRootRing</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node422.html#UnivariatePolynomialCategory:integerRoots"><TT>integerRoots</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node881.html#Generator"><TT>Generator</TT></A> <A HREF="node146.html#FractionalRoot"><TT>FractionalRoot</TT></A> <A HREF="#Integer"><TT>Integer</TT></A></TD>
+<TD ALIGN="LEFT">Integer roots</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node422.html#UnivariatePolynomialCategory:rationalRoots"><TT>rationalRoots</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node881.html#Generator"><TT>Generator</TT></A> <A HREF="node146.html#FractionalRoot"><TT>FractionalRoot</TT></A> <A HREF="#Integer"><TT>Integer</TT></A></TD>
+<TD ALIGN="LEFT">Rational roots</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <A HREF="node119.html#Ring"><TT>Ring</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node418.html#UnivariatePolynomialCategory:values"><TT>values</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, R) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node881.html#Generator"><TT>Generator</TT></A> R</TD>
+<TD ALIGN="LEFT">Generate values of a polynomial</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <A HREF="node127.html#Specializable"><TT>Specializable</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node127.html#Specializable"><TT>Specializable</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html7398"
+  HREF="node404.html">apply</A>
+<LI><A NAME="tex2html7399"
+  HREF="node405.html">equal?</A>
+<LI><A NAME="tex2html7400"
+  HREF="node406.html">height</A>
+<LI><A NAME="tex2html7401"
+  HREF="node407.html">Horner</A>
+<LI><A NAME="tex2html7402"
+  HREF="node408.html">integrate</A>
+<LI><A NAME="tex2html7403"
+  HREF="node409.html">lift</A>
+<LI><A NAME="tex2html7404"
+  HREF="node410.html">monicDivide,monicQuotient, monicRemainder</A>
+<LI><A NAME="tex2html7405"
+  HREF="node411.html">ordinaryPoint</A>
+<LI><A NAME="tex2html7406"
+  HREF="node412.html">pseudoDivide</A>
+<LI><A NAME="tex2html7407"
+  HREF="node413.html">pseudoRemainder</A>
+<LI><A NAME="tex2html7408"
+  HREF="node414.html">rationalReconstruction</A>
+<LI><A NAME="tex2html7409"
+  HREF="node415.html">resultant</A>
+<LI><A NAME="tex2html7410"
+  HREF="node416.html">sparseMultiple</A>
+<LI><A NAME="tex2html7411"
+  HREF="node417.html">squareFree,squareFreePart</A>
+<LI><A NAME="tex2html7412"
+  HREF="node418.html">values</A>
+<LI><A NAME="tex2html7413"
+  HREF="node419.html">factor</A>
+<LI><A NAME="tex2html7414"
+  HREF="node420.html">fractionalRoots,roots</A>
+<LI><A NAME="tex2html7415"
+  HREF="node421.html">dispersion,integerDistances</A>
+<LI><A NAME="tex2html7416"
+  HREF="node422.html">integerRoots,rationalRoots</A>
+<LI><A NAME="tex2html7417"
+  HREF="node423.html">minIntegerRoot,maxIntegerRoot</A>
+<LI><A NAME="tex2html7418"
+  HREF="node424.html">universalBound</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html7396"
+  HREF="node404.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html7390"
+  HREF="node331.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html7384"
+  HREF="node402.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html7392"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html7394"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html7397"
+  HREF="node404.html">apply</A>
+<B> Up:</B> <A NAME="tex2html7391"
+  HREF="node331.html">Univariate Polynomials and Series</A>
+<B> Previous:</B> <A NAME="tex2html7385"
+  HREF="node402.html">compose,translate</A>
+ &nbsp; <B>  <A NAME="tex2html7393"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html7395"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

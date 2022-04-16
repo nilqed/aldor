@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>deter</TITLE>
+<META NAME="description" CONTENT="deter">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node303.html">
+<LINK REL="previous" HREF="node301.html">
+<LINK REL="up" HREF="node301.html">
+<LINK REL="next" HREF="node303.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html5859"
+  HREF="node303.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5853"
+  HREF="node301.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5847"
+  HREF="node301.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5855"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html5857"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html5860"
+  HREF="node303.html">determinant!</A>
+<B> Up:</B> <A NAME="tex2html5854"
+  HREF="node301.html">ModulopGaussElimination</A>
+<B> Previous:</B> <A NAME="tex2html5848"
+  HREF="node301.html">ModulopGaussElimination</A>
+ &nbsp; <B>  <A NAME="tex2html5856"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html5858"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000811100000000000000"></A>
+<A NAME="ModulopGaussElimination:deter"></A>
+<BR>
+deter
+</H3> <A NAME="33326"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+deter(a,n,<IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img169.png"
+ ALT="$\sigma$">,r,d,p)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">deter:</TD>
+<TD ALIGN="LEFT">(<A HREF="node818.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> <A HREF="node818.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> Z,Z,
+<A HREF="node818.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> Z,Z,Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Z</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>a</EM></TD>
+<TD ALIGN="LEFT">A A <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">A square matrix in REF form</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>n</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">The size of <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img64.png"
+ ALT="$a$"></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM><IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img169.png"
+ ALT="$\sigma$"></EM></TD>
+<TD ALIGN="LEFT">A <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">A permutation of the rows of <EM>a</EM></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>r</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">The number of stairs of the REF</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>d</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">The sign of <IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img169.png"
+ ALT="$\sigma$"></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>p</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">a prime</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">A</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node818.html#PrimitiveArray"><TT>PrimitiveArray</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+<EM>(a,<IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img169.png"
+ ALT="$\sigma$">,r,d)</EM> must be the representation of a REF computed by
+either <A HREF="node304.html#ModulopGaussElimination:extendedRowEchelon_"><TT>extendedRowEchelon!</TT></A> or <A HREF="node311.html#ModulopGaussElimination:rowEchelon_"><TT>rowEchelon!</TT></A>. The
+determinant of the original matrix over <!-- MATH
+ ${\mathbbm Z}/p{\mathbbm Z}$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="${\mathbbm Z}/ p{\mathbbm Z}$"> is returned.
+
+</BLOCKQUOTE>
+<P></P>
+
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html5859"
+  HREF="node303.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5853"
+  HREF="node301.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5847"
+  HREF="node301.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5855"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html5857"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html5860"
+  HREF="node303.html">determinant!</A>
+<B> Up:</B> <A NAME="tex2html5854"
+  HREF="node301.html">ModulopGaussElimination</A>
+<B> Previous:</B> <A NAME="tex2html5848"
+  HREF="node301.html">ModulopGaussElimination</A>
+ &nbsp; <B>  <A NAME="tex2html5856"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html5858"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

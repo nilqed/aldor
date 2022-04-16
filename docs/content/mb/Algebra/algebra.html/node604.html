@@ -1,0 +1,336 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Arithmetic</TITLE>
+<META NAME="description" CONTENT="Arithmetic">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node697.html">
+<LINK REL="previous" HREF="node603.html">
+<LINK REL="up" HREF="html.html">
+<LINK REL="next" HREF="node605.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html10420"
+  HREF="node605.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html10414"
+  HREF="html.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html10408"
+  HREF="node603.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html10416"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html10418"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html10421"
+  HREF="node605.html">AldorInteger</A>
+<B> Up:</B> <A NAME="tex2html10415"
+  HREF="html.html">html</A>
+<B> Previous:</B> <A NAME="tex2html10409"
+  HREF="node603.html">libaldor Reference Manual</A>
+ &nbsp; <B>  <A NAME="tex2html10417"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html10419"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION000150000000000000000">
+Arithmetic</A>
+</H1>
+
+  <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html10422"
+  HREF="node605.html">AldorInteger</A>
+<LI><A NAME="tex2html10423"
+  HREF="node606.html">AdditiveType</A>
+<UL>
+<LI><A NAME="tex2html10424"
+  HREF="node607.html">.</A>
+<LI><A NAME="tex2html10425"
+  HREF="node608.html">+,-</A>
+<LI><A NAME="tex2html10426"
+  HREF="node609.html">add!,minus!</A>
+<LI><A NAME="tex2html10427"
+  HREF="node610.html">zero?</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10428"
+  HREF="node611.html">ArithmeticType</A>
+<UL>
+<LI><A NAME="tex2html10429"
+  HREF="node612.html">1</A>
+<LI><A NAME="tex2html10430"
+  HREF="node613.html">*,**</A>
+<LI><A NAME="tex2html10431"
+  HREF="node614.html">commutative?</A>
+<LI><A NAME="tex2html10432"
+  HREF="node615.html">one?</A>
+<LI><A NAME="tex2html10433"
+  HREF="node616.html">times!</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10434"
+  HREF="node617.html">BinaryPowering</A>
+<UL>
+<LI><A NAME="tex2html10435"
+  HREF="node618.html">binaryExponentiation</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10436"
+  HREF="node619.html">Boolean</A>
+<UL>
+<LI><A NAME="tex2html10437"
+  HREF="node620.html">true,false</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10438"
+  HREF="node621.html">BooleanArithmeticType</A>
+<UL>
+<LI><A NAME="tex2html10439"
+  HREF="node622.html">and,or,not,xor</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10440"
+  HREF="node623.html">Complex</A>
+<UL>
+<LI><A NAME="tex2html10441"
+  HREF="node624.html">coerce</A>
+<LI><A NAME="tex2html10442"
+  HREF="node625.html">complex</A>
+<LI><A NAME="tex2html10443"
+  HREF="node626.html">conjugate</A>
+<LI><A NAME="tex2html10444"
+  HREF="node627.html">copy!</A>
+<LI><A NAME="tex2html10445"
+  HREF="node628.html">imag,real</A>
+<LI><A NAME="tex2html10446"
+  HREF="node629.html">norm</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10447"
+  HREF="node630.html">DoubleFloat</A>
+<UL>
+<LI><A NAME="tex2html10448"
+  HREF="node631.html">**</A>
+<LI><A NAME="tex2html10449"
+  HREF="node632.html">coerce,single</A>
+<LI><A NAME="tex2html10450"
+  HREF="node633.html">max,min</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10451"
+  HREF="node634.html">FloatType</A>
+<UL>
+<LI><A NAME="tex2html10452"
+  HREF="node635.html"><IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$/$"></A>
+<LI><A NAME="tex2html10453"
+  HREF="node636.html">coerce</A>
+<LI><A NAME="tex2html10454"
+  HREF="node637.html">fraction,truncate</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10455"
+  HREF="node638.html">GMPFloat</A>
+<UL>
+<LI><A NAME="tex2html10456"
+  HREF="node639.html">coerce</A>
+<LI><A NAME="tex2html10457"
+  HREF="node640.html">limbs</A>
+<LI><A NAME="tex2html10458"
+  HREF="node641.html">machine,single</A>
+<LI><A NAME="tex2html10459"
+  HREF="node642.html">new</A>
+<LI><A NAME="tex2html10460"
+  HREF="node643.html">precision,setPrecision!</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10461"
+  HREF="node644.html">GMPInteger</A>
+<UL>
+<LI><A NAME="tex2html10462"
+  HREF="node645.html">coerce</A>
+<LI><A NAME="tex2html10463"
+  HREF="node646.html">limbs</A>
+<LI><A NAME="tex2html10464"
+  HREF="node647.html">new</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10465"
+  HREF="node648.html">IntegerSegment</A>
+<UL>
+<LI><A NAME="tex2html10466"
+  HREF="node649.html">..</A>
+<LI><A NAME="tex2html10467"
+  HREF="node650.html">by,step</A>
+<LI><A NAME="tex2html10468"
+  HREF="node651.html">generator</A>
+<LI><A NAME="tex2html10469"
+  HREF="node652.html">high,low</A>
+<LI><A NAME="tex2html10470"
+  HREF="node653.html">open?</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10471"
+  HREF="node654.html">IntegerType</A>
+<UL>
+<LI><A NAME="tex2html10472"
+  HREF="node655.html">bit?,clear,set</A>
+<LI><A NAME="tex2html10473"
+  HREF="node656.html">coerce,machine</A>
+<LI><A NAME="tex2html10474"
+  HREF="node657.html">divide,mod,quo,rem</A>
+<LI><A NAME="tex2html10475"
+  HREF="node658.html">even?,odd?</A>
+<LI><A NAME="tex2html10476"
+  HREF="node659.html">factorial</A>
+<LI><A NAME="tex2html10477"
+  HREF="node660.html">gcd,lcm</A>
+<LI><A NAME="tex2html10478"
+  HREF="node661.html">length</A>
+<LI><A NAME="tex2html10479"
+  HREF="node662.html">next,prev</A>
+<LI><A NAME="tex2html10480"
+  HREF="node663.html">nthRoot</A>
+<LI><A NAME="tex2html10481"
+  HREF="node664.html">random</A>
+<LI><A NAME="tex2html10482"
+  HREF="node665.html">shift</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10483"
+  HREF="node666.html">LinearCombinationType</A>
+<UL>
+<LI><A NAME="tex2html10484"
+  HREF="node667.html"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$*$"></A>
+<LI><A NAME="tex2html10485"
+  HREF="node668.html">add!</A>
+<LI><A NAME="tex2html10486"
+  HREF="node669.html">times!</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10487"
+  HREF="node670.html">MachineInteger</A>
+<UL>
+<LI><A NAME="tex2html10488"
+  HREF="node671.html">bytes,max,min</A>
+<LI><A NAME="tex2html10489"
+  HREF="node672.html">modX,modInverse</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10490"
+  HREF="node673.html">OrderedArithmeticType</A>
+<UL>
+<LI><A NAME="tex2html10491"
+  HREF="node674.html">abs</A>
+<LI><A NAME="tex2html10492"
+  HREF="node675.html">sign</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10493"
+  HREF="node676.html">PartiallyOrderedType</A>
+<UL>
+<LI><A NAME="tex2html10494"
+  HREF="node677.html"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$&lt;$">,<IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$&gt;$"></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10495"
+  HREF="node678.html">PackableType</A>
+<UL>
+<LI><A NAME="tex2html10496"
+  HREF="node679.html">getPackedArray,setPackedArray!</A>
+<LI><A NAME="tex2html10497"
+  HREF="node680.html">newPackedArray</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10498"
+  HREF="node681.html">PrimitiveType</A>
+<UL>
+<LI><A NAME="tex2html10499"
+  HREF="node682.html"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$=$"></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10500"
+  HREF="node683.html">RandomNumberGenerator</A>
+<UL>
+<LI><A NAME="tex2html10501"
+  HREF="node684.html">apply</A>
+<LI><A NAME="tex2html10502"
+  HREF="node685.html">generator</A>
+<LI><A NAME="tex2html10503"
+  HREF="node686.html">max,min</A>
+<LI><A NAME="tex2html10504"
+  HREF="node687.html">numberOfGenerators</A>
+<LI><A NAME="tex2html10505"
+  HREF="node688.html">randomGenerator</A>
+<LI><A NAME="tex2html10506"
+  HREF="node689.html">randomInteger</A>
+<LI><A NAME="tex2html10507"
+  HREF="node690.html">seed</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10508"
+  HREF="node691.html">SingleFloat</A>
+<UL>
+<LI><A NAME="tex2html10509"
+  HREF="node692.html">**</A>
+<LI><A NAME="tex2html10510"
+  HREF="node693.html">max,min</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html10511"
+  HREF="node694.html">TotallyOrderedType</A>
+<UL>
+<LI><A NAME="tex2html10512"
+  HREF="node695.html">compare</A>
+<LI><A NAME="tex2html10513"
+  HREF="node696.html">max,min</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

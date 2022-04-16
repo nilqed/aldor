@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>DirectProductCategory</TITLE>
+<META NAME="description" CONTENT="DirectProductCategory">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node447.html">
+<LINK REL="previous" HREF="node445.html">
+<LINK REL="up" HREF="node443.html">
+<LINK REL="next" HREF="node447.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html8049"
+  HREF="node447.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html8043"
+  HREF="node443.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html8037"
+  HREF="node445.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html8045"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html8047"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html8050"
+  HREF="node447.html">DistributedMultivariatePolynomial0</A>
+<B> Up:</B> <A NAME="tex2html8044"
+  HREF="node443.html">Multivariate Polynomials</A>
+<B> Previous:</B> <A NAME="tex2html8038"
+  HREF="node445.html">DirectProduct</A>
+ &nbsp; <B>  <A NAME="tex2html8046"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html8048"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000103000000000000000"></A><A NAME="40243"></A><A NAME="DirectProductCategory"></A>
+<BR>
+DirectProductCategory
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+DirectProductCategory&nbsp;(dim, T): Category
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>dim</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">The length of a direct product</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>T</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node129.html#ExpressionType"><TT>ExpressionType</TT></A></TD>
+<TD ALIGN="LEFT">The type of each factor</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+DirectProductCategory&nbsp;(dim, T) is the category of
+ cartesian products of <IMG
+ WIDTH="32" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img560.png"
+ ALT="$dim$"> copies of <IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img556.png"
+ ALT="$T.$"> Hence
+ an elements of a domain of this category is
+ a (direct) product (or tuple) of elements from <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img557.png"
+ ALT="$T$"> with 
+ length <IMG
+ WIDTH="32" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img560.png"
+ ALT="$dim$">. The components of such a tuple
+ are indexed from <A HREF="node796.html#LinearStructureType:firstIndex"><TT>firstIndex</TT></A> to <A HREF="#DirectProductCategory:lastIndex"><TT>lastIndex</TT></A>.
+ Thus <IMG
+ WIDTH="32" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img560.png"
+ ALT="$dim$"> is <!-- MATH
+ $lastIndex \, - \, firstIndex \, + \, 1.$
+ -->
+<IMG
+ WIDTH="214" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img561.png"
+ ALT="$lastIndex \, - \, firstIndex \, + \, 1.$">
+ This category is essentially designed to support the
+ implementation of multivariate monomials involving at
+ most <IMG
+ WIDTH="65" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img562.png"
+ ALT="$dim \, - \, 1$"> (if one component is used for storing the
+ total degree) or <IMG
+ WIDTH="32" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img560.png"
+ ALT="$dim$"> (if not) variables.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node879.html#CopyableType"><TT>CopyableType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node793.html#LinearStructureType"><TT>LinearStructureType</TT></A> T</TD>
+</TR>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node129.html#ExpressionType"><TT>ExpressionType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#DirectProductCategory:bracket"><TT>bracket</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="#Tuple"><TT>Tuple</TT></A> T <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Conversion of a tuple whose length is <IMG
+ WIDTH="32" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img560.png"
+ ALT="$dim$"></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#DirectProductCategory:lastIndex"><TT>lastIndex</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">The biggest index of a direct product.</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#DirectProductCategory:generator"><TT>generator</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node881.html#Generator"><TT>Generator</TT></A> T</TD>
+<TD ALIGN="LEFT">The factors of a direct product.</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#DirectProductCategory:map"><TT>map</TT></A>:</TD>
+<TD ALIGN="LEFT">((T <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> T) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> T)  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Componentwise mapping.</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#DirectProductCategory:map"><TT>map</TT></A>:</TD>
+<TD ALIGN="LEFT">(T <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> T)  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Mapping</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#DirectProductCategory:map_"><TT>map!</TT></A>:</TD>
+<TD ALIGN="LEFT">(T <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> T)  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Mapping that may modify its second arg</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+  <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html8049"
+  HREF="node447.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html8043"
+  HREF="node443.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html8037"
+  HREF="node445.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html8045"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html8047"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html8050"
+  HREF="node447.html">DistributedMultivariatePolynomial0</A>
+<B> Up:</B> <A NAME="tex2html8044"
+  HREF="node443.html">Multivariate Polynomials</A>
+<B> Previous:</B> <A NAME="tex2html8038"
+  HREF="node445.html">DirectProduct</A>
+ &nbsp; <B>  <A NAME="tex2html8046"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html8048"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

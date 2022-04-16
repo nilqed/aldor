@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>UnivariateFactorialPolynomial</TITLE>
+<META NAME="description" CONTENT="UnivariateFactorialPolynomial">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node385.html">
+<LINK REL="previous" HREF="node381.html">
+<LINK REL="up" HREF="node331.html">
+<LINK REL="next" HREF="node383.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html7096"
+  HREF="node383.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html7090"
+  HREF="node331.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html7084"
+  HREF="node381.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html7092"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html7094"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html7097"
+  HREF="node383.html">coerce,expand,trailExpand</A>
+<B> Up:</B> <A NAME="tex2html7091"
+  HREF="node331.html">Univariate Polynomials and Series</A>
+<B> Previous:</B> <A NAME="tex2html7085"
+  HREF="node381.html">SparseUnivariatePolynomial</A>
+ &nbsp; <B>  <A NAME="tex2html7093"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html7095"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000918000000000000000"></A><A NAME="37109"></A><A NAME="UnivariateFactorialPolynomial"></A>
+<BR>
+UnivariateFactorialPolynomial
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from UnivariateFactorialPolynomial(R, Rx)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node119.html#Ring"><TT>Ring</TT></A></TD>
+<TD ALIGN="LEFT">The coefficient domain</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>Rx</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node403.html#UnivariatePolynomialCategory"><TT>UnivariatePolynomialCategory</TT></A> R</TD>
+<TD ALIGN="LEFT">A polynomial type over R</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+UnivariateFactorialPolynomial(R, Rx) implements univariate factorial polynomials with
+coefficients in <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$">.
+Those are polynomials with respect to the basis
+of the descending factorials <!-- MATH
+ $(x^{{\underline n}})_{n \ge 0}$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img461.png"
+ ALT="$(x^{{\underline n}})_{n \ge 0}$">,
+where <!-- MATH
+ $x^{{\underline n}} = x (x-1) \dots (x-n+1)$
+ -->
+<IMG
+ WIDTH="203" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img462.png"
+ ALT="$x^{{\underline n}} = x (x-1) \dots (x-n+1)$">.
+Rx is used for representing
+the factorial polynomials, so you can choose between sparse and dense
+representations.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node349.html#MonogenicAlgebra"><TT>MonogenicAlgebra</TT></A> R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node383.html#UnivariateFactorialPolynomial:coerce"><TT>coerce</TT></A>:</TD>
+<TD ALIGN="LEFT">Rx <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Conversion to a factorial polynomial</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node383.html#UnivariateFactorialPolynomial:expand"><TT>expand</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Rx</TD>
+<TD ALIGN="LEFT">Conversion from a factorial polynomial</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node383.html#UnivariateFactorialPolynomial:trailExpand"><TT>trailExpand</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (<A HREF="#Integer"><TT>Integer</TT></A>, Rx)</TD>
+<TD ALIGN="LEFT">Conversion from a factorial polynomial</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$"> has <A HREF="node29.html#CommutativeRing"><TT>CommutativeRing</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node29.html#CommutativeRing"><TT>CommutativeRing</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$"> has <A HREF="node99.html#IntegralDomain"><TT>IntegralDomain</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node99.html#IntegralDomain"><TT>IntegralDomain</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$"> has <A HREF="node371.html#RationalRootRing"><TT>RationalRootRing</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node384.html#UnivariateFactorialPolynomial:integerRoots"><TT>integerRoots</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node799.html#List"><TT>List</TT></A> <A HREF="node146.html#FractionalRoot"><TT>FractionalRoot</TT></A> <A HREF="#Integer"><TT>Integer</TT></A></TD>
+<TD ALIGN="LEFT">Integer roots</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node384.html#UnivariateFactorialPolynomial:rationalRoots"><TT>rationalRoots</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node799.html#List"><TT>List</TT></A> <A HREF="node146.html#FractionalRoot"><TT>FractionalRoot</TT></A> <A HREF="#Integer"><TT>Integer</TT></A></TD>
+<TD ALIGN="LEFT">Rational roots</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html7098"
+  HREF="node383.html">coerce,expand,trailExpand</A>
+<LI><A NAME="tex2html7099"
+  HREF="node384.html">integerRoots,rationalRoots</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html7096"
+  HREF="node383.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html7090"
+  HREF="node331.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html7084"
+  HREF="node381.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html7092"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html7094"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html7097"
+  HREF="node383.html">coerce,expand,trailExpand</A>
+<B> Up:</B> <A NAME="tex2html7091"
+  HREF="node331.html">Univariate Polynomials and Series</A>
+<B> Previous:</B> <A NAME="tex2html7085"
+  HREF="node381.html">SparseUnivariatePolynomial</A>
+ &nbsp; <B>  <A NAME="tex2html7093"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html7095"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

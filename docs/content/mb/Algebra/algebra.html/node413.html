@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>pseudoRemainder</TITLE>
+<META NAME="description" CONTENT="pseudoRemainder">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node414.html">
+<LINK REL="previous" HREF="node412.html">
+<LINK REL="up" HREF="node403.html">
+<LINK REL="next" HREF="node414.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html7557"
+  HREF="node414.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html7551"
+  HREF="node403.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html7545"
+  HREF="node412.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html7553"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html7555"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html7558"
+  HREF="node414.html">rationalReconstruction</A>
+<B> Up:</B> <A NAME="tex2html7552"
+  HREF="node403.html">UnivariatePolynomialCategory</A>
+<B> Previous:</B> <A NAME="tex2html7546"
+  HREF="node412.html">pseudoDivide</A>
+ &nbsp; <B>  <A NAME="tex2html7554"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html7556"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION0009231000000000000000"></A>
+<A NAME="UnivariatePolynomialCategory:pseudoRemainder"></A>
+<BR>
+pseudoRemainder
+</H3> <A NAME="38770"></A>
+<A NAME="UnivariatePolynomialCategory:pseudoRemainder_"></A> <A NAME="38773"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+pseudoRemainder(a, b)
+<BR>
+pseudoRemainder!(a, b)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">pseudoRemainder:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>a</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">A polynomial</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>b</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">A nonzero polynomial</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+Returns <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img66.png"
+ ALT="$r$"> such that <!-- MATH
+ $c^n a = b q + r$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img501.png"
+ ALT="$c^n a = b q + r$"> and either <IMG
+ WIDTH="41" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img67.png"
+ ALT="$r = 0$">
+or <!-- MATH
+ $\deg(r) < \deg(b)$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img495.png"
+ ALT="$\deg(r) &lt; \deg(b)$">, where <IMG
+ WIDTH="11" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img33.png"
+ ALT="$c$"> is the leading coefficient of <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img65.png"
+ ALT="$b$"> and
+<!-- MATH
+ $n = \deg(a) - \deg(b) + 1$
+ -->
+<IMG
+ WIDTH="170" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img502.png"
+ ALT="$n = \deg(a) - \deg(b) + 1$">.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+When using pseudoRemainder!(<IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img87.png"
+ ALT="$a,b$">), the storage used by a is allowed to be
+destroyed or reused, so a is lost after this call.
+This may cause a to be destroyed, so do not use this unless a has been locally
+allocated, and is thus guaranteed not to share space with other polynomials.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>See Also</B><P>
+    <BLOCKQUOTE>
+<A HREF="node412.html#UnivariatePolynomialCategory:pseudoDivide"><TT>pseudoDivide</TT></A>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

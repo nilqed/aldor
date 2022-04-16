@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>dispersion,integerDistances</TITLE>
+<META NAME="description" CONTENT="dispersion,integerDistances">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node422.html">
+<LINK REL="previous" HREF="node420.html">
+<LINK REL="up" HREF="node403.html">
+<LINK REL="next" HREF="node422.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html7669"
+  HREF="node422.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html7663"
+  HREF="node403.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html7657"
+  HREF="node420.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html7665"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html7667"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html7670"
+  HREF="node422.html">integerRoots,rationalRoots</A>
+<B> Up:</B> <A NAME="tex2html7664"
+  HREF="node403.html">UnivariatePolynomialCategory</A>
+<B> Previous:</B> <A NAME="tex2html7658"
+  HREF="node420.html">fractionalRoots,roots</A>
+ &nbsp; <B>  <A NAME="tex2html7666"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html7668"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION0009231800000000000000"></A>
+<A NAME="UnivariatePolynomialCategory:dispersion_integerDistances"></A>
+<BR>
+dispersion,integerDistances
+</H3> <A NAME="39071"></A>
+<A NAME="UnivariatePolynomialCategory:dispersion"></A> <A NAME="39074"></A>
+<A NAME="UnivariatePolynomialCategory:integerDistances"></A> <A NAME="39077"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+dispersion&nbsp;p
+<BR>
+dispersion(p, q)
+<BR>
+integerDistances&nbsp;p
+<BR>
+integerDistances(p, q)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">dispersion:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="#Integer"><TT>Integer</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">dispersion:</TD>
+<TD ALIGN="LEFT">(%,%) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="#Integer"><TT>Integer</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">integerDistances:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node799.html#List"><TT>List</TT></A> <A HREF="#Integer"><TT>Integer</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">integerDistances:</TD>
+<TD ALIGN="LEFT">(%,%) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node799.html#List"><TT>List</TT></A> <A HREF="#Integer"><TT>Integer</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>p</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">A nonzero polynomial</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>q</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">A nonzero polynomial (optional)</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+integerDistances(p, q) returns
+all the integers <!-- MATH
+ $e \in {\mathbbm Z}$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img512.png"
+ ALT="$e \in {\mathbbm Z}$"> such that for each such <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img103.png"
+ ALT="$e$">
+there exists <IMG
+ WIDTH="15" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img231.png"
+ ALT="$\alpha$"> in an algebraic closure of the fraction
+field of <EM>R</EM> such that <!-- MATH
+ $p(\alpha) = q(\alpha + e) = 0$
+ -->
+<IMG
+ WIDTH="143" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img513.png"
+ ALT="$p(\alpha) = q(\alpha + e) = 0$">,
+while dispersion(p, q) returns <IMG
+ WIDTH="25" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img47.png"
+ ALT="$-1$"> if
+integerDistances(p, q) contains only elements strictly smaller than <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$0$">,
+its maximal nonnegative element otherwise.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+The parameter <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.png"
+ ALT="$q$"> is optional for both functions,
+its default value being <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$p$">.
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

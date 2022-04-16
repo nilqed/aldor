@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>polynomials</TITLE>
+<META NAME="description" CONTENT="polynomials">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node437.html">
+<LINK REL="previous" HREF="node435.html">
+<LINK REL="up" HREF="node433.html">
+<LINK REL="next" HREF="node437.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html7884"
+  HREF="node437.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html7878"
+  HREF="node433.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html7872"
+  HREF="node435.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html7880"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html7882"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html7885"
+  HREF="node437.html">monicNewtonSeries</A>
+<B> Up:</B> <A NAME="tex2html7879"
+  HREF="node433.html">UnivariateTaylorSeriesCategory2Poly</A>
+<B> Previous:</B> <A NAME="tex2html7873"
+  HREF="node435.html">expandFraction</A>
+ &nbsp; <B>  <A NAME="tex2html7881"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html7883"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000927300000000000000"></A>
+<A NAME="UnivariateTaylorSeriesCategory2Poly:polynomials"></A>
+<BR>
+polynomials
+</H3> <A NAME="39827"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+polynomials([<IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img526.png"
+ ALT="$s_1,\dots,s_n$">], N)
+<BR>
+polynomials([<IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img526.png"
+ ALT="$s_1,\dots,s_n$">], N, M)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">polynomials:</TD>
+<TD ALIGN="LEFT">(<A HREF="node325.html#Vector"><TT>Vector</TT></A> RXX, <A HREF="#Integer"><TT>Integer</TT></A>)
+<IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (<A HREF="node325.html#Vector"><TT>Vector</TT></A> RX, <A HREF="node230.html#DenseMatrix"><TT>DenseMatrix</TT></A> R)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">polynomials:</TD>
+<TD ALIGN="LEFT">(<A HREF="node325.html#Vector"><TT>Vector</TT></A> RXX, <A HREF="#Integer"><TT>Integer</TT></A>, <A HREF="#Integer"><TT>Integer</TT></A>)
+<IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (<A HREF="node325.html#Vector"><TT>Vector</TT></A> RX, <A HREF="node230.html#DenseMatrix"><TT>DenseMatrix</TT></A> R)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img527.png"
+ ALT="$s_i$"></TD>
+<TD ALIGN="LEFT">RXX</TD>
+<TD ALIGN="LEFT">series</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><I>N</I></TD>
+<TD ALIGN="LEFT"><A HREF="#Integer"><TT>Integer</TT></A></TD>
+<TD ALIGN="LEFT">a degree bound</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><I>M</I></TD>
+<TD ALIGN="LEFT"><A HREF="#Integer"><TT>Integer</TT></A></TD>
+<TD ALIGN="LEFT">an upper bound</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+polynomials(<!-- MATH
+ $[s_1,\dots,s_n], N, M$
+ -->
+<IMG
+ WIDTH="124" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img528.png"
+ ALT="$[s_1,\dots,s_n], N, M$">) returns <!-- MATH
+ $([p_1,\dots,p_s], A)$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img529.png"
+ ALT="$([p_1,\dots,p_s], A)$">
+such that the series <!-- MATH
+ $[s_1,\dots,s_n] A$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img530.png"
+ ALT="$[s_1,\dots,s_n] A$"> all have coefficients <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$0$">
+from <IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img531.png"
+ ALT="$x^{N+1}$"> to <IMG
+ WIDTH="28" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img532.png"
+ ALT="$x^M$">, and <!-- MATH
+ $[p_1,\dots,p_s]$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img533.png"
+ ALT="$[p_1,\dots,p_s]$"> are the truncations
+to order <IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img478.png"
+ ALT="$N$"> of <!-- MATH
+ $[s_1,\dots,s_n] A$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img530.png"
+ ALT="$[s_1,\dots,s_n] A$">. If the upper bound <IMG
+ WIDTH="22" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img410.png"
+ ALT="$M$"> is not given,
+then the series returned have coefficients <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$0$"> from <IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img531.png"
+ ALT="$x^{N+1}$"> up to
+an order that is determined heuristically.
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

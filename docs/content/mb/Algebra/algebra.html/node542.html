@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>run</TITLE>
+<META NAME="description" CONTENT="run">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node541.html">
+<LINK REL="up" HREF="node539.html">
+<LINK REL="next" HREF="node543.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html9510"
+  HREF="node543.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html9504"
+  HREF="node539.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html9500"
+  HREF="node541.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html9506"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html9508"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html9511"
+  HREF="node543.html">Parsable</A>
+<B> Up:</B> <A NAME="tex2html9505"
+  HREF="node539.html">Maple</A>
+<B> Previous:</B> <A NAME="tex2html9501"
+  HREF="node541.html">maple</A>
+ &nbsp; <B>  <A NAME="tex2html9507"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html9509"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000125300000000000000"></A>
+<A NAME="Maple:run"></A>
+<BR>
+run
+</H3> <A NAME="44481"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+run&nbsp;m
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">run:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node887.html#Partial"><TT>Partial</TT></A> <A HREF="node474.html#ExpressionTree"><TT>ExpressionTree</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT">m</TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">A maple session</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+Launches the system maple and executes all the commands that were
+sent to the input stream of the session. Returns the expression tree
+corresponding to the value returned by the last maple command executed.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Example</B><P>
+      <BLOCKQUOTE>
+This examples shows how to call M<SMALL>APLE</SMALL> to compute the integral
+of the <!-- MATH
+ ${5}^{{\rm th}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img631.png"
+ ALT="${5}^{{\rm th}}$"> Legendre polynomial:
+</BLOCKQUOTE><PRE>
+import from Integer, Maple, ExpressionTree, Partial ExpressionTree;
+
+n := 5;
+-- create a session (maple is not launched but a unique link is created)
+mapl := maple();
+
+-- send the maple code to compute the integral of the n-th legendre poly
+-- note that all the maple commands are terminated with ":"
+-- so that they do not generate any output
+-- here again, nothing happens, the commands are only stored
+input(mapl) &lt;&lt; "with(orthopoly): p := P(" &lt;&lt; n &lt;&lt; ", x): int(p, x):";
+
+-- now launch maple and recover the result of the last command ("int")
+tree := run mapl;
+
+failed? tree =&gt; error "Unable to parse Maple's output";
+retract tree;
+</PRE><BLOCKQUOTE>
+Running the above code produces the following expression tree:
+</BLOCKQUOTE><PRE>
+(+ (- (* (/ 21 16) (^ x 6)) (* (/ 35 16) (^ x 4))) (* (/ 15 16) (^ x 2)))
+</PRE>
+<P></P>
+
+  <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

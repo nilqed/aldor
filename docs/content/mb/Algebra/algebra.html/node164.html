@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>LinearCombinationFraction</TITLE>
+<META NAME="description" CONTENT="LinearCombinationFraction">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node170.html">
+<LINK REL="previous" HREF="node162.html">
+<LINK REL="up" HREF="node132.html">
+<LINK REL="next" HREF="node165.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3718"
+  HREF="node165.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3712"
+  HREF="node132.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3706"
+  HREF="node163.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3714"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html3716"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> 
+<B> Up:</B> <A NAME="tex2html3713"
+  HREF="node132.html">Commutative Algebra</A>
+<B> Previous:</B> <A NAME="tex2html3707"
+  HREF="node163.html">/</A>
+ &nbsp; <B>  <A NAME="tex2html3715"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3717"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000613000000000000000"></A><A NAME="26646"></A><A NAME="LinearCombinationFraction"></A>
+<BR>
+LinearCombinationFraction
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+LinearCombinationFraction(R, LR, Q, LQ): Category
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node99.html#IntegralDomain"><TT>IntegralDomain</TT></A></TD>
+<TD ALIGN="LEFT">an integral domain</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>LR</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node666.html#LinearCombinationType"><TT>LinearCombinationType</TT></A> R</TD>
+<TD ALIGN="LEFT">a type over R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>Q</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node158.html#FractionCategory"><TT>FractionCategory</TT></A> R</TD>
+<TD ALIGN="LEFT">a fraction domain of R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>LQ</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node666.html#LinearCombinationType"><TT>LinearCombinationType</TT></A> Q</TD>
+<TD ALIGN="LEFT">a type over Q</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+LinearCombinationFraction(R, LR, Q, LQ) is a category for domains providing conversions
+between types integral and rational coefficients.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="#LinearCombinationFraction:_tex2html_wrap_inline60400_"><TT><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$*$"></TT></A>:</TD>
+<TD ALIGN="LEFT">(Q, LR) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> LQ</TD>
+<TD ALIGN="LEFT">Product of a fraction by an integral element</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node166.html#LinearCombinationFraction:makeIntegral"><TT>makeIntegral</TT></A>:</TD>
+<TD ALIGN="LEFT">LQ <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (R, LR)</TD>
+<TD ALIGN="LEFT">Conversion to an integral element</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node168.html#LinearCombinationFraction:makeRational"><TT>makeRational</TT></A>:</TD>
+<TD ALIGN="LEFT">LR <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> LQ</TD>
+<TD ALIGN="LEFT">Conversion to a rational element</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if Q has <A HREF="node155.html#FractionByCategory0"><TT>FractionByCategory0</TT></A> R</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node167.html#LinearCombinationFraction:makeIntegralBy"><TT>makeIntegralBy</TT></A>:</TD>
+<TD ALIGN="LEFT">LQ <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (<A HREF="#Integer"><TT>Integer</TT></A>, LR)</TD>
+<TD ALIGN="LEFT">Conversion to an integral element</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if Q has <A HREF="node162.html#FractionFieldCategory0"><TT>FractionFieldCategory0</TT></A> R</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node169.html#LinearCombinationFraction:normalize"><TT>normalize</TT></A>:</TD>
+<TD ALIGN="LEFT">LR <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (R, LQ)</TD>
+<TD ALIGN="LEFT">Conversion to a monic rational element</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3720"
+  HREF="node165.html"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$*$"></A>
+<LI><A NAME="tex2html3721"
+  HREF="node166.html">makeIntegral</A>
+<LI><A NAME="tex2html3722"
+  HREF="node167.html">makeIntegralBy</A>
+<LI><A NAME="tex2html3723"
+  HREF="node168.html">makeRational</A>
+<LI><A NAME="tex2html3724"
+  HREF="node169.html">normalize</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3718"
+  HREF="node165.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3712"
+  HREF="node132.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3706"
+  HREF="node163.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3714"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html3716"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> 
+<B> Up:</B> <A NAME="tex2html3713"
+  HREF="node132.html">Commutative Algebra</A>
+<B> Previous:</B> <A NAME="tex2html3707"
+  HREF="node163.html">/</A>
+ &nbsp; <B>  <A NAME="tex2html3715"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3717"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

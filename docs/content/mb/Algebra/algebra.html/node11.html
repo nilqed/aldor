@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Linear algebra</TITLE>
+<META NAME="description" CONTENT="Linear algebra">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node12.html">
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node12.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1371"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1365"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1359"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1367"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1369"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1372"
+  HREF="node12.html">Univariate polynomials and series</A>
+<B> Up:</B> <A NAME="tex2html1366"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html1360"
+  HREF="node10.html">Input/Output</A>
+ &nbsp; <B>  <A NAME="tex2html1368"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1370"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00035000000000000000">
+Linear algebra</A>
+</H2>
+The basic types to use for doing linear algebra
+are <A HREF="node325.html#Vector"><TT>Vector</TT></A> and <A HREF="node230.html#DenseMatrix"><TT>DenseMatrix</TT></A>.
+The basic linear algebra computations are provided
+by the type <A HREF="node234.html#LinearAlgebra"><TT>LinearAlgebra</TT></A>. Although
+<TT>Algebra</TT>  provides many specialized types for
+performing various sorts of triangulations and solving
+linear systems, <A HREF="node234.html#LinearAlgebra"><TT>LinearAlgebra</TT></A> knows about all of
+them and contains procedures that decide which algorithm is
+best suited for your particular input. So do not call
+directly the more specialized packages unless you have
+a particular reason to use a specific algorithm rather
+than let <TT>Algebra</TT>  decide for you.
+
+<P>
+The type of the entries of vectors and matrices does
+not need to be a <A HREF="node119.html#Ring"><TT>Ring</TT></A>, it can be an
+<A HREF="node606.html#AdditiveType"><TT>AdditiveType</TT></A> or <A HREF="node611.html#ArithmeticType"><TT>ArithmeticType</TT></A> respectively.
+This allows types that do not have a full equality such
+as <A HREF="node691.html#SingleFloat"><TT>SingleFloat</TT></A> or <A HREF="node333.html#DenseUnivariateTaylorSeries"><TT>DenseUnivariateTaylorSeries</TT></A>
+to be entries of vectors and matrices. However,
+<A HREF="node234.html#LinearAlgebra"><TT>LinearAlgebra</TT></A> requires the entries to be from
+a <A HREF="node29.html#CommutativeRing"><TT>CommutativeRing</TT></A> so its functionalities are
+not available for matrices of series or floating point numbers.
+
+<P>
+<TT>Algebra</TT>  contains many fraction-free algorithms that
+allow you to perform
+some computations, such as matrix inverses or solving systems,
+over an <A HREF="node99.html#IntegralDomain"><TT>IntegralDomain</TT></A> rather than over a <A HREF="node52.html#Field"><TT>Field</TT></A>
+as is usually done.
+Those fraction-free
+algorithms are significantly faster over integral domains than
+over their fraction fields, so consider using domains
+such as <IMG
+ WIDTH="16" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="${\mathbbm Z}$"> or <IMG
+ WIDTH="35" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$R[x]$"> as matrix entries rather than
+fractions. See for example the description of the
+<A HREF="node239.html#LinearAlgebra:inverse"><TT>inverse</TT></A> function to see the
+effect of working over domains rather than fields
+on the signatures of the functions.
+
+<P>
+To write generic linear algebra code that does not depend
+on the implementation of matrices, use a type parameter
+of category <A HREF="node276.html#MatrixCategory"><TT>MatrixCategory</TT></A>. For example, a normal
+form package could look like:
+<PRE>
+NormalForms(R:IntegralDomain, M:MatrixCategory R): with {
+        frobenius: M -&gt; M;     -- Returns the Frobenius form of its argument
+        ...
+} == add { ... }
+</PRE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1371"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1365"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1359"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1367"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1369"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1372"
+  HREF="node12.html">Univariate polynomials and series</A>
+<B> Up:</B> <A NAME="tex2html1366"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html1360"
+  HREF="node10.html">Input/Output</A>
+ &nbsp; <B>  <A NAME="tex2html1368"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1370"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

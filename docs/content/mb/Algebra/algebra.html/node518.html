@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>aldor,axiom,C,fortran,infix,lisp,maple,tex</TITLE>
+<META NAME="description" CONTENT="aldor,axiom,C,fortran,infix,lisp,maple,tex">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node519.html">
+<LINK REL="previous" HREF="node517.html">
+<LINK REL="up" HREF="node517.html">
+<LINK REL="next" HREF="node519.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html9137"
+  HREF="node519.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html9131"
+  HREF="node517.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html9125"
+  HREF="node517.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html9133"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html9135"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html9138"
+  HREF="node519.html">arity</A>
+<B> Up:</B> <A NAME="tex2html9132"
+  HREF="node517.html">ExpressionTreeOperator</A>
+<B> Previous:</B> <A NAME="tex2html9126"
+  HREF="node517.html">ExpressionTreeOperator</A>
+ &nbsp; <B>  <A NAME="tex2html9134"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html9136"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION0001121100000000000000"></A>
+<A NAME="ExpressionTreeOperator:aldor_axiom_C_fortran_infix_lisp_maple_tex"></A>
+<BR>
+aldor,axiom,C,fortran,infix,lisp,maple,tex
+</H3> <A NAME="43639"></A>
+<A NAME="ExpressionTreeOperator:aldor"></A> <A NAME="43642"></A>
+<A NAME="ExpressionTreeOperator:axiom"></A> <A NAME="43645"></A>
+<A NAME="ExpressionTreeOperator:C"></A> <A NAME="43648"></A>
+<A NAME="ExpressionTreeOperator:fortran"></A> <A NAME="43651"></A>
+<A NAME="ExpressionTreeOperator:infix"></A> <A NAME="43654"></A>
+<A NAME="ExpressionTreeOperator:lisp"></A> <A NAME="43657"></A>
+<A NAME="ExpressionTreeOperator:maple"></A> <A NAME="43660"></A>
+<A NAME="ExpressionTreeOperator:tex"></A> <A NAME="43663"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+<EM>format</EM>(p, [<IMG
+ WIDTH="67" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img610.png"
+ ALT="$t_1,\dots,t_n$">])
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">aldor,axiom,C,fortran,infix,lisp,maple,tex:</TD>
+<TD ALIGN="LEFT">(<A HREF="node741.html#TextWriter"><TT>TextWriter</TT></A>, <A HREF="node799.html#List"><TT>List</TT></A> <A HREF="node474.html#ExpressionTree"><TT>ExpressionTree</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node741.html#TextWriter"><TT>TextWriter</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>p</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node741.html#TextWriter"><TT>TextWriter</TT></A></TD>
+<TD ALIGN="LEFT">The port to write to</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM><IMG
+ WIDTH="16" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img611.png"
+ ALT="$t_i$"></EM></TD>
+<TD ALIGN="LEFT"><A HREF="node474.html#ExpressionTree"><TT>ExpressionTree</TT></A></TD>
+<TD ALIGN="LEFT">The arguments of the operator</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+Writes to <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$p$"> the expression corresponding to this operator applied to
+the arguments <!-- MATH
+ $(t_1,\dots,t_n)$
+ -->
+<IMG
+ WIDTH="80" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img619.png"
+ ALT="$(t_1,\dots,t_n)$"> in the requested format.
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,271 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>ModulopGaussElimination</TITLE>
+<META NAME="description" CONTENT="ModulopGaussElimination">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node314.html">
+<LINK REL="previous" HREF="node297.html">
+<LINK REL="up" HREF="node226.html">
+<LINK REL="next" HREF="node302.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html5833"
+  HREF="node302.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5827"
+  HREF="node226.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5821"
+  HREF="node300.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5829"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html5831"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html5834"
+  HREF="node302.html">deter</A>
+<B> Up:</B> <A NAME="tex2html5828"
+  HREF="node226.html">Linear Algebra</A>
+<B> Previous:</B> <A NAME="tex2html5822"
+  HREF="node300.html">makeRowIntegralBy</A>
+ &nbsp; <B>  <A NAME="tex2html5830"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html5832"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000811000000000000000"></A><A NAME="33257"></A><A NAME="ModulopGaussElimination"></A>
+<BR>
+ModulopGaussElimination
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from ModulopGaussElimination
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node302.html#ModulopGaussElimination:deter"><TT>deter</TT></A>:</TD>
+<TD ALIGN="LEFT">(M, Z, V, Z, Z, Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Z</TD>
+<TD ALIGN="LEFT">Determinant</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node303.html#ModulopGaussElimination:determinant_"><TT>determinant!</TT></A>:</TD>
+<TD ALIGN="LEFT">(M, Z, Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Z</TD>
+<TD ALIGN="LEFT">Determinant</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node304.html#ModulopGaussElimination:extendedRowEchelon_"><TT>extendedRowEchelon!</TT></A>:</TD>
+<TD ALIGN="LEFT">(M, Z, Z, Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (V, Z, V, M)</TD>
+<TD ALIGN="LEFT">REF of a matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node305.html#ModulopGaussElimination:firstDependence_"><TT>firstDependence!</TT></A>:</TD>
+<TD ALIGN="LEFT">(<A HREF="node881.html#Generator"><TT>Generator</TT></A> V, Z, Z, M, M) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Z</TD>
+<TD ALIGN="LEFT">First dependence relation</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node306.html#ModulopGaussElimination:inverse_"><TT>inverse!</TT></A>:</TD>
+<TD ALIGN="LEFT">(M, Z, Z, M, V) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> ()</TD>
+<TD ALIGN="LEFT">Inverse</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#ModulopGaussElimination:kernel_"><TT>kernel!</TT></A>:</TD>
+<TD ALIGN="LEFT">(M, Z, Z, M) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Z</TD>
+<TD ALIGN="LEFT">Kernel</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node308.html#ModulopGaussElimination:maxInvertibleSubmatrix_"><TT>maxInvertibleSubmatrix!</TT></A>:</TD>
+<TD ALIGN="LEFT">(M, Z, Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (V, V)</TD>
+<TD ALIGN="LEFT">Maximal minor</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node309.html#ModulopGaussElimination:particularSolution_"><TT>particularSolution!</TT></A>:</TD>
+<TD ALIGN="LEFT">(M, Z, Z, M, Z, Z, M, V) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> ()</TD>
+<TD ALIGN="LEFT">A solution</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node310.html#ModulopGaussElimination:rank_"><TT>rank!</TT></A>:</TD>
+<TD ALIGN="LEFT">(M, Z, Z, Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Z</TD>
+<TD ALIGN="LEFT">Rank</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node311.html#ModulopGaussElimination:rowEchelon_"><TT>rowEchelon!</TT></A>:</TD>
+<TD ALIGN="LEFT">(M, Z, Z, Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (V, Z, V)</TD>
+<TD ALIGN="LEFT">REF of a matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node312.html#ModulopGaussElimination:solve_"><TT>solve!</TT></A>:</TD>
+<TD ALIGN="LEFT">(M, Z, Z, M, Z, Z, M, V, M) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Z</TD>
+<TD ALIGN="LEFT">All solutions</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node313.html#ModulopGaussElimination:span_"><TT>span!</TT></A>:</TD>
+<TD ALIGN="LEFT">(M, Z, Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> V</TD>
+<TD ALIGN="LEFT">Span</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">V</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node818.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">M</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node818.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> <A HREF="node818.html#PrimitiveArray"><TT>PrimitiveArray</TT></A> <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+This domain implements ordinary Gaussian elimination on dense matrices
+over the integers modulo a machine prime.
+
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5835"
+  HREF="node302.html">deter</A>
+<LI><A NAME="tex2html5836"
+  HREF="node303.html">determinant!</A>
+<LI><A NAME="tex2html5837"
+  HREF="node304.html">extendedRowEchelon!</A>
+<LI><A NAME="tex2html5838"
+  HREF="node305.html">firstDependence!</A>
+<LI><A NAME="tex2html5839"
+  HREF="node306.html">inverse!</A>
+<LI><A NAME="tex2html5840"
+  HREF="node307.html">kernel</A>
+<LI><A NAME="tex2html5841"
+  HREF="node308.html">maxInvertibleSubmatrix!</A>
+<LI><A NAME="tex2html5842"
+  HREF="node309.html">particularSolution!</A>
+<LI><A NAME="tex2html5843"
+  HREF="node310.html">rank!</A>
+<LI><A NAME="tex2html5844"
+  HREF="node311.html">rowEchelon!</A>
+<LI><A NAME="tex2html5845"
+  HREF="node312.html">solve!</A>
+<LI><A NAME="tex2html5846"
+  HREF="node313.html">span!</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html5833"
+  HREF="node302.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5827"
+  HREF="node226.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5821"
+  HREF="node300.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5829"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html5831"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html5834"
+  HREF="node302.html">deter</A>
+<B> Up:</B> <A NAME="tex2html5828"
+  HREF="node226.html">Linear Algebra</A>
+<B> Previous:</B> <A NAME="tex2html5822"
+  HREF="node300.html">makeRowIntegralBy</A>
+ &nbsp; <B>  <A NAME="tex2html5830"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html5832"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

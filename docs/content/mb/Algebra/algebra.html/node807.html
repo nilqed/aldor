@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>find</TITLE>
+<META NAME="description" CONTENT="find">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node808.html">
+<LINK REL="previous" HREF="node806.html">
+<LINK REL="up" HREF="node802.html">
+<LINK REL="next" HREF="node808.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html13582"
+  HREF="node808.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html13576"
+  HREF="node802.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html13570"
+  HREF="node806.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html13578"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html13580"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html13583"
+  HREF="node808.html">first</A>
+<B> Up:</B> <A NAME="tex2html13577"
+  HREF="node802.html">ListType</A>
+<B> Previous:</B> <A NAME="tex2html13571"
+  HREF="node806.html">delete!</A>
+ &nbsp; <B>  <A NAME="tex2html13579"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html13581"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION0001721500000000000000"></A>
+<A NAME="ListType:find"></A>
+<BR>
+find
+</H3> <A NAME="55214"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+find(t, l)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">find:</TD>
+<TD ALIGN="LEFT">(T, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (%, <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A>)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>t</EM></TD>
+<TD ALIGN="LEFT">T</TD>
+<TD ALIGN="LEFT">the value to search for</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>l</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">a list</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+Returns (b, i) such that:
+</BLOCKQUOTE>
+<UL>
+<LI>if b is not <A HREF="node780.html#FiniteLinearStructureType:empty"><TT>empty</TT></A>,
+then <IMG
+ WIDTH="46" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img781.png"
+ ALT="$l.i = t$"> is the first occurence
+of t in l, and b is the sublist of l starting at <IMG
+ WIDTH="19" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img782.png"
+ ALT="$l.i$">,
+</LI>
+<LI>if b is <A HREF="node780.html#FiniteLinearStructureType:empty"><TT>empty</TT></A>,
+then i is undefined and t does not occur in l.
+</LI>
+</UL><BLOCKQUOTE>
+The list a does not need to be sorted, and the complexity is expected
+to be linear in its size.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+No copy of l is made:
+if b is not <A HREF="node780.html#FiniteLinearStructureType:empty"><TT>empty</TT></A>,
+then its data is shared with l.
+This function allows all the occurences of t to be found
+successively in a list, as in the example below.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Example</B><P>
+      <BLOCKQUOTE>
+If <TT>l1</TT> is the list of <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A> [1,6,2,5,3,7,2,4],
+then <TT>(l2, n) := find(2, l1)</TT> sets <TT>l2</TT> to [2,5,3,7,2,4]
+and <TT>n</TT> to 3, the further call <TT>(l3, n) := find(2, rest l2)</TT>
+sets <TT>l3</TT> to [2,4] and <TT>n</TT> to 4, and the further call
+<TT>(l4, n) := find(2, rest l3)</TT> sets <TT>l4</TT> to
+<A HREF="node780.html#FiniteLinearStructureType:empty"><TT>empty</TT></A>.
+</BLOCKQUOTE>
+<P></P>
+
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html13582"
+  HREF="node808.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html13576"
+  HREF="node802.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html13570"
+  HREF="node806.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html13578"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html13580"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html13583"
+  HREF="node808.html">first</A>
+<B> Up:</B> <A NAME="tex2html13577"
+  HREF="node802.html">ListType</A>
+<B> Previous:</B> <A NAME="tex2html13571"
+  HREF="node806.html">delete!</A>
+ &nbsp; <B>  <A NAME="tex2html13579"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html13581"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

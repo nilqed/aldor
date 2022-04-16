@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>norm,trace</TITLE>
+<META NAME="description" CONTENT="norm,trace">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node194.html">
+<LINK REL="up" HREF="node193.html">
+<LINK REL="next" HREF="node196.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html4164"
+  HREF="node196.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4158"
+  HREF="node193.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4154"
+  HREF="node194.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4160"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html4162"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html4165"
+  HREF="node196.html">Finite Fields</A>
+<B> Up:</B> <A NAME="tex2html4159"
+  HREF="node193.html">UnivariatePolynomialQuotientSqfr</A>
+<B> Previous:</B> <A NAME="tex2html4155"
+  HREF="node194.html">newtonSeries</A>
+ &nbsp; <B>  <A NAME="tex2html4161"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html4163"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000622200000000000000"></A>
+<A NAME="UnivariatePolynomialQuotientSqfr:norm_trace"></A>
+<BR>
+norm,trace
+</H3> <A NAME="27968"></A>
+<A NAME="UnivariatePolynomialQuotientSqfr:norm"></A> <A NAME="27971"></A>
+<A NAME="UnivariatePolynomialQuotientSqfr:trace"></A> <A NAME="27974"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+norm&nbsp;q
+<BR>
+trace&nbsp;q
+<BR>
+norm&nbsp;P
+<BR>
+trace&nbsp;P
+<BR>
+norm(P)(p)
+<BR>
+trace(P)(p)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">norm,trace:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R</TD>
+</TR>
+<TR><TD ALIGN="LEFT">norm,trace:</TD>
+<TD ALIGN="LEFT">(P:<A HREF="node403.html#UnivariatePolynomialCategory"><TT>UnivariatePolynomialCategory</TT></A> %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> P <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Rx</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>q</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">An element of the algebraic extension</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>P</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node403.html#UnivariatePolynomialCategory"><TT>UnivariatePolynomialCategory</TT></A> %</TD>
+<TD ALIGN="LEFT">A polynomial type</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>p</EM></TD>
+<TD ALIGN="LEFT">P</TD>
+<TD ALIGN="LEFT">A polynomial</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+norm(<IMG
+ WIDTH="35" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img233.png"
+ ALT="$q(\alpha)$">) and trace(<IMG
+ WIDTH="35" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img233.png"
+ ALT="$q(\alpha)$">) return respectively
+the product and sum of the <IMG
+ WIDTH="35" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img233.png"
+ ALT="$q(\alpha)$"> over all the roots
+of the polynomial defining the extension,
+while norm(P)(<IMG
+ WIDTH="51" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img234.png"
+ ALT="$p(\alpha,x)$">) and trace(P)(<IMG
+ WIDTH="51" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img234.png"
+ ALT="$p(\alpha,x)$">) return respectively
+the product and sum of the <IMG
+ WIDTH="51" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img234.png"
+ ALT="$p(\alpha,x)$"> over all the roots
+of the polynomial defining the extension.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

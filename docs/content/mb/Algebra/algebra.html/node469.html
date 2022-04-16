@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>ResultantOfBivariatePolynomialsOverSmallPrimeField</TITLE>
+<META NAME="description" CONTENT="ResultantOfBivariatePolynomialsOverSmallPrimeField">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node470.html">
+<LINK REL="previous" HREF="node468.html">
+<LINK REL="up" HREF="node443.html">
+<LINK REL="next" HREF="node470.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html8370"
+  HREF="node470.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html8364"
+  HREF="node443.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html8358"
+  HREF="node468.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html8366"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html8368"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html8371"
+  HREF="node470.html">SparseIntegerMultivariatePolynomial</A>
+<B> Up:</B> <A NAME="tex2html8365"
+  HREF="node443.html">Multivariate Polynomials</A>
+<B> Previous:</B> <A NAME="tex2html8359"
+  HREF="node468.html">RecursiveMultivariatePolynomialCategory0</A>
+ &nbsp; <B>  <A NAME="tex2html8367"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html8369"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001023000000000000000"></A><A NAME="41687"></A><A NAME="ResultantOfBivariatePolynomialsOverSmallPrimeField"></A>
+<BR>
+ResultantOfBivariatePolynomialsOverSmallPrimeField
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from ResultantOfBivariatePolynomialsOverSmallPrimeField&nbsp;(Kp, Up, Vp)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>Kp</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node221.html#SmallPrimeFieldCategory"><TT>SmallPrimeFieldCategory</TT></A></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>Up</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node403.html#UnivariatePolynomialCategory"><TT>UnivariatePolynomialCategory</TT></A>  Kp</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>Vp</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node403.html#UnivariatePolynomialCategory"><TT>UnivariatePolynomialCategory</TT></A> Up</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+ResultantOfBivariatePolynomialsOverSmallPrimeField&nbsp;(Kp, Up, Vp) provides resultant computations 
+       for two bivariate polynomials over a small prime field.
+
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="#ResultantOfBivariatePolynomialsOverSmallPrimeField:evaluationResultant"><TT>evaluationResultant</TT></A>:</TD>
+<TD ALIGN="LEFT">(Vp, Vp, Z)  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Up</TD>
+<TD ALIGN="LEFT">resultant computed by an evaluation</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">and interpolation scheme.</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">Arg 3 is a degree bound.</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#ResultantOfBivariatePolynomialsOverSmallPrimeField:evaluationReduction"><TT>evaluationReduction</TT></A>:</TD>
+<TD ALIGN="LEFT">(Vp, Kp)  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Up</TD>
+<TD ALIGN="LEFT">evaluation at a point</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#ResultantOfBivariatePolynomialsOverSmallPrimeField:interpolation"><TT>interpolation</TT></A>:</TD>
+<TD ALIGN="LEFT">(A Kp, A Kp) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Up</TD>
+<TD ALIGN="LEFT">Lagrange interpolant where the arrays give</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">points and values resp.</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#ResultantOfBivariatePolynomialsOverSmallPrimeField:integerImage"><TT>integerImage</TT></A>:</TD>
+<TD ALIGN="LEFT">Up  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> DUP
+                                          I</TD>
+<TD ALIGN="LEFT">conversion.</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">DUP</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node332.html#DenseUnivariatePolynomial"><TT>DenseUnivariatePolynomial</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">I</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="#Integer"><TT>Integer</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">A</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node751.html#Array"><TT>Array</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+  <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html8370"
+  HREF="node470.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html8364"
+  HREF="node443.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html8358"
+  HREF="node468.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html8366"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html8368"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html8371"
+  HREF="node470.html">SparseIntegerMultivariatePolynomial</A>
+<B> Up:</B> <A NAME="tex2html8365"
+  HREF="node443.html">Multivariate Polynomials</A>
+<B> Previous:</B> <A NAME="tex2html8359"
+  HREF="node468.html">RecursiveMultivariatePolynomialCategory0</A>
+ &nbsp; <B>  <A NAME="tex2html8367"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html8369"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

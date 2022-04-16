@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Evaluator</TITLE>
+<META NAME="description" CONTENT="Evaluator">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node535.html">
+<LINK REL="previous" HREF="node533.html">
+<LINK REL="up" HREF="node533.html">
+<LINK REL="next" HREF="node535.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html9398"
+  HREF="node535.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html9392"
+  HREF="node533.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html9386"
+  HREF="node533.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html9394"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html9396"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html9399"
+  HREF="node535.html">InfixExpressionParser</A>
+<B> Up:</B> <A NAME="tex2html9393"
+  HREF="node533.html">Shells</A>
+<B> Previous:</B> <A NAME="tex2html9387"
+  HREF="node533.html">Shells</A>
+ &nbsp; <B>  <A NAME="tex2html9395"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html9397"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000121000000000000000"></A><A NAME="44205"></A><A NAME="Evaluator"></A>
+<BR>
+Evaluator
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+Evaluator&nbsp;R: Category
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT">R</TD>
+<TD ALIGN="LEFT"><A HREF="node554.html#PartialRing"><TT>PartialRing</TT></A></TD>
+<TD ALIGN="LEFT">Resulting type of the evaluation</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+Evaluator&nbsp;R is a category of interpreters, <I>i.e.</I>&nbsp;types which convert
+expression trees into elements of R whenever possible.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="#Evaluator:eval_"><TT>eval!</TT></A>:</TD>
+<TD ALIGN="LEFT">(TEXT, TREE, SYM R) <!-- MATH
+ $\to \overline R$
+ -->
+<IMG
+ WIDTH="37" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img628.png"
+ ALT="$\to \overline R$"></TD>
+<TD ALIGN="LEFT">Interpret an arbitrary tree</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#Evaluator:evalLeaf_"><TT>evalLeaf!</TT></A>:</TD>
+<TD ALIGN="LEFT">(LEAF, SYM R) <!-- MATH
+ $\to \overline R$
+ -->
+<IMG
+ WIDTH="37" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img628.png"
+ ALT="$\to \overline R$"></TD>
+<TD ALIGN="LEFT">Interpret a leaf</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#Evaluator:evalOp_"><TT>evalOp!</TT></A>:</TD>
+<TD ALIGN="LEFT">(TEXT, TREE, SYM R) <!-- MATH
+ $\to \overline R$
+ -->
+<IMG
+ WIDTH="37" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img628.png"
+ ALT="$\to \overline R$"></TD>
+<TD ALIGN="LEFT">Interpret <IMG
+ WIDTH="64" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img629.png"
+ ALT="$op(args)$"></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#Evaluator:evalPrefix_"><TT>evalPrefix!</TT></A>:</TD>
+<TD ALIGN="LEFT">(<A HREF="node845.html#String"><TT>String</TT></A>, Z, <A HREF="node799.html#List"><TT>List</TT></A> R, SYM R) <!-- MATH
+ $\to \overline R$
+ -->
+<IMG
+ WIDTH="37" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img628.png"
+ ALT="$\to \overline R$"></TD>
+<TD ALIGN="LEFT">Interpret <IMG
+ WIDTH="64" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img629.png"
+ ALT="$op(args)$">, <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img612.png"
+ ALT="$op$"> is prefix</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">LEAF</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node496.html#ExpressionTreeLeaf"><TT>ExpressionTreeLeaf</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img630.png"
+ ALT="$\overline R$"></TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node887.html#Partial"><TT>Partial</TT></A> R</TD>
+</TR>
+<TR><TD ALIGN="LEFT">SYM</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node560.html#SymbolTable"><TT>SymbolTable</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">TEXT</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node741.html#TextWriter"><TT>TextWriter</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">TREE</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node474.html#ExpressionTree"><TT>ExpressionTree</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+  <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html9398"
+  HREF="node535.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html9392"
+  HREF="node533.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html9386"
+  HREF="node533.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html9394"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html9396"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html9399"
+  HREF="node535.html">InfixExpressionParser</A>
+<B> Up:</B> <A NAME="tex2html9393"
+  HREF="node533.html">Shells</A>
+<B> Previous:</B> <A NAME="tex2html9387"
+  HREF="node533.html">Shells</A>
+ &nbsp; <B>  <A NAME="tex2html9395"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html9397"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>particularSolution</TITLE>
+<META NAME="description" CONTENT="particularSolution">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node258.html">
+<LINK REL="previous" HREF="node256.html">
+<LINK REL="up" HREF="node249.html">
+<LINK REL="next" HREF="node258.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html5190"
+  HREF="node258.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5184"
+  HREF="node249.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5178"
+  HREF="node256.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5186"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html5188"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html5191"
+  HREF="node258.html">rank</A>
+<B> Up:</B> <A NAME="tex2html5185"
+  HREF="node249.html">LinearAlgebraRing</A>
+<B> Previous:</B> <A NAME="tex2html5179"
+  HREF="node256.html">maxInvertibleSubmatrix</A>
+ &nbsp; <B>  <A NAME="tex2html5187"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html5189"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00087800000000000000"></A>
+<A NAME="LinearAlgebraRing:particularSolution"></A>
+<BR>
+particularSolution
+</H3> <A NAME="30694"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+particularSolution(M)(a, b)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">particularSolution:</TD>
+<TD ALIGN="LEFT">(M:<A HREF="node276.html#MatrixCategory"><TT>MatrixCategory</TT></A> %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (M, M) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (M, <A HREF="node325.html#Vector"><TT>Vector</TT></A> R)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>M</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node276.html#MatrixCategory"><TT>MatrixCategory</TT></A> %</TD>
+<TD ALIGN="LEFT">A matrix type</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>a, b</EM></TD>
+<TD ALIGN="LEFT">M</TD>
+<TD ALIGN="LEFT">Matrices</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+Returns <!-- MATH
+ $(m, [d_1,\dots,d_n])$
+ -->
+<IMG
+ WIDTH="114" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img295.png"
+ ALT="$(m, [d_1,\dots,d_n])$"> such that
+</BLOCKQUOTE>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+a m = b \pmatrix{
+d_1 &     &        & \cr
+    & d_2 &        & \cr
+    &     & \ddots & \cr
+    &     &        & d_n \cr
+}\,.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="207" HEIGHT="88" BORDER="0"
+ SRC="img296.png"
+ ALT="\begin{displaymath}
+a m = b \pmatrix{
+d_1 &amp; &amp; &amp; \cr
+&amp; d_2 &amp; &amp; \cr
+&amp; &amp; \ddots &amp; \cr
+&amp; &amp; &amp; d_n \cr
+}\,.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+For each <IMG
+ WIDTH="10" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img258.png"
+ ALT="$i$">, <IMG
+ WIDTH="47" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img297.png"
+ ALT="$d_i \ne 0$"> if and only if the system
+<!-- MATH
+ $a x = {i}^{{\rm th}}$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img298.png"
+ ALT="$a x = {i}^{{\rm th}}$"> column of <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img65.png"
+ ALT="$b$"> has a solution, which is then <IMG
+ WIDTH="30" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img299.png"
+ ALT="$d_i^{-1}$">
+times the <!-- MATH
+ ${i}^{{\rm th}}$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img300.png"
+ ALT="${i}^{{\rm th}}$"> column of <IMG
+ WIDTH="18" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img97.png"
+ ALT="$m$">.
+When <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$"> is a <A HREF="node52.html#Field"><TT>Field</TT></A>, then <!-- MATH
+ $d_i \in \{0,1\}$
+ -->
+<IMG
+ WIDTH="76" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img287.png"
+ ALT="$d_i \in \{0,1\}$"> for <IMG
+ WIDTH="70" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img288.png"
+ ALT="$1 \le i \le n$">,
+so <IMG
+ WIDTH="18" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img97.png"
+ ALT="$m$"> is a solution of <IMG
+ WIDTH="50" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img301.png"
+ ALT="$a x = b$"> when <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$"> is a <A HREF="node52.html#Field"><TT>Field</TT></A> and all
+the <IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img302.png"
+ ALT="$d_i$">'s are nonzero.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>See Also</B><P>
+    <BLOCKQUOTE>
+<A HREF="node260.html#LinearAlgebraRing:solve"><TT>solve</TT></A>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

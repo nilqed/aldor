@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>KeyEntry</TITLE>
+<META NAME="description" CONTENT="KeyEntry">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node791.html">
+<LINK REL="previous" HREF="node784.html">
+<LINK REL="up" HREF="node750.html">
+<LINK REL="next" HREF="node788.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html13286"
+  HREF="node788.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html13280"
+  HREF="node750.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html13274"
+  HREF="node786.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html13282"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html13284"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html13287"
+  HREF="node788.html">[]</A>
+<B> Up:</B> <A NAME="tex2html13281"
+  HREF="node750.html">Data Structures</A>
+<B> Previous:</B> <A NAME="tex2html13275"
+  HREF="node786.html">remove!</A>
+ &nbsp; <B>  <A NAME="tex2html13283"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html13285"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001715000000000000000"></A><A NAME="54408"></A><A NAME="KeyEntry"></A>
+<BR>
+KeyEntry
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from KeyEntry(K, V)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>K</EM></TD>
+<TD ALIGN="LEFT"><TT>Type</TT></TD>
+<TD ALIGN="LEFT">the type of the keys</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>V</EM></TD>
+<TD ALIGN="LEFT"><TT>Type</TT></TD>
+<TD ALIGN="LEFT">the type of the entries</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+KeyEntry(K, V) provides pairs consisting of a key from <EM>K</EM>,
+and a entry from <EM>V</EM>. When <EM>K</EM> is a <A HREF="node681.html#PrimitiveType"><TT>PrimitiveType</TT></A>,
+then two pairs are equal if they share the same key.
+When <EM>K</EM> is a <A HREF="node694.html#TotallyOrderedType"><TT>TotallyOrderedType</TT></A>, then
+the pair <EM>x</EM> is greater than the pair <EM>y</EM> if
+<!-- MATH
+ $key(x) > key(y)$
+ -->
+<IMG
+ WIDTH="117" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img767.png"
+ ALT="$key(x) &gt; key(y)$">. Hence key-entry pairs are useful for building
+tables of entries where each slot is given by a unique key.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node879.html#CopyableType"><TT>CopyableType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node788.html#KeyEntry:__"><TT>[]</TT></A>:</TD>
+<TD ALIGN="LEFT">(K, V) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">construction of a key-entry pair</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node789.html#KeyEntry:entry"><TT>entry</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> V</TD>
+<TD ALIGN="LEFT">get the entry</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node789.html#KeyEntry:explode"><TT>explode</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (K, V)</TD>
+<TD ALIGN="LEFT">get the key and the entry</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node789.html#KeyEntry:key"><TT>key</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> K</TD>
+<TD ALIGN="LEFT">get the key</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node774.html#DataStructureType:free_"><TT>free!</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> ()</TD>
+<TD ALIGN="LEFT">memory disposal</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node790.html#KeyEntry:setEntry_"><TT>setEntry!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, V) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> V</TD>
+<TD ALIGN="LEFT">change the entry</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node790.html#KeyEntry:setKey_"><TT>setKey!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, K) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> K</TD>
+<TD ALIGN="LEFT">change the key</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <EM>K</EM> has <A HREF="node681.html#PrimitiveType"><TT>PrimitiveType</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node681.html#PrimitiveType"><TT>PrimitiveType</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if <EM>K</EM> has <A HREF="node694.html#TotallyOrderedType"><TT>TotallyOrderedType</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node694.html#TotallyOrderedType"><TT>TotallyOrderedType</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html13288"
+  HREF="node788.html">[]</A>
+<LI><A NAME="tex2html13289"
+  HREF="node789.html">entry,explode,key</A>
+<LI><A NAME="tex2html13290"
+  HREF="node790.html">setEntry!,setKey!</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html13286"
+  HREF="node788.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html13280"
+  HREF="node750.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html13274"
+  HREF="node786.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html13282"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html13284"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html13287"
+  HREF="node788.html">[]</A>
+<B> Up:</B> <A NAME="tex2html13281"
+  HREF="node750.html">Data Structures</A>
+<B> Previous:</B> <A NAME="tex2html13275"
+  HREF="node786.html">remove!</A>
+ &nbsp; <B>  <A NAME="tex2html13283"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html13285"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>SimpleAlgebraicExtension</TITLE>
+<META NAME="description" CONTENT="SimpleAlgebraicExtension">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node182.html">
+<LINK REL="previous" HREF="node180.html">
+<LINK REL="up" HREF="node132.html">
+<LINK REL="next" HREF="node182.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html3965"
+  HREF="node182.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3959"
+  HREF="node132.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3953"
+  HREF="node180.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3961"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html3963"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html3966"
+  HREF="node182.html">SimpleAlgebraicExtensionCategory</A>
+<B> Up:</B> <A NAME="tex2html3960"
+  HREF="node132.html">Commutative Algebra</A>
+<B> Previous:</B> <A NAME="tex2html3954"
+  HREF="node180.html">ReducibleModulusExceptionType</A>
+ &nbsp; <B>  <A NAME="tex2html3962"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html3964"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000617000000000000000"></A><A NAME="27277"></A><A NAME="SimpleAlgebraicExtension"></A>
+<BR>
+SimpleAlgebraicExtension
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from SimpleAlgebraicExtension(R, Rx, p)
+<BR>
+import from SimpleAlgebraicExtension(R, Rx, p, x)
+<BR>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node99.html#IntegralDomain"><TT>IntegralDomain</TT></A></TD>
+<TD ALIGN="LEFT">The coefficient ring of the polynomials</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>Rx</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node403.html#UnivariatePolynomialCategory"><TT>UnivariatePolynomialCategory</TT></A> R</TD>
+<TD ALIGN="LEFT">The type of the modulus</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>p</EM></TD>
+<TD ALIGN="LEFT">Rx</TD>
+<TD ALIGN="LEFT">The modulus</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>x</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node599.html#Symbol"><TT>Symbol</TT></A></TD>
+<TD ALIGN="LEFT">The generator name (optional)</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+SimpleAlgebraicExtension(R, Rx, p) implements the algebraic extension <IMG
+ WIDTH="54" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img222.png"
+ ALT="$Rx / (p)$">,
+where <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$p$"> is expected to be irreducible. It is possible to use this
+type with reducible <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$p$">, but then
+divisions can throw the exception <A HREF="node179.html#ReducibleModulusException"><TT>ReducibleModulusException</TT></A>.
+Use <A HREF="node183.html#UnivariatePolynomialMod"><TT>UnivariatePolynomialMod</TT></A> if you want to prevent divisions
+from being available.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node182.html#SimpleAlgebraicExtensionCategory"><TT>SimpleAlgebraicExtensionCategory</TT></A>(R, Rx)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+  <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

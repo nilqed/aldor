@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>solve</TITLE>
+<META NAME="description" CONTENT="solve">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node261.html">
+<LINK REL="previous" HREF="node259.html">
+<LINK REL="up" HREF="node249.html">
+<LINK REL="next" HREF="node261.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html5232"
+  HREF="node261.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5226"
+  HREF="node249.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5220"
+  HREF="node259.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5228"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html5230"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html5233"
+  HREF="node261.html">span</A>
+<B> Up:</B> <A NAME="tex2html5227"
+  HREF="node249.html">LinearAlgebraRing</A>
+<B> Previous:</B> <A NAME="tex2html5221"
+  HREF="node259.html">rankLowerBound</A>
+ &nbsp; <B>  <A NAME="tex2html5229"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html5231"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000871100000000000000"></A>
+<A NAME="LinearAlgebraRing:solve"></A>
+<BR>
+solve
+</H3> <A NAME="30880"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+solve(M)(a, b)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">solve:</TD>
+<TD ALIGN="LEFT">(M:<A HREF="node276.html#MatrixCategory"><TT>MatrixCategory</TT></A> %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (M, M) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (M, M, <A HREF="node325.html#Vector"><TT>Vector</TT></A> R)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>M</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node276.html#MatrixCategory"><TT>MatrixCategory</TT></A> %</TD>
+<TD ALIGN="LEFT">A matrix type</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>a, b</EM></TD>
+<TD ALIGN="LEFT">M</TD>
+<TD ALIGN="LEFT">Matrices</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+Returns <!-- MATH
+ $(w, m, [d_1,\dots,d_n])$
+ -->
+<IMG
+ WIDTH="133" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img307.png"
+ ALT="$(w, m, [d_1,\dots,d_n])$"> such that the columns
+of <IMG
+ WIDTH="16" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img308.png"
+ ALT="$w$"> form a basis of the kernel of <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img64.png"
+ ALT="$a$"> and
+</BLOCKQUOTE>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+a m = b \pmatrix{
+d_1 &     &        & \cr
+    & d_2 &        & \cr
+    &     & \ddots & \cr
+    &     &        & d_n \cr
+}\,.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="207" HEIGHT="88" BORDER="0"
+ SRC="img296.png"
+ ALT="\begin{displaymath}
+a m = b \pmatrix{
+d_1 &amp; &amp; &amp; \cr
+&amp; d_2 &amp; &amp; \cr
+&amp; &amp; \ddots &amp; \cr
+&amp; &amp; &amp; d_n \cr
+}\,.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+For each <IMG
+ WIDTH="10" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img258.png"
+ ALT="$i$">, <IMG
+ WIDTH="47" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img297.png"
+ ALT="$d_i \ne 0$"> if and only if the system
+<!-- MATH
+ $a x = {i}^{{\rm th}}$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img298.png"
+ ALT="$a x = {i}^{{\rm th}}$"> column of <IMG
+ WIDTH="11" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img65.png"
+ ALT="$b$"> has a solution, which is then <IMG
+ WIDTH="30" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img299.png"
+ ALT="$d_i^{-1}$">
+times the <!-- MATH
+ ${i}^{{\rm th}}$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img300.png"
+ ALT="${i}^{{\rm th}}$"> column of <IMG
+ WIDTH="18" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img97.png"
+ ALT="$m$">.
+When <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$"> is a <A HREF="node52.html#Field"><TT>Field</TT></A>, then <!-- MATH
+ $d_i \in \{0,1\}$
+ -->
+<IMG
+ WIDTH="76" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img287.png"
+ ALT="$d_i \in \{0,1\}$"> for <IMG
+ WIDTH="70" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img288.png"
+ ALT="$1 \le i \le n$">,
+so the general solution of <IMG
+ WIDTH="50" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img301.png"
+ ALT="$a x = b$"> when <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$"> is a <A HREF="node52.html#Field"><TT>Field</TT></A> and all
+the <IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img302.png"
+ ALT="$d_i$">'s are nonzero is <!-- MATH
+ $x = m + \sum_j r_j w_j$
+ -->
+<IMG
+ WIDTH="126" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.png"
+ ALT="$x = m + \sum_j r_j w_j$"> where <IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img310.png"
+ ALT="$w_j$"> is the
+<!-- MATH
+ ${j}^{{\rm th}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img256.png"
+ ALT="${j}^{{\rm th}}$"> column of <IMG
+ WIDTH="16" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img308.png"
+ ALT="$w$">.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>See Also</B><P>
+    <BLOCKQUOTE>
+<A HREF="node254.html#LinearAlgebraRing:kernel"><TT>kernel</TT></A>,<A HREF="node257.html#LinearAlgebraRing:particularSolution"><TT>particularSolution</TT></A>
+</BLOCKQUOTE>
+<P></P>
+
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html5232"
+  HREF="node261.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5226"
+  HREF="node249.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5220"
+  HREF="node259.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5228"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html5230"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html5233"
+  HREF="node261.html">span</A>
+<B> Up:</B> <A NAME="tex2html5227"
+  HREF="node249.html">LinearAlgebraRing</A>
+<B> Previous:</B> <A NAME="tex2html5221"
+  HREF="node259.html">rankLowerBound</A>
+ &nbsp; <B>  <A NAME="tex2html5229"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html5231"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

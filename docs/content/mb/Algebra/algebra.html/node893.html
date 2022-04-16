@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Timer</TITLE>
+<META NAME="description" CONTENT="Timer">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node900.html">
+<LINK REL="previous" HREF="node891.html">
+<LINK REL="up" HREF="node866.html">
+<LINK REL="next" HREF="node894.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html14838"
+  HREF="node894.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html14832"
+  HREF="node866.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html14826"
+  HREF="node892.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html14834"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html14836"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html14839"
+  HREF="node894.html">gc</A>
+<B> Up:</B> <A NAME="tex2html14833"
+  HREF="node866.html">Utilities</A>
+<B> Previous:</B> <A NAME="tex2html14827"
+  HREF="node892.html">nil</A>
+ &nbsp; <B>  <A NAME="tex2html14835"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html14837"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001811000000000000000"></A><A NAME="58598"></A><A NAME="Timer"></A>
+<BR>
+Timer
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from Timer
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+Timer&nbsp;is a type whose elements are stopwatch timers, which can be used
+to time precisely various sections of code, including garbage collection.
+The precision can be up to 1 millisecond but depends on the operating system.
+The times returned are CPU times (user + gc) used by the process that
+created the timer.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node894.html#Timer:gc"><TT>gc</TT></A>:</TD>
+<TD ALIGN="LEFT">%  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">read a timer</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node895.html#Timer:read"><TT>read</TT></A>:</TD>
+<TD ALIGN="LEFT">%  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">read a timer</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node896.html#Timer:reset_"><TT>reset!</TT></A>:</TD>
+<TD ALIGN="LEFT">%  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">reset a timer to 0</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node897.html#Timer:start_"><TT>start!</TT></A>:</TD>
+<TD ALIGN="LEFT">%  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">start or restart a timer</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node898.html#Timer:stop_"><TT>stop!</TT></A>:</TD>
+<TD ALIGN="LEFT">%  <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">stop a timer</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node899.html#Timer:timer"><TT>timer</TT></A>:</TD>
+<TD ALIGN="LEFT">() <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">create a new timer</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html14840"
+  HREF="node894.html">gc</A>
+<LI><A NAME="tex2html14841"
+  HREF="node895.html">read</A>
+<LI><A NAME="tex2html14842"
+  HREF="node896.html">reset!</A>
+<LI><A NAME="tex2html14843"
+  HREF="node897.html">start!</A>
+<LI><A NAME="tex2html14844"
+  HREF="node898.html">stop!</A>
+<LI><A NAME="tex2html14845"
+  HREF="node899.html">timer</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

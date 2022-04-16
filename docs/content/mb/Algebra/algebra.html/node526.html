@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>prefix</TITLE>
+<META NAME="description" CONTENT="prefix">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node525.html">
+<LINK REL="up" HREF="node523.html">
+<LINK REL="next" HREF="node527.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html9248"
+  HREF="node527.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html9242"
+  HREF="node523.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html9238"
+  HREF="node525.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html9244"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html9246"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html9249"
+  HREF="node527.html">ExpressionTreePlus</A>
+<B> Up:</B> <A NAME="tex2html9243"
+  HREF="node523.html">ExpressionTreeOperatorTools</A>
+<B> Previous:</B> <A NAME="tex2html9239"
+  HREF="node525.html">lisp</A>
+ &nbsp; <B>  <A NAME="tex2html9245"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html9247"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION0001122300000000000000"></A>
+<A NAME="ExpressionTreeOperatorTools:prefix"></A>
+<BR>
+prefix
+</H3> <A NAME="44007"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+prefix(p, t, paren?, farg, op, left, right)
+<BR>
+prefix(p, [<IMG
+ WIDTH="67" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img610.png"
+ ALT="$t_1,\dots,t_n$">], farg, op, left, right)
+
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">prefix:</TD>
+<TD ALIGN="LEFT">(TEXT, TREE, TREE <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A>, (TEXT, TREE) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT,</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;<A HREF="node845.html#String"><TT>String</TT></A>, <A HREF="node845.html#String"><TT>String</TT></A>, <A HREF="node845.html#String"><TT>String</TT></A>)
+<IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+</TR>
+<TR><TD ALIGN="LEFT">prefix:</TD>
+<TD ALIGN="LEFT">(TEXT, <A HREF="node799.html#List"><TT>List</TT></A> TREE, (TEXT, TREE) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT,</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;<A HREF="node845.html#String"><TT>String</TT></A>, <A HREF="node845.html#String"><TT>String</TT></A>, <A HREF="node845.html#String"><TT>String</TT></A>)
+<IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>p</EM></TD>
+<TD ALIGN="LEFT">TEXT</TD>
+<TD ALIGN="LEFT">The port to write to</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>[<IMG
+ WIDTH="67" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img610.png"
+ ALT="$t_1,\dots,t_n$">]</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node799.html#List"><TT>List</TT></A> TREE</TD>
+<TD ALIGN="LEFT">The arguments of the operator</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>paren?</EM></TD>
+<TD ALIGN="LEFT">TREE <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">The parenthetization function</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>farg</EM></TD>
+<TD ALIGN="LEFT">(TEXT, TREE) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+<TD ALIGN="LEFT">The function for the arguments</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>op</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node845.html#String"><TT>String</TT></A></TD>
+<TD ALIGN="LEFT">The prefix symbol</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>left</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node845.html#String"><TT>String</TT></A></TD>
+<TD ALIGN="LEFT">The left parenthesis (optional)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>right</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node845.html#String"><TT>String</TT></A></TD>
+<TD ALIGN="LEFT">The right parenthesis (optional)</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">TEXT</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node741.html#TextWriter"><TT>TextWriter</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">TREE</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node474.html#ExpressionTree"><TT>ExpressionTree</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+Writes <!-- MATH
+ $op(farg(t_1),\dots,farg(t_n))$
+ -->
+<IMG
+ WIDTH="187" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img627.png"
+ ALT="$op(farg(t_1),\dots,farg(t_n))$"> to <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$p$">, calling <IMG
+ WIDTH="38" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img622.png"
+ ALT="$farg$">
+on each argument. Uses <IMG
+ WIDTH="32" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img624.png"
+ ALT="$left$"> and <IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img625.png"
+ ALT="$right$">, which default to ``('' and ``)''
+for parenthetizing. The unary version calls <IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img623.png"
+ ALT="$paren?$"> to decide whether
+to parenthetize the argument.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>See Also</B><P>
+    <BLOCKQUOTE>
+<A HREF="node524.html#ExpressionTreeOperatorTools:infix"><TT>infix</TT></A>
+</BLOCKQUOTE>
+<P></P>
+
+  <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html9248"
+  HREF="node527.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html9242"
+  HREF="node523.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html9238"
+  HREF="node525.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html9244"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html9246"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html9249"
+  HREF="node527.html">ExpressionTreePlus</A>
+<B> Up:</B> <A NAME="tex2html9243"
+  HREF="node523.html">ExpressionTreeOperatorTools</A>
+<B> Previous:</B> <A NAME="tex2html9239"
+  HREF="node525.html">lisp</A>
+ &nbsp; <B>  <A NAME="tex2html9245"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html9247"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

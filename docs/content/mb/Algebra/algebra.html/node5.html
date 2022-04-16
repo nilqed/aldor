@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>How do I use Algebra in my programs?</TITLE>
+<META NAME="description" CONTENT="How do I use Algebra in my programs?">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1276"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1270"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1266"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1272"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1274"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1277"
+  HREF="node6.html">User Guide</A>
+<B> Up:</B> <A NAME="tex2html1271"
+  HREF="node2.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html1267"
+  HREF="node4.html">How do I get</A>
+ &nbsp; <B>  <A NAME="tex2html1273"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1275"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00023000000000000000">
+How do I use <TT>Algebra</TT> in my programs?</A>
+</H2>
+Once <TT>Algebra</TT> is properly built, you need to set the following environment
+variables before using it:
+
+<UL>
+<LI>the environment variable ALGEBRAROOT should be set to
+the main <TT>algebra</TT> directory;
+</LI>
+<LI><TT>$ALGEBRAROOT/include</TT>
+should be appended to your INCPATH environment variable;
+</LI>
+<LI><TT>$ALGEBRAROOT/lib</TT>
+should be appended to your LIBPATH environment variable;
+</LI>
+</UL>
+In your A<SMALL>LDOR</SMALL> programs, use <TT>#include "algebra"</TT> instead of
+<TT>#include "aldor"</TT>.
+When building your final executable, add the options
+<DIV ALIGN="CENTER">
+<TT>-lalgebra -laldor -y$ALGEBRAROOT/lib</TT>
+
+</DIV>
+to your compiler command line, or
+<DIV ALIGN="CENTER">
+<TT>-lalgebrad -laldord -dDEBUG -y$ALGEBRAROOT/lib</TT>
+
+</DIV>
+to link to the debug version of <TT>Algebra</TT>.
+Check the subsection on&nbsp;<A HREF="node15.html#:sec:gmp"><TT>using GMP</TT></A>
+for the options required if you want to use the GMP library and the GMP
+version of <TT>Algebra</TT>.
+
+<P>
+If you are running <TT>Algebra</TT> inside the compiler interactive loop, then
+type the line
+<DIV ALIGN="CENTER">
+<TT>#include "aldorinterp"</TT>
+
+</DIV>
+immediately after <TT>#include "algebra"</TT>,
+which will import various things for interactive use and make the interpreter
+loop print values automatically.
+As with any A<SMALL>LDOR</SMALL> program, do not forget
+the <TT>-q</TT> option in order to optimize your programs, specially
+if performance is an issue.
+
+<P>
+Before using <TT>Algebra</TT> for the first time, please check your installation
+by running <TT>make</TT> in the <TT>algebra/test</TT> directory, followed by
+running <TT>testall</TT>.
+
+<P>
+Please report any installation problem or bugs you encounter
+to <TT>sumit@sophia.inria.fr</TT>.
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1276"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1270"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1266"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1272"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1274"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1277"
+  HREF="node6.html">User Guide</A>
+<B> Up:</B> <A NAME="tex2html1271"
+  HREF="node2.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html1267"
+  HREF="node4.html">How do I get</A>
+ &nbsp; <B>  <A NAME="tex2html1273"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1275"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>diagonal</TITLE>
+<META NAME="description" CONTENT="diagonal">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node286.html">
+<LINK REL="previous" HREF="node284.html">
+<LINK REL="up" HREF="node276.html">
+<LINK REL="next" HREF="node286.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html5610"
+  HREF="node286.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5604"
+  HREF="node276.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5598"
+  HREF="node284.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5606"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html5608"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html5611"
+  HREF="node286.html">dimensions</A>
+<B> Up:</B> <A NAME="tex2html5605"
+  HREF="node276.html">MatrixCategory</A>
+<B> Previous:</B> <A NAME="tex2html5599"
+  HREF="node284.html">companion</A>
+ &nbsp; <B>  <A NAME="tex2html5607"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html5609"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00089900000000000000"></A>
+<A NAME="MatrixCategory:diagonal"></A>
+<BR>
+diagonal
+</H3> <A NAME="32494"></A>
+<A NAME="MatrixCategory:diagonal_"></A> <A NAME="32497"></A>
+<A NAME="MatrixCategory:scalar_"></A> <A NAME="32500"></A>
+<A NAME="MatrixCategory:square_"></A> <A NAME="32503"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+diagonal&nbsp;[<IMG
+ WIDTH="70" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img363.png"
+ ALT="$r_1,\dots,r_n$">]
+<BR>
+diagonal(r, n)
+<BR>
+diagonal?&nbsp;A
+<BR>
+scalar?&nbsp;A
+<BR>
+square?&nbsp;A
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">diagonal:</TD>
+<TD ALIGN="LEFT"><A HREF="node325.html#Vector"><TT>Vector</TT></A> R <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">diagonal:</TD>
+<TD ALIGN="LEFT">(R, <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">diagonal?,scalar?,square?:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><!-- MATH
+ $r, r_1,\dots,r_n$
+ -->
+<IMG
+ WIDTH="84" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img365.png"
+ ALT="$r, r_1,\dots,r_n$"></TD>
+<TD ALIGN="LEFT">R</TD>
+<TD ALIGN="LEFT">Entries</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><I>n</I></TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">A size</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>A</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">A matrix</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+diagonal([<IMG
+ WIDTH="70" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img363.png"
+ ALT="$r_1,\dots,r_n$">]) returns a diagonal matrix whose diagonal
+elements are <IMG
+ WIDTH="70" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img363.png"
+ ALT="$r_1,\dots,r_n$">,
+while diagonal(<IMG
+ WIDTH="28" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img366.png"
+ ALT="$r,n$">) returns an <IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img367.png"
+ ALT="$n \times n$"> diagonal matrix with <I>r</I>
+on its diagonal, and
+square?(A) (resp.&nbsp;diagonal&nbsp;A and scalar?&nbsp;A) return <I>true</I>  if <EM>A</EM>
+is a square (resp.&nbsp;diagonal and diagonal with the same entry on its
+diagonal) matrix, <I>false</I>  otherwise.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>See Also</B><P>
+    <BLOCKQUOTE>
+<A HREF="node284.html#MatrixCategory:companion"><TT>companion</TT></A>,<A HREF="node289.html#MatrixCategory:one_"><TT>one?</TT></A>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

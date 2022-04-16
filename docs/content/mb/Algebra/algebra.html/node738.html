@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>readUntil!,readWhile!,skipUntil!,skipWhile!</TITLE>
+<META NAME="description" CONTENT="readUntil!,readWhile!,skipUntil!,skipWhile!">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node739.html">
+<LINK REL="previous" HREF="node737.html">
+<LINK REL="up" HREF="node735.html">
+<LINK REL="next" HREF="node739.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html12480"
+  HREF="node739.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html12474"
+  HREF="node735.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html12468"
+  HREF="node737.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html12476"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html12478"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html12481"
+  HREF="node739.html">stdin</A>
+<B> Up:</B> <A NAME="tex2html12475"
+  HREF="node735.html">TextReader</A>
+<B> Previous:</B> <A NAME="tex2html12469"
+  HREF="node737.html">read!</A>
+ &nbsp; <B>  <A NAME="tex2html12477"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html12479"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION0001613300000000000000"></A>
+<A NAME="TextReader:readUntil__readWhile__skipUntil__skipWhile_"></A>
+<BR>
+readUntil!,readWhile!,skipUntil!,skipWhile!
+</H3> <A NAME="52517"></A>
+<A NAME="TextReader:readUntil_"></A> <A NAME="52520"></A>
+<A NAME="TextReader:readWhile_"></A> <A NAME="52523"></A>
+<A NAME="TextReader:skipUntil_"></A> <A NAME="52526"></A>
+<A NAME="TextReader:skipWhile_"></A> <A NAME="52529"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+readUntil!(str, s, c)
+<BR>
+readWhile!(str, s, read?)
+<BR>
+skipUntil!(s, c)
+<BR>
+skipWhile!(s, read?)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">readUntil!:</TD>
+<TD ALIGN="LEFT">(<A HREF="node852.html#StringBuffer"><TT>StringBuffer</TT></A>, %, <A HREF="node711.html#Character"><TT>Character</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node711.html#Character"><TT>Character</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">readWhile!:</TD>
+<TD ALIGN="LEFT">(<A HREF="node852.html#StringBuffer"><TT>StringBuffer</TT></A>, %, <A HREF="node711.html#Character"><TT>Character</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$">
+<A HREF="node711.html#Character"><TT>Character</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">skipUntil!:</TD>
+<TD ALIGN="LEFT">(%, <A HREF="node711.html#Character"><TT>Character</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node711.html#Character"><TT>Character</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">skipWhile!:</TD>
+<TD ALIGN="LEFT">(%, <A HREF="node711.html#Character"><TT>Character</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node711.html#Character"><TT>Character</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><I>str</I></TD>
+<TD ALIGN="LEFT"><A HREF="node852.html#StringBuffer"><TT>StringBuffer</TT></A></TD>
+<TD ALIGN="LEFT">a buffer</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>s</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">a stream</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>c</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node711.html#Character"><TT>Character</TT></A></TD>
+<TD ALIGN="LEFT">a character</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><I>read?</I></TD>
+<TD ALIGN="LEFT"><A HREF="node711.html#Character"><TT>Character</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">a predicate</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+readUntil!(str, s, c) reads characters from <I>s</I> and stores
+them in <I>str</I>, until the character <I>c</I> is read.
+Returns <I>c</I> if it is read, <A HREF="node714.html#Character:eof"><TT>eof</TT></A> otherwise.
+readWhile!(str, s, read?) reads characters from <I>s</I> and stores
+them in <I>str</I> as long as <I>read?</I> is <I>true</I>  on the characters read.
+Returns either the first character read for which <I>read?</I> is <I>false</I> 
+or <A HREF="node714.html#Character:eof"><TT>eof</TT></A>.
+skipUntil! and skipWhile! work like readUntil! and readWhile! except that
+the characters read are not stored anywhere.
+</BLOCKQUOTE>
+<P></P>
+
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html12480"
+  HREF="node739.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html12474"
+  HREF="node735.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html12468"
+  HREF="node737.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html12476"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html12478"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html12481"
+  HREF="node739.html">stdin</A>
+<B> Up:</B> <A NAME="tex2html12475"
+  HREF="node735.html">TextReader</A>
+<B> Previous:</B> <A NAME="tex2html12469"
+  HREF="node737.html">read!</A>
+ &nbsp; <B>  <A NAME="tex2html12477"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html12479"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

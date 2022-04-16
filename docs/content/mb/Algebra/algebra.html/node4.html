@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>How do I get and install Algebra?</TITLE>
+<META NAME="description" CONTENT="How do I get and install Algebra?">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1264"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1258"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1252"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1260"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1262"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1265"
+  HREF="node5.html">How do I use</A>
+<B> Up:</B> <A NAME="tex2html1259"
+  HREF="node2.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html1253"
+  HREF="node3.html">What is Algebra?</A>
+ &nbsp; <B>  <A NAME="tex2html1261"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1263"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00022000000000000000">
+How do I get and install <TT>Algebra</TT>?</A>
+</H2>
+You can download <TT>Algebra</TT> by anonymous ftp from the C<SMALL>AF&#201;</SMALL> server at
+<TT>ftp-sop.inria.fr</TT> in <TT>cafe/software/algebra</TT>,
+or from the URL:
+<BR>
+<BR>
+<DIV ALIGN="CENTER">
+<TT><A NAME="tex2html3"
+  HREF="http://www.inria.fr/cafe/Manuel.Bronstein/algebra/">http://www.inria.fr/cafe/Manuel.Bronstein/algebra/</A></TT>
+</DIV>
+After downloading the file <TT>algebra.tar.gz</TT>, issue
+``<TT>tar -xzvf algebra.tar.gz</TT>'' in order to unpack it.
+This will create the following directories:
+
+<UL>
+<LI><TT>algebra/doc</TT>: this user guide,
+</LI>
+<LI><TT>algebra/lib</TT>: the library,
+</LI>
+<LI><TT>algebra/include</TT>: the required include files,
+</LI>
+<LI><TT>algebra/test</TT>: some test files,
+</LI>
+<LI><TT>algebra/samples</TT>: <TT>Algebra</TT> programming samples,
+</LI>
+</UL>
+Once the above file is unpacked, do the following:
+
+<UL>
+<LI>add the option <TT>-csys=XXX</TT> to your ALDORARGS environment variable,
+where <TT>XXX</TT>
+depends on your hardware and operating system. Common values for <TT>XXX</TT>
+are <TT>axposf1v4</TT> for OSF1 V4.0 on a DEC Alpha, <TT>linux-486</TT> for linux on
+a 486 or above PC, and <TT>sun4os55g-v8</TT> for SunOS 5.5 on a SPARC v8 machine.
+See the file <TT>$ALDORROOT/include/aldor.conf</TT> for other values;
+</LI>
+<LI>go to <TT>algebra/lib</TT> and execute <TT>sh makealgebra</TT>;
+shell;
+</LI>
+<LI>if you want to build the GMP version of the library,
+execute <TT>sh makealgebra-gmp</TT>.
+See the subsection on&nbsp;<A HREF="node15.html#:sec:gmp"><TT>using GMP</TT></A>
+for more information about using the GMP version of <TT>Algebra</TT>;
+</LI>
+<LI>if you want to build the debug version of the library,
+execute <TT>sh makealgebrad</TT>.
+See the subsection on&nbsp;<A HREF="node17.html#:sec:debug"><TT>debugging</TT></A>
+for more information on using the debug library.
+</LI>
+</UL>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1264"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1258"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1252"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1260"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1262"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1265"
+  HREF="node5.html">How do I use</A>
+<B> Up:</B> <A NAME="tex2html1259"
+  HREF="node2.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html1253"
+  HREF="node3.html">What is Algebra?</A>
+ &nbsp; <B>  <A NAME="tex2html1261"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1263"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,328 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>FreeModule</TITLE>
+<META NAME="description" CONTENT="FreeModule">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node78.html">
+<LINK REL="previous" HREF="node66.html">
+<LINK REL="up" HREF="node19.html">
+<LINK REL="next" HREF="node69.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2291"
+  HREF="node69.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2285"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2279"
+  HREF="node67.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2287"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2289"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2292"
+  HREF="node69.html">content,primitive,primitivePart</A>
+<B> Up:</B> <A NAME="tex2html2286"
+  HREF="node19.html">Basic Categories</A>
+<B> Previous:</B> <A NAME="tex2html2280"
+  HREF="node67.html">map</A>
+ &nbsp; <B>  <A NAME="tex2html2288"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2290"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000517000000000000000"></A><A NAME="22763"></A><A NAME="FreeModule"></A>
+<BR>
+FreeModule
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+FreeModule&nbsp;R: Category
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node129.html#ExpressionType"><TT>ExpressionType</TT></A></TD>
+<TD ALIGN="LEFT">The coefficient domain</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><A HREF="node611.html#ArithmeticType"><TT>ArithmeticType</TT></A></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+FreeModule&nbsp;is a category for free modules over an
+arbitrary arithmetic system R and with respect to an arbitrary basis.
+Its elements are assumed to have finite support.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node66.html#FreeLinearCombinationType"><TT>FreeLinearCombinationType</TT></A> R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node70.html#FreeModule:ground_"><TT>ground?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Test for a ground element</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node72.html#FreeModule:leadingCoefficient"><TT>leadingCoefficient</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R</TD>
+<TD ALIGN="LEFT">The leading coefficient</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node75.html#FreeModule:nonZeroCoefficients"><TT>nonZeroCoefficients</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node881.html#Generator"><TT>Generator</TT></A> R</TD>
+<TD ALIGN="LEFT">Iterate over the coefficients</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node76.html#FreeModule:reductum"><TT>reductum</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">All terms except the leading one</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node76.html#FreeModule:reductum_"><TT>reductum!</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">All terms except the leading one</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node77.html#FreeModule:support"><TT>support</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node881.html#Generator"><TT>Generator</TT></A> <TT>Cross</TT>(R, %)</TD>
+<TD ALIGN="LEFT">Make an iterator</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node70.html#FreeModule:term_"><TT>term?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Boolean</TD>
+<TD ALIGN="LEFT">Test for a monomial</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node73.html#FreeModule:trailingCoefficient"><TT>trailingCoefficient</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R</TD>
+<TD ALIGN="LEFT">The trailing coefficient</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+If R has <A HREF="node119.html#Ring"><TT>Ring</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node109.html#Module"><TT>Module</TT></A> R</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+If R has <A HREF="node78.html#GcdDomain"><TT>GcdDomain</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node69.html#FreeModule:content"><TT>content</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R</TD>
+<TD ALIGN="LEFT">Content</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node69.html#FreeModule:primitive"><TT>primitive</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (R, %)</TD>
+<TD ALIGN="LEFT">Content and primitive part</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node69.html#FreeModule:primitive_"><TT>primitive!</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (R, %)</TD>
+<TD ALIGN="LEFT">Content and primitive part</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node69.html#FreeModule:primitivePart"><TT>primitivePart</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Primitive part</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node69.html#FreeModule:primitivePart_"><TT>primitivePart!</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Primitive part</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+If <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$"> has <A HREF="node52.html#Field"><TT>Field</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node74.html#FreeModule:monic"><TT>monic</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Make monic</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node74.html#FreeModule:monic_"><TT>monic!</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Make monic</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html2293"
+  HREF="node69.html">content,primitive,primitivePart</A>
+<LI><A NAME="tex2html2294"
+  HREF="node70.html">ground?,term?</A>
+<LI><A NAME="tex2html2295"
+  HREF="node71.html">leadingCoefficient,trailingCoefficient</A>
+<LI><A NAME="tex2html2296"
+  HREF="node72.html">leadingCoefficient</A>
+<LI><A NAME="tex2html2297"
+  HREF="node73.html">trailingCoefficient</A>
+<LI><A NAME="tex2html2298"
+  HREF="node74.html">monic</A>
+<LI><A NAME="tex2html2299"
+  HREF="node75.html">nonZeroCoefficients</A>
+<LI><A NAME="tex2html2300"
+  HREF="node76.html">reductum</A>
+<LI><A NAME="tex2html2301"
+  HREF="node77.html">support</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2291"
+  HREF="node69.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2285"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2279"
+  HREF="node67.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2287"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html2289"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2292"
+  HREF="node69.html">content,primitive,primitivePart</A>
+<B> Up:</B> <A NAME="tex2html2286"
+  HREF="node19.html">Basic Categories</A>
+<B> Previous:</B> <A NAME="tex2html2280"
+  HREF="node67.html">map</A>
+ &nbsp; <B>  <A NAME="tex2html2288"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2290"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

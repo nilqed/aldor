@@ -1,0 +1,2339 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>html</TITLE>
+<META NAME="description" CONTENT="html">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html10"
+  HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev_g.png"> 
+<A NAME="tex2html6"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html8"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html11"
+  HREF="node1.html">Contents</A>
+ &nbsp; <B>  <A NAME="tex2html7"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html9"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<P>
+
+<DIV ALIGN="CENTER">
+</DIV>
+<DIV ALIGN="CENTER"><HR><FONT SIZE="+2"><B><TT>Algebra</TT>&nbsp;User Guide and Reference Manual</B></FONT>
+<BR><FONT SIZE="+2">Manuel Bronstein and Marc Moreno Maza</FONT>
+<BR><FONT SIZE="+2">Version 1.0.2 - April 30, 2004</FONT>
+<BR></DIV>
+<DIV ALIGN="CENTER"><HR>
+</DIV>
+
+<DIV ALIGN="CENTER">
+<FONT SIZE="+2"><B><TT>Algebra</TT>&nbsp;Contributors</B></FONT>
+<BR>
+</DIV>
+<FONT SIZE="+1"><TT>Algebra</TT> is the result of extracting the central subset of
+the <!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$\Sigma{}^{{\rm it}}$"> library<A NAME="tex2html1"
+  HREF="footnode.html#foot15370"><SUP>1</SUP></A>and adding new data structures and polynomial types written by
+Marc Moreno Maza, in order to provide a general-purpose
+computer algebra library.
+</FONT>
+<P>
+<FONT SIZE="+1">
+Besides the principal authors, the following
+<!-- MATH
+ $\Sigma{}^{{\rm it}}$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$\Sigma{}^{{\rm it}}$">&nbsp;project members have contributed code
+that is now part of the <TT>Algebra</TT>&nbsp;library:
+<BR></FONT>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">Laurent Bernardin
+<BR>
+Marco Codutti
+<BR>
+Niklaus Mannhart
+<BR>
+Thom Mulders
+<BR>
+Julien Ohler
+<BR>
+H&#233;l&#232;ne Prieto
+<BR></FONT></DIV>
+<HR>
+&nbsp;
+&nbsp;
+&nbsp;
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL>
+<LI><A NAME="tex2html12"
+  HREF="node1.html">Contents</A>
+<LI><A NAME="tex2html13"
+  HREF="node2.html">Introduction</A>
+<UL>
+<LI><A NAME="tex2html14"
+  HREF="node3.html">What is <TT>Algebra</TT>?</A>
+<LI><A NAME="tex2html15"
+  HREF="node4.html">How do I get and install <TT>Algebra</TT>?</A>
+<LI><A NAME="tex2html16"
+  HREF="node5.html">How do I use <TT>Algebra</TT> in my programs?</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html17"
+  HREF="node6.html">User Guide</A>
+<UL>
+<LI><A NAME="tex2html18"
+  HREF="node7.html">Basic algebraic categories</A>
+<LI><A NAME="tex2html19"
+  HREF="node8.html">Arithmetic</A>
+<LI><A NAME="tex2html20"
+  HREF="node9.html">Data structures</A>
+<LI><A NAME="tex2html21"
+  HREF="node10.html">Input/Output</A>
+<LI><A NAME="tex2html22"
+  HREF="node11.html">Linear algebra</A>
+<LI><A NAME="tex2html23"
+  HREF="node12.html">Univariate polynomials and series</A>
+<LI><A NAME="tex2html24"
+  HREF="node13.html">Multivariate polynomials</A>
+<LI><A NAME="tex2html25"
+  HREF="node14.html">Compatibility with C types</A>
+<LI><A NAME="tex2html26"
+  HREF="node15.html">Using GMP</A>
+<LI><A NAME="tex2html27"
+  HREF="node16.html">Exceptions</A>
+<LI><A NAME="tex2html28"
+  HREF="node17.html">Profiling and debugging</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html29"
+  HREF="node18.html">Reference Manual</A>
+<LI><A NAME="tex2html30"
+  HREF="node19.html">Basic Categories</A>
+<UL>
+<LI><A NAME="tex2html31"
+  HREF="node20.html">AbelianGroup</A>
+<LI><A NAME="tex2html32"
+  HREF="node21.html">AbelianMonoid</A>
+<UL>
+<LI><A NAME="tex2html33"
+  HREF="node22.html"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$0$"></A>
+<LI><A NAME="tex2html34"
+  HREF="node23.html">+</A>
+<LI><A NAME="tex2html35"
+  HREF="node24.html"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$*$"></A>
+<LI><A NAME="tex2html36"
+  HREF="node25.html">add!</A>
+<LI><A NAME="tex2html37"
+  HREF="node26.html">zero?</A>
+</UL>
+<LI><A NAME="tex2html38"
+  HREF="node27.html">Algebra</A>
+<LI><A NAME="tex2html39"
+  HREF="node28.html">CharacteristicZero</A>
+<LI><A NAME="tex2html40"
+  HREF="node29.html">CommutativeRing</A>
+<UL>
+<LI><A NAME="tex2html41"
+  HREF="node30.html">canonicalUnitNormal?</A>
+<LI><A NAME="tex2html42"
+  HREF="node31.html">cutoff</A>
+<LI><A NAME="tex2html43"
+  HREF="node32.html">reciprocal</A>
+<LI><A NAME="tex2html44"
+  HREF="node33.html">unitNormal</A>
+<LI><A NAME="tex2html45"
+  HREF="node34.html">unit?</A>
+</UL>
+<LI><A NAME="tex2html46"
+  HREF="node35.html">DecomposableRing</A>
+<UL>
+<LI><A NAME="tex2html47"
+  HREF="node36.html">provablyIrreducible?</A>
+<LI><A NAME="tex2html48"
+  HREF="node37.html">someFactors</A>
+</UL>
+<LI><A NAME="tex2html49"
+  HREF="node38.html">DifferentialExtension</A>
+<UL>
+<LI><A NAME="tex2html50"
+  HREF="node39.html">lift</A>
+</UL>
+<LI><A NAME="tex2html51"
+  HREF="node40.html">DifferentialRing</A>
+<UL>
+<LI><A NAME="tex2html52"
+  HREF="node41.html">derivation</A>
+<LI><A NAME="tex2html53"
+  HREF="node42.html">differentiate</A>
+</UL>
+<LI><A NAME="tex2html54"
+  HREF="node43.html">EuclideanDomain</A>
+<UL>
+<LI><A NAME="tex2html55"
+  HREF="node44.html">diophantine</A>
+<LI><A NAME="tex2html56"
+  HREF="node45.html">divide,quo,rem</A>
+<LI><A NAME="tex2html57"
+  HREF="node46.html">divide!</A>
+<LI><A NAME="tex2html58"
+  HREF="node47.html">euclid</A>
+<LI><A NAME="tex2html59"
+  HREF="node48.html">euclideanSize</A>
+<LI><A NAME="tex2html60"
+  HREF="node49.html">extendedEuclidean</A>
+<LI><A NAME="tex2html61"
+  HREF="node50.html">rationalReconstruction</A>
+<LI><A NAME="tex2html62"
+  HREF="node51.html">remainder!</A>
+</UL>
+<LI><A NAME="tex2html63"
+  HREF="node52.html">Field</A>
+<LI><A NAME="tex2html64"
+  HREF="node53.html">FiniteField</A>
+<UL>
+<LI><A NAME="tex2html65"
+  HREF="node54.html">degree</A>
+<LI><A NAME="tex2html66"
+  HREF="node55.html">pthRoot</A>
+</UL>
+<LI><A NAME="tex2html67"
+  HREF="node56.html">FiniteCharacteristic</A>
+<UL>
+<LI><A NAME="tex2html68"
+  HREF="node57.html">pthPower</A>
+</UL>
+<LI><A NAME="tex2html69"
+  HREF="node58.html">FiniteSet</A>
+<UL>
+<LI><A NAME="tex2html70"
+  HREF="node59.html">size</A>
+<LI><A NAME="tex2html71"
+  HREF="node60.html">apply</A>
+<LI><A NAME="tex2html72"
+  HREF="node61.html">index</A>
+<LI><A NAME="tex2html73"
+  HREF="node62.html">lookup</A>
+<LI><A NAME="tex2html74"
+  HREF="node63.html">random</A>
+</UL>
+<LI><A NAME="tex2html75"
+  HREF="node64.html">FreeAlgebra</A>
+<LI><A NAME="tex2html76"
+  HREF="node65.html">FreeLinearArithmeticType</A>
+<LI><A NAME="tex2html77"
+  HREF="node66.html">FreeLinearCombinationType</A>
+<UL>
+<LI><A NAME="tex2html78"
+  HREF="node67.html">map</A>
+</UL>
+<LI><A NAME="tex2html79"
+  HREF="node68.html">FreeModule</A>
+<UL>
+<LI><A NAME="tex2html80"
+  HREF="node69.html">content,primitive,primitivePart</A>
+<LI><A NAME="tex2html81"
+  HREF="node70.html">ground?,term?</A>
+<LI><A NAME="tex2html82"
+  HREF="node71.html">leadingCoefficient,trailingCoefficient</A>
+<LI><A NAME="tex2html83"
+  HREF="node72.html">leadingCoefficient</A>
+<LI><A NAME="tex2html84"
+  HREF="node73.html">trailingCoefficient</A>
+<LI><A NAME="tex2html85"
+  HREF="node74.html">monic</A>
+<LI><A NAME="tex2html86"
+  HREF="node75.html">nonZeroCoefficients</A>
+<LI><A NAME="tex2html87"
+  HREF="node76.html">reductum</A>
+<LI><A NAME="tex2html88"
+  HREF="node77.html">support</A>
+</UL>
+<LI><A NAME="tex2html89"
+  HREF="node78.html">GcdDomain</A>
+<UL>
+<LI><A NAME="tex2html90"
+  HREF="node79.html">gcd,lcm</A>
+<LI><A NAME="tex2html91"
+  HREF="node80.html">gcdquo</A>
+</UL>
+<LI><A NAME="tex2html92"
+  HREF="node81.html">Group</A>
+<UL>
+<LI><A NAME="tex2html93"
+  HREF="node82.html">/</A>
+<LI><A NAME="tex2html94"
+  HREF="node83.html">inv</A>
+</UL>
+<LI><A NAME="tex2html95"
+  HREF="node84.html">IndexedFreeAlgebra</A>
+<LI><A NAME="tex2html96"
+  HREF="node85.html">IndexedFreeLinearArithmeticType</A>
+<UL>
+<LI><A NAME="tex2html97"
+  HREF="node86.html">add!</A>
+</UL>
+<LI><A NAME="tex2html98"
+  HREF="node87.html">IndexedFreeLinearCombinationType</A>
+<UL>
+<LI><A NAME="tex2html99"
+  HREF="node88.html">add!</A>
+<LI><A NAME="tex2html100"
+  HREF="node89.html">coefficient</A>
+<LI><A NAME="tex2html101"
+  HREF="node90.html">monomial,term</A>
+</UL>
+<LI><A NAME="tex2html102"
+  HREF="node91.html">IndexedFreeModule</A>
+<UL>
+<LI><A NAME="tex2html103"
+  HREF="node92.html">degree,trailingDegree</A>
+<LI><A NAME="tex2html104"
+  HREF="node93.html">generator,terms</A>
+<LI><A NAME="tex2html105"
+  HREF="node94.html">leadingMonomial,leadingTerm,trailingMonomial,trailingTerm</A>
+</UL>
+<LI><A NAME="tex2html106"
+  HREF="node95.html">IntegerCategory</A>
+<UL>
+<LI><A NAME="tex2html107"
+  HREF="node96.html">binomial</A>
+<LI><A NAME="tex2html108"
+  HREF="node97.html">integer</A>
+<LI><A NAME="tex2html109"
+  HREF="node98.html">rationalReconstruction</A>
+</UL>
+<LI><A NAME="tex2html110"
+  HREF="node99.html">IntegralDomain</A>
+<UL>
+<LI><A NAME="tex2html111"
+  HREF="node100.html">divDiffProd</A>
+<LI><A NAME="tex2html112"
+  HREF="node101.html">divSumProd</A>
+<LI><A NAME="tex2html113"
+  HREF="node102.html">exactQuotient</A>
+<LI><A NAME="tex2html114"
+  HREF="node103.html">order</A>
+<LI><A NAME="tex2html115"
+  HREF="node104.html">orderquo</A>
+<LI><A NAME="tex2html116"
+  HREF="node105.html">quotient,quotientBy</A>
+</UL>
+<LI><A NAME="tex2html117"
+  HREF="node106.html">LinearArithmeticType</A>
+<UL>
+<LI><A NAME="tex2html118"
+  HREF="node107.html">**</A>
+<LI><A NAME="tex2html119"
+  HREF="node108.html">coerce</A>
+</UL>
+<LI><A NAME="tex2html120"
+  HREF="node109.html">Module</A>
+<LI><A NAME="tex2html121"
+  HREF="node110.html">Monoid</A>
+<UL>
+<LI><A NAME="tex2html122"
+  HREF="node111.html">1</A>
+<LI><A NAME="tex2html123"
+  HREF="node112.html">*</A>
+<LI><A NAME="tex2html124"
+  HREF="node113.html">**</A>
+<LI><A NAME="tex2html125"
+  HREF="node114.html">one?</A>
+<LI><A NAME="tex2html126"
+  HREF="node115.html">times!</A>
+</UL>
+<LI><A NAME="tex2html127"
+  HREF="node116.html">NonCommutativeIntegralDomain</A>
+<UL>
+<LI><A NAME="tex2html128"
+  HREF="node117.html">leftExactQuotient</A>
+<LI><A NAME="tex2html129"
+  HREF="node118.html">rightExactQuotient</A>
+</UL>
+<LI><A NAME="tex2html130"
+  HREF="node119.html">Ring</A>
+<UL>
+<LI><A NAME="tex2html131"
+  HREF="node120.html">characteristic</A>
+<LI><A NAME="tex2html132"
+  HREF="node121.html">coerce</A>
+<LI><A NAME="tex2html133"
+  HREF="node122.html">factorial</A>
+<LI><A NAME="tex2html134"
+  HREF="node123.html">random</A>
+</UL>
+<LI><A NAME="tex2html135"
+  HREF="node124.html">RittRing</A>
+<UL>
+<LI><A NAME="tex2html136"
+  HREF="node125.html"><IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$/$"></A>
+<LI><A NAME="tex2html137"
+  HREF="node126.html">inv</A>
+</UL>
+<LI><A NAME="tex2html138"
+  HREF="node127.html">Specializable</A>
+<UL>
+<LI><A NAME="tex2html139"
+  HREF="node128.html">specialization</A>
+</UL>
+<LI><A NAME="tex2html140"
+  HREF="node129.html">ExpressionType</A>
+<UL>
+<LI><A NAME="tex2html141"
+  HREF="node130.html">extree</A>
+<LI><A NAME="tex2html142"
+  HREF="node131.html">relativeSize</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html143"
+  HREF="node132.html">Commutative Algebra</A>
+<UL>
+<LI><A NAME="tex2html144"
+  HREF="node133.html">Automorphism</A>
+<UL>
+<LI><A NAME="tex2html145"
+  HREF="node134.html">apply</A>
+<LI><A NAME="tex2html146"
+  HREF="node135.html">function</A>
+<LI><A NAME="tex2html147"
+  HREF="node136.html">morphism</A>
+</UL>
+<LI><A NAME="tex2html148"
+  HREF="node137.html">ChineseRemaindering</A>
+<UL>
+<LI><A NAME="tex2html149"
+  HREF="node138.html">combine</A>
+<LI><A NAME="tex2html150"
+  HREF="node139.html">interpolate</A>
+</UL>
+<LI><A NAME="tex2html151"
+  HREF="node140.html">Complex</A>
+<LI><A NAME="tex2html152"
+  HREF="node141.html">Derivation</A>
+<UL>
+<LI><A NAME="tex2html153"
+  HREF="node142.html">apply</A>
+<LI><A NAME="tex2html154"
+  HREF="node143.html">derivation</A>
+<LI><A NAME="tex2html155"
+  HREF="node144.html">function</A>
+</UL>
+<LI><A NAME="tex2html156"
+  HREF="node145.html">Fraction</A>
+<LI><A NAME="tex2html157"
+  HREF="node146.html">FractionalRoot</A>
+<UL>
+<LI><A NAME="tex2html158"
+  HREF="node147.html">integral?</A>
+<LI><A NAME="tex2html159"
+  HREF="node148.html">fractionalRoot,integralRoot</A>
+<LI><A NAME="tex2html160"
+  HREF="node149.html">integralValue</A>
+<LI><A NAME="tex2html161"
+  HREF="node150.html">multiplicity</A>
+<LI><A NAME="tex2html162"
+  HREF="node151.html">setMultiplicity!</A>
+<LI><A NAME="tex2html163"
+  HREF="node152.html">value</A>
+</UL>
+<LI><A NAME="tex2html164"
+  HREF="node153.html">FractionBy</A>
+<LI><A NAME="tex2html165"
+  HREF="node154.html">FractionByCategory</A>
+<LI><A NAME="tex2html166"
+  HREF="node155.html">FractionByCategory0</A>
+<UL>
+<LI><A NAME="tex2html167"
+  HREF="node156.html">order</A>
+<LI><A NAME="tex2html168"
+  HREF="node157.html">shift</A>
+</UL>
+<LI><A NAME="tex2html169"
+  HREF="node158.html">FractionCategory</A>
+<UL>
+<LI><A NAME="tex2html170"
+  HREF="node159.html">denominator,numerator</A>
+<LI><A NAME="tex2html171"
+  HREF="node160.html">normalize</A>
+</UL>
+<LI><A NAME="tex2html172"
+  HREF="node161.html">FractionFieldCategory</A>
+<LI><A NAME="tex2html173"
+  HREF="node162.html">FractionFieldCategory0</A>
+<UL>
+<LI><A NAME="tex2html174"
+  HREF="node163.html">/</A>
+</UL>
+<LI><A NAME="tex2html175"
+  HREF="node164.html">LinearCombinationFraction</A>
+<UL>
+<LI><A NAME="tex2html176"
+  HREF="node165.html"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$*$"></A>
+<LI><A NAME="tex2html177"
+  HREF="node166.html">makeIntegral</A>
+<LI><A NAME="tex2html178"
+  HREF="node167.html">makeIntegralBy</A>
+<LI><A NAME="tex2html179"
+  HREF="node168.html">makeRational</A>
+<LI><A NAME="tex2html180"
+  HREF="node169.html">normalize</A>
+</UL>
+<LI><A NAME="tex2html181"
+  HREF="node170.html">Product</A>
+<UL>
+<LI><A NAME="tex2html182"
+  HREF="node171.html">size</A>
+<LI><A NAME="tex2html183"
+  HREF="node172.html">divisors</A>
+<LI><A NAME="tex2html184"
+  HREF="node173.html">expand</A>
+<LI><A NAME="tex2html185"
+  HREF="node174.html">expandFraction</A>
+<LI><A NAME="tex2html186"
+  HREF="node175.html">generator</A>
+<LI><A NAME="tex2html187"
+  HREF="node176.html">log</A>
+<LI><A NAME="tex2html188"
+  HREF="node177.html">term</A>
+<LI><A NAME="tex2html189"
+  HREF="node178.html">times!</A>
+</UL>
+<LI><A NAME="tex2html190"
+  HREF="node179.html">ReducibleModulusException</A>
+<LI><A NAME="tex2html191"
+  HREF="node180.html">ReducibleModulusExceptionType</A>
+<LI><A NAME="tex2html192"
+  HREF="node181.html">SimpleAlgebraicExtension</A>
+<LI><A NAME="tex2html193"
+  HREF="node182.html">SimpleAlgebraicExtensionCategory</A>
+<LI><A NAME="tex2html194"
+  HREF="node183.html">UnivariatePolynomialMod</A>
+<LI><A NAME="tex2html195"
+  HREF="node184.html">UnivariatePolynomialModSqfr</A>
+<LI><A NAME="tex2html196"
+  HREF="node185.html">UnivariatePolynomialQuotient</A>
+<UL>
+<LI><A NAME="tex2html197"
+  HREF="node186.html">compose</A>
+<LI><A NAME="tex2html198"
+  HREF="node187.html">definingPolynomial</A>
+<LI><A NAME="tex2html199"
+  HREF="node188.html">knownIrreducible?</A>
+<LI><A NAME="tex2html200"
+  HREF="node189.html">lift</A>
+<LI><A NAME="tex2html201"
+  HREF="node190.html">monom</A>
+<LI><A NAME="tex2html202"
+  HREF="node191.html">reduce</A>
+<LI><A NAME="tex2html203"
+  HREF="node192.html">value</A>
+</UL>
+<LI><A NAME="tex2html204"
+  HREF="node193.html">UnivariatePolynomialQuotientSqfr</A>
+<UL>
+<LI><A NAME="tex2html205"
+  HREF="node194.html">newtonSeries</A>
+<LI><A NAME="tex2html206"
+  HREF="node195.html">norm,trace</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html207"
+  HREF="node196.html">Finite Fields</A>
+<UL>
+<LI><A NAME="tex2html208"
+  HREF="node197.html">SmallPrimes</A>
+<LI><A NAME="tex2html209"
+  HREF="node198.html">LazyHalfWordSizePrimes</A>
+<LI><A NAME="tex2html210"
+  HREF="node199.html">HalfWordSizePrimes</A>
+<LI><A NAME="tex2html211"
+  HREF="node200.html">WordSizePrimes</A>
+<LI><A NAME="tex2html212"
+  HREF="node201.html">PrimeCollection</A>
+<UL>
+<LI><A NAME="tex2html213"
+  HREF="node202.html">allPrimes</A>
+<LI><A NAME="tex2html214"
+  HREF="node203.html">fourierPrime</A>
+<LI><A NAME="tex2html215"
+  HREF="node204.html">maxPrime</A>
+<LI><A NAME="tex2html216"
+  HREF="node205.html">nextPrime</A>
+<LI><A NAME="tex2html217"
+  HREF="node206.html">previousPrime</A>
+<LI><A NAME="tex2html218"
+  HREF="node207.html">primRoot</A>
+<LI><A NAME="tex2html219"
+  HREF="node208.html">randomPrime</A>
+</UL>
+<LI><A NAME="tex2html220"
+  HREF="node209.html">PrimeField2</A>
+<LI><A NAME="tex2html221"
+  HREF="node210.html">PrimeFieldCategory</A>
+<UL>
+<LI><A NAME="tex2html222"
+  HREF="node211.html">rootsSqfr</A>
+</UL>
+<LI><A NAME="tex2html223"
+  HREF="node212.html">PrimeFieldCategory0</A>
+<UL>
+<LI><A NAME="tex2html224"
+  HREF="node213.html">lift</A>
+</UL>
+<LI><A NAME="tex2html225"
+  HREF="node214.html">PrimitiveRoots</A>
+<UL>
+<LI><A NAME="tex2html226"
+  HREF="node215.html">factors</A>
+<LI><A NAME="tex2html227"
+  HREF="node216.html">primitiveRoot</A>
+</UL>
+<LI><A NAME="tex2html228"
+  HREF="node217.html">PthPowering</A>
+<UL>
+<LI><A NAME="tex2html229"
+  HREF="node218.html">pExponentiation</A>
+</UL>
+<LI><A NAME="tex2html230"
+  HREF="node219.html">SmallPrimeField</A>
+<LI><A NAME="tex2html231"
+  HREF="node220.html">SmallPrimeField0</A>
+<LI><A NAME="tex2html232"
+  HREF="node221.html">SmallPrimeFieldCategory</A>
+<LI><A NAME="tex2html233"
+  HREF="node222.html">SmallPrimeFieldCategory0</A>
+<UL>
+<LI><A NAME="tex2html234"
+  HREF="node223.html">coerce,machine</A>
+<LI><A NAME="tex2html235"
+  HREF="node224.html">discreteLogTable</A>
+</UL>
+<LI><A NAME="tex2html236"
+  HREF="node225.html">ZechPrimeField</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html237"
+  HREF="node226.html">Linear Algebra</A>
+<UL>
+<LI><A NAME="tex2html238"
+  HREF="node227.html">Backsolve</A>
+<UL>
+<LI><A NAME="tex2html239"
+  HREF="node228.html">backsolve</A>
+<LI><A NAME="tex2html240"
+  HREF="node229.html">backsolve2</A>
+</UL>
+<LI><A NAME="tex2html241"
+  HREF="node230.html">DenseMatrix</A>
+<LI><A NAME="tex2html242"
+  HREF="node231.html">DivisionFreeGaussElimination</A>
+<LI><A NAME="tex2html243"
+  HREF="node232.html">FractionFreeGaussElimination</A>
+<LI><A NAME="tex2html244"
+  HREF="node233.html">HermiteGaussElimination</A>
+<LI><A NAME="tex2html245"
+  HREF="node234.html">LinearAlgebra</A>
+<UL>
+<LI><A NAME="tex2html246"
+  HREF="node235.html">cycle</A>
+<LI><A NAME="tex2html247"
+  HREF="node236.html">determinant</A>
+<LI><A NAME="tex2html248"
+  HREF="node237.html">factorOfDeterminant</A>
+<LI><A NAME="tex2html249"
+  HREF="node238.html">firstDependence</A>
+<LI><A NAME="tex2html250"
+  HREF="node239.html">inverse</A>
+<LI><A NAME="tex2html251"
+  HREF="node240.html">invertibleSubmatrix</A>
+<LI><A NAME="tex2html252"
+  HREF="node241.html">kernel</A>
+<LI><A NAME="tex2html253"
+  HREF="node242.html">maxInvertibleSubmatrix</A>
+<LI><A NAME="tex2html254"
+  HREF="node243.html">particularSolution</A>
+<LI><A NAME="tex2html255"
+  HREF="node244.html">rank</A>
+<LI><A NAME="tex2html256"
+  HREF="node245.html">rankLowerBound</A>
+<LI><A NAME="tex2html257"
+  HREF="node246.html">span</A>
+<LI><A NAME="tex2html258"
+  HREF="node247.html">solve</A>
+<LI><A NAME="tex2html259"
+  HREF="node248.html">subKernel</A>
+</UL>
+<LI><A NAME="tex2html260"
+  HREF="node249.html">LinearAlgebraRing</A>
+<UL>
+<LI><A NAME="tex2html261"
+  HREF="node250.html">determinant</A>
+<LI><A NAME="tex2html262"
+  HREF="node251.html">factorOfDeterminant</A>
+<LI><A NAME="tex2html263"
+  HREF="node252.html">inverse</A>
+<LI><A NAME="tex2html264"
+  HREF="node253.html">invertibleSubmatrix</A>
+<LI><A NAME="tex2html265"
+  HREF="node254.html">kernel</A>
+<LI><A NAME="tex2html266"
+  HREF="node255.html">linearDependence</A>
+<LI><A NAME="tex2html267"
+  HREF="node256.html">maxInvertibleSubmatrix</A>
+<LI><A NAME="tex2html268"
+  HREF="node257.html">particularSolution</A>
+<LI><A NAME="tex2html269"
+  HREF="node258.html">rank</A>
+<LI><A NAME="tex2html270"
+  HREF="node259.html">rankLowerBound</A>
+<LI><A NAME="tex2html271"
+  HREF="node260.html">solve</A>
+<LI><A NAME="tex2html272"
+  HREF="node261.html">span</A>
+<LI><A NAME="tex2html273"
+  HREF="node262.html">subKernel</A>
+</UL>
+<LI><A NAME="tex2html274"
+  HREF="node263.html">LinearEliminationCategory</A>
+<UL>
+<LI><A NAME="tex2html275"
+  HREF="node264.html">denominators</A>
+<LI><A NAME="tex2html276"
+  HREF="node265.html">dependence</A>
+<LI><A NAME="tex2html277"
+  HREF="node266.html">deter</A>
+<LI><A NAME="tex2html278"
+  HREF="node267.html">determinant</A>
+<LI><A NAME="tex2html279"
+  HREF="node268.html">extendedRowEchelon</A>
+<LI><A NAME="tex2html280"
+  HREF="node269.html">extendedRowEchelonForm</A>
+<LI><A NAME="tex2html281"
+  HREF="node270.html">maxInvertibleSubmatrix</A>
+<LI><A NAME="tex2html282"
+  HREF="node271.html">pivot</A>
+<LI><A NAME="tex2html283"
+  HREF="node272.html">rank</A>
+<LI><A NAME="tex2html284"
+  HREF="node273.html">rowEchelon</A>
+<LI><A NAME="tex2html285"
+  HREF="node274.html">rowEchelonForm</A>
+<LI><A NAME="tex2html286"
+  HREF="node275.html">span</A>
+</UL>
+<LI><A NAME="tex2html287"
+  HREF="node276.html">MatrixCategory</A>
+<UL>
+<LI><A NAME="tex2html288"
+  HREF="node277.html"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$*$"></A>
+<LI><A NAME="tex2html289"
+  HREF="node278.html">bracket</A>
+<LI><A NAME="tex2html290"
+  HREF="node279.html">apply</A>
+<LI><A NAME="tex2html291"
+  HREF="node280.html">colCombine!,rowCombine!</A>
+<LI><A NAME="tex2html292"
+  HREF="node281.html">colSwap!,rowSwap!</A>
+<LI><A NAME="tex2html293"
+  HREF="node282.html">column,row</A>
+<LI><A NAME="tex2html294"
+  HREF="node283.html">columns,rows</A>
+<LI><A NAME="tex2html295"
+  HREF="node284.html">companion</A>
+<LI><A NAME="tex2html296"
+  HREF="node285.html">diagonal</A>
+<LI><A NAME="tex2html297"
+  HREF="node286.html">dimensions</A>
+<LI><A NAME="tex2html298"
+  HREF="node287.html">map</A>
+<LI><A NAME="tex2html299"
+  HREF="node288.html">numberOfColumns,numberOfRows</A>
+<LI><A NAME="tex2html300"
+  HREF="node289.html">one,one?</A>
+<LI><A NAME="tex2html301"
+  HREF="node290.html">random</A>
+<LI><A NAME="tex2html302"
+  HREF="node291.html">set!</A>
+<LI><A NAME="tex2html303"
+  HREF="node292.html">setMatrix!</A>
+<LI><A NAME="tex2html304"
+  HREF="node293.html">tensor</A>
+<LI><A NAME="tex2html305"
+  HREF="node294.html">transpose</A>
+<LI><A NAME="tex2html306"
+  HREF="node295.html">wronskian</A>
+<LI><A NAME="tex2html307"
+  HREF="node296.html">zero</A>
+</UL>
+<LI><A NAME="tex2html308"
+  HREF="node297.html">MatrixCategoryOverFraction</A>
+<UL>
+<LI><A NAME="tex2html309"
+  HREF="node298.html">makeColIntegral</A>
+<LI><A NAME="tex2html310"
+  HREF="node299.html">makeRowIntegral</A>
+<LI><A NAME="tex2html311"
+  HREF="node300.html">makeRowIntegralBy</A>
+</UL>
+<LI><A NAME="tex2html312"
+  HREF="node301.html">ModulopGaussElimination</A>
+<UL>
+<LI><A NAME="tex2html313"
+  HREF="node302.html">deter</A>
+<LI><A NAME="tex2html314"
+  HREF="node303.html">determinant!</A>
+<LI><A NAME="tex2html315"
+  HREF="node304.html">extendedRowEchelon!</A>
+<LI><A NAME="tex2html316"
+  HREF="node305.html">firstDependence!</A>
+<LI><A NAME="tex2html317"
+  HREF="node306.html">inverse!</A>
+<LI><A NAME="tex2html318"
+  HREF="node307.html">kernel</A>
+<LI><A NAME="tex2html319"
+  HREF="node308.html">maxInvertibleSubmatrix!</A>
+<LI><A NAME="tex2html320"
+  HREF="node309.html">particularSolution!</A>
+<LI><A NAME="tex2html321"
+  HREF="node310.html">rank!</A>
+<LI><A NAME="tex2html322"
+  HREF="node311.html">rowEchelon!</A>
+<LI><A NAME="tex2html323"
+  HREF="node312.html">solve!</A>
+<LI><A NAME="tex2html324"
+  HREF="node313.html">span!</A>
+</UL>
+<LI><A NAME="tex2html325"
+  HREF="node314.html">OrdinaryGaussElimination</A>
+<LI><A NAME="tex2html326"
+  HREF="node315.html">OverdeterminedLinearSystemSolver</A>
+<UL>
+<LI><A NAME="tex2html327"
+  HREF="node316.html">kernel!</A>
+</UL>
+<LI><A NAME="tex2html328"
+  HREF="node317.html">SpecializationLinearAlgebra</A>
+<UL>
+<LI><A NAME="tex2html329"
+  HREF="node318.html">rankLowerBound</A>
+</UL>
+<LI><A NAME="tex2html330"
+  HREF="node319.html">TwoStepFractionFreeGaussElimination</A>
+<LI><A NAME="tex2html331"
+  HREF="node320.html">UnivariatePolynomialCRTLinearAlgebra</A>
+<UL>
+<LI><A NAME="tex2html332"
+  HREF="node321.html">degreeBound</A>
+<LI><A NAME="tex2html333"
+  HREF="node322.html">determinant</A>
+</UL>
+<LI><A NAME="tex2html334"
+  HREF="node323.html">UnivariatePolynomialPopovLinearAlgebra</A>
+<UL>
+<LI><A NAME="tex2html335"
+  HREF="node324.html">hermite</A>
+</UL>
+<LI><A NAME="tex2html336"
+  HREF="node325.html">Vector</A>
+<UL>
+<LI><A NAME="tex2html337"
+  HREF="node326.html">dot</A>
+<LI><A NAME="tex2html338"
+  HREF="node327.html">random</A>
+<LI><A NAME="tex2html339"
+  HREF="node328.html">tensor</A>
+<LI><A NAME="tex2html340"
+  HREF="node329.html">zero</A>
+</UL>
+<LI><A NAME="tex2html341"
+  HREF="node330.html">VectorOverFraction</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html342"
+  HREF="node331.html">Univariate Polynomials and Series</A>
+<UL>
+<LI><A NAME="tex2html343"
+  HREF="node332.html">DenseUnivariatePolynomial</A>
+<LI><A NAME="tex2html344"
+  HREF="node333.html">DenseUnivariateTaylorSeries</A>
+<LI><A NAME="tex2html345"
+  HREF="node334.html">FactorizationRing</A>
+<UL>
+<LI><A NAME="tex2html346"
+  HREF="node335.html">factor</A>
+<LI><A NAME="tex2html347"
+  HREF="node336.html">fractionalRoots,roots</A>
+</UL>
+<LI><A NAME="tex2html348"
+  HREF="node337.html">FFTRing</A>
+<UL>
+<LI><A NAME="tex2html349"
+  HREF="node338.html">fft</A>
+<LI><A NAME="tex2html350"
+  HREF="node339.html">fft!</A>
+<LI><A NAME="tex2html351"
+  HREF="node340.html">fftCutoff</A>
+</UL>
+<LI><A NAME="tex2html352"
+  HREF="node341.html">HeuristicGcd</A>
+<UL>
+<LI><A NAME="tex2html353"
+  HREF="node342.html">balancedRemainder</A>
+<LI><A NAME="tex2html354"
+  HREF="node343.html">heuristicGcd</A>
+<LI><A NAME="tex2html355"
+  HREF="node344.html">radixInterpolate</A>
+</UL>
+<LI><A NAME="tex2html356"
+  HREF="node345.html">ModularUnivariateGcd</A>
+<UL>
+<LI><A NAME="tex2html357"
+  HREF="node346.html">modularGcd</A>
+</UL>
+<LI><A NAME="tex2html358"
+  HREF="node347.html">ModulopUnivariateGcd</A>
+<UL>
+<LI><A NAME="tex2html359"
+  HREF="node348.html">gcd!</A>
+</UL>
+<LI><A NAME="tex2html360"
+  HREF="node349.html">MonogenicAlgebra</A>
+<UL>
+<LI><A NAME="tex2html361"
+  HREF="node350.html">coerce,vectorize!</A>
+<LI><A NAME="tex2html362"
+  HREF="node351.html">companion</A>
+<LI><A NAME="tex2html363"
+  HREF="node352.html">content,primitive,primitivePart</A>
+<LI><A NAME="tex2html364"
+  HREF="node353.html">monomial!</A>
+<LI><A NAME="tex2html365"
+  HREF="node354.html">random</A>
+<LI><A NAME="tex2html366"
+  HREF="node355.html">revert</A>
+<LI><A NAME="tex2html367"
+  HREF="node356.html">times</A>
+</UL>
+<LI><A NAME="tex2html368"
+  HREF="node357.html">MonogenicAlgebra2</A>
+<UL>
+<LI><A NAME="tex2html369"
+  HREF="node358.html">map</A>
+</UL>
+<LI><A NAME="tex2html370"
+  HREF="node359.html">MonogenicAlgebraOverFraction</A>
+<LI><A NAME="tex2html371"
+  HREF="node360.html">MonogenicLinearArithmeticType</A>
+<UL>
+<LI><A NAME="tex2html372"
+  HREF="node361.html">apply</A>
+<LI><A NAME="tex2html373"
+  HREF="node362.html">coefficients</A>
+<LI><A NAME="tex2html374"
+  HREF="node363.html">monom</A>
+<LI><A NAME="tex2html375"
+  HREF="node364.html">shift</A>
+<LI><A NAME="tex2html376"
+  HREF="node365.html">truncate</A>
+</UL>
+<LI><A NAME="tex2html377"
+  HREF="node366.html">PrimeFieldUnivariateFactorizer</A>
+<UL>
+<LI><A NAME="tex2html378"
+  HREF="node367.html">berlekamp</A>
+<LI><A NAME="tex2html379"
+  HREF="node368.html">cantorZassenhaus</A>
+<LI><A NAME="tex2html380"
+  HREF="node369.html">roots</A>
+<LI><A NAME="tex2html381"
+  HREF="node370.html">factor</A>
+</UL>
+<LI><A NAME="tex2html382"
+  HREF="node371.html">RationalRootRing</A>
+<UL>
+<LI><A NAME="tex2html383"
+  HREF="node372.html">integerRoots,rationalRoots</A>
+</UL>
+<LI><A NAME="tex2html384"
+  HREF="node373.html">Resultant</A>
+<UL>
+<LI><A NAME="tex2html385"
+  HREF="node374.html">lastSPRS</A>
+<LI><A NAME="tex2html386"
+  HREF="node375.html">extendedLastSPRS</A>
+<LI><A NAME="tex2html387"
+  HREF="node376.html">resultant</A>
+<LI><A NAME="tex2html388"
+  HREF="node377.html">SPRS</A>
+<LI><A NAME="tex2html389"
+  HREF="node378.html">subResultantGcd</A>
+</UL>
+<LI><A NAME="tex2html390"
+  HREF="node379.html">SparseUnivariatePolynomial0</A>
+<LI><A NAME="tex2html391"
+  HREF="node380.html">SparseUnivariatePolynomial1</A>
+<LI><A NAME="tex2html392"
+  HREF="node381.html">SparseUnivariatePolynomial</A>
+<LI><A NAME="tex2html393"
+  HREF="node382.html">UnivariateFactorialPolynomial</A>
+<UL>
+<LI><A NAME="tex2html394"
+  HREF="node383.html">coerce,expand,trailExpand</A>
+<LI><A NAME="tex2html395"
+  HREF="node384.html">integerRoots,rationalRoots</A>
+</UL>
+<LI><A NAME="tex2html396"
+  HREF="node385.html">UnivariateGcdRing</A>
+<UL>
+<LI><A NAME="tex2html397"
+  HREF="node386.html">gcdUP</A>
+<LI><A NAME="tex2html398"
+  HREF="node387.html">gcdquoUP</A>
+</UL>
+<LI><A NAME="tex2html399"
+  HREF="node388.html">UnivariateIntegralFactorizer</A>
+<UL>
+<LI><A NAME="tex2html400"
+  HREF="node389.html">factor</A>
+<LI><A NAME="tex2html401"
+  HREF="node390.html">integerRoots,rationalRoots</A>
+</UL>
+<LI><A NAME="tex2html402"
+  HREF="node391.html">UnivariateMonomial</A>
+<UL>
+<LI><A NAME="tex2html403"
+  HREF="node392.html">apply</A>
+<LI><A NAME="tex2html404"
+  HREF="node393.html">coefficient</A>
+<LI><A NAME="tex2html405"
+  HREF="node394.html">degree</A>
+<LI><A NAME="tex2html406"
+  HREF="node395.html">map</A>
+<LI><A NAME="tex2html407"
+  HREF="node396.html">monomial</A>
+<LI><A NAME="tex2html408"
+  HREF="node397.html">pthPower</A>
+<LI><A NAME="tex2html409"
+  HREF="node398.html">setCoefficient!</A>
+<LI><A NAME="tex2html410"
+  HREF="node399.html">setDegree!</A>
+</UL>
+<LI><A NAME="tex2html411"
+  HREF="node400.html">UnivariatePolynomialAlgebra</A>
+<UL>
+<LI><A NAME="tex2html412"
+  HREF="node401.html">add!</A>
+<LI><A NAME="tex2html413"
+  HREF="node402.html">compose,translate</A>
+</UL>
+<LI><A NAME="tex2html414"
+  HREF="node403.html">UnivariatePolynomialCategory</A>
+<UL>
+<LI><A NAME="tex2html415"
+  HREF="node404.html">apply</A>
+<LI><A NAME="tex2html416"
+  HREF="node405.html">equal?</A>
+<LI><A NAME="tex2html417"
+  HREF="node406.html">height</A>
+<LI><A NAME="tex2html418"
+  HREF="node407.html">Horner</A>
+<LI><A NAME="tex2html419"
+  HREF="node408.html">integrate</A>
+<LI><A NAME="tex2html420"
+  HREF="node409.html">lift</A>
+<LI><A NAME="tex2html421"
+  HREF="node410.html">monicDivide,monicQuotient, monicRemainder</A>
+<LI><A NAME="tex2html422"
+  HREF="node411.html">ordinaryPoint</A>
+<LI><A NAME="tex2html423"
+  HREF="node412.html">pseudoDivide</A>
+<LI><A NAME="tex2html424"
+  HREF="node413.html">pseudoRemainder</A>
+<LI><A NAME="tex2html425"
+  HREF="node414.html">rationalReconstruction</A>
+<LI><A NAME="tex2html426"
+  HREF="node415.html">resultant</A>
+<LI><A NAME="tex2html427"
+  HREF="node416.html">sparseMultiple</A>
+<LI><A NAME="tex2html428"
+  HREF="node417.html">squareFree,squareFreePart</A>
+<LI><A NAME="tex2html429"
+  HREF="node418.html">values</A>
+<LI><A NAME="tex2html430"
+  HREF="node419.html">factor</A>
+<LI><A NAME="tex2html431"
+  HREF="node420.html">fractionalRoots,roots</A>
+<LI><A NAME="tex2html432"
+  HREF="node421.html">dispersion,integerDistances</A>
+<LI><A NAME="tex2html433"
+  HREF="node422.html">integerRoots,rationalRoots</A>
+<LI><A NAME="tex2html434"
+  HREF="node423.html">minIntegerRoot,maxIntegerRoot</A>
+<LI><A NAME="tex2html435"
+  HREF="node424.html">universalBound</A>
+</UL>
+<LI><A NAME="tex2html436"
+  HREF="node425.html">UnivariatePolynomialKaratsuba</A>
+<LI><A NAME="tex2html437"
+  HREF="node426.html">UnivariatePolynomialSquareFree</A>
+<UL>
+<LI><A NAME="tex2html438"
+  HREF="node427.html">musser</A>
+<LI><A NAME="tex2html439"
+  HREF="node428.html">yun</A>
+</UL>
+<LI><A NAME="tex2html440"
+  HREF="node429.html">UnivariateTaylorSeriesCategory</A>
+<UL>
+<LI><A NAME="tex2html441"
+  HREF="node430.html">degree,finite?</A>
+<LI><A NAME="tex2html442"
+  HREF="node431.html">differentiate,integrate</A>
+<LI><A NAME="tex2html443"
+  HREF="node432.html">series</A>
+</UL>
+<LI><A NAME="tex2html444"
+  HREF="node433.html">UnivariateTaylorSeriesCategory2Poly</A>
+<UL>
+<LI><A NAME="tex2html445"
+  HREF="node434.html">expand</A>
+<LI><A NAME="tex2html446"
+  HREF="node435.html">expandFraction</A>
+<LI><A NAME="tex2html447"
+  HREF="node436.html">polynomials</A>
+<LI><A NAME="tex2html448"
+  HREF="node437.html">monicNewtonSeries</A>
+<LI><A NAME="tex2html449"
+  HREF="node438.html">tryExpandFraction</A>
+<LI><A NAME="tex2html450"
+  HREF="node439.html">truncate</A>
+</UL>
+<LI><A NAME="tex2html451"
+  HREF="node440.html">UnivariateTaylorSeriesNewtonSolver</A>
+<UL>
+<LI><A NAME="tex2html452"
+  HREF="node441.html">differentiate</A>
+<LI><A NAME="tex2html453"
+  HREF="node442.html">root</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html454"
+  HREF="node443.html">Multivariate Polynomials</A>
+<UL>
+<LI><A NAME="tex2html455"
+  HREF="node444.html">BivariateUtilitiesPackage</A>
+<LI><A NAME="tex2html456"
+  HREF="node445.html">DirectProduct</A>
+<LI><A NAME="tex2html457"
+  HREF="node446.html">DirectProductCategory</A>
+<LI><A NAME="tex2html458"
+  HREF="node447.html">DistributedMultivariatePolynomial0</A>
+<LI><A NAME="tex2html459"
+  HREF="node448.html">DistributedMultivariatePolynomial1</A>
+<LI><A NAME="tex2html460"
+  HREF="node449.html">ExponentCategory</A>
+<LI><A NAME="tex2html461"
+  HREF="node450.html">FiniteAbelianMonoidRing0</A>
+<LI><A NAME="tex2html462"
+  HREF="node451.html">FiniteVariableType</A>
+<UL>
+<LI><A NAME="tex2html463"
+  HREF="node452.html">variable</A>
+</UL>
+<LI><A NAME="tex2html464"
+  HREF="node453.html">GeneralExponentCategory</A>
+<UL>
+<LI><A NAME="tex2html465"
+  HREF="node454.html">cancel,cancelIfCan</A>
+<LI><A NAME="tex2html466"
+  HREF="node455.html">times</A>
+</UL>
+<LI><A NAME="tex2html467"
+  HREF="node456.html">IntegerExponentVectorCategory</A>
+<LI><A NAME="tex2html468"
+  HREF="node457.html">IntegerPolynomial</A>
+<LI><A NAME="tex2html469"
+  HREF="node458.html">MachineIntegerDegreeLexicographicalExponent</A>
+<LI><A NAME="tex2html470"
+  HREF="node459.html">MachineIntegerDegreeReverseLexicographicalExponent</A>
+<LI><A NAME="tex2html471"
+  HREF="node460.html">MachineIntegerExponentVectorCategory</A>
+<LI><A NAME="tex2html472"
+  HREF="node461.html">MachineIntegerLexicographicalExponent</A>
+<LI><A NAME="tex2html473"
+  HREF="node462.html">OrderedSymbol</A>
+<LI><A NAME="tex2html474"
+  HREF="node463.html">OrderedVariableList</A>
+<LI><A NAME="tex2html475"
+  HREF="node464.html">OrderedVariableTuple</A>
+<LI><A NAME="tex2html476"
+  HREF="node465.html">PolynomialRing</A>
+<LI><A NAME="tex2html477"
+  HREF="node466.html">PolynomialRing0</A>
+<LI><A NAME="tex2html478"
+  HREF="node467.html">RecursiveMultivariatePolynomial0</A>
+<LI><A NAME="tex2html479"
+  HREF="node468.html">RecursiveMultivariatePolynomialCategory0</A>
+<LI><A NAME="tex2html480"
+  HREF="node469.html">ResultantOfBivariatePolynomialsOverSmallPrimeField</A>
+<LI><A NAME="tex2html481"
+  HREF="node470.html">SparseIntegerMultivariatePolynomial</A>
+<LI><A NAME="tex2html482"
+  HREF="node471.html">SparseMultivariatePolynomial</A>
+<LI><A NAME="tex2html483"
+  HREF="node472.html">VariableType</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html484"
+  HREF="node473.html">Expression Trees</A>
+<UL>
+<LI><A NAME="tex2html485"
+  HREF="node474.html">ExpressionTree</A>
+<UL>
+<LI><A NAME="tex2html486"
+  HREF="node475.html">aldor,axiom,C,fortran,infix,lisp,maple,tex</A>
+<LI><A NAME="tex2html487"
+  HREF="node476.html">apply</A>
+<LI><A NAME="tex2html488"
+  HREF="node477.html">arguments</A>
+<LI><A NAME="tex2html489"
+  HREF="node478.html">extree</A>
+<LI><A NAME="tex2html490"
+  HREF="node479.html">is?</A>
+<LI><A NAME="tex2html491"
+  HREF="node480.html">leaf</A>
+<LI><A NAME="tex2html492"
+  HREF="node481.html">negate</A>
+<LI><A NAME="tex2html493"
+  HREF="node482.html">negative?</A>
+<LI><A NAME="tex2html494"
+  HREF="node483.html">operator</A>
+<LI><A NAME="tex2html495"
+  HREF="node484.html">texParen?</A>
+</UL>
+<LI><A NAME="tex2html496"
+  HREF="node485.html">ExpressionTreeAnd</A>
+<LI><A NAME="tex2html497"
+  HREF="node486.html">ExpressionTreeAssign</A>
+<LI><A NAME="tex2html498"
+  HREF="node487.html">ExpressionTreeBigO</A>
+<LI><A NAME="tex2html499"
+  HREF="node488.html">ExpressionTreeCase</A>
+<LI><A NAME="tex2html500"
+  HREF="node489.html">ExpressionTreeExpt</A>
+<LI><A NAME="tex2html501"
+  HREF="node490.html">ExpressionTreeEqual</A>
+<LI><A NAME="tex2html502"
+  HREF="node491.html">ExpressionTreeExpt</A>
+<LI><A NAME="tex2html503"
+  HREF="node492.html">ExpressionTreeFactorial</A>
+<LI><A NAME="tex2html504"
+  HREF="node493.html">ExpressionTreeGreaterEqual</A>
+<LI><A NAME="tex2html505"
+  HREF="node494.html">ExpressionTreeGreaterThan</A>
+<LI><A NAME="tex2html506"
+  HREF="node495.html">ExpressionTreeIf</A>
+<LI><A NAME="tex2html507"
+  HREF="node496.html">ExpressionTreeLeaf</A>
+<UL>
+<LI><A NAME="tex2html508"
+  HREF="node497.html">aldor,axiom,C,fortran,infix,lisp,maple,tex</A>
+<LI><A NAME="tex2html509"
+  HREF="node498.html">boolean</A>
+<LI><A NAME="tex2html510"
+  HREF="node499.html">doubleFloat</A>
+<LI><A NAME="tex2html511"
+  HREF="node500.html">float</A>
+<LI><A NAME="tex2html512"
+  HREF="node501.html">integer</A>
+<LI><A NAME="tex2html513"
+  HREF="node502.html">leaf</A>
+<LI><A NAME="tex2html514"
+  HREF="node503.html">negate</A>
+<LI><A NAME="tex2html515"
+  HREF="node504.html">negative?</A>
+<LI><A NAME="tex2html516"
+  HREF="node505.html">machineInteger</A>
+<LI><A NAME="tex2html517"
+  HREF="node506.html">singleFloat</A>
+<LI><A NAME="tex2html518"
+  HREF="node507.html">string</A>
+<LI><A NAME="tex2html519"
+  HREF="node508.html">symbol</A>
+<LI><A NAME="tex2html520"
+  HREF="node509.html">texParen?</A>
+</UL>
+<LI><A NAME="tex2html521"
+  HREF="node510.html">ExpressionTreeLessEqual</A>
+<LI><A NAME="tex2html522"
+  HREF="node511.html">ExpressionTreeLessThan</A>
+<LI><A NAME="tex2html523"
+  HREF="node512.html">ExpressionTreeLispList</A>
+<LI><A NAME="tex2html524"
+  HREF="node513.html">ExpressionTreeList</A>
+<LI><A NAME="tex2html525"
+  HREF="node514.html">ExpressionTreeMatrix</A>
+<LI><A NAME="tex2html526"
+  HREF="node515.html">ExpressionTreeMinus</A>
+<LI><A NAME="tex2html527"
+  HREF="node516.html">ExpressionTreeNotEqual</A>
+<LI><A NAME="tex2html528"
+  HREF="node517.html">ExpressionTreeOperator</A>
+<UL>
+<LI><A NAME="tex2html529"
+  HREF="node518.html">aldor,axiom,C,fortran,infix,lisp,maple,tex</A>
+<LI><A NAME="tex2html530"
+  HREF="node519.html">arity</A>
+<LI><A NAME="tex2html531"
+  HREF="node520.html">name</A>
+<LI><A NAME="tex2html532"
+  HREF="node521.html">texParen?</A>
+<LI><A NAME="tex2html533"
+  HREF="node522.html">uniqueId</A>
+</UL>
+<LI><A NAME="tex2html534"
+  HREF="node523.html">ExpressionTreeOperatorTools</A>
+<UL>
+<LI><A NAME="tex2html535"
+  HREF="node524.html">infix</A>
+<LI><A NAME="tex2html536"
+  HREF="node525.html">lisp</A>
+<LI><A NAME="tex2html537"
+  HREF="node526.html">prefix</A>
+</UL>
+<LI><A NAME="tex2html538"
+  HREF="node527.html">ExpressionTreePlus</A>
+<LI><A NAME="tex2html539"
+  HREF="node528.html">ExpressionTreePrefix</A>
+<LI><A NAME="tex2html540"
+  HREF="node529.html">ExpressionTreeQuotient</A>
+<LI><A NAME="tex2html541"
+  HREF="node530.html">ExpressionTreeSubscript</A>
+<LI><A NAME="tex2html542"
+  HREF="node531.html">ExpressionTreeTimes</A>
+<LI><A NAME="tex2html543"
+  HREF="node532.html">ExpressionTreeVector</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html544"
+  HREF="node533.html">Shells</A>
+<UL>
+<LI><A NAME="tex2html545"
+  HREF="node534.html">Evaluator</A>
+<LI><A NAME="tex2html546"
+  HREF="node535.html">InfixExpressionParser</A>
+<UL>
+<LI><A NAME="tex2html547"
+  HREF="node536.html">precedences!</A>
+</UL>
+<LI><A NAME="tex2html548"
+  HREF="node537.html">LispExpressionParser</A>
+<LI><A NAME="tex2html549"
+  HREF="node538.html">MakePartialRing</A>
+<LI><A NAME="tex2html550"
+  HREF="node539.html">Maple</A>
+<UL>
+<LI><A NAME="tex2html551"
+  HREF="node540.html">input</A>
+<LI><A NAME="tex2html552"
+  HREF="node541.html">maple</A>
+<LI><A NAME="tex2html553"
+  HREF="node542.html">run</A>
+</UL>
+<LI><A NAME="tex2html554"
+  HREF="node543.html">Parsable</A>
+<UL>
+<LI><A NAME="tex2html555"
+  HREF="node544.html">eval</A>
+</UL>
+<LI><A NAME="tex2html556"
+  HREF="node545.html">Parser</A>
+<UL>
+<LI><A NAME="tex2html557"
+  HREF="node546.html">eof?</A>
+<LI><A NAME="tex2html558"
+  HREF="node547.html">lastError</A>
+<LI><A NAME="tex2html559"
+  HREF="node548.html">parse!</A>
+</UL>
+<LI><A NAME="tex2html560"
+  HREF="node549.html">ParserReader</A>
+<UL>
+<LI><A NAME="tex2html561"
+  HREF="node550.html">parser</A>
+</UL>
+<LI><A NAME="tex2html562"
+  HREF="node551.html">ParsingTools</A>
+<UL>
+<LI><A NAME="tex2html563"
+  HREF="node552.html">evalArith</A>
+<LI><A NAME="tex2html564"
+  HREF="node553.html">evalInt</A>
+</UL>
+<LI><A NAME="tex2html565"
+  HREF="node554.html">PartialRing</A>
+<LI><A NAME="tex2html566"
+  HREF="node555.html">Scanner</A>
+<UL>
+<LI><A NAME="tex2html567"
+  HREF="node556.html">scan</A>
+</UL>
+<LI><A NAME="tex2html568"
+  HREF="node557.html">Shell</A>
+<UL>
+<LI><A NAME="tex2html569"
+  HREF="node558.html">center</A>
+<LI><A NAME="tex2html570"
+  HREF="node559.html">shell!</A>
+</UL>
+<LI><A NAME="tex2html571"
+  HREF="node560.html">SymbolTable</A>
+<UL>
+<LI><A NAME="tex2html572"
+  HREF="node561.html">apply</A>
+<LI><A NAME="tex2html573"
+  HREF="node562.html">set!</A>
+<LI><A NAME="tex2html574"
+  HREF="node563.html">table</A>
+</UL>
+<LI><A NAME="tex2html575"
+  HREF="node564.html">Token</A>
+<UL>
+<LI><A NAME="tex2html576"
+  HREF="node565.html">float</A>
+<LI><A NAME="tex2html577"
+  HREF="node566.html">integer</A>
+<LI><A NAME="tex2html578"
+  HREF="node567.html">leaf</A>
+<LI><A NAME="tex2html579"
+  HREF="node568.html">name</A>
+<LI><A NAME="tex2html580"
+  HREF="node569.html">operator</A>
+<LI><A NAME="tex2html581"
+  HREF="node570.html">prefix</A>
+<LI><A NAME="tex2html582"
+  HREF="node571.html">special</A>
+<LI><A NAME="tex2html583"
+  HREF="node572.html">name</A>
+<LI><A NAME="tex2html584"
+  HREF="node573.html">token</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html585"
+  HREF="node574.html">Utilities</A>
+<UL>
+<LI><A NAME="tex2html586"
+  HREF="node575.html">AlgebraLibraryInformation</A>
+<LI><A NAME="tex2html587"
+  HREF="node576.html">IndexedVariable</A>
+<UL>
+<LI><A NAME="tex2html588"
+  HREF="node577.html">index</A>
+<LI><A NAME="tex2html589"
+  HREF="node578.html">variable</A>
+</UL>
+<LI><A NAME="tex2html590"
+  HREF="node579.html">PartialFunction</A>
+<UL>
+<LI><A NAME="tex2html591"
+  HREF="node580.html">apply</A>
+<LI><A NAME="tex2html592"
+  HREF="node581.html">inDomain?</A>
+<LI><A NAME="tex2html593"
+  HREF="node582.html">mapping</A>
+<LI><A NAME="tex2html594"
+  HREF="node583.html">partialMapping</A>
+<LI><A NAME="tex2html595"
+  HREF="node584.html">predicate</A>
+<LI><A NAME="tex2html596"
+  HREF="node585.html">partialFunction</A>
+<LI><A NAME="tex2html597"
+  HREF="node586.html">partialApply</A>
+</UL>
+<LI><A NAME="tex2html598"
+  HREF="node587.html">Permutation</A>
+<UL>
+<LI><A NAME="tex2html599"
+  HREF="node588.html">apply</A>
+<LI><A NAME="tex2html600"
+  HREF="node589.html">mapping</A>
+<LI><A NAME="tex2html601"
+  HREF="node590.html">sign</A>
+<LI><A NAME="tex2html602"
+  HREF="node591.html">transpose</A>
+</UL>
+<LI><A NAME="tex2html603"
+  HREF="node592.html">Sequence</A>
+<UL>
+<LI><A NAME="tex2html604"
+  HREF="node593.html">size</A>
+<LI><A NAME="tex2html605"
+  HREF="node594.html">bound,finite?</A>
+<LI><A NAME="tex2html606"
+  HREF="node595.html">dot</A>
+<LI><A NAME="tex2html607"
+  HREF="node596.html">interlacing</A>
+<LI><A NAME="tex2html608"
+  HREF="node597.html">random</A>
+<LI><A NAME="tex2html609"
+  HREF="node598.html">sequence</A>
+</UL>
+<LI><A NAME="tex2html610"
+  HREF="node599.html">Symbol</A>
+<UL>
+<LI><A NAME="tex2html611"
+  HREF="node600.html"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$-$"></A>
+<LI><A NAME="tex2html612"
+  HREF="node601.html">name</A>
+<LI><A NAME="tex2html613"
+  HREF="node602.html">new</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html614"
+  HREF="node603.html"><TT>libaldor</TT>  Reference Manual</A>
+<LI><A NAME="tex2html615"
+  HREF="node604.html">Arithmetic</A>
+<UL>
+<LI><A NAME="tex2html616"
+  HREF="node605.html">AldorInteger</A>
+<LI><A NAME="tex2html617"
+  HREF="node606.html">AdditiveType</A>
+<UL>
+<LI><A NAME="tex2html618"
+  HREF="node607.html">.</A>
+<LI><A NAME="tex2html619"
+  HREF="node608.html">+,-</A>
+<LI><A NAME="tex2html620"
+  HREF="node609.html">add!,minus!</A>
+<LI><A NAME="tex2html621"
+  HREF="node610.html">zero?</A>
+</UL>
+<LI><A NAME="tex2html622"
+  HREF="node611.html">ArithmeticType</A>
+<UL>
+<LI><A NAME="tex2html623"
+  HREF="node612.html">1</A>
+<LI><A NAME="tex2html624"
+  HREF="node613.html">*,**</A>
+<LI><A NAME="tex2html625"
+  HREF="node614.html">commutative?</A>
+<LI><A NAME="tex2html626"
+  HREF="node615.html">one?</A>
+<LI><A NAME="tex2html627"
+  HREF="node616.html">times!</A>
+</UL>
+<LI><A NAME="tex2html628"
+  HREF="node617.html">BinaryPowering</A>
+<UL>
+<LI><A NAME="tex2html629"
+  HREF="node618.html">binaryExponentiation</A>
+</UL>
+<LI><A NAME="tex2html630"
+  HREF="node619.html">Boolean</A>
+<UL>
+<LI><A NAME="tex2html631"
+  HREF="node620.html">true,false</A>
+</UL>
+<LI><A NAME="tex2html632"
+  HREF="node621.html">BooleanArithmeticType</A>
+<UL>
+<LI><A NAME="tex2html633"
+  HREF="node622.html">and,or,not,xor</A>
+</UL>
+<LI><A NAME="tex2html634"
+  HREF="node623.html">Complex</A>
+<UL>
+<LI><A NAME="tex2html635"
+  HREF="node624.html">coerce</A>
+<LI><A NAME="tex2html636"
+  HREF="node625.html">complex</A>
+<LI><A NAME="tex2html637"
+  HREF="node626.html">conjugate</A>
+<LI><A NAME="tex2html638"
+  HREF="node627.html">copy!</A>
+<LI><A NAME="tex2html639"
+  HREF="node628.html">imag,real</A>
+<LI><A NAME="tex2html640"
+  HREF="node629.html">norm</A>
+</UL>
+<LI><A NAME="tex2html641"
+  HREF="node630.html">DoubleFloat</A>
+<UL>
+<LI><A NAME="tex2html642"
+  HREF="node631.html">**</A>
+<LI><A NAME="tex2html643"
+  HREF="node632.html">coerce,single</A>
+<LI><A NAME="tex2html644"
+  HREF="node633.html">max,min</A>
+</UL>
+<LI><A NAME="tex2html645"
+  HREF="node634.html">FloatType</A>
+<UL>
+<LI><A NAME="tex2html646"
+  HREF="node635.html"><IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$/$"></A>
+<LI><A NAME="tex2html647"
+  HREF="node636.html">coerce</A>
+<LI><A NAME="tex2html648"
+  HREF="node637.html">fraction,truncate</A>
+</UL>
+<LI><A NAME="tex2html649"
+  HREF="node638.html">GMPFloat</A>
+<UL>
+<LI><A NAME="tex2html650"
+  HREF="node639.html">coerce</A>
+<LI><A NAME="tex2html651"
+  HREF="node640.html">limbs</A>
+<LI><A NAME="tex2html652"
+  HREF="node641.html">machine,single</A>
+<LI><A NAME="tex2html653"
+  HREF="node642.html">new</A>
+<LI><A NAME="tex2html654"
+  HREF="node643.html">precision,setPrecision!</A>
+</UL>
+<LI><A NAME="tex2html655"
+  HREF="node644.html">GMPInteger</A>
+<UL>
+<LI><A NAME="tex2html656"
+  HREF="node645.html">coerce</A>
+<LI><A NAME="tex2html657"
+  HREF="node646.html">limbs</A>
+<LI><A NAME="tex2html658"
+  HREF="node647.html">new</A>
+</UL>
+<LI><A NAME="tex2html659"
+  HREF="node648.html">IntegerSegment</A>
+<UL>
+<LI><A NAME="tex2html660"
+  HREF="node649.html">..</A>
+<LI><A NAME="tex2html661"
+  HREF="node650.html">by,step</A>
+<LI><A NAME="tex2html662"
+  HREF="node651.html">generator</A>
+<LI><A NAME="tex2html663"
+  HREF="node652.html">high,low</A>
+<LI><A NAME="tex2html664"
+  HREF="node653.html">open?</A>
+</UL>
+<LI><A NAME="tex2html665"
+  HREF="node654.html">IntegerType</A>
+<UL>
+<LI><A NAME="tex2html666"
+  HREF="node655.html">bit?,clear,set</A>
+<LI><A NAME="tex2html667"
+  HREF="node656.html">coerce,machine</A>
+<LI><A NAME="tex2html668"
+  HREF="node657.html">divide,mod,quo,rem</A>
+<LI><A NAME="tex2html669"
+  HREF="node658.html">even?,odd?</A>
+<LI><A NAME="tex2html670"
+  HREF="node659.html">factorial</A>
+<LI><A NAME="tex2html671"
+  HREF="node660.html">gcd,lcm</A>
+<LI><A NAME="tex2html672"
+  HREF="node661.html">length</A>
+<LI><A NAME="tex2html673"
+  HREF="node662.html">next,prev</A>
+<LI><A NAME="tex2html674"
+  HREF="node663.html">nthRoot</A>
+<LI><A NAME="tex2html675"
+  HREF="node664.html">random</A>
+<LI><A NAME="tex2html676"
+  HREF="node665.html">shift</A>
+</UL>
+<LI><A NAME="tex2html677"
+  HREF="node666.html">LinearCombinationType</A>
+<UL>
+<LI><A NAME="tex2html678"
+  HREF="node667.html"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$*$"></A>
+<LI><A NAME="tex2html679"
+  HREF="node668.html">add!</A>
+<LI><A NAME="tex2html680"
+  HREF="node669.html">times!</A>
+</UL>
+<LI><A NAME="tex2html681"
+  HREF="node670.html">MachineInteger</A>
+<UL>
+<LI><A NAME="tex2html682"
+  HREF="node671.html">bytes,max,min</A>
+<LI><A NAME="tex2html683"
+  HREF="node672.html">modX,modInverse</A>
+</UL>
+<LI><A NAME="tex2html684"
+  HREF="node673.html">OrderedArithmeticType</A>
+<UL>
+<LI><A NAME="tex2html685"
+  HREF="node674.html">abs</A>
+<LI><A NAME="tex2html686"
+  HREF="node675.html">sign</A>
+</UL>
+<LI><A NAME="tex2html687"
+  HREF="node676.html">PartiallyOrderedType</A>
+<UL>
+<LI><A NAME="tex2html688"
+  HREF="node677.html"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$&lt;$">,<IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$&gt;$"></A>
+</UL>
+<LI><A NAME="tex2html689"
+  HREF="node678.html">PackableType</A>
+<UL>
+<LI><A NAME="tex2html690"
+  HREF="node679.html">getPackedArray,setPackedArray!</A>
+<LI><A NAME="tex2html691"
+  HREF="node680.html">newPackedArray</A>
+</UL>
+<LI><A NAME="tex2html692"
+  HREF="node681.html">PrimitiveType</A>
+<UL>
+<LI><A NAME="tex2html693"
+  HREF="node682.html"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$=$"></A>
+</UL>
+<LI><A NAME="tex2html694"
+  HREF="node683.html">RandomNumberGenerator</A>
+<UL>
+<LI><A NAME="tex2html695"
+  HREF="node684.html">apply</A>
+<LI><A NAME="tex2html696"
+  HREF="node685.html">generator</A>
+<LI><A NAME="tex2html697"
+  HREF="node686.html">max,min</A>
+<LI><A NAME="tex2html698"
+  HREF="node687.html">numberOfGenerators</A>
+<LI><A NAME="tex2html699"
+  HREF="node688.html">randomGenerator</A>
+<LI><A NAME="tex2html700"
+  HREF="node689.html">randomInteger</A>
+<LI><A NAME="tex2html701"
+  HREF="node690.html">seed</A>
+</UL>
+<LI><A NAME="tex2html702"
+  HREF="node691.html">SingleFloat</A>
+<UL>
+<LI><A NAME="tex2html703"
+  HREF="node692.html">**</A>
+<LI><A NAME="tex2html704"
+  HREF="node693.html">max,min</A>
+</UL>
+<LI><A NAME="tex2html705"
+  HREF="node694.html">TotallyOrderedType</A>
+<UL>
+<LI><A NAME="tex2html706"
+  HREF="node695.html">compare</A>
+<LI><A NAME="tex2html707"
+  HREF="node696.html">max,min</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html708"
+  HREF="node697.html">Input/Output</A>
+<UL>
+<LI><A NAME="tex2html709"
+  HREF="node698.html">BinaryReader</A>
+<UL>
+<LI><A NAME="tex2html710"
+  HREF="node699.html">bin</A>
+<LI><A NAME="tex2html711"
+  HREF="node700.html">binaryReader</A>
+<LI><A NAME="tex2html712"
+  HREF="node701.html">read!</A>
+</UL>
+<LI><A NAME="tex2html713"
+  HREF="node702.html">BinaryWriter</A>
+<UL>
+<LI><A NAME="tex2html714"
+  HREF="node703.html">berr,bout</A>
+<LI><A NAME="tex2html715"
+  HREF="node704.html">binaryWriter</A>
+<LI><A NAME="tex2html716"
+  HREF="node705.html">flush!</A>
+<LI><A NAME="tex2html717"
+  HREF="node706.html">write!</A>
+</UL>
+<LI><A NAME="tex2html718"
+  HREF="node707.html">Byte</A>
+<UL>
+<LI><A NAME="tex2html719"
+  HREF="node708.html">coerce</A>
+<LI><A NAME="tex2html720"
+  HREF="node709.html">eof</A>
+<LI><A NAME="tex2html721"
+  HREF="node710.html">lowByte</A>
+</UL>
+<LI><A NAME="tex2html722"
+  HREF="node711.html">Character</A>
+<UL>
+<LI><A NAME="tex2html723"
+  HREF="node712.html">char,ord</A>
+<LI><A NAME="tex2html724"
+  HREF="node713.html">digit?,letter?,space?</A>
+<LI><A NAME="tex2html725"
+  HREF="node714.html">eof,newline,null,tab</A>
+<LI><A NAME="tex2html726"
+  HREF="node715.html">lower,upper</A>
+</UL>
+<LI><A NAME="tex2html727"
+  HREF="node716.html">File</A>
+<UL>
+<LI><A NAME="tex2html728"
+  HREF="node717.html">close!</A>
+<LI><A NAME="tex2html729"
+  HREF="node718.html">coerce</A>
+<LI><A NAME="tex2html730"
+  HREF="node719.html">fileAppend,fileBinary,fileRead,fileText,fileWrite</A>
+<LI><A NAME="tex2html731"
+  HREF="node720.html">open</A>
+<LI><A NAME="tex2html732"
+  HREF="node721.html">position</A>
+<LI><A NAME="tex2html733"
+  HREF="node722.html">remove</A>
+<LI><A NAME="tex2html734"
+  HREF="node723.html">setPosition!,setPositionFromEnd!,setRelativePosition!</A>
+<LI><A NAME="tex2html735"
+  HREF="node724.html">uniqueName</A>
+</UL>
+<LI><A NAME="tex2html736"
+  HREF="node725.html">FileException</A>
+<LI><A NAME="tex2html737"
+  HREF="node726.html">FileExceptionType</A>
+<LI><A NAME="tex2html738"
+  HREF="node727.html">InputType</A>
+<UL>
+<LI><A NAME="tex2html739"
+  HREF="node728.html"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$&lt;&lt;$"></A>
+</UL>
+<LI><A NAME="tex2html740"
+  HREF="node729.html">OutputType</A>
+<UL>
+<LI><A NAME="tex2html741"
+  HREF="node730.html"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$&lt;&lt;$"></A>
+</UL>
+<LI><A NAME="tex2html742"
+  HREF="node731.html">SerializableType</A>
+<UL>
+<LI><A NAME="tex2html743"
+  HREF="node732.html"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$&lt;&lt;$"></A>
+</UL>
+<LI><A NAME="tex2html744"
+  HREF="node733.html">SyntaxException</A>
+<LI><A NAME="tex2html745"
+  HREF="node734.html">SyntaxExceptionType</A>
+<LI><A NAME="tex2html746"
+  HREF="node735.html">TextReader</A>
+<UL>
+<LI><A NAME="tex2html747"
+  HREF="node736.html">push!</A>
+<LI><A NAME="tex2html748"
+  HREF="node737.html">read!</A>
+<LI><A NAME="tex2html749"
+  HREF="node738.html">readUntil!,readWhile!,skipUntil!,skipWhile!</A>
+<LI><A NAME="tex2html750"
+  HREF="node739.html">stdin</A>
+<LI><A NAME="tex2html751"
+  HREF="node740.html">textReader</A>
+</UL>
+<LI><A NAME="tex2html752"
+  HREF="node741.html">TextWriter</A>
+<UL>
+<LI><A NAME="tex2html753"
+  HREF="node742.html">flush!</A>
+<LI><A NAME="tex2html754"
+  HREF="node743.html">stderr,stdout</A>
+<LI><A NAME="tex2html755"
+  HREF="node744.html">textWriter</A>
+<LI><A NAME="tex2html756"
+  HREF="node745.html">write!</A>
+</UL>
+<LI><A NAME="tex2html757"
+  HREF="node746.html">WriterManipulator</A>
+<UL>
+<LI><A NAME="tex2html758"
+  HREF="node747.html"><IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$&lt;&lt;$"></A>
+<LI><A NAME="tex2html759"
+  HREF="node748.html">endnl</A>
+<LI><A NAME="tex2html760"
+  HREF="node749.html">flush</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html761"
+  HREF="node750.html">Data Structures</A>
+<UL>
+<LI><A NAME="tex2html762"
+  HREF="node751.html">Array</A>
+<LI><A NAME="tex2html763"
+  HREF="node752.html">ArrayException</A>
+<LI><A NAME="tex2html764"
+  HREF="node753.html">ArrayExceptionType</A>
+<LI><A NAME="tex2html765"
+  HREF="node754.html">ArrayType</A>
+<UL>
+<LI><A NAME="tex2html766"
+  HREF="node755.html">array</A>
+<LI><A NAME="tex2html767"
+  HREF="node756.html">binarySearch</A>
+<LI><A NAME="tex2html768"
+  HREF="node757.html">data</A>
+<LI><A NAME="tex2html769"
+  HREF="node758.html">new</A>
+<LI><A NAME="tex2html770"
+  HREF="node759.html">resize!</A>
+<LI><A NAME="tex2html771"
+  HREF="node760.html">sort!</A>
+</UL>
+<LI><A NAME="tex2html772"
+  HREF="node761.html">BoundedFiniteDataStructureType</A>
+<UL>
+<LI><A NAME="tex2html773"
+  HREF="node762.html">size</A>
+<LI><A NAME="tex2html774"
+  HREF="node763.html">findAll</A>
+<LI><A NAME="tex2html775"
+  HREF="node764.html">generator</A>
+<LI><A NAME="tex2html776"
+  HREF="node765.html">member?</A>
+</UL>
+<LI><A NAME="tex2html777"
+  HREF="node766.html">BoundedFiniteLinearStructureType</A>
+<UL>
+<LI><A NAME="tex2html778"
+  HREF="node767.html">linearSearch</A>
+<LI><A NAME="tex2html779"
+  HREF="node768.html">map</A>
+</UL>
+<LI><A NAME="tex2html780"
+  HREF="node769.html">CheckingArray</A>
+<LI><A NAME="tex2html781"
+  HREF="node770.html">CheckingList</A>
+<LI><A NAME="tex2html782"
+  HREF="node771.html">CheckingMemoryBlock</A>
+<LI><A NAME="tex2html783"
+  HREF="node772.html">DataStructureType</A>
+<UL>
+<LI><A NAME="tex2html784"
+  HREF="node773.html">empty?</A>
+<LI><A NAME="tex2html785"
+  HREF="node774.html">free!</A>
+</UL>
+<LI><A NAME="tex2html786"
+  HREF="node775.html">DynamicDataStructureType</A>
+<UL>
+<LI><A NAME="tex2html787"
+  HREF="node776.html">insert</A>
+<LI><A NAME="tex2html788"
+  HREF="node777.html">remove,removeAll</A>
+</UL>
+<LI><A NAME="tex2html789"
+  HREF="node778.html">FiniteLinearStructureType</A>
+<UL>
+<LI><A NAME="tex2html790"
+  HREF="node779.html">[]</A>
+<LI><A NAME="tex2html791"
+  HREF="node780.html">empty</A>
+<LI><A NAME="tex2html792"
+  HREF="node781.html">new</A>
+</UL>
+<LI><A NAME="tex2html793"
+  HREF="node782.html">Flags</A>
+<UL>
+<LI><A NAME="tex2html794"
+  HREF="node783.html">dimension</A>
+</UL>
+<LI><A NAME="tex2html795"
+  HREF="node784.html">HashTable</A>
+<UL>
+<LI><A NAME="tex2html796"
+  HREF="node785.html">forget,remember</A>
+<LI><A NAME="tex2html797"
+  HREF="node786.html">remove!</A>
+</UL>
+<LI><A NAME="tex2html798"
+  HREF="node787.html">KeyEntry</A>
+<UL>
+<LI><A NAME="tex2html799"
+  HREF="node788.html">[]</A>
+<LI><A NAME="tex2html800"
+  HREF="node789.html">entry,explode,key</A>
+<LI><A NAME="tex2html801"
+  HREF="node790.html">setEntry!,setKey!</A>
+</UL>
+<LI><A NAME="tex2html802"
+  HREF="node791.html">HashType</A>
+<UL>
+<LI><A NAME="tex2html803"
+  HREF="node792.html">hash</A>
+</UL>
+<LI><A NAME="tex2html804"
+  HREF="node793.html">LinearStructureType</A>
+<UL>
+<LI><A NAME="tex2html805"
+  HREF="node794.html">[]</A>
+<LI><A NAME="tex2html806"
+  HREF="node795.html">apply</A>
+<LI><A NAME="tex2html807"
+  HREF="node796.html">firstIndex</A>
+<LI><A NAME="tex2html808"
+  HREF="node797.html">set!</A>
+<LI><A NAME="tex2html809"
+  HREF="node798.html">equal?</A>
+</UL>
+<LI><A NAME="tex2html810"
+  HREF="node799.html">List</A>
+<LI><A NAME="tex2html811"
+  HREF="node800.html">ListException</A>
+<LI><A NAME="tex2html812"
+  HREF="node801.html">ListExceptionType</A>
+<LI><A NAME="tex2html813"
+  HREF="node802.html">ListType</A>
+<UL>
+<LI><A NAME="tex2html814"
+  HREF="node803.html"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$+$"></A>
+<LI><A NAME="tex2html815"
+  HREF="node804.html">append!</A>
+<LI><A NAME="tex2html816"
+  HREF="node805.html">cons</A>
+<LI><A NAME="tex2html817"
+  HREF="node806.html">delete!</A>
+<LI><A NAME="tex2html818"
+  HREF="node807.html">find</A>
+<LI><A NAME="tex2html819"
+  HREF="node808.html">first</A>
+<LI><A NAME="tex2html820"
+  HREF="node809.html">merge!</A>
+<LI><A NAME="tex2html821"
+  HREF="node810.html">rest</A>
+<LI><A NAME="tex2html822"
+  HREF="node811.html">reverse</A>
+<LI><A NAME="tex2html823"
+  HREF="node812.html">setFirst!</A>
+<LI><A NAME="tex2html824"
+  HREF="node813.html">setRest!</A>
+<LI><A NAME="tex2html825"
+  HREF="node814.html">sort!</A>
+<LI><A NAME="tex2html826"
+  HREF="node815.html">split!</A>
+</UL>
+<LI><A NAME="tex2html827"
+  HREF="node816.html">MemoryBlock</A>
+<LI><A NAME="tex2html828"
+  HREF="node817.html">PackedPrimitiveArray</A>
+<LI><A NAME="tex2html829"
+  HREF="node818.html">PrimitiveArray</A>
+<LI><A NAME="tex2html830"
+  HREF="node819.html">PrimitiveArrayType</A>
+<UL>
+<LI><A NAME="tex2html831"
+  HREF="node820.html">array,pointer</A>
+<LI><A NAME="tex2html832"
+  HREF="node821.html">new</A>
+<LI><A NAME="tex2html833"
+  HREF="node822.html">read,write</A>
+<LI><A NAME="tex2html834"
+  HREF="node823.html">resize!</A>
+<LI><A NAME="tex2html835"
+  HREF="node824.html">sort!</A>
+</UL>
+<LI><A NAME="tex2html836"
+  HREF="node825.html">PrimitiveMemoryBlock</A>
+<UL>
+<LI><A NAME="tex2html837"
+  HREF="node826.html">coerce</A>
+</UL>
+<LI><A NAME="tex2html838"
+  HREF="node827.html">Queue</A>
+<UL>
+<LI><A NAME="tex2html839"
+  HREF="node828.html">remove!</A>
+</UL>
+<LI><A NAME="tex2html840"
+  HREF="node829.html">Set</A>
+<UL>
+<LI><A NAME="tex2html841"
+  HREF="node830.html"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$-$"></A>
+<LI><A NAME="tex2html842"
+  HREF="node831.html">intersection</A>
+<LI><A NAME="tex2html843"
+  HREF="node832.html">minus!</A>
+<LI><A NAME="tex2html844"
+  HREF="node833.html">union</A>
+</UL>
+<LI><A NAME="tex2html845"
+  HREF="node834.html">SortedAssociationSet</A>
+<LI><A NAME="tex2html846"
+  HREF="node835.html">SortedList</A>
+<LI><A NAME="tex2html847"
+  HREF="node836.html">SortedSet</A>
+<LI><A NAME="tex2html848"
+  HREF="node837.html">Stream</A>
+<UL>
+<LI><A NAME="tex2html849"
+  HREF="node838.html">size</A>
+<LI><A NAME="tex2html850"
+  HREF="node839.html">constant</A>
+<LI><A NAME="tex2html851"
+  HREF="node840.html">generator</A>
+<LI><A NAME="tex2html852"
+  HREF="node841.html">interlacing</A>
+<LI><A NAME="tex2html853"
+  HREF="node842.html">map!</A>
+<LI><A NAME="tex2html854"
+  HREF="node843.html">orbit</A>
+<LI><A NAME="tex2html855"
+  HREF="node844.html">stream</A>
+</UL>
+<LI><A NAME="tex2html856"
+  HREF="node845.html">String</A>
+<UL>
+<LI><A NAME="tex2html857"
+  HREF="node846.html"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$+$"></A>
+<LI><A NAME="tex2html858"
+  HREF="node847.html">char</A>
+<LI><A NAME="tex2html859"
+  HREF="node848.html">coerce</A>
+<LI><A NAME="tex2html860"
+  HREF="node849.html">error</A>
+<LI><A NAME="tex2html861"
+  HREF="node850.html">new</A>
+<LI><A NAME="tex2html862"
+  HREF="node851.html">pointer,string</A>
+</UL>
+<LI><A NAME="tex2html863"
+  HREF="node852.html">StringBuffer</A>
+<UL>
+<LI><A NAME="tex2html864"
+  HREF="node853.html">coerce</A>
+<LI><A NAME="tex2html865"
+  HREF="node854.html">new</A>
+<LI><A NAME="tex2html866"
+  HREF="node855.html">string</A>
+</UL>
+<LI><A NAME="tex2html867"
+  HREF="node856.html">TableException</A>
+<LI><A NAME="tex2html868"
+  HREF="node857.html">TableExceptionType</A>
+<LI><A NAME="tex2html869"
+  HREF="node858.html">TableType</A>
+<UL>
+<LI><A NAME="tex2html870"
+  HREF="node859.html">[]</A>
+<LI><A NAME="tex2html871"
+  HREF="node860.html">apply</A>
+<LI><A NAME="tex2html872"
+  HREF="node861.html">entries, keys</A>
+<LI><A NAME="tex2html873"
+  HREF="node862.html">find</A>
+<LI><A NAME="tex2html874"
+  HREF="node863.html">numberOfEntries</A>
+<LI><A NAME="tex2html875"
+  HREF="node864.html">set!</A>
+<LI><A NAME="tex2html876"
+  HREF="node865.html">table</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html877"
+  HREF="node866.html">Utilities</A>
+<UL>
+<LI><A NAME="tex2html878"
+  HREF="node867.html">AldorLibraryInformation</A>
+<LI><A NAME="tex2html879"
+  HREF="node868.html">VersionInformationType</A>
+<UL>
+<LI><A NAME="tex2html880"
+  HREF="node869.html">credits</A>
+<LI><A NAME="tex2html881"
+  HREF="node870.html">major,minor,patch</A>
+<LI><A NAME="tex2html882"
+  HREF="node871.html">name</A>
+<LI><A NAME="tex2html883"
+  HREF="node872.html">version</A>
+</UL>
+<LI><A NAME="tex2html884"
+  HREF="node873.html">BinarySearch</A>
+<UL>
+<LI><A NAME="tex2html885"
+  HREF="node874.html">binarySearch</A>
+</UL>
+<LI><A NAME="tex2html886"
+  HREF="node875.html">CommandLine</A>
+<UL>
+<LI><A NAME="tex2html887"
+  HREF="node876.html">arguments</A>
+<LI><A NAME="tex2html888"
+  HREF="node877.html">command</A>
+<LI><A NAME="tex2html889"
+  HREF="node878.html">flag</A>
+</UL>
+<LI><A NAME="tex2html890"
+  HREF="node879.html">CopyableType</A>
+<UL>
+<LI><A NAME="tex2html891"
+  HREF="node880.html">copy</A>
+</UL>
+<LI><A NAME="tex2html892"
+  HREF="node881.html">Generator</A>
+<UL>
+<LI><A NAME="tex2html893"
+  HREF="node882.html">concat</A>
+<LI><A NAME="tex2html894"
+  HREF="node883.html">interlacing</A>
+<LI><A NAME="tex2html895"
+  HREF="node884.html">next!,partialNext!</A>
+</UL>
+<LI><A NAME="tex2html896"
+  HREF="node885.html">GeneratorException</A>
+<LI><A NAME="tex2html897"
+  HREF="node886.html">GeneratorExceptionType</A>
+<LI><A NAME="tex2html898"
+  HREF="node887.html">Partial</A>
+<UL>
+<LI><A NAME="tex2html899"
+  HREF="node888.html">[]</A>
+<LI><A NAME="tex2html900"
+  HREF="node889.html">failed</A>
+<LI><A NAME="tex2html901"
+  HREF="node890.html">retract</A>
+</UL>
+<LI><A NAME="tex2html902"
+  HREF="node891.html">Pointer</A>
+<UL>
+<LI><A NAME="tex2html903"
+  HREF="node892.html">nil</A>
+</UL>
+<LI><A NAME="tex2html904"
+  HREF="node893.html">Timer</A>
+<UL>
+<LI><A NAME="tex2html905"
+  HREF="node894.html">gc</A>
+<LI><A NAME="tex2html906"
+  HREF="node895.html">read</A>
+<LI><A NAME="tex2html907"
+  HREF="node896.html">reset!</A>
+<LI><A NAME="tex2html908"
+  HREF="node897.html">start!</A>
+<LI><A NAME="tex2html909"
+  HREF="node898.html">stop!</A>
+<LI><A NAME="tex2html910"
+  HREF="node899.html">timer</A>
+</UL>
+<LI><A NAME="tex2html911"
+  HREF="node900.html">Trace</A>
+<UL>
+<LI><A NAME="tex2html912"
+  HREF="node901.html">name,shortName</A>
+<LI><A NAME="tex2html913"
+  HREF="node902.html">traceActivate,traceStop</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html914"
+  HREF="node903.html">Index</A>
+<LI><A NAME="tex2html915"
+  HREF="node904.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

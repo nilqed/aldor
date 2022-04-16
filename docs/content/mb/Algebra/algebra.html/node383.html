@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>coerce,expand,trailExpand</TITLE>
+<META NAME="description" CONTENT="coerce,expand,trailExpand">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node384.html">
+<LINK REL="previous" HREF="node382.html">
+<LINK REL="up" HREF="node382.html">
+<LINK REL="next" HREF="node384.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html7112"
+  HREF="node384.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html7106"
+  HREF="node382.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html7100"
+  HREF="node382.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html7108"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html7110"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html7113"
+  HREF="node384.html">integerRoots,rationalRoots</A>
+<B> Up:</B> <A NAME="tex2html7107"
+  HREF="node382.html">UnivariateFactorialPolynomial</A>
+<B> Previous:</B> <A NAME="tex2html7101"
+  HREF="node382.html">UnivariateFactorialPolynomial</A>
+ &nbsp; <B>  <A NAME="tex2html7109"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html7111"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000918100000000000000"></A>
+<A NAME="UnivariateFactorialPolynomial:coerce_expand_trailExpand"></A>
+<BR>
+coerce,expand,trailExpand
+</H3> <A NAME="37208"></A>
+<A NAME="UnivariateFactorialPolynomial:coerce"></A> <A NAME="37211"></A>
+<A NAME="UnivariateFactorialPolynomial:expand"></A> <A NAME="37214"></A>
+<A NAME="UnivariateFactorialPolynomial:trailExpand"></A> <A NAME="37217"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+p::%
+<BR>
+coerce&nbsp;p
+<BR>
+expand&nbsp;q
+<BR>(n, h) := trailExpand&nbsp;q
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">coerce:</TD>
+<TD ALIGN="LEFT">Rx <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">expand:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Rx</TD>
+</TR>
+<TR><TD ALIGN="LEFT">trailExpand:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (<A HREF="#Integer"><TT>Integer</TT></A>, Rx)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>p</EM></TD>
+<TD ALIGN="LEFT">Rx</TD>
+<TD ALIGN="LEFT">A polynomial</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>q</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">A factorial polynomial</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+p::% converts <EM>p</EM> from the power basis <!-- MATH
+ $(x^n)_{n \ge 0}$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img463.png"
+ ALT="$(x^n)_{n \ge 0}$"> to
+the factorial basis <!-- MATH
+ $(x^{{\underline n}})_{n \ge 0}$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img461.png"
+ ALT="$(x^{{\underline n}})_{n \ge 0}$">, while expand(q)
+performs the reverse conversion and trailExpand(q) returns <IMG
+ WIDTH="43" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img464.png"
+ ALT="$(n, h)$">
+such that <!-- MATH
+ $q = x^{{\underline n}} h$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img465.png"
+ ALT="$q = x^{{\underline n}} h$">.
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

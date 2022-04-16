@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>monicDivide,monicQuotient, monicRemainder</TITLE>
+<META NAME="description" CONTENT="monicDivide,monicQuotient, monicRemainder">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node411.html">
+<LINK REL="previous" HREF="node409.html">
+<LINK REL="up" HREF="node403.html">
+<LINK REL="next" HREF="node411.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html7515"
+  HREF="node411.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html7509"
+  HREF="node403.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html7503"
+  HREF="node409.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html7511"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html7513"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html7516"
+  HREF="node411.html">ordinaryPoint</A>
+<B> Up:</B> <A NAME="tex2html7510"
+  HREF="node403.html">UnivariatePolynomialCategory</A>
+<B> Previous:</B> <A NAME="tex2html7504"
+  HREF="node409.html">lift</A>
+ &nbsp; <B>  <A NAME="tex2html7512"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html7514"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000923700000000000000"></A>
+<A NAME="UnivariatePolynomialCategory:monicDivide_monicQuotient__monicRemainder"></A>
+<BR>
+monicDivide,monicQuotient, monicRemainder
+</H3> <A NAME="38626"></A>
+<A NAME="UnivariatePolynomialCategory:monicDivide"></A> <A NAME="38629"></A>
+<A NAME="UnivariatePolynomialCategory:monicDivide_"></A> <A NAME="38632"></A>
+<A NAME="UnivariatePolynomialCategory:monicDivideBy"></A> <A NAME="38635"></A>
+<A NAME="UnivariatePolynomialCategory:monicDivideBy_"></A> <A NAME="38638"></A>
+<A NAME="UnivariatePolynomialCategory:monicQuotient"></A> <A NAME="38641"></A>
+<A NAME="UnivariatePolynomialCategory:monicQuotient_"></A> <A NAME="38644"></A>
+<A NAME="UnivariatePolynomialCategory:monicQuotientBy"></A> <A NAME="38647"></A>
+<A NAME="UnivariatePolynomialCategory:monicQuotientBy_"></A> <A NAME="38650"></A>
+<A NAME="UnivariatePolynomialCategory:monicRemainder"></A> <A NAME="38653"></A>
+<A NAME="UnivariatePolynomialCategory:monicRemainder_"></A> <A NAME="38656"></A>
+<A NAME="UnivariatePolynomialCategory:monicRemainderBy"></A> <A NAME="38659"></A>
+<A NAME="UnivariatePolynomialCategory:monicRemainderBy_"></A> <A NAME="38662"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+monicXXX(a, b)
+<BR>
+monicXXX!(a, b)
+<BR>
+monicXXXBy(b)(a)
+<BR>
+monicXXXBy!(b)(a)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">monicDivide, monicDivide!:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (%, %)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">monicDivideBy, monicDivideBy!:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (%, %)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">monicQuotient, monicQuotient!:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">monicRemainder, monicRemainder!:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">monicQuotientBy, monicQuotientBy!:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">monicRemainderBy, monicRemainderBy!:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>a</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">A polynomial</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>b</EM></TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">A polynomial whose leading coefficient is a unit in <EM>R</EM></TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+monicRemainder(a, b) returns <EM>r</EM> such that
+either <IMG
+ WIDTH="41" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img67.png"
+ ALT="$r = 0$"> or <!-- MATH
+ $\deg(r) < \deg(b)$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img495.png"
+ ALT="$\deg(r) &lt; \deg(b)$"> or <!-- MATH
+ $a \equiv r \pmod b$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.png"
+ ALT="$a \equiv r \pmod b$">,
+monicQuotient(a, b) returns <EM>q</EM> such that <IMG
+ WIDTH="76" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img71.png"
+ ALT="$a - b q = 0$"> or
+<!-- MATH
+ $\deg(a - bq) < \deg(b)$
+ -->
+<IMG
+ WIDTH="148" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img496.png"
+ ALT="$\deg(a - bq) &lt; \deg(b)$">, and monicDivide(a, b) returns
+<IMG
+ WIDTH="39" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img73.png"
+ ALT="$(q, r)$"> such that <IMG
+ WIDTH="76" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img497.png"
+ ALT="$a = b q + r$"> and either <IMG
+ WIDTH="41" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img67.png"
+ ALT="$r = 0$"> or <!-- MATH
+ $\deg(r) < \deg(b)$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img495.png"
+ ALT="$\deg(r) &lt; \deg(b)$">.
+The functions monicDivide!, monicQuotient! and monicRemainder! return the
+same results but allow the storage used by <EM>a</EM> to be destroyed or reused.
+Finally, monicXXXBy(b) returns the map <!-- MATH
+ $a \to \mbox{monicXXX}(a, b)$
+ -->
+<IMG
+ WIDTH="150" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img498.png"
+ ALT="$a \to \mbox{monicXXX}(a, b)$">, while
+monicXXXBy!(b) returns the map <!-- MATH
+ $a \to \mbox{monicXXX!}(a, b)$
+ -->
+<IMG
+ WIDTH="154" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img499.png"
+ ALT="$a \to \mbox{monicXXX!}(a, b)$">.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+When using monicXXX!(a,b) or monicXXXBy!(b)(a),
+the storage used by a is allowed to be
+destroyed or reused, so a is lost after this call.
+This may cause a to be destroyed, so do not use this unless a has been locally
+allocated, and is thus guaranteed not to share space with other polynomials.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>See Also</B><P>
+    <BLOCKQUOTE>
+<A HREF="node413.html#UnivariatePolynomialCategory:pseudoRemainder"><TT>pseudoRemainder</TT></A>
+</BLOCKQUOTE>
+<P></P>
+
+    <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html7515"
+  HREF="node411.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html7509"
+  HREF="node403.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html7503"
+  HREF="node409.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html7511"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html7513"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html7516"
+  HREF="node411.html">ordinaryPoint</A>
+<B> Up:</B> <A NAME="tex2html7510"
+  HREF="node403.html">UnivariatePolynomialCategory</A>
+<B> Previous:</B> <A NAME="tex2html7504"
+  HREF="node409.html">lift</A>
+ &nbsp; <B>  <A NAME="tex2html7512"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html7514"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

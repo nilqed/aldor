@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>traceActivate,traceStop</TITLE>
+<META NAME="description" CONTENT="traceActivate,traceStop">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node901.html">
+<LINK REL="up" HREF="node900.html">
+<LINK REL="next" HREF="node903.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html14966"
+  HREF="node903.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html14960"
+  HREF="node900.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html14956"
+  HREF="node901.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html14962"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html14964"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html14967"
+  HREF="node903.html">Index</A>
+<B> Up:</B> <A NAME="tex2html14961"
+  HREF="node900.html">Trace</A>
+<B> Previous:</B> <A NAME="tex2html14957"
+  HREF="node901.html">name,shortName</A>
+ &nbsp; <B>  <A NAME="tex2html14963"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html14965"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION0001812200000000000000"></A>
+<A NAME="Trace:traceActivate_traceStop"></A>
+<BR>
+traceActivate,traceStop
+</H3> <A NAME="58974"></A>
+<A NAME="Trace:traceActivate"></A> <A NAME="58977"></A>
+<A NAME="Trace:traceStop"></A> <A NAME="58980"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+traceActivate()
+<BR>
+traceActivate(abbr?)
+<BR>
+traceStop()
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">traceActivate:</TD>
+<TD ALIGN="LEFT"><A HREF="node619.html#Boolean"><TT>Boolean</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> ()</TD>
+</TR>
+<TR><TD ALIGN="LEFT">traceStop:</TD>
+<TD ALIGN="LEFT">() <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> ()</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><I>abbr?</I></TD>
+<TD ALIGN="LEFT"><A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">A flag to control type names (optional)</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+Tracing of functions from source files compiled with the <TT>-Wdebug</TT>
+option is enabled between calls to traceActivate() and traceStop().
+If <I>abbr?</I> is missing or <I>false</I>,
+then full type names are printed, otherwise
+the arguments to types are not printed, see <A HREF="node901.html#Trace:name"><TT>name</TT></A> for details.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Example</B><P>
+      <BLOCKQUOTE>
+Suppose that <TT>foo.as</TT> contains the following code:
+</BLOCKQUOTE><PRE>
+#include "aldor"
+#include "aldorio"
+
+local fact(n:Integer):Integer == {
+    assert(n &gt;= 0);
+    zero? n or one? n =&gt; 1;
+    n * fact(n-1);
+}
+
+main():() == {
+    import from Boolean, Integer, Trace;
+    traceActivate();
+    stdout &lt;&lt; "5! = " &lt;&lt; fact 5 &lt;&lt; newline;
+    traceStop();
+    stdout &lt;&lt; "20! = " &lt;&lt; fact 20 &lt;&lt; newline;
+}
+
+main();
+</PRE><BLOCKQUOTE>
+Compiling and running it with <TT>aldor -grun -Wdebug -laldor foo.as</TT> yields
+the following output:
+</BLOCKQUOTE><PRE>
+{Line: 7 Entering: fact
+{Line: 7 Entering: fact
+{Line: 7 Entering: fact
+{Line: 7 Entering: fact
+{Line: 7 Entering: fact
+Line: 11 Return: AldorInteger is: 1}
+Line: 11 Return: AldorInteger is: 2}
+Line: 11 Return: AldorInteger is: 6}
+Line: 11 Return: AldorInteger is: 24}
+Line: 11 Return: AldorInteger is: 120}
+5! = 120
+20! = 2432902008176640000
+</PRE><BLOCKQUOTE>
+Note that the call to <TT>fact 20</TT> is not traced because it is done
+after the call to <TT>traceStop()</TT>.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+&nbsp;
+
+&nbsp;
+
+<P>
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

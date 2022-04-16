@@ -1,0 +1,645 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MatrixCategory</TITLE>
+<META NAME="description" CONTENT="MatrixCategory">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node297.html">
+<LINK REL="previous" HREF="node263.html">
+<LINK REL="up" HREF="node226.html">
+<LINK REL="next" HREF="node277.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html5464"
+  HREF="node277.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5458"
+  HREF="node226.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5452"
+  HREF="node275.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5460"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html5462"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> 
+<B> Up:</B> <A NAME="tex2html5459"
+  HREF="node226.html">Linear Algebra</A>
+<B> Previous:</B> <A NAME="tex2html5453"
+  HREF="node275.html">span</A>
+ &nbsp; <B>  <A NAME="tex2html5461"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html5463"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00089000000000000000"></A><A NAME="31820"></A><A NAME="MatrixCategory"></A>
+<BR>
+MatrixCategory
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+MatrixCategory&nbsp;R: Category
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node129.html#ExpressionType"><TT>ExpressionType</TT></A></TD>
+<TD ALIGN="LEFT">The coefficient domain</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><A HREF="node611.html#ArithmeticType"><TT>ArithmeticType</TT></A></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+MatrixCategory&nbsp;R is a common category for matrices of arbitrary sizes
+with coefficients in R. They are <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="$1$">-indexed and whether they do
+bound checking depends on each particular matrix type.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node879.html#CopyableType"><TT>CopyableType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node106.html#LinearArithmeticType"><TT>LinearArithmeticType</TT></A> R</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#MatrixCategory:_tex2html_wrap_inline61980_"><TT><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$*$"></TT></A>:</TD>
+<TD ALIGN="LEFT">(%,V) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> V</TD>
+<TD ALIGN="LEFT">multiplication by a vector</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node278.html#MatrixCategory:bracket"><TT><IMG
+ WIDTH="13" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img326.png"
+ ALT="$[]$"></TT></A>:</TD>
+<TD ALIGN="LEFT"><TT>Tuple</TT> V <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">create a matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><A HREF="node881.html#Generator"><TT>Generator</TT></A> V <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node279.html#MatrixCategory:apply"><TT>apply</TT></A>:</TD>
+<TD ALIGN="LEFT">(%,I,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R</TD>
+<TD ALIGN="LEFT">extract an entry</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(%,I,I,I,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">extract a submatrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(%, <A HREF="node751.html#Array"><TT>Array</TT></A> I, <A HREF="node751.html#Array"><TT>Array</TT></A> I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node280.html#MatrixCategory:colCombine_"><TT>colCombine!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%,R,I,R,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">In-place linear combination of columns</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(%,R,I,R,I,I,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(%,(R,R)<IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R,I,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(%,(R,R)<IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R,I,I,I,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node281.html#MatrixCategory:colSwap_"><TT>colSwap!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%,I,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Swap columns in-place</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(%,I,I,I,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node282.html#MatrixCategory:column"><TT>column</TT></A>:</TD>
+<TD ALIGN="LEFT">(%,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> V</TD>
+<TD ALIGN="LEFT">extraction of a column</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node283.html#MatrixCategory:columns"><TT>columns</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node881.html#Generator"><TT>Generator</TT></A> V</TD>
+<TD ALIGN="LEFT">iteration over the columns</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node284.html#MatrixCategory:companion"><TT>companion</TT></A>:</TD>
+<TD ALIGN="LEFT">V <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">creates a companion matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(V, R) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node285.html#MatrixCategory:diagonal"><TT>diagonal</TT></A>:</TD>
+<TD ALIGN="LEFT">V <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">creates a diagonal matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(R,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node285.html#MatrixCategory:diagonal_"><TT>diagonal?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">test for a diagonal matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node286.html#MatrixCategory:dimensions"><TT>dimensions</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (I,I)</TD>
+<TD ALIGN="LEFT">get row and column dimensions</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node287.html#MatrixCategory:map"><TT>map</TT></A>:</TD>
+<TD ALIGN="LEFT">(R <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> V <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">lift a mapping</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node287.html#MatrixCategory:map"><TT>map</TT></A>:</TD>
+<TD ALIGN="LEFT">(R <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">lift a mapping</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node287.html#MatrixCategory:map_"><TT>map!</TT></A>:</TD>
+<TD ALIGN="LEFT">(R <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">lift a mapping</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node288.html#MatrixCategory:numberOfColumns"><TT>numberOfColumns</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> I</TD>
+<TD ALIGN="LEFT">number of columns of the matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node288.html#MatrixCategory:numberOfRows"><TT>numberOfRows</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> I</TD>
+<TD ALIGN="LEFT">number of rows of the matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node289.html#MatrixCategory:one"><TT>one</TT></A>:</TD>
+<TD ALIGN="LEFT">I <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">identity matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node289.html#MatrixCategory:one_"><TT>one?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">test for an identity matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node282.html#MatrixCategory:row"><TT>row</TT></A>:</TD>
+<TD ALIGN="LEFT">(%,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> V</TD>
+<TD ALIGN="LEFT">extraction of a row</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node280.html#MatrixCategory:rowCombine_"><TT>rowCombine!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%,R,I,R,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">In-place linear combination of rows</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(%,R,I,R,I,I,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(%,(R,R)<IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R,I,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(%,(R,R)<IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R,I,I,I,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node281.html#MatrixCategory:rowSwap_"><TT>rowSwap!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%,I,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Swap rows in-place</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(%,I,I,I,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node283.html#MatrixCategory:rows"><TT>rows</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node881.html#Generator"><TT>Generator</TT></A> V</TD>
+<TD ALIGN="LEFT">iteration over the rows</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node285.html#MatrixCategory:scalar_"><TT>scalar?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">test for a scalar matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node291.html#MatrixCategory:set_"><TT>set!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%,I,I,R) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R</TD>
+<TD ALIGN="LEFT">set an entry in the matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node292.html#MatrixCategory:setMatrix_"><TT>setMatrix!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%,I,I,%) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">modify a submatrix of a matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node285.html#MatrixCategory:square_"><TT>square?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">test for a square matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node293.html#MatrixCategory:tensor"><TT>tensor</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">tensor product</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node294.html#MatrixCategory:transpose"><TT>transpose</TT></A>:</TD>
+<TD ALIGN="LEFT">V <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">transpose a vector</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node294.html#MatrixCategory:transpose"><TT>transpose</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">transpose a matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node294.html#MatrixCategory:transpose_"><TT>transpose!</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">transpose a matrix in-place</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node296.html#MatrixCategory:zero"><TT>zero</TT></A>:</TD>
+<TD ALIGN="LEFT">(I,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">create a zero matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node296.html#MatrixCategory:zero_"><TT>zero!</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> ()</TD>
+<TD ALIGN="LEFT">make all the entries zero</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node296.html#MatrixCategory:zero_"><TT>zero?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">test if all entries are zero</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <A HREF="node119.html#Ring"><TT>Ring</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node290.html#MatrixCategory:random"><TT>random</TT></A>:</TD>
+<TD ALIGN="LEFT">() <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">create a random matrix</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(I,I) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <A HREF="node40.html#DifferentialRing"><TT>DifferentialRing</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node295.html#MatrixCategory:wronskian"><TT>wronskian</TT></A>:</TD>
+<TD ALIGN="LEFT">V <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Wronskian matrix</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">I</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">V</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node325.html#Vector"><TT>Vector</TT></A> R</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <A HREF="node731.html#SerializableType"><TT>SerializableType</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node731.html#SerializableType"><TT>SerializableType</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5466"
+  HREF="node277.html"><IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$*$"></A>
+<LI><A NAME="tex2html5467"
+  HREF="node278.html">bracket</A>
+<LI><A NAME="tex2html5468"
+  HREF="node279.html">apply</A>
+<LI><A NAME="tex2html5469"
+  HREF="node280.html">colCombine!,rowCombine!</A>
+<LI><A NAME="tex2html5470"
+  HREF="node281.html">colSwap!,rowSwap!</A>
+<LI><A NAME="tex2html5471"
+  HREF="node282.html">column,row</A>
+<LI><A NAME="tex2html5472"
+  HREF="node283.html">columns,rows</A>
+<LI><A NAME="tex2html5473"
+  HREF="node284.html">companion</A>
+<LI><A NAME="tex2html5474"
+  HREF="node285.html">diagonal</A>
+<LI><A NAME="tex2html5475"
+  HREF="node286.html">dimensions</A>
+<LI><A NAME="tex2html5476"
+  HREF="node287.html">map</A>
+<LI><A NAME="tex2html5477"
+  HREF="node288.html">numberOfColumns,numberOfRows</A>
+<LI><A NAME="tex2html5478"
+  HREF="node289.html">one,one?</A>
+<LI><A NAME="tex2html5479"
+  HREF="node290.html">random</A>
+<LI><A NAME="tex2html5480"
+  HREF="node291.html">set!</A>
+<LI><A NAME="tex2html5481"
+  HREF="node292.html">setMatrix!</A>
+<LI><A NAME="tex2html5482"
+  HREF="node293.html">tensor</A>
+<LI><A NAME="tex2html5483"
+  HREF="node294.html">transpose</A>
+<LI><A NAME="tex2html5484"
+  HREF="node295.html">wronskian</A>
+<LI><A NAME="tex2html5485"
+  HREF="node296.html">zero</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html5464"
+  HREF="node277.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5458"
+  HREF="node226.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5452"
+  HREF="node275.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5460"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html5462"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> 
+<B> Up:</B> <A NAME="tex2html5459"
+  HREF="node226.html">Linear Algebra</A>
+<B> Previous:</B> <A NAME="tex2html5453"
+  HREF="node275.html">span</A>
+ &nbsp; <B>  <A NAME="tex2html5461"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html5463"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

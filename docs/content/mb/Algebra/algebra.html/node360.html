@@ -1,0 +1,281 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MonogenicLinearArithmeticType</TITLE>
+<META NAME="description" CONTENT="MonogenicLinearArithmeticType">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node366.html">
+<LINK REL="previous" HREF="node359.html">
+<LINK REL="up" HREF="node331.html">
+<LINK REL="next" HREF="node361.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html6781"
+  HREF="node361.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html6775"
+  HREF="node331.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html6769"
+  HREF="node359.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html6777"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html6779"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html6782"
+  HREF="node361.html">apply</A>
+<B> Up:</B> <A NAME="tex2html6776"
+  HREF="node331.html">Univariate Polynomials and Series</A>
+<B> Previous:</B> <A NAME="tex2html6770"
+  HREF="node359.html">MonogenicAlgebraOverFraction</A>
+ &nbsp; <B>  <A NAME="tex2html6778"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html6780"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000911000000000000000"></A><A NAME="36191"></A><A NAME="MonogenicLinearArithmeticType"></A>
+<BR>
+MonogenicLinearArithmeticType
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+MonogenicLinearArithmeticType&nbsp;R: Category
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node129.html#ExpressionType"><TT>ExpressionType</TT></A></TD>
+<TD ALIGN="LEFT">The coefficient domain</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><A HREF="node611.html#ArithmeticType"><TT>ArithmeticType</TT></A></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+MonogenicLinearArithmeticType&nbsp;is a common category for commutative and noncommutative
+univariate polynomials and power series with coefficients in an arbitrary
+arithmetic system R and with respect to an arbitrary basis <!-- MATH
+ $(P_n)_{n \ge 0}$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img424.png"
+ ALT="$(P_n)_{n \ge 0}$">.
+Its elements are not assumed to have finite support, so this type
+cannot be asserted to be an <A HREF="node27.html#Algebra"><TT>Algebra</TT></A>&nbsp;R even when R is a <A HREF="node119.html#Ring"><TT>Ring</TT></A>.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node85.html#IndexedFreeLinearArithmeticType"><TT>IndexedFreeLinearArithmeticType</TT></A>(R, Z)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#MonogenicLinearArithmeticType:add_"><TT>add!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, R, Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">In-place addition of a term</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#MonogenicLinearArithmeticType:add_"><TT>add!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, R, Z, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">In-place product and sum</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node361.html#MonogenicLinearArithmeticType:apply"><TT>apply</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, TREE) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TREE</TD>
+<TD ALIGN="LEFT">Conversion to an expression tree</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node361.html#MonogenicLinearArithmeticType:apply"><TT>apply</TT></A>:</TD>
+<TD ALIGN="LEFT">(OUT, %, <A HREF="node599.html#Symbol"><TT>Symbol</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> OUT</TD>
+<TD ALIGN="LEFT">Write an element to a port</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node362.html#MonogenicLinearArithmeticType:coefficients"><TT>coefficients</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node881.html#Generator"><TT>Generator</TT></A> R</TD>
+<TD ALIGN="LEFT">Iterate over all the coefficients</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node363.html#MonogenicLinearArithmeticType:monom"><TT>monom</TT></A>:</TD>
+<TD ALIGN="LEFT"><IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Term with degree 1 and coefficient 1</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#MonogenicLinearArithmeticType:setCoefficient_"><TT>setCoefficient!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, Z, R) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">In-place replacement of a coefficient</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node364.html#MonogenicLinearArithmeticType:shift"><TT>shift</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Exponent translation</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node364.html#MonogenicLinearArithmeticType:shift_"><TT>shift!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">In-place exponent translation</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node365.html#MonogenicLinearArithmeticType:truncate"><TT>truncate</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Truncation</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node365.html#MonogenicLinearArithmeticType:truncate_"><TT>truncate!</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">In-place truncation</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">OUT</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node741.html#TextWriter"><TT>TextWriter</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">TREE</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node474.html#ExpressionTree"><TT>ExpressionTree</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="#Integer"><TT>Integer</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html6783"
+  HREF="node361.html">apply</A>
+<LI><A NAME="tex2html6784"
+  HREF="node362.html">coefficients</A>
+<LI><A NAME="tex2html6785"
+  HREF="node363.html">monom</A>
+<LI><A NAME="tex2html6786"
+  HREF="node364.html">shift</A>
+<LI><A NAME="tex2html6787"
+  HREF="node365.html">truncate</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html6781"
+  HREF="node361.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html6775"
+  HREF="node331.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html6769"
+  HREF="node359.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html6777"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html6779"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html6782"
+  HREF="node361.html">apply</A>
+<B> Up:</B> <A NAME="tex2html6776"
+  HREF="node331.html">Univariate Polynomials and Series</A>
+<B> Previous:</B> <A NAME="tex2html6770"
+  HREF="node359.html">MonogenicAlgebraOverFraction</A>
+ &nbsp; <B>  <A NAME="tex2html6778"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html6780"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

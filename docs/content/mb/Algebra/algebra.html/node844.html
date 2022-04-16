@@ -1,0 +1,408 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>stream</TITLE>
+<META NAME="description" CONTENT="stream">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node843.html">
+<LINK REL="up" HREF="node837.html">
+<LINK REL="next" HREF="node845.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html14106"
+  HREF="node845.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html14100"
+  HREF="node837.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html14096"
+  HREF="node843.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html14102"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html14104"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html14107"
+  HREF="node845.html">String</A>
+<B> Up:</B> <A NAME="tex2html14101"
+  HREF="node837.html">Stream</A>
+<B> Previous:</B> <A NAME="tex2html14097"
+  HREF="node843.html">orbit</A>
+ &nbsp; <B>  <A NAME="tex2html14103"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html14105"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION0001732700000000000000"></A>
+<A NAME="Stream:stream"></A>
+<BR>
+stream
+</H3> <A NAME="56729"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+stream&nbsp;t
+<BR>
+stream&nbsp;f
+<BR>
+stream&nbsp;h
+<BR>
+stream(n, g)
+<BR>
+stream(n, g, m, t)
+<BR>
+stream(gen, t)
+<BR>
+stream(gen, m, t)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signatures</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">stream:</TD>
+<TD ALIGN="LEFT">T <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">stream:</TD>
+<TD ALIGN="LEFT">(() <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> T) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">stream:</TD>
+<TD ALIGN="LEFT">((<A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A>, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> T) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">stream:</TD>
+<TD ALIGN="LEFT">(<A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A>, <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> T) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">stream:</TD>
+<TD ALIGN="LEFT">(<A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A>, <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> T,
+<A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A>, T) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">stream:</TD>
+<TD ALIGN="LEFT">(<A HREF="node881.html#Generator"><TT>Generator</TT></A> T, T) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+<TR><TD ALIGN="LEFT">stream:</TD>
+<TD ALIGN="LEFT">(<A HREF="node881.html#Generator"><TT>Generator</TT></A> T, <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A>, T) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>n, m</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">machine integers</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>t</EM></TD>
+<TD ALIGN="LEFT">T</TD>
+<TD ALIGN="LEFT">an element</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>f</EM></TD>
+<TD ALIGN="LEFT">() <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> T</TD>
+<TD ALIGN="LEFT">a function</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>g</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> T</TD>
+<TD ALIGN="LEFT">a function</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>h</EM></TD>
+<TD ALIGN="LEFT">(<A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A>, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> T</TD>
+<TD ALIGN="LEFT">a function</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>gen</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node881.html#Generator"><TT>Generator</TT></A> T</TD>
+<TD ALIGN="LEFT">a generator</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+stream(t) returns the constant stream <IMG
+ WIDTH="70" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img804.png"
+ ALT="$[t,t,t,\dots]$">,
+while stream(f) returns the stream obtained by successive calls to <IMG
+ WIDTH="26" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img438.png"
+ ALT="$f()$">,
+stream(n, g) returns the stream <!-- MATH
+ $[g(n),g(n+1),g(n+2),\dots]$
+ -->
+<IMG
+ WIDTH="198" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img805.png"
+ ALT="$[g(n),g(n+1),g(n+2),\dots]$">,
+stream(n, g, m, t) returns the eventually constant stream
+<!-- MATH
+ $[g(n),g(n+1),g(n+2),\dots,g(m-1),t,t,t,\dots]$
+ -->
+<IMG
+ WIDTH="334" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img806.png"
+ ALT="$[g(n),g(n+1),g(n+2),\dots,g(m-1),t,t,t,\dots]$">
+and stream(h) returns the stream <!-- MATH
+ $[s_0,s_1,s_2,\dots]$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img807.png"
+ ALT="$[s_0,s_1,s_2,\dots]$"> where
+<!-- MATH
+ $s_k = h(k, s_0, \dots s_{i-k})$
+ -->
+<IMG
+ WIDTH="151" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img808.png"
+ ALT="$s_k = h(k, s_0, \dots s_{i-k})$"> for any <IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img809.png"
+ ALT="$k \ge 0$">.
+When using generators, stream(gen, t) returns the stream
+<!-- MATH
+ $[x \mbox{ for } x \mbox{ in } gen]$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img810.png"
+ ALT="$[x \mbox{ for } x \mbox{ in } gen]$"> followed by <IMG
+ WIDTH="70" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img804.png"
+ ALT="$[t,t,t,\dots]$">
+if <IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img811.png"
+ ALT="$gen$"> is finite, while stream(gen, m, t) returns the first
+<IMG
+ WIDTH="18" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img97.png"
+ ALT="$m$"> elements of the stream <!-- MATH
+ $[x \mbox{ for } x \mbox{ in } gen]$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img810.png"
+ ALT="$[x \mbox{ for } x \mbox{ in } gen]$"> followed
+by <IMG
+ WIDTH="70" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img804.png"
+ ALT="$[t,t,t,\dots]$">.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>See Also</B><P>
+    <BLOCKQUOTE>
+<A HREF="node843.html#Stream:orbit"><TT>orbit</TT></A>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Remarks</B><P>
+      <BLOCKQUOTE>
+The function <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img178.png"
+ ALT="$g$"> must be defined for all <IMG
+ WIDTH="44" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img812.png"
+ ALT="$n\le k$"> (resp.&nbsp;<IMG
+ WIDTH="79" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img813.png"
+ ALT="$n\le k &lt; m$">)
+and <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img765.png"
+ ALT="$h$"> must be defined for all <IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img620.png"
+ ALT="$n \ge 0$">, even if you intend to use
+<A HREF="node797.html#LinearStructureType:set_"><TT>set!</TT></A> to set specific values of the
+stream later. Note that
+stream(f) does not necessarily returns a constant stream since
+each call to <IMG
+ WIDTH="26" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img438.png"
+ ALT="$f()$"> can side-effect its environment.
+Constant or eventually constant streams do not repeatedly store
+their constant value and are therefore preferable. For example,
+<!-- MATH
+ ${\tt stream(0)}$
+ -->
+<IMG
+ WIDTH="75" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img814.png"
+ ALT="${\tt stream(0)}$"> stores only one value no matter how many values
+are requested, while <!-- MATH
+ ${\tt stream(():MachineInteger +-> 0)}$
+ -->
+<IMG
+ WIDTH="271" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img815.png"
+ ALT="${\tt stream(():MachineInteger +-&gt; 0)}$"> stores
+<IMG
+ WIDTH="14" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img88.png"
+ ALT="$n$"> times <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$0$"> when its <!-- MATH
+ ${n}^{{\rm th}}$
+ -->
+<IMG
+ WIDTH="27" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img330.png"
+ ALT="${n}^{{\rm th}}$"> element is requested.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Example</B><P>
+      <BLOCKQUOTE>
+The following code creates the stream of the Fibonnaci numbers and prints
+the first 10 of them:
+</BLOCKQUOTE><PRE>
+	import from MachineInteger, AldorInteger, Stream AldorInteger;
+	fib(n:MachineInteger, f:Stream AldorInteger):AldorInteger == {
+		n = 0 or n = 1 =&gt; 1;
+		f(n-1) + f(n-2);
+	}
+	sfib := stream fib;
+	a := sfib.9;	-- computes sfib.0 to sfib.9
+	stdout &lt;&lt; a &lt;&lt; newline;
+</PRE>
+<P></P>
+
+  <HR>
+<!--Navigation Panel-->
+<A NAME="tex2html14106"
+  HREF="node845.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html14100"
+  HREF="node837.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html14096"
+  HREF="node843.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html14102"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html14104"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html14107"
+  HREF="node845.html">String</A>
+<B> Up:</B> <A NAME="tex2html14101"
+  HREF="node837.html">Stream</A>
+<B> Previous:</B> <A NAME="tex2html14097"
+  HREF="node843.html">orbit</A>
+ &nbsp; <B>  <A NAME="tex2html14103"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html14105"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

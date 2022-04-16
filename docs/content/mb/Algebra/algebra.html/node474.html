@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>ExpressionTree</TITLE>
+<META NAME="description" CONTENT="ExpressionTree">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node485.html">
+<LINK REL="previous" HREF="node473.html">
+<LINK REL="up" HREF="node473.html">
+<LINK REL="next" HREF="node475.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html8497"
+  HREF="node475.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html8491"
+  HREF="node473.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html8485"
+  HREF="node473.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html8493"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html8495"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html8498"
+  HREF="node475.html">aldor,axiom,C,fortran,infix,lisp,maple,tex</A>
+<B> Up:</B> <A NAME="tex2html8492"
+  HREF="node473.html">Expression Trees</A>
+<B> Previous:</B> <A NAME="tex2html8486"
+  HREF="node473.html">Expression Trees</A>
+ &nbsp; <B>  <A NAME="tex2html8494"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html8496"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000111000000000000000"></A><A NAME="41896"></A><A NAME="ExpressionTree"></A>
+<BR>
+ExpressionTree
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from ExpressionTree
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+ExpressionTree&nbsp;is a type whose elements are expression trees.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node729.html#OutputType"><TT>OutputType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node681.html#PrimitiveType"><TT>PrimitiveType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node475.html#ExpressionTree:aldor"><TT>aldor</TT></A>:</TD>
+<TD ALIGN="LEFT">(TEXT, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+<TD ALIGN="LEFT">Conversion to <IMG
+ WIDTH="28" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img609.png"
+ ALT="$A^{\char93 }$">code</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node476.html#ExpressionTree:apply"><TT>apply</TT></A>:</TD>
+<TD ALIGN="LEFT">(OP, <A HREF="node799.html#List"><TT>List</TT></A> %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Apply an operator to arguments</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node476.html#ExpressionTree:apply"><TT>apply</TT></A>:</TD>
+<TD ALIGN="LEFT">(OP, <TT>Tuple</TT> %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Apply an operator to arguments</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node477.html#ExpressionTree:arguments"><TT>arguments</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node799.html#List"><TT>List</TT></A> %</TD>
+<TD ALIGN="LEFT">Take the arguments of the root</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node475.html#ExpressionTree:axiom"><TT>axiom</TT></A>:</TD>
+<TD ALIGN="LEFT">(TEXT, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+<TD ALIGN="LEFT">Conversion to Axiom code</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node475.html#ExpressionTree:C"><TT>C</TT></A>:</TD>
+<TD ALIGN="LEFT">(TEXT, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+<TD ALIGN="LEFT">Conversion to C code</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node478.html#ExpressionTree:extree"><TT>extree</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node496.html#ExpressionTreeLeaf"><TT>ExpressionTreeLeaf</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Conversion to a tree</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node475.html#ExpressionTree:fortran"><TT>fortran</TT></A>:</TD>
+<TD ALIGN="LEFT">TEXT, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+<TD ALIGN="LEFT">Conversion to FORTRAN code</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node475.html#ExpressionTree:infix"><TT>infix</TT></A>:</TD>
+<TD ALIGN="LEFT">(TEXT, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+<TD ALIGN="LEFT">Conversion to one-dim infix output</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node479.html#ExpressionTree:is_"><TT>is?</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, OP) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Test for a specific operator</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node480.html#ExpressionTree:leaf"><TT>leaf</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node496.html#ExpressionTreeLeaf"><TT>ExpressionTreeLeaf</TT></A></TD>
+<TD ALIGN="LEFT">Conversion to a leaf</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node480.html#ExpressionTree:leaf_"><TT>leaf?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Test whether tree is a leaf</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node475.html#ExpressionTree:lisp"><TT>lisp</TT></A>:</TD>
+<TD ALIGN="LEFT">TEXT, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+<TD ALIGN="LEFT">Conversion to Lisp code</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node475.html#ExpressionTree:maple"><TT>maple</TT></A>:</TD>
+<TD ALIGN="LEFT">(TEXT, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+<TD ALIGN="LEFT">Conversion to Maple code</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node483.html#ExpressionTree:operator"><TT>operator</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> OP</TD>
+<TD ALIGN="LEFT">Take the root operator</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node475.html#ExpressionTree:tex"><TT>tex</TT></A>:</TD>
+<TD ALIGN="LEFT">(TEXT, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+<TD ALIGN="LEFT">Conversion to L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node484.html#ExpressionTree:texParen_"><TT>texParen?</TT></A>:</TD>
+<TD ALIGN="LEFT">(<A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A>, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Check whether to parenthetize</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">TEXT</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node741.html#TextWriter"><TT>TextWriter</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">OP</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node517.html#ExpressionTreeOperator"><TT>ExpressionTreeOperator</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html8499"
+  HREF="node475.html">aldor,axiom,C,fortran,infix,lisp,maple,tex</A>
+<LI><A NAME="tex2html8500"
+  HREF="node476.html">apply</A>
+<LI><A NAME="tex2html8501"
+  HREF="node477.html">arguments</A>
+<LI><A NAME="tex2html8502"
+  HREF="node478.html">extree</A>
+<LI><A NAME="tex2html8503"
+  HREF="node479.html">is?</A>
+<LI><A NAME="tex2html8504"
+  HREF="node480.html">leaf</A>
+<LI><A NAME="tex2html8505"
+  HREF="node481.html">negate</A>
+<LI><A NAME="tex2html8506"
+  HREF="node482.html">negative?</A>
+<LI><A NAME="tex2html8507"
+  HREF="node483.html">operator</A>
+<LI><A NAME="tex2html8508"
+  HREF="node484.html">texParen?</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html8497"
+  HREF="node475.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html8491"
+  HREF="node473.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html8485"
+  HREF="node473.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html8493"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html8495"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html8498"
+  HREF="node475.html">aldor,axiom,C,fortran,infix,lisp,maple,tex</A>
+<B> Up:</B> <A NAME="tex2html8492"
+  HREF="node473.html">Expression Trees</A>
+<B> Previous:</B> <A NAME="tex2html8486"
+  HREF="node473.html">Expression Trees</A>
+ &nbsp; <B>  <A NAME="tex2html8494"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html8496"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

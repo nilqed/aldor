@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Arithmetic</TITLE>
+<META NAME="description" CONTENT="Arithmetic">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1329"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1323"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1317"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1325"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1327"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1330"
+  HREF="node9.html">Data structures</A>
+<B> Up:</B> <A NAME="tex2html1324"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html1318"
+  HREF="node7.html">Basic algebraic categories</A>
+ &nbsp; <B>  <A NAME="tex2html1326"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1328"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00032000000000000000">
+Arithmetic</A>
+</H2>
+All of the arithmetic types provided by <TT>libaldor</TT> (machine and software
+integers, floats, as well as <A HREF="node623.html#Complex"><TT>Complex</TT></A>) remain available
+in <TT>Algebra</TT>, and most of them are extended to various algebraic categories.
+As in <TT>libaldor</TT>, <TT>Integer</TT> is actually a macro that defaults to
+<A HREF="node605.html#AldorInteger"><TT>AldorInteger</TT></A>. If integer efficiency is important for your application,
+we strongly recommend that you link with the GMP version of
+<TT>Algebra</TT> instead,
+see the section on&nbsp;<A HREF="node15.html#:sec:gmp"><TT>using GMP</TT></A> for
+more details. Regardless of the integer implementation that you choose,
+we also recommended that you use&nbsp;<TT>MachineInteger</TT> whenever
+appropriate, in particular for loop
+or data structure indices. Conversions between
+<TT>MachineInteger</TT>
+and <A HREF="#Integer"><TT>Integer</TT></A> are provided by <A HREF="node656.html#IntegerType:coerce"><TT>coerce</TT></A>
+and <A HREF="node656.html#IntegerType:machine"><TT>machine</TT></A>.
+
+<P>
+In addition, <TT>Algebra</TT> 
+provides two different implementations of the finite field <!-- MATH
+ ${\mathbbm Z}/ p{\mathbbm Z}$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="${\mathbbm Z}/ p{\mathbbm Z}$">
+when <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$p$"> is a machine prime: <A HREF="node219.html#SmallPrimeField"><TT>SmallPrimeField</TT></A> provides a
+standard implementation, while <A HREF="node225.html#ZechPrimeField"><TT>ZechPrimeField</TT></A> provides
+a significantly faster implementation based on a logarithmic
+representation of its elements.
+However, <A HREF="node225.html#ZechPrimeField"><TT>ZechPrimeField</TT></A>
+precomputes a table of size <IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="${\cal O}(p)$"> so it should only be used
+for reasonably small values of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$p$"> and when a significant amount
+of calculations in <!-- MATH
+ ${\mathbbm Z}/ p{\mathbbm Z}$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="${\mathbbm Z}/ p{\mathbbm Z}$"> are made following the creation
+of the type (we have found the precomputation time to be under one second
+for <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$p$"> around <IMG
+ WIDTH="28" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.png"
+ ALT="$10^6$"> on recent workstations).
+
+<P>
+The type <A HREF="node145.html#Fraction"><TT>Fraction</TT></A><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$(R)$"> implements the fraction field of
+the <A HREF="node78.html#GcdDomain"><TT>GcdDomain</TT></A> <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$">. Typical arguments are <A HREF="#Integer"><TT>Integer</TT></A>
+(to get the rational numbers) or polynomial types. Note that fractions
+are automatically normalized after each arithmetic operation.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1329"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1323"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1317"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1325"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1327"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1330"
+  HREF="node9.html">Data structures</A>
+<B> Up:</B> <A NAME="tex2html1324"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html1318"
+  HREF="node7.html">Basic algebraic categories</A>
+ &nbsp; <B>  <A NAME="tex2html1326"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1328"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

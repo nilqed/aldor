@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Basic algebraic categories</TITLE>
+<META NAME="description" CONTENT="Basic algebraic categories">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node8.html">
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1315"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1309"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1303"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1311"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1313"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1316"
+  HREF="node8.html">Arithmetic</A>
+<B> Up:</B> <A NAME="tex2html1310"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html1304"
+  HREF="node6.html">User Guide</A>
+ &nbsp; <B>  <A NAME="tex2html1312"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1314"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00031000000000000000">
+Basic algebraic categories</A>
+</H2>
+The basic algebraic categories provided by <TT>Algebra</TT>  are shown in
+Figure&nbsp;<A HREF="#fig:cats">1</A>.
+While it follows quite closely the usual algebraic structures, a few
+points needs to be mentioned.
+
+<DIV ALIGN="CENTER"><A NAME="fig:cats"></A><A NAME="15371"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1:</STRONG>
+The <TT>Algebra</TT>  basic algebraic category hierarchy</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="645" HEIGHT="929" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.png"
+ ALT="\includegraphics{algbcat}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<UL>
+<LI>The multiplication <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$\ast$"> is in general not assumed to be commutative,
+except in the subtree starting at <A HREF="node29.html#CommutativeRing"><TT>CommutativeRing</TT></A>, which appears
+in blue in Figure&nbsp;<A HREF="#fig:cats">1</A>.
+This means that code written for the other categories
+should be careful and not assume commutativity of <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$\ast$">. Addition is on
+the other hand always assumed commutative.
+</LI>
+<LI>The <TT>Algebra</TT>  category tree has a unique root
+<A HREF="node129.html#ExpressionType"><TT>ExpressionType</TT></A> to which
+almost all the types provided by <TT>Algebra</TT>  belong. The category
+<A HREF="node129.html#ExpressionType"><TT>ExpressionType</TT></A> inherits <A HREF="node681.html#PrimitiveType"><TT>PrimitiveType</TT></A> from <TT>libaldor</TT>,
+which means that types in <TT>Algebra</TT>  must export an equality.
+That equality however does not need to be complete, as described
+in the <A HREF="#PrimitiveType:_tex2html_wrap_inline59038_"><TT><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$=$"></TT></A> page of the <TT>libaldor</TT>  reference manual.
+<A HREF="node129.html#ExpressionType"><TT>ExpressionType</TT></A> plays also an important role in input/output as
+explained below.
+</LI>
+<LI>The <TT>libaldor</TT>  categories <A HREF="node606.html#AdditiveType"><TT>AdditiveType</TT></A>,
+<A HREF="node611.html#ArithmeticType"><TT>ArithmeticType</TT></A> and <A HREF="node666.html#LinearCombinationType"><TT>LinearCombinationType</TT></A>
+already export the basic arithmetic operations provided respectively
+by abelian groups, rings and modules. In fact
+<A HREF="node20.html#AbelianGroup"><TT>AbelianGroup</TT></A>, <A HREF="node119.html#Ring"><TT>Ring</TT></A> and <A HREF="node109.html#Module"><TT>Module</TT></A>
+do inherit their exports from them. There is however
+a fundamental difference: while the <TT>libaldor</TT>  categories
+export the usual operations <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$=$">, <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$+$">, <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$-$">, <IMG
+ WIDTH="12" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$\ast$">,...,
+they make no assumption about their algebraic properties whatsoever.
+On the other hand, the corresponding algebraic categories
+in <TT>Algebra</TT>  do assume that <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$=$"> is a complete equality test, and that
+the arithmetic operations satisfy the algebraic axioms of their
+mathematical structure. So for example, while <A HREF="#Integer"><TT>Integer</TT></A> is
+extended by <TT>Algebra</TT>  to be a <A HREF="node119.html#Ring"><TT>Ring</TT></A> (among other things),
+<A HREF="node691.html#SingleFloat"><TT>SingleFloat</TT></A> remains an <A HREF="node611.html#ArithmeticType"><TT>ArithmeticType</TT></A> but is
+not a <A HREF="node119.html#Ring"><TT>Ring</TT></A>.
+There is a similar relationship between <A HREF="node106.html#LinearArithmeticType"><TT>LinearArithmeticType</TT></A>
+and <A HREF="node27.html#Algebra"><TT>Algebra</TT></A>, both provided by <TT>Algebra</TT>.
+Mathematical types such as
+<A HREF="node230.html#DenseMatrix"><TT>DenseMatrix</TT></A><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$(R)$"> or
+<A HREF="node332.html#DenseUnivariatePolynomial"><TT>DenseUnivariatePolynomial</TT></A><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$(R)$">
+allow their argument <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$"> to be an <A HREF="node611.html#ArithmeticType"><TT>ArithmeticType</TT></A> rather
+than a <A HREF="node119.html#Ring"><TT>Ring</TT></A>, but those among their functions that require
+a complete equality on <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$"> are not exported when <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$"> is not a <A HREF="node119.html#Ring"><TT>Ring</TT></A>.
+Similarly, while <A HREF="node332.html#DenseUnivariatePolynomial"><TT>DenseUnivariatePolynomial</TT></A><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$(R)$"> is always an
+<A HREF="node611.html#ArithmeticType"><TT>ArithmeticType</TT></A>, it is a <A HREF="node119.html#Ring"><TT>Ring</TT></A> only when <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$"> itself
+is a <A HREF="node119.html#Ring"><TT>Ring</TT></A>. For example,
+<BR>
+<BR>
+<DIV ALIGN="CENTER">
+<A HREF="node230.html#DenseMatrix"><TT>DenseMatrix</TT></A>&nbsp;<A HREF="node332.html#DenseUnivariatePolynomial"><TT>DenseUnivariatePolynomial</TT></A>&nbsp;<A HREF="node691.html#SingleFloat"><TT>SingleFloat</TT></A>
+
+</DIV>
+is a valid type in <TT>Algebra</TT>, but Gaussian elimination is not available for
+such matrices, and the Euclidean algorithm is not available for their
+polynomial entries. Basic arithmetic, as provided by <A HREF="node611.html#ArithmeticType"><TT>ArithmeticType</TT></A>
+is however available.
+</LI>
+</UL>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1315"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1309"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1303"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1311"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1313"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1316"
+  HREF="node8.html">Arithmetic</A>
+<B> Up:</B> <A NAME="tex2html1310"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html1304"
+  HREF="node6.html">User Guide</A>
+ &nbsp; <B>  <A NAME="tex2html1312"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1314"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

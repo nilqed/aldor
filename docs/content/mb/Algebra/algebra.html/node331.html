@@ -1,0 +1,359 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Univariate Polynomials and Series</TITLE>
+<META NAME="description" CONTENT="Univariate Polynomials and Series">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node443.html">
+<LINK REL="previous" HREF="node226.html">
+<LINK REL="up" HREF="html.html">
+<LINK REL="next" HREF="node332.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html6260"
+  HREF="node332.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html6254"
+  HREF="html.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html6248"
+  HREF="node330.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html6256"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html6258"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html6261"
+  HREF="node332.html">DenseUnivariatePolynomial</A>
+<B> Up:</B> <A NAME="tex2html6255"
+  HREF="html.html">html</A>
+<B> Previous:</B> <A NAME="tex2html6249"
+  HREF="node330.html">VectorOverFraction</A>
+ &nbsp; <B>  <A NAME="tex2html6257"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html6259"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00090000000000000000">
+Univariate Polynomials and Series</A>
+</H1>
+
+  <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html6262"
+  HREF="node332.html">DenseUnivariatePolynomial</A>
+<LI><A NAME="tex2html6263"
+  HREF="node333.html">DenseUnivariateTaylorSeries</A>
+<LI><A NAME="tex2html6264"
+  HREF="node334.html">FactorizationRing</A>
+<UL>
+<LI><A NAME="tex2html6265"
+  HREF="node335.html">factor</A>
+<LI><A NAME="tex2html6266"
+  HREF="node336.html">fractionalRoots,roots</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6267"
+  HREF="node337.html">FFTRing</A>
+<UL>
+<LI><A NAME="tex2html6268"
+  HREF="node338.html">fft</A>
+<LI><A NAME="tex2html6269"
+  HREF="node339.html">fft!</A>
+<LI><A NAME="tex2html6270"
+  HREF="node340.html">fftCutoff</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6271"
+  HREF="node341.html">HeuristicGcd</A>
+<UL>
+<LI><A NAME="tex2html6272"
+  HREF="node342.html">balancedRemainder</A>
+<LI><A NAME="tex2html6273"
+  HREF="node343.html">heuristicGcd</A>
+<LI><A NAME="tex2html6274"
+  HREF="node344.html">radixInterpolate</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6275"
+  HREF="node345.html">ModularUnivariateGcd</A>
+<UL>
+<LI><A NAME="tex2html6276"
+  HREF="node346.html">modularGcd</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6277"
+  HREF="node347.html">ModulopUnivariateGcd</A>
+<UL>
+<LI><A NAME="tex2html6278"
+  HREF="node348.html">gcd!</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6279"
+  HREF="node349.html">MonogenicAlgebra</A>
+<UL>
+<LI><A NAME="tex2html6280"
+  HREF="node350.html">coerce,vectorize!</A>
+<LI><A NAME="tex2html6281"
+  HREF="node351.html">companion</A>
+<LI><A NAME="tex2html6282"
+  HREF="node352.html">content,primitive,primitivePart</A>
+<LI><A NAME="tex2html6283"
+  HREF="node353.html">monomial!</A>
+<LI><A NAME="tex2html6284"
+  HREF="node354.html">random</A>
+<LI><A NAME="tex2html6285"
+  HREF="node355.html">revert</A>
+<LI><A NAME="tex2html6286"
+  HREF="node356.html">times</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6287"
+  HREF="node357.html">MonogenicAlgebra2</A>
+<UL>
+<LI><A NAME="tex2html6288"
+  HREF="node358.html">map</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6289"
+  HREF="node359.html">MonogenicAlgebraOverFraction</A>
+<LI><A NAME="tex2html6290"
+  HREF="node360.html">MonogenicLinearArithmeticType</A>
+<UL>
+<LI><A NAME="tex2html6291"
+  HREF="node361.html">apply</A>
+<LI><A NAME="tex2html6292"
+  HREF="node362.html">coefficients</A>
+<LI><A NAME="tex2html6293"
+  HREF="node363.html">monom</A>
+<LI><A NAME="tex2html6294"
+  HREF="node364.html">shift</A>
+<LI><A NAME="tex2html6295"
+  HREF="node365.html">truncate</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6296"
+  HREF="node366.html">PrimeFieldUnivariateFactorizer</A>
+<UL>
+<LI><A NAME="tex2html6297"
+  HREF="node367.html">berlekamp</A>
+<LI><A NAME="tex2html6298"
+  HREF="node368.html">cantorZassenhaus</A>
+<LI><A NAME="tex2html6299"
+  HREF="node369.html">roots</A>
+<LI><A NAME="tex2html6300"
+  HREF="node370.html">factor</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6301"
+  HREF="node371.html">RationalRootRing</A>
+<UL>
+<LI><A NAME="tex2html6302"
+  HREF="node372.html">integerRoots,rationalRoots</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6303"
+  HREF="node373.html">Resultant</A>
+<UL>
+<LI><A NAME="tex2html6304"
+  HREF="node374.html">lastSPRS</A>
+<LI><A NAME="tex2html6305"
+  HREF="node375.html">extendedLastSPRS</A>
+<LI><A NAME="tex2html6306"
+  HREF="node376.html">resultant</A>
+<LI><A NAME="tex2html6307"
+  HREF="node377.html">SPRS</A>
+<LI><A NAME="tex2html6308"
+  HREF="node378.html">subResultantGcd</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6309"
+  HREF="node379.html">SparseUnivariatePolynomial0</A>
+<LI><A NAME="tex2html6310"
+  HREF="node380.html">SparseUnivariatePolynomial1</A>
+<LI><A NAME="tex2html6311"
+  HREF="node381.html">SparseUnivariatePolynomial</A>
+<LI><A NAME="tex2html6312"
+  HREF="node382.html">UnivariateFactorialPolynomial</A>
+<UL>
+<LI><A NAME="tex2html6313"
+  HREF="node383.html">coerce,expand,trailExpand</A>
+<LI><A NAME="tex2html6314"
+  HREF="node384.html">integerRoots,rationalRoots</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6315"
+  HREF="node385.html">UnivariateGcdRing</A>
+<UL>
+<LI><A NAME="tex2html6316"
+  HREF="node386.html">gcdUP</A>
+<LI><A NAME="tex2html6317"
+  HREF="node387.html">gcdquoUP</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6318"
+  HREF="node388.html">UnivariateIntegralFactorizer</A>
+<UL>
+<LI><A NAME="tex2html6319"
+  HREF="node389.html">factor</A>
+<LI><A NAME="tex2html6320"
+  HREF="node390.html">integerRoots,rationalRoots</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6321"
+  HREF="node391.html">UnivariateMonomial</A>
+<UL>
+<LI><A NAME="tex2html6322"
+  HREF="node392.html">apply</A>
+<LI><A NAME="tex2html6323"
+  HREF="node393.html">coefficient</A>
+<LI><A NAME="tex2html6324"
+  HREF="node394.html">degree</A>
+<LI><A NAME="tex2html6325"
+  HREF="node395.html">map</A>
+<LI><A NAME="tex2html6326"
+  HREF="node396.html">monomial</A>
+<LI><A NAME="tex2html6327"
+  HREF="node397.html">pthPower</A>
+<LI><A NAME="tex2html6328"
+  HREF="node398.html">setCoefficient!</A>
+<LI><A NAME="tex2html6329"
+  HREF="node399.html">setDegree!</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6330"
+  HREF="node400.html">UnivariatePolynomialAlgebra</A>
+<UL>
+<LI><A NAME="tex2html6331"
+  HREF="node401.html">add!</A>
+<LI><A NAME="tex2html6332"
+  HREF="node402.html">compose,translate</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6333"
+  HREF="node403.html">UnivariatePolynomialCategory</A>
+<UL>
+<LI><A NAME="tex2html6334"
+  HREF="node404.html">apply</A>
+<LI><A NAME="tex2html6335"
+  HREF="node405.html">equal?</A>
+<LI><A NAME="tex2html6336"
+  HREF="node406.html">height</A>
+<LI><A NAME="tex2html6337"
+  HREF="node407.html">Horner</A>
+<LI><A NAME="tex2html6338"
+  HREF="node408.html">integrate</A>
+<LI><A NAME="tex2html6339"
+  HREF="node409.html">lift</A>
+<LI><A NAME="tex2html6340"
+  HREF="node410.html">monicDivide,monicQuotient, monicRemainder</A>
+<LI><A NAME="tex2html6341"
+  HREF="node411.html">ordinaryPoint</A>
+<LI><A NAME="tex2html6342"
+  HREF="node412.html">pseudoDivide</A>
+<LI><A NAME="tex2html6343"
+  HREF="node413.html">pseudoRemainder</A>
+<LI><A NAME="tex2html6344"
+  HREF="node414.html">rationalReconstruction</A>
+<LI><A NAME="tex2html6345"
+  HREF="node415.html">resultant</A>
+<LI><A NAME="tex2html6346"
+  HREF="node416.html">sparseMultiple</A>
+<LI><A NAME="tex2html6347"
+  HREF="node417.html">squareFree,squareFreePart</A>
+<LI><A NAME="tex2html6348"
+  HREF="node418.html">values</A>
+<LI><A NAME="tex2html6349"
+  HREF="node419.html">factor</A>
+<LI><A NAME="tex2html6350"
+  HREF="node420.html">fractionalRoots,roots</A>
+<LI><A NAME="tex2html6351"
+  HREF="node421.html">dispersion,integerDistances</A>
+<LI><A NAME="tex2html6352"
+  HREF="node422.html">integerRoots,rationalRoots</A>
+<LI><A NAME="tex2html6353"
+  HREF="node423.html">minIntegerRoot,maxIntegerRoot</A>
+<LI><A NAME="tex2html6354"
+  HREF="node424.html">universalBound</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6355"
+  HREF="node425.html">UnivariatePolynomialKaratsuba</A>
+<LI><A NAME="tex2html6356"
+  HREF="node426.html">UnivariatePolynomialSquareFree</A>
+<UL>
+<LI><A NAME="tex2html6357"
+  HREF="node427.html">musser</A>
+<LI><A NAME="tex2html6358"
+  HREF="node428.html">yun</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6359"
+  HREF="node429.html">UnivariateTaylorSeriesCategory</A>
+<UL>
+<LI><A NAME="tex2html6360"
+  HREF="node430.html">degree,finite?</A>
+<LI><A NAME="tex2html6361"
+  HREF="node431.html">differentiate,integrate</A>
+<LI><A NAME="tex2html6362"
+  HREF="node432.html">series</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6363"
+  HREF="node433.html">UnivariateTaylorSeriesCategory2Poly</A>
+<UL>
+<LI><A NAME="tex2html6364"
+  HREF="node434.html">expand</A>
+<LI><A NAME="tex2html6365"
+  HREF="node435.html">expandFraction</A>
+<LI><A NAME="tex2html6366"
+  HREF="node436.html">polynomials</A>
+<LI><A NAME="tex2html6367"
+  HREF="node437.html">monicNewtonSeries</A>
+<LI><A NAME="tex2html6368"
+  HREF="node438.html">tryExpandFraction</A>
+<LI><A NAME="tex2html6369"
+  HREF="node439.html">truncate</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html6370"
+  HREF="node440.html">UnivariateTaylorSeriesNewtonSolver</A>
+<UL>
+<LI><A NAME="tex2html6371"
+  HREF="node441.html">differentiate</A>
+<LI><A NAME="tex2html6372"
+  HREF="node442.html">root</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Multivariate polynomials</TITLE>
+<META NAME="description" CONTENT="Multivariate polynomials">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node14.html">
+<LINK REL="previous" HREF="node12.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node14.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1399"
+  HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1393"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1387"
+  HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1395"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1397"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1400"
+  HREF="node14.html">Compatibility with C types</A>
+<B> Up:</B> <A NAME="tex2html1394"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html1388"
+  HREF="node12.html">Univariate polynomials and series</A>
+ &nbsp; <B>  <A NAME="tex2html1396"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1398"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00037000000000000000">
+Multivariate polynomials</A>
+</H2>
+The basic types for computing with multivariate polynomials
+are <A HREF="node471.html#SparseMultivariatePolynomial"><TT>SparseMultivariatePolynomial</TT></A> and
+<A HREF="node448.html#DistributedMultivariatePolynomial1"><TT>DistributedMultivariatePolynomial1</TT></A>.
+Both types use a sparse representation.
+Elements of the former one are regarded as univariate polynomials
+with polynomial coefficients.
+Elements of the latter one are regarded as lists of terms
+where a term is the product of a coefficient by a power product
+of variables.
+
+<P>
+To construct a multivariate polynomial type with 
+<A HREF="node471.html#SparseMultivariatePolynomial"><TT>SparseMultivariatePolynomial</TT></A>
+one needs a <A HREF="node119.html#Ring"><TT>Ring</TT></A> as  a coefficient type 
+and a <A HREF="node472.html#VariableType"><TT>VariableType</TT></A> as a variable type.
+<PRE>
+#include "algebra"
+import from String, Symbol;
+macro V == OrderedVariableTuple(-"x",-"y",-"z");
+import from MachineInteger, V;
+macro P == SparseMultivariatePolynomial(Integer,V);
+x: P := variable(1)$V :: P;
+y: P := variable(2)$V :: P;
+z: P := variable(3)$V :: P;
+p := (y + z)*x^2 + (y^3 + z)*x + z^4;
+</PRE>
+
+<P>
+To construct a multivariate polynomial type with 
+<A HREF="node448.html#DistributedMultivariatePolynomial1"><TT>DistributedMultivariatePolynomial1</TT></A>
+one needs a <A HREF="node119.html#Ring"><TT>Ring</TT></A> as  a coefficient type ,
+a <A HREF="node472.html#VariableType"><TT>VariableType</TT></A> as a variable type.
+and <A HREF="#ExponentCategory_V_"><TT>ExponentCategory(V)</TT></A> as an exponent type.
+So we can continue the above sample program as follows
+<PRE>
+macro E1 == MachineIntegerDegreeLexicographicalExponent(V);
+macro E2 == MachineIntegerLexicographicalExponent(V);
+macro Q1 == DistributedMultivariatePolynomial1(Integer, V, E1);
+macro Q2 == DistributedMultivariatePolynomial1(Integer, V, E2);
+q1 := expand(E1)(Q1)(p);
+q2 := expand(E2)(Q2)(p);
+</PRE>
+
+<P>
+The above polynomials appear respectively as follows
+in an interpreter session.
+<PRE>
+%20 &gt;&gt; q1 := expand(E1)(Q1)(p)
+x*y^3 + z^4 + x^2*y + x^2*z + x*z @ Q1
+
+%21 &gt;&gt; q2 := expand(E2)(Q2)(p);
+x^2*y + x^2*z + x*y^3 + x*z + z^4 @ Q2
+</PRE>
+Do not forget to enter
+<PRE>
+#include "aldorinterp"
+</PRE>
+after 
+<PRE>
+#include "algebra"
+</PRE>
+in every interpreter session.
+
+<P>
+There are other multivariate polynomial types 
+like <A HREF="node467.html#RecursiveMultivariatePolynomial0"><TT>RecursiveMultivariatePolynomial0</TT></A>.
+It is similar to <A HREF="node471.html#SparseMultivariatePolynomial"><TT>SparseMultivariatePolynomial</TT></A>
+but takes a third argument which is a univariate polynomial
+type constructor:
+<PRE>
+  UP: (R: Join(ArithmeticType, ExpressionType), avar: Symbol == new()
+       ) -&gt; UnivariatePolynomialCategory(R),
+</PRE>
+This third argument is used for the internal representation.
+
+<P>
+Another useful type is <A HREF="node457.html#IntegerPolynomial"><TT>IntegerPolynomial</TT></A>
+which provides multivariate polynomial with integer coefficient
+and variables from <A HREF="node462.html#OrderedSymbol"><TT>OrderedSymbol</TT></A>.
+This multivariate polynomial type is easy to use as
+shown by the following interpreter session.
+<PRE>
+%1 &gt;&gt; #include "algebra"
+                                           Comp: 130 msec, Interp: 0 msec
+%2 &gt;&gt; #include "aldorinterp"
+                                           Comp: 70 msec, Interp: 0 msec
+%3 &gt;&gt; macro P == IntegerPolynomial;
+                                           Comp: 0 msec, Interp: 0 msec
+%4 &gt;&gt; import from String, P, Integer;
+                                           Comp: 210 msec, Interp: 0 msec
+%5 &gt;&gt; x: P := "x" :: P
+x @ IntegerPolynomial
+                                           Comp: 0 msec, Interp: 520 msec
+%6 &gt;&gt; y: P := "y" :: P        
+y @ IntegerPolynomial
+                                           Comp: 0 msec, Interp: 0 msec
+%7 &gt;&gt; z: P := "z" ::P
+z @ IntegerPolynomial
+                                           Comp: 0 msec, Interp: 0 msec
+%8 &gt;&gt; p := (y + z)*x^2 + (y^3 + z)*x + z^4 + 3::P;
+z^4+(x^2+x)*z+x*y^3+x^2*y+3 @ IntegerPolynomial
+</PRE>
+Observe the <TT>3::P</TT>. Indeed, it is necessary to convert
+the integer <TT>3</TT> into a polynomial.
+Observe also the ordering on symbols is reversed w.r.t. the dictionnary one.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1399"
+  HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1393"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1387"
+  HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1395"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html1397"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1400"
+  HREF="node14.html">Compatibility with C types</A>
+<B> Up:</B> <A NAME="tex2html1394"
+  HREF="node6.html">User Guide</A>
+<B> Previous:</B> <A NAME="tex2html1388"
+  HREF="node12.html">Univariate polynomials and series</A>
+ &nbsp; <B>  <A NAME="tex2html1396"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1398"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

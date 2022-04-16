@@ -1,0 +1,325 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>UnivariatePolynomialQuotient</TITLE>
+<META NAME="description" CONTENT="UnivariatePolynomialQuotient">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node193.html">
+<LINK REL="previous" HREF="node184.html">
+<LINK REL="up" HREF="node132.html">
+<LINK REL="next" HREF="node186.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html4021"
+  HREF="node186.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4015"
+  HREF="node132.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4009"
+  HREF="node184.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4017"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html4019"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html4022"
+  HREF="node186.html">compose</A>
+<B> Up:</B> <A NAME="tex2html4016"
+  HREF="node132.html">Commutative Algebra</A>
+<B> Previous:</B> <A NAME="tex2html4010"
+  HREF="node184.html">UnivariatePolynomialModSqfr</A>
+ &nbsp; <B>  <A NAME="tex2html4018"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html4020"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000621000000000000000"></A><A NAME="27521"></A><A NAME="UnivariatePolynomialQuotient"></A>
+<BR>
+UnivariatePolynomialQuotient
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+UnivariatePolynomialQuotient(R, Rx):Category 
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>R</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node29.html#CommutativeRing"><TT>CommutativeRing</TT></A></TD>
+<TD ALIGN="LEFT">The coefficient ring of the polynomials</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>Rx</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node403.html#UnivariatePolynomialCategory"><TT>UnivariatePolynomialCategory</TT></A> R</TD>
+<TD ALIGN="LEFT">A polynomial type over R</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+UnivariatePolynomialQuotient(R, Rx) is the category of extensions of <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$R$"> of the form
+<IMG
+ WIDTH="54" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img222.png"
+ ALT="$Rx / (p)$"> for some <IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img223.png"
+ ALT="$p \in Rx$">, where <I>p</I> is assumed to be monic,
+but with no other restrictions.
+Use instead the categories <A HREF="node193.html#UnivariatePolynomialQuotientSqfr"><TT>UnivariatePolynomialQuotientSqfr</TT></A>
+when <I>p</I> is also known to
+be squarefree, and <A HREF="node182.html#SimpleAlgebraicExtensionCategory"><TT>SimpleAlgebraicExtensionCategory</TT></A>
+when <I>p</I> is also known to be irreducible.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node27.html#Algebra"><TT>Algebra</TT></A> R</TD>
+</TR>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node29.html#CommutativeRing"><TT>CommutativeRing</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node89.html#IndexedFreeLinearCombinationType:coefficient"><TT>coefficient</TT></A>:</TD>
+<TD ALIGN="LEFT">(%, Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R</TD>
+<TD ALIGN="LEFT">Extraction of a coefficient</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node186.html#UnivariatePolynomialQuotient:compose"><TT>compose</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Modular composition</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node187.html#UnivariatePolynomialQuotient:definingPolynomial"><TT>definingPolynomial</TT></A>:</TD>
+<TD ALIGN="LEFT">Rx</TD>
+<TD ALIGN="LEFT">Defining polynomial</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node93.html#IndexedFreeModule:generator"><TT>generator</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node881.html#Generator"><TT>Generator</TT></A> <TT>Cross</TT>(R, Z)</TD>
+<TD ALIGN="LEFT">iterate through all the terms</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node188.html#UnivariatePolynomialQuotient:knownIrreducible_"><TT>knownIrreducible?</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Irreducible modulus?</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node189.html#UnivariatePolynomialQuotient:lift"><TT>lift</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> Rx</TD>
+<TD ALIGN="LEFT">Conversion to a polynomial</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node67.html#FreeLinearCombinationType:map"><TT>map</TT></A>:</TD>
+<TD ALIGN="LEFT">(R <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Lift a mapping</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node67.html#FreeLinearCombinationType:map_"><TT>map!</TT></A>:</TD>
+<TD ALIGN="LEFT">(R <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> R) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> % <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Lift a mapping</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node190.html#UnivariatePolynomialQuotient:monom"><TT>monom</TT></A>:</TD>
+<TD ALIGN="LEFT">%</TD>
+<TD ALIGN="LEFT">Generator of the algebra</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node191.html#UnivariatePolynomialQuotient:reduce"><TT>reduce</TT></A>:</TD>
+<TD ALIGN="LEFT">Rx <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Reduction of a polynomial</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node192.html#UnivariatePolynomialQuotient:value"><TT>value</TT></A>:</TD>
+<TD ALIGN="LEFT">(P:POLY %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (P, Z, Z) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Evaluation at a rational number</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">Z</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="#Integer"><TT>Integer</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT">POLY</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node403.html#UnivariatePolynomialCategory"><TT>UnivariatePolynomialCategory</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <A HREF="node56.html#FiniteCharacteristic"><TT>FiniteCharacteristic</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node56.html#FiniteCharacteristic"><TT>FiniteCharacteristic</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+    
+<P>
+
+<P>
+<BR>
+<BLOCKQUOTE>
+if R has <A HREF="node58.html#FiniteSet"><TT>FiniteSet</TT></A> then</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>    <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node58.html#FiniteSet"><TT>FiniteSet</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4023"
+  HREF="node186.html">compose</A>
+<LI><A NAME="tex2html4024"
+  HREF="node187.html">definingPolynomial</A>
+<LI><A NAME="tex2html4025"
+  HREF="node188.html">knownIrreducible?</A>
+<LI><A NAME="tex2html4026"
+  HREF="node189.html">lift</A>
+<LI><A NAME="tex2html4027"
+  HREF="node190.html">monom</A>
+<LI><A NAME="tex2html4028"
+  HREF="node191.html">reduce</A>
+<LI><A NAME="tex2html4029"
+  HREF="node192.html">value</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html4021"
+  HREF="node186.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4015"
+  HREF="node132.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4009"
+  HREF="node184.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4017"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html4019"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html4022"
+  HREF="node186.html">compose</A>
+<B> Up:</B> <A NAME="tex2html4016"
+  HREF="node132.html">Commutative Algebra</A>
+<B> Previous:</B> <A NAME="tex2html4010"
+  HREF="node184.html">UnivariatePolynomialModSqfr</A>
+ &nbsp; <B>  <A NAME="tex2html4018"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html4020"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

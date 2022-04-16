@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>tryExpandFraction</TITLE>
+<META NAME="description" CONTENT="tryExpandFraction">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node439.html">
+<LINK REL="previous" HREF="node437.html">
+<LINK REL="up" HREF="node433.html">
+<LINK REL="next" HREF="node439.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html7912"
+  HREF="node439.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html7906"
+  HREF="node433.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html7900"
+  HREF="node437.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html7908"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html7910"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html7913"
+  HREF="node439.html">truncate</A>
+<B> Up:</B> <A NAME="tex2html7907"
+  HREF="node433.html">UnivariateTaylorSeriesCategory2Poly</A>
+<B> Previous:</B> <A NAME="tex2html7901"
+  HREF="node437.html">monicNewtonSeries</A>
+ &nbsp; <B>  <A NAME="tex2html7909"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html7911"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000927500000000000000"></A>
+<A NAME="UnivariateTaylorSeriesCategory2Poly:tryExpandFraction"></A>
+<BR>
+tryExpandFraction
+</H3> <A NAME="39926"></A>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+tryExpandFraction&nbsp;a
+<BR>
+tryExpandFraction(a)(p,q)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Signature</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">tryExpandFraction:</TD>
+<TD ALIGN="LEFT">R <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (RX, RX) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (<A HREF="#Integer"><TT>Integer</TT></A>, <A HREF="node887.html#Partial"><TT>Partial</TT></A> RXX)</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>a</EM></TD>
+<TD ALIGN="LEFT">R</TD>
+<TD ALIGN="LEFT">the expansion point</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>p,q</EM></TD>
+<TD ALIGN="LEFT">RX</TD>
+<TD ALIGN="LEFT">numerator and denominator of a rational function</TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Returns</B><P>
+      <BLOCKQUOTE>
+If <IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img536.png"
+ ALT="$q(a)$"> is a unit in <I>R</I>,
+then tryExpandFraction(a)(p,q) returns <IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img521.png"
+ ALT="$(n, s)$"> where <IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img522.png"
+ ALT="$n \le 0$"> and the series expansion
+of <IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img537.png"
+ ALT="$p/q$"> around <EM>a</EM> is <!-- MATH
+ $(x-a)^{n} s(x-a)$
+ -->
+<IMG
+ WIDTH="119" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img523.png"
+ ALT="$(x-a)^{n} s(x-a)$">.
+In addition, <IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img524.png"
+ ALT="$s(a) \ne 0$"> whenever <IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img525.png"
+ ALT="$n &lt; 0$">.
+Otherwise, it returns <!-- MATH
+ $(n,{\it failed}\xspace )$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img538.png"
+ ALT="$(n,{\it failed}\xspace )$"> where <I>n</I> is the order of <I>p/q</I>
+at <IMG
+ WIDTH="43" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img539.png"
+ ALT="$x=a$">.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>See Also</B><P>
+    <BLOCKQUOTE>
+<A HREF="node434.html#UnivariateTaylorSeriesCategory2Poly:expand"><TT>expand</TT></A>,<A HREF="node435.html#UnivariateTaylorSeriesCategory2Poly:expandFraction"><TT>expandFraction</TT></A>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

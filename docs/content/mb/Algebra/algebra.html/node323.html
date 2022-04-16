@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>UnivariatePolynomialPopovLinearAlgebra</TITLE>
+<META NAME="description" CONTENT="UnivariatePolynomialPopovLinearAlgebra">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node325.html">
+<LINK REL="previous" HREF="node320.html">
+<LINK REL="up" HREF="node226.html">
+<LINK REL="next" HREF="node324.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html6149"
+  HREF="node324.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html6143"
+  HREF="node226.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html6137"
+  HREF="node322.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html6145"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html6147"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html6150"
+  HREF="node324.html">hermite</A>
+<B> Up:</B> <A NAME="tex2html6144"
+  HREF="node226.html">Linear Algebra</A>
+<B> Previous:</B> <A NAME="tex2html6138"
+  HREF="node322.html">determinant</A>
+ &nbsp; <B>  <A NAME="tex2html6146"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html6148"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000817000000000000000"></A><A NAME="34586"></A><A NAME="UnivariatePolynomialPopovLinearAlgebra"></A>
+<BR>
+UnivariatePolynomialPopovLinearAlgebra
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from UnivariatePolynomialPopovLinearAlgebra(F, FX, M)
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+        <TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><B>Parameter</B></TH>
+<TH ALIGN="LEFT"><B>Type</B></TH>
+<TH ALIGN="LEFT"><B>Description</B></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>F</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node52.html#Field"><TT>Field</TT></A></TD>
+<TD ALIGN="LEFT">The coefficient field</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>FX</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node403.html#UnivariatePolynomialCategory"><TT>UnivariatePolynomialCategory</TT></A> F</TD>
+<TD ALIGN="LEFT">Polynomials over <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img392.png"
+ ALT="$F$"></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><EM>M</EM></TD>
+<TD ALIGN="LEFT"><A HREF="node276.html#MatrixCategory"><TT>MatrixCategory</TT></A> FX</TD>
+<TD ALIGN="LEFT">A matrix type over <IMG
+ WIDTH="31" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img393.png"
+ ALT="$FX$"></TD>
+</TR>
+</TABLE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+UnivariatePolynomialPopovLinearAlgebra(F, FX, M) provides basic linear algebra functionalities
+using weak Popov forms for matrices over <IMG
+ WIDTH="31" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img393.png"
+ ALT="$FX$">.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><A HREF="node236.html#LinearAlgebra:determinant"><TT>determinant</TT></A>:</TD>
+<TD ALIGN="LEFT">M <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> FX</TD>
+<TD ALIGN="LEFT">Determinant</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node324.html#UnivariatePolynomialPopovLinearAlgebra:hermite"><TT>hermite</TT></A>:</TD>
+<TD ALIGN="LEFT">M <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> M</TD>
+<TD ALIGN="LEFT">Hermite form</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node241.html#LinearAlgebra:kernel"><TT>kernel</TT></A>:</TD>
+<TD ALIGN="LEFT">M <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> M</TD>
+<TD ALIGN="LEFT">Kernel</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node242.html#LinearAlgebra:maxInvertibleSubmatrix"><TT>maxInvertibleSubmatrix</TT></A>:</TD>
+<TD ALIGN="LEFT">M <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> (AZ, AZ)</TD>
+<TD ALIGN="LEFT">Maximal minor</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#UnivariatePolynomialPopovLinearAlgebra:popov"><TT>popov</TT></A>:</TD>
+<TD ALIGN="LEFT">M <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> M</TD>
+<TD ALIGN="LEFT">weak Popov form</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node244.html#LinearAlgebra:rank"><TT>rank</TT></A>:</TD>
+<TD ALIGN="LEFT">M <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">Rank</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node246.html#LinearAlgebra:span"><TT>span</TT></A>:</TD>
+<TD ALIGN="LEFT">M <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> AZ</TD>
+<TD ALIGN="LEFT">Span</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">AZ</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node751.html#Array"><TT>Array</TT></A> <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html6151"
+  HREF="node324.html">hermite</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html6149"
+  HREF="node324.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html6143"
+  HREF="node226.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html6137"
+  HREF="node322.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html6145"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html6147"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html6150"
+  HREF="node324.html">hermite</A>
+<B> Up:</B> <A NAME="tex2html6144"
+  HREF="node226.html">Linear Algebra</A>
+<B> Previous:</B> <A NAME="tex2html6138"
+  HREF="node322.html">determinant</A>
+ &nbsp; <B>  <A NAME="tex2html6146"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html6148"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

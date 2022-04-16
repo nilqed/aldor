@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Token</TITLE>
+<META NAME="description" CONTENT="Token">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="previous" HREF="node560.html">
+<LINK REL="up" HREF="node533.html">
+<LINK REL="next" HREF="node565.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html9815"
+  HREF="node565.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html9809"
+  HREF="node533.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html9805"
+  HREF="node563.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html9811"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html9813"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html9816"
+  HREF="node565.html">float</A>
+<B> Up:</B> <A NAME="tex2html9810"
+  HREF="node533.html">Shells</A>
+<B> Previous:</B> <A NAME="tex2html9806"
+  HREF="node563.html">table</A>
+ &nbsp; <B>  <A NAME="tex2html9812"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html9814"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001214000000000000000"></A><A NAME="45483"></A><A NAME="Token"></A>
+<BR>
+Token
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from Token
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+Token&nbsp;is a type whose elements are parser tokens.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node729.html#OutputType"><TT>OutputType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node681.html#PrimitiveType"><TT>PrimitiveType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node565.html#Token:float"><TT>float</TT></A>:</TD>
+<TD ALIGN="LEFT">(<A HREF="node799.html#List"><TT>List</TT></A> <A HREF="node711.html#Character"><TT>Character</TT></A>, <A HREF="node799.html#List"><TT>List</TT></A> <A HREF="node711.html#Character"><TT>Character</TT></A>) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Create a float token</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node566.html#Token:integer"><TT>integer</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node799.html#List"><TT>List</TT></A> <A HREF="node711.html#Character"><TT>Character</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Create an integer token</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node567.html#Token:leaf"><TT>leaf</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node496.html#ExpressionTreeLeaf"><TT>ExpressionTreeLeaf</TT></A></TD>
+<TD ALIGN="LEFT">Conversion to a leaf</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node567.html#Token:leaf_"><TT>leaf?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Test for a leaf</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node572.html#Token:name"><TT>name</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node799.html#List"><TT>List</TT></A> <A HREF="node711.html#Character"><TT>Character</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Create a constant name token</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node569.html#Token:operator"><TT>operator</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node517.html#ExpressionTreeOperator"><TT>ExpressionTreeOperator</TT></A></TD>
+<TD ALIGN="LEFT">Conversion to an operator</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node569.html#Token:operator_"><TT>operator?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Test for an operator</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node570.html#Token:prefix"><TT>prefix</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node799.html#List"><TT>List</TT></A> <A HREF="node711.html#Character"><TT>Character</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Create a prefix function token</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node571.html#Token:special"><TT>special</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">Conversion to a special token</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node571.html#Token:special_"><TT>special?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Test for a special token</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="#Token:string"><TT>string</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node799.html#List"><TT>List</TT></A> <A HREF="node711.html#Character"><TT>Character</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Create a string</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node573.html#Token:token"><TT>token</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node711.html#Character"><TT>Character</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node887.html#Partial"><TT>Partial</TT></A> %</TD>
+<TD ALIGN="LEFT">Create a single character token</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html9817"
+  HREF="node565.html">float</A>
+<LI><A NAME="tex2html9818"
+  HREF="node566.html">integer</A>
+<LI><A NAME="tex2html9819"
+  HREF="node567.html">leaf</A>
+<LI><A NAME="tex2html9820"
+  HREF="node568.html">name</A>
+<LI><A NAME="tex2html9821"
+  HREF="node569.html">operator</A>
+<LI><A NAME="tex2html9822"
+  HREF="node570.html">prefix</A>
+<LI><A NAME="tex2html9823"
+  HREF="node571.html">special</A>
+<LI><A NAME="tex2html9824"
+  HREF="node572.html">name</A>
+<LI><A NAME="tex2html9825"
+  HREF="node573.html">token</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html9815"
+  HREF="node565.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html9809"
+  HREF="node533.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html9805"
+  HREF="node563.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html9811"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html9813"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html9816"
+  HREF="node565.html">float</A>
+<B> Up:</B> <A NAME="tex2html9810"
+  HREF="node533.html">Shells</A>
+<B> Previous:</B> <A NAME="tex2html9806"
+  HREF="node563.html">table</A>
+ &nbsp; <B>  <A NAME="tex2html9812"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html9814"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>

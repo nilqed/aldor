@@ -1,0 +1,408 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>ExpressionTreeLeaf</TITLE>
+<META NAME="description" CONTENT="ExpressionTreeLeaf">
+<META NAME="keywords" CONTENT="html">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="html.css">
+
+<LINK REL="next" HREF="node510.html">
+<LINK REL="previous" HREF="node495.html">
+<LINK REL="up" HREF="node473.html">
+<LINK REL="next" HREF="node497.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html8813"
+  HREF="node497.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html8807"
+  HREF="node473.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html8801"
+  HREF="node495.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html8809"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html8811"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html8814"
+  HREF="node497.html">aldor,axiom,C,fortran,infix,lisp,maple,tex</A>
+<B> Up:</B> <A NAME="tex2html8808"
+  HREF="node473.html">Expression Trees</A>
+<B> Previous:</B> <A NAME="tex2html8802"
+  HREF="node495.html">ExpressionTreeIf</A>
+ &nbsp; <B>  <A NAME="tex2html8810"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html8812"
+  HREF="node903.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION0001113000000000000000"></A><A NAME="42611"></A><A NAME="ExpressionTreeLeaf"></A>
+<BR>
+ExpressionTreeLeaf
+</H2>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Usage</B><P>
+      <BLOCKQUOTE>
+import from ExpressionTreeLeaf
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Description</B><P>
+      <BLOCKQUOTE>
+ExpressionTreeLeaf&nbsp;is a type whose elements are the leafs (atoms) of expression
+trees. It provides conversions to and from the basic atomic types.
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+
+<P><P>
+<BR>
+
+    <B>Exports</B><P>
+    <BLOCKQUOTE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node729.html#OutputType"><TT>OutputType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT" COLSPAN=3><A HREF="node681.html#PrimitiveType"><TT>PrimitiveType</TT></A></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node497.html#ExpressionTreeLeaf:aldor"><TT>aldor</TT></A>:</TD>
+<TD ALIGN="LEFT">(TEXT, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+<TD ALIGN="LEFT">Conversion to A<SMALL>LDOR</SMALL> code</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node497.html#ExpressionTreeLeaf:axiom"><TT>axiom</TT></A>:</TD>
+<TD ALIGN="LEFT">(TEXT, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+<TD ALIGN="LEFT">Conversion to Axiom code</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node498.html#ExpressionTreeLeaf:boolean"><TT>boolean</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Conversion to a boolean</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node498.html#ExpressionTreeLeaf:boolean_"><TT>boolean?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Test for a boolean</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node497.html#ExpressionTreeLeaf:C"><TT>C</TT></A>:</TD>
+<TD ALIGN="LEFT">(TEXT, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+<TD ALIGN="LEFT">Conversion to C code</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node499.html#ExpressionTreeLeaf:doubleFloat"><TT>doubleFloat</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node630.html#DoubleFloat"><TT>DoubleFloat</TT></A></TD>
+<TD ALIGN="LEFT">Conversion to a double precision float</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node499.html#ExpressionTreeLeaf:doubleFloat_"><TT>doubleFloat?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Test for a double precision float</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node500.html#ExpressionTreeLeaf:float"><TT>float</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="#Float"><TT>Float</TT></A></TD>
+<TD ALIGN="LEFT">Conversion to a software big float</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node500.html#ExpressionTreeLeaf:float_"><TT>float?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Test for a software big float</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node497.html#ExpressionTreeLeaf:fortran"><TT>fortran</TT></A>:</TD>
+<TD ALIGN="LEFT">TEXT, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+<TD ALIGN="LEFT">Conversion to FORTRAN code</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node497.html#ExpressionTreeLeaf:infix"><TT>infix</TT></A>:</TD>
+<TD ALIGN="LEFT">(TEXT, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+<TD ALIGN="LEFT">Conversion to one-dim infix output</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node501.html#ExpressionTreeLeaf:integer"><TT>integer</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="#Integer"><TT>Integer</TT></A></TD>
+<TD ALIGN="LEFT">Conversion to a software big integer</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node501.html#ExpressionTreeLeaf:integer_"><TT>integer?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Test for a software big integer</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node502.html#ExpressionTreeLeaf:leaf"><TT>leaf</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node619.html#Boolean"><TT>Boolean</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Conversion to a leaf</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node502.html#ExpressionTreeLeaf:leaf"><TT>leaf</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node630.html#DoubleFloat"><TT>DoubleFloat</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Conversion to a leaf</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node502.html#ExpressionTreeLeaf:leaf"><TT>leaf</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Conversion to a leaf</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node502.html#ExpressionTreeLeaf:leaf"><TT>leaf</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="#Integer"><TT>Integer</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Conversion to a leaf</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node502.html#ExpressionTreeLeaf:leaf"><TT>leaf</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node691.html#SingleFloat"><TT>SingleFloat</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Conversion to a leaf</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node502.html#ExpressionTreeLeaf:leaf"><TT>leaf</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node845.html#String"><TT>String</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Conversion to a leaf</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node502.html#ExpressionTreeLeaf:leaf"><TT>leaf</TT></A>:</TD>
+<TD ALIGN="LEFT"><A HREF="node599.html#Symbol"><TT>Symbol</TT></A> <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> %</TD>
+<TD ALIGN="LEFT">Conversion to a leaf</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node497.html#ExpressionTreeLeaf:lisp"><TT>lisp</TT></A>:</TD>
+<TD ALIGN="LEFT">(TEXT, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+<TD ALIGN="LEFT">Conversion to Lisp code</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node506.html#ExpressionTreeLeaf:singleFloat"><TT>singleFloat</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node691.html#SingleFloat"><TT>SingleFloat</TT></A></TD>
+<TD ALIGN="LEFT">Conversion to a single precision float</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node506.html#ExpressionTreeLeaf:singleFloat_"><TT>singleFloat?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Test for a single precision float</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node505.html#ExpressionTreeLeaf:machineInteger"><TT>machineInteger</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node670.html#MachineInteger"><TT>MachineInteger</TT></A></TD>
+<TD ALIGN="LEFT">Conversion to a machine integer</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node505.html#ExpressionTreeLeaf:machineInteger_"><TT>machineInteger?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Test for a machine integer</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node497.html#ExpressionTreeLeaf:maple"><TT>maple</TT></A>:</TD>
+<TD ALIGN="LEFT">(TEXT, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+<TD ALIGN="LEFT">Conversion to Maple code</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node507.html#ExpressionTreeLeaf:string"><TT>string</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node845.html#String"><TT>String</TT></A></TD>
+<TD ALIGN="LEFT">Conversion to a string</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node507.html#ExpressionTreeLeaf:string_"><TT>string?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Test for a string</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node508.html#ExpressionTreeLeaf:symbol"><TT>symbol</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node599.html#Symbol"><TT>Symbol</TT></A></TD>
+<TD ALIGN="LEFT">Conversion to a symbol</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node508.html#ExpressionTreeLeaf:symbol_"><TT>symbol?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Test for a symbol</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node497.html#ExpressionTreeLeaf:tex"><TT>tex</TT></A>:</TD>
+<TD ALIGN="LEFT">(TEXT, %) <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> TEXT</TD>
+<TD ALIGN="LEFT">Conversion to L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><A HREF="node509.html#ExpressionTreeLeaf:texParen_"><TT>texParen?</TT></A>:</TD>
+<TD ALIGN="LEFT">% <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\to$"> <A HREF="node619.html#Boolean"><TT>Boolean</TT></A></TD>
+<TD ALIGN="LEFT">Check whether to parenthetize</TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+<P>
+<BR>
+    <BLOCKQUOTE>
+where</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>      <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">TEXT</TD>
+<TD ALIGN="CENTER">==</TD>
+<TD ALIGN="LEFT"><A HREF="node741.html#TextWriter"><TT>TextWriter</TT></A></TD>
+</TR>
+</TABLE>
+</BLOCKQUOTE>
+<P></P>
+
+    <BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html8815"
+  HREF="node497.html">aldor,axiom,C,fortran,infix,lisp,maple,tex</A>
+<LI><A NAME="tex2html8816"
+  HREF="node498.html">boolean</A>
+<LI><A NAME="tex2html8817"
+  HREF="node499.html">doubleFloat</A>
+<LI><A NAME="tex2html8818"
+  HREF="node500.html">float</A>
+<LI><A NAME="tex2html8819"
+  HREF="node501.html">integer</A>
+<LI><A NAME="tex2html8820"
+  HREF="node502.html">leaf</A>
+<LI><A NAME="tex2html8821"
+  HREF="node503.html">negate</A>
+<LI><A NAME="tex2html8822"
+  HREF="node504.html">negative?</A>
+<LI><A NAME="tex2html8823"
+  HREF="node505.html">machineInteger</A>
+<LI><A NAME="tex2html8824"
+  HREF="node506.html">singleFloat</A>
+<LI><A NAME="tex2html8825"
+  HREF="node507.html">string</A>
+<LI><A NAME="tex2html8826"
+  HREF="node508.html">symbol</A>
+<LI><A NAME="tex2html8827"
+  HREF="node509.html">texParen?</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html8813"
+  HREF="node497.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html8807"
+  HREF="node473.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html8801"
+  HREF="node495.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html8809"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A> 
+<A NAME="tex2html8811"
+  HREF="node903.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.png"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html8814"
+  HREF="node497.html">aldor,axiom,C,fortran,infix,lisp,maple,tex</A>
+<B> Up:</B> <A NAME="tex2html8808"
+  HREF="node473.html">Expression Trees</A>
+<B> Previous:</B> <A NAME="tex2html8802"
+  HREF="node495.html">ExpressionTreeIf</A>
+ &nbsp; <B>  <A NAME="tex2html8810"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html8812"
+  HREF="node903.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Manuel Bronstein
+2004-06-28
+</ADDRESS>
+</BODY>
+</HTML>
