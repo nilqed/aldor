@@ -1,28 +1,59 @@
-# The Aldor Programming Language
-
-### scan-build
-
-```
-clang version 18.1.8 
-Thu Jan 15 22:38:56 2026
-```
-
-[scan-build report (HTML)](https://nilqed.github.io/aldor-scan-build/)
-
-
-### gdb
-
-Use `gdb -p <pid>` of running `aldor -g loop` process in `libexec`
-(`ps xa | grep aldor`).
-
-
-```
 kfp@omega:~$ sudo gdb -p 879480
 [sudo] password for kfp:
 GNU gdb (Ubuntu 15.0.50.20240403-0ubuntu1) 15.0.50.20240403-git
 Copyright (C) 2024 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
 
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+Attaching to process 879480
+Reading symbols from /usr/local/libexec/aldor...
+Reading symbols from /lib/x86_64-linux-gnu/libm.so.6...
+Reading symbols from /usr/lib/debug/.build-id/f8/34d7308d2660218ed4f7486a58e28c8464fe4b.debug...
+Reading symbols from /usr/local/lib/libreadline.so.8...
+(No debugging symbols found in /usr/local/lib/libreadline.so.8)
+Reading symbols from /lib/x86_64-linux-gnu/libc.so.6...
+Reading symbols from /usr/lib/debug/.build-id/27/4eec488d230825a136fa9c4d85370fed7a0a5e.debug...
+Reading symbols from /lib64/ld-linux-x86-64.so.2...
+Reading symbols from /usr/lib/debug/.build-id/52/0e05878220fb2fc6d28ff46b63b3fd5d48e763.debug...
+Reading symbols from /lib/x86_64-linux-gnu/libtinfo.so.6...
+
+warning: could not find '.gnu_debugaltlink' file for /lib/x86_64-linux-gnu/libtinfo.so.6
+(No debugging symbols found in /lib/x86_64-linux-gnu/libtinfo.so.6)
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007d45d552600e in pselect64_syscall (
+    sigmask=0x7d45d56e9120 <_rl_orig_sigset>, timeout=<optimised out>,
+    exceptfds=0x0, writefds=0x0, readfds=0x7ffeedb18610, nfds=1)
+    at ../sysdeps/unix/sysv/linux/pselect.c:34
+
+warning: 34     ../sysdeps/unix/sysv/linux/pselect.c: No such file or directory
+(gdb) next
+
+0x00007d45d56c882d in _rl_timeout_select ()
+   from /usr/local/lib/libreadline.so.8
+(gdb)
+Single stepping until exit from function _rl_timeout_select,
+which has no line number information.
+0x00007d45d56cc4c7 in rl_getc () from /usr/local/lib/libreadline.so.8
+(gdb) run
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /usr/local/libexec/aldor
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+warning: could not find '.gnu_debugaltlink' file for /lib/x86_64-linux-gnu/libtinfo.so.6
+#1 (Warning) No files!  Type `aldor -help' for help.
+[Inferior 1 (process 879616) exited normally]
 (gdb) run -g loop
 Starting program: /usr/local/libexec/aldor -g loop
 [Thread debugging using libthread_db enabled]
@@ -58,6 +89,15 @@ Type "#int help" for more details.
 %%8 := import from Integer
                                            Comp: 10 msec, Interp: 0 msec
 %%9 := 2
+
+Program received signal SIGSEGV, Segmentation fault.
+0x0000555555705da7 in dnfIsTrue (xx=0x0) at dnf.c:391
+391             return xx->argc == 1 && dnfAndIsTrue(xx->argv[0]);
+(gdb)
+
+
+-----
+
 
 Program received signal SIGSEGV, Segmentation fault.
 0x0000555555705da7 in dnfIsTrue (xx=0x0) at dnf.c:391
@@ -104,15 +144,3 @@ The program is not being run.
 (gdb) next
 The program is not being run.
 (gdb)
-```  
-
-
----
-
-Choose the master branch or switch to the original 
-https://github.com/aldorlang/aldor for cloning/building. 
-
-
-Docs in various formats: http://nilqed.github.io/aldor/
-
-

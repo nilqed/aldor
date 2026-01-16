@@ -364,7 +364,7 @@ dnfOrMerge(DNF xx)
  * :: True and False.
  *
  ****************************************************************************/
-			
+
 local struct dnf_And 	dnfTrueProd    	= { 0 };
 local struct dnf_Or  	dnfTrueStruct  	= { 1, { &dnfTrueProd }};
 local DNF	      	dnfTrueValue   	= &dnfTrueStruct;
@@ -387,8 +387,9 @@ dnfFalse(void)
 
 Bool
 dnfIsTrue(DNF xx)
-{
-	return xx->argc == 1 && dnfAndIsTrue(xx->argv[0]);
+{   //fix: Segmentation fault, in dnfIsTrue (xx=0x0) at dnf.c:391
+    if (xx == NULL) {return false;}
+	   {return xx->argc == 1 && dnfAndIsTrue(xx->argv[0]);}
 }
 
 Bool
@@ -607,7 +608,7 @@ dnfImplies(DNF xx, DNF yy)
 		for (j = 0; !result && j < yy->argc; j += 1)
 			result = dnfAndImplies(xx->argv[i], yy->argv[j]);
 	}
-	
+
 	return result;
 }
 
@@ -628,14 +629,14 @@ dnfMap(Bool (*mapFn)(void*, DNF_Atom), void * clos, DNF xx)
 
 	for (i=0; i<xx->argc; i++) {
 		xxi = xx->argv[i];
-		for (j=0; j < xxi->argc; j++) 
+		for (j=0; j < xxi->argc; j++)
 			if (mapFn(clos, xxi->argv[j]))
 				return;
 	}
 }
 
 Bool
-dnfExpandImplies(Bool (*testFn)(void *, DNF_Atom, DNF_Atom), 
+dnfExpandImplies(Bool (*testFn)(void *, DNF_Atom, DNF_Atom),
 		 void *clos,
 		 DNF xx, DNF yy)
 {
@@ -648,7 +649,7 @@ dnfExpandImplies(Bool (*testFn)(void *, DNF_Atom, DNF_Atom),
 			result = dnfExpandAndImplies(testFn, clos,
 						     xx->argv[i], yy->argv[j]);
 	}
-	
+
 	return result;
 }
 
@@ -671,7 +672,7 @@ dnfExpandAndImplies(Bool (*testFn)(void *, DNF_Atom, DNF_Atom),
 			xxi += 1;	/* Found yyi. */
 			yyi += 1;
 		}
-		else {	
+		else {
 			/* Be a bit more enthusiastic */
 			Bool res = false;
 			int  ti;
@@ -689,18 +690,18 @@ dnfExpandAndImplies(Bool (*testFn)(void *, DNF_Atom, DNF_Atom),
 	return yyi == yy->argc;
 }
 
-		 
+
 /******************************************************************************
  *
  * :: Aliasing
  * !!! This is currently broken, so don't try to use it.
  *****************************************************************************/
 
-DNF 
+DNF
 dnfFollow(DNF dnf)
 {
 #if 0
-	if (dnf->argc != -1) 
+	if (dnf->argc != -1)
 		return dnf;
 	else {
 		dnf->argv[0] = dnfFollow( (DNF) dnf->argv[0]);
@@ -719,7 +720,7 @@ dnfAlias(DNF old, DNF new)
 	 */
 	if (old->argc != -1) {
 		assert(old->argc != 0);
-		for (i=0; i < old->argc; i++) 
+		for (i=0; i < old->argc; i++)
 			dnfAndFree(old->argv[i]);
 		old->argc = -1;
 	}
