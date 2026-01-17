@@ -319,6 +319,7 @@ ALDOR_M_FintIntOptionsNoFile "Cannot give files, such as `%s', with `#int option
 ALDOR_M_ShellSyntax         "The correct syntax is: #int %s \"<shell-command>\"\n"
 ALDOR_M_StdPrompt           "The correct syntax is: #int %s \"<fmt-string>\"\n"
 ALDOR_M_HisPrompt           "The correct syntax is: #int %s \"<fmt-string>\"\n"
+ALDOR_M_TypeFormat          "The correct syntax is: #int %s \"<fmt-string>\"\n"
 ALDOR_M_CdSyntax            "The correct syntax is: #int %s <directory>\n"
 ALDOR_M_InvalidDir	         "Invalid directory.\n"
 ALDOR_M_FintOptions         "\nAvailable options:\n\n\
@@ -335,6 +336,7 @@ ALDOR_M_FintOptions         "\nAvailable options:\n\n\
      0: never, 1: only when not caught, 2: always.\n\
 #int %s \"<fmt-string>\"\t set standard prompt.\n\
 #int %s \"<fmt-string>\"\t set history prompt.\n\
+#int %s \"<fmt-string>\"\t set type output format.\n\
 #int %s \t\t\t display this message.\n\
 \n\
 #quit   \t\t\t quit the interactive loop."

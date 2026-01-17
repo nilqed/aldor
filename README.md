@@ -142,6 +142,7 @@ Available options:
      0: never, 1: only when not caught, 2: always.
 #int set-sprompt "<fmt-string>"  set standard prompt.
 #int set-hprompt "<fmt-string>"  set history prompt.
+#int set-typefmt "<fmt-string>"  set type output format.
 #int help     display this message.
 
 #quit       quit the interactive loop.
@@ -161,6 +162,41 @@ Available options:
                                            Comp: 0 msec, Interp: 0 msec
 (15) ->
 ```
+
+#### Howto: 
+
+ 1. Declare variables in `fintphase.c`
+ 2. Import extern in `axlcomp.c` (if necessary)
+ 3. Add `FINT_DECLARE_OPTION` in `fintphase.c`
+ 4. Add handler there (below)
+ 5. Don't forget to add `<x>OPt` to the `helpOpt` list!
+ 6. Add new `ALDOR_M_xxx` in `comsgdb.msg`
+ 7. Add corresponding `#int %s ...` entry at the correct position in `comsgdb.msg`
+ 
+
+Printing `types` is still tricky. We have to use `$` for the `\\n` character,
+because of the filtering in the `scmdScanFName` function (?). An example of
+a type format string is given below:
+
+```
+%%8 >> 4
+4 @ AldorInteger
+                                           Comp: 0 msec, Interp: 20 msec
+%%9 >> #int set-typefmt "$ $Type: %s $"
+%%10 >> 4
+4
+
+Type: AldorInteger
+                                           Comp: 0 msec, Interp: 0 msec
+                                           
+todo:
+#int set-typefmt "$ $Type: %20s $"   -- right justify 
+```
+---
+
+
+
+
 
 ---
 

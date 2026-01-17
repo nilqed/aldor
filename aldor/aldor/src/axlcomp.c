@@ -72,6 +72,7 @@ extern int	compGLoopFinish	(FileName, EmitInfo);
 // new: setting interpreter prompts with #int ... (defined in fintphase.c)
 extern char sprompt[20];
 extern char hprompt[20];
+extern char typefmt[20];
 
 /*****************************************************************************
  *
@@ -355,10 +356,10 @@ compGLoop(int argc, char **argv, FILE *fin, FILE *fout)
 void
 compGLoopEval(FILE * fin, FILE * fout, EmitInfo finfo)
 {
-        Stab            stab = stabFile();
+    Stab        stab = stabFile();
 	AbSyn		ab;
 	Foam		foam;
-        static int      lineno = 0;
+    static int  lineno = 0;
 
         comsgInit();
 

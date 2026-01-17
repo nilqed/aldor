@@ -37,6 +37,7 @@
 // 17-JAN-2026 new: #int sprompt <str> and #int hprompt <str>
 char sprompt[20] = "%%%d >> " ;
 char hprompt[20] = "%%%d := " ;
+char typefmt[20] = " @ %s\n"  ;
 
 
 #define FINT_DECLARE_OPTION(var, str)	\
@@ -60,6 +61,7 @@ fintParseOptions(String str)
 	// new (see: comsgdb.msg)
 	FINT_DECLARE_OPTION(stdPrompt, "set-sprompt");
 	FINT_DECLARE_OPTION(hisPrompt, "set-hprompt");
+	FINT_DECLARE_OPTION(typeFMT,   "set-typefmt");
 
 	while (*str && *str == ' ') str++;
 
@@ -156,7 +158,7 @@ fintParseOptions(String str)
 		(void)comsgFPrintf(osStdout, ALDOR_M_FintOptions,
 		       verboseOpt, historyOpt, confirmOpt, timingsOpt,
 		       msgLimitOpt, optionsOpt, runGbcOpt, shellOpt, cdOpt,
-		       exntraceOpt, stdPromptOpt, hisPromptOpt, helpOpt);
+		       exntraceOpt, stdPromptOpt, hisPromptOpt, typeFMTOpt, helpOpt);
 		return;
 	}
 
@@ -223,6 +225,37 @@ fintParseOptions(String str)
 
 		// todo: check for strlen < 20 !
         strcpy(hprompt, hPrompt);
+
+
+		return;
+	}
+
+    if (!strncmp(str, typeFMTOpt, typeFMTOptLen)) {
+		String tyFmt;
+
+		str += typeFMTOptLen;
+
+		if (!scmdScanFName(str, &tyFmt)) {
+			(void)comsgFPrintf(osStdout, ALDOR_M_TypeFormat, typeFMTOpt);
+			return;
+		}
+
+		// todo: check for strlen < 20 !
+        //strcpy(typefmt, tyFmt);
+
+        // #int set-typefmt "$ $Type: %s $"
+        // we have to use a syn char for \n :(
+        int i, j = 0;
+        for (i = 0; tyFmt[i] != '\0'; i++) {
+        // Check for $ <--> repl to newline
+          if (tyFmt[i] == '$') {
+            typefmt[j++] = '\n';
+            i++;
+          }
+            // copy the current character to typefmt
+          {typefmt[j++] = tyFmt[i];}
+         }
+         typefmt[j] = '\0'; // Null-terminate the typefmt string
 
 
 		return;
@@ -394,6 +427,6 @@ fintPrintType(FILE * fout, AbSyn ab)
 		(void)fprintf(fout, "  ()");
 
 	s =tfPrettyClippedIn(tf, fintMsgLimit, int0);
-	(void)fprintf(fout, " @ %s\n", s);
+	(void)fprintf(fout, typefmt, s);
 	strFree(s);
 }
