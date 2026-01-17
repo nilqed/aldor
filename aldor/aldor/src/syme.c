@@ -77,7 +77,7 @@ extern TForm		abGetCategory		(AbSyn);
 local Syme
 symeAlloc(SymeTag kind)
 {
-	Syme	syme = (Syme) stoAlloc((unsigned) OB_Syme, sizeof(*syme)); 
+	Syme	syme = (Syme) stoAlloc((unsigned) OB_Syme, sizeof(*syme));
 
 	syme->fieldc		= 0;
 	syme->kind		= kind;
@@ -398,6 +398,8 @@ symeExtension(Syme syme)
 Syme
 symeExtensionFirst(Syme syme)
 {
+    //fix(?): SIGSEGV in in symeExtensionFirst (syme=0x0) at syme.c:401
+    if (syme == NULL) {return syme;}
 	Syme ext = (Syme) symeGetField(syme, SYFI_Extension);
 	return ext;
 }
@@ -603,8 +605,8 @@ symeSetLib(Syme syme, Lib lib)
 {
 	Lib clib = NULL;
 
-	if (syme->kind != SYME_Trigger 
-		 && syme->lib != NULL 
+	if (syme->kind != SYME_Trigger
+		 && syme->lib != NULL
 		 && symeSameLibs(syme))
 		clib = symeConstLib(syme);
 
@@ -694,7 +696,7 @@ symeAddTwin(Syme final, Syme twin)
 
 extern SImpl symeMergeImpl(Syme, SImpl);
 
-void 
+void
 symeTransferImplInfo(Syme to, Syme from)
 {
 	symeSetHashNum(to, symeHashNum(from));
@@ -769,7 +771,7 @@ symeJavaApplyName(Syme syme)
 	tfFollow(enumArg);
 	if (!tfIsEnum(enumArg))
 		return "apply";
-	
+
 	return symString(tfEnumId(enumArg, 0));
 }
 
@@ -817,7 +819,7 @@ symeIsJavaExport(Syme syme)
 
 /*
  * Eventually, this will be a rehash of the `conditional' code
- * with a few twists (like it's ok to give up if things get 
+ * with a few twists (like it's ok to give up if things get
  * overly nasty.
  */
 
@@ -829,7 +831,7 @@ symeMergeImpl(Syme syme, SImpl impl)
 
 	if (oimpl == NULL && impl == NULL)
 		return impl;
-	
+
 	if (DEBUG(syme)) {
 		fprintf(dbOut, "(Merging:\n");
 		implPrintDb(oimpl);
@@ -855,12 +857,12 @@ symeMergeImpl(Syme syme, SImpl impl)
 	}
 	/* Inherited */
 	else if (implIsInherit(oimpl)) {
-		if (implIsLocal(impl)) 
+		if (implIsLocal(impl))
 			newImpl = impl;
 		else if (implIsDefault(impl))
 			newImpl = impl;
 		else if (implIsCond(impl)) {
-			newImpl = implNewBranch(impl->implCond.cond, 
+			newImpl = implNewBranch(impl->implCond.cond,
 						impl->implCond.impl,
 						oimpl);
 		}
@@ -880,18 +882,18 @@ symeMergeImpl(Syme syme, SImpl impl)
 	/* Branch condition */
 	else if (implIsBranch(oimpl)) {
 		/* Probably just plain wrong */
-		/* Should be some implies test, since one condition will imply 
+		/* Should be some implies test, since one condition will imply
 		 * or be equal to the other.
 		 */
 		newImpl = oimpl;
 	}
 	else if (implIsDefault(oimpl)) {
-		if (implIsDefault(impl)) 
+		if (implIsDefault(impl))
 			newImpl = impl;
-		else if (implIsLocal(impl)) 
+		else if (implIsLocal(impl))
 			newImpl = impl;
 		else if (implIsCond(impl)) {
-			newImpl = implNewBranch(impl->implCond.cond, 
+			newImpl = implNewBranch(impl->implCond.cond,
 						impl->implCond.impl,
 						oimpl);
 		}
@@ -908,10 +910,10 @@ symeMergeImpl(Syme syme, SImpl impl)
 	else {
 		bug("%s: Unexpected merge", "symeMergeImpl");
 	}
-	
+
 	if (!newImpl)
 		bug("%s: Unhandled Merge #3", "symeMergeImpl");
-	
+
 	if (DEBUG(syme)) {
 		implPrintDb(newImpl); fprintf(dbOut, ")\n");
 	}
@@ -925,9 +927,9 @@ void
 symeImplAddConst(Syme syme, AbLogic condition, int defn)
 {
 	SImpl impl;
-	
+
 	if (DEBUG(syme)) {
-		fprintf(dbOut, "(Adding implementation (%d) for: %s\n", 
+		fprintf(dbOut, "(Adding implementation (%d) for: %s\n",
 			defn, symeString(syme));
 		tfPrintDb(symeType(syme));
 		ablogPrint(dbOut, condition);
@@ -955,12 +957,12 @@ symeImplAddInherit(Syme syme, TForm tf, Syme parent)
 		symeMergeImpl(syme, impl);
 		return;
 	}
-	/* 
+	/*
 	 * Simple checks to see if tf really does export something
 	 * called syme
 	 */
 	if (tfIsNone(tf)) return;
-	
+
 	if (DEBUG(syme)) {
 		fprintf(dbOut, "(Adding inherited implementation for: %s", symeString(syme));
 		tfPrintDb(symeType(syme));
@@ -970,7 +972,7 @@ symeImplAddInherit(Syme syme, TForm tf, Syme parent)
 
 	symeMergeImpl(syme, impl);
 	symeDEBUG(dbOut, ")\n");
-	
+
 }
 
 
@@ -1204,7 +1206,7 @@ symeListCheckWithCondition(SymeList symes0)
 
 		if (symeIsSelfSelf(syme)) continue;
 		if (!symeCheckCondition(syme)) continue;
-		
+
 		/* Don't merge, as we may get garbage!
 		 * eg % == X
 		 * [remove next 3 if unsure]*/
@@ -1370,7 +1372,7 @@ symeCheckHas(SymeCContext conditionContext, Sefo dom, Sefo cat)
 	cache = symeCheckHasResult(dom, cat, &flg);
 	if (cache == 1)
 		return flg;
-	
+
 	tfdom = abGetCategory(dom);
 	if (tiTopFns()->tiCanSefo(cat)) {
 		tiTopFns()->tiSefo(stabFile(), cat);
@@ -1390,10 +1392,10 @@ symeCheckHas(SymeCContext conditionContext, Sefo dom, Sefo cat)
 
 /* We use the following encoding for the hashtable:
  * symeHasCache is a table consisting of (S, SymeSatTblVal)
- * pairs.  We have to treat pending comparisons specially, 
+ * pairs.  We have to treat pending comparisons specially,
  * as we can't rely on the return value --- it better to
  * wait until the type is fully instatiated.  This also
- * assumes that the value given by tfSatGetPendingFail  
+ * assumes that the value given by tfSatGetPendingFail
  * must no longer be pending before the result of the
  * tfSat test changes.
  */
@@ -1418,23 +1420,23 @@ symeCheckHasMemo(Sefo dom, Sefo cat, SatMask result)
 	int idx;
 
 	if (symeHasTestCache == NULL)
-		symeHasTestCache = tblNew((TblHashFun) abHash, 
+		symeHasTestCache = tblNew((TblHashFun) abHash,
 					  (TblEqFun) sefoEqual);
 
 	ent0 = (SymeSatTblEnt*) tblElt(symeHasTestCache, (TblKey) dom, NULL);
 	ent = ent0;
 	if (ent == NULL) {
-		ent = (SymeSatTblEnt *)stoAlloc(OB_Other, 
-						fullsizeof(SymeSatTblEnt, 2, 
+		ent = (SymeSatTblEnt *)stoAlloc(OB_Other,
+						fullsizeof(SymeSatTblEnt, 2,
 							   SymeSatTblVal));
 		ent->sz = 2;
 		ent->argv[1].sefo = NULL;
 		idx = 0;
-	} 
+	}
 	else if (ent->argv[ent->sz-1].sefo != NULL) {
-		ent = (SymeSatTblEnt *)stoAlloc(OB_Other, 
-						fullsizeof(SymeSatTblEnt, 
-							   (ent0->sz + 2), 
+		ent = (SymeSatTblEnt *)stoAlloc(OB_Other,
+						fullsizeof(SymeSatTblEnt,
+							   (ent0->sz + 2),
 							   SymeSatTblVal));
 		ent->sz = ent0->sz + 2;
 		for (idx = 0; idx < ent0->sz; idx++) {
@@ -1446,10 +1448,10 @@ symeCheckHasMemo(Sefo dom, Sefo cat, SatMask result)
 		ent->argv[idx  ].sefo = NULL;
 		ent->argv[idx+1].sefo = NULL;
 	}
-	else {	
+	else {
 		for (idx=0; ent->argv[idx].sefo != NULL; idx++) /* nuffin */;
 	}
-	
+
 	ent->argv[idx].sefo    = cat;
 	ent->argv[idx].success = tfSatSucceed(result);
 	ent->argv[idx].pend    = tfSatPending(result) ? tfSatGetPendingFail() : NULL;
@@ -1481,11 +1483,11 @@ symeCheckHasResult(Sefo dom, Sefo cat, Bool *result)
 	if (symeHasTestCache == NULL) return 0;
 
 	ent =  (SymeSatTblEnt*) tblElt(symeHasTestCache, (TblKey) dom, NULL);
-	
+
 	if (ent == NULL) return 0;
-	
+
 	for (idx = 0; idx < ent->sz; idx++) {
-		if (ent->argv[idx].sefo 
+		if (ent->argv[idx].sefo
 		    && sefoEqual(ent->argv[idx].sefo, cat))
 			break;
 	}
@@ -1494,7 +1496,7 @@ symeCheckHasResult(Sefo dom, Sefo cat, Bool *result)
 	*result = (ent->argv[idx].pend != NULL) ? 1 : (ent->argv[idx].success ? 2 : 0);
 
 	if (ent->argv[idx].pend) {
-		if (!tfIsPending(ent->argv[idx].pend)) {	
+		if (!tfIsPending(ent->argv[idx].pend)) {
 			ent->argv[idx].sefo = NULL;
 			return 2;
 		}
@@ -1503,7 +1505,7 @@ symeCheckHasResult(Sefo dom, Sefo cat, Bool *result)
 }
 
 /*
- * Lazy conditionals 
+ * Lazy conditionals
  */
 AbSyn symeLazyCheckData;
 
@@ -1532,7 +1534,7 @@ symeCheckIdentifier(AbSyn ab, Syme syme)
 	AbSyn 	 fluid(symeLazyCheckData);
 	SefoList conds, tmp;
 	Bool 	 ok = true;
-	
+
 	symeLazyCheckData = ab;
 
 	if (!symeCondIsLazy(syme))
@@ -1561,7 +1563,7 @@ symeCheckIdentifier(AbSyn ab, Syme syme)
 
 		/* D has C iff typeof(D) satisfies C. */
 		result = tfSat(tfSatTdnInfoMask(), tfdom, tfcat);
-		
+
 		ok = tfSatPending(result) || tfSatSucceed(result);
 	}
 
@@ -1599,10 +1601,10 @@ symeSExprAList(Syme syme)
 	String 		str;
 	/* 1. Documentation */
 
-	/* Should replace this with something that combines 
+	/* Should replace this with something that combines
 	 * the comments in a meaningful way
 	 */
-	
+
 	str = symeSExprDocumentation(syme, false);
 	if (str) {
 		sxi = sxiFrString(str);
@@ -1615,8 +1617,8 @@ symeSExprAList(Syme syme)
 	else if (symeIsExtend(syme))
 		dsyme = car(listLastCons(Syme)(symeExtendee(syme)));
 	else dsyme = NULL;
-	
-	if (dsyme && symeIsExport(dsyme) 
+
+	if (dsyme && symeIsExport(dsyme)
 	    && symeComment(dsyme) != docNone
 	    && (symeLib(dsyme) == NULL
 		|| strEqual(libToStringShort(symeLib(dsyme)), ssxName))
@@ -1625,7 +1627,7 @@ symeSExprAList(Syme syme)
 		al = sxiACons("documentation", sxi, al);
 	}
 #endif
-	
+
 	/* 2. Defaulted?  */
 	if (symeHasDefault(syme))
 		al = sxiACons("default", sxiFrInteger(1), al);
@@ -1637,7 +1639,7 @@ symeSExprAList(Syme syme)
 	/* 4. Type hash code */
 	sxi = sxiFrInteger(gen0SymeTypeCode(syme));
 	al = sxiACons("symeTypeCode", sxi, al);
-	
+
 	if (tfIsAnyMap(type))
 		type = tfMapRet(type);
 
@@ -1678,9 +1680,9 @@ symeSExprDocumentation(Syme syme, Bool localp)
 	if (symeIsExport(syme)) {
 		if (symeComment(syme) == docNone)
 			return NULL;
-		if (!localp 
-		    || symeLib(syme) == NULL 
-		    || strEqual(libToStringShort(symeLib(syme)), 
+		if (!localp
+		    || symeLib(syme) == NULL
+		    || strEqual(libToStringShort(symeLib(syme)),
 				ssxName))
 			return strCopy(docString(symeComment(syme)));
 		return NULL;
@@ -1878,7 +1880,7 @@ symeXSetExtension(Syme s, AInt v)
 struct symeInfo symeInfo[] = {
 	{SYME_Label,   "SYME_Label",	"label",	    ALDOR_S_Syme_Label},
 	{SYME_Param,   "SYME_Param",	"parameter",        ALDOR_S_Syme_Param},
-	{SYME_LexVar,  "SYME_LexVar",	"lexical variable", ALDOR_S_Syme_LexVar },      
+	{SYME_LexVar,  "SYME_LexVar",	"lexical variable", ALDOR_S_Syme_LexVar },
 	{SYME_LexConst,"SYME_LexConst", "lexical constant", ALDOR_S_Syme_LexConst},
 	{SYME_Import,  "SYME_Import",	"import",	    ALDOR_S_Syme_Import},
 	{SYME_Export,  "SYME_Export",	"export",	    ALDOR_S_Syme_Export},

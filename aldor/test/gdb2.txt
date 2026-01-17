@@ -1,0 +1,71 @@
+(gdb) run -g loop
+Starting program: /usr/local/libexec/aldor -g loop
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+warning: could not find '.gnu_debugaltlink' file for /lib/x86_64-linux-gnu/libtinfo.so.6
+Aldor
+
+Copyright (c) 1990-2007 Aldor Software Organization Ltd (Aldor.org).
+
+Release: Aldor(C) version 1.4.0(2c53e759f1e00e345f8b172e7139debda72fda13) for LINUX(glibc2.10+) (debug version)
+Type "#int help" for more details.
+Reading aldorinit.as...
+                                           Comp: 50 msec, Interp: 0 msec
+                                           Comp: 20 msec, Interp: 0 msec
+                                           Comp: 10 msec, Interp: 0 msec
+                                           Comp: 10 msec, Interp: 0 msec
+                                           Comp: 0 msec, Interp: 0 msec
+                                           Comp: 0 msec, Interp: 0 msec
+%%8 >> import from Set
+
+Program received signal SIGSEGV, Segmentation fault.
+0x00005555556d0afc in symeExtensionFirst (syme=0x0) at syme.c:401
+401             Syme ext = (Syme) symeGetField(syme, SYFI_Extension);
+(gdb) n
+compSignalHandler (signo=21845) at axlcomp.c:1377
+1377    {
+(gdb) n
+1382            if      (signo == SIGFAKE)      sigerr = ALDOR_E_SigUnknown;
+(gdb) n
+1383            else if (signo == SIGHUP)       sigerr = ALDOR_E_SigHup;
+(gdb) n
+1384            else if (signo == SIGINT)       sigerr = ALDOR_E_SigInt;
+(gdb) n
+1385            else if (signo == SIGQUIT)      sigerr = ALDOR_E_SigQuit;
+(gdb) n
+1386            else if (signo == SIGILL)       sigerr = ALDOR_E_SigIll;
+(gdb) n
+1387            else if (signo == SIGTRAP)      sigerr = ALDOR_E_SigTrap;
+(gdb) n
+1388            else if (signo == SIGABRT)      sigerr = ALDOR_E_SigAbrt;
+(gdb) n
+1389            else if (signo == SIGEMT)       sigerr = ALDOR_E_SigEmt;
+(gdb) n
+1390            else if (signo == SIGFPE)       sigerr = ALDOR_E_SigFpe;
+(gdb) n
+1391            else if (signo == SIGBUS)       sigerr = ALDOR_E_SigBus;
+(gdb) n
+1392            else if (signo == SIGSEGV)      sigerr = ALDOR_E_SigSegv;
+(gdb) n
+1401            osDisplayMessage(comsgString(sigerr));
+(gdb) n
+1402            comsgError(NULL, sigerr, signo);
+(gdb) n
+Program fault (segmentation violation).#2 (Error) Program fault (segmentation violation).
+1403            fflush(dbOut);
+(gdb) n
+1404            exitFailure();
+(gdb) n
+............^
+[L11 C13] #1 (Error) There are 0 meanings for `Set' in this context.
+The possible types were:
+          Set: (T: PrimitiveType) -> (
+                Join(BoundedFiniteLine... from AldorLib
+  The context requires an expression of type Tuple(Type).
+
+[Inferior 1 (process 122203) exited with code 01]
+(gdb) n
+The program is not being run.
+(gdb)
+The program is not being run.
+(gdb)
