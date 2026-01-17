@@ -106,6 +106,61 @@ The program is not being run.
 (gdb)
 ```  
 
+### Additional Interpreter Options
+
+We may set the standard prompt or the history[on] prompt as below:
+
+```
+kfp@omega:~/quicklisp/local-projects/aldor/aldor/test$ aldor -g loop
+Aldor
+
+Copyright (c) 1990-2007 Aldor Software Organization Ltd (Aldor.org).
+
+Release: Aldor(C) version 1.4.0(2c53e759f1e00e345f8b172e7139debda72fda13) for LINUX(glibc2.10+) (debug version)
+Type "#int help" for more details.
+Reading aldorinit.as...
+                                           Comp: 30 msec, Interp: 10 msec
+                                           Comp: 30 msec, Interp: 0 msec
+                                           Comp: 0 msec, Interp: 0 msec
+                                           Comp: 10 msec, Interp: 0 msec
+                                           Comp: 0 msec, Interp: 0 msec
+                                           Comp: 0 msec, Interp: 0 msec
+%%8 >> #int help
+
+Available options:
+
+#int verbose [on|off]  print the value of an evaluated expression.
+#int history [on|off]  try to wrap an assignment around the current line.
+#int confirm [on|off]  ask for confirmation before redefining something.
+#int timing [on|off]  display timings after every input.
+#int msg-limit [num]  set the limit size of some messages; 0 for no-limit.
+#int options ...  reset command line options.
+#int gc     perform garbage collection.
+#int shell "<command>"  execute a shell command.
+#int cd <directory>  change current directory.
+#int exntrace [0|1|2]  display backtrace when an exception occurs.
+     0: never, 1: only when not caught, 2: always.
+#int set-sprompt "<fmt-string>"  set standard prompt.
+#int set-hprompt "<fmt-string>"  set history prompt.
+#int help     display this message.
+
+#quit       quit the interactive loop.
+%%9 >> #int set-sprompt "[%d] -> "
+[10] -> #int set-hprompt "(%d) -> "
+[11] ->
+[11] -> #int history on
+(12) -> 23
+23 @ AldorInteger
+                                           Comp: 0 msec, Interp: 30 msec
+(13) -> %23
+^
+[L17 C1] #1 (Error) No meaning for identifier `%23'.
+
+(14) -> %12
+23 @ AldorInteger
+                                           Comp: 0 msec, Interp: 0 msec
+(15) ->
+```
 
 ---
 

@@ -317,6 +317,8 @@ ALDOR_M_FintGbcStart        "Garbage collection..."
 ALDOR_M_FintGbcEnd          "done."
 ALDOR_M_FintIntOptionsNoFile "Cannot give files, such as `%s', with `#int options'"
 ALDOR_M_ShellSyntax         "The correct syntax is: #int %s \"<shell-command>\"\n"
+ALDOR_M_StdPrompt           "The correct syntax is: #int %s \"<fmt-string>\"\n"
+ALDOR_M_HisPrompt           "The correct syntax is: #int %s \"<fmt-string>\"\n"
 ALDOR_M_CdSyntax            "The correct syntax is: #int %s <directory>\n"
 ALDOR_M_InvalidDir	         "Invalid directory.\n"
 ALDOR_M_FintOptions         "\nAvailable options:\n\n\
@@ -331,6 +333,8 @@ ALDOR_M_FintOptions         "\nAvailable options:\n\n\
 #int %s <directory>\t change current directory.\n\
 #int %s [0|1|2]\t display backtrace when an exception occurs.\n\
      0: never, 1: only when not caught, 2: always.\n\
+#int %s \"<fmt-string>\"\t set standard prompt.\n\
+#int %s \"<fmt-string>\"\t set history prompt.\n\
 #int %s \t\t\t display this message.\n\
 \n\
 #quit   \t\t\t quit the interactive loop."
@@ -850,7 +854,7 @@ information.\n\
 This program should not be used after %s"
 
 ALDOR_S_Syme_Label   	"label"
-ALDOR_S_Syme_Param   	"parameter"    
+ALDOR_S_Syme_Param   	"parameter"
 ALDOR_S_Syme_LexVar  	"lexical variable"
 ALDOR_S_Syme_LexConst	"lexical constant"
 ALDOR_S_Syme_Import  	"import"

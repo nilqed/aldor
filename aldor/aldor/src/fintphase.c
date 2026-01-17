@@ -26,13 +26,18 @@
 #include "comsg.h"
 #include "strops.h"
 
-/* Declare a new option for the interactive mode. 
+/* Declare a new option for the interactive mode.
  * Example:
- *      FINT_DECLARE_OPTION(verbose, "verbose") 
+ *      FINT_DECLARE_OPTION(verbose, "verbose")
  * creates the following declarations:
- *      String verboseOpt = "verbose";  
+ *      String verboseOpt = "verbose";
  *      Length verboseOptLen = strLength(verboseOpt);
  */
+
+// 17-JAN-2026 new: #int sprompt <str> and #int hprompt <str>
+char sprompt[20] = "%%%d >> " ;
+char hprompt[20] = "%%%d := " ;
+
 
 #define FINT_DECLARE_OPTION(var, str)	\
 	String var##Opt = str;		\
@@ -52,7 +57,10 @@ fintParseOptions(String str)
 	FINT_DECLARE_OPTION(shell, "shell");
 	FINT_DECLARE_OPTION(cd, "cd");
 	FINT_DECLARE_OPTION(exntrace, "exntrace");
-	
+	// new (see: comsgdb.msg)
+	FINT_DECLARE_OPTION(stdPrompt, "set-sprompt");
+	FINT_DECLARE_OPTION(hisPrompt, "set-hprompt");
+
 	while (*str && *str == ' ') str++;
 
 	if (!strncmp(str, verboseOpt, verboseOptLen)) {
@@ -93,7 +101,7 @@ fintParseOptions(String str)
 		int limit;
 		str += msgLimitOptLen;
 
-		if (scmdScanInteger(str, &limit)) 
+		if (scmdScanInteger(str, &limit))
 			fintMsgLimit = (limit ? limit : ABPP_UNCLIPPED);
 
 		if (fintMsgLimit == ABPP_UNCLIPPED)
@@ -108,7 +116,7 @@ fintParseOptions(String str)
 		int mode;
 		str += exntraceOptLen;
 
-		if (scmdScanInteger(str, &mode)) 
+		if (scmdScanInteger(str, &mode))
 			fintExntraceMode = (mode ? mode : 0);
 		if (fintExntraceMode < 0 ) fintExntraceMode = 0;
 		if (fintExntraceMode > 2 ) fintExntraceMode = 2;
@@ -124,7 +132,7 @@ fintParseOptions(String str)
 		stoGc();
 		(void)comsgFPrintf(osStdout, ALDOR_M_FintGbcEnd);
 		if (fintVerbose) phGrandTotals(true);
-			
+
 		return;
 	}
 
@@ -148,7 +156,7 @@ fintParseOptions(String str)
 		(void)comsgFPrintf(osStdout, ALDOR_M_FintOptions,
 		       verboseOpt, historyOpt, confirmOpt, timingsOpt,
 		       msgLimitOpt, optionsOpt, runGbcOpt, shellOpt, cdOpt,
-		       exntraceOpt, helpOpt);
+		       exntraceOpt, stdPromptOpt, hisPromptOpt, helpOpt);
 		return;
 	}
 
@@ -183,6 +191,44 @@ fintParseOptions(String str)
 		return;
 	}
 
+	//new
+
+    if (!strncmp(str, stdPromptOpt, stdPromptOptLen)) {
+        String sPrompt;
+
+		str += stdPromptOptLen;
+
+		if (!scmdScanFName(str, &sPrompt)) {
+			(void)comsgFPrintf(osStdout, ALDOR_M_StdPrompt, stdPromptOpt);
+			return;
+		}
+
+        strcpy(sprompt, sPrompt);
+
+
+		return;
+	}
+
+	//
+
+    if (!strncmp(str, hisPromptOpt, hisPromptOptLen)) {
+		String hPrompt;
+
+		str += hisPromptOptLen;
+
+		if (!scmdScanFName(str, &hPrompt)) {
+			(void)comsgFPrintf(osStdout, ALDOR_M_HisPrompt, hisPromptOpt);
+			return;
+		}
+
+		// todo: check for strlen < 20 !
+        strcpy(hprompt, hPrompt);
+
+
+		return;
+	}
+
+	//
 
 	(void)comsgFPrintf(osStdout, ALDOR_M_FintUnknownOpt, helpOpt);
 	return;
@@ -204,7 +250,7 @@ local Bool tfHasPrintFlag;
  * Return value: the original ab if his type isn't a rhs, else the new absyn
  * with the assignment.
  *
- * NB: This is all very gross and unpleasant.  A better idea would be a 
+ * NB: This is all very gross and unpleasant.  A better idea would be a
  * way of calling some precompiled foam so we can set up exception
  * handling at the Aldor level (not down here where no bugger knows what is
  * happening).
@@ -316,7 +362,7 @@ fintPrintType(FILE * fout, AbSyn ab)
                 AbSyn   abId;
                 AbSyn   abComma;
                 Length  ai;
- 
+
                 if (abTag(ab->abDefine.lhs) == AB_Declare)
                 {
                         abId = ab->abDefine.lhs->abDeclare.id;
@@ -344,7 +390,7 @@ fintPrintType(FILE * fout, AbSyn ab)
                         tf = abTUnique(ab->abDefine.lhs);
                 }
 	}
-	else if (!tfHasPrintFlag) 
+	else if (!tfHasPrintFlag)
 		(void)fprintf(fout, "  ()");
 
 	s =tfPrettyClippedIn(tf, fintMsgLimit, int0);

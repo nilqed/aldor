@@ -1,0 +1,291 @@
+# depslib dependency file v1.0
+1768652797 source:/home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/fintphase.c
+	"axlobs.h"
+	"cmdline.h"
+	"fint.h"
+	"fintphase.h"
+	"foam_c.h"
+	"opsys.h"
+	"output.h"
+	"phase.h"
+	"spesym.h"
+	"stab.h"
+	"store.h"
+	"syscmd.h"
+	"tinfer.h"
+	"tfsat.h"
+	"ablogic.h"
+	"abpretty.h"
+	"comsg.h"
+	"strops.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/axlobs.h
+	"axlgen.h"
+	"absyn.h"
+	"foam.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/axlgen.h
+	"axlgen0.h"
+	"list.h"
+	"table.h"
+	"ttable.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/axlgen0.h
+	"editlevels.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/editlevels.h
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/list.h
+	"cport.h"
+	"ostream.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/cport.h
+	"stdc.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/stdc.h
+	"platform.h"
+	"cconfig.h"
+	"assert.h0"
+	"ctype.h0"
+	"errno.h0"
+	"float.h0"
+	"limits.h0"
+	"locale.h0"
+	"math.h0"
+	"setjmp.h0"
+	"signal.h0"
+	"stdarg.h0"
+	"stddef.h0"
+	"stdio.h0"
+	"stdlib.h0"
+	"string.h0"
+	"time.h0"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/platform.h
+	<features.h>
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/cconfig.h
+	"platform.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/assert.h0
+	"features.h0"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/features.h0
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/ctype.h0
+	<ctype.h>
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/errno.h0
+	<errno.h>
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/float.h0
+	<float.h>
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/limits.h0
+	<limits.h>
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/locale.h0
+	<locale.h>
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/math.h0
+	<math.h>
+	<math.h>
+	<math.h>
+	"stddef.h0"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/stddef.h0
+	<sys/types.h>
+	<sys/stdtypes.h>
+	<stddef.h>
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/setjmp.h0
+	<setjmp.h>
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/signal.h0
+	<signal.h>
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/stdarg.h0
+	<stdarg.h>
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/stdio.h0
+	<stdio.h>
+	"stddef.h0"
+	"stddef.h0"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/stdlib.h0
+	"stddef.h0"
+	<stdlib.h>
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/string.h0
+	<string.h>
+	"stddef.h0"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/time.h0
+	<time.h>
+	<time.h>
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/ostream.h
+	"buffer.h"
+	"cport.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/buffer.h
+	"cport.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/table.h
+	"cport.h"
+	"ostream.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/ttable.h
+	"cport.h"
+	"list.h"
+	"ostream.h"
+	"table.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/absyn.h
+	"srcpos.h"
+	"token.h"
+	"symbol.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/srcpos.h
+	"cport.h"
+	"fname.h"
+	"buffer.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/fname.h
+	"axlgen.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/token.h
+	"symbol.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/symbol.h
+	"axlobs.h"
+	"ttable.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/foam.h
+	"axlobs.h"
+	"fex.h"
+	"syme0.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/fex.h
+	"axlobs.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/syme0.h
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/cmdline.h
+	"axlgen.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/fint.h
+	<stdio.h>
+	"axlgen.h"
+	"absyn.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/fintphase.h
+	"axlobs.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/foam_c.h
+	"cconfig.h"
+	"optcfg.h"
+	"foamopt.h"
+	<setjmp.h>
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/optcfg.h
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/foamopt.h
+	"optcfg.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/opsys.h
+	"cport.h"
+	"editlevels.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/output.h
+	<stdio.h>
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/phase.h
+	"axlobs.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/spesym.h
+	"symbol.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/stab.h
+	"axlobs.h"
+	"syme.h"
+	"tform.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/syme.h
+	"axlobs.h"
+	"forg.h"
+	"msg.h"
+	"lib.h"
+	"errorset.h"
+	"syme0.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/forg.h
+	"foam.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/msg.h
+	"cport.h"
+	"fname.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/lib.h
+	"axlobs.h"
+	"path.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/path.h
+	"cport.h"
+	"list.h"
+	"strops.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/strops.h
+	"cport.h"
+	"list.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/errorset.h
+	"strops.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/tform.h
+	"axlobs.h"
+	"foam.h"
+	"tfcond.h"
+	"errorset.h"
+	"symeset.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/tfcond.h
+	"axlobs.h"
+	"ablogic.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/ablogic.h
+	"axlobs.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/symeset.h
+	"symbol.h"
+	"syme.h"
+	"ttable.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/store.h
+	"cport.h"
+	"timer.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/timer.h
+	"axlgen.h"
+	"foam_c.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/syscmd.h
+	"axlobs.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/tinfer.h
+	"axlobs.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/tfsat.h
+	"axlobs.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/abpretty.h
+	"axlobs.h"
+
+1768600362 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/comsg.h
+	"axlobs.h"
+	"comsgdb.h"
+	"msg.h"
+
+1768600821 /home/kfp/quicklisp/local-projects/aldor/aldor/aldor/src/comsgdb.h
+	"msg.h"
+

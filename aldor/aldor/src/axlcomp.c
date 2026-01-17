@@ -69,12 +69,16 @@ extern void	compGLoopEval	(FILE *, FILE *, EmitInfo);
 extern void	compGLoopInit	(int, char **, FILE *, FileName *, EmitInfo *);
 extern int	compGLoopFinish	(FileName, EmitInfo);
 
+// new: setting interpreter prompts with #int ... (defined in fintphase.c)
+extern char sprompt[20];
+extern char hprompt[20];
+
 /*****************************************************************************
  *
  * :: Top-level entry points
  *
  ****************************************************************************/
- 
+
 /*
  * Select and call one of the compXxxxLoop entry points below.
  */
@@ -104,7 +108,7 @@ compCmd(int argc, char **argv)
 	 */
 	/* Don't set compDoGcVerbose if -V seen */
 	compDoGcFile    = cmdHasGcFileOption(argc, argv) ||
-			  cmdHasInteractiveOption(argc, argv); 
+			  cmdHasInteractiveOption(argc, argv);
 
 
 	/* Garbage collection is now on by default */
@@ -201,7 +205,7 @@ compSExprLoop(FILE *in, FILE *out)
 	compFini();
 	return 0;
 }
- 
+
 /*
  * Read expressions from the file "in",
  * evaluate them (according to a limited subset of Common Lisp semantics),
@@ -228,13 +232,13 @@ compInteractiveLoop(int argc, char **argv, FILE *fin, FILE *fout)
 	Stab		stab;
 	Foam		foam;
 	Bool		readingInitFile = true, tmpHistory;
-	Bool		endOfInput = false; 
+	Bool		endOfInput = false;
 	FILE		*fin0 = fin;
 
 	compInit();
 
 	iargc = cmdArguments(1, argc, argv);
- 
+
 	argc	 -= iargc;
 	argv	 += iargc;
 	emitDoneOptions(argc, argv);
@@ -260,13 +264,13 @@ compInteractiveLoop(int argc, char **argv, FILE *fin, FILE *fout)
 	fn  = fnameStdin();
 
 	finfo  = emitInfoNew(fn);
- 
+
 	lineno	  = 0;
- 
+
 	compFileInit(finfo);
 	stab = stabFile();
 	comsgFini();
- 
+
 	fintInit();
 
 	for (; !endOfInput; intStepNo++) {
@@ -278,10 +282,10 @@ compInteractiveLoop(int argc, char **argv, FILE *fin, FILE *fout)
 			if (feof(fin)) break;
 		}
 
-		comsgPromptPrint(fin, fout, 
-		       fintHistory ? "%%%d := " : "%%%d >> ",
+		comsgPromptPrint(fin, fout,
+		       fintHistory ? hprompt : sprompt,
 		       intStepNo);
- 
+
 		osSetBreakHandler(compFintBreakHandler0);
 
 		ab = compFileFront(finfo, stab, fin, &lineno);
@@ -290,7 +294,7 @@ compInteractiveLoop(int argc, char **argv, FILE *fin, FILE *fout)
 		if (compIsMoreAfterFront(finfo) &&
 		    !abIsEmptySequence(ab)) {
 			ab = (AbSyn) fintWrap(ab, intStepNo);
- 
+
 			foam = compFileMiddle(finfo, stab, ab);
 			if (foam) {
  				Bool ok = fint(foam);
@@ -314,18 +318,18 @@ compInteractiveLoop(int argc, char **argv, FILE *fin, FILE *fout)
 				readingInitFile = false;
 				fintHistory = tmpHistory;
 				intStepNo = 0;
- 
+
 				comsgFini();
 			}
 			else
 				endOfInput = true;
 		}
-	}			
- 
+	}
+
 	totErrors = comsgErrorCount();
 
 	fintFini();
- 
+
 	compFileFini(finfo);
 	emitAllDone();
 	emitInfoFree(finfo);
@@ -340,11 +344,11 @@ compGLoop(int argc, char **argv, FILE *fin, FILE *fout)
 {
     FileName    fn;
     EmitInfo    finfo;
-  
+
     compGLoopInit(argc, argv, fout, &fn, &finfo);
     compGLoopEval(fin, fout, finfo);
     compGLoopFinish(fn, finfo);
-  
+
     return 0;
 }
 
@@ -355,9 +359,9 @@ compGLoopEval(FILE * fin, FILE * fout, EmitInfo finfo)
 	AbSyn		ab;
 	Foam		foam;
         static int      lineno = 0;
-      
+
         comsgInit();
-      
+
         while (!osFEof(fin)) {
 			   Bool ok;
                intStepNo += 1;
@@ -369,7 +373,7 @@ compGLoopEval(FILE * fin, FILE * fout, EmitInfo finfo)
                         if (osFEof(fin))
                                 break;
 
-               rdlnSetPrompt(fintHistory ? "%%%d := " : "%%%d >> ", intStepNo);
+               rdlnSetPrompt(fintHistory ? hprompt : sprompt, intStepNo);
                osSetBreakHandler(compFintBreakHandler0);
                ab = compFileFront(finfo, stab, fin, &lineno);
                breakSetRoot(ab);
@@ -377,7 +381,7 @@ compGLoopEval(FILE * fin, FILE * fout, EmitInfo finfo)
                if (!compIsMoreAfterFront(finfo) ||
                    abIsEmptySequence(ab))
                       continue;
-                
+
                ab = (AbSyn) fintWrap(ab, intStepNo);
                foam = compFileMiddle(finfo, stab, ab);
 
@@ -392,8 +396,8 @@ compGLoopEval(FILE * fin, FILE * fout, EmitInfo finfo)
                       fintPrintType(fout, ab);
                fintDisplayTimings();
         }
-      
-        comsgFini();                
+
+        comsgFini();
 }
 
 void
@@ -467,8 +471,8 @@ compGLoopFinish(FileName fn, EmitInfo finfo)
 
 	return totErrors;
 }
- 
- 
+
+
 /*
  * Compile files controlled by the argument vector and
  * return the total error count.
@@ -479,11 +483,11 @@ compFilesLoop(int argc, char **argv)
 	int		i, iargc, totErrors, nErrors;
 	FileName	fn;
 	Bool		isSolo;
- 
+
 	compInit();
 
 	iargc = cmdArguments(1, argc, argv);
- 
+
 	argc -= iargc;
 	argv += iargc;
 	if (argc == 0) {
@@ -493,25 +497,25 @@ compFilesLoop(int argc, char **argv)
 	}
 	emitDoneOptions(argc, argv);
 	ccGetReady();
- 
+
 	isSolo    = (cmdFileCount == 1);
- 
+
 	compFinfov = (EmitInfo *) stoAlloc((unsigned) OB_Other,
 					   (cmdFileCount+1) * sizeof(EmitInfo));
 	for (i = 0; i <= cmdFileCount; i += 1) compFinfov[i] = 0;
- 
+
 	totErrors = 0;
 	for (i = 0; i < cmdFileCount; i++) {
 		fn = fnameParse(argv[i]);
 		compFinfov[i] = emitInfoNew(fn);
 		nErrors = 0;
- 
+
 		if (!fileIsReadable(fn)) {
 			if (comsgOkBreakLoop())
 				bloopMsgFPrintf(osStdout, ALDOR_F_CantOpen, argv[i]);
 			comsgFatal(NULL, ALDOR_F_CantOpen, argv[i]);
 		}
- 
+
 		switch (ftypeNo(fnameType(fn))) {
 #if 0
 		case FTYPENO_C:
@@ -553,7 +557,7 @@ compFilesLoop(int argc, char **argv)
 		totErrors += nErrors;
 		fnameFree(fn);
 	}
- 
+
 	if (cmdFileCount > 0 && totErrors == 0) {
 		compFinfov[cmdFileCount] = emitInfoNewAXLmain();
 		compAXLmainFile(compFinfov[cmdFileCount]);
@@ -564,7 +568,7 @@ compFilesLoop(int argc, char **argv)
 		emitRun   (argc, argv);
 	}
 	if (totErrors > 0) emitAllDone();
- 
+
 	for (i = 0; i < cmdFileCount + 1; i++) emitInfoFree(compFinfov[i]);
 	stoFree((Pointer) compFinfov);
 	compFinfov = 0;
@@ -574,14 +578,14 @@ compFilesLoop(int argc, char **argv)
 
 	return totErrors;
 }
- 
- 
+
+
 /*****************************************************************************
  *
  * :: Constituents of the "compXxxxLoop" programs.
  *
  ****************************************************************************/
- 
+
 /*
  * Directories to search for {library,include} files come from:
  *
@@ -600,7 +604,7 @@ compFilesLoop(int argc, char **argv)
 
 static String	compLibraryFiles[] = { 0 };
 static String	compLibraryKeys[]  = { 0 };
- 
+
 void
 compInit(void)
 {
@@ -623,7 +627,7 @@ compInit(void)
 	dbInit();
 	comsgOpen();
 	compInfoAudit();
- 
+
 	osSetBreakHandler(compSignalHandler);
 	osSetFaultHandler(compSignalHandler);
 	osSetLimitHandler(compSignalHandler);
@@ -633,7 +637,7 @@ compInit(void)
 	fileSetHandler	 (compFileError);
 	stoSetHandler	 (compStoreError);
 	sxiSetHandler	 (compSExprError);
- 
+
 	pathInit();
 	if (compRootDir) {
 		fileAddLibraryDirectory(fileSubdir(compRootDir, "lib"));
@@ -646,7 +650,7 @@ compInit(void)
 
 	compCfgInit(compRootDir);
 	arInit(compLibraryFiles, compLibraryKeys);
- 
+
 	sxiInit();
 	keyInit();
 	ssymInit();
@@ -657,8 +661,8 @@ compInit(void)
 	optInit();
 	tinferInit();
 }
- 
- 
+
+
 /*
  * Compile .as file, returning error count.
  */
@@ -669,15 +673,15 @@ compSourceFile(EmitInfo finfo)
 	Stab		stab;
 	Foam		foam;
 	int		msgCount;
- 
+
 	compFileInit(finfo);
 	breakSetRoot(NULL);
- 
+
 	stab = stabFile();
- 
+
 	ab = compFileFront(finfo, stab, NULL, NULL);
 	breakSetRoot(ab);
- 
+
 	if (emitIsOutputNeededOrWarn(finfo, FTYPENO_CPP)) {
 		/* Need to inspect finfo to get the filename */
 		FileName fn = emitFileName(finfo, FTYPENO_INTERMED);
@@ -687,21 +691,21 @@ compSourceFile(EmitInfo finfo)
 
 	if (compIsMoreAfterFront(finfo)) {
 		foam = compFileMiddle(finfo, stab, ab);
- 
+
 		compFileSave(finfo, stab, foam);
 		compFileBack(finfo, foam);
- 
+
 		foamFree(foam);
 	}
- 
+
 	msgCount = comsgErrorCount();
 	compFileFini(finfo);
 	/* abFree(ab); !! ab is seeping into types. */
 	if (msgCount < 1) breakInterrupt();
- 
+
 	return msgCount;
 }
- 
+
 /*
  * Compile .fm or .ao file, returning error count.
  */
@@ -710,16 +714,16 @@ compSavedFile(EmitInfo finfo)
 {
 	Foam	foam;
 	Stab	stab;
- 
+
 	compFileInit(finfo);
- 
+
 	stab  = stabFile();
 	foam  = compFileLoadFoam(finfo);
- 
+
 	compFileSave(finfo, stab, foam);
 	compFileBack(finfo, foam);
 	foamFree(foam);
- 
+
 	compFileFini(finfo);
 	return comsgErrorCount();
 }
@@ -776,7 +780,7 @@ compFileInit(EmitInfo finfo)
 	ablogInit();
 	sposInit();
 	comsgInit();
-	arFileInit(emitFileName(finfo, FTYPENO_INTERMED), 
+	arFileInit(emitFileName(finfo, FTYPENO_INTERMED),
 		   emitGetFileIdName(finfo));
 }
 
@@ -945,9 +949,9 @@ compPhaseLoadFoam(EmitInfo finfo)
 	Foam		foam;
 	FileName	fn    = emitSrcFile(finfo);
 	int		ftype = ftypeNo(fnameType(fn));
- 
+
 	phStart(PH_Load);
- 
+
 	foam = 0;
 	if (ftype == FTYPENO_INTERMED) {
 		Lib lib = libRead(fn);
@@ -965,11 +969,11 @@ compPhaseLoadFoam(EmitInfo finfo)
 		foam = foamRdSExpr(fin, &fn, NULL);
 		fclose(fin);
 	}
- 
+
 	phEnd((PhPrFun) foamPrint, (PhPrFun) 0, (Pointer) foam);
 	return foam;
 }
- 
+
 SrcLineList
 compPhaseInclude(EmitInfo finfo, FILE *fin, int *plno)
 {
