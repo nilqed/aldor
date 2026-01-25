@@ -1,0 +1,21 @@
+/* hyper.sha:  various examples of hypergeometric solutions */
+
+L := (n-1)*E^2 - (n^2+3*n-2)*E + 2*n*(n+1);
+y := hyper(L);
+tex(y);
+
+L := (n+4)*E^2 + E - (n+1);
+y := hyper(L);
+tex(y);
+
+/* Irreducible with many combinations to try */
+L := (n^7+28*n^6+322*n^5+1960*n^4+6769*n^3+13132*n^2+13068*n+5040)*E^2 + E +
+      n^7-4*n^6-62*n^5+200*n^4+1009*n^3-2356*n^2-3828*n+5040;
+y := hyper(L);
+tex(y);
+
+/* Hypergeometric recurrence from Hendriks (1998) */
+L := (n+9)*E^2 - (3*n + 14)*E + 2*n;
+y := hyper(L);
+tex(y);
+

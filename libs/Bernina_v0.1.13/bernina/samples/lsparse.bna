@@ -1,0 +1,109 @@
+n := 5;
+Lsparse := (x^(n^3)*n^6*x-x^(n^3)*n^3*x)*D+(x^(n^3)*n^9-3*x^(n^3)
+*n^6+2*x^(n^3)*n^3)+(-x^3-x^3*x^(n^3))*D^3-x^(n^3)*n^3*x^2*D^2;
+/* Polynomial solutions */
+Kp := kernel(Lsparse, 1);
+tex(Kp);
+/* Rational solutions */
+Kr := kernel(Lsparse);
+tex(Kr);
+
+n := 6;
+Lsparse := (x^(n^3)*n^6*x-x^(n^3)*n^3*x)*D+(x^(n^3)*n^9-3*x^(n^3)
+*n^6+2*x^(n^3)*n^3)+(-x^3-x^3*x^(n^3))*D^3-x^(n^3)*n^3*x^2*D^2;
+/* Polynomial solutions */
+Kp := kernel(Lsparse, 1);
+tex(Kp);
+/* Rational solutions */
+Kr := kernel(Lsparse);
+tex(Kr);
+
+n := 7;
+Lsparse := (x^(n^3)*n^6*x-x^(n^3)*n^3*x)*D+(x^(n^3)*n^9-3*x^(n^3)
+*n^6+2*x^(n^3)*n^3)+(-x^3-x^3*x^(n^3))*D^3-x^(n^3)*n^3*x^2*D^2;
+/* Polynomial solutions */
+Kp := kernel(Lsparse, 1);
+tex(Kp);
+/* Rational solutions */
+Kr := kernel(Lsparse);
+tex(Kr);
+
+n := 8;
+Lsparse := (x^(n^3)*n^6*x-x^(n^3)*n^3*x)*D+(x^(n^3)*n^9-3*x^(n^3)
+*n^6+2*x^(n^3)*n^3)+(-x^3-x^3*x^(n^3))*D^3-x^(n^3)*n^3*x^2*D^2;
+/* Polynomial solutions */
+Kp := kernel(Lsparse, 1);
+tex(Kp);
+/* Rational solutions */
+Kr := kernel(Lsparse);
+tex(Kr);
+
+n := 9;
+Lsparse := (x^(n^3)*n^6*x-x^(n^3)*n^3*x)*D+(x^(n^3)*n^9-3*x^(n^3)
+*n^6+2*x^(n^3)*n^3)+(-x^3-x^3*x^(n^3))*D^3-x^(n^3)*n^3*x^2*D^2;
+/* Polynomial solutions */
+Kp := kernel(Lsparse, 1);
+tex(Kp);
+/* Rational solutions */
+Kr := kernel(Lsparse);
+tex(Kr);
+
+n := 10;
+Lsparse := (x^(n^3)*n^6*x-x^(n^3)*n^3*x)*D+(x^(n^3)*n^9-3*x^(n^3)
+*n^6+2*x^(n^3)*n^3)+(-x^3-x^3*x^(n^3))*D^3-x^(n^3)*n^3*x^2*D^2;
+/* Polynomial solutions */
+Kp := kernel(Lsparse, 1);
+tex(Kp);
+/* Rational solutions */
+Kr := kernel(Lsparse);
+tex(Kr);
+
+n := 11;
+Lsparse := (x^(n^3)*n^6*x-x^(n^3)*n^3*x)*D+(x^(n^3)*n^9-3*x^(n^3)
+*n^6+2*x^(n^3)*n^3)+(-x^3-x^3*x^(n^3))*D^3-x^(n^3)*n^3*x^2*D^2;
+/* Polynomial solutions */
+Kp := kernel(Lsparse, 1);
+tex(Kp);
+/* Rational solutions */
+Kr := kernel(Lsparse);
+tex(Kr);
+
+n := 12;
+Lsparse := (x^(n^3)*n^6*x-x^(n^3)*n^3*x)*D+(x^(n^3)*n^9-3*x^(n^3)
+*n^6+2*x^(n^3)*n^3)+(-x^3-x^3*x^(n^3))*D^3-x^(n^3)*n^3*x^2*D^2;
+/* Polynomial solutions */
+Kp := kernel(Lsparse, 1);
+tex(Kp);
+/* Rational solutions */
+Kr := kernel(Lsparse);
+tex(Kr);
+
+n := 13;
+Lsparse := (x^(n^3)*n^6*x-x^(n^3)*n^3*x)*D+(x^(n^3)*n^9-3*x^(n^3)
+*n^6+2*x^(n^3)*n^3)+(-x^3-x^3*x^(n^3))*D^3-x^(n^3)*n^3*x^2*D^2;
+/* Polynomial solutions */
+Kp := kernel(Lsparse, 1);
+tex(Kp);
+/* Rational solutions */
+Kr := kernel(Lsparse);
+tex(Kr);
+
+n := 20;
+Lsparse := (x^(n^3)*n^6*x-x^(n^3)*n^3*x)*D+(x^(n^3)*n^9-3*x^(n^3)
+*n^6+2*x^(n^3)*n^3)+(-x^3-x^3*x^(n^3))*D^3-x^(n^3)*n^3*x^2*D^2;
+/* Polynomial solutions */
+Kp := kernel(Lsparse, 1);
+tex(Kp);
+/* Rational solutions */
+Kr := kernel(Lsparse);
+tex(Kr);
+
+n := 30;
+Lsparse := (x^(n^3)*n^6*x-x^(n^3)*n^3*x)*D+(x^(n^3)*n^9-3*x^(n^3)
+*n^6+2*x^(n^3)*n^3)+(-x^3-x^3*x^(n^3))*D^3-x^(n^3)*n^3*x^2*D^2;
+/* Polynomial solutions */
+Kp := kernel(Lsparse, 1);
+tex(Kp);
+/* Rational solutions */
+Kr := kernel(Lsparse);
+tex(Kr);

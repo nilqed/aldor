@@ -1,0 +1,201 @@
+# ======================================================================
+# This code was written all or part by Dr. Manuel Bronstein from
+# Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+# decided to publish this code under the CeCILL open source license in
+# memory of Dr. Manuel Bronstein.
+# 
+# This software is governed by the CeCILL license under French law and
+# abiding by the rules of distribution of free software. You can use,
+# modify and/or redistribute the software under the terms of the CeCILL
+# license as circulated by CEA, CNRS and Inria at the following URL :
+# http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+# 
+# As a counterpart to the access to the source code and rights to copy,
+# modify and redistribute granted by the license, users are provided
+# only with a limited warranty and the software's author, the holder of
+# the economic rights, and the successive licensors have only limited
+# liability.
+# 
+# In this respect, the user's attention is drawn to the risks associated
+# with loading, using, modifying and/or developing or reproducing the
+# software by the user in light of its specific status of free software,
+# that may mean that it is complicated to manipulate, and that also
+# therefore means that it is reserved for developers and experienced
+# professionals having in-depth computer knowledge. Users are therefore
+# encouraged to load and test the software's suitability as regards
+# their requirements in conditions enabling the security of their
+# systems and/or data to be ensured and, more generally, to use and
+# operate it in the same conditions as regards security.
+# 
+# The fact that you are presently reading this means that you have had
+# knowledge of the CeCILL license and that you accept its terms.
+# ======================================================================
+# 
+objects1 = CATbasic.o CATfset.o CATring.o CATcomring.o CATfinring.o CATintdom.o
+objects2 = CATgcd.o CATeuclid.o CATfield.o CATncid.o CATint.o CATfloat.o chrem.o
+objects3 = CATchar0.o CATqring.o CATprime0.o CATspf0.o CATmonoid.o CATcopy.o
+objects4 = CATabmon.o CATabgroup.o
+objects = $(objects1) $(objects2) $(objects3) $(objects4)
+asobjects1 = CATbasic.ao CATfset.ao CATring.ao CATcomring.ao CATfinring.ao
+asobjects2 = CATintdom.ao CATgcd.ao CATeuclid.ao CATfield.ao CATncid.ao
+asobjects3 = CATint.ao CATfloat.ao chrem.ao CATchar0.ao CATqring.ao CATprime0.ao
+asobjects4 = CATspf0.ao CATmonoid.ao CATcopy.ao CATabmon.ao CATabgroup.ao
+asobjects = $(asobjects1) $(asobjects2) $(asobjects3) $(asobjects4)
+flags	  = -M2 -Fao -Fo -Csmax=0 -Mno-mactext
+options   = $(flags) -q3
+tex1 = CATbasic.tex CATfset.tex CATring.tex CATcomring.tex CATfinring.tex
+tex2 = CATintdom.tex CATgcd.tex CATeuclid.tex CATfield.tex CATncid.tex
+tex3 = CATint.tex pthpower.tex chrem.tex CATchar0.tex CATqring.tex CATprime0.tex
+tex4 = CATspf0.tex CATmonoid.tex CATcopy.tex CATabmon.tex CATabgroup.tex
+tex = $(tex1) $(tex2) $(tex3) $(tex4)
+libsumit  = ../../lib/libsumit.a
+sumitasl  = ../../lib/libsumit.al
+
+all: datestamp
+
+datestamp: $(objects)
+	ar rv $(libsumit) $(objects)
+	touch datestamp
+
+CATbasic.o: CATbasic.as ../extree/extree.o
+	axiomxl $(options) CATbasic.as
+	ar rv $(sumitasl) CATbasic.ao
+
+CATcopy.o: CATcopy.as
+	axiomxl $(options) CATcopy.as
+	ar rv $(sumitasl) CATcopy.ao
+
+CATfset.o: CATfset.as CATbasic.o
+	axiomxl $(options) CATfset.as
+	ar rv $(sumitasl) CATfset.ao
+
+CATmonoid.o: CATmonoid.as CATbasic.o CATcopy.o
+	axiomxl $(options) CATmonoid.as
+	ar rv $(sumitasl) CATmonoid.ao
+
+CATabmon.o: CATabmon.as CATbasic.o CATcopy.o
+	axiomxl $(options) CATabmon.as
+	ar rv $(sumitasl) CATabmon.ao
+
+CATabgroup.o: CATabgroup.as CATabmon.o
+	axiomxl $(options) CATabgroup.as
+	ar rv $(sumitasl) CATabgroup.ao
+
+CATring.o: CATring.as CATabgroup.o CATmonoid.o
+	axiomxl $(options) CATring.as
+	ar rv $(sumitasl) CATring.ao
+
+CATchar0.o: CATchar0.as CATring.o
+	axiomxl $(options) CATchar0.as
+	ar rv $(sumitasl) CATchar0.ao
+
+CATqring.o: CATqring.as CATchar0.o
+	axiomxl $(options) CATqring.as
+	ar rv $(sumitasl) CATqring.ao
+
+CATcomring.o: CATcomring.as CATring.o
+	axiomxl $(options) CATcomring.as
+	ar rv $(sumitasl) CATcomring.ao
+
+CATncid.o: CATncid.as CATring.o
+	axiomxl $(options) CATncid.as
+	ar rv $(sumitasl) CATncid.ao
+
+CATintdom.o: CATintdom.as CATring.o
+	axiomxl $(options) CATintdom.as
+	ar rv $(sumitasl) CATintdom.ao
+
+CATgcd.o: CATgcd.as CATintdom.o
+	axiomxl $(options) CATgcd.as
+	ar rv $(sumitasl) CATgcd.ao
+
+CATeuclid.o: CATeuclid.as CATgcd.o
+	axiomxl $(options) CATeuclid.as
+	ar rv $(sumitasl) CATeuclid.ao
+
+chrem.o: chrem.as CATeuclid.o
+	axiomxl $(options) chrem.as
+	ar rv $(sumitasl) chrem.ao
+
+CATfield.o: CATfield.as CATeuclid.o
+	axiomxl $(options) CATfield.as
+	ar rv $(sumitasl) CATfield.ao
+
+CATfinring.o: CATfinring.as pthpower.as CATring.o
+	axiomxl $(options) CATfinring.as
+	ar rv $(sumitasl) CATfinring.ao
+
+CATint.o: CATint.as CATeuclid.o CATchar0.o
+	axiomxl $(options) CATint.as
+	ar rv $(sumitasl) CATint.ao
+
+CATfloat.o: CATfloat.as CATring.o
+	axiomxl $(options) CATfloat.as
+	ar rv $(sumitasl) CATfloat.ao
+
+CATprime0.o: CATprime0.as CATfield.o CATfinring.o
+	axiomxl $(options) CATprime0.as
+	ar rv $(sumitasl) CATprime0.ao
+
+CATspf0.o: CATspf0.as CATprime0.o
+	axiomxl $(options) CATspf0.as
+	ar rv $(sumitasl) CATspf0.ao
+
+.PHONY: doc
+doc: $(tex)
+
+CATbasic.tex: CATbasic.as
+	as2doc CATbasic
+
+CATfset.tex: CATfset.as
+	as2doc CATfset
+
+CATring.tex: CATring.as
+	as2doc CATring
+
+CATcomring.tex: CATcomring.as
+	as2doc CATcomring
+
+CATncid.tex: CATncid.as
+	as2doc CATncid
+
+CATintdom.tex: CATintdom.as
+	as2doc CATintdom
+
+CATgcd.tex: CATgcd.as
+	as2doc CATgcd
+
+CATeuclid.tex: CATeuclid.as
+	as2doc CATeuclid
+
+chrem.tex: chrem.as
+	as2doc chrem
+
+CATfield.tex: CATfield.as
+	as2doc CATfield
+
+CATfinring.tex: CATfinring.as
+	as2doc CATfinring
+
+CATchar0.tex: CATchar0.as
+	as2doc CATchar0
+
+CATqring.tex: CATqring.as
+	as2doc CATqring
+
+CATint.tex: CATint.as
+	as2doc CATint
+
+CATprime0.tex: CATprime0.as
+	as2doc CATprime0
+
+CATspf0.tex: CATspf0.as
+	as2doc CATspf0
+
+pthpower.tex: pthpower.as
+	as2doc pthpower
+
+.PHONY: clean
+clean:
+	-rm $(objects) $(asobjects) $(tex)
+

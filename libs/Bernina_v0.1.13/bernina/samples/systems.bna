@@ -1,0 +1,59 @@
+/* systems.bna: examples of systems of the form Y' = A Y */
+
+/* The airy equation y'' = x y as a companion system, has null kernel */
+airy := system(0, 1, x, 0);
+K := kernel(airy);
+tex(K);
+
+/* This example has a 1-dimensional rational non-polynomial kernel */
+A := system(x, -1/x^2, x^2-x^4, x);
+K := kernel(A);
+maple(K);
+
+/* 4x4 example from Barkatou's JSC'99 paper, has a 2-dimensional poly kernel */
+M := system((6+2*x)/(1-x^2),0,6/(1-x^2),6/(-1+x^2),
+            0,1/2*(x+4)/x,-2/x,0,
+            0,1/2*(4+3*x)/x,-2/x,0,
+         (x^2-2*x-7)/(-1+x^2),1/2*(4+3*x)/x,(2*x^2+6*x-2)/x/(1-x^2),6/(-1+x^2));
+K := kernel(M);
+maple(K);
+
+/* 4x4 example with a 3-dimensional rational kernel, 2 of which polynomial */
+M := system(1/x,1/x^2,-1,0,0,1/x,4*x,1,0,0,3/x,1/x^2,1/x,0,0,1/x);
+K := kernel(M);
+maple(K);
+
+/* 4x4 example with a 3-dimensional polynomial kernel */
+M := system(1/x,0,0,-16/x,-3/4/x,1/x,1/x,-20/x,0,0,1/x,4/x,1/4/x,1/4/x,0,7/x); 
+K := kernel(M);
+maple(K);
+
+/* 9x9 example with 1-dimensional rational non-polynomial kernel from ISOLDE */
+T := system(-5/x^2+5/(x^2+1)+5/x^2/(x^2+1)-2/(x^2+1)*x, 1, 1, -12/x/(x^2+1),
+	0, 0, 12/x/(x^2+1)-48*x^2/(x^2+1)-48/(x^2+1), 0, 0, -4/x,
+	5/x^2/(x^2+1)+2/x+5/(x^2+1)-2/(x^2+1)*x, -5/x, 0, -12/x/(x^2+1), 0, 0,
+	12/x/(x^2+1)-48*x^2/(x^2+1)-48/(x^2+1), 0, -8, 4,
+	5/(x^2+1)+5/x^3+4/x^2+5/x^2/(x^2+1)-2/(x^2+1)*x, 0, 0, -12/x/(x^2+1),
+	0, 0, 12/x/(x^2+1)-48*x^2/(x^2+1)-48/(x^2+1),
+	5/6*x^2/(x^2+1)+1/2/(x^2+1)+1/3*x^4/(x^2+1), 0, 0,
+	-2/(x^2+1)*x-5/x^2+1/2/x/(x^2+1), 1, 1,
+	-16*x^2/(x^2+1)-4/x^2/(x^2+1)-8*x^4/(x^2+1)
+		-12/(x^2+1)-11/2/x/(x^2+1)-5/x^3/(x^2+1), 0, 0, 0,
+	5/6*x^2/(x^2+1)+1/2/(x^2+1)+1/3*x^4/(x^2+1), 0, -4/x,
+	-2/(x^2+1)*x+1/2/x/(x^2+1)+2/x, -5/x, 0,
+	-16*x^2/(x^2+1)-4/x^2/(x^2+1)-8*x^4/(x^2+1)
+		-12/(x^2+1)-11/2/x/(x^2+1)-5/x^3/(x^2+1), 0, 0, 0,
+	5/6*x^2/(x^2+1)+1/2/(x^2+1)+1/3*x^4/(x^2+1), -8, 4,
+	4/x^2-2/(x^2+1)*x+1/2/x/(x^2+1)+5/x^3, 0, 0,
+	-16*x^2/(x^2+1)-4/x^2/(x^2+1)-8*x^4/(x^2+1)
+		-12/(x^2+1)-11/2/x/(x^2+1)-5/x^3/(x^2+1),
+	1/6/(x^2+1)+1/6*x^2/(x^2+1), 0, 0, 5/2/x/(x^2+1), 0, 0,
+	-4/x^2/(x^2+1)-15/2/x/(x^2+1)-5/x^2-2/(x^2+1)*x-5/x^3/(x^2+1)-4/(x^2+1),
+	1, 1, 0, 1/6/(x^2+1)+1/6*x^2/(x^2+1), 0, 0, 5/2/x/(x^2+1), 0, -4/x,
+	2/x-15/2/x/(x^2+1)-4/x^2/(x^2+1)-2/(x^2+1)*x-5/x^3/(x^2+1)-4/(x^2+1),
+	-5/x, 0, 0, 1/6/(x^2+1)+1/6*x^2/(x^2+1), 0, 0, 5/2/x/(x^2+1), -8, 4,
+	5/x^3+4/x^2-4/x^2/(x^2+1)-15/2/x/(x^2+1)
+		-5/x^3/(x^2+1)-4/(x^2+1)-2/(x^2+1)*x);
+K := kernel(T);
+maple(K);
+

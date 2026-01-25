@@ -5,7 +5,969 @@
 		<Option title="aldor" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Build />
+		<Build>
+			<Target title="Debian">
+				<Option output="aldor" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+			</Target>
+		</Build>
+		<Unit filename="../../aldor/aldor/src/abcheck.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/abcheck.h" />
+		<Unit filename="../../aldor/aldor/src/ablogic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/ablogic.h" />
+		<Unit filename="../../aldor/aldor/src/abnorm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/abnorm.h" />
+		<Unit filename="../../aldor/aldor/src/abpretty.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/abpretty.h" />
+		<Unit filename="../../aldor/aldor/src/absub.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/absub.h" />
+		<Unit filename="../../aldor/aldor/src/absyn.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/absyn.h" />
+		<Unit filename="../../aldor/aldor/src/abuse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/abuse.h" />
+		<Unit filename="../../aldor/aldor/src/aldorlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/aldorlib.h" />
+		<Unit filename="../../aldor/aldor/src/annabs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/annabs.h" />
+		<Unit filename="../../aldor/aldor/src/any_as.s" />
+		<Unit filename="../../aldor/aldor/src/archive.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/archive.h" />
+		<Unit filename="../../aldor/aldor/src/axl.h" />
+		<Unit filename="../../aldor/aldor/src/axl_y.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/axlcomp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/axlcomp.h" />
+		<Unit filename="../../aldor/aldor/src/axlgen.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/axlgen.h" />
+		<Unit filename="../../aldor/aldor/src/axlgen0.h" />
+		<Unit filename="../../aldor/aldor/src/axlobs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/axlobs.h" />
+		<Unit filename="../../aldor/aldor/src/axltop.h" />
+		<Unit filename="../../aldor/aldor/src/bigint.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/bigint.h" />
+		<Unit filename="../../aldor/aldor/src/bigint_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/bitv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/bitv.h" />
+		<Unit filename="../../aldor/aldor/src/bitv_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/bloop.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/bloop.h" />
+		<Unit filename="../../aldor/aldor/src/btree.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/btree.h" />
+		<Unit filename="../../aldor/aldor/src/btree_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/buffer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/buffer.h" />
+		<Unit filename="../../aldor/aldor/src/buffer_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/ccode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/ccode.h" />
+		<Unit filename="../../aldor/aldor/src/ccode_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/ccomp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/ccomp.h" />
+		<Unit filename="../../aldor/aldor/src/cconfig.h" />
+		<Unit filename="../../aldor/aldor/src/cfgfile.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/cfgfile.h" />
+		<Unit filename="../../aldor/aldor/src/cmdline.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/cmdline.h" />
+		<Unit filename="../../aldor/aldor/src/compcfg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/compcfg.h" />
+		<Unit filename="../../aldor/aldor/src/compopt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/compopt.h" />
+		<Unit filename="../../aldor/aldor/src/comsg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/comsg.h" />
+		<Unit filename="../../aldor/aldor/src/comsgdb.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/comsgdb.h" />
+		<Unit filename="../../aldor/aldor/src/cport.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/cport.h" />
+		<Unit filename="../../aldor/aldor/src/cport_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/csig.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/csig.h" />
+		<Unit filename="../../aldor/aldor/src/debug.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/debug.h" />
+		<Unit filename="../../aldor/aldor/src/depdag.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/depdag.h" />
+		<Unit filename="../../aldor/aldor/src/dflow.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/dflow.h" />
+		<Unit filename="../../aldor/aldor/src/dnf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/dnf.h" />
+		<Unit filename="../../aldor/aldor/src/dnf_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/doc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/doc.h" />
+		<Unit filename="../../aldor/aldor/src/dword.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/dword.h" />
+		<Unit filename="../../aldor/aldor/src/editlevels.h" />
+		<Unit filename="../../aldor/aldor/src/emit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/emit.h" />
+		<Unit filename="../../aldor/aldor/src/errorset.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/errorset.h" />
+		<Unit filename="../../aldor/aldor/src/fbox.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/fbox.h" />
+		<Unit filename="../../aldor/aldor/src/fex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/fex.h" />
+		<Unit filename="../../aldor/aldor/src/file.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/file.h" />
+		<Unit filename="../../aldor/aldor/src/file_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/fint.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/fint.h" />
+		<Unit filename="../../aldor/aldor/src/fintphase.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/fintphase.h" />
+		<Unit filename="../../aldor/aldor/src/flatten.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/flatten.h" />
+		<Unit filename="../../aldor/aldor/src/float_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/flog.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/flog.h" />
+		<Unit filename="../../aldor/aldor/src/fluid.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/fluid.h" />
+		<Unit filename="../../aldor/aldor/src/fluid_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/fname.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/fname.h" />
+		<Unit filename="../../aldor/aldor/src/fname_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/foam.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/foam.h" />
+		<Unit filename="../../aldor/aldor/src/foam_c.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/foam_c.h" />
+		<Unit filename="../../aldor/aldor/src/foam_cfp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/foam_cfp.h" />
+		<Unit filename="../../aldor/aldor/src/foam_i.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/foam_i.h" />
+		<Unit filename="../../aldor/aldor/src/foamopt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/foamopt.h" />
+		<Unit filename="../../aldor/aldor/src/foamsig.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/foamsig.h" />
+		<Unit filename="../../aldor/aldor/src/forg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/forg.h" />
+		<Unit filename="../../aldor/aldor/src/format.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/format.h" />
+		<Unit filename="../../aldor/aldor/src/format_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/formatters.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/formatters.h" />
+		<Unit filename="../../aldor/aldor/src/fortran.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/fortran.h" />
+		<Unit filename="../../aldor/aldor/src/fptr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/fptr.h" />
+		<Unit filename="../../aldor/aldor/src/freevar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/freevar.h" />
+		<Unit filename="../../aldor/aldor/src/ftype.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/ftype.h" />
+		<Unit filename="../../aldor/aldor/src/genc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/genc.h" />
+		<Unit filename="../../aldor/aldor/src/gencpp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/gencpp.h" />
+		<Unit filename="../../aldor/aldor/src/gencr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/gencr.h" />
+		<Unit filename="../../aldor/aldor/src/genfoam.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/genfoam.h" />
+		<Unit filename="../../aldor/aldor/src/genlisp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/genlisp.h" />
+		<Unit filename="../../aldor/aldor/src/genssa.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/genssa.h" />
+		<Unit filename="../../aldor/aldor/src/genstyle.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/genstyle.h" />
+		<Unit filename="../../aldor/aldor/src/gentest.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/gf_add.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/gf_add.h" />
+		<Unit filename="../../aldor/aldor/src/gf_cgener.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/gf_cgener.h" />
+		<Unit filename="../../aldor/aldor/src/gf_excpt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/gf_excpt.h" />
+		<Unit filename="../../aldor/aldor/src/gf_fortran.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/gf_fortran.h" />
+		<Unit filename="../../aldor/aldor/src/gf_gener.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/gf_gener.h" />
+		<Unit filename="../../aldor/aldor/src/gf_implicit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/gf_implicit.h" />
+		<Unit filename="../../aldor/aldor/src/gf_imps.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/gf_imps.h" />
+		<Unit filename="../../aldor/aldor/src/gf_java.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/gf_java.h" />
+		<Unit filename="../../aldor/aldor/src/gf_prog.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/gf_prog.h" />
+		<Unit filename="../../aldor/aldor/src/gf_reference.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/gf_reference.h" />
+		<Unit filename="../../aldor/aldor/src/gf_rtime.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/gf_rtime.h" />
+		<Unit filename="../../aldor/aldor/src/gf_seq.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/gf_seq.h" />
+		<Unit filename="../../aldor/aldor/src/gf_syme.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/gf_syme.h" />
+		<Unit filename="../../aldor/aldor/src/gf_util.h" />
+		<Unit filename="../../aldor/aldor/src/gf_xgener.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/gf_xgener.h" />
+		<Unit filename="../../aldor/aldor/src/include.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/include.h" />
+		<Unit filename="../../aldor/aldor/src/inlstate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/inlstate.h" />
+		<Unit filename="../../aldor/aldor/src/inlutil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/inlutil.h" />
+		<Unit filename="../../aldor/aldor/src/int.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/int.h" />
+		<Unit filename="../../aldor/aldor/src/intset.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/intset.h" />
+		<Unit filename="../../aldor/aldor/src/java/foamj/Closure.java" />
+		<Unit filename="../../aldor/aldor/src/java/genjava.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/java/genjava.h" />
+		<Unit filename="../../aldor/aldor/src/java/javacode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/java/javacode.h" />
+		<Unit filename="../../aldor/aldor/src/java/javaobj.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/java/javaobj.h" />
+		<Unit filename="../../aldor/aldor/src/java/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/javasig.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/javasig.h" />
+		<Unit filename="../../aldor/aldor/src/lib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/lib.h" />
+		<Unit filename="../../aldor/aldor/src/linear.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/linear.h" />
+		<Unit filename="../../aldor/aldor/src/link_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/list.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/list.h" />
+		<Unit filename="../../aldor/aldor/src/list_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/loops.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/loops.h" />
+		<Unit filename="../../aldor/aldor/src/macex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/macex.h" />
+		<Unit filename="../../aldor/aldor/src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/main_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/memclim.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/memclim.h" />
+		<Unit filename="../../aldor/aldor/src/msg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/msg.h" />
+		<Unit filename="../../aldor/aldor/src/msg_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/newjflow.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_argsub.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_argsub.h" />
+		<Unit filename="../../aldor/aldor/src/of_cfold.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_cfold.h" />
+		<Unit filename="../../aldor/aldor/src/of_comex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_comex.h" />
+		<Unit filename="../../aldor/aldor/src/of_cprop.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_cprop.h" />
+		<Unit filename="../../aldor/aldor/src/of_crinlin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_crinlin.h" />
+		<Unit filename="../../aldor/aldor/src/of_deada.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_deada.h" />
+		<Unit filename="../../aldor/aldor/src/of_deadv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_deadv.h" />
+		<Unit filename="../../aldor/aldor/src/of_emerg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_emerg.h" />
+		<Unit filename="../../aldor/aldor/src/of_env.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_env.h" />
+		<Unit filename="../../aldor/aldor/src/of_hfold.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_hfold.h" />
+		<Unit filename="../../aldor/aldor/src/of_inlin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_inlin.h" />
+		<Unit filename="../../aldor/aldor/src/of_jflow.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_jflow.h" />
+		<Unit filename="../../aldor/aldor/src/of_killp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_killp.h" />
+		<Unit filename="../../aldor/aldor/src/of_loops.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_loops.h" />
+		<Unit filename="../../aldor/aldor/src/of_peep.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_peep.h" />
+		<Unit filename="../../aldor/aldor/src/of_retyp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_retyp.h" />
+		<Unit filename="../../aldor/aldor/src/of_retyp2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_rrfmt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_rrfmt.h" />
+		<Unit filename="../../aldor/aldor/src/of_util.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/of_util.h" />
+		<Unit filename="../../aldor/aldor/src/opsys.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/opsys.h" />
+		<Unit filename="../../aldor/aldor/src/opsys_port.h" />
+		<Unit filename="../../aldor/aldor/src/opsys_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/optcfg.h" />
+		<Unit filename="../../aldor/aldor/src/optfoam.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/optfoam.h" />
+		<Unit filename="../../aldor/aldor/src/optinfo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/optinfo.h" />
+		<Unit filename="../../aldor/aldor/src/opttools.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/opttools.h" />
+		<Unit filename="../../aldor/aldor/src/os_cms.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/os_dos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/os_macosx_vm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/os_macs7.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/os_os2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/os_unix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/os_vms.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/os_win32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/ostream.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/ostream.h" />
+		<Unit filename="../../aldor/aldor/src/output.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/output.h" />
+		<Unit filename="../../aldor/aldor/src/parseby.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/parseby.h" />
+		<Unit filename="../../aldor/aldor/src/path.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/path.h" />
+		<Unit filename="../../aldor/aldor/src/phase.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/phase.h" />
+		<Unit filename="../../aldor/aldor/src/platform.h" />
+		<Unit filename="../../aldor/aldor/src/priq.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/priq.h" />
+		<Unit filename="../../aldor/aldor/src/priq_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/rdln.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/rdln.h" />
+		<Unit filename="../../aldor/aldor/src/scan.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/scan.h" />
+		<Unit filename="../../aldor/aldor/src/scobind.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/scobind.h" />
+		<Unit filename="../../aldor/aldor/src/sefo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/sefo.h" />
+		<Unit filename="../../aldor/aldor/src/sexpr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/sexpr.h" />
+		<Unit filename="../../aldor/aldor/src/showexports.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/simpl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/simpl.h" />
+		<Unit filename="../../aldor/aldor/src/spesym.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/spesym.h" />
+		<Unit filename="../../aldor/aldor/src/srcline.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/srcline.h" />
+		<Unit filename="../../aldor/aldor/src/srcpos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/srcpos.h" />
+		<Unit filename="../../aldor/aldor/src/stab.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/stab.h" />
+		<Unit filename="../../aldor/aldor/src/stdc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/stdc.h" />
+		<Unit filename="../../aldor/aldor/src/store.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/store.h" />
+		<Unit filename="../../aldor/aldor/src/store1_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/store2_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/store3_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/strops.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/strops.h" />
+		<Unit filename="../../aldor/aldor/src/strops_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/structtest.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/susage.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/susage.h" />
+		<Unit filename="../../aldor/aldor/src/symbol.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/symbol.h" />
+		<Unit filename="../../aldor/aldor/src/symbol_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/symcoinfo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/symcoinfo.h" />
+		<Unit filename="../../aldor/aldor/src/syme.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/syme.h" />
+		<Unit filename="../../aldor/aldor/src/syme0.h" />
+		<Unit filename="../../aldor/aldor/src/symeset.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/symeset.h" />
+		<Unit filename="../../aldor/aldor/src/syscmd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/syscmd.h" />
+		<Unit filename="../../aldor/aldor/src/table.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/table.h" />
+		<Unit filename="../../aldor/aldor/src/table_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/tconst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/tconst.h" />
+		<Unit filename="../../aldor/aldor/src/termtype.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/termtype.h" />
+		<Unit filename="../../aldor/aldor/src/terror.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/terror.h" />
+		<Unit filename="../../aldor/aldor/src/test.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test.h" />
+		<Unit filename="../../aldor/aldor/src/test/abquick.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/abquick.h" />
+		<Unit filename="../../aldor/aldor/src/test/test_abcheck.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_ablogic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_abnorm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_absyn.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_annabs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_archive.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_bigint.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_bitv.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_errorset.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_float.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_flog.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_fname.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_foam.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_forg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_format.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_fptr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_gencr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_genfoam.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_int.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_java.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_jcode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_jflow.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_list.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_of_cprop.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_of_crinlin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_of_peep.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_ostream.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_printf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_retyp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_scobind.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_srcpos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_stab.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_strops.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_syme.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_symeset.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_tform.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_tfsat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_tibup.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_tinfer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_tisef.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_tposs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/test_tset.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/testall.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/testall.h" />
+		<Unit filename="../../aldor/aldor/src/test/testlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/test/testlib.h" />
+		<Unit filename="../../aldor/aldor/src/textansi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/textansi.h" />
+		<Unit filename="../../aldor/aldor/src/textcolour.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/textcolour.h" />
+		<Unit filename="../../aldor/aldor/src/texthp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/texthp.h" />
+		<Unit filename="../../aldor/aldor/src/tfcond.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/tfcond.h" />
+		<Unit filename="../../aldor/aldor/src/tform.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/tform.h" />
+		<Unit filename="../../aldor/aldor/src/tfsat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/tfsat.h" />
+		<Unit filename="../../aldor/aldor/src/ti_bup.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/ti_bup.h" />
+		<Unit filename="../../aldor/aldor/src/ti_decl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/ti_decl.h" />
+		<Unit filename="../../aldor/aldor/src/ti_sef.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/ti_sef.h" />
+		<Unit filename="../../aldor/aldor/src/ti_tdn.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/ti_tdn.h" />
+		<Unit filename="../../aldor/aldor/src/ti_top.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/ti_top.h" />
+		<Unit filename="../../aldor/aldor/src/timer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/timer.h" />
+		<Unit filename="../../aldor/aldor/src/tinfer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/tinfer.h" />
+		<Unit filename="../../aldor/aldor/src/token.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/token.h" />
+		<Unit filename="../../aldor/aldor/src/tposs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/tposs.h" />
+		<Unit filename="../../aldor/aldor/src/tqual.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/tqual.h" />
+		<Unit filename="../../aldor/aldor/src/ttable.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/ttable.h" />
+		<Unit filename="../../aldor/aldor/src/usedef.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/usedef.h" />
+		<Unit filename="../../aldor/aldor/src/util.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/util.h" />
+		<Unit filename="../../aldor/aldor/src/util_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/version.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/version.h" />
+		<Unit filename="../../aldor/aldor/src/winmain.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/xfloat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/xfloat.h" />
+		<Unit filename="../../aldor/aldor/src/xfloat_t.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/yldlocs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../aldor/aldor/src/yldlocs.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

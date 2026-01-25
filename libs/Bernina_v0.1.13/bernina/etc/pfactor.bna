@@ -1,0 +1,44 @@
+/* factorizations of 2nd order differential operators modulo p */
+
+airy := D^2 - x;
+l := factor(airy, 3);
+tex(l);
+l := factor(airy, 5);
+tex(l);
+l := factor(airy, 41);
+tex(l);
+l := factor(airy, 101);
+tex(l);
+l := factor(airy, 503);
+tex(l);
+l := factor(airy, 1009);
+tex(l);
+
+L := (x^4+x)*D^2 + (x^3-1)*D - x^2;
+l := factor(L, 3);
+tex(l);
+l := factor(L, 5);
+tex(l);
+l := factor(L, 41);
+tex(l);
+l := factor(L, 101);
+tex(l);
+l := factor(L, 503);
+tex(l);
+l := factor(L, 1009);
+tex(l);
+
+L := (x^2-x^4)*D^2 - (8*x^3-5*x+1)*D + 3 - 12*x^2;
+l := factor(L, 3);
+tex(l);
+l := factor(L, 5);
+tex(l);
+l := factor(L, 41);
+tex(l);
+l := factor(L, 101);
+tex(l);
+l := factor(L, 503);
+tex(l);
+l := factor(L, 1009);
+tex(l);
+

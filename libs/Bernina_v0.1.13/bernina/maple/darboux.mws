@@ -1,0 +1,191 @@
+{VERSION 3 0 "DEC ALPHA UNIX" "3.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{CSTYLE "" -1 256 "terminal" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "
+" -1 257 "terminal" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 258 "
+terminal" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 259 "terminal" 
+0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 
+-1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }
+{PSTYLE "Maple Output" 0 11 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 
+0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "" 11 12 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }1 0 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }{PSTYLE "R3 Font 0" -1 256 1 {CSTYLE "" -1 -1 "Helvetica
+" 1 14 0 0 0 0 2 1 2 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }
+{PSTYLE "R3 Font 2" -1 257 1 {CSTYLE "" -1 -1 "Courier" 1 14 0 0 0 0 
+2 2 2 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "" 0 258 
+1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 
+0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "" 0 "" {TEXT -1 44 "Darboux.mws: Examples of D
+arboux curves from" }}{PARA 0 "" 0 "" {TEXT -1 94 "                   \+
+     F.Ulmer & J.A.Weil, Note on Kovacic's Algorithm, JSC 22, 179-200,
+ 1996" }}}{EXCHG {PARA 258 "" 0 "" {TEXT -1 16 "IMPORTANT: the  " }
+{TEXT 257 8 "bernina " }{TEXT -1 66 " executable must be in your path \+
+before you can execute this demo." }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 
+50 "To start, we tell maple about the location of the " }{TEXT 258 9 "
+bernina.m" }{TEXT -1 31 " file, which is located in the " }{TEXT 259 
+5 "maple" }{TEXT -1 140 " directory of bernina.\n Replace the '.' by t
+he appropriate directory on your system. The following line is only va
+lid if you are using maple" }}{PARA 0 "" 0 "" {TEXT -1 10 "from the  \+
+" }{TEXT 256 5 "maple" }{TEXT -1 106 "  directory of bernina. Alternat
+ively, you can add a line to this effect in your .mapleinit file, and \+
+then" }}{PARA 0 "" 0 "" {TEXT -1 24 "run maple from anywhere." }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 32 "restart; libname := `.`,libname:" }
+}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 78 "We then load the bernina interfa
+ce, bringing the bernina functions into scope:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 14 "with(bernina);" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#7:%
+(DarbouxG%&LoewyG%(adjointG%&applyG%*decomposeG%(dfactorG%*eigenringG%
+5exponentialSolutionsG%.exteriorPowerG%(leftGcdG%(leftLcmG%-makeIntegr
+alG%%multG%*normalizeG%1polynomialKernelG%3polynomialSolutionG%1radica
+lSolutionsG%/rationalKernelG%1rationalSolutionG%)rightGcdG%)rightLcmG%
+.rightQuotientG%0symmetricKernelG%/symmetricPowerG" }}}{EXCHG {PARA 0 
+"" 0 "" {TEXT -1 177 "We first define a short verification function fo
+r proposed solutions of 2nd order operators (yes, both calls to simpli
+fy and normal seem to be necessary for the examples below)." }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 202 "verify := proc(L, D, x, solutions) local
+ i; seq(simplify(normal(coeff(L,D,2) * diff(solutions[i],x$2) + coeff(
+L,D,1) * diff(solutions[i],x) + coeff(L,D,0) * solutions[i])), i = 1..
+nops(solutions)); end;" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%'verifyGR6
+&%\"LG%\"DG%\"xG%*solutionsG6#%\"iG6\"F--%$seqG6$-%)simplifyG6#-%'norm
+alG6#,(*&-%&coeffG6%9$9%\"\"#\"\"\"-%%diffG6$&9'6#8$-%\"$G6$9&F>F?F?*&
+-F:6%F<F=F?F?-FA6$FCFJF?F?*&-F:6%F<F=\"\"!F?FCF?F?/FF;F?-%%nopsG6#FDF-
+F-F-" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 46 "First a  with a completel
+y reducible operator:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "L := D^2 +
+ 3/16/x^2;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"LG,&*$)%\"DG\"\"#\"
+\"\"\"\"\"*&F*F**$)%\"xG\"\"#F*!\"\"#\"\"$\"#;" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 22 "C := Darboux(L,D,x,u);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"CG-%'vectorG6#7$,&*&%\"xG\"\"\"%\"uGF,F,#!\"\"\"\"%
+F,,&F*F,#!\"$F0F," }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 90 "We then veri
+fy that exp(int(y,x)) is a solution of Lz = 0 for y a root of a Darbou
+x curve:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "sols := map(solve,C,u);
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%solsG-%'vectorG6#7$,$*&\"\"\"F+
+%\"xG!\"\"#\"\"\"\"\"%,$F*#\"\"$F0" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 68 "deqsols := [seq(exp(int(sols[i],x)), i = 1..linalg[ve
+ctdim](sols))];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%(deqsolsG7$*$)%\"
+xG#\"\"\"\"\"%\"\"\"*$)F(#\"\"$F+F," }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 22 "verify(L,D,x,deqsols);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6$\"\"!F#" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 57 "Darboux is not l
+imited to completely reducible operators:" }{TEXT -1 0 "" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 67 "L := D^2 - (8*x^3-5*x+1)/(1-x^2)/x^2 * D + 3*
+(1-4*x^2)/(1-x^2)/x^2;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"LG,(*$)%
+\"DG\"\"#\"\"\"\"\"\"*&*&,(*$)%\"xG\"\"$F*\"\")F1!\"&F+F+F+F(F+F**&,&F
++F+*$)F1F)F*!\"\"\"\"\")F1\"\"#F*!\"\"F9*&,&F+F+F7!\"%F**&F6\"\"\")F1
+\"\"#F*F=F2" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "C := Darboux
+(L,D,x,u);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"CG-%'vectorG6#7#,**&
+,&*$)%\"xG\"\"$\"\"\"\"\"\"*$)F.\"\"#F0!\"\"F1%\"uGF1F1F2\"\"%F.!\"%F1
+F1" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "sols := map(solve,C,u
+);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%solsG-%'vectorG6#7#,$*&,(*$)%
+\"xG\"\"#\"\"\"\"\"%F.!\"%\"\"\"F3F0*&)F.\"\"#F0,&F.F3!\"\"F3\"\"\"!\"
+\"F8" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 68 "deqsols := [seq(exp
+(int(sols[i],x)), i = 1..linalg[vectdim](sols))];" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%(deqsolsG7#-%$expG6#,(*&\"\"\"F+%\"xG!\"\"!\"\"-%#lnG
+6#F,!\"$-F06#,&F,\"\"\"F.F6F." }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 22 "verify(L,D,x,deqsols);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"!
+" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 70 "An irreducible operator with \+
+an irreducible Darboux curve of degree 2:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 99 "L := D^2 - 2/(2*x-1) * D + (27*x^4-54*x^3+5*x^2+22*x+
+27)*(2*x-1)^2 / (144*x^2*(x-1)^2*(x^2-x-1)^2);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"LG,(*$)%\"DG\"\"#\"\"\"\"\"\"*&F(F*,&%\"xGF)!\"\"F+
+!\"\"!\"#*&*&,,*$)F.\"\"%F*\"#F*$)F.\"\"$F*!#a*$)F.F)F*\"\"&F.\"#AF8F+
+F+)F-F)F*F**()F.\"\"#F*),&F.F+F/F+\"\"#F*),(F=F+F.F/F/F+\"\"#F*F0#F+\"
+$W\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "C := Darboux(L,D,x,
+u);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"CG-%'vectorG6#7#,4*&,.*$)%
+\"xG\"\")\"\"\"\"\"\"*$)F.\"\"(F0!\"%*$)F.\"\"'F0\"\"%*$)F.\"\"&F0\"\"
+#*$)F.F9F0F5*$)F.F=F0F1F1)%\"uGF=F0F1*&,0F2!\"$F6#\"#@F=F:#!#>F=F>#!\"
+&F=*$)F.\"\"$F0#\"#6F=F@#!\"\"F=F.FRF1FCF1F1F6#\"\"*F9F:#!#FF9F>#\"$@)
+\"$W\"FM#!#6\"#sF@#!$t\"FZF.#FQFgn#F1\"#;F1" }}}{EXCHG {PARA 0 "> " 0 
+"" {MPLTEXT 1 0 24 "sols := [solve(C[1],u)];" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%%solsG7$,$*&*&,*#!\"\"\"\"#\"\"\"*$)%\"xGF,\"\"\"#\"
+\"$F,F0#!\"$F,*$-%%sqrtG6#,&F.F-F0F+F1#F-F3F-,&F0F,F+F-F-F1*(F0\"\"\",
+&F0F-F+F-\"\"\",(F.F-F0F+F+F-\"\"\"!\"\"#F-F,,$*&*&,*F*F-F.F2F0F4F6#F+
+F3F-F<F1F1*(F0\"\"\"F?\"\"\"FA\"\"\"FCFD" }}}{EXCHG {PARA 0 "" 0 "" 
+{TEXT -1 65 "You can replace Int by int in order to see the expanded i
+ntegrals" }{TEXT -1 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 57 "deqsols \+
+:= [seq(exp(Int(sols[i],x)), i = 1..nops(sols))];" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%(deqsolsG7$-%$expG6#-%$IntG6$,$*&*&,*#!\"\"\"\"#\"\"
+\"*$)%\"xGF2\"\"\"#\"\"$F2F6#!\"$F2*$-%%sqrtG6#,&F4F3F6F1F7#F3F9F3,&F6
+F2F1F3F3F7*(F6\"\"\",&F6F3F1F3\"\"\",(F4F3F6F1F1F3\"\"\"!\"\"#F3F2F6-F
+'6#-F*6$,$*&*&,*F0F3F4F8F6F:F<#F1F9F3FBF7F7*(F6\"\"\"FE\"\"\"FG\"\"\"F
+IFJF6" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "verify(L,D,x,deqso
+ls);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\"!F#" }}}{EXCHG {PARA 0 "" 
+0 "" {TEXT -1 70 "An irreducible operator with 2 irreducible Darboux c
+urves of degree 2:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 86 "L := D^2 - 2/
+(2*x-1) * D + 3*(2*x-1)^2*(x^4-2*x^3+x+1) / (16*x^2*(x-1)^2*(x^2-x-1)^
+2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"LG,(*$)%\"DG\"\"#\"\"\"\"\"
+\"*&F(F*,&%\"xGF)!\"\"F+!\"\"!\"#*&*&)F-F)F*,**$)F.\"\"%F*F+*$)F.\"\"$
+F*F1F.F+F+F+F+F**()F.\"\"#F*),&F.F+F/F+\"\"#F*),(*$)F.F)F*F+F.F/F/F+\"
+\"#F*F0#F;\"#;" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "C := Darb
+oux(L,D,x,u);" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%\"CG-%'vectorG6#7$,
+4*&,.*$)%\"xG\"\")\"\"\"\"\"\"*$)F.\"\"(F0!\"%*$)F.\"\"'F0\"\"%*$)F.\"
+\"&F0\"\"#*$)F.F9F0F5*$)F.F=F0F1F1)%\"uGF=F0F1*&,0F2!\"$F6#\"#@F=F:#!#
+<F=F>!\"&*$)F.\"\"$F0#\"#8F=F@#F1F=F.!\"\"F1FCF1F1F6#\"\"*F9F:#!#FF9F>
+#\"#t\"#;FL#\"#<F/F@#FJF/F.#FRFY#FNFYF1,4F*F1*&,.F2!\"#F6F4F:!\"'F>#FK
+F=FLF9F.#FRF=F1FCF0F1F6#FNF9F:#!\"*F9F>#\"#FFYFL#FNF/F@F_oF.Fgn#F1FYF1
+" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 47 "Each curve yields a basis of \+
+the solution space" }{TEXT -1 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+23 "sols := map(solve,C,u);" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%%sols
+G-%&ARRAYG6$7#;\"\"\"\"\"#7$/6#F*6$,$*&*&,*!\"\"F**$)%\"xGF+\"\"\"#\"
+\"$F+F7#!\"$F+*$-%%sqrtG6#,(F*F*F5F4F7F*F8#F*F+F*,&F7F+F4F*F*F8*(F7\"
+\"\",&F7F*F4F*\"\"\",(F5F*F7F4F4F*\"\"\"!\"\"FB,$*&*&,*F4F*F5F9F7F;F=#
+F4F+F*FCF8F8*(F7\"\"\"FF\"\"\"FH\"\"\"FJFB/6#F+6$,$*&*&,*F5F*F7F4FOF**
+$-F?6#,(*$)F7\"\"%F8F**$)F7F:F8!\"#F7F*F8FBF*FCF8F8*(F7\"\"\"FF\"\"\"F
+H\"\"\"FJFB,$*&*&,*F5F*F7F4FOF*FenFOF*FCF8F8*(F7\"\"\"FF\"\"\"FH\"\"\"
+FJFB" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 58 "The first one has nicer-l
+ooking integrals than the second:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+66 "deqsols1 := [seq(exp(int(sols[1][i],x)), i = 1..nops([sols[1]]))];
+" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%)deqsols1G7$-%$expG6#,4*$-%%sqrt
+G6#,(\"\"\"F/*$)%\"xG\"\"#\"\"\"!\"\"F2F/F4#F5\"\"%-%(arctanhG6#,$*&,&
+F3F/F2F/F4*$-F,6#F.F4!\"\"#F/F3#F/F7*$-F,6#,(*$),&F2F/F5F/F3F4F5F2F5F3
+F/F4F6-F96#,$*&,&\"\"$F/F2F5F4*$-F,6#FGF4FAFBFC*$-F,6#,&*$),(F2F/#F5F3
+F/*$-F,6#\"\"&F4FenF3F4F5*&FgnF4FZF/F5F4FC*$-F,6#,&*$),(F2F/FenF/FfnFB
+F3F4F5*&FgnF4FaoF/F/F4FC-%#lnG6#F2FB-Fdo6#FJFB-Fdo6#,(F0F/F2F5F5F/FC-F
+'6#,4F*FCF8F6FDFCFKF6FTF6F[oF6FcoFBFfoFBFhoFC" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 23 "verify(L,D,x,deqsols1);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6$\"\"!F#" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 66 "d
+eqsols2 := [seq(exp(Int(sols[2][i],x)), i = 1..nops([sols[2]]))];" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%)deqsols2G7$-%$expG6#-%$IntG6$,$*&*&
+,**$)%\"xG\"\"#\"\"\"\"\"\"F2!\"\"#F6F3F5*$-%%sqrtG6#,(*$)F2\"\"%F4F5*
+$)F2\"\"$F4!\"#F2F5F4#F5F3F5,&F2F3F6F5F5F4*(F2\"\"\",&F2F5F6F5\"\"\",(
+F0F5F2F6F6F5\"\"\"!\"\"FDF2-F'6#-F*6$,$*&*&,*F0F5F2F6F7F5F8F7F5FEF4F4*
+(F2\"\"\"FH\"\"\"FJ\"\"\"FLFDF2" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 23 "verify(L,D,x,deqsols2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"
+\"!F#" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 76 "Finally an irreducible o
+perator whose solutions are all algebraic functions:" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 54 "L := D^2 - (-3/16/x^2 - 2/9/(x-1)^2 + 3/(16*x*(x
+-1)));" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"LG,**$)%\"DG\"\"#\"\"\"
+\"\"\"*&F*F**$)%\"xG\"\"#F*!\"\"#\"\"$\"#;*&F*F**$),&F/F+!\"\"F+\"\"#F
+*F1#F)\"\"**&F*F**&F8\"\"\"F/\"\"\"F1#!\"$F4" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 22 "C := Darboux(L,D,x,u);" }}{PARA 12 "" 1 "" 
+{XPPMATH 20 "6#>%\"CG-%'vectorG6#7#,<*&,0*$)%\"xG\"#7\"\"\"\"\"\"*$)F.
+\"#6F0!\"'*$)F.\"#5F0\"#:*$)F.\"\"*F0!#?*$)F.\"\")F0F9*$)F.\"\"(F0F5*$
+)F.\"\"'F0F1F1)%\"uGFFF0F1*&,0F2!\"%F6\"#AF:!#]F>\"#gFA!#SFD\"#9*$)F.
+\"\"&F0!\"#F1)FHFSF0F1*&,0F6#\"#?\"\"$F:#!%&f\"\"#[F>#\"%&3\"\"#;FA#!%
+N<\"#CFD#\"%:5F]oFQ#!$0#Fjn*$)F.\"\"%F0#\"#DFjnF1)FHFdoF0F1*&,0F:#!$g
+\"\"#FF>#\"&09\"\"$K%FA#!%X6F]oFD#\"%N'*\"$;#FQ#!%D7\"#aFbo#\"#&*Fjn*$
+)F.FZF0#!\"&F@F1)FHFZF0F1*&,0F>#\"#!)F\\pFA#!$N)\"#sFD#\"'0j7\"%7pFQ#!
+%XG\"$#>Fbo#\"&bD#\"%cMFjp#!#&*\"#k*$)F.\"\"#F0#\"#N\"$c#F1)FHFdrF0F1*
+&,0FA#!#k\"#\")FD#\"$(G\"$3\"FQ#!&,X(\"&O2#Fbo#\"&Xt\"FhqFjp#!$P(\"$o(
+Fbr#\"#\\FgrF.#!\"\"FarF1FHF1F1FD#Far\"$H(FQ#!$f$\"%e9Fbo#\"'^_5\"'[KP
+Fjp#!%^i\"&ko$Fbr#\"%*3#FgtF.#!#T\"%'4%#FZF\\uF1" }}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 21 "sol := solve(C[1],u);" }}{PARA 12 "" 1 "" 
+{XPPMATH 20 "6#>%$solG,$*&-%'RootOfG6#,<*$)%#_ZG\"\"'\"\"\"\"\"\"*&,&
+\"$)GF0%\"xG!$w&F0)F-\"\"&F/F0*&,(F4!'!3O\"\"&+C$F0*$)F4\"\"#F/\"'S#Q
+\"F0)F-\"\"%F/F0*&,*F4!)g087\"(Si'=F0F<\")+suD*$)F4\"\"$F/!)?Zp<F0)F-F
+IF/F0*&,,*$)F4FAF/\"+S)>SF\"F<\"++W01<F4!*g4o?&FG!++ObQC\")glyeF0F0)F-
+F>F/F0*&,.F4!,!o6R)3\"FN\"-![+th:\"*$)F4F7F/!,c=OA*[F<\",OR=M&[\"*;)eu
+'*F0FG!-/N\\To5F0F-F0F0FZ!.)G))4R&>#FN\".seTAU^#\"+3qMIlF0F<\"-cmOb_]*
+$)F4F.F/\"-'p*ydFyF4!,wd2[#*)FG!./ZE'*=^\"F/*&F4\"\"\",&F4F0!\"\"F0\"
+\"\"!\"\"#F0\"$W\"" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 69 "The solutio
+n space is spanned by this solution and all its conjugates" }{TEXT -1 
+0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "deqsol := exp(Int(sol,x));" 
+}}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%'deqsolG-%$expG6#-%$IntG6$,$*&-%'R
+ootOfG6#,<*$)%#_ZG\"\"'\"\"\"\"\"\"*&,&\"$)GF6%\"xG!$w&F6)F3\"\"&F5F6*
+&,(F:!'!3O\"\"&+C$F6*$)F:\"\"#F5\"'S#Q\"F6)F3\"\"%F5F6*&,*F:!)g087\"(S
+i'=F6FB\")+suD*$)F:\"\"$F5!)?Zp<F6)F3FOF5F6*&,,*$)F:FGF5\"+S)>SF\"FB\"
+++W01<F:!*g4o?&FM!++ObQC\")glyeF6F6)F3FDF5F6*&,.F:!,!o6R)3\"FT\"-![+th
+:\"*$)F:F=F5!,c=OA*[FB\",OR=M&[\"*;)eu'*F6FM!-/N\\To5F6F3F6F6Fjn!.)G))
+4R&>#FT\".seTAU^#\"+3qMIlF6FB\"-cmOb_]*$)F:F4F5\"-'p*ydFyF:!,wd2[#*)FM
+!./ZE'*=^\"F5*&F:\"\"\",&F:F6!\"\"F6\"\"\"!\"\"#F6\"$W\"F:" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "verify(L,D,x,[deqsol]);" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 0 "" }}}}{MARK "30 0 0" 58 }{VIEWOPTS 1 1 0 1 1 1803 }

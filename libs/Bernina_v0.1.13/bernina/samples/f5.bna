@@ -1,0 +1,11 @@
+/* f36.bna: Example with Galois group F36 */
+
+L := D^3 + 5*(9*x^2 + 14*x + 9)/(48*x^2*(x+1)^2) * D
+     - 5*(81*x^3 + 185*x^2 + 229*x + 81) / (432*x^3*(x+1)^3);
+
+/* symmetric 6th power has 1-dimensional kernel */
+V := symmetricKernel(L, 5);
+
+maple(V);
+
+tex(V);

@@ -1,0 +1,132 @@
+# ======================================================================
+# This code was written all or part by Dr. Manuel Bronstein from
+# Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+# decided to publish this code under the CeCILL open source license in
+# memory of Dr. Manuel Bronstein.
+# 
+# This software is governed by the CeCILL license under French law and
+# abiding by the rules of distribution of free software. You can use,
+# modify and/or redistribute the software under the terms of the CeCILL
+# license as circulated by CEA, CNRS and Inria at the following URL :
+# http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+# 
+# As a counterpart to the access to the source code and rights to copy,
+# modify and redistribute granted by the license, users are provided
+# only with a limited warranty and the software's author, the holder of
+# the economic rights, and the successive licensors have only limited
+# liability.
+# 
+# In this respect, the user's attention is drawn to the risks associated
+# with loading, using, modifying and/or developing or reproducing the
+# software by the user in light of its specific status of free software,
+# that may mean that it is complicated to manipulate, and that also
+# therefore means that it is reserved for developers and experienced
+# professionals having in-depth computer knowledge. Users are therefore
+# encouraged to load and test the software's suitability as regards
+# their requirements in conditions enabling the security of their
+# systems and/or data to be ensured and, more generally, to use and
+# operate it in the same conditions as regards security.
+# 
+# The fact that you are presently reading this means that you have had
+# knowledge of the CeCILL license and that you accept its terms.
+# ======================================================================
+# 
+obj1    = BS.o DFGE.o ECat.o FF2GE.o FFGE.o HGE.o OGE.o LA.o
+obj2    = spfge.o modpge.o
+objects = $(obj1) $(obj2)
+asobj1    = BS.ao DFGE.ao ECat.ao FF2GE.ao FFGE.ao HGE.ao OGE.ao LA.ao
+asobj2    = spfge.ao modpge.ao
+asobjects = $(asobj1) $(asobj2)
+options   = -M2 -Fao -Fo -Q3 -Csmax=0 -Mno-mactext
+tex1  = BS.tex DFGE.tex ECat.tex FF2GE.tex FFGE.tex HGE.tex OGE.tex LA.tex
+tex2  = modpge.tex
+tex   = $(tex1) $(tex2)
+test      = 
+testdir   = ../../../test
+libsumit  = ../../../lib/libsumit.a
+sumitasl  = ../../../lib/libsumit.al
+
+all: datestamp
+
+datestamp: $(objects)
+	ar rv $(libsumit) $(objects)
+	touch datestamp
+
+ECat.o: ECat.as ../categories/matcat0.o
+	axiomxl $(options) ECat.as
+	ar rv $(sumitasl) ECat.ao
+
+OGE.o: OGE.as ECat.o
+	axiomxl $(options) OGE.as
+	ar rv $(sumitasl) OGE.ao
+
+DFGE.o: DFGE.as ECat.o
+	axiomxl $(options) DFGE.as
+	ar rv $(sumitasl) DFGE.ao
+
+FFGE.o: FFGE.as ECat.o
+	axiomxl $(options) FFGE.as
+	ar rv $(sumitasl) FFGE.ao
+
+FF2GE.o: FF2GE.as ECat.o
+	axiomxl $(options) FF2GE.as
+	ar rv $(sumitasl) FF2GE.ao
+
+HGE.o: HGE.as ECat.o
+	axiomxl $(options) HGE.as
+	ar rv $(sumitasl) HGE.ao
+
+BS.o: BS.as ../categories/matcat0.o
+	axiomxl $(options) BS.as
+	ar rv $(sumitasl) BS.ao
+
+LA.o: LA.as ECat.o BS.o ../categories/overdet.o
+	axiomxl $(options) LA.as
+	ar rv $(sumitasl) LA.ao
+
+modpge.o: modpge.as halfge.as fullge.as ../../numbers/hwordprimes.o
+	axiomxl $(options) modpge.as
+	ar rv $(sumitasl) modpge.ao
+
+spfge.o: spfge.as modpge.o ECat.o
+	axiomxl $(options) spfge.as
+	ar rv $(sumitasl) spfge.ao
+
+
+.PHONY: doc
+doc: $(tex)
+
+ECat.tex: ECat.as
+	as2doc ECat
+
+OGE.tex: OGE.as
+	as2doc OGE
+
+DFGE.tex: DFGE.as
+	as2doc DFGE
+
+FFGE.tex: FFGE.as
+	as2doc FFGE
+
+FF2GE.tex: FF2GE.as
+	as2doc FF2GE
+
+HGE.tex: HGE.as
+	as2doc HGE
+
+BS.tex: BS.as
+	as2doc BS
+
+LA.tex: LA.as
+	as2doc LA
+
+modpge.tex: modpge.as
+	as2doc modpge
+
+#.PHONY: test
+test: $(test)
+
+.PHONY: clean
+clean:
+	-rm $(objects) $(asobjects) $(tex) $(test)
+

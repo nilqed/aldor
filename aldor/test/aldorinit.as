@@ -8,3 +8,8 @@ import from List Integer
 MI ==> MachineInteger
 I ==> Integer
 
+#int set-sprompt "[%d] -> "
+#int set-hprompt "(%d) -> "
+#int set-typefmt "$ $ Type: %s $"
+
+

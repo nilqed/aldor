@@ -1,0 +1,12 @@
+/* hurwitz.bna: Hurwitz example with Galois group G168 */
+
+L := D^3 + (7*x-4)/(x*(x-1)) * D^2
+     + (2592*x^2-2963*x+560)/(252*x^2*(x-1)^2) * D
+     + (57024*x-40805)/(24696*x^2*(x-1)^2);
+
+/* symmetric 6th power has 1-dimensional kernel */
+V := symmetricKernel(L, 6);
+
+maple(V);
+
+tex(V);

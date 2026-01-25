@@ -1,0 +1,34 @@
+This is the full source tree of the salli library. There are several
+targets that you can/should make:
+- the library itself,
+- its documentation,
+- its test-suite,
+- the corresponding aldor/salli tutorial
+
+1) To build the library:
+- copy (or link) $AXIOMXLROOT/include/axiomxl.conf into salli/src/util
+- set your $LIBPATH variable to salli/lib and $INCPATH to salli/include
+- go to the src directory and issue either:
+   - 'gmake aobj'       to make libsalli.al
+   - 'gmake objects'    to make libsalli.a
+- go to the lib directory and issue
+     'axiomxl -q3 sal_gloop.as'    to make sal_gloop.ao
+  Note that sal_gloop.ao  is *NOT* part of libsalli.al and should not be.
+
+2) To build the documentation:
+- go to the src directory and issue 'gmake doc'
+- go to the doc directory and issue 'make'
+
+3) To build the test-suite:
+- go to the src directory and issue 'gmake test'
+- go to the test directory and issue 'make'
+
+4) To build the tutorial:
+- go to the tutorial directory and issue 'latex tutorial'
+
+For points 2) and 3) you first need to compile src/extract.c into an
+executable called 'extract' that must be in your path.
+
+Report any problems to  salli@sophia.inria.fr
+
+-- Manuel Bronstein  December 2, 1999

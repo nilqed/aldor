@@ -1,0 +1,169 @@
+# ======================================================================
+# This code was written all or part by Dr. Manuel Bronstein from
+# Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+# decided to publish this code under the CeCILL open source license in
+# memory of Dr. Manuel Bronstein.
+# 
+# This software is governed by the CeCILL license under French law and
+# abiding by the rules of distribution of free software. You can use,
+# modify and/or redistribute the software under the terms of the CeCILL
+# license as circulated by CEA, CNRS and Inria at the following URL :
+# http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+# 
+# As a counterpart to the access to the source code and rights to copy,
+# modify and redistribute granted by the license, users are provided
+# only with a limited warranty and the software's author, the holder of
+# the economic rights, and the successive licensors have only limited
+# liability.
+# 
+# In this respect, the user's attention is drawn to the risks associated
+# with loading, using, modifying and/or developing or reproducing the
+# software by the user in light of its specific status of free software,
+# that may mean that it is complicated to manipulate, and that also
+# therefore means that it is reserved for developers and experienced
+# professionals having in-depth computer knowledge. Users are therefore
+# encouraged to load and test the software's suitability as regards
+# their requirements in conditions enabling the security of their
+# systems and/or data to be ensured and, more generally, to use and
+# operate it in the same conditions as regards security.
+# 
+# The fact that you are presently reading this means that you have had
+# knowledge of the CeCILL license and that you accept its terms.
+# ======================================================================
+# 
+# libname must be properly set for bernina
+
+with(bernina):
+
+unprotect('Order2'):
+Order2 := 'Order2':
+
+Order2[dsolve2] := Order2Dsolve2;
+Order2[dsolveSpec] := dsolveSpecial;
+Order2[verify2] := Order2Verify;
+
+Order2Dsolve2 := proc(L, D, x) Order2Dsolve(L, D, x, true, false); end;
+
+Order2Dsolve := proc(L, D, x, verb, grp) local d, f, dbx, n; global y;
+	if verb then
+	    if grp then
+	       print(`Computing the Galois group of the differential equation:`)
+	    else print(`Solving the differential equation:`); fi;
+	    print(L);
+	fi;
+	y := 'y';
+	d := degree(L, D);
+	if d = 0 then [];
+	else
+		if d = 1 then
+			f := normal(coeff(L,D,0) / coeff(L,D,1));
+			dbx := linalg[vector](1, [y + f]);
+		else dbx := Darboux(L, D, x, y); fi;
+		n := linalg[vectdim](dbx);
+		if n = 0 then NonLiouvillianSolver(L, D, x, verb, grp);
+		else LiouvillianSolution(L, D, dbx, n, y, x, grp); fi;
+	fi; end;
+
+LiouvillianSolution := proc(L, D, dbx, n, y, x, grp)
+	local deg, mindeg, index, i;
+	mindeg := degree(dbx[1], y); index := 1;
+	for i to n-1 do
+		deg := degree(dbx[i+1], y);
+		if deg < mindeg then mindeg := deg; index := i+1; fi;
+	od;
+	if mindeg = 1 then Order2degree1(L, D, dbx, n, y, x, grp);
+	elif mindeg = 2 then Order2degree2(L, D, dbx[index], n, y, x, grp);
+	else Order2degreen(L, D, dbx[index], n, y, x, grp);
+	fi; end;
+
+IntIfEasy := proc(f, x)
+	if f = 0 then 0
+	elif type(f,ratpoly(anything,x)) and degree(denom(f),x)<4 then int(f,x);
+	else Int(f,x); fi; end;
+
+Order2expint1 := proc(p, y, x) local u;
+	if degree(p, y) = 1 then
+		u := solve(p, y);
+		[u, exp(IntIfEasy(u, x))];
+	else NULL fi; end;
+
+Order2degree1 := proc(L, D, curves, n, y, x, grp) local i, l, a, u;
+	if grp then
+		if n = 1 then `Reducible 1-1`
+			else `Completely Reducible LeftLcm(1,1)`; fi;
+	else
+		l := [seq(Order2expint1(curves[i], y, x), i = 1..n)];
+		if nops(l) <> 1 or degree(L,D) <> 2 then
+			[seq(l[i][2], i=1..nops(l))]
+		else
+			u := l[1][1];
+			a := normal(-coeff(L,D,1) / coeff(L,D,2) - 2 * u);
+			[l[1][2], l[1][2] * Int(exp(IntIfEasy(a, x)), x)];
+		fi;
+	fi; end;
+
+Order2degree2 := proc(L, D, curve, n, y, x, grp) local i, s, m;
+	s := [solve(curve, y)];
+	m := nops(s);
+	if m = 1 then
+		if grp then `reducible 1-1`; else exp(IntIfEasy(s[1],x)); fi;
+	elif grp then
+		if type(s[1], ratpoly(anything, x)) then
+			`Completely Reducible LeftLcm(1,1)`;
+		elif n = 2 then Order2Group(L, D, x, `D_2`);
+		else  Order2Group(L, D, x, `Imprimitive irreducible`); fi;
+	else [seq(exp(IntIfEasy(s[i], x)), i = 1..m)]; fi; end;
+
+Order2degreen := proc(L, D, curve, n, y, x, grp) local p, d, g;
+	p := Order2sqrfreepart(curve, y);
+	d := degree(p, y);
+	if d = 1 then Order2degree1(L, D, [p], 1, y, x, grp);
+	elif d = 2 then Order2degree2(L, D, p, n, y, x, grp);
+	elif grp then
+		if d = 4 then g := `D_2`;
+		elif d = 6 then g := `A_4`;
+		elif d = 8 then g := `S_4`;
+		elif d = 12 then g := `A_5`;
+		else g := `finite primitive`; fi;
+		Order2Group(L, D, x, g);
+	else exp(Int(RootOf(curve, y), x)); fi; end;
+
+LogarithmicDerivative := proc(f, x, u) local a, d, dd, r, rr, sum, i;
+	if f = 0 then RETURN(true); fi;
+	a := numer(f);
+	d := denom(f);
+	dd := degree(d,x);
+	if dd <> degree(a,x) + 1 then RETURN(false); fi;
+	r := resultant(d, a - u * diff(d, x), x);
+	rr := roots(r, u);
+	sum := 0;
+	for i to nops(rr) do
+		if denom(rr[i][1]) = 1 then sum := sum + rr[i][2]; fi; od;
+	if sum = dd then true else false; fi;
+end;
+
+Order2Group := proc(L, D, x, g) local f;
+	f := normal(coeff(L,D,1) / coeff(L,D,2));
+	if LogarithmicDerivative(f,x,D) then g;
+	else cat(`Irreducible non unimodular, unimodular transform is `, g); fi;
+	end;
+
+Order2sqrfreepart := proc(p, x) local l, i;
+	l := sqrfree(p, x);
+	convert([seq(l[2][i][1], i = 1..nops(l[2]))], `*`); end;
+	
+Order2Verify := proc(L, D, x, sol)
+	normal(coeff(L, D, 2) * diff(sol, x$2) + coeff(L, D, 1) * diff(sol, x)
+	+ coeff(L, D, 0) * sol); end;
+
+NonLiouvillianSolver := proc(L, D, x, verb, grp)
+	if verb and not(grp) then
+		print(`The equation has no Liouvillian solutions`);
+		print(`Trying to find special function solutions...`);
+	fi;
+	if grp then Order2Group(L, D, x, `SL_2`);
+		else dsolveSpecial(L, D, x); fi; end;
+
+# Special function solver
+read `special.maple`:
+

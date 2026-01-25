@@ -1,0 +1,162 @@
+% ======================================================================
+% This code was written all or part by Dr. Manuel Bronstein from
+% Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+% decided to publish this code under the CeCILL open source license in
+% memory of Dr. Manuel Bronstein.
+% 
+% This software is governed by the CeCILL license under French law and
+% abiding by the rules of distribution of free software. You can use,
+% modify and/or redistribute the software under the terms of the CeCILL
+% license as circulated by CEA, CNRS and Inria at the following URL :
+% http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+% 
+% As a counterpart to the access to the source code and rights to copy,
+% modify and redistribute granted by the license, users are provided
+% only with a limited warranty and the software's author, the holder of
+% the economic rights, and the successive licensors have only limited
+% liability.
+% 
+% In this respect, the user's attention is drawn to the risks associated
+% with loading, using, modifying and/or developing or reproducing the
+% software by the user in light of its specific status of free software,
+% that may mean that it is complicated to manipulate, and that also
+% therefore means that it is reserved for developers and experienced
+% professionals having in-depth computer knowledge. Users are therefore
+% encouraged to load and test the software's suitability as regards
+% their requirements in conditions enabling the security of their
+% systems and/or data to be ensured and, more generally, to use and
+% operate it in the same conditions as regards security.
+% 
+% The fact that you are presently reading this means that you have had
+% knowledge of the CeCILL license and that you accept its terms.
+% ======================================================================
+% 
+\section{Input and Output}
+\shasta always takes its input from the {\tt stdin} stream, and gives
+two different sorts of output, that are sent to the {\tt stderr} and
+{\tt stdout} streams.
+Always use {\tt <} and {\tt >} to read and/or write files.
+When reading input from {\tt stdin}, use CTRL-D twice to exit \shasta.
+
+\subsection{Input}
+\shasta{} understands two different input formats, infix and lisp.
+You must choose one input format when you launch \shasta{} and you
+cannot change the input format during a session.
+Use {\tt -i fmt} on the command line
+to select the desired input format, where {\tt fmt}
+is either {\tt infix} (the default) or {\tt lisp}. The startup banner
+informs you of the selected input format.
+\begin{itemize}
+\item
+The infix format is the standard FORTRAN mathematical expression format
+with the additional feature that you can use both \^{} and $\ast\ast$ for
+exponentiation. All statements must be terminated by a semicolon.
+In addition, the infix format allows \shasta{} to read back
+the \TeX~that it generates, but do not expect it to understand \TeX~generated
+from anyone else, including you.
+\item
+The lisp format is the standard common LISP
+expression format, with the exception that the \shasta{} function names
+are case-sensitive.
+\end{itemize}
+The following sample sessions show how to compute the rational kernel of the
+operator $(n+1)(n+2)E^2 -n(n+1)E - n$ in both the infix and lisp formats:
+\begin{verbatim}
+% shasta
+
+                                                          /\    
+      -----  it                                          /| \    
+      \                 S H A S T A 1.0.0               / |  \    
+       \                                               |   \  \   
+       /                 A Sum^it server               |    |  \  
+      /                                                /     \  \ 
+      -----                                           /      |   \
+                   Use ^D to terminate session       /       /    \
+
+
+Sum^it - Copyright (c) 1994-2002, ETH Zurich, INRIA and M.Bronstein
+Algebra Library - Copyright (c) 1994-2002, ETH Zurich, INRIA and M.Bronstein
+Algebra Library - Copyright (c) 1998-2002, NAG Ltd., LIFL and M.Moreno Maza
+Aldor Library - Copyright (c) 1998-2002, INRIA and M.Bronstein
+GMP version: must be linked with GMP (Free Software Foundation)
+
+Input format = infix
+Independent variable = n
+Shift = E
+
+1 --> L := (n+1)*(n+2)*E^2 -n*(n+1)*E -n;
+0:00:00.010 (gc = 0:00:00.000)
+
+2 --> K := kernel(L);
+0:00:00.190 (gc = 0:00:00.120)
+\end{verbatim}
+% PAGE BREAK: MAY BE REMOVED
+\pagebreak
+\begin{verbatim}
+% shasta -ilisp
+
+                                                          /\    
+      -----  it                                          /| \    
+      \                 S H A S T A 1.0.0               / |  \    
+       \                                               |   \  \   
+       /                 A Sum^it server               |    |  \  
+      /                                                /     \  \ 
+      -----                                           /      |   \
+                   Use ^D to terminate session       /       /    \
+
+
+Sum^it - Copyright (c) 1994-2002, ETH Zurich, INRIA and M.Bronstein
+Algebra Library - Copyright (c) 1994-2002, ETH Zurich, INRIA and M.Bronstein
+Algebra Library - Copyright (c) 1998-2002, NAG Ltd., LIFL and M.Moreno Maza
+Aldor Library - Copyright (c) 1998-2002, INRIA and M.Bronstein
+GMP version: must be linked with GMP (Free Software Foundation)
+
+Input format = lisp
+Independent variable = n
+Shift = E
+
+1 --> (setq L (+ (* (+ n 1) (+ n 2) (^ E 2)) (- (* n (+ n 1) E)) (- n)))
+0:00:00.010 (gc = 0:00:00.000)
+
+2 --> (setq K (kernel L))
+0:00:00.190 (gc = 0:00:00.120)
+\end{verbatim}
+
+\subsection{Predefined names}
+By default, \shasta{} uses \nn~for the independent variable and
+\EE~for the shift $\nn \to \nn + 1$. Those two names are
+then reserved and cannot be assigned within a session. They can
+be redefined on the command line when you start \shasta.
+
+\subsection{Output}
+\shasta{} uses two different sorts of output:
+\begin{itemize}
+\item
+The {\em information output} consists of the startup banner,
+the input prompts, and the execution and garbage collection
+times of each command.
+This output is sent to {\tt stderr} and cannot be rerouted,
+but it can be completely turned off
+with the {\tt -q} (quiet) command line option.
+\item
+The {\em mathematical output,\/} which is sent to {\tt stdout} and can
+be rerouted to a file, contains only the results of specific output commands.
+Unlike most systems, \shasta{} does not write out automatically the results
+of its computations, so you must ensure that each result is assigned to a
+variable or it is lost forever. To send an expression to the mathematical
+output, use the command {\tt fmt(expr)} where {\tt expr} is the expression to
+write out and {\tt fmt} is one of {\tt axiom, lisp, maple} or {\tt tex}.
+Note that you
+can mix various output formats in the same session, and that the output
+format is independent of the selected input format. The {\tt axiom, lisp}
+and {\tt maple} commands produce valid inputs for the corresponding systems,
+while {\tt tex} produces \LaTeX~input. The {\tt tex} command makes absolutely
+no attempt at line-breaking or at generating nice-looking output, so consider
+what it produces as a file to be edited by hand. You may be better off
+producing ouput for another computer algebra system and using that system
+to produce decent \TeX~code.
+\end{itemize}
+This combination of two output streams allows you to create input files
+for other computer algebra systems by rerouting {\tt stdout} to a file,
+while still using \shasta{} interactively: just use the {\tt fmt} command
+on the results that you want to save in the input file.

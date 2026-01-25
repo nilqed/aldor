@@ -1,0 +1,130 @@
+# ======================================================================
+# This code was written all or part by Dr. Manuel Bronstein from
+# Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+# decided to publish this code under the CeCILL open source license in
+# memory of Dr. Manuel Bronstein.
+# 
+# This software is governed by the CeCILL license under French law and
+# abiding by the rules of distribution of free software. You can use,
+# modify and/or redistribute the software under the terms of the CeCILL
+# license as circulated by CEA, CNRS and Inria at the following URL :
+# http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+# 
+# As a counterpart to the access to the source code and rights to copy,
+# modify and redistribute granted by the license, users are provided
+# only with a limited warranty and the software's author, the holder of
+# the economic rights, and the successive licensors have only limited
+# liability.
+# 
+# In this respect, the user's attention is drawn to the risks associated
+# with loading, using, modifying and/or developing or reproducing the
+# software by the user in light of its specific status of free software,
+# that may mean that it is complicated to manipulate, and that also
+# therefore means that it is reserved for developers and experienced
+# professionals having in-depth computer knowledge. Users are therefore
+# encouraged to load and test the software's suitability as regards
+# their requirements in conditions enabling the security of their
+# systems and/or data to be ensured and, more generally, to use and
+# operate it in the same conditions as regards security.
+# 
+# The fact that you are presently reading this means that you have had
+# knowledge of the CeCILL license and that you accept its terms.
+# ======================================================================
+# 
+obj1 = series.o polysol.o balfact.o ratsol.o sysratsol.o sysholonom.o holonom.o
+obj2 = lodo2rec.o syspolysol.o
+objects = $(obj1) $(obj2)
+asobj1 = series.ao polysol.ao balfact.ao ratsol.ao sysratsol.ao sysholonom.ao
+asobj2 = holonom.ao lodo2rec.ao syspolysol.ao
+asobjects = $(asobj1) $(asobj2)
+flags	  = -M2 -Fao -Fo -Csmax=0 -Mno-mactext
+options   = $(flags) -q3
+tex1 = polysol.tex balfact.tex ratsol.tex sysratsol.tex series.tex lodo2rec.tex
+tex2 = syspolysol.tex
+tex = $(tex1) $(tex2)
+test      = Tratsol.as Tsysratsol.as
+testdir   = ../../../test
+libsumit  = ../../../lib/libsumit.a
+sumitasl  = ../../../lib/libsumit.al
+
+all: datestamp
+
+datestamp: $(objects)
+	ar rv $(libsumit) $(objects)
+	touch datestamp
+
+series.o: series.as holonom.o sysholonom.o
+	axiomxl $(options) series.as
+	ar rv $(sumitasl) series.ao
+
+lodo2rec.o: lodo2rec.as holonom.o
+	axiomxl $(options) lodo2rec.as
+	ar rv $(sumitasl) lodo2rec.ao
+
+polysol.o: polysol.as series.o lodo2rec.o ../../mat/linearmap.o
+	axiomxl $(options) polysol.as
+	ar rv $(sumitasl) polysol.ao
+
+balfact.o: balfact.as ../../polyfactor0/zringint.o
+	axiomxl $(options) balfact.as
+	ar rv $(sumitasl) balfact.ao
+
+holonom.o: holonom.as balfact.o ../../skewpoly/lodo/CATlodo.o ../place/lodnewton.o ../place/ratplace.o ../place/affplace.o ../place/infplace.o ../../skewpoly/lodifo.o
+	axiomxl $(options) holonom.as
+	ar rv $(sumitasl) holonom.ao
+
+sysholonom.o: sysholonom.as ../../skewpoly/lodifo.o ../../mat/matdense.o
+	axiomxl $(options) sysholonom.as
+	ar rv $(sumitasl) sysholonom.ao
+
+ratsol.o: ratsol.as polysol.o ../../skewpoly/lodo/lodotools.o ../../mat/categories/vect.o
+	axiomxl $(options) ratsol.as
+	ar rv $(sumitasl) ratsol.ao
+
+syspolysol.o: syspolysol.as series.o ../system/lodosystem.o
+	axiomxl $(options) syspolysol.as
+	ar rv $(sumitasl) syspolysol.ao
+
+sysratsol.o: sysratsol.as syspolysol.o ratsol.o ../system/sys2lodo.o ../../fraction/matquot.o
+	axiomxl $(options) sysratsol.as
+	ar rv $(sumitasl) sysratsol.ao
+
+.PHONY: doc
+doc: $(tex)
+
+lodo2rec.tex: lodo2rec.as
+	as2doc lodo2rec
+
+polysol.tex: polysol.as
+	as2doc polysol
+
+balfact.tex: balfact.as
+	as2doc balfact
+
+series.tex: series.as
+	as2doc series
+
+ratsol.tex: ratsol.as
+	as2doc ratsol
+
+syspolysol.tex: syspolysol.as
+	as2doc syspolysol
+
+sysratsol.tex: sysratsol.as
+	as2doc sysratsol
+
+.PHONY: test
+test: $(test)
+
+Tratsol.as: ratsol.as
+	as2test ratsol
+	cp Tratsol.as $(testdir)
+
+Tsysratsol.as: sysratsol.as
+	as2test sysratsol
+	cp Tsysratsol.as $(testdir)
+
+.PHONY: clean
+clean:
+	-rm $(objects) $(asobjects) $(tex) $(test)
+

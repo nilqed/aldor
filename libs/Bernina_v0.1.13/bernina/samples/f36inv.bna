@@ -1,0 +1,16 @@
+/* f36inv.bna: Example with Galois group F36 from
+    M.van Hoeij & J.A.Weil,
+    An Algorithm for Computing Invariants of Differential Galois Groups,
+    Proceedings of MEGA'96   */
+
+L := D^3 + 5*(9*x^2 + 14*x + 9)/(48*x^2*(x+1)^2) * D
+     - 5*(81*x^3 + 185*x^2 + 229*x + 81) / (432*x^3*(x+1)^3);
+
+/* there is a 2-dim space of degree-6 invariants */
+I := invariants(L,6);
+maple(I);
+
+/* and a 1-dim space of degree-9 invariants */
+I := invariants(L,9);
+maple(I);
+

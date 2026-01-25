@@ -1,0 +1,140 @@
+# ======================================================================
+# This code was written all or part by Dr. Manuel Bronstein from
+# Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+# decided to publish this code under the CeCILL open source license in
+# memory of Dr. Manuel Bronstein.
+# 
+# This software is governed by the CeCILL license under French law and
+# abiding by the rules of distribution of free software. You can use,
+# modify and/or redistribute the software under the terms of the CeCILL
+# license as circulated by CEA, CNRS and Inria at the following URL :
+# http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+# 
+# As a counterpart to the access to the source code and rights to copy,
+# modify and redistribute granted by the license, users are provided
+# only with a limited warranty and the software's author, the holder of
+# the economic rights, and the successive licensors have only limited
+# liability.
+# 
+# In this respect, the user's attention is drawn to the risks associated
+# with loading, using, modifying and/or developing or reproducing the
+# software by the user in light of its specific status of free software,
+# that may mean that it is complicated to manipulate, and that also
+# therefore means that it is reserved for developers and experienced
+# professionals having in-depth computer knowledge. Users are therefore
+# encouraged to load and test the software's suitability as regards
+# their requirements in conditions enabling the security of their
+# systems and/or data to be ensured and, more generally, to use and
+# operate it in the same conditions as regards security.
+# 
+# The fact that you are presently reading this means that you have had
+# knowledge of the CeCILL license and that you accept its terms.
+# ======================================================================
+# 
+obj1 = upolycat.o ufalg.o upolc0.o sqrfree.o resultant.o ugring.o
+obj2 = fring.o zring.o mgcd.o fftring.o
+objects   = $(obj1) $(obj2)
+asobj1 = upolycat.ao ufalg.ao upolc0.ao sqrfree.ao resultant.ao ugring.ao
+asobj2 = fring.ao zring.ao mgcd.ao fftring.ao
+asobjects   = $(asobj1) $(asobj2)
+flags     = -M2 -Fao -Fo -Csmax=0 -Mno-mactext
+options	  = $(flags) -q3
+tex1 = upolycat.tex ufalg.tex upolc0.tex sqrfree.tex resultant.tex fring.tex
+tex2 = zring.tex ugring.tex fftring.tex
+tex = $(tex1) $(tex2)
+test      = Tsqrfree.as Tresultant.as
+testdir   = ../../../test
+libsumit  = ../../../lib/libsumit.a
+sumitasl  = ../../../lib/libsumit.al
+
+all: datestamp
+
+datestamp: $(objects)
+	ar rv $(libsumit) $(objects)
+	touch datestamp
+
+ufalg.o: ufalg.as ../../categories/CATfinring.o ../../categories/CATqring.o ../../categories/CATint.o
+	axiomxl $(options) ufalg.as
+	ar rv $(sumitasl) ufalg.ao
+
+upolc0.o: upolc0.as ufalg.o ../../basic/product.o
+	axiomxl $(options) upolc0.as
+	ar rv $(sumitasl) upolc0.ao
+
+zring.o: zring.as upolc0.o
+	axiomxl $(options) zring.as
+	ar rv $(sumitasl) zring.ao
+
+fring.o: fring.as zring.o
+	axiomxl $(options) fring.as
+	ar rv $(sumitasl) fring.ao
+
+fftring.o: fftring.as upolc0.o
+	axiomxl $(options) fftring.as
+	ar rv $(sumitasl) fftring.ao
+
+ugring.o: ugring.as upolc0.o
+	axiomxl $(options) ugring.as
+	ar rv $(sumitasl) ugring.ao
+
+mgcd.o: mgcd.as upolc0.o
+	axiomxl $(options) mgcd.as
+	ar rv $(sumitasl) mgcd.ao
+
+upolycat.o: upolycat.as ugring.o fring.o sqrfree.o resultant.o mgcd.o
+	axiomxl $(options) upolycat.as
+	ar rv $(sumitasl) upolycat.ao
+
+sqrfree.o: sqrfree.as upolc0.o
+	axiomxl $(options) sqrfree.as
+	ar rv $(sumitasl) sqrfree.ao
+
+resultant.o: resultant.as upolc0.o
+	axiomxl $(options) resultant.as
+	ar rv $(sumitasl) resultant.ao
+
+.PHONY: doc
+doc: $(tex)
+
+ufalg.tex: ufalg.as
+	as2doc ufalg
+
+upolc0.tex: upolc0.as
+	as2doc upolc0
+
+ugring.tex: ugring.as
+	as2doc ugring
+
+fftring.tex: fftring.as
+	as2doc fftring
+
+fring.tex: fring.as
+	as2doc fring
+
+zring.tex: zring.as
+	as2doc zring
+
+upolycat.tex: upolycat.as
+	as2doc upolycat
+
+sqrfree.tex: sqrfree.as
+	as2doc sqrfree
+
+resultant.tex: resultant.as
+	as2doc resultant
+
+.PHONY: test
+test: $(test)
+
+Tsqrfree.as: sqrfree.as
+	as2test sqrfree
+	cp Tsqrfree.as $(testdir)
+
+Tresultant.as: resultant.as
+	as2test resultant
+	cp Tresultant.as $(testdir)
+
+.PHONY: clean
+clean:
+	-rm $(objects) $(asobjects) $(tex) $(test) article.*
+

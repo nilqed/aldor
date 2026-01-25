@@ -1,0 +1,97 @@
+-- ======================================================================
+-- This code was written all or part by Dr. Manuel Bronstein from
+-- Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+-- decided to publish this code under the CeCILL open source license in
+-- memory of Dr. Manuel Bronstein.
+-- 
+-- This software is governed by the CeCILL license under French law and
+-- abiding by the rules of distribution of free software. You can use,
+-- modify and/or redistribute the software under the terms of the CeCILL
+-- license as circulated by CEA, CNRS and Inria at the following URL :
+-- http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+-- 
+-- As a counterpart to the access to the source code and rights to copy,
+-- modify and redistribute granted by the license, users are provided
+-- only with a limited warranty and the software's author, the holder of
+-- the economic rights, and the successive licensors have only limited
+-- liability.
+-- 
+-- In this respect, the user's attention is drawn to the risks associated
+-- with loading, using, modifying and/or developing or reproducing the
+-- software by the user in light of its specific status of free software,
+-- that may mean that it is complicated to manipulate, and that also
+-- therefore means that it is reserved for developers and experienced
+-- professionals having in-depth computer knowledge. Users are therefore
+-- encouraged to load and test the software's suitability as regards
+-- their requirements in conditions enabling the security of their
+-- systems and/or data to be ensured and, more generally, to use and
+-- operate it in the same conditions as regards security.
+-- 
+-- The fact that you are presently reading this means that you have had
+-- knowledge of the CeCILL license and that you accept its terms.
+-- ======================================================================
+-- 
+----------------------------- primes31.as ----------------------------------
+#include "sumit"
+
+macro Z == SingleInteger;
+
+Primes31: PrimeTable == add {
+	-- the last 200 31-bit primes
+	primes:Array Z == [_
+		2147479273, 2147479307, 2147479339, 2147479349, 2147479361,_
+		2147479381, 2147479403, 2147479421, 2147479447, 2147479489,_
+		2147479507, 2147479513, 2147479517, 2147479531, 2147479547,_
+		2147479549, 2147479573, 2147479589, 2147479601, 2147479619,_
+		2147479637, 2147479643, 2147479657, 2147479681, 2147479751,_
+		2147479753, 2147479757, 2147479781, 2147479787, 2147479819,_
+		2147479823, 2147479879, 2147479891, 2147479897, 2147479907,_
+		2147479937, 2147479991, 2147480009, 2147480011, 2147480039,_
+		2147480161, 2147480197, 2147480207, 2147480219, 2147480227,_
+		2147480297, 2147480299, 2147480311, 2147480327, 2147480369,_
+		2147480429, 2147480437, 2147480459, 2147480471, 2147480507,_
+		2147480519, 2147480527, 2147480551, 2147480591, 2147480611,_
+		2147480623, 2147480641, 2147480651, 2147480677, 2147480683,_
+		2147480707, 2147480723, 2147480743, 2147480747, 2147480791,_
+		2147480837, 2147480843, 2147480849, 2147480893, 2147480897,_
+		2147480899, 2147480921, 2147480927, 2147480941, 2147480957,_
+		2147480969, 2147480971, 2147480989, 2147481019, 2147481031,_
+		2147481053, 2147481071, 2147481139, 2147481143, 2147481151,_
+		2147481173, 2147481179, 2147481199, 2147481209, 2147481247,_
+		2147481263, 2147481269, 2147481283, 2147481311, 2147481317,_
+		2147481337, 2147481353, 2147481359, 2147481367, 2147481373,_
+		2147481487, 2147481491, 2147481499, 2147481509, 2147481529,_
+		2147481563, 2147481571, 2147481629, 2147481673, 2147481793,_
+		2147481797, 2147481811, 2147481827, 2147481863, 2147481883,_
+		2147481893, 2147481899, 2147481901, 2147481907, 2147481937,_
+		2147481949, 2147481967, 2147481997, 2147482021, 2147482063,_
+		2147482081, 2147482091, 2147482093, 2147482121, 2147482223,_
+		2147482231, 2147482237, 2147482273, 2147482291, 2147482327,_
+		2147482343, 2147482349, 2147482361, 2147482367, 2147482409,_
+		2147482417, 2147482481, 2147482501, 2147482507, 2147482577,_
+		2147482583, 2147482591, 2147482621, 2147482661, 2147482663,_
+		2147482681, 2147482693, 2147482697, 2147482739, 2147482763,_
+		2147482801, 2147482811, 2147482817, 2147482819, 2147482859,_
+		2147482867, 2147482873, 2147482877, 2147482921, 2147482937,_
+		2147482943, 2147482949, 2147482951, 2147483029, 2147483033,_
+		2147483053, 2147483059, 2147483069, 2147483077, 2147483123,_
+		2147483137, 2147483171, 2147483179, 2147483237, 2147483249,_
+		2147483269, 2147483323, 2147483353, 2147483399, 2147483423,_
+		2147483477, 2147483489, 2147483497, 2147483543, 2147483549,_
+		2147483563, 2147483579, 2147483587, 2147483629, 2147483647];
+
+	-- 31-bit primes of the form 2^n k + 1 for n = 1,2,...,19
+	fourier:Array Z == [_
+		2147481359, 2147481373, 2147481337, 2147483249, 2147482081,_
+		2147481793, 2147479937, 2147477249, 2147483137, 2147415041,_
+		2147473409, 2147389441, 2147377153, 2147205121, 2146336769,_
+		2145976321, 2147352577, 2142502913, 2147481337];
+
+	-- primitive 2^n-th roots of unity for the above fourier primes
+	roots:Array Z == [_
+		2147481358, 1656763493, 1048073712, 2056890868,  123061290,_
+		 198634476, 1036818207, 2074424914,  365034239,  101307741,_
+		 383167813,  447825397, 1202012506,  709811861, 1772766431,_
+		1861286377, 1615402923, 1483439287, 1691121884];
+}
+

@@ -1,0 +1,361 @@
+% ======================================================================
+% This code was written all or part by Dr. Manuel Bronstein from
+% Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+% decided to publish this code under the CeCILL open source license in
+% memory of Dr. Manuel Bronstein.
+% 
+% This software is governed by the CeCILL license under French law and
+% abiding by the rules of distribution of free software. You can use,
+% modify and/or redistribute the software under the terms of the CeCILL
+% license as circulated by CEA, CNRS and Inria at the following URL :
+% http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+% 
+% As a counterpart to the access to the source code and rights to copy,
+% modify and redistribute granted by the license, users are provided
+% only with a limited warranty and the software's author, the holder of
+% the economic rights, and the successive licensors have only limited
+% liability.
+% 
+% In this respect, the user's attention is drawn to the risks associated
+% with loading, using, modifying and/or developing or reproducing the
+% software by the user in light of its specific status of free software,
+% that may mean that it is complicated to manipulate, and that also
+% therefore means that it is reserved for developers and experienced
+% professionals having in-depth computer knowledge. Users are therefore
+% encouraged to load and test the software's suitability as regards
+% their requirements in conditions enabling the security of their
+% systems and/or data to be ensured and, more generally, to use and
+% operate it in the same conditions as regards security.
+% 
+% The fact that you are presently reading this means that you have had
+% knowledge of the CeCILL license and that you accept its terms.
+% ======================================================================
+% 
+\section{User's Guide}
+
+This guide introduces the common types and categories provided by \salli,
+and presupposes some familiarity with programming in \aldor.
+If you are unfamiliar with \aldor, then after installing \salli, go
+through the tutorial
+{\tt salli/tutorial/tutorial.ps}, which will familiarize you both with
+\aldor and \salli.
+\salli provides basic categories and types in 3 areas:
+arithmetic, data structures and input/output. Figure 1 shows the
+category hierarchy in those 3 areas and a few of the types provided.
+Note that all the category names end with the word {\tt Type}.
+
+\subsection{Arithmetic}
+\salli contains 2 sorts of integers: \astype{MachineInteger} provides
+the full-word signed machine integers, while \astype{Integer} provides
+``infinite'' precision software integers\footnote{The actual implementation
+of software integer arithmetic is external and can be selected at link-time}.
+Both are of category \astype{IntegerType}, so exactly the same functions
+can be applied to them. In addition, \astype{MachineInteger} exports 3 useful
+constants: \asfunc{MachineInteger}{min}
+and \asfunc{MachineInteger}{max}, whose values are the smallest and
+greatest machine integers,
+and \asfunc{MachineInteger}{bytes}, whose values is the
+machine wordsize in bytes.
+The \asfunc{MachineInteger}{bytes} constant allows you to write
+wordsize--dependent code, for example when generating half--word--size prime
+numbers. A \astype{MachineInteger} value {\tt n}
+can be coerced to an \astype{Integer}
+via {\tt n::Integer}, and the reverse conversion is provided via the
+\asfunc{Integer}{machine} function,
+\ie {\tt n := machine m}. This last conversion can
+of course lose precision if {\tt m} does not fit within a machine word.
+The general form for iterating over a range of integers is\\
+\centerline{ {\tt for} {\em variable} {\tt in} {\em from}{\tt..}{\em to}
+{\tt by} {\em step} | {\em condition} {\tt repeat \{ \dots~\}} }
+where the {\em to} parameter and the {\tt by} and ``| {\em condition}''
+parts are optional.
+
+Besides the integers, \salli also provides single--precision
+(\astype{SingleFloat}) and double--precision (\astype{DoubleFloat})
+floating point numbers with a very limited set of exports as well
+as logical values (\astype{Boolean}).
+
+\subsection{Data structures}
+\salli provides 3 data structures having very similar functionalities:
+\astype{List}~{\tt T} provides linked lists whose entries are of type {\tt T},
+\astype{Array}~{\tt T} provides arrays whose entries are of type {\tt T},
+and \astype{Set}~{\tt T} provides finite sets whose entries are of type {\tt T},
+all of them of category \astype{FiniteLinearStructureType}~{\tt T}.
+In addition, \astype{PrimitiveArray}~{\tt T} provides
+C-like arrays whose entries
+are of type {\tt T}, but its exports are less rich than the other three.
+All of those data structures can be created by explicitly listing a
+finite number of elements, for example\\
+\centerline{{\tt l:\astype{List} \astype{String} := ["hello", "world"] }}
+or by bracketing a generator, for example\\
+\centerline{ {\tt a:\astype{PrimitiveArray} \astype{MachineInteger} :=
+[n for n in 1..100 | odd?~n]}.}
+In addition, the function \asfunc{LinearStructureType}{new}
+also allows structures to be created, and the constant
+\asfunc{LinearStructureType}{empty}
+returns an empty structure. The individual elements can
+be accessed via {\tt s.n} where {\tt s} is a data structure and
+{\tt n} an index. The indexing scheme and the bound--checking scheme
+both depend on the structure:
+\astype{List} and \astype{Set} are 1-indexed, while
+\astype{Array} and \astype{PrimitiveArray} are 0-indexed, and
+\astype{Array} checks whether the index is within the range
+of the array, while \astype{List}, \astype{Set} and \astype{PrimitiveArray} do
+not perform this check. If you need to know the indexing scheme at runtime,
+or want to write index-independent code, the {\tt firstIndex} constant
+returns the index of the first element of a structure.
+The general form for iterating efficiently over a
+\astype{FiniteLinearStructureType} is\\
+\centerline{ {\tt for} {\em variable} {\tt in} {\em structure}
+| {\em condition} {\tt repeat \{ \dots~\}} }
+where ``| {\em condition}'' is optional. This is available
+for \astype{List}, \astype{Set} and \astype{Array}
+but not for \astype{PrimitiveArray}.
+Aliases to substructures can be created via the
+\asfunc{LinearStructureType}{+} operation,
+which shifts the start of any structure without copying, and for
+an array {\tt a}, {\tt a(n,m)} returns the subarray {\tt a.n}
+through {\tt a.m} without copying.
+
+There is a classical trade-off between the 2 array types:
+\astype{Array} is richer and offers bound-checking, while
+\astype{PrimitiveArray} is compatible with C arrays and offers
+faster direct access to its elements.
+For this reason, \salli provides the \asfunc{Array}{data} function,
+which returns
+the data of an \astype{Array} as a \astype{PrimitiveArray} without copying.
+It is thus possible to use \astype{Array} in your code, making sure to
+apply \asfunc{Array}{data} to it before accessing elements in a loop.
+For example, the following function efficiently computes the sum
+of all the elements with even indices of an array of integers:
+\begin{ttyout}
+evenSum(a:Array Integer):Integer == {
+    import from MachineInteger;              -- for the index i
+    import from PrimitiveArray Integer;      -- for accessing the elements of p
+    p := data a;                             -- for efficiency (no bound checks)
+    sum:Integer := 0;
+    for i in 0..#a by 2 repeat sum := sum + p.i;
+    sum;
+}
+\end{ttyout}
+In the reverse direction, the function \asfunc{Array}{array}
+creates an \astype{Array}
+from a \astype{PrimitiveArray} without copying. It is recommended to use
+\astype{Array} in your programs, and to use the \asfunc{Array}{data}
+and \asfunc{Array}{array} functions to go back and forth between \astype{Array}
+and \astype{PrimitiveArray} as needed for efficiency or
+for calling C functions. Note that the
+\asfunc{FiniteLinearStructureType}{generator} function
+in \astype{Array} uses the \asfunc{Array}{data} function, so iterating an
+\astype{Array} {\tt a} via\\
+\centerline{{\tt for x in a repeat \{ \dots~\}}}
+does not perform any superfluous bound-checking.
+
+Since \astype{String} has the category \astype{FiniteLinearStructureType}
+\astype{Character}, the above functionalities
+are also applicable to strings. For example,\\
+\centerline{{\tt for c in "hello" repeat \{ \dots~\}}}
+assigns successively the characters 'h', 'e', 'l', 'l' and 'o' to {\tt c},
+and strings can be created from \builtin{Generator} \astype{Character}.
+
+Hash tables are provided by the \astype{HashTable} type and are created
+via the \asfunc{HashTable}{table} function, as in\\
+\centerline{{\tt t:HashTable(String, MachineInteger) := table 1000;}}
+The hash function defaults to the one provided by the type of the keys
+if it has \astype{HashType}, but can be overridden by providing your
+own as last argument to the hash table type constructor, as in\\
+\centerline{{\tt t:HashTable(SingleFloat, MachineInteger, h) := table 1000;}}
+where {\tt h} any function producing machine integers from machine
+floats. Providing the hash function is required when the type of
+the keys does not have \astype{HashType}.
+
+\subsection{Input/Output}
+\salli provides an I/O model inspired from the stream model of C++.
+Data is written in text format on objects of type
+\astype{TextWriter}, in binary format on objects of type
+\astype{BinaryWriter}, read in text format from
+objects of type \astype{TextReader}
+and read in binary format from objects of type \astype{BinaryReader}.
+The standard streams \asfunc{TextReader}{stdin},
+\asfunc{TextWriter}{stdout} and \asfunc{TextWriter}{stderr}
+are constants exported
+by \astype{TextReader} and \astype{TextWriter} respectively,
+while \asfunc{BinaryReader}{bin}, \asfunc{BinaryWriter}{bout}
+and \asfunc{BinaryWriter}{berr} are their binary
+counterparts.
+In addition, any \astype{File} or \astype{String} can be coerced into either
+text or binary readers or writers, and you can create
+custom streams via the \asfunc{TextReader}{textReader},
+\asfunc{TextWriter}{textWriter},
+\asfunc{BinaryReader}{binaryReader} and \asfunc{BinaryWriter}{binaryWriter}
+functions.
+
+The function {\tt $<<$} is used for both input and output:
+its binary version ``{\em writer} \asfunc{OutputType}{$<<$} {\em data}''
+is for output,
+and its unary version ``\asfunc{InputType}{$<<$} {\em reader}'' is for input,
+in which
+case the return type must be specified, either via an assigment to a variable,
+\eg {\tt n:Integer := $<<$ stdin}, or via the {\tt @} construct, or via
+the context. Whether you are reading/writing text or serializing data depends
+on the reader/writer type (text or binary).
+For example, a \salli version of the ``Hello world'' program is
+\begin{ttyout}
+#include "salli"
+
+import from TextWriter, String, Character;  -- Character needed for 'newline'
+stdout << "Hello world!" << newline;
+\end{ttyout}
+Text and binary writers can be flushed, either via the
+\asfunc{TextWriter}{flush!}
+function, or by sending the constant \asfunc{WriterManipulator}{flush},
+exported by \astype{WriterManipulator}. Thus, the two lines\\
+\centerline{\tt flush!(stdout $<<$ "Hello world" $<<$ newline);}
+and\\
+\centerline{\tt stdout $<<$ "Hello world" $<<$ newline $<<$ flush;}
+are equivalent. The manipulator \asfunc{WriterManipulator}{endnl}
+sends first a \asfunc{Character}{newline}
+and then flushes the stream, so another alternative for the above is\\
+\centerline{\tt stdout $<<$ "Hello world" $<<$ endnl;}
+
+When coercing files and strings to readers or writers, you should assign the
+resulting stream to a variable if you intend to read or write more than
+one value from it, since the coercion resets the stream to the beginning
+of the file or string. For example, if {\tt s} is the \astype{String}
+``   12   56'', then
+\begin{ttyout}
+import from Integer;
+a:Integer := << s::TextReader;             -- assigns 12 to a
+b:Integer := << s::TextReader;             -- assigns again 12 to b
+\end{ttyout}
+while
+\begin{ttyout}
+import from Integer;
+p := s::TextReader;
+a:Integer := << p;                         -- assigns 12 to a
+b:Integer := << p;                         -- assigns 56 to b
+\end{ttyout}
+Similarly, if the file ``mydata''
+contains ``[1,2,3]  [4,5,6]'', then the way to read both structures is
+\begin{ttyout}
+import from List Integer, Array MachineInteger, File, String;
+f := open("mydata", fileRead);
+s := f::TextReader;
+l:List Integer := << s;                     -- assigns [1,2,3] to l
+v:Array MachineInteger := << s;             -- assigns [4,5,6] to v
+close! f;
+\end{ttyout}
+When coercing a \astype{String} to a text or binary writer, you must ensure
+that the string is long enough to contain all the data that will be written to
+it, since \salli does not protect you against writing past the end of the
+string, and the string is not extended by the write operation. You can
+either use \asfunc{LinearStructureType}{new} to create a large enough buffer,
+or write into an existing string constant. In the latter case, you may have
+to send \asfunc{Character}{null} (a constant exported by \astype{Character})
+to your string in order to terminate it after your data.
+
+\salli provides 2 categories for text input/output: \astype{InputType}
+is for types whose elements can be read from a \astype{TextReader},
+and \astype{OutputType} is for types whose elements can be written
+to a \astype{TextWriter}. In addition, the single category
+\astype{SerializableType} is for types whose elements can be serialized
+in binary format from a \astype{BinaryReader} and to a \astype{BinaryWriter}.
+All the arithmetic types provided by \salli, as well as \astype{Character}
+and \astype{String} are \astype{InputType}, \astype{OutputType} and
+\astype{SerializableType},
+allowing you to read, write and serialize their elements. The data structures
+\astype{List} {\tt T}, \astype{Array} {\tt T} and 
+\astype{HashTable}{\tt(K,V)} inherit whatever input
+and output capabilities that their parameters have.
+
+Programs that perform input or output tend to repeatedly import 
+the various stream types and accessories (manipulators, characters and
+strings). As an alternative to those imports,
+you can use {\tt \#include "sallio"} in
+addition to {\tt \#include "salli"}, which does a global import of
+all the following: \astype{Character}, \astype{String}, \astype{File},
+\astype{TextReader}, \astype{TextWriter}, \astype{BinaryReader},
+\astype{BinaryWriter} and
+\astype{WriterManipulator}.
+So an alternative ``Hello world'' program would be:
+\begin{ttyout}
+#include "salli"                              -- performs no import
+#include "sallio"                             -- imports all the I/O types
+
+stdout << "Hello world!" << endnl;
+\end{ttyout}
+
+\subsection{Compatibility with C types}
+Several of \salli's types are compatible with their C counterparts and
+can be passed as arguments to C functions.
+% Table~\ref{tab:compatc}  %% BUG IN LATEX ?
+Table~1
+lists those types that can safely be exchanged with C functions.
+\begin{table}[ht]
+% \label{tab:compatc}
+\begin{center}
+\begin{tabular}{|ll|} \hline
+\salli & C \\ \hline
+\astype{Boolean} & \tt{long} \\
+\astype{MachineInteger} & \tt{long} \\
+\astype{Character} & \tt{char} \\
+\astype{String} & \tt{char*} \\
+\astype{Pointer} & \tt{void*} \\
+\astype{PrimitiveArray} & \tt{void**} \\
+\astype{PrimitiveArray} \astype{MachineInteger} & \tt{long*} \\
+\astype{File} & \tt{FILE*} \\ \hline
+\end{tabular}
+\caption{Compatibility between \salli and C types}
+\end{center}
+\end{table}
+Note that \aldor does not provide a type that is guaranteed to be compatible 
+with the C {\tt int} type on all platforms, so in order to use C functions
+having {\tt int} in their parameters, you must first write a C wrapper that
+communicates only through the type {\tt long}.
+In addition, even though some type {\tt T} can be compatible
+with a C type {\tt TC}, it is not always the case that
+\astype{PrimitiveArray} {\tt T} is compatible with {\tt TC*}, for
+example \astype{PrimitiveArray} \astype{Character} is not compatible
+with {\tt char*} (nor is it compatible with \astype{String} in \salli).
+
+\subsection{Profiling}
+\salli provides a couple of tools to help you determine how much time is
+spent in various sections of your programs. The simplest way is to use
+the TIMESTART and TIME(\dots) macros in your code. Those macros have
+absolutely no effect when compiling normally, but if you add the option
+{\tt -dSALLITIME} in the compiler command line when making the {\tt .ao}
+file, then a CPU stopwatch is started when TIMESTART is encountered,
+and read at each TIME(\dots) statement. Those readings are then written
+to \asfunc{TextWriter}{stderr} together with whatever message appears inside
+the TIME macro. For example, if a computation has 3 major parts, then the
+following coding allows you to determine how much time is spent in each
+part:
+\begin{ttyout}
+myComputation(...):... == {
+    TIMESTART;                  -- has no effect on normal compilation
+    ... part 1 of the computation ...
+    TIME("myComputation: part one done at");
+    ... part 2 of the computation ...
+    TIME("myComputation: part two done at");
+    ... part 3 of the computation ...
+    TIME("myComputation: part three done at");
+    ...                         -- do not forget to return the result here
+}
+\end{ttyout}
+When profiling sections of a multi-file library, simply recompile the
+desired {\tt .as} files with the {\tt -dSALLITIME -fo -q3} options, then link
+your executable with the local {\tt .o} files, which takes precedence over
+the ones in the library.
+
+Finer profiling is possible via the use of the type \astype{Timer}, whose
+objects are stopwatches that can be started and stopped at will. See the
+reference section for more information on the use of timers.
+
+\subsection{Exceptions}
+\salli can throw two different exceptions: \asfunc{File}{open}
+throws the exception \astype{FileException} if the file cannot
+be opened in the desired mode, while accessing an \astype{Array}
+out of bounds cause the exception \astype{ArrayException} to
+be thrown. Those exceptions are of type \astype{FileExceptionType}
+and \astype{ArrayExceptionType} respectively.
+No function in \salli makes a call to \asfunc{String}{error}.

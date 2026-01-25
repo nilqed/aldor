@@ -1,0 +1,118 @@
+{VERSION 3 0 "DEC ALPHA UNIX" "3.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{CSTYLE "" -1 256 "terminal" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "
+" -1 257 "terminal" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 258 "
+terminal" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 259 "terminal" 
+0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 
+-1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }
+{PSTYLE "Text Output" -1 2 1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 
+1 0 0 0 0 0 1 3 0 3 }1 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Warning
+" 2 7 1 {CSTYLE "" -1 -1 "" 0 1 0 0 255 1 0 0 0 0 0 0 1 0 0 }0 0 0 -1 
+-1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Error" 7 8 1 {CSTYLE "" -1 -1 "" 0 1 
+255 0 255 1 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }
+{PSTYLE "Maple Output" 0 11 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 
+0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "" 11 12 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }1 0 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }{PSTYLE "" 0 256 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 1 
+0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 256 "" 0 "" {TEXT -1 16 "IMPORTANT: the  " }
+{TEXT 256 7 "shasta " }{TEXT -1 66 " executable must be in your path b
+efore you can execute this demo." }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 
+50 "To start, we tell maple about the location of the " }{TEXT 258 8 "
+shasta.m" }{TEXT -1 31 " file, which is located in the " }{TEXT 259 5 
+"maple" }{TEXT -1 139 " directory of shasta.\n Replace the '.' by the \+
+appropriate directory on your system. The following line is only valid
+ if you are using maple" }}{PARA 0 "" 0 "" {TEXT -1 10 "from the  " }
+{TEXT 257 5 "maple" }{TEXT -1 105 "  directory of shasta. Alternativel
+y, you can add a line to this effect in your .mapleinit file, and then
+" }}{PARA 0 "" 0 "" {TEXT -1 24 "run maple from anywhere." }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 23 "libname := `.`,libname:" }}}{EXCHG {PARA 0 "
+" 0 "" {TEXT -1 77 "We then load the shasta interface, bringing the sh
+asta  functions into scope:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "with
+(shasta);" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#74%(adjointG%&applyG%+dis
+persionG%.exteriorPowerG%&hyperG%(leftGcdG%(leftLcmG%-makeIntegralG%*n
+ormalizeG%1polynomialKernelG%3polynomialSolutionG%/rationalKernelG%1ra
+tionalSolutionG%)rightGcdG%)rightLcmG%.rightQuotientG%)sectionsG%'spre
+adG" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 93 "Difference operators are e
+ntered simply as polynomials in the shift and independent variable:" }
+{TEXT -1 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 47 "L := (n+2)*E^2 + (n
+^2+3*n+2)*E - n^2 - 3*n - 2;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"LG
+,,*&,&%\"nG\"\"\"\"\"#F)F))%\"EGF*\"\"\"F)*&,(*$)F(F*F-F)F(\"\"$F*F)F)
+F,F)F)F0!\"\"F(!\"$!\"#F)" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 131 "Whe
+n calling a shasta  function, e.g. adjoint, add the shift operator  na
+me and independent variable name to the shasta parameters:" }{TEXT -1 
+0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "tL := adjoint(L,E,n);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#tLG,**&,(*$)%\"nG\"\"#\"\"\"!\"\"F*
+!\"(!#7\"\"\"F0)%\"EGF+F,F0*&,(F(F0F*\"\"&\"\"'F0F0F2F0F0F*F0F+F0" }}}
+{EXCHG {PARA 0 "" 0 "" {TEXT -1 101 "The functions 'polynomialKernel' \+
+and  'rationalKernel' always  return arrays, potentially empty ones:" 
+}{TEXT -1 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "rationalKernel(L,E
+,n);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#-%'vectorG6#7\"" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "K := rationalKernel(tL,E,n);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"KG-%'vectorG6#7#*&\"\"\"F*,&%\"nG
+\"\"\"\"\"#F-!\"\"" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 80 "We can veri
+fy that the first entry of K is indeed a solution of the adjoint of L
+" }{TEXT -1 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "apply(tL,K[1],E,
+n);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"!" }}}{EXCHG {PARA 0 "" 0 "
+" {TEXT -1 139 "Since the adjoint of L has a rational solution, L must
+ be reducible, which implies in this case that it must have a hypergeo
+metric solution" }{TEXT -1 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "f
+ := hyper(L,E,n);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"fG,&%\"nG!\"
+\"F'\"\"\"" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 125 "hyper returns eith
+er [] if there are no hypergeometric solutions, or f(n) = y(n+1)/y(n) \+
+where y is a hypergeometric solution." }}{PARA 0 "" 0 "" {TEXT -1 75 "
+In that case, y can be recovered from f by calling rsolve on y(n+1)=f*
+y(n):" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "rsolve(y(n+1)=f*y(n),y(n))
+;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#*()!\"\"%\"nG\"\"\"-%&GAMMAG6#,&F
+&F'F'F'F'-%\"yG6#\"\"!F'" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 75 "More \+
+general closed-form solutions can be computed by 'liouvillianSolution'
+" }{TEXT -1 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 98 "L := (n+2)*(n^5+
+2*n^4+n^3-1)*E^2 + (n+1)*(5*n^2+8*n+4)*E - n^2 * (n^5+7*n^4+19*n^3+25*
+n^2+16*n+3);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"LG,(*(,&%\"nG\"\"
+\"\"\"#F)F),**$)F(\"\"&\"\"\"F)*$)F(\"\"%F/F**$)F(\"\"$F/F)!\"\"F)F))%
+\"EGF*F/F)*(,&F(F)F)F)F),(*$)F(F*F/F.F(\"\")F2F)F)F8F)F)*&F=F/,.F,F)F0
+\"\"(F3\"#>F<\"#DF(\"#;F5F)F)F6" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 32 "y := liouvillianSolution(L,E,n);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%\"yG-%4liouvillianSolutionG6%,(*(,&%\"nG\"\"\"\"\"#F,F,,**$)F+
+\"\"&\"\"\"F,*$)F+\"\"%F2F-*$)F+\"\"$F2F,!\"\"F,F,)%\"EGF-F2F,*(,&F+F,
+F,F,F,,(*$)F+F-F2F1F+\"\")F5F,F,F;F,F,*&F@F2,.F/F,F3\"\"(F6\"#>F?\"#DF
++\"#;F8F,F,F9F;F+" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 147 "The above r
+esult means that a solution of Ly=0 is the interlacing of  z1(n) and z
+2(n) where zi(n) is a hypergeometric solution of z(n+1)=y[i]*z(n):" }
+{TEXT -1 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 66 "z1 := simplify(LREt
+ools[hypergeomsols](z(n+1)=y[1]*z(n),z(n),\{\}));" }}{PARA 8 "" 1 "" 
+{TEXT -1 76 "Error, (in LREtools[hypergeomsols]) Only polynomial coeff
+icients are handled" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 36 "z2 :
+= rsolve(z(n+1)=y[2]*z(n),z(n));" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%
+#z2G*&-%(productG6$&-%4liouvillianSolutionG6%,(*(,&%$_n1G\"\"\"\"\"#F1
+F1,**$)F0\"\"&\"\"\"F1*$)F0\"\"%F7F2*$)F0\"\"$F7F1!\"\"F1F1)%\"EGF2F7F
+1*(,&F0F1F1F1F1,(*$)F0F2F7F6F0\"\")F:F1F1F@F1F1*&FEF7,.F4F1F8\"\"(F;\"
+#>FD\"#DF0\"#;F=F1F1F>F@F06#F2/F0;\"\"!,&%\"nGF1F>F1F1-%\"zG6#FPF1" }}
+}{EXCHG {PARA 0 "" 0 "" {TEXT -1 75 "Systems Y(n+1) = A(n)Y(n) are sol
+ved by passing the matrix A(n) as argument" }{TEXT -1 0 "" }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 295 "A := linalg[matrix](4,4,[(n-1)/(n+5), (7*n^
+2+4*n+n^3)/(n+5), -n-1, (1-n)*(n^2+5*n+5)/(n+5),\n        (n-1)/(n*(n+
+1)*(n+5)), (n-1)/((n+1)*(n+5)), 0, (n-1)/((n+1)*(n+5)),\n        (n-1)
+/(n+5), n*(n-1)/(n+5), -n, -(n^3+3*n^2-5*n-5)/(n+5),\n        (1-n)/(n
+*(n+5)), (1-n)/(n+5), 1, (n+4)*(n-1)/(n+5)]);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"AG-%'matrixG6#7&7&*&,&%\"nG\"\"\"!\"\"F-\"\"\",&F,F
+-\"\"&F-!\"\"*&,(*$)F,\"\"#F/\"\"(F,\"\"%*$)F,\"\"$F/F-F/F0F2,&F,F.F.F
+-*&*&,&F-F-F,F.F-,(F5F-F,F1F1F-F-F/F0F27&*&F+F/*(F,\"\"\",&F,F-F-F-\"
+\"\"F0\"\"\"F2*&F+F/*&FF\"\"\"F0\"\"\"F2\"\"!FI7&F**&*&F,F-F+F-F/F0F2,
+$F,F.,$*&,*F:F-F5F<F,!\"&FUF-F/F0F2F.7&*&F@F/*&F,\"\"\"F0\"\"\"F2*&F@F
+/F0F2F-*&*&,&F,F-F9F-F-F+F/F/F0F2" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 27 "K := rationalKernel(A,E,n);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"KG-%'matrixG6#7&7$*&,2*$)%\"nG\"\"(\"\"\"#!\"\"\"$W
+\"*$)F.\"\"'F0#F2\"#;*$)F.\"\"&F0F1*$)F.\"\"%F0#!#8\"#[*$)F.\"\"$F0#!$
+R#\"#s*$)F.\"\"#F0#!#6FDF.#!\"#FDFN\"\"\"F0,.F4FOF9\"\"*F<\"#DFB\"#:FH
+!#EF.!#C!\"\",$F.#F2\"$?(7$,$*&F0F0,(F<FOFBF6FH\"\")FVFM\"\"!7$*&,.F9F
+1F<#F2\"#=FB#FOF8FH#\"#<\"#OF.#!#BFbo#!\"$FJFOF0,,F<FOFB\"#5FH\"#NF.\"
+#]\"#CFOFV,&F.FX#FO\"$g$FO7$*&,(FH#FOF3F.#FOF[p#F2FQFOF0,(FHFOF.F6FhnF
+OFV#FOFY" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 41 "We can verify that K \+
+is indeed a solution" }{TEXT -1 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+50 "map(normal, evalm(subs(n=n+1,evalm(K)) - A &* K));" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#-%'matrixG6#7&7$\"\"!F(F'F'F'" }}}{EXCHG {PARA 0 "
+> " 0 "" {MPLTEXT 1 0 0 "" }}}}{MARK "14 1 0" 0 }{VIEWOPTS 1 1 0 1 1 
+1803 }

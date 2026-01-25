@@ -1,0 +1,43 @@
+/* Examples of large symmetric powers */
+
+F36 := D^3 + 5*(9*x^2 + 14*x + 9)/(48*x^2*(x+1)^2) * D
+     - 5*(81*x^3 + 185*x^2 + 229*x + 81) / (432*x^3*(x+1)^3);
+invariants(F36, 2);
+invariants(F36, 3);
+invariants(F36, 4);
+invariants(F36, 5);
+invariants(F36, 6);
+
+/* Has a 1-dim space of invariants of degree 4, 2-dim of degree 6 */
+H := D^3 + (7*x-4)/(x*(x-1)) * D^2
+     + (2592*x^2 - 2963*x + 560)/(252*x^2*(x-1)^2) * D
+     + (57024*x - 40805) / (24696*x^2*(x-1)^2);
+invariants(H, 2);
+invariants(H, 3);
+invariants(H, 4);
+invariants(H, 5);
+invariants(H, 6);
+
+
+xd := x * D;
+PSL3 := xd * (xd - 1/2) * (xd - 1/4) * (xd + 1/4) * (xd - 1/8) * (xd - 5/8)
+	* (xd + 1/8) * (xd + 5/8) - x * (xd + 1/3) * (xd - 1/3);
+invariants(PSL3, 2);
+
+
+L := D^3+(2/x*(64*x^5-49*x^4+54*x^3+189*x^2-243*x+81)/(72*x^7-288*x^6+496*x^5
+	-406*x^4+153*x^3+54*x^2-135*x+54))*D^2+(1/36*(9477*x+2106*x^4+
+	29565*x^3-26514*x^2-24840*x^5+24872*x^6+2304*x^8-13464*x^7-1458)/x^2
+	/(189*x-189*x^2-99*x^3+559*x^4-902*x^5+784*x^6-360*x^7+72*x^8-54))*D+(
+	-1/72*(4608*x^6-28872*x^5+67240*x^4-115560*x^3+131166*x^2-78165*x+27135)
+	/x/(189*x-189*x^2-99*x^3+559*x^4-902*x^5+784*x^6-360*x^7+72*x^8-54));
+invariants(L, 2);
+invariants(L, 3);
+invariants(L, 4);
+
+/* Has a 2-dim space of invariants of degree 10 */
+L:=D^3+(-3+8*x^2)/(x+1)/(x-1)/x*D^2+1/225*(-125+3168*x^2)/x^2/(x-1)/
+(x+1)*D+528/125/(x+1)/(x-1)/x;
+invariants(L, 10);
+
+

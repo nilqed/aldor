@@ -1,0 +1,39 @@
+{VERSION 2 3 "DEC ALPHA UNIX" "2.3" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 
+0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Output" 0 11 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 37 "libname := `.`,libna
+me:with(bernina);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7/%(DarbouxG%(adj
+ointG%&applyG%.exteriorPowerG%'kernelG%(leftGcdG%(leftLcmG%-makeIntegr
+alG%*normalizeG%)rightGcdG%)rightLcmG%0symmetricKernelG%/symmetricPowe
+rG" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 38 "A := matrix(2,2,[x,-1
+/x^2,x^2-x^4,x]);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"AG-%'MATRIXG6
+#7$7$%\"xG,$*$F*!\"#!\"\"7$,&*$F*\"\"#\"\"\"*$F*\"\"%F.F*" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "K := kernel(A,D,x);" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%\"KG-%'MATRIXG6#7$7#*$%\"xG!\"\"7#,&*$F+\"\"#\"
+\"\"F1F1" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 40 "map(normal,eval
+m(map(diff,K,x) - A&*K));" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#-%'MATRIX
+G6#7$7#\"\"!F'" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "B := matr
+ix(2,2,[0,1,x,0]);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"BG-%'MATRIXG
+6#7$7$\"\"!\"\"\"7$%\"xGF*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+19 "K := kernel(B,D,x);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"KG-%&ar
+rayG6%;\"\"\"\"\"#;F)\"\"!7\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 178 "M := matrix(4,4,[(6+2*x)/(1-x^2), 0, 6/(1-x^2), 6/(x^2-1), 0, (
+x+4)/2/x, -2/x, 0, 0, (4+3*x)/2/x, -2/x, 0, (x^2-2*x-7)/(x^2-1), (4+3*
+x)/2/x, (2*x^2+6*x-2)/x/(1-x^2), 6/(x^2-1)]);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"MG-%'MATRIXG6#7&7&*&,&\"\"'\"\"\"%\"xG\"\"#F-,&F-F-
+*$F.F/!\"\"F2\"\"!,$*$F0F2F,,$*$,&F2F-F1F-F2F,7&F3,$*&,&F.F-\"\"%F-F-F
+.F2#F-F/,$*$F.F2!\"#F37&F3,$*&,&F=F-F.\"\"$F-F.F2F>F?F37&*&,(F1F-F.FA!
+\"(F-F-F8F2FC*(,(F1F/F.F,FAF-F-F.F2F0F2F6" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 19 "K := kernel(M,D,x);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%\"KG-%'MATRIXG6#7&7$,$%\"xG!%%G\",$F+\"\"'7$,**$F+\"\"$\"#G*$F
++\"\"#!$/&F+\"%;?!%W8\"\"\"\"\"!7$,,*$F+\"\"%\"\"(F1!$S\"F4\"$/&F+\"$s
+'F8F9F:7$,,F=F?F1F@F4!$Q\"F+!$7'!%I6F9,(F4F2F+F.!\"\"F9" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 40 "map(normal,evalm(map(diff,K,x) - M&
+*K));" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#-%'MATRIXG6#7&7$\"\"!F(F'F'F'
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{MARK "9 0 0" 0 }
+{VIEWOPTS 1 1 0 1 1 1803 }

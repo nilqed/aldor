@@ -1,0 +1,54 @@
+/* decomp3.sha: decompositions of 3rd order difference operators */
+
+/* 1*(1+1)  Rational */
+L := (E-n)* leftLcm(E-n,E-1/n);
+Lw := Loewy(L);
+tex(L - element(Lw,1) * element(Lw,2));
+decompose(L);
+factor(L);
+e := eigenring(L);
+tex(e);
+
+/* (1+1)*1 Rational */
+L := leftLcm(E-1/n,E-n)*(E-n^2);
+Lw := Loewy(L);
+tex(L - element(Lw,1) * element(Lw,2));
+decompose(L);
+factor(L);
+e := eigenring(L);
+tex(e);
+
+Ladj := adjoint(L);
+Lwadj := Loewy(Ladj);
+tex(Ladj - element(Lwadj,1) * element(Lwadj,2));
+decompose(Ladj);
+factor(Ladj);
+e := eigenring(Ladj);
+tex(e);
+
+/* 1*(1+1) Algebraic */
+L := (E-n)*(E^2+3*n*(n+1));
+Lw := Loewy(L);
+tex(L - element(Lw,1) * element(Lw,2));
+decompose(L);
+factor(L);
+e := eigenring(L);
+tex(e);
+
+/* (1+1)*1 Algebraic */
+L := (E^2 + 3*n*(n+1))*(E-n);
+L := (E-n)*(E^2+3*n*(n+1));
+Lw := Loewy(L);
+tex(L - element(Lw,1) * element(Lw,2));
+decompose(L);
+factor(L);
+e := eigenring(L);
+tex(e);
+
+Ladj := adjoint(L);
+Lwadj := Loewy(Ladj);
+tex(Ladj - element(Lwadj,1) * element(Lwadj,2));
+decompose(Ladj);
+factor(Ladj);
+e := eigenring(Ladj);
+tex(e);

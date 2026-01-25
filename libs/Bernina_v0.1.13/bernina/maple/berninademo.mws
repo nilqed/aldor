@@ -1,0 +1,147 @@
+{VERSION 3 0 "DEC ALPHA UNIX" "3.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{CSTYLE "" -1 256 "terminal" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "
+" -1 257 "terminal" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 258 "
+terminal" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 259 "terminal" 
+0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 260 "" 1 12 0 0 0 0 0 0 
+0 0 0 0 0 0 0 }{CSTYLE "" -1 261 "" 1 12 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+{CSTYLE "" -1 262 "" 1 12 0 0 0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 
+263 "" 1 12 0 0 0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 264 "" 1 12 0 0 
+0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 265 "" 1 12 0 0 0 0 0 0 0 0 0 0 
+0 0 0 }{CSTYLE "" -1 266 "" 1 12 0 0 0 0 0 0 0 0 0 0 0 0 0 }{PSTYLE "N
+ormal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 
+0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Output" 0 11 1 {CSTYLE "" 
+-1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 0 0 0 0 -1 
+0 }{PSTYLE "" 11 12 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 
+0 }1 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "R3 Font 0" -1 256 1 
+{CSTYLE "" -1 -1 "Helvetica" 1 14 0 0 0 0 2 1 2 0 0 0 0 0 0 }0 0 0 -1 
+-1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "R3 Font 2" -1 257 1 {CSTYLE "" -1 -1 
+"Courier" 1 14 0 0 0 0 2 2 2 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 
+-1 0 }{PSTYLE "" 0 258 1 {CSTYLE "" -1 -1 "" 1 12 0 0 0 0 0 1 0 0 0 0 
+0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "" 0 259 1 {CSTYLE "" 
+-1 -1 "" 1 12 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 
+-1 0 }{PSTYLE "" 0 260 1 {CSTYLE "" -1 -1 "" 1 12 0 0 0 0 0 0 0 0 0 0 
+0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "" 0 261 1 {CSTYLE "" 
+-1 -1 "" 1 12 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 
+-1 0 }{PSTYLE "" 0 262 1 {CSTYLE "" -1 -1 "" 1 12 0 0 0 0 0 0 0 0 0 0 
+0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 258 "" 0 "" {TEXT -1 16 "IMPORTANT: the  " }
+{TEXT 257 8 "bernina " }{TEXT -1 66 " executable must be in your path \+
+before you can execute this demo." }}}{EXCHG {PARA 259 "" 0 "" {TEXT 
+-1 50 "To start, we tell maple about the location of the " }{TEXT 258 
+9 "bernina.m" }{TEXT -1 31 " file, which is located in the " }{TEXT 
+259 5 "maple" }{TEXT -1 140 " directory of bernina.\n Replace the '.' \+
+by the appropriate directory on your system. The following line is onl
+y valid if you are using maple" }}{PARA 260 "" 0 "" {TEXT -1 10 "from \+
+the  " }{TEXT 256 5 "maple" }{TEXT -1 106 "  directory of bernina. Alt
+ernatively, you can add a line to this effect in your .mapleinit file,
+ and then" }}{PARA 261 "" 0 "" {TEXT -1 24 "run maple from anywhere." 
+}}{PARA 0 "> " 0 "" {MPLTEXT 1 0 32 "restart; libname := `.`,libname:
+" }}}{EXCHG {PARA 0 "" 0 "" {TEXT 260 78 "We then load the bernina int
+erface, bringing the bernina functions into scope:" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 14 "with(bernina);" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#7
+:%(DarbouxG%&LoewyG%(adjointG%&applyG%*decomposeG%(dfactorG%*eigenring
+G%5exponentialSolutionsG%.exteriorPowerG%(leftGcdG%(leftLcmG%-makeInte
+gralG%%multG%*normalizeG%1polynomialKernelG%3polynomialSolutionG%1radi
+calSolutionsG%/rationalKernelG%1rationalSolutionG%)rightGcdG%)rightLcm
+G%.rightQuotientG%0symmetricKernelG%/symmetricPowerG" }}}{EXCHG {PARA 
+262 "" 0 "" {TEXT -1 100 "Differential operators are entered simply as
+ polynomials in the derivation and independent variable:" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 33 "L := x*D^3 + D^2 - x^2 * D - 2*x;" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#>%\"LG,**&%\"xG\"\"\")%\"DG\"\"$\"\"\"F(*$)F
+*\"\"#F,F(*&)F'F/F,F*F(!\"\"F'!\"#" }}}{EXCHG {PARA 0 "" 0 "" {TEXT 
+261 127 "When calling a bernina function, e.g. adjoint, add the deriva
+tion name and independent variable name to the bernina parameters:" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "tL := adjoint(L,D,x);" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#>%#tLG,(*&%\"xG\"\"\")%\"DG\"\"$\"\"\"!\"\"*$)F*
+\"\"#F,!\"#*&)F'F0F,F*F(F(" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+20 "L - adjoint(tL,D,x);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"!" }}}
+{EXCHG {PARA 0 "" 0 "" {TEXT 262 126 "The function 'Darboux' needs eve
+n one more additional parameter: the name of a second variable to use \+
+for the implicit curves:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "L := D^
+2 + 3/16/x^2;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"LG,&*$)%\"DG\"\"#
+\"\"\"\"\"\"*&F*F**$)%\"xG\"\"#F*!\"\"#\"\"$\"#;" }}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 22 "C := Darboux(L,D,x,u);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"CG-%'vectorG6#7$,&*&%\"xG\"\"\"%\"uGF,F,#!\"\"\"\"%
+F,,&F*F,#!\"$F0F," }}}{EXCHG {PARA 0 "" 0 "" {TEXT 263 92 "We can veri
+fy that exp(int(y,x)) is a solution of Lz = 0 for y a root of each Dar
+boux curve:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "sols := map(solve,C,
+u);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%solsG-%'vectorG6#7$,$*&\"\"
+\"F+%\"xG!\"\"#\"\"\"\"\"%,$F*#\"\"$F0" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 68 "deqsols := [seq(exp(int(sols[i],x)), i = 1..linalg[ve
+ctdim](sols))];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%(deqsolsG7$*$)%\"
+xG#\"\"\"\"\"%\"\"\"*$)F(#\"\"$F+F," }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 72 "seq(diff(deqsols[i],x$2) + 3/16/x^2 * deqsols[i], i =
+ 1..nops(deqsols));" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\"!F#" }}}
+{EXCHG {PARA 0 "" 0 "" {TEXT 264 116 "The functions 'polynomialKernel'
+, 'rationalKernel' and 'symmetricKernel' also return arrays, potential
+ly empty ones:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "L := D^7 - x*D + \+
+1/2;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"LG,(*$)%\"DG\"\"(\"\"\"\"
+\"\"*&%\"xGF+F(F+!\"\"#F+\"\"#F+" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 27 "K := rationalKernel(L,D,x);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"KG-%&arrayG6$;\"\"\"\"\"!7\"" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 31 "K2 := symmetricKernel(L,2,D,x);" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#>%#K2G-%'vectorG6#7#%\"xG" }}}{EXCHG {PARA 0 "" 
+0 "" {TEXT 265 107 "You can specify the allowed singularities in the o
+ptional second argument of the 'rationalKernel' function:" }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 162 "L := D^3+(5*x^4-8/15*x^2-1/5)/(x^5-14/15*x^
+3-1/15*x)*D^2\n              +(-26*x^2-22/15)/(x^4-14/15 *x^2-1/15)*D
+\n              +(-30*x^2-6)/(x^5-14/15*x^3-1/15*x);" }}{PARA 11 "" 1 
+"" {XPPMATH 20 "6#>%\"LG,**$)%\"DG\"\"$\"\"\"\"\"\"*&*&,(*$)%\"xG\"\"%
+F*\"\"&*$)F1\"\"#F*#!\")\"#:#!\"\"F3F+F+)F(F6F*F*,(*$)F1F3F*F+*$)F1F)F
+*#!#9F9F1#F;F9!\"\"F+*&*&,&F4!#E#!#AF9F+F+F(F+F*,(F/F+F4FBFDF+FEF+*&,&
+F4!#I!\"'F+F*F=FEF+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "Krat
+ := rationalKernel(L,D,x);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%KratG
+-%'vectorG6#7$,(*$)%\"xG\"\"&\"\"\"\"\"\"*$)F,\"\"$F.#!#5\"\"*F,#F-\"#
+@*&F.F.F,!\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 33 "Kpoly := \+
+rationalKernel(L,1,D,x);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&KpolyG-
+%'vectorG6#7#,(*$)%\"xG\"\"&\"\"\"\"\"\"*$)F,\"\"$F.#!#5\"\"*F,#F-\"#@
+" }}}{EXCHG {PARA 0 "" 0 "" {TEXT 266 58 "The same could have been ach
+ieved with 'polynomialKernel':" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "p
+olynomialKernel(L,D,x);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#-%'vectorG6
+#7#,(*$)%\"xG\"\"&\"\"\"\"\"\"*$)F*\"\"$F,#!#5\"\"*F*#F+\"#@" }}}
+{EXCHG {PARA 0 "" 0 "" {TEXT -1 99 "'dfactor' always tries to decompos
+e the operator as a least common left multiple whenever possible:" }
+{TEXT -1 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "f := dfactor(L,D,x)
+;" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#>%\"fG-%(LeftLcmG6$,&%\"DG\"\"\"*
+&,**$)%\"xG\"\"'\"\"\"!\"&*$)F/\"\"%F1#\"#5\"\"$*$)F/\"\"#F1#F2\"#@#!%
+g<F8F*F1,**$)F/\"\"(F1F**$)F/\"\"&F1#!#5\"\"**$)F/F8F1#FFF=F/F>!\"\"F*
+-%'vectorG6#7$,&F)F**&,8*$)F/\"#7F1F;*$)F/F7F1#!$)=\"#F*$)F/\"\")F1#\"
+%EB\"$V#FA#!%zC\"#=F-#!&S7\"\"%,<FD#\"'0bB\"%M6F3#\"&]%G\"&2>\"FJ#!':2
+@\"%YEF9#!%+<\"%pRF/#\"&&R7F[p#\"#]\"%B8F*F1,8*$)F/\"#8F1F**$)F/\"#6F1
+#!$/\"Ffn*$)F/FIF1#\"%T**FboFgn#F^o\"$E\"FA#!%![(FboF-#\"&,r%FeoFD#\"&
+0,#FhoF3#Fjo\"%QzFJ#!$+%FcpF9F_pF/#\"#DFcpFMF*,&F)F**&,(F3F2F9F6F<F*F1
+,(FDF*FJFGF/FLFMF*" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 184 "The above \+
+means that L is the least common left multiple of a first-order operat
+or L1 and a second-order operator L2, which is itself a product of two
+ first-order operators, but not a " }{TEXT -1 51 "least common left mu
+ltiple of first order operators" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 53 "
+L1 := op(1,f); L2 := mult(op(2,f)[1],op(2,f)[2],D,x);" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%#L1G,&%\"DG\"\"\"*&,**$)%\"xG\"\"'\"\"\"!\"&*$)F
+,\"\"%F.#\"#5\"\"$*$)F,\"\"#F.#F/\"#@#!%g<F5F'F.,**$)F,\"\"(F.F'*$)F,
+\"\"&F.#!#5\"\"**$)F,F5F.#FCF:F,F;!\"\"F'" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%#L2G,(*$)%\"DG\"\"#\"\"\"\"\"\"*&*&,.*$)%\"xG\"\")F*!
+\"$*$)F1\"\"'F*#\"$#=\"#F*$)F1\"\"%F*#!$K)\"$*=*$)F1\"\"$F*#!%zC\"#j*$
+)F1F)F*#\"$5\"F?#\"\"&FEF+F+F(F+F*,0*$)F1\"\"*F*F+*$)F1\"\"(F*#!#uF9*$
+)F1FKF*#\"$%[F?F:#FD\"$E\"F@#!$q\"F?FF#\"%zCFZF1FJ!\"\"F+*&,.F/!\"&F4#
+FIFOF:#!$+#\"#@F@#\"&&R7F`oFF#\"#]F`o#F\\oFEF+F*,0*$)F1\"#5F*F+F/FSF4F
+WFUFYF:FenF@FgnFFFJFinF+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 23 
+"L - leftLcm(L1,L2,D,x);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"!" }}}
+{EXCHG {PARA 0 "" 0 "" {TEXT -1 74 "Systems dY/dx = A(x)Y(x) are solve
+d by passing the matrix A(x) as argument" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 80 "A := linalg[matrix](4,4,[1/x,1/x^2,-1,0,0,1/x,4*x,1,0
+,0,3/x,1/x^2,1/x,0,0,1/x]);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"AG-
+%'matrixG6#7&7&*&\"\"\"F+%\"xG!\"\"*&F+F+*$)F,\"\"#F+F-!\"\"\"\"!7&F3F
+*,$F,\"\"%\"\"\"7&F3F3,$F*\"\"$F.7&F*F3F3F*" }}}{EXCHG {PARA 0 "> " 0 
+"" {MPLTEXT 1 0 27 "K := rationalKernel(A,D,x);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"KG-%'matrixG6#7&7%\"\"!\"\"\"!\"\"7%,&*$)%\"xG\"\"&
+\"\"\"#F+\"\"$*$)F1\"\"#F3#F,F5,(F/#\"#8\"#7F6F9F1#!\"$\"\"%,(F/#F,F=F
+6F4F1#F5F@7%,&*$)F1F5F3F4F9F+*&,(*$)F1F@F3F;F1F9#F+F@F+F3F1!\"\"*&,(FJ
+FBF1F4#F,F@F+F3F1FM7%F1,&F1F+F,F+,&F1F,F+F+" }}}{EXCHG {PARA 0 "" 0 "
+" {TEXT -1 41 "We can verify that K is indeed a solution" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 43 "map(normal, evalm(map(diff,K,x) - A &* K));" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6#-%'matrixG6#7&7%\"\"!F(F(F'F'F'" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{MARK "1 3 0" 32 }
+{VIEWOPTS 1 1 0 1 1 1803 }

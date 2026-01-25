@@ -1,0 +1,28 @@
+README for shasta 1.0.0  --  3 September 2002
+
+This is version 1.0.0 of the shasta interactive server.
+Shasta provides you with interactive access to selected
+functionalities of Sum^it. You do not need Aldor to use shasta.
+
+Downloading shasta 1.0.0:
+-------------------------
+You must get both the platform-independent shasta.tar.gz file
+and the executable corresponding to the desired operating system
+and processor:
+-  shasta-1.0.0.gmp4.1_ev5.gz   for DEC/OSF1 on an EV5 processor
+-  shasta-1.0.0.gmp4.1_ev6.gz   for DEC/OSF1 on an EV6 processor
+-  shasta-1.0.0.gmp4.1_p1.gz    for Linux on an Intel Pentium processor
+-  shasta-1.0.0.gmp4.1_p2.gz    for Linux on an Intel Pentium2 processor
+-  shasta-1.0.0.gmp4.1_p3.gz    for Linux on an Intel Pentium3 processor
+
+Installing shasta 1.0.0:
+------------------------
+- issue 'tar -xvzf shasta.tar.gz' to install the platform-independent parts
+- move the shasta executable into the bin subdirectory of shasta and unzip it
+- check the shasta user guide in shasta/share/doc for further instructions.
+
+Please report any bugs or problems you encounter to   sumit@sophia.inria.fr
+We would be thankful if you could send an email notification to the above
+address after installing shasta, so we can keep track of who uses shasta.
+Simply put 'shasta 1.0.0' in the subject line.
+

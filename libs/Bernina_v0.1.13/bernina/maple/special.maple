@@ -1,0 +1,311 @@
+# ======================================================================
+# This code was written all or part by Dr. Manuel Bronstein from
+# Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+# decided to publish this code under the CeCILL open source license in
+# memory of Dr. Manuel Bronstein.
+# 
+# This software is governed by the CeCILL license under French law and
+# abiding by the rules of distribution of free software. You can use,
+# modify and/or redistribute the software under the terms of the CeCILL
+# license as circulated by CEA, CNRS and Inria at the following URL :
+# http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+# 
+# As a counterpart to the access to the source code and rights to copy,
+# modify and redistribute granted by the license, users are provided
+# only with a limited warranty and the software's author, the holder of
+# the economic rights, and the successive licensors have only limited
+# liability.
+# 
+# In this respect, the user's attention is drawn to the risks associated
+# with loading, using, modifying and/or developing or reproducing the
+# software by the user in light of its specific status of free software,
+# that may mean that it is complicated to manipulate, and that also
+# therefore means that it is reserved for developers and experienced
+# professionals having in-depth computer knowledge. Users are therefore
+# encouraged to load and test the software's suitability as regards
+# their requirements in conditions enabling the security of their
+# systems and/or data to be ensured and, more generally, to use and
+# operate it in the same conditions as regards security.
+# 
+# The fact that you are presently reading this means that you have had
+# knowledge of the CeCILL license and that you accept its terms.
+# ======================================================================
+# 
+# Syntax is either dsolveSpecial(operator, D, x, special_function)
+# or  dsolveSpecial(operator, D, x)  in which case all except DC-Heun are tried
+dsolveSpecial := proc(L, D, x) local p, q, lc, sl;
+	lc := coeff(L,D,2);
+	p := normal(coeff(L,D,1)/lc);
+	q := normal(coeff(L,D,0)/lc);
+	if nargs = 4 then RETURN(TrySpecialFunction(p, q, x, args[4])); fi;
+	sl := TrySpecialFunction(p, q, x, "Airy");
+	if sl <> [] then RETURN(sl); fi;
+	sl := TrySpecialFunction(p, q, x, "Bessel");
+	if sl <> [] then RETURN(sl); fi;
+	sl := TrySpecialFunction(p, q, x, "Bessel modifie");
+	if sl <> [] then RETURN(sl); fi;
+	sl := TrySpecialFunction(p, q, x, "Whittaker");
+	if sl <> [] then RETURN(sl); fi;
+	sl := TrySpecialFunction(p, q, x, "Mathieu");
+	sl;
+end;
+
+
+# Code de Sebastien Lafaille  <s.lafaille@infonie.fr>
+# MB: ajout de nouvelles fonctions speciales Mathieu et DCHeun
+TrySpecialFunction:=proc(p,q,x,t)
+
+local  u1,u0,z,j,k,F,d,C,w,yo,i,L,eq,W,nu,mu,weq,v,e,
+       sol1,sol2,timetotal,X,c,a,M,S,S1,S2,alpha,beta,delta;
+
+timetotal:=time():
+
+v:=normal((2*diff(p,x)+p^2-4*q)/4);
+
+F:=sqrfree(expand(denom(v))):
+C:=1:
+
+if t="Airy" then
+	u1:=0:
+	u0:=-x:
+	sol1:=AiryAi(W0);
+	sol2:=AiryBi(W0):
+	for k to nops(F[2])
+	do
+	if ((F[2][k][2]) mod 3 = 2 ) then
+             C:=C*(F[2][k][1])^((F[2][k][2]-2)/3) fi;
+	od:
+	d:=(degree(numer(v),x)+2+3*degree(C,x)-degree(denom(v),x))/3;
+
+
+elif t="Whittaker" then 
+	u1:=0:
+	u0:=-1/4+mu/x+(1/4-nu^2)/(x^2):
+	sol1:=WhittakerM(mu0, nu0, W0);
+	sol2:=WhittakerW(mu0, nu0, W0):
+	for k to nops(F[2])
+	do	 
+ 	if ((F[2][k][2]) mod 2 = 0 ) then
+             C:=C*(F[2][k][1])^((F[2][k][2]-2)/2) fi;
+	od:
+	d:=(degree(numer(v),x)+2+2*degree(C,x)-degree(denom(v),x))/2;
+
+
+elif t="Bessel" then 
+	u1:=1/x:
+	u0:=(1-e^2/x^2):
+	sol1:=BesselJ(e0,W0):
+	sol2:=BesselY(e0,W0):	
+	for k to nops(F[2])
+	do	 
+ 	if ((F[2][k][2]) mod 2 = 0 ) then
+             C:=C*(F[2][k][1])^((F[2][k][2]-2)/2) fi;
+	od:
+	d:=(degree(numer(v),x)+2+2*degree(C,x)-degree(denom(v),x))/2;
+
+elif t="Bessel modifie" then 
+	u1:=1/x:
+	u0:=(1+e^2/x^2):
+	sol1:=BesselI(e0,W0):
+	sol2:=BesselK(e0,W0):	
+	for k to nops(F[2])
+	do	 
+ 	if ((F[2][k][2]) mod 2 = 0 ) then
+             C:=C*(F[2][k][1])^((F[2][k][2]-2)/2) fi;
+	od:
+	d:=(degree(numer(v),x)+2+2*degree(C,x)-degree(denom(v),x))/2;
+
+elif t="Mathieu" then
+# Non-normalized version: allows rational functions only
+#	u1 := x/(x-1)/(x+1):
+#	u0 := (4*nu*x^2 - 2*nu - mu)/(x-1)/(x+1):
+#	sol1 := MathieuC(mu0,nu0,arccos(W0)):
+#	sol2 := MathieuS(mu0,nu0,arccos(W0)):
+#	for k to nops(F[2])
+#	do	 
+# 	if ((F[2][k][2]) mod 2 = 0 ) then
+#             C:=C*(F[2][k][1])^((F[2][k][2]-2)/2) fi;
+#	od:
+#	d:=(degree(numer(v),x)+2+2*degree(C,x)-degree(denom(v),x))/2;
+# Normalized version: allows square roots of rational functions
+	u1 := 0:
+	u0 := (mu*x^3 - (mu+nu)*x^2 + nu*x + 3)/16/x^2/(x-1)^2:
+	sol1:=(W0*(W0-1))^(1/4)*MathieuC(1+nu0/4-mu0/8,mu0/16,arccos(sqrt(W0))):
+	sol2:=(W0*(W0-1))^(1/4)*MathieuS(1+nu0/4-mu0/8,mu0/16,arccos(sqrt(W0))):
+	for k to nops(F[2])
+	do	 
+ 	if (F[2][k][2] > 2) then
+             C:=C*(F[2][k][1])^(F[2][k][2]-2) fi;
+	od:
+	d:=degree(numer(v),x)+2+degree(C,x)-degree(denom(v),x);
+
+elif t="DCH" then
+	u1:=0;
+	u0:=-(alpha^2/4-delta/x-e/x^2-beta/x^3+alpha^2/4/x^4);
+	sol1 := DCHeun1(alpha0,beta0,delta0,e0,W0);
+	sol2 := DCHeun2(alpha0,beta0,delta0,e0,W0);
+	for k to nops(F[2])
+	do	 
+ 	if ((F[2][k][2]) mod 2 = 0 ) then
+             C:=C*(F[2][k][1])^((F[2][k][2]-2)/2) fi;
+	od:
+	d:=(degree(numer(v),x)+2+2*degree(C,x)-degree(denom(v),x))/2;
+
+fi:
+
+if denom(d) <> 1 then d:=degree(C,x) else d:=max(degree(C,x),d) fi;
+
+weq:=(subs(x=z(x),u1)^2+2*subs(x=z(x),diff(u1,x))
+      -4*subs(x=z(x),u0))*diff(z(x),x)^4+3*(diff(z(x),x$2)^2)
+      -2*diff(z(x),x)*diff(z(x),x$3)-4*v*(diff(z(x),x))^2:
+
+w:=sum('a[i]*x^i','i'=0..d)/C:
+yo:=collect(numer(normal((eval(subs(z(x) =w,weq))))),x):
+eq:=1+sum('(a[i]*coeff(C,x,degree(C,x))
+           -a[degree(C,x)]*coeff(C,x,i))*y[i]','i'=0..d)=0:
+
+X:=indets({yo,eq}) intersect
+	{seq(a[j],j=0..d),seq(y[j],j=0..d),mu,nu,e,alpha,beta,delta}: 
+L:=[solve({seq(coeff(yo,x,j)=0,j=0..degree(yo,x)),eq},X)]:
+
+for i from 0 to d do
+     if (member(a[i],X)=false) then w:=subs(a[i]=0,w):fi: od:
+
+c:=simplify(exp(-1/2*int(p,x))):
+
+if L<>[] then 
+
+		 W:=factor(subs(L[1],w)):
+	
+		 mu:=subs(L[1],mu):
+		 nu:=subs(L[1],nu):
+		alpha := subs(L[1],alpha):
+		beta := subs(L[1],beta):
+		delta := subs(L[1],delta):
+		 e:=subs(L[1],e):
+		 M:=sqrt(evala(Normal(exp(subs(x=W,int(u1,x)))/(diff(W,x))))):		
+		 S:={mu0=mu,nu0=nu,W0=W,e0=e,alpha0=alpha,beta0=beta,delta0=delta};
+		 S1:=c*M*subs(S,sol1):
+		 S2:=c*M*subs(S,sol2):
+		L := [S1,S2];
+#		print(S1);
+#		print(S2):	 
+fi:	 
+	
+#print('total'=-timetotal+time()):	
+L;
+end;
+
+GetEquations:=proc(p,q,x,t)
+
+local  u1,u0,z,j,k,F,d,C,w,yo,i,eq,nu,mu,weq,v,e,sol1,sol2,X,a,alpha,beta,delta;
+
+v:=normal((2*diff(p,x)+p^2-4*q)/4);
+
+F:=sqrfree(expand(denom(v))):
+C:=1:
+
+if t="Airy" then
+	u1:=0:
+	u0:=-x:
+	sol1:=AiryAi(W0);
+	sol2:=AiryBi(W0):
+	for k to nops(F[2])
+	do
+	if ((F[2][k][2]) mod 3 = 2 ) then
+             C:=C*(F[2][k][1])^((F[2][k][2]-2)/3) fi;
+	od:
+	d:=(degree(numer(v),x)+2+3*degree(C,x)-degree(denom(v),x))/3;
+
+
+elif t="Whittaker" then 
+	u1:=0:
+	u0:=-1/4+mu/x+(1/4-nu^2)/(x^2):
+	sol1:=WhittakerM(mu0, nu0, W0);
+	sol2:=WhittakerW(mu0, nu0, W0):
+	for k to nops(F[2])
+	do	 
+ 	if ((F[2][k][2]) mod 2 = 0 ) then
+             C:=C*(F[2][k][1])^((F[2][k][2]-2)/2) fi;
+	od:
+	d:=(degree(numer(v),x)+2+2*degree(C,x)-degree(denom(v),x))/2;
+
+
+elif t="Bessel" then 
+	u1:=1/x:
+	u0:=(1-e^2/x^2):
+	sol1:=BesselJ(e0,W0):
+	sol2:=BesselY(e0,W0):	
+	for k to nops(F[2])
+	do	 
+ 	if ((F[2][k][2]) mod 2 = 0 ) then
+             C:=C*(F[2][k][1])^((F[2][k][2]-2)/2) fi;
+	od:
+	d:=(degree(numer(v),x)+2+2*degree(C,x)-degree(denom(v),x))/2;
+
+elif t="Bessel modifie" then 
+	u1:=1/x:
+	u0:=(1+e^2/x^2):
+	sol1:=BesselI(e0,W0):
+	sol2:=BesselK(e0,W0):	
+	for k to nops(F[2])
+	do	 
+ 	if ((F[2][k][2]) mod 2 = 0 ) then
+             C:=C*(F[2][k][1])^((F[2][k][2]-2)/2) fi;
+	od:
+	d:=(degree(numer(v),x)+2+2*degree(C,x)-degree(denom(v),x))/2;
+
+elif t="Mathieu" then
+# Non-normalized version: allows rational functions only
+#	u1 := x/(x-1)/(x+1):
+#	u0 := (4*nu*x^2 - 2*nu - mu)/(x-1)/(x+1):
+#	sol1 := MathieuC(mu0,nu0,arccos(W0)):
+#	sol2 := MathieuS(mu0,nu0,arccos(W0)):
+#	for k to nops(F[2])
+#	do	 
+# 	if ((F[2][k][2]) mod 2 = 0 ) then
+#             C:=C*(F[2][k][1])^((F[2][k][2]-2)/2) fi;
+#	od:
+#	d:=(degree(numer(v),x)+2+2*degree(C,x)-degree(denom(v),x))/2;
+# Normalized version: allows square roots of rational functions
+	u1 := 0:
+	u0 := (mu*x^3 - (mu+nu)*x^2 + nu*x + 3)/16/x^2/(x-1)^2:
+	sol1 := (W0^2-W0)^(1/4)*MathieuC(1+nu0/4-mu0/8,mu0/16,arccos(sqrt(W0))):
+	sol2 := (W0^2-W0)^(1/4)*MathieuS(1+nu0/4-mu0/8,mu0/16,arccos(sqrt(W0))):
+	for k to nops(F[2])
+	do	 
+ 	if (F[2][k][2] > 2) then
+             C:=C*(F[2][k][1])^(F[2][k][2]-2) fi;
+	od:
+	d:=degree(numer(v),x)+2+degree(C,x)-degree(denom(v),x);
+
+elif t="DCH" then
+	u1:=0;
+	u0:=-(alpha^2/4-delta/x-e/x^2-beta/x^3+alpha^2/4/x^4);
+	sol1 := DCHeun1(alpha0,beta0,delta0,e0,W0);
+	sol2 := DCHeun2(alpha0,beta0,delta0,e0,W0);
+	for k to nops(F[2])
+	do	 
+ 	if ((F[2][k][2]) mod 2 = 0 ) then
+             C:=C*(F[2][k][1])^((F[2][k][2]-2)/2) fi;
+	od:
+	d:=(degree(numer(v),x)+2+2*degree(C,x)-degree(denom(v),x))/2;
+
+fi:
+
+if denom(d) <> 1 then d:=degree(C,x) else d:=max(degree(C,x),d) fi;
+
+weq:=(subs(x=z(x),u1)^2+2*subs(x=z(x),diff(u1,x))
+      -4*subs(x=z(x),u0))*diff(z(x),x)^4+3*(diff(z(x),x$2)^2)
+      -2*diff(z(x),x)*diff(z(x),x$3)-4*v*(diff(z(x),x))^2:
+
+w:=sum('a[i]*x^i','i'=0..d)/C:
+yo:=collect(numer(normal((eval(subs(z(x) =w,weq))))),x):
+eq:=1+sum('(a[i]*coeff(C,x,degree(C,x))
+           -a[degree(C,x)]*coeff(C,x,i))*y[i]','i'=0..d)=0:
+
+X:=indets({yo,eq}) intersect
+	{seq(a[j],j=0..d),seq(y[j],j=0..d),mu,nu,e,alpha,beta,delta}: 
+[{seq(coeff(yo,x,j)=0,j=0..degree(yo,x)),eq},X]:
+end;
+

@@ -1,0 +1,57 @@
+Script started on Wed Dec  3 12:06:13 1997
+anne(manuel): maple < ratlode.in
+    |\^/|     Maple V Release 4 (Ecole Polytechnique)
+._|\|   |/|_. Copyright (c) 1981-1996 by Waterloo Maple Inc. All rights
+ \  MAPLE  /  reserved. Maple and Maple V are registered trademarks of
+ <____ ____>  Waterloo Maple Inc.
+      |       Type ? for help.
+> with(share);
+See ?share and ?share,contents for information about the share library
+
+> readshare(ratlode,calculus);
+                                   ratlode
+
+> read(rwca98);
+> 
+> for i to 6 do
+> 	t := time(); f := ratlode(subs(n=10*i,L_dense), y(x));
+> 	tr := time() - t;
+> 	printf(`Time for L_dense(%a) = %f (rat), degree = %a\n`,
+> 		10*i, tr, degree(f[1], x));
+> od:
+Time for L_dense(10) = .924 (rat), degree = 100
+Time for L_dense(20) = 9.068 (rat), degree = 400
+Time for L_dense(30) = 44.523 (rat), degree = 900
+Time for L_dense(40) = 162.146 (rat), degree = 1600
+Time for L_dense(50) = 456.666 (rat), degree = 2500
+Time for L_dense(60) = 1087.835 (rat), degree = 3600
+> 
+> t := time(): f := ratlode(L_rat, y(x)): tr := time() - t:
+> printf(`Time for L_rat = %f (rat), sol = %a\n`, tr, f);
+Time for L_rat = 63.206 (rat), sol = [(_C[0]-135/8*_C[0]*x+7491/64*_C[0]*x^2-229509/512*_C[0]*x^3+552993/512*_C[0]*x^4-425481/256*_C[0]*x^5+11333/8*_C[0]*x^6-173391/512*_C[0]*x^7-135327/128*_C[0]*x^8+477861/512*_C[0]*x^9-243999/128*_C[0]*x^10-78519/512*_C[0]*x^11-26355/16*_C[0]*x^12-826287/256*_C[0]*x^13-1503957/512*_C[0]*x^14-1691137/512*_C[0]*x^15-124509/64*_C[0]*x^16-7203/8*_C[0]*x^17-343*_C[0]*x^18)/(-79/85-10/17*x-97/85*x^2+7/17*x^3+37/85*x^4+11/17*x^5+x^6)/(x^6+7/8*x^5+9/8*x^4+57/56*x^3-59/56*x^2+45/56*x-1/7), {_C[0]}]
+> 
+> ns := [5,6,7,8,9,10,11,12,13,20,30];
+                 ns := [5, 6, 7, 8, 9, 10, 11, 12, 13, 20, 30]
+
+> for i to nops(ns) do
+> 	t := time(); f := ratlode(subs(n=ns[i],L_sparse), y(x));
+> 	tr := time() - t;
+> 	printf(`Time for L_sparse(%a) = %f (rat), sol = %a\n`, ns[i], tr, f);
+> od:
+Time for L_sparse(5) = 2.059 (rat), sol = [x^125*_C[0]+_C[0], {_C[0]}]
+Time for L_sparse(6) = 5.629 (rat), sol = [_C[0]+x^216*_C[0], {_C[0]}]
+Time for L_sparse(7) = 15.898 (rat), sol = [_C[0]+x^343*_C[0], {_C[0]}]
+Time for L_sparse(8) = 67.587 (rat), sol = [_C[512]*x^512+_C[512], {_C[512]}]
+Time for L_sparse(9) = 203.474 (rat), sol = [_C[0]+x^729*_C[0], {_C[0]}]
+Time for L_sparse(10) = 866.907 (rat), sol = [_C[1000]+_C[1000]*x^1000, {_C[1000]}]
+Interrupted
+> 
+> t := time(): f := ratlode(L_cyclic, y(x)): tr := time() - t:
+> printf(`Time for L_cyclic = %f (rat), sol = %a\n`, tr, f);
+Time for L_cyclic = 6938.723 (rat), sol = [0, {}]
+
+> done
+anne(manuel): exit
+exit
+
+script done on Wed Dec  3 16:14:01 1997

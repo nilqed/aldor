@@ -1,0 +1,14 @@
+/* psl3.bna: Example with Galois group for which G_0 = PSL3 */
+
+xd := x * D;
+
+L := xd * (xd - 1/2) * (xd - 1/4) * (xd + 1/4) * (xd - 1/8) * (xd - 5/8)
+	* (xd + 1/8) * (xd + 5/8) - x * (xd + 1/3) * (xd - 1/3);
+
+/* symmetric square and 3rd powers have 1-dimensional kernels */
+V := symmetricKernel(L, 2);
+maple(V);
+
+
+V := symmetricKernel(L, 3);
+maple(V);

@@ -1,0 +1,106 @@
+% ======================================================================
+% This code was written all or part by Dr. Manuel Bronstein from
+% Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+% decided to publish this code under the CeCILL open source license in
+% memory of Dr. Manuel Bronstein.
+% 
+% This software is governed by the CeCILL license under French law and
+% abiding by the rules of distribution of free software. You can use,
+% modify and/or redistribute the software under the terms of the CeCILL
+% license as circulated by CEA, CNRS and Inria at the following URL :
+% http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+% 
+% As a counterpart to the access to the source code and rights to copy,
+% modify and redistribute granted by the license, users are provided
+% only with a limited warranty and the software's author, the holder of
+% the economic rights, and the successive licensors have only limited
+% liability.
+% 
+% In this respect, the user's attention is drawn to the risks associated
+% with loading, using, modifying and/or developing or reproducing the
+% software by the user in light of its specific status of free software,
+% that may mean that it is complicated to manipulate, and that also
+% therefore means that it is reserved for developers and experienced
+% professionals having in-depth computer knowledge. Users are therefore
+% encouraged to load and test the software's suitability as regards
+% their requirements in conditions enabling the security of their
+% systems and/or data to be ensured and, more generally, to use and
+% operate it in the same conditions as regards security.
+% 
+% The fact that you are presently reading this means that you have had
+% knowledge of the CeCILL license and that you accept its terms.
+% ======================================================================
+% 
+\section{Introduction}
+
+\subsection{What is \shasta?}
+Mount Shasta is a 4317--meter somewhat active volcano in Northern California.
+Its snow--capped multiple--crater summit, which appears on the cover of this
+guide\footnote{Check out \url{http://www.mtshasta.com} for more pictures.}
+is a well-known california landmark as well as a ski resort.
+This guide describes however \shasta, an interactive interface to
+the \sumit~library that provides some efficient computations revolving
+around difference operators and systems in $\weyl$ or $\weylq$. In fact, the
+main goal of \shasta{} is to provide access to selected functionalities
+of the \sumit~library to other computer algebra systems, or to users
+who do not own an \asharp~compiler, or who feel more confortable with
+interactive access to a library. The functionalities currently provided
+by \shasta{} are the ones that tend to be missing from several commercial
+computer algebra systems, namely:
+\begin{itemize}
+\item
+Basic arithmetic in $\weyl$, including
+adjoints and left and right gcd's and lcm's.
+\item
+Exterior powers.
+\item
+Rational kernels, \ie~$\Ker(L) \cap \QQ(n)$ for $L \in \weyl$,
+and rational solutions of inhomogeneous equations of the form
+$L y = g$. % and $L y = \sum_{i=1}^m c_i g_i$.
+\item
+Rational kernels of systems of the form $Y(x+1) = A(x) Y(x)$.
+\item
+Hypergeometric solutions, \ie~the solutions $y$ of $L y = 0$
+such that $y(n+1)/y(n) \in \bb{Q}(n)$.
+% \item
+% Liouvillian solutions (interlacing of hypergeometric solutions).
+\item
+Factorisation and decomposition of second and third--order operators.
+\end{itemize}
+If you do not need any of the above computations, then
+you probably will not have much use for \shasta.
+Otherwise, since \shasta{} provides implementations of several recent
+algorithms for those computations, it is worth trying it and
+reading further.
+
+\subsection{How do I get and install \shasta?}
+You can download \shasta{} by anonymous ftp from the {\sc Caf\'e} server at
+{\tt ftp-sop.inria.fr} in {\tt cafe/software/shasta},
+or from the URL:\\
+\vspace{-2mm}
+\begin{center}
+{\tt http://www.inria.fr/cafe/Manuel.Bronstein/sumit/shasta.html}.
+\end{center}
+You must get both the platform-independent {\tt shasta.tar.gz} file
+and the executable(s) corresponding to the desired operating system and
+processor type.
+After downloading the above files, issue
+{\tt tar -xvzf shasta.tar.gz},
+which will create the following subdirectories:
+\begin{itemize}
+\item{\bf shasta/share/doc}: this user guide,
+\item{\bf shasta/share/maple}: the \shasta-\maple interface,
+\item{\bf shasta/share/samples}: some sample \shasta{} input files.
+\end{itemize}
+You can then unzip and move the executable(s) anywhere. Note that
+if you intend to use \shasta{} from within \maple, then you will need
+to add the location of the \shasta{} executable to your path,
+and the {\bf shasta/share/maple} directory to the \maple{} library path,
+for example with the statement
+{\tt libname := `\dots/shasta/share/maple`, libname:`} in your
+{\tt .mapleinit} file. Alternatively,
+you may move or copy the executable and {\tt shasta/share/maple/shasta.m} files
+to places on your path and \maple{} library path respectively.
+Although \shasta{} is free, we appreciate if you send an e-mail to
+{\tt sumit@sophia.inria.fr} notifying us that you downloaded and
+installed it. Also report any bugs or problems to that address.

@@ -1,0 +1,27 @@
+/* ulmerweil.bna: examples from the Ulmer-Weil Kovacic paper */
+
+/* Completely reducible, symmetric square has 1-dimensional kernel */
+red := D^2 + 3/16/x^2;
+red2 := symmetricPower(red, 2);
+Kred := kernel(red2);
+tex(Kred);
+
+/* Irreducible, symmetric 4th power has 1-dimensional kernel */
+imp1 := D^2 - 2/(2*x-1) * D
+     + (27*x^4-54*x^3+5*x^2+22*x+27)*(2*x-1)^2 / (144*x^2*(x-1)^2*(x^2-x-1)^2);
+imp14 := symmetricPower(imp1, 4);
+Kimp1 := kernel(imp14);
+tex(Kimp1);
+
+/* Irreducible, symmetric 4th power has 2-dimensional kernel */
+imp2 := D^2 - 2/(2*x-1) * D
+         + 3*(2*x-1)^2*(x^4-2*x^3+x+1) / (16*x^2*(x-1)^2*(x^2-x-1)^2);
+imp24 := symmetricPower(imp2, 4);
+Kimp2 := kernel(imp24);
+tex(Kimp2);
+
+/* Irreducible, symmetric 6th power has 1-dimensional kernel */
+alg := D^2 - (-3/16/x^2 - 2/9/(x-1)^2 + 3/(16*x*(x-1)));
+alg6 := symmetricPower(alg, 6);
+Kalg := kernel(alg6);
+tex(Kalg);

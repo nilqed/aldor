@@ -1,0 +1,106 @@
+# ======================================================================
+# This code was written all or part by Dr. Manuel Bronstein from
+# Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+# decided to publish this code under the CeCILL open source license in
+# memory of Dr. Manuel Bronstein.
+# 
+# This software is governed by the CeCILL license under French law and
+# abiding by the rules of distribution of free software. You can use,
+# modify and/or redistribute the software under the terms of the CeCILL
+# license as circulated by CEA, CNRS and Inria at the following URL :
+# http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+# 
+# As a counterpart to the access to the source code and rights to copy,
+# modify and redistribute granted by the license, users are provided
+# only with a limited warranty and the software's author, the holder of
+# the economic rights, and the successive licensors have only limited
+# liability.
+# 
+# In this respect, the user's attention is drawn to the risks associated
+# with loading, using, modifying and/or developing or reproducing the
+# software by the user in light of its specific status of free software,
+# that may mean that it is complicated to manipulate, and that also
+# therefore means that it is reserved for developers and experienced
+# professionals having in-depth computer knowledge. Users are therefore
+# encouraged to load and test the software's suitability as regards
+# their requirements in conditions enabling the security of their
+# systems and/or data to be ensured and, more generally, to use and
+# operate it in the same conditions as regards security.
+# 
+# The fact that you are presently reading this means that you have had
+# knowledge of the CeCILL license and that you accept its terms.
+# ======================================================================
+# 
+# libname must be properly set for bernina and isolde
+
+with(bernina): with(ISOLDE):
+
+unprotect('Kovacic'):
+Kovacic := 'Kovacic':
+
+Kovacic[dsolve2] := KovacicDsolve2;
+Kovacic[verify2] := KovacicVerify;
+
+KovacicDsolve2 := proc(L, D, x) local dbx, n, deg, mindeg, index, i; global y;
+	print(`Solving the differential equation:`);
+	print(L);
+	y := 'y';
+	dbx := Darboux(L, D, x, y);
+	n := linalg[vectdim](dbx);
+	if n = 1 and dbx[1] = 0 then NonLiouvillianSolver(L, D, x);
+	elif n = 0 then Kovacictryexponentialsols(L, D, x);
+	else
+		mindeg := degree(dbx[1], y); index := 1;
+		for i to n-1 do
+			deg := degree(dbx[i+1], y);
+			if deg < mindeg then mindeg := deg; index := i+1; fi;
+		od;
+		if mindeg = 1 then Kovacicdegree1(dbx, n, y, x);
+		elif mindeg = 2 then Kovacicdegree2(dbx[index], y, x);
+		else Kovacicdegreen(dbx[index], y, x);
+		fi;
+	fi; end;
+
+Kovacicexpint1 := proc(p, y, x)
+	if degree(p, y) = 1 then exp(int(solve(p, y), x)) else NULL fi; end;
+
+Kovacicdegree1 := proc(curves, n, y, x) local i, l;
+	l := [seq(Kovacicexpint1(curves[i], y, x), i = 1..n)];
+	if nops(l) = 1 then l[1] else l; fi; end;
+
+Kovacicdegree2 := proc(curve, y, x) local i, s, n;
+	s := [solve(curve, y)];
+	n := nops(s);
+	if n = 1 then exp(int(s[1], y), x);
+	else [seq(exp(int(s[i], x)), i = 1..n)]; fi; end;
+
+Kovacicdegreen := proc(curve, y, x) local p, d;
+	p := Kovacicsqrfreepart(curve, y);
+	d := degree(p, y);
+	if d = 1 then Kovacicdegree1([p], 1, y, x);
+	elif d = 2 then Kovacicdegree2(p, y, x);
+	else exp(Int(RootOf(curve, y), x)); fi; end;
+
+Kovacicsqrfreepart := proc(p, x) local l, i;
+	l := sqrfree(p, x);
+	convert([seq(l[2][i][1], i = 1..nops(l[2]))], `*`); end;
+	
+Kovacictryexponentialsols := proc(L, D, x) local s;
+	s := expsolde(L, D, x, `basis`);
+	if nops(s) = 0 then NonLiouvillianSolver(L, D, x);
+	else s[1]; fi; end;
+	
+KovacicVerify := proc(L, D, x, sol)
+	normal(coeff(L, D, 2) * diff(sol, x$2) + coeff(L, D, 1) * diff(sol, x)
+	+ coeff(L, D, 0) * sol); end;
+
+NonLiouvillianSolver := proc(L, D, x)
+	print(`The equation has no Liouvillian solutions`);
+	print(`Trying to find special function solutions...`);
+	dsolveSpecial(L, D, x); end;
+
+# Special function solver
+read `special.maple`:
+
+# save `Kovacic.m`;
+# done;

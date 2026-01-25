@@ -1,0 +1,71 @@
+idefix{bronstei} 41: bernina < ../samples/psl3.bna
+
+                                                          /\    
+      -----  IT                                          /| \    
+      \              B E R N I N A   0.1.8a             / |  \    
+       \                                               |   \  \   
+       /                 A Sum^it server               |    |  \  
+      /                                                /     \  \ 
+      -----                                           /      |   \
+                   Use ^D to terminate session       /       /    \
+
+
+Input format = infix
+Independent variable = x
+Derivation = D
+Second variable for Darboux curves = y
+
+3 -->							19.03.97	14.08.97
+annihilator::symmetricPower: optimized for p at		   267		   284
+annihilator: optimized for factors at			   700		   550
+ffsympow::removeRowContents: done at			  1134		   567
+annihilator: dependence at				140067		 85950
+annihilator: non-primitive operator at			140117		 86000
+primpart: primitive part at				   867		   317
+
+4 --> linalg[vector](1,[1]);
+
+5 --> \pmatrix{ 1\cr } 
+
+                 0.1.9          linprog         gmp+div/+/-
+                18.03.97        19.03.97         14.08.97
+optimization   =    10"		    0.7"             0.6"
+linear algebra =  2'17		 2'18		  1'25
+content        =     1.7"	    2"		     1"
+----------------------------------------------------------------------------
+TOTAL(mat+ker) =   2'34		 2'27		   1'30
+
+
+idefix{bronstei} 41: bernina < ../samples/psl3.bna
+
+                                                          /\    
+      -----  IT                                          /| \    
+      \              B E R N I N A   0.1.8a             / |  \    
+       \                                               |   \  \   
+       /                 A Sum^it server               |    |  \  
+      /                                                /     \  \ 
+      -----                                           /      |   \
+                   Use ^D to terminate session       /       /    \
+
+
+Input format = infix
+Independent variable = x
+Derivation = D
+Second variable for Darboux curves = y
+
+3 -->							19.03.97	14.08.97
+annihilator::symmetricPower: optimized for p at		  48517		  54717
+annihilator: optimized for factors at			 113000		  98300
+ffsympow::removeRowContents: done at			 142767		  46567
+annihilator: dependence at
+annihilator: non-primitive operator at
+primpart: primitive part at
+
+                 0.1.9          linprog         gmp+div/+/-
+                18.03.97        19.03.97         14.08.97
+optimization   = 1:47'55	 1'53		  1'38
+linear algebra =
+content        =
+----------------------------------------------------------------------------
+TOTAL(mat+ker) =
+

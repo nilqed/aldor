@@ -1,0 +1,505 @@
+-- ======================================================================
+-- This code was written all or part by Dr. Manuel Bronstein from
+-- Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+-- decided to publish this code under the CeCILL open source license in
+-- memory of Dr. Manuel Bronstein.
+-- 
+-- This software is governed by the CeCILL license under French law and
+-- abiding by the rules of distribution of free software. You can use,
+-- modify and/or redistribute the software under the terms of the CeCILL
+-- license as circulated by CEA, CNRS and Inria at the following URL :
+-- http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+-- 
+-- As a counterpart to the access to the source code and rights to copy,
+-- modify and redistribute granted by the license, users are provided
+-- only with a limited warranty and the software's author, the holder of
+-- the economic rights, and the successive licensors have only limited
+-- liability.
+-- 
+-- In this respect, the user's attention is drawn to the risks associated
+-- with loading, using, modifying and/or developing or reproducing the
+-- software by the user in light of its specific status of free software,
+-- that may mean that it is complicated to manipulate, and that also
+-- therefore means that it is reserved for developers and experienced
+-- professionals having in-depth computer knowledge. Users are therefore
+-- encouraged to load and test the software's suitability as regards
+-- their requirements in conditions enabling the security of their
+-- systems and/or data to be ensured and, more generally, to use and
+-- operate it in the same conditions as regards security.
+-- 
+-- The fact that you are presently reading this means that you have had
+-- knowledge of the CeCILL license and that you accept its terms.
+-- ======================================================================
+-- 
+------------------------------ sit_sys1tls.as ------------------------------
+-- Copyright (c) Manuel Bronstein 2000
+-- Copyright (c) INRIA 2000, Version 0.1.12
+-- Logiciel Sum^it (c) INRIA 2000, dans sa version 0.1.12
+-----------------------------------------------------------------------------
+
+#include "sumit"
+
+#if ALDOC
+\thistype{LinearOrdinaryRecurrenceSystemTools}
+\History{Manuel Bronstein}{6/10/2000}{created}
+\Usage{import from \this(R, F, $\iota$, RX)}
+\Params{
+{\em R} & \astype{IntegralDomain} & An integral domain\\
+{\em F} & \astype{Field} & A field containing R\\
+$\iota$ & $R \to F$ & An injection from R into F\\
+{\em RX} & \astype{UnivariatePolynomialCategory} R & A polynomial ring over R\\
+}
+\Descr{\this(R, F, $\iota$, RX) provides tools for viewing linear
+recurrences with matrices of polynomials as coefficients,
+as generators of sequences of vectors satisfying the corresponding recurrences.}
+\begin{exports}
+\asexp{kernel}: & A $\to$ \astype{Generator} V V F & compute all solutions\\
+                & (A, Z) $\to$ \astype{Generator} V V F & \\
+& (A, \astype{PrimitiveArray} I, V M F) $\to$ \astype{Generator} V V F & \\
+& (A, Z, \astype{PrimitiveArray} I, V M F) $\to$ \astype{Generator} V V F & \\
+\asexp{values}:
+& A $\to$ V V F $\to$ \astype{Generator} V F & compute a solution\\
+& (A, Z) $\to$ V V F $\to$ \astype{Generator} V F & \\
+& (A, Z) $\to$ (V V F, \astype{Generator} V F) $\to$ \astype{Generator} V F &\\
+\end{exports}
+\begin{aswhere}
+A &==& \astype{Array} \astype{DenseMatrix} RX\\
+I &==& \astype{MachineInteger}\\
+M &==& \astype{DenseMatrix}\\
+V &==& \astype{Vector}\\
+Z &==& \astype{Integer}\\
+\end{aswhere}
+#endif
+
+macro {
+	B	== Boolean;
+	G	== Generator;
+	PA	== PrimitiveArray;
+	A	== Array;
+	I	== MachineInteger;
+	Z	== Integer;
+	V	== Vector;
+	M	== DenseMatrix;
+}
+
+LinearOrdinaryRecurrenceSystemTools(R:IntegralDomain, F:Field, inj: R -> F,
+				RX: UnivariatePolynomialCategory R): with {
+	kernel: A M RX -> G V V F;
+	kernel: (A M RX, Z) -> G V V F;
+	kernel: (A M RX, PA I, V M F) -> G V V F;
+	kernel: (A M RX, Z, PA I, V M F) -> G V V F;
+#if ALDOC
+\aspage{kernel}
+\Usage{\name($[A_m,\dots,A_0]$)\\ \name($[A_m,\dots,A_0]$, e)\\
+\name($[A_m,\dots,A_0]$, a, v)\\ \name($[A_m,\dots,A_0]$, e, a, v)}
+\Signatures{
+\name: & A $\to$ \astype{Generator} V V F\\
+\name: & (A, \astype{Integer}) $\to$ \astype{Generator} V V F\\
+\name: & (A, \astype{PrimitiveArray} I, V \astype{DenseMatrix} F) $\to$
+\astype{Generator} V V F\\
+\name: & (A, \astype{Integer}, \astype{PrimitiveArray} I,
+V \astype{DenseMatrix} F) $\to$ \astype{Generator} V V F\\
+}
+\begin{aswhere}
+A &==& \astype{Array} \astype{DenseMatrix} RX\\
+I &==& \astype{MachineInteger}\\
+V &==& \astype{Vector}\\
+\end{aswhere}
+\Params{
+$A_i$ & \astype{DenseMatrix} RX & Matrices defining a recurrence\\
+{\em e} & \astype{Integer} & An optional shift (default is 0)\\
+{\em a} & \astype{PrimitiveArray} \astype{MachineInteger} &
+Will contain the singularities\\
+{\em v} & \astype{Vector} \astype{DenseMatrix} F &
+Will contain linear constraints\\
+}
+\Descr{Returns a generator for all the values generated by $L E^e$
+starting will all possible initial values,
+where $L = \sum_{i=0}^m A_i E^i$.
+As vectors are being produced by the resulting generator,
+$a_0$ is being updated to contain the number $n$ of singularities
+encountered, while $a_1,\dots,a_n$ contain the indices of the
+encountered singularities, and $v.1,\dots,v.n$ contain the corresponding
+constraints on the initial values for the sequence to be a solution
+of $Ly = 0$.
+The kernel of $L$ is a subspace of the span of the sequence
+of vectors generated modulo the obtained constraints. It is
+exactly that space after all the singularities of $L$ have been
+encountered. It is possible to give \asfunc{FiniteLinearStructureType}{empty}
+as parameter for $a$ (resp.~$v$), in which case the singularities
+(resp.~constraints) are not computed. Note that the size of the
+vectors generated increase by one or more at each singularity.}
+#endif
+	values: A M RX -> V V F -> G V F;
+	values: (A M RX, Z) -> V V F -> G V F;
+	values: (A M RX, Z) -> (V V F, G V F) -> G V F;
+#if ALDOC
+\aspage{values}
+\Usage{\name($[A_m,\dots,A_0]$)([$Y_0,\dots,Y_{m+e-1}$])\\
+\name($[A_m,\dots,A_0]$, e)([$Y_0,\dots,Y_{m+e-1}$])\\
+\name($[A_m,\dots,A_0]$, e)([$Y_0,\dots,Y_{m+e-1}$], rhs)}
+\Signatures{
+\name: & A $\to$ \astype{Vector} \astype{Vector} F $\to$
+\astype{Generator} \astype{Vector} F\\
+\name: & (A, \astype{Integer}) $\to$ \astype{Vector} \astype{Vector} F $\to$
+\astype{Generator} \astype{Vector} F\\
+\name: & (A, \astype{Integer}) $\to$ (\astype{Vector} \astype{Vector} F,
+\astype{Generator} \astype{Vector} F) $\to$ \astype{Generator} F\\
+}
+\begin{aswhere}
+A &==& \astype{Array} \astype{DenseMatrix} RX\\
+\end{aswhere}
+\Params{
+$A_i$ & \astype{DenseMatrix} RX & Matrices defining a recurrence\\
+{\em e} & \astype{Integer} & An optional shift (default is 0)\\
+$Y_i$ & \astype{Vector} F & Initial conditions\\
+{\em rhs} & \astype{Generator} \astype{Vector} F &
+An optional right-hand side (default is 0)\\
+}
+\Retval{Returns a generator for the sequence $Y$ satisfying by
+$(L E^e) Y = rhs$, where $L = \sum_{i=0}^m A_i E^i$,
+starting with $Y_0,Y_1,\dots,Y_{m+e-1}$. If $L$ is nonsingular,
+\ie if $A_m(n)$ is nonsingular for all integers $n \ge 0$,
+then the sequence generated is the only solution of $(L E^e) Y = rhs$ with
+the given initial values.}
+\Remarks{This function causes a division by zero if a singularity
+of $L$ is encountered. Use \asexp{kernel} for singular recurrences.
+Note that even for nonsingular recurrences, \asexp{kernel} is more efficient
+for obtaining a basis of the solutions of $(L E^e) Y = 0$ than calling
+\name{} repeatedly with several intitial conditions.}
+#endif
+} == add {
+	values(L:A M RX):V V F -> G V F	== { import from Z; values(L, 0); }
+
+	local times(mat:M F, v:V V F):V V F == {
+		import from I;
+		w:V V F := zero(n := #v);
+		for i in 1..n repeat w.i := mat * v.i;
+		w;
+	}
+
+	local count(a?:PA B, dim:I):I == {
+		n := 0;
+		for i in 0..prev dim repeat { if a?.i then n := next n }
+		n;
+	}
+
+	-- put the rows of mat * vec corresponding to sing? = true as 0
+	-- and append unit vectors corresponding to them at the end
+	-- if const? = true, returns a matrix st each row is a linear constraint
+	local times(mat:M F,v:V V F,sing?:PA B,dim:I,const?:B):(V V F, M F) == {
+		import from I, F, V F;
+		n := #v;
+		m := count(sing?, dim);
+		assert(m > 0);
+		constraints:M F := { const? => zero(m, n); zero(0, 0) }
+		w:V V F := zero(n+m);
+		for i in 1..n repeat {
+			w.i := mat * v.i;
+			k:I := 1;
+			for j in 1..dim | sing?(prev j) repeat {
+				if const? then constraints(k, i) := w.i.j;
+				w.i.j := 0;
+				k := next k;
+			}
+		}
+		k := next n;
+		for j in 1..dim | sing?(prev j) repeat {
+			w.k := zero dim;
+			w.k.j := 1;
+			k := next k;
+		}
+		(w, constraints);
+	}
+
+	kernel(L:A M RX):G V V F == {
+		import from PA I, V M F;
+		kernel(L, empty, empty);
+	}
+
+	kernel(L:A M RX, e:Z):G V V F == {
+		import from PA I, V M F;
+		kernel(L, e, empty, empty);
+	}
+
+	kernel(L:A M RX, sing:PA I, constraints:V M F):G V V F == {
+		import from Z;
+		kernel(L, 0, sing, constraints);
+	}
+
+	local genzero(n:I):G V F == {
+		v:V F := zero n;
+		generate { repeat yield v }
+	}
+
+	values(L:A M RX, e:Z):V V F -> G V F == {
+		import from B, I, M RX;
+		assert(~empty? L);
+		assert(square?(L.0));
+		n := numberOfRows(L.0);
+		f:(V V F, G V F) -> G V F := values(L, e, false);
+		(v:V V F):G V F +-> f(v, genzero n);
+	}
+
+	values(L:A M RX, ee:Z):(V V F, G V F) -> G V F == {
+		import from B;
+		values(L, ee, true);
+	}
+
+	local values(m:M RX):PA PA G R == {
+		import from I, R, RX, PA G R;
+		assert(square? m);
+		n := numberOfRows m;
+		g:PA PA G R := new n;
+		for i in 1..n repeat {
+			i1 := prev i;
+			g.i1 := new n;
+			for j in 1..n repeat g.i1.(prev j) := values(m(i,j), 0);
+		}
+		g;
+	}
+
+	local zerovec(n:I, m:I):V V F == {
+		import from V F;
+		v:V V F := zero n;
+		for i in 1..n repeat v.i := zero m;
+		v;
+	}
+
+	-- the vectors in a are not necessarily of the same size
+	-- but they are all at most the size of v
+	-- on exit, v.i is the dot product of b times the i-th cut of a
+	local dot!(v:V V F, d:I, b:V M F, a:PA V V F):() ==
+		for i in 1..#v repeat dot!(v.i, b, a, i, d);
+
+	-- the vectors in a are not necessarily of the same size
+	-- in particular they could be of size < i
+	local dot!(v:V F, b:V M F, a:PA V V F, i:I, d:I):() == {
+		import from V V F;
+		assert(i > 0);
+		zero! v;
+		for k in 1..#b repeat {
+			ak := a(prev k);
+			if i <= #ak then add!(v, b.k, ak.i, d);
+		}
+		v;
+	}
+
+	-- the equation to consider is really (L E^e y)|n = f|n for n >= 0
+	-- where genrhs yields f|0, f|1, ...
+	-- if inhom? is false, then genrhs is actually ignored
+	-- yields an array a of array of vectors such that a(i,j) is
+	-- the vector corresponding to the initial condition
+	-- unit vector i+1 at time j+1, 0 everywhere else
+        -- If ee > 0, then the first ee vectors of the sequences generated
+        -- in the kernel are completely free and independent, so the
+        -- generated sequences starting from e_{ij} for 0 <= j < ee
+	-- would be 0 after the first ee vectors
+        -- To save memory, we do not return sequences from those
+	-- initial values and let the client code consider them
+	-- sing must be either empty or at least
+	--                     1 + max number of singularities of L
+	-- on exit:
+	--   sing.0 = #singularities encountered, sing.i = i-th singularity,
+	-- TEMPORARY: HOMOGENEOUS EQS ONLY
+	kernel(L:A M RX, ee:Z, sing:PA I, constraints:V M F):G V V F==generate {
+		import from B, F, V F, V V F, R, RX, V RX, M RX, PA PA G R;
+		import from LinearAlgebra(RX, M RX);
+		TRACE("sys1tls::kernel: L = ", L);
+		TRACE("sys1tls::kernel: ee = ", ee);
+		e := machine ee;
+		m := prev(#L);		-- order of the steady-state recurrence
+		assert(m > 0);		-- 0-th order is only for singular recs
+		assert(square?(L.0));
+		dim := numberOfRows(L.0);
+		td:I := 0;
+		while zero?(L.td) repeat { td := next td; m := prev m; }
+		if td  > 0 then {
+			for i in 0..next m repeat L.i := L(i + td);
+			e := e + td;
+		}
+		a:PA V V F := new m;	-- last m computed values (homogeneous)
+		m1 := prev m;
+		dim1 := prev dim;
+		-- free initial values if e > 0
+		for n in 1..e repeat yield zerovec(dim * m, dim);
+		emin := min(e, 0);
+		r := m + emin;		-- order of L*E^e if e<0, of L otherwise
+		for n in 0..m1 repeat {	-- zeroes if e < 0 and initial values
+			a.n := zerovec(dim * r, dim);
+			if (nn := n + emin) >= 0 then {
+				for i in 0..dim1 repeat
+					a.n.(r * i + next nn).(next i) := 1;
+				yield(a.n);
+			}
+		}
+		b:V M F := zero m;
+		for i in 1..m repeat b.i := zero(dim, dim);
+		(invlcg, dgg) := genInverse(L.m);
+		g:PA PA PA G R := new m;
+		for i in 0..m1 repeat g.i := values(L.i);
+		d:M F := zero(dim, dim);
+		v := zerovec(dim * r, dim);
+		r1 := prev r;
+		singindex?:PA B := new dim;
+		nsing:I := 0;
+		if (sing? := ~empty? sing) then sing.0 := nsing;
+		const? := ~empty? constraints;
+		for n in e.. repeat {
+			for i in 1..m repeat eval!(b.i, dim1, g(prev i));
+			dot!(v, dim, b, a);
+			if eval!(d, dim1, invlcg, dgg, singindex?) then {
+				nsing := next nsing;
+				if sing? then {
+					sing.0 := nsing;
+					sing.nsing := n;
+				}
+				(vv,mt) := times(d, v, singindex?, dim, const?);
+				if const? then constraints.nsing := mt;
+				v := zerovec(#vv, dim);
+			}
+			else vv := times(d, v);		-- not a singularity
+			yield vv;
+			for i in 1..m1 repeat a(prev i) := a.i;
+			a.m1 := vv;
+		}
+	}
+
+	local allnonzero?(v:V RX):B == {
+		import from RX;
+		for p in v repeat { zero? p => return false; }
+		true;
+	}
+
+	-- returns (g, d) such that g(i,j)/d.i generates (-m^{-1})_{ij}
+	local genInverse(m:M RX):(PA PA G R, PA G R) == {
+		import from I, R, RX, V RX, LinearAlgebra(RX, M RX);
+		TRACE("sys1tls::genInverse: m = ", m);
+		-- (m^t)^{-1} = invlc dg^{-1}, so m^{-1} = dg^{-1} invlc^t
+		(invlc, dg) := inverse transpose m;
+		TRACE("sys1tls::genInverse: invlc = ", invlc);
+		TRACE("sys1tls::genInverse: dg = ", dg);
+		assert(square? invlc); assert(allnonzero? dg);
+		n := numberOfRows invlc;
+		assert(#dg = n);
+		invlcg := values transpose invlc;
+		-- negate denominators so that we generate the values of -A^{-1}
+		dgg:PA G R := new n;
+		for i in 1..n repeat dgg(prev i) := values(-(dg.i), 0);
+		(invlcg, dgg);
+	}
+
+	-- the equation to consider is really (L E^e y)|n = f|n for n >= 0
+	-- where genrhs yields f|0, f|1, ...
+	-- if inhom? is false, then genrhs is actually ignored
+	local values(L:A M RX, ee:Z, inhom?:B):(V V F, G V F) -> G V F == {
+		import from V F, M RX, PA PA G R;
+		TRACE("sys1tls::values: L = ", L);
+		TRACE("sys1tls::values: ee = ", ee);
+		TRACE("sys1tls::values: inhom? = ", inhom?);
+		e := machine ee;
+		m := prev(#L);		-- order of the steady-state recurrence
+		assert(m > 0);		-- 0-th order is only for singular recs
+		assert(square?(L.0));
+		dim := numberOfRows(L.0);
+		td:I := 0;
+		while zero?(L.td) repeat { td := next td; m := prev m; }
+		if td  > 0 then {
+			for i in 0..next m repeat L.i := L(i + td);
+			e := e + td;
+		}
+		assert(m > 0);		-- 0-th order is only for singular recs
+		assert(~zero?(L.0));
+		r := m + e;		-- order of L*E^e
+		a:V V F := zero m;
+		b:V M F := zero m;
+		for i in 1..m repeat b.i := zero(dim, dim);
+		(invlcg, dgg) := genInverse(L.m);
+		g:PA PA PA G R := new m;
+		m1 := prev m;
+		for i in 0..m1 repeat g.i := values(L.i);
+		d:M F := zero(dim, dim);
+		-- TEMPO: COMPILER BUG?
+		-- v:V F := zero dim;
+		dim1 := prev dim;
+		sing?:PA B := new dim;
+		(y:V V F, genrhs:G V F):G V F +-> generate {
+			v:V F := zero dim;
+			assert(#y = r);
+			zero! d;
+			for n in 1..e repeat { assert(#(y.n) = dim); yield y.n }
+			for n in 1..m repeat {
+				zero!(b.n);
+				if (nn := n + e) > 0 then {
+					assert(#(y.nn) = dim);
+					a.n := y.nn;
+					yield(a.n);
+				}
+				else a.n := zero dim;
+			}
+			for rh in genrhs repeat {
+				for i in 1..m repeat eval!(b.i,dim1,g(prev i));
+				singular? := eval!(d, dim1, invlcg, dgg, sing?);
+				assert(~singular?);
+				TRACE("sys1tls::values: d = ", d);
+				dot!(v, b, a, dim);
+				TRACE("sys1tls::values: v = ", v);
+				if inhom? then v := minus!(v, rh);
+				vv := d * v;
+				TRACE("sys1tls::values: yielding ", vv);
+				yield vv;
+				for i in 1..m1 repeat a.i := a(next i);
+				a.m := vv;
+			}
+		}
+	}
+
+	-- adds b * a to v
+	local add!(v:V F, b:M F, a:V F, n:I):() == {
+		import from F;
+		assert(square? b);
+		assert(numberOfRows b = n);
+		assert(#a = n);
+		for i in 1..n repeat {
+			s := v.i;
+			for j in 1..n repeat s := add!(s, b(i, j) * a.j);
+			v.i := s;
+		}
+	}
+
+	local dot!(v:V F, b:V M F, a:V V F, dim:I):() == {
+		zero! v;
+		for j in 1..#b repeat add!(v, b.j, a.j, dim);
+		v;
+	}
+
+	local eval!(mat:M F, n:I, g:PA PA G R):() == {
+		import from G R, PA G R;
+		assert(square? mat);
+		assert(numberOfRows mat = next n);
+		for i in 0..n repeat for j in 0..n repeat
+			mat(next i, next j) := inj next!(g.i.j);
+	}
+
+	-- fills mat_{ij} with num(i,j)/d.i or num(i,j) if d.i = 0
+	-- on exit, sing.i is true whenever d.i = 0
+	-- returns true if sing.i is true for some i, false otherwise
+	local eval!(mat:M F, n:I, num:PA PA G R, den:PA G R, sing?:PA B):B == {
+		import from R, F, G R;
+		assert(square? mat);
+		assert(numberOfRows mat = next n);
+		singular? := false;
+		local dd:F;
+		for i in 0..n repeat {
+			d := next!(den.i);		-- denom for row i
+			if (sing?.i := zero? d) then {
+				singular? := true;
+				dd := 1;
+			}
+			else dd := inv inj d;
+			for j in 0..n repeat
+				mat(next i, next j) := inj(next!(num.i.j)) * dd;
+		}
+		singular?
+	}
+}

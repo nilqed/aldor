@@ -1,0 +1,15 @@
+L := D^3+(8*x-3)*D^2/x/(x-1)+1/108*(1536*x^2-1156*x+81)*D/x^2/(x-1)^2
++1/729*(3240*x^2-3674*x+621)/x^2/(x-1)^3;
+
+K3 := radicalSolutions(symmetricPower(L,3), 2);
+maple(K3);
+
+K6 := symmetricKernel(L,6);
+maple(K6);
+
+K9 := symmetricKernel(L,9);
+maple(K9);
+
+K18 := symmetricKernel(L,18);
+maple(K18);
+

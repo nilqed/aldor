@@ -1,0 +1,162 @@
+# ======================================================================
+# This code was written all or part by Dr. Manuel Bronstein from
+# Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+# decided to publish this code under the CeCILL open source license in
+# memory of Dr. Manuel Bronstein.
+# 
+# This software is governed by the CeCILL license under French law and
+# abiding by the rules of distribution of free software. You can use,
+# modify and/or redistribute the software under the terms of the CeCILL
+# license as circulated by CEA, CNRS and Inria at the following URL :
+# http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+# 
+# As a counterpart to the access to the source code and rights to copy,
+# modify and redistribute granted by the license, users are provided
+# only with a limited warranty and the software's author, the holder of
+# the economic rights, and the successive licensors have only limited
+# liability.
+# 
+# In this respect, the user's attention is drawn to the risks associated
+# with loading, using, modifying and/or developing or reproducing the
+# software by the user in light of its specific status of free software,
+# that may mean that it is complicated to manipulate, and that also
+# therefore means that it is reserved for developers and experienced
+# professionals having in-depth computer knowledge. Users are therefore
+# encouraged to load and test the software's suitability as regards
+# their requirements in conditions enabling the security of their
+# systems and/or data to be ensured and, more generally, to use and
+# operate it in the same conditions as regards security.
+# 
+# The fact that you are presently reading this means that you have had
+# knowledge of the CeCILL license and that you accept its terms.
+# ======================================================================
+# 
+obj1      = quotient.o nnquotient.o quotientby.o nnquotby.o quotcat.o
+obj2      = quotfcat0.o quotfcat.o ufalgquot.o rateval.o matquot.o
+obj3	  = quotbycat.o vecquot.o
+objects   = $(obj1) $(obj2) $(obj3)
+asobj1    = quotient.ao nnquotient.ao quotientby.ao nnquotby.ao quotcat.ao
+asobj2    = quotfcat0.ao quotfcat.ao ufalgquot.ao rateval.ao matquot.ao
+asobj3	  = quotbycat.ao vecquot.ao
+asobjects = $(asobj1) $(asobj2) $(asobj3)
+flags	  = -M2 -Fao -Fo -Csmax=0 -Mno-mactext
+options   = $(flags) -q3
+tex1      = quotient.tex nnquotient.tex quotientby.tex nnquotby.tex quotcat.tex
+tex2      = quotfcat0.tex quotfcat.tex ufalgquot.tex rateval.tex matquot.tex
+tex3	  = quotbycat.tex vecquot.tex
+tex       = $(tex1) $(tex2) $(tex3)
+test      = Tquotient.as
+testdir   = ../../test
+libsumit  = ../../lib/libsumit.a
+sumitasl  = ../../lib/libsumit.al
+
+all: datestamp
+
+datestamp: $(objects)
+	ar rv $(libsumit) $(objects)
+	touch datestamp
+
+quotcat.o: quotcat.as ../diff/CATdiffext.o ../univpoly/sup.o ../mat/categories/laring.o
+	axiomxl $(options) quotcat.as
+	ar rv $(sumitasl) quotcat.ao
+
+quotbycat.o: quotbycat.as quotcat.o ufalgquot.o matquot.o ../mat/matdense.o
+	axiomxl $(options) quotbycat.as
+	ar rv $(sumitasl) quotbycat.ao
+
+quotientby.o: quotientby.as quotbycat.o
+	axiomxl $(options) quotientby.as
+	ar rv $(sumitasl) quotientby.ao
+
+nnquotby.o: nnquotby.as quotbycat.o
+	axiomxl $(options) nnquotby.as
+	ar rv $(sumitasl) nnquotby.ao
+
+quotfcat0.o: quotfcat0.as quotcat.o ../mat/matdense.o
+	axiomxl $(options) quotfcat0.as
+	ar rv $(sumitasl) quotfcat0.ao
+
+ufalgquot.o: ufalgquot.as quotfcat0.o ../univpoly/categories/upolc0.o
+	axiomxl $(options) ufalgquot.as
+	ar rv $(sumitasl) ufalgquot.ao
+
+quotfcat.o: quotfcat.as ufalgquot.o matquot.o
+	axiomxl $(options) quotfcat.as
+	ar rv $(sumitasl) quotfcat.ao
+
+nnquotient.o: nnquotient.as quotfcat.o
+	axiomxl $(options) nnquotient.as
+	ar rv $(sumitasl) nnquotient.ao
+
+quotient.o: quotient.as quotfcat.o
+	axiomxl $(options) quotient.as
+	ar rv $(sumitasl) quotient.ao
+
+vecquot.o: vecquot.as quotfcat0.o ../mat/categories/vect.o
+	axiomxl $(options) vecquot.as
+	ar rv $(sumitasl) vecquot.ao
+
+matquot.o: matquot.as vecquot.o ../mat/categories/matcat0.o
+	axiomxl $(options) matquot.as
+	ar rv $(sumitasl) matquot.ao
+
+rateval.o: rateval.as quotient.o ../basic/shell/evaluator.o ../basic/shell/makepring.o
+	axiomxl $(options) rateval.as
+	ar rv $(sumitasl) rateval.ao
+
+
+.PHONY: doc
+doc: $(tex)
+
+quotcat.tex: quotcat.as
+	as2doc quotcat
+
+quotbycat.tex: quotbycat.as
+	as2doc quotbycat
+
+quotientby.tex: quotientby.as
+	as2doc quotientby
+
+nnquotby.tex: nnquotby.as
+	as2doc nnquotby
+
+ufalgquot.tex: ufalgquot.as
+	as2doc ufalgquot
+
+matquot.tex: matquot.as
+	as2doc matquot
+
+vecquot.tex: vecquot.as
+	as2doc vecquot
+
+quotfcat0.tex: quotfcat0.as
+	as2doc quotfcat0
+
+quotfcat.tex: quotfcat.as
+	as2doc quotfcat
+
+quotient.tex: quotient.as
+	as2doc quotient
+
+nnquotient.tex: nnquotient.as
+	as2doc nnquotient
+
+rateval.tex: rateval.as
+	as2doc rateval
+
+
+.PHONY: test
+test: $(test)
+
+Tquotient.as: quotient.as
+	as2test quotient
+	cp Tquotient.as $(testdir)
+
+.PHONY: clean
+clean:
+	-rm $(objects) $(asobjects) $(tex) $(test)
+
+.PHONY: Tclean
+Tclean:
+	-rm $(test) article.*
+

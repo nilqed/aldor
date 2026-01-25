@@ -1,0 +1,130 @@
+# ======================================================================
+# This code was written all or part by Dr. Manuel Bronstein from
+# Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+# decided to publish this code under the CeCILL open source license in
+# memory of Dr. Manuel Bronstein.
+# 
+# This software is governed by the CeCILL license under French law and
+# abiding by the rules of distribution of free software. You can use,
+# modify and/or redistribute the software under the terms of the CeCILL
+# license as circulated by CEA, CNRS and Inria at the following URL :
+# http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+# 
+# As a counterpart to the access to the source code and rights to copy,
+# modify and redistribute granted by the license, users are provided
+# only with a limited warranty and the software's author, the holder of
+# the economic rights, and the successive licensors have only limited
+# liability.
+# 
+# In this respect, the user's attention is drawn to the risks associated
+# with loading, using, modifying and/or developing or reproducing the
+# software by the user in light of its specific status of free software,
+# that may mean that it is complicated to manipulate, and that also
+# therefore means that it is reserved for developers and experienced
+# professionals having in-depth computer knowledge. Users are therefore
+# encouraged to load and test the software's suitability as regards
+# their requirements in conditions enabling the security of their
+# systems and/or data to be ensured and, more generally, to use and
+# operate it in the same conditions as regards security.
+# 
+# The fact that you are presently reading this means that you have had
+# knowledge of the CeCILL license and that you accept its terms.
+# ======================================================================
+# 
+obj1 = karatsuba.o dup.o umonom.o sup.o poch.o upoch.o fft.o
+obj2 = fftmodp.o
+objects = $(obj1) $(obj2)
+asobj1 = karatsuba.ao dup.ao umonom.ao sup.ao poch.ao upoch.ao fft.ao
+asobj2 = fftmodp.ao
+asobjects = $(asobj1) $(asobj2)
+flags	  = -M2 -Mno-mactext -Fao -Fo -Csmax=0
+options   = $(flags) -q3
+# options   = $(flags) -q1 -dASTRACE -dASSERT -zdb
+tex       = karatsuba.tex dup.tex sup.tex umonom.tex poch.tex upoch.tex
+test      = Tumonom.as Tdup.as Tsup.as
+testdir   = ../../test
+libsumit  = ../../lib/libsumit.a
+sumitasl  = ../../lib/libsumit.al
+
+all: datestamp
+
+datestamp: $(objects)
+	ar rv $(libsumit) $(objects)
+	touch datestamp
+
+fftmodp.o: fftmodp.as ../numbers/hwordprimes.o
+	axiomxl $(options) fftmodp.as
+	ar rv $(sumitasl) fftmodp.ao
+
+fft.o: fft.as fftmodp.o categories/upolc0.o ../categories/CATprime0.o
+	axiomxl $(options) fft.as
+	ar rv $(sumitasl) fft.ao
+
+karatsuba.o: karatsuba.as ../categories/CATcomring.o ../util/stdutil.o
+	axiomxl $(options) karatsuba.as
+	ar rv $(sumitasl) karatsuba.ao
+
+dup.o: dup.as categories/fftring.o categories/upolycat.o karatsuba.o
+	axiomxl $(options) dup.as
+	ar rv $(sumitasl) dup.ao
+
+sup.o: sup.as categories/upolycat.o umonom.o
+	axiomxl $(options) sup.as
+	ar rv $(sumitasl) sup.ao
+
+umonom.o: umonom.as ../categories/CATfinring.o
+	axiomxl $(options) umonom.as
+	ar rv $(sumitasl) umonom.ao
+
+upoch.o: upoch.as poch.o sup.o
+	axiomxl $(options) upoch.as
+	ar rv $(sumitasl) upoch.ao
+
+poch.o: poch.as categories/upolycat.o
+	axiomxl $(options) poch.as
+	ar rv $(sumitasl) poch.ao
+
+treesup.o: treesup.as
+	axiomxl $(options) treesup.as
+	ar rv $(sumitasl) treesup.ao
+
+.PHONY: doc
+doc: $(tex)
+
+karatsuba.tex: karatsuba.as
+	as2doc karatsuba
+
+dup.tex: dup.as
+	as2doc dup
+
+sup.tex: sup.as
+	as2doc sup
+
+umonom.tex: umonom.as
+	as2doc umonom
+
+poch.tex: poch.as
+	as2doc poch
+
+upoch.tex: upoch.as
+	as2doc upoch
+
+.PHONY: test
+test: $(test)
+
+Tumonom.as: umonom.as
+	as2test umonom
+	cp Tumonom.as $(testdir)
+
+Tdup.as: dup.as
+	as2test dup
+	cp Tdup.as $(testdir)
+
+Tsup.as: sup.as
+	as2test sup
+	cp Tsup.as $(testdir)
+
+.PHONY: clean
+clean:
+	-rm $(objects) $(asobjects) $(tex) $(test)
+

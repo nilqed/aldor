@@ -1,0 +1,6 @@
+The salli reference manual is best viewed online with a recent version
+of xdvi that supports hypertext. The recommended way to make a hardcopy
+is with 2 manual pages on each side via
+               dvips -f salliref.dvi | psnup -2 | lpr
+~
+

@@ -1,0 +1,68 @@
+{VERSION 3 0 "DEC ALPHA UNIX" "3.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 
+0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Output" 0 11 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }{PSTYLE "" 11 12 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 
+0 0 0 0 0 0 0 }1 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "restart; with(shasta
+);" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#74%(adjointG%&applyG%+dispersion
+G%.exteriorPowerG%&hyperG%(leftGcdG%(leftLcmG%-makeIntegralG%*normaliz
+eG%1polynomialKernelG%3polynomialSolutionG%/rationalKernelG%1rationalS
+olutionG%)rightGcdG%)rightLcmG%.rightQuotientG%)sectionsG%'spreadG" }}
+}{EXCHG {PARA 0 "" 0 "" {TEXT -1 109 "Solve the homogeneous system Y(n
++1) = A(n) Y(n) where A(n) is the following 16x16 matrix with entries \+
+in Q(n)" }{TEXT -1 35 " [arises from an order 4 eigenring]" }}{PARA 0 
+"> " 0 "" {MPLTEXT 1 0 20 "read(\"sys16.maple\");" }}{PARA 12 "" 1 "" 
+{XPPMATH 20 "6#>%\"AG-%'matrixG6#7272\"\"!F*F*F**&,,*$)%\"nG\"\"%\"\"
+\"#!\"$F0*$)F/\"\"$F1#\"\"&\"\"#*$)F/F9F1#\"#XF9F/#\"$L\"F0#\"#BF9\"\"
+\"F1,.*$)F/F8F1FBF-#FBF9F4!#9F:!#IF/#!#RF9!\"%FB!\"\"FBF*F*F*F*F*F*F*F
+*F*F*72F*F*F*F**&,0*$)F/\"\"'F1#FBF0FD#F8F0F-#!#>F0F4!#GF:#!$J\"F0F/FU
+#\"#6F0FBF1,0FPFBFD#F6F9F-#!#FF9F4!#WF:#!#**F9F/#!#ZF9FKFBFLF*FBF*F*F*
+F*F*F*F*F*F*72F*F*F*F**&,.FDFSF-F2F4#!#BF0F:#!#XF0F/#FJF0#!#6F0FBF1Ffn
+FLF*F*FBF*F*F*F*F*F*F*F*72F*F*F*F**&,.FD#!\"\"F0F-FFF4F0F:#\"#:F0F/F]p
+F]pFBF1FfnFLF*F*F*F*F*F*F*F*F*F*F*72F*F*F*F*F*F*F*F*F+FBF*F*F*F*F*F*72
+F*F*F*F*F*F*F*F*FNF*FBF*F*F*F*F*72F*F*F*F*F*F*F*F*F`oF*F*FBF*F*F*F*72F
+*F*F*F*F*F*F*F*FjoF*F*F*F*F*F*F*72F*F*F*F*F*F*F*F*F*F*F*F*F+FBF*F*72F*
+F*F*F*F*F*F*F*F*F*F*F*FNF*FBF*72F*F*F*F*F*F*F*F*F*F*F*F*F`oF*F*FB72F*F
+*F*F*F*F*F*F*F*F*F*F*FjoF*F*F*72*&,.FDF6F-!\"(F4!$+\"F:!$B#F/!$z\"!#YF
+BF1,.FDFBF-!\"#F4!#;F:!#:F/F0F0FBFL*&,0FPFKFD!\"'F-\"#aF4\"$w\"F:\"$)>
+F/\"#%*\"#;FBF1F`qFLF*F**&,6*$)F/\"\"*F1#F`rF0*$)F/\"\")F1#!#^F0*$)F/
+\"\"(F1!$D\"FP#\"$\"GF9FD#\"%VdF9F-\"%O))F4#\"&H3&F0F:#\"&0#QF0F/\"%)e
+$\"$H&FBF1,8*$)F/\"#5F1FBF^r#F3F9Fbr!#JFgr!#DFP\"$h#FD\"$J(F-\"$;(F4#
+\"$h$F9F:!$Q\"F/!#%*FbqFBFL*&,.FDF3F-FirF4\"$+\"F:\"$B#F/\"$z\"\"#YFBF
+1F`qFLF*F**&,8FgsF2F^r#!\"&F0Fbr#\"$(>F0Fgr#\"$H(F0FP#!$j)F9FD#!%:oF9F
+-#!&$yFF0F4#!&vT#F0F:#!%jvF0F/#\"$*eF0#\"$`#F9FBF1FfsFL*&,0FPFBFDF8F-F
+VF4!$7\"F:FYF/FVFenFBF1F`qFLF*F**&,6F^rF2Fbr#\"#>F0Fgr#\"$H\"F0FP!#eFD
+!$*oF-!%,>F4#!&j1\"F0F:#!%Z#)F0F/#!%dKF0#!$`#F9FBF1FfsFL*&,.FDFBF-F3F4
+FcoF:FeoF/FJFhoFBF1F`qFLF*F*72*&,0FPF]pFDF]uF-FfvF4\"$7\"F:\"$J\"F/Ffv
+FhoFBF1F`qFLF*FdqF*FjtF*FdtF**&,<*$)F/\"#7F1FS*$)F/FenF1F7Fgs#!#8F0F^r
+#!$2#F9Fbr#!%@5F0Fgr\"$F(FP#\"%x')F9FD\"%WvF-#\"&**4#F0F4#\"%d7F9F:#!%
+@DF0F/#!$4#F9#\"$@\"F0FBF1,:F`xFBFgs#F]pF9F^r#!#lF9Fbr!#cFgr\"$O#FP\"$
+#**FD\"%Z9F-#\"%$z\"F9F4#\"#&)F9F:!$K#F/!$5\"FbqFBFLF*F`vF**&,:F`xFSFg
+sFFF^r#!#dF0Fbr#!$:#F0Fgr#\"$*=F9FP#\"%*f$F0FD#\"%2))F0F-\"%>FF4#\"%Vp
+F0F:#\"%(o\"F0F/!#b#!$@\"F0FBF1FfyFLF*FdwF*72*&,.FDF]pF-F6F4FAF:F=F/\"
+#RFenFBF1F`qFLF*F*FdqFcvF*F*FdtFdzF*F*F`v*&,8FgsFSF^rFjsFbr#!#PF0FgrF_
+xFP#\"$@(F0FD#\"%T6F9F-#\"%&)QF0F4\"%/5F:#\"%6DF0F/#\"$H%F9FdyFBF1FfyF
+LF*F*Fdw72FBF*F*F**&,,F-#F6F0F4#F]uF9F:#FeoF9F/#!$L\"F0#FcoF9FBF1FCFLF
+*F*F**&,0FPF\\pFDF\\uF-FevF4\"#GF:#FjwF0F/FevFgoFBF1FfnFLF*F*F**&,.FDF
+\\pF-F^]lF4#FAF0F:#F=F0F/#F[\\lF0FZFBF1FfnFLF*F*F*" }}}{EXCHG {PARA 0 
+"" 0 "" {TEXT -1 25 "Shasta takes 14\" (obelix)" }{TEXT -1 0 "" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "Y := rationalKernel(A,E,n);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"YG-%'matrixG6#727$#\"\"\"\"\"#*&,,
+*$)%\"nG\"\"%\"\"\"#!\"(F,*$)F1\"\"$F3\"#=*$)F1F,F3\"#IF1#!#BF,!#6F+F3
+,,F/F+F6!\"%F:!\")F1F+F,F+!\"\"7$\"\"!*&,(F:!\"&F1!#5FAF+F3F@FC7$FE*&,
+(F6!\"\"F1F8F+F+F3F@FC7$FE*&,(F:F+F1F,F+F+F3F@FC7$FE*&,*F6FAF:!#9F1FTF
+AF+F3F@FC7$F**&,,F/F4F6F9F:\"#BF1#!#`F,!#<F+F3F@FC7$FE*&,*F6F+F:F,F1\"
+\"&F,F+F3F@FC7$FE*&,*F6FMF:F,F1FinF,F+F3F@FC7$FE*&,,F/F2F6F,F:!#?F1!#E
+FBF+F3F@FC7$FE*&,*F6FMF:F`oF1!#PFTF+F3F@FC7$F**&,,F/#!\"*F,F6\"#9F:\"#
+LF1#\"#6F,FAF+F3F@FC7$FE*&,(F:FinF1\"\")F8F+F3F@FC7$FE*&,*F6F`oF:!#iF1
+!#e!#;F+F3F@FC7$FE*&,,F/F2F6F,F:FZF1!#$*!#MF+F3F@FC7$FE*&,*F6F2F:F[pF1
+\"#@\"\"(F+F3F@FC7$F**&,*F/FioF6F[pF:\"#UF1#F\\pF,F3F@FC" }}}{EXCHG 
+{PARA 0 "" 0 "" {TEXT -1 12 "Verification" }{TEXT -1 0 "" }}{PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 48 "map(normal, evalm(subs(n=n+1,evalm(Y)) - A&*Y
+));" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#-%'matrixG6#727$\"\"!F(F'F'F'F'
+F'F'F'F'F'F'F'F'F'F'F'" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" 
+}}}}{MARK "4 0 0" 0 }{VIEWOPTS 1 1 0 1 1 1803 }

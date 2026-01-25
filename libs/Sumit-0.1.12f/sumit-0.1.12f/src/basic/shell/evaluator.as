@@ -1,0 +1,286 @@
+-- ======================================================================
+-- This code was written all or part by Dr. Manuel Bronstein from
+-- Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+-- decided to publish this code under the CeCILL open source license in
+-- memory of Dr. Manuel Bronstein.
+-- 
+-- This software is governed by the CeCILL license under French law and
+-- abiding by the rules of distribution of free software. You can use,
+-- modify and/or redistribute the software under the terms of the CeCILL
+-- license as circulated by CEA, CNRS and Inria at the following URL :
+-- http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+-- 
+-- As a counterpart to the access to the source code and rights to copy,
+-- modify and redistribute granted by the license, users are provided
+-- only with a limited warranty and the software's author, the holder of
+-- the economic rights, and the successive licensors have only limited
+-- liability.
+-- 
+-- In this respect, the user's attention is drawn to the risks associated
+-- with loading, using, modifying and/or developing or reproducing the
+-- software by the user in light of its specific status of free software,
+-- that may mean that it is complicated to manipulate, and that also
+-- therefore means that it is reserved for developers and experienced
+-- professionals having in-depth computer knowledge. Users are therefore
+-- encouraged to load and test the software's suitability as regards
+-- their requirements in conditions enabling the security of their
+-- systems and/or data to be ensured and, more generally, to use and
+-- operate it in the same conditions as regards security.
+-- 
+-- The fact that you are presently reading this means that you have had
+-- knowledge of the CeCILL license and that you accept its terms.
+-- ======================================================================
+-- 
+---------------------- evaluator.as -----------------------------
+-- Copyright Swiss Federal Polytechnic Institute Zurich, 1995
+--
+#include "sumit"
+#include "uid"
+
+macro {
+	Z	== SingleInteger;
+	TEXT	== TextWriter;
+	TREE	== ExpressionTree;
+	LEAF	== ExpressionTreeLeaf;
+	SYMBTAB	== SymbolTable;
+}
+
+#if ASDOC
+\thistype{Evaluator}
+\History{Manuel Bronstein}{10/01/96}{created}
+\Usage{\this~R: Category}
+\Params{ R & PartialRing & Resulting type of the evaluation\\ }
+\Descr{\this~R is a category of interpreters, \ie~types which convert
+expression trees into elements of R whenever possible.}
+\begin{exports}
+eval!: & (TEXT, TREE, SYM R) $\to \overline R$ & Interpret an arbitrary tree\\
+evalLeaf!: &	(LEAF, SYM R) $\to \overline R$ & Interpret a leaf\\
+evalOp!: &	(TEXT, TREE, SYM R) $\to \overline R$ & Interpret $op(args)$\\
+evalPrefix!: & (String, SingleInteger, List R, SYM R) $\to \overline R$ &
+Interpret $op(args)$, $op$ is prefix\\
+\end{exports}
+\begin{aswhere}
+LEAF &==& ExpressionTreeLeaf\\
+$\overline R$ &==& Partial R\\
+SYM &==& SymbolTable\\
+TEXT &==& TextWriter\\
+TREE &==& ExpressionTree\\
+\end{aswhere}
+#endif
+
+Evaluator(R:PartialRing): Category == with {
+	eval!:		(TEXT, TREE, SYMBTAB R) -> Partial R;
+	evalLeaf!:	(LEAF, SYMBTAB R) -> Partial R;
+	evalOp!:	(TEXT, TREE, SYMBTAB R) -> Partial R;
+	evalPrefix!:	(String, Z, List R, SYMBTAB R) -> Partial R;
+	default {
+		evalPrefix!(s:String, n:Z, l:List R, t:SYMBTAB R):Partial R == {
+			failed;
+		}
+
+		evalLeaf!(t:LEAF, tab:SYMBTAB R):Partial R == {
+			import from R;
+			symbol? t => tab symbol t;
+			integer? t => [integer(t)::R];
+			failed;
+		}
+
+		eval!(p:TEXT, t:TREE, tab:SYMBTAB R):Partial R == {
+			TRACE("Evaluator::eval! ", t);
+			leaf? t => evalLeaf!(leaf t, tab);
+			evalOp!(p, t, tab);
+		}
+
+		local evalArgs!(p:TEXT, l:List TREE, tab:SYMBTAB R):
+			Partial List R == {
+			TRACE("Evaluator::evalArgs! ", l);
+			import from Partial R, List R;
+			ans:List(R) := empty();
+			for arg in l repeat {
+				failed?(u := eval!(p,arg,tab)) => return failed;
+				ans := cons(retract u, ans);
+			}
+			[reverse! ans];
+		}
+
+		-- for(i := a, i <= b, i := i + 1, expr)
+		-- TEMPORARILY: for(i, a, lesseq(i, b), i + 1, expr)
+		local evalFor!(p:TEXT, n:Z, l:List TREE, tab:SYMBTAB R):
+			Partial R == {
+			TRACE("Evaluator::evalFor! ", l);
+			n ~= 5 or ~leaf?(t := first l) => failed;
+			evalFor!(p, t, first rest l, first rest rest l,
+					first rest rest rest l,
+					first rest rest rest rest l, tab);
+		}
+
+		local evalFor!(p:TEXT, var:TREE, init:TREE, end:TREE, incr:TREE,
+					code:TREE, tab:SYMBTAB R):Partial R == {
+			import from LEAF, List TREE, Z, R;
+			TRACE("Evaluator::evalFor! ", init);
+			-- uniqueId$operator(init) ~= UID__ASSIGN
+				-- or ~leaf?(first(args := arguments init))
+				-- or ~symbol?(leaf first args) => failed;
+			-- lv := symbol leaf first args;
+			~leaf?(var) or ~symbol?(leaf var) => failed;
+			lv := symbol leaf var;
+			oldval := tab.lv;
+			-- failed? evalAssign!(p, #args, args, tab) => failed;
+			failed?(u := eval!(p, init, tab)) => failed;
+			tab.lv := retract u;
+			ans:Partial R := failed;
+			cont?:Boolean := true;
+			while cont? repeat {
+				if failed?(u := eval!(p, end, tab)) then
+					cont? := false;
+				else if retract u = 0 then {
+					ans := u;
+					cont? := false;
+				}
+				else if failed? eval!(p, code, tab)
+					or failed?(u := eval!(p,incr,tab)) then
+						cont? := false;
+				-- TEMPORARY: REMOVE WHEN i := i + 1 IS ALLOWED
+				else tab.lv := retract u;
+			}
+			if ~failed?(oldval) then tab.lv := retract oldval;
+			ans;
+		}
+
+		local evalAssign!(p:TEXT, n:Z, l:List TREE, tab:SYMBTAB R):
+			Partial R == {
+			import from LEAF;
+			n=2 and leaf? first l and symbol?(lf:=leaf first l) => {
+				failed?(u:=eval!(p,first rest l,tab)) => failed;
+				tab.(symbol lf) := retract u;
+				u;
+			}
+			failed;
+		}
+
+		local evalLispList!(p:TEXT, n:Z, l:List TREE, tab:SYMBTAB R):
+			Partial R == {
+			import from LEAF, TREE;
+			empty? l => failed;
+			leaf? first l and symbol?(lf := leaf first l) =>
+				evalLisp!(p, lf, prev n, rest l, tab);
+			evalOp!(p, ExpressionTreeList l, tab);
+		}
+
+		local evalLisp!(p:TEXT, lf:LEAF, n:Z,l:List TREE,tab:SYMBTAB R):
+			Partial R == {
+			import from Character, List R, Partial List R;
+			us := map(upper, s := symbol lf);
+			n = 2 and us = "SETQ" => evalAssign!(p, n, l, tab);
+			failed?(pl := evalArgs!(p, l, tab)) => failed;
+			args := retract pl;
+			n = 1 and evalPrint?(p, s, first args) => [first args];
+			failed?(u := evalPrefix!(s, n, args, tab)) => {
+				us = "PLUS" or us = "ADD" or us = "SUM" =>
+					sum args;
+				us = "TIMES" or us = "PRODUCT" => product args;
+				n = 2 and us = "EXPT" =>
+					first args ^ first rest args;
+				n = 2 and us = "QUOTIENT" =>
+					first args / first rest args;
+				n = 2 and (us = "DIFFERENCE" or us = "DIFF") =>
+					first args - first rest args;
+				n = 1 and us = "MINUS" => - first args;
+				n = 1 and us = "ADD1" => first(args) + 1;
+				n = 1 and us = "SUB1" => first(args) - 1;
+				failed?(v := evalLeaf!(lf, tab)) => failed;
+				evalPrefix!(name$ExpressionTreeList, next n,
+						cons(retract v, args), tab);
+			}
+			u;
+		}
+
+		evalOp!(p:TEXT, t:TREE, tab:SYMBTAB R):Partial R == {
+			TRACE("Evaluator::evalOp! ", t);
+			ASSERT(~leaf? t);
+			import from LEAF, List TREE, Z;
+			import from R, List R, Partial List R;
+			op := uniqueId$operator(t);
+			TRACE("Evaluator::evalOp!: operator id = ", op);
+			nargs := #(args := arguments t);
+			TRACE("Evaluator::evalOp!: # of arguments = ", nargs);
+			op = UID__ASSIGN => evalAssign!(p, nargs, args, tab);
+			op = UID__LLIST => evalLispList!(p, nargs, args, tab);
+			s := name$operator(t);
+			op = UID__PREFIX and s = "for" =>
+				evalFor!(p, nargs, args, tab);
+			failed?(pl := evalArgs!(p, args, tab)) => failed;
+			arg1 := first(l := retract pl);
+			arg2 := { nargs < 2 => arg1; first rest l };
+			TRACE("Evaluator::evalOp!: arguments = ", l);
+			op = UID__PREFIX => {
+				s := name$operator(t);
+				nargs = 1 and evalPrint?(p, s, arg1) => [arg1];
+				nargs = 2 and
+				  ~failed?(u := evalBoolean?(s,arg1,arg2)) => u;
+				evalPrefix!(s, nargs, l, tab);
+			}
+			op = UID__PLUS => sum l;
+			op = UID__TIMES => product l;
+			op = UID__MINUS => {
+				nargs = 1 => - arg1;
+				nargs = 2 => arg1 - arg2;
+				failed;
+			}
+			op = UID__DIVIDE => {
+				nargs = 2 => arg1 / arg2;
+				failed;
+			}
+			op = UID__EXPT => {
+				nargs = 2 => arg1 ^ arg2;
+				failed;
+			}
+			op = UID__LESSTHAN => {
+				nargs = 2 => arg1 < arg2;
+				failed;
+			}
+			op = UID__LESSEQUAL => {
+				nargs = 2 => arg1 <= arg2;
+				failed;
+			}
+			op = UID__MORETHAN => {
+				nargs = 2 => arg1 > arg2;
+				failed;
+			}
+			op = UID__MOREEQUAL => {
+				nargs = 2 => arg1 >= arg2;
+				failed;
+			}
+			failed;
+		}
+
+		local evalPrint(p:TEXT, f:(TEXT,TREE)->TEXT, semi?:Boolean,x:R):
+			Boolean == {
+				f(p, extree x);
+				if semi? then p << ";";
+				p << newline;
+				true;
+		}
+
+		local evalPrint?(p:TEXT, name:String, x:R):Boolean == {
+			import from TREE;
+			name = "C" => evalPrint(p, C, true, x);
+			name = "axiom" => evalPrint(p, axiom, false, x);
+			name = "asharp" => evalPrint(p, asharp, true, x);
+			name = "maple" => evalPrint(p, maple, true, x);
+			name = "fortran" => evalPrint(p, fortran, false, x);
+			name = "lisp" => evalPrint(p, lisp, false, x);
+			name = "tex" => evalPrint(p, tex, false, x);
+			false;
+		}
+
+		-- TEMPORARY: TO REMOVE WHEN  < > <= >= are parsed
+		local evalBoolean?(name:String, x:R, y:R):Partial R == {
+			name = "less"      => x < y;
+			name = "lesseq"    => x <= y;
+			name = "greater"   => x > y;
+			name = "greatereq" => x >= y;
+			failed;
+		}
+	}
+}

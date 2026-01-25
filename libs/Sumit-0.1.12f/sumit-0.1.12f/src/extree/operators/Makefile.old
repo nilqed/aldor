@@ -1,0 +1,197 @@
+# ======================================================================
+# This code was written all or part by Dr. Manuel Bronstein from
+# Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+# decided to publish this code under the CeCILL open source license in
+# memory of Dr. Manuel Bronstein.
+# 
+# This software is governed by the CeCILL license under French law and
+# abiding by the rules of distribution of free software. You can use,
+# modify and/or redistribute the software under the terms of the CeCILL
+# license as circulated by CEA, CNRS and Inria at the following URL :
+# http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+# 
+# As a counterpart to the access to the source code and rights to copy,
+# modify and redistribute granted by the license, users are provided
+# only with a limited warranty and the software's author, the holder of
+# the economic rights, and the successive licensors have only limited
+# liability.
+# 
+# In this respect, the user's attention is drawn to the risks associated
+# with loading, using, modifying and/or developing or reproducing the
+# software by the user in light of its specific status of free software,
+# that may mean that it is complicated to manipulate, and that also
+# therefore means that it is reserved for developers and experienced
+# professionals having in-depth computer knowledge. Users are therefore
+# encouraged to load and test the software's suitability as regards
+# their requirements in conditions enabling the security of their
+# systems and/or data to be ensured and, more generally, to use and
+# operate it in the same conditions as regards security.
+# 
+# The fact that you are presently reading this means that you have had
+# knowledge of the CeCILL license and that you accept its terms.
+# ======================================================================
+# 
+objects = $(objects1) $(objects2) $(objects3)
+objects1 = OPplus.o OPtimes.o OPexpt.o OPquotient.o OPminus.o OPmatrix.o
+objects2 = OPand.o OPequal.o OPcase.o OPif.o OPnoteq.o OPprefix.o OPassign.o
+objects3 = OPgpoch.o OPlist.o OPllist.o OPless.o OPmore.o OPvect.o
+asobjects = $(asobjects1) $(asobjects2) $(asobjects3) $(asobjects4)
+asobjects1 = OPplus.ao OPtimes.ao OPexpt.ao OPquotient.ao OPminus.ao OPmatrix.ao
+asobjects2 = OPvect.ao OPand.ao OPequal.ao OPcase.ao OPif.ao OPnoteq.ao
+asobjects3 = OPprefix.ao OPassign.ao OPgpoch.ao OPlist.ao OPllist.ao OPless.ao
+asobjects4 = OPmore.ao
+options   = -M2 -Fao -Fo -Q3 -Csmax=0 -Mno-mactext
+tex = $(tex1) $(tex2) $(tex3) $(tex4)
+tex1 = OPplus.tex OPtimes.tex OPexpt.tex OPquotient.tex OPminus.tex OPmatrix.tex
+tex2 = OPvect.tex OPand.tex OPequal.tex OPcase.tex OPif.tex OPnoteq.tex
+tex3 = OPprefix.tex OPassign.tex OPgpoch.tex OPlist.tex OPllist.tex OPless.tex
+tex4 = OPmore.tex
+libsumit  = ../../../lib/libsumit.a
+sumitasl  = ../../../lib/libsumit.al
+
+all: datestamp
+
+datestamp: $(objects)
+	ar rv $(libsumit) $(objects)
+	touch datestamp
+
+OPplus.o: OPplus.as OPminus.o ../extree.o ../optools.o
+	axiomxl $(options) OPplus.as
+	ar rv $(sumitasl) OPplus.ao
+
+OPtimes.o: OPtimes.as ../extree.o ../optools.o
+	axiomxl $(options) OPtimes.as
+	ar rv $(sumitasl) OPtimes.ao
+
+OPexpt.o: OPexpt.as ../extree.o ../optools.o
+	axiomxl $(options) OPexpt.as
+	ar rv $(sumitasl) OPexpt.ao
+
+OPgpoch.o: OPgpoch.as ../extree.o ../optools.o
+	axiomxl $(options) OPgpoch.as
+	ar rv $(sumitasl) OPgpoch.ao
+
+OPquotient.o: OPquotient.as ../extree.o ../optools.o
+	axiomxl $(options) OPquotient.as
+	ar rv $(sumitasl) OPquotient.ao
+
+OPminus.o: OPminus.as ../extree.o ../optools.o
+	axiomxl $(options) OPminus.as
+	ar rv $(sumitasl) OPminus.ao
+
+OPmatrix.o: OPmatrix.as ../extree.o ../optools.o
+	axiomxl $(options) OPmatrix.as
+	ar rv $(sumitasl) OPmatrix.ao
+
+OPvect.o: OPvect.as ../extree.o ../optools.o
+	axiomxl $(options) OPvect.as
+	ar rv $(sumitasl) OPvect.ao
+
+OPlist.o: OPlist.as ../extree.o ../optools.o
+	axiomxl $(options) OPlist.as
+	ar rv $(sumitasl) OPlist.ao
+
+OPllist.o: OPllist.as OPlist.o
+	axiomxl $(options) OPllist.as
+	ar rv $(sumitasl) OPllist.ao
+
+OPand.o: OPand.as ../extree.o ../optools.o
+	axiomxl $(options) OPand.as
+	ar rv $(sumitasl) OPand.ao
+
+OPmore.o: OPmore.as ../extree.o ../optools.o
+	axiomxl $(options) OPmore.as
+	ar rv $(sumitasl) OPmore.ao
+
+OPless.o: OPless.as ../extree.o ../optools.o
+	axiomxl $(options) OPless.as
+	ar rv $(sumitasl) OPless.ao
+
+OPequal.o: OPequal.as ../extree.o ../optools.o
+	axiomxl $(options) OPequal.as
+	ar rv $(sumitasl) OPequal.ao
+
+OPcase.o: OPcase.as ../extree.o OPif.o
+	axiomxl $(options) OPcase.as
+	ar rv $(sumitasl) OPcase.ao
+
+OPif.o: OPif.as ../extree.o ../optools.o
+	axiomxl $(options) OPif.as
+	ar rv $(sumitasl) OPif.ao
+
+OPnoteq.o: OPnoteq.as ../extree.o
+	axiomxl $(options) OPnoteq.as
+	ar rv $(sumitasl) OPnoteq.ao
+
+OPprefix.o: OPprefix.as ../extree.o ../optools.o
+	axiomxl $(options) OPprefix.as
+	ar rv $(sumitasl) OPprefix.ao
+
+OPassign.o: OPassign.as ../extree.o ../optools.o
+	axiomxl $(options) OPassign.as
+	ar rv $(sumitasl) OPassign.ao
+
+.PHONY: doc
+doc: $(tex)
+
+OPplus.tex: OPplus.as
+	as2doc OPplus
+
+OPtimes.tex: OPtimes.as
+	as2doc OPtimes
+
+OPexpt.tex: OPexpt.as
+	as2doc OPexpt
+
+OPgpoch.tex: OPgpoch.as
+	as2doc OPgpoch
+
+OPquotient.tex: OPquotient.as
+	as2doc OPquotient
+
+OPminus.tex: OPminus.as
+	as2doc OPminus
+
+OPmatrix.tex: OPmatrix.as
+	as2doc OPmatrix
+
+OPvect.tex: OPvect.as
+	as2doc OPvect
+
+OPlist.tex: OPlist.as
+	as2doc OPlist
+
+OPllist.tex: OPllist.as
+	as2doc OPllist
+
+OPand.tex: OPand.as
+	as2doc OPand
+
+OPequal.tex: OPequal.as
+	as2doc OPequal
+
+OPless.tex: OPless.as
+	as2doc OPless
+
+OPmore.tex: OPmore.as
+	as2doc OPmore
+
+OPif.tex: OPif.as
+	as2doc OPif
+
+OPcase.tex: OPcase.as
+	as2doc OPcase
+
+OPnoteq.tex: OPnoteq.as
+	as2doc OPnoteq
+
+OPprefix.tex: OPprefix.as
+	as2doc OPprefix
+
+OPassign.tex: OPassign.as
+	as2doc OPassign
+
+.PHONY: clean
+clean:
+	-rm $(objects) $(asobjects) $(tex)
+

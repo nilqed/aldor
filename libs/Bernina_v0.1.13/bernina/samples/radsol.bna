@@ -1,0 +1,17 @@
+/* Examples of radical solutions */
+
+L := 16*x^2*D^2 + 3;
+/* L has no rational solutions */
+tex(kernel(L));
+/* L has solutions whose 4rd power is rational */
+tex(radicalSolutions(L));
+
+L := 9*x*(x-1)*D^2+3*(2*x-1)*D-20;
+/* L has no rational solutions */
+tex(kernel(L));
+/* L has solutions whose 3rd power is rational */
+tex(radicalSolutions(L));
+/* Can be faster if one specifies the desired ramification */
+tex(radicalSolutions(L,3));
+tex(radicalSolutions(L,4));
+

@@ -1,0 +1,231 @@
+# ======================================================================
+# This code was written all or part by Dr. Manuel Bronstein from
+# Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+# decided to publish this code under the CeCILL open source license in
+# memory of Dr. Manuel Bronstein.
+# 
+# This software is governed by the CeCILL license under French law and
+# abiding by the rules of distribution of free software. You can use,
+# modify and/or redistribute the software under the terms of the CeCILL
+# license as circulated by CEA, CNRS and Inria at the following URL :
+# http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+# 
+# As a counterpart to the access to the source code and rights to copy,
+# modify and redistribute granted by the license, users are provided
+# only with a limited warranty and the software's author, the holder of
+# the economic rights, and the successive licensors have only limited
+# liability.
+# 
+# In this respect, the user's attention is drawn to the risks associated
+# with loading, using, modifying and/or developing or reproducing the
+# software by the user in light of its specific status of free software,
+# that may mean that it is complicated to manipulate, and that also
+# therefore means that it is reserved for developers and experienced
+# professionals having in-depth computer knowledge. Users are therefore
+# encouraged to load and test the software's suitability as regards
+# their requirements in conditions enabling the security of their
+# systems and/or data to be ensured and, more generally, to use and
+# operate it in the same conditions as regards security.
+# 
+# The fact that you are presently reading this means that you have had
+# knowledge of the CeCILL license and that you accept its terms.
+# ======================================================================
+# 
+# Maple file to create the Max.m stub
+
+unprotect(`Max`);
+Max := `Max`:
+canonical := `canonical`;
+
+Max[GaloisGroup] := Max_Galois_group;
+Max[RiccatiPolynomial] := Max_riccati_polynomial;
+
+# Max_det_diff([v_1,...,v_n],i,x) = Det [v_1,...,v_i',...,v_n]
+Max_det_diff := proc(l,i,x) local j;
+    Max_det([seq(l[j],j=1..i-1), map(diff,l[i],x), seq(l[j],j=i+1..nops(l))]);
+end;
+
+# Derivative of a formal determinant
+`diff/Max_det` := proc(l,x) local ans, i;
+    ans := 0;
+    for i to nops(l) do ans := ans + Max_det_diff(l,i,x); od;
+    ans;
+end;
+
+Max_diff_diff := proc(p,v) local i; [seq(diff(p,v[i]),i=1..nops(v))]; end;
+
+Max_diff_diff2 := proc(p,v,a) local i; [seq(diff(p,v[i]),i=1..nops(v)),a]; end;
+
+Max_Hessian := proc(p,v) local i;
+    Max_det([seq(Max_diff_diff(diff(p,v[i]),v), i=1..nops(v))]);
+end;
+
+Max_bounded_Hessian := proc(p,q,v) local i;
+    Max_det([seq(Max_diff_diff2(diff(p,v[i]),v,diff(q,v[i])),i=1..nops(v)),
+		[seq(diff(q,v[i]),i=1..nops(v)),0]]);
+end;
+
+Max_Jacobian := proc(p,q,r,v) local i;
+    Max_det([seq([diff(p,v[i]),diff(q,v[i]),diff(r,v[i])],i=1..nops(v))]);
+end;
+
+Max_full_det := proc(l) linalg[det](linalg[matrix](l)); end;
+
+# In = a single (semi-)invariant of degree n
+Max_det_chain := proc(L, n, In, D, x, u) local vars, p1, p2, p3, p4, a2, a3, f, g, r;
+    p1 := In[3];			# canonical image of 1st invariant
+    a2 := coeff(L, D, 2);
+    a3 := coeff(L, D, 3);
+    f := simplify(exp(int(normal(a2 / a3), x)));	# must be a fraction
+    vars := [x[1], x[2], x[3]];
+    p2 := f^2 * Max_Hessian(p1, vars);
+    p3 := f^2 * Max_bounded_Hessian(p1, p2, vars);
+    p4 := f * Max_Jacobian(p1, p2, p3, vars);
+    g := normal(diff(In[2],x)/In[2]);
+    r := normal(subs([vars[1] = u - g/n, vars[2] = -1, vars[3] = 0], p4));
+    eval(subs(Max_det = Max_full_det, r));
+end;
+
+# 3rd order solver for irreducible but not necessarily unimodular operators
+# Returns [riccati_polynomial, galois_group]
+Max_irreducible := proc(L, D, x, u, grp) local ans, group, nounim, r1;
+    ans := irreducible3(L, grp, D, x, u);
+    if type(ans, integer) then group := ans; else group := ans[1]; fi;
+    if type(group, integer) and group < 0 then nounim := true; group := -group;
+	else nounim := false; fi;
+    ans := Max_Bernina_Answer(L, D, x, u, grp, group, ans, nounim);
+    r1 := ans[1];
+    if nounim then
+	r1 := cat(`Irreducible non unimodular, unimodular transform is `,r1);fi;
+    if grp then r1 elif nops(ans) = 1 then [r1]
+	else [r1, collect(ans[2]/lcoeff(ans[2], u), u, normal)]; fi;
+end;
+
+Max_Bernina_Answer := proc(L, D, x, u, grp, group, ans, nounim) local ric, s;
+    if group = 1 then [`PSL_2`];
+    elif group = 2 then [`PSL_2 x C_3`];
+    elif group = 3 then [`SL_3`];
+    elif group = 4 then [`SL_3 or PSL_2 x C_3`];
+    elif group = 5 then
+	if grp then [`H_72`]; else [`H_72`, ans[2]]; fi;
+    elif group = 6 then
+	if grp then [`A_5`]; else [`A_5`, ans[2]]; fi;
+    elif group = 7 then
+	if grp then [`G_168`]
+	else
+		ric := Max_det_chain(L, 4, ans[3][1], D, x, u);
+		if ans[2] <> 0 then ric := subs(u = u - ans[2], ric); fi;
+		[`G_168`, ric];
+	fi;
+    elif group = 8 then
+	if grp then [`H_216`] else [`H_216`, ans[2]]; fi;
+    elif group = 9 then
+	if grp then [`F_36`] else [`F_36`, ans[2]]; fi;
+    elif group = 10 then
+	if grp then [`A_6`];
+	else
+		ric := Max_det_chain(L, 6, ans[3][1], D, x, u);
+		if ans[2] <> 0 then ric := subs(u = u - ans[2], ric); fi;
+		[`A_6`, ric];
+	fi;
+    elif group = 11 then
+	if grp then [`G_168 x C_3`];
+	else
+		ric := Max_det_chain(L, 4, ans[3][1], D, x, u);
+		if ans[2] <> 0 then ric := subs(u = u - ans[2], ric); fi;
+		[`G_168 x C_3`, ric];
+	fi;
+    elif group = 12 then
+	if grp then [`A_5 x C_3`]; else [`A_5 x C_3`, ans[2]]; fi;
+    elif group = 13 then
+	if nounim then s := `imprimitive`; else s := `Imprimitive unimodular`; fi;
+	if grp then [s] else [s, ans[2]]; fi;
+    else	# Bernina returned a semi-invariant rather than an invariant
+	if grp then [`G_168 x C_3`];
+	else
+		ric := Max_det_chain(L, 4, ans[3][1], D, x, u);
+		if ans[2] <> 0 then ric := subs(u = u - ans[2], ric); fi;
+		[`G_168 x C_3`, ric];
+	fi;
+    fi;
+end;
+
+# Case of order 1 operators or factors
+Max_order1 := proc(L,D,u,str) local f, n, i;
+    n := nops(L);
+    f := [seq(normal(- coeff(L[i],D,0) / coeff(L[i],D,1)), i=1..n)];
+    [str, seq(denom(f[i]) * u - numer(f[i]), i=1..n)];
+end;
+
+# Case of order 2 operators or factors
+Max_order2 := proc(L,D,x,u,str) local c, n, i;
+    c := Darboux(L, D, x, u);
+    n := linalg[vectdim](c);
+    if n = 0 then [str] else [str, seq(c[i], i=1..n)]; fi;
+end;
+
+# Top-level 1st/2nd/3rd order solver, returns a Riccati polynomial or 0
+# Returns [galois_group, riccati_polynomial]
+Max_riccati_polynomial := proc(L,D,x,u) local l, L1, L2, d, g, c, i, grp;
+    grp := evalb(nargs = 5 and args[5] = 'group');
+    if degree(L,D) = 1 then Max_order1([L], D, u, `1st order`);
+    elif degree(L,D) = 2 then Max_order2(L, D, x, u, `2nd order`);
+    elif degree(L,D) <> 3 then
+	ERROR("Max: can only handle operators of order at most 3");
+    else
+	l := dfactor(L, D, x);
+	if op(0,l) = 'LeftLcm' then
+	    d := nops(l);		# must be 2 or 3
+	    L1 := op(1,l);		# must be of degree 1 or 2
+	    L2 := op(2,l);
+	    if d=3 then
+		g := `Completely Reducible LeftLcm(1,1,1)`;
+		if grp then g else Max_order1([L1,L2,op(3,l)], D, u, g); fi;
+	    elif L2 = `and conjugates` then
+		g := `Completely Reducible LeftLcm(1,1,1)`;
+		if grp then g else Max_order1([L1], D, u, g); fi;
+	    else			# either CR LCLM(1,2) or LCLM(1,1*1)
+		if type(L2, vector) then
+		    g := `LeftLcm(1, Reducible(1*1))`;
+		    if grp then g else Max_order1([L1, L2[2]], D, u, g); fi;
+		else
+		    g := `Completely Reducible LeftLcm(1,2)`;
+		    if grp then g else
+			if degree(L1,D) = 2 then c := L2; L2 := L1; L1 := c; fi;
+			c := Darboux(L2, D, x, u);
+			l := Max_order1([L1], D, u, g);
+			[g, l[2], seq(c[i], i=1..linalg[vectdim](c))];
+		    fi;
+		fi;
+	    fi;
+	elif type(l,vector) then
+	    d := linalg[vectdim](l);
+	    if d = 1 then Max_irreducible(L, D, x, u, grp);
+	    elif d = 3 then
+		if degree(l[1],D) = 1 then
+			Max_order1([l[3]], D, u, `Reducible(1*1*1)`);
+		else Max_order1([l[3]], D, u, `Reducible(LeftLcm(1,1)*1)`); fi;
+	    else
+		L1 := l[2];		# right-most factor
+		if op(0,L1) = 'LeftLcm' then
+		    g := `Reducible(1*LeftLcm(1,1))`;
+		    if grp then g else Max_order1([op(1,L1),op(2,L1)],D,u,g);fi;
+		else
+		    d := degree(L1, D);
+		    if d = 1 then
+			if op(0,l[1]) = 'LeftLcm' then
+			    g := `Reducible(LeftLcm(1,1)*1)`;
+			else g := `Reducible(2*1)`; fi;
+			if grp then g else Max_order1([L1], D, u, g); fi;
+		    else Max_order2(L1, D, x, u, `Reducible(1*2)`); fi;
+		fi;
+	    fi;
+	else Max_irreducible(L, D, x, u, grp); fi;
+   fi;
+end;
+
+Max_Galois_group := proc(L, D, x)
+	Max_riccati_polynomial(L, D, x, BerninaNewName(x), 'group'); end;
+
+save "Max.m";
+done;

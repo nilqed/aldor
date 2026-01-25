@@ -1,0 +1,135 @@
+# ======================================================================
+# This code was written all or part by Dr. Manuel Bronstein from
+# Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+# decided to publish this code under the CeCILL open source license in
+# memory of Dr. Manuel Bronstein.
+# 
+# This software is governed by the CeCILL license under French law and
+# abiding by the rules of distribution of free software. You can use,
+# modify and/or redistribute the software under the terms of the CeCILL
+# license as circulated by CEA, CNRS and Inria at the following URL :
+# http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+# 
+# As a counterpart to the access to the source code and rights to copy,
+# modify and redistribute granted by the license, users are provided
+# only with a limited warranty and the software's author, the holder of
+# the economic rights, and the successive licensors have only limited
+# liability.
+# 
+# In this respect, the user's attention is drawn to the risks associated
+# with loading, using, modifying and/or developing or reproducing the
+# software by the user in light of its specific status of free software,
+# that may mean that it is complicated to manipulate, and that also
+# therefore means that it is reserved for developers and experienced
+# professionals having in-depth computer knowledge. Users are therefore
+# encouraged to load and test the software's suitability as regards
+# their requirements in conditions enabling the security of their
+# systems and/or data to be ensured and, more generally, to use and
+# operate it in the same conditions as regards security.
+# 
+# The fact that you are presently reading this means that you have had
+# knowledge of the CeCILL license and that you accept its terms.
+# ======================================================================
+# 
+obj1 = smallprimes.o primroot.o hwordprimes.o wordprimes.o primes15.o
+obj2 = primes31.o primes63.o fixedprimes.o primtable.o primes13.o
+obj3 = primes27.o lwordprimes.o
+objects = $(obj1) $(obj2) $(obj3)
+asobj1 = smallprimes.ao primroot.ao hwordprimes.ao wordprimes.ao primes15.ao
+asobj2 = primes31.ao primes63.ao fixedprimes.ao primtable.ao primes13.ao
+asobj3 = primes27.ao lwordprimes.ao
+asobjects = $(asobj1) $(asobj2) $(asobj3)
+flags	  = -M2 -Fao -Fo -Csmax=0 -Mno-mactext
+options	  = $(flags) -q3
+tex1 = smallprimes.tex primroot.tex wordprimes.tex hwordprimes.tex
+tex2 = primtable.tex lwordprimes.tex
+tex = $(tex1) $(tex2)
+test      =
+testdir	  = ../../test
+libsumit  = ../../lib/libsumit.a
+sumitasl  = ../../lib/libsumit.al
+
+all: datestamp
+
+datestamp: $(objects)
+	ar rv $(libsumit) $(objects)
+	touch datestamp
+
+smallprimes.o: smallprimes.as ../categories/CATint.o ../util/binsearch.o
+	axiomxl $(options) smallprimes.as
+	ar rv $(sumitasl) smallprimes.ao
+
+primroot.o: primroot.as smallprimes.o
+	axiomxl $(options) primroot.as
+	ar rv $(sumitasl) primroot.ao
+
+primes13.o: primes13.as primtable.o
+	axiomxl $(options) primes13.as
+	ar rv $(sumitasl) primes13.ao
+
+primes15.o: primes15.as primtable.o
+	axiomxl $(options) primes15.as
+	ar rv $(sumitasl) primes15.ao
+
+primes27.o: primes27.as primtable.o
+	axiomxl $(options) primes27.as
+	ar rv $(sumitasl) primes27.ao
+
+primes31.o: primes31.as primtable.o
+	axiomxl $(options) primes31.as
+	ar rv $(sumitasl) primes31.ao
+
+primes63.o: primes63.as primtable.o
+# TEMPORARY: BUG 1145 at -q2 or higher
+#	axiomxl $(options) primes63.as
+	axiomxl $(flags) -q1 primes63.as
+	ar rv $(sumitasl) primes63.ao
+
+primtable.o: primtable.as ../categories/CATbasic.o
+	axiomxl $(options) primtable.as
+	ar rv $(sumitasl) primtable.ao
+
+fixedprimes.o: fixedprimes.as primtable.o ../categories/CATint.o ../util/binsearch.o
+	axiomxl $(options) fixedprimes.as
+	ar rv $(sumitasl) fixedprimes.ao
+
+lwordprimes.o: lwordprimes.as fixedprimes.o primes13.o primes27.o ../util/stdutil.o
+	axiomxl $(options) lwordprimes.as
+	ar rv $(sumitasl) lwordprimes.ao
+
+hwordprimes.o: hwordprimes.as fixedprimes.o primes15.o primes31.o ../util/stdutil.o
+	axiomxl $(options) hwordprimes.as
+	ar rv $(sumitasl) hwordprimes.ao
+
+wordprimes.o: wordprimes.as fixedprimes.o primes31.o primes63.o ../util/stdutil.o
+	axiomxl $(options) wordprimes.as
+	ar rv $(sumitasl) wordprimes.ao
+
+.PHONY: doc
+doc: $(tex)
+
+smallprimes.tex: smallprimes.as
+	as2doc smallprimes
+
+primroot.tex: primroot.as
+	as2doc primroot
+
+lwordprimes.tex: lwordprimes.as
+	as2doc lwordprimes
+
+hwordprimes.tex: hwordprimes.as
+	as2doc hwordprimes
+
+wordprimes.tex: wordprimes.as
+	as2doc wordprimes
+
+primtable.tex: primtable.as
+	as2doc primtable
+
+.PHONY: test
+test: $(test)
+
+.PHONY: clean
+clean:
+	-rm $(objects) $(asobjects) $(tex) $(test)
+

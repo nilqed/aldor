@@ -1,0 +1,43 @@
+/* ratsol.sha:  various examples of rational solutions */
+
+/* 1-dimensional rational kernel */
+L := (n+2)*(n+4)*E^2-(2*(n+1)*(n+3)+1)*E+(n+1)^2;
+K := kernel(L);
+tex(K);
+
+/* 1-dimensional rational kernel */
+L := (n+2)*(n+1)*E^2 -n*(n+1)*E -n;
+K := kernel(L);
+tex(K);
+
+/* simple 4x4 system with 2-dimensional rational kernel */
+A := system(2*n*(2*n-1+4*n^2)/(8*n^3+4*n^2-2*n-1),
+	4*n^2/(8*n^3+4*n^2-2*n-1),
+	-1/2*(2*n-1+4*n^2)/n/(8*n^3+4*n^2-2*n-1),
+	-1/(8*n^3+4*n^2-2*n-1),
+
+	2*n/(8*n^3+4*n^2-2*n-1),
+	8*n^3/(8*n^3+4*n^2-2*n-1),
+	-1/2/n/(8*n^3+4*n^2-2*n-1),
+	-2*n/(8*n^3+4*n^2-2*n-1),
+
+	-(2*n-1+4*n^2)/(8*n^3+4*n^2-2*n-1),
+	-2*n/(8*n^3+4*n^2-2*n-1),
+	1/2*(-4*n^2-4*n+1+16*n^4+16*n^3)/n/(8*n^3+4*n^2-2*n-1),
+	(2*n-1+4*n^2)/(8*n^3+4*n^2-2*n-1),
+
+	-1/(8*n^3+4*n^2-2*n-1),
+	-4*n^2/(8*n^3+4*n^2-2*n-1),
+	1/2*(2*n-1+4*n^2)/n/(8*n^3+4*n^2-2*n-1),
+	2*n*(2*n-1+4*n^2)/(8*n^3+4*n^2-2*n-1));
+K := kernel(A);
+tex(K);
+
+/* from Abramov & Barkatou, ISSAC'98, non-simple system with
+   2-dimensional rational kernel */
+A := system((n-1)/(n+5), (7*n^2+4*n+n^3)/(n+5), -n-1, (1-n)*(n^2+5*n+5)/(n+5),
+	(n-1)/(n*(n+1)*(n+5)), (n-1)/((n+1)*(n+5)), 0, (n-1)/((n+1)*(n+5)),
+	(n-1)/(n+5), n*(n-1)/(n+5), -n, -(n^3+3*n^2-5*n-5)/(n+5),
+	(1-n)/(n*(n+5)), (1-n)/(n+5), 1, (n+4)*(n-1)/(n+5));
+K := kernel(A);
+tex(K);

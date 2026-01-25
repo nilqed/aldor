@@ -1,0 +1,8 @@
+/* extpow.bna: 2-nd exterior power the square of Airy's operator */
+
+airy := D^2 - x;
+L := airy^2;
+E2 := exteriorPower(L, 2);
+tex(E2);
+K2 := exteriorKernel(L, 2);
+tex(K2);

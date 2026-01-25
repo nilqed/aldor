@@ -1,0 +1,98 @@
+{VERSION 2 3 "SUN SPARC SOLARIS" "2.3" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{CSTYLE "" -1 256 "terminal" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "
+" -1 257 "terminal" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 258 "
+terminal" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 259 "terminal" 
+0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 
+-1 "Times" 1 14 0 0 0 0 2 2 2 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 
+-1 0 }{PSTYLE "Maple Output" 0 11 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 
+0 0 0 0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "" 11 12 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }1 0 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }{PSTYLE "R3 Font 0" -1 256 1 {CSTYLE "" -1 -1 "Helvetica
+" 1 14 0 0 0 0 2 1 2 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }
+{PSTYLE "R3 Font 2" -1 257 1 {CSTYLE "" -1 -1 "Courier" 1 14 0 0 0 0 
+2 2 2 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "" 0 258 
+1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 
+0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 258 "" 0 "" {TEXT -1 16 "IMPORTANT: the  " }
+{TEXT 257 8 "bernina " }{TEXT -1 66 " executable must be in your path \+
+before you can execute this demo." }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 
+50 "To start, we tell maple about the location of the " }{TEXT 258 9 "
+bernina.m" }{TEXT -1 31 " file, which is located in the " }{TEXT 259 
+5 "maple" }{TEXT -1 140 " directory of bernina.\n Replace the '.' by t
+he appropriate directory on your system. The following line is only va
+lid if you are using maple" }}{PARA 0 "" 0 "" {TEXT -1 10 "from the  \+
+" }{TEXT 256 5 "maple" }{TEXT -1 106 "  directory of bernina. Alternat
+ively, you can add a line to this effect in your .mapleinit file, and \+
+then" }}{PARA 0 "" 0 "" {TEXT -1 24 "run maple from anywhere." }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "libname := `.`,libname:" }}}{EXCHG 
+{PARA 0 "" 0 "" {TEXT -1 79 "\nWe then load the bernina interface, bri
+nging the bernina functions into scope:" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 14 "with(bernina);" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#70%(DarbouxG
+%(adjointG%&applyG%/exteriorKernelG%.exteriorPowerG%'kernelG%(leftGcdG
+%(leftLcmG%-makeIntegralG%*normalizeG%)rightGcdG%)rightLcmG%0symmetric
+KernelG%/symmetricPowerG" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 100 "Diff
+erential operators are entered simply as polynomials in the derivation
+ and independent variable:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 33 "L := \+
+x*D^3 + D^2 - x^2 * D - 2*x;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"LG
+,**&%\"xG\"\"\"%\"DG\"\"$F(*$F)\"\"#F(*&F'F,F)F(!\"\"F'!\"#" }}}
+{EXCHG {PARA 0 "" 0 "" {TEXT -1 127 "When calling a bernina function, \+
+e.g. adjoint, add the derivation name and independent variable name to
+ the bernina parameters:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "tL := a
+djoint(L,D,x);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#tLG,(*&%\"xG\"\"
+\"%\"DG\"\"$!\"\"*$F)\"\"#!\"#*&F'F-F)F(F(" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 20 "L - adjoint(tL,D,x);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#\"\"!" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 126 "The function 'Dar
+boux' needs even one more additional parameter: the name of a second v
+ariable to use for the implicit curves:" }}{PARA 0 "> " 0 "" {MPLTEXT 
+1 0 20 "L := D^2 + 3/16/x^2;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"LG
+,&*$%\"DG\"\"#\"\"\"*$%\"xG!\"##\"\"$\"#;" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 22 "C := Darboux(L,D,x,y);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"CG-%'VECTORG6#7#,(*&%\"xG\"\"#%\"yGF,\"\"\"*&F+F.F-
+F.!\"\"#\"\"$\"#;F." }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 89 "We can ver
+ify that exp(int(y,x)) is a solution of Lz = 0 for y a root of a Darbo
+ux curve:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "sols := [solve(C[1],y)
+];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%solsG7$,$*$%\"xG!\"\"#\"\"\"
+\"\"%,$F'#\"\"$F," }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 57 "deqsol
+s := [seq(exp(int(sols[i],x)), i = 1..nops(sols))];" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#>%(deqsolsG7$*$%\"xG#\"\"\"\"\"%*$F'#\"\"$F*" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 72 "seq(diff(deqsols[i],x$2) + 3
+/16/x^2 * deqsols[i], i = 1..nops(deqsols));" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6$\"\"!F#" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 88 "The fun
+ctions 'kernel' and 'symmetricKernel' also return arrays, potentially \+
+empty ones:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "L := D^7 - x*D + 1/2
+;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"LG,(*$%\"DG\"\"(\"\"\"*&%\"xG
+F)F'F)!\"\"#F)\"\"#F)" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "K \+
+:= kernel(L,D,x);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"KG-%&arrayG6$
+;\"\"\"\"\"!7\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "K2 := sy
+mmetricKernel(L,2,D,x);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#K2G-%'VE
+CTORG6#7#%\"xG" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 99 "You can specify
+ the allowed singularities in the optional second argument of the 'ker
+nel' function:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 162 "L := D^3+(5*x^4-
+8/15*x^2-1/5)/(x^5-14/15*x^3-1/15*x)*D^2\n              +(-26*x^2-22/1
+5)/(x^4-14/15 *x^2-1/15)*D\n              +(-30*x^2-6)/(x^5-14/15*x^3-
+1/15*x);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"LG,**$%\"DG\"\"$\"\"\"
+*(,(*$%\"xG\"\"%\"\"&*$F-\"\"##!\")\"#:#!\"\"F/F)F),(*$F-F/F)*$F-F(#!#
+9F4F-#F6F4F6F'F1F)*(,&F0!#E#!#AF4F)F),(F,F)F0F:F<F)F6F'F)F)*&,&F0!#I!
+\"'F)F)F7F6F)" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "Krat := ke
+rnel(L,D,x);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%KratG-%'VECTORG6#7$
+,(*$%\"xG\"\"&\"\"\"*$F+\"\"$#!#5\"\"*F+#F,\"#@*$F+!\"\"" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "Kpoly := kernel(L,1,D,x);" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#>%&KpolyG-%'VECTORG6#7#,(*$%\"xG\"\"&\"\"\"*
+$F+\"\"$#!#5\"\"*F+#F,\"#@" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 114 "Yo
+u can also compute the kernel of a system of the form Y' = A Y by pass
+ing the matrix A to the `kernel' function:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 38 "A := matrix(2,2,[x,-1/x^2,x^2-x^4,x]);" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#>%\"AG-%'MATRIXG6#7$7$%\"xG,$*$F*!\"#!\"\"7$,&*$
+F*\"\"#\"\"\"*$F*\"\"%F.F*" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 118 "Th
+e kernel is returned in the form of a matrix whose columns form a basi
+s for the rational solution space of Y' = A Y:" }}{PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 22 "Ksys := kernel(A,D,x);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%%KsysG-%'MATRIXG6#7$7#*$%\"xG!\"\"7#,&*$F+\"\"#\"\"\"F1F1" }}}
+{EXCHG {PARA 0 "" 0 "" {TEXT -1 67 "We can verify that the columns of \+
+are indeed solutions of Y' = A Y:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+48 "map(normal,evalm(map(diff,Ksys,x) - A &* Ksys));" }}{PARA 11 "" 1 
+"" {XPPMATH 20 "6#-%'MATRIXG6#7$7#\"\"!F'" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 0 "" }}}}{MARK "20 0 0" 0 }{VIEWOPTS 1 1 0 1 1 1803 }

@@ -1,0 +1,102 @@
+{VERSION 2 3 "LINUX INTEL UNIX" "2.3" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 14 0 0 0 0 2 2 2 0 
+0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Text Output" -1 
+2 1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 0 0 0 0 0 1 3 0 0 }1 0 
+0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Warning" 2 7 1 {CSTYLE "" -1 -1 
+"" 0 1 0 0 255 1 0 0 0 0 0 0 1 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }
+{PSTYLE "Error" 7 8 1 {CSTYLE "" -1 -1 "" 0 1 255 0 255 1 0 0 0 0 0 0 
+0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Output" 0 11 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }{PSTYLE "" 11 12 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 
+0 0 0 0 0 0 0 }1 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "R3 Font 0" 
+-1 256 1 {CSTYLE "" -1 -1 "Helvetica" 1 14 0 0 0 0 2 1 2 0 0 0 0 0 0 }
+0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "R3 Font 2" -1 257 1 {CSTYLE 
+"" -1 -1 "Courier" 1 14 0 0 0 0 2 2 2 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "with(Kovacic);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#7$%(dsolve2G%'verifyG" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "L := D^2 + 3/16/x^2;" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#>%\"LG,&*$%\"DG\"\"#\"\"\"*$%\"xG!\"##\"\"$\"#;
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "s := dsolve2(L, D, x);
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"sG7$*$%\"xG#\"\"\"\"\"%*$F'#\"
+\"$F*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 45 "verify(L, D, x, s[
+1]); verify(L, D, x, s[2]);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"!" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 37 "L := x*(x^3+1)*D^2 + (x^3-1)*D - x^2;" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%\"LG,(*(%\"xG\"\"\",&*$F'\"\"$F(F(F(F(%\"DG\"\"#
+F(*&,&F*F(!\"\"F(F(F,F(F(*$F'F-F0" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 22 "s := dsolve2(L, D, x);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%\"sG*$,&*$%\"xG\"\"$\"\"\"F*F*#F*F)" }}}{EXCHG {PARA 0 "> " 0 
+"" {MPLTEXT 1 0 19 "verify(L, D, x, s);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 53 "L := x^2*(1-
+x^2)*D^2 - (8*x^3-5*x+1)*D + 3*(1-4*x^2);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"LG,**(%\"xG\"\"#,&\"\"\"F**$F'F(!\"\"F*%\"DGF(F**&,
+(*$F'\"\"$\"\")F'!\"&F*F*F*F-F*F,F1F*F+!#7" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 22 "s := dsolve2(L, D, x);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"sG*&,&*$%\"xG\"\"%\"\"\"*$F(\"\"#!\"\"F*-%$expG6#-%
+$IntG6$,$**,(*$F(\"\"$\"\")F(!\"&F*F*F*F(!\"#,&F(F*F-F*F-,&F(F*F*F*F-F
+-F(F*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "verify(L, D, x, s)
+;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"!" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 29 "L := (x^2-2)*D^2 + x*D - 1/4;" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"LG,(*&,&*$%\"xG\"\"#\"\"\"!\"#F+F+%\"DGF*F+*&F)F+F-
+F+F+#!\"\"\"\"%F+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "s := d
+solve2(L, D, x);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"sG7$-%$expG6#,
+&-%#lnG6#,&*$%\"xG\"\"#\"\"\"!\"#F1#F1\"\"%-%(arctanhG6#,$*&F/F1F0#F1F
+0F:#!\"\"F0-F'6#,&F*F3F5F:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+45 "verify(L, D, x, s[1]); verify(L, D, x, s[2]);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#\"\"!" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"!" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 91 "L := D^2-2/(2*x-1)*D+(27*x^4
+-54*x^3+5*x^2+22*x+27)*(2*x-1)^2/(144*x^2*(x-1)^2*(x^2-x-1)^2);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"LG,(*$%\"DG\"\"#\"\"\"*&,&%\"xGF(!
+\"\"F)F-F'F)!\"#*,,,*$F,\"\"%\"#F*$F,\"\"$!#a*$F,F(\"\"&F,\"#AF3F)F)F+
+F(F,F.,&F,F)F-F)F.,(F7F)F,F-F-F)F.#F)\"$W\"" }}}{EXCHG {PARA 0 "> " 0 
+"" {MPLTEXT 1 0 22 "s := dsolve2(L, D, x);" }}{PARA 12 "" 1 "" 
+{XPPMATH 20 "6#>%\"sG7$-%$expG6#,<*&\"\"&#\"\"\"\"\"#-%#lnG6#,(%\"xGF-
+#!\"\"F.F-*$,,*$,(F3F-F4F-*$F+F,F,F.\"\"%*&F+F,F9F-!\"%*$,&F:F-F5F-F.F
+-!\"#F-F:F.F,F,F-#F5\"#7F6#F-FB-F06#F3#F-F;*$,&*$F3F.F-F3F5F,#F5\"\"'-
+F06#,(FIF-F3F5F5F-F,-F06#,&F3F-F5F-FF*$,(*$FQF.F-F5F-F3F-F,FJ-F06#,(F4
+F-F3F-FRF-FA-F06#,(F3F-F4F-FGF-FC*&,(*$,&F:F5F5F-F.F-F:F@F@F-F4-%(arct
+anhG6#,$*(,*FgnF,F:F5F5F-*&F+F,,(F3F-F:F4F4F-F-F-F-FfnF4,,*$F`oF.F;F_o
+F;FgnF-F:F@F@F-F4F.F-#F5\"\"$*&,(F>F-F@F-F:F.F4-Fjn6#,$*(,*F>F,F5F-F:F
+-F<F5F-FfoF4F7F4F.F-Fco*&F+F,-F06#,(F3F-F4F-*$FaoF,F,F-FCF`pFC-F'6#,<F
+*FCF6FAFDFFFG#F-FKFLF,FOFFFRFdpFUFCFXFAFen#F-FdoFeoFepF\\pFAF`pFA" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 45 "verify(L, D, x, s[1]); verif
+y(L, D, x, s[2]);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"!" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 78 "L := D^2-2/(2*x-1)*D+3*(2*x-1)^2*(x^4-2*x^3+x+1)/(16*x^2*(x-1)
+^2*(x^2-x-1)^2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"LG,(*$%\"DG\"
+\"#\"\"\"*&,&%\"xGF(!\"\"F)F-F'F)!\"#*,F+F(,**$F,\"\"%F)*$F,\"\"$F.F,F
+)F)F)F)F,F.,&F,F)F-F)F.,(*$F,F(F)F,F-F-F)F.#F4\"#;" }}}{EXCHG {PARA 0 
+"> " 0 "" {MPLTEXT 1 0 17 "dsolve2(L, D, x);" }}{PARA 12 "" 1 "" 
+{XPPMATH 20 "6#-%$expG6#-%$IntG6$-%'RootOfG6#,<*&,0*$%\"xG\"#7\"(%)f)H
+*$F0\"#6!)/f\"z\"*$F0\"#5\")g(*yW*$F0\"\"*!)!o>(f*$F0\"\")F8*$F0\"\"'F
+2*$F0\"\"(F5\"\"\"%#_ZGF?FB*&,0F@!*g$R%>\"F3!)OR%>\"F6\")[;plF9!*+#*H
+\\\"F<\"*S!f\"z\"F>\")wP!=%*$F0\"\"&!(o>(fFBFCFMFB*&,0F>\"*SAGE\"F6\")
+gl!*>F@!*g<'e@F<\"*Sq[-#FL!)?zDQF9!)g<A***$F0\"\"%\"(+cm%FBFCFXFB*&,0F
+@!*?jXU\"FW\")!GHx\"*$F0\"\"$!(Si'=F>\"*SU>L\"F9!)?Zp<F<\")g8$)yFL!)+w
+tnFBFCFinFB*&,0Fhn!(?BV%*$F0\"\"#\"'S#3%FL!)SaCWFW\")?v[>F<\"(gt%))F@!
+)?\"HY$F>\")gPcaFBFCFcoFB*&,0FL!)W\"G2\"Fbo\"'O:dF0!&cm%FW\"(SI\\(F@!(
+'HfBF>\"(w\\$zFhn!(ca'GFBFCFBFBF0!&*))HFhn!'Jj]Fbo\"'4#p\"\"%(=#FBFW\"
+'3?%)F>\"'W@EFL!'K_tF0" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 54 "L
+ := D^2 - (-3/16/x^2 - 2/9/(x-1)^2 + 3/(16*x*(x-1)));" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%\"LG,**$%\"DG\"\"#\"\"\"*$%\"xG!\"##\"\"$\"#;*$,
+&F+F)!\"\"F)F,#F(\"\"**&F+F2F1F2#!\"$F/" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 17 "dsolve2(L, D, x);" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#
+-%$expG6#-%$IntG6$-%'RootOfG6#,<*&,0*$%\"xG\"#7\"(%)f)H*$F0\"#6!)/f\"z
+\"*$F0\"#5\")g(*yW*$F0\"\"*!)!o>(f*$F0\"\")F8*$F0\"\"'F2*$F0\"\"(F5\"
+\"\"%#_ZGF?FB*&,0F@!*g$R%>\"F3!)OR%>\"F6\")[;plF9!*+#*H\\\"F<\"*S!f\"z
+\"F>\")wP!=%*$F0\"\"&!(o>(fFBFCFMFB*&,0F>\"*SAGE\"F6\")gl!*>F@!*g<'e@F
+<\"*Sq[-#FL!)?zDQF9!)g<A***$F0\"\"%\"(+cm%FBFCFXFB*&,0F@!*?jXU\"FW\")!
+GHx\"*$F0\"\"$!(Si'=F>\"*SU>L\"F9!)?Zp<F<\")g8$)yFL!)+wtnFBFCFinFB*&,0
+Fhn!(?BV%*$F0\"\"#\"'S#3%FL!)SaCWFW\")?v[>F<\"(gt%))F@!)?\"HY$F>\")gPc
+aFBFCFcoFB*&,0FL!)W\"G2\"Fbo\"'O:dF0!&cm%FW\"(SI\\(F@!('HfBF>\"(w\\$zF
+hn!(ca'GFBFCFBFBF0!&*))HFhn!'Jj]Fbo\"'4#p\"\"%(=#FBFW\"'3?%)F>\"'W@EFL
+!'K_tF0" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "L := D^2 - x;" }
+}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"LG,&*$%\"DG\"\"#\"\"\"%\"xG!\"\"
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 17 "dsolve2(L, D, x);" }}
+{PARA 8 "" 1 "" {TEXT -1 63 "Error, (in ISOLDE/candidates) improper op
+ or subscript selector" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" 
+}}}}{MARK "22 0 0" 0 }{VIEWOPTS 1 1 0 1 1 1803 }

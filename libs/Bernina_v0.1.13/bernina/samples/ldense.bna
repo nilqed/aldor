@@ -1,0 +1,53 @@
+n := 10;
+Ldense := n*x*D^2-x*D+n^2;
+/* Polynomial solutions */
+Kp := kernel(Ldense, 1);
+tex(degree(element(Kp, 1)));
+/* Rational solutions */
+Kr := kernel(Ldense);
+tex(degree(element(Kr, 1)));
+
+n := 20;
+Ldense := n*x*D^2-x*D+n^2;
+/* Polynomial solutions */
+Kp := kernel(Ldense, 1);
+tex(degree(element(Kp, 1)));
+/* Rational solutions */
+Kr := kernel(Ldense);
+tex(degree(element(Kr, 1)));
+
+n := 30;
+Ldense := n*x*D^2-x*D+n^2;
+/* Polynomial solutions */
+Kp := kernel(Ldense, 1);
+tex(degree(element(Kp, 1)));
+/* Rational solutions */
+Kr := kernel(Ldense);
+tex(degree(element(Kr, 1)));
+
+n := 40;
+Ldense := n*x*D^2-x*D+n^2;
+/* Polynomial solutions */
+Kp := kernel(Ldense, 1);
+tex(degree(element(Kp, 1)));
+/* Rational solutions */
+Kr := kernel(Ldense);
+tex(degree(element(Kr, 1)));
+
+n := 50;
+Ldense := n*x*D^2-x*D+n^2;
+/* Polynomial solutions */
+Kp := kernel(Ldense, 1);
+tex(degree(element(Kp, 1)));
+/* Rational solutions */
+Kr := kernel(Ldense);
+tex(degree(element(Kr, 1)));
+
+n := 60;
+Ldense := n*x*D^2-x*D+n^2;
+/* Polynomial solutions */
+Kp := kernel(Ldense, 1);
+tex(degree(element(Kp, 1)));
+/* Rational solutions */
+Kr := kernel(Ldense);
+tex(degree(element(Kr, 1)));

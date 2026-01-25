@@ -1,0 +1,108 @@
+# ======================================================================
+# This code was written all or part by Dr. Manuel Bronstein from
+# Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+# decided to publish this code under the CeCILL open source license in
+# memory of Dr. Manuel Bronstein.
+# 
+# This software is governed by the CeCILL license under French law and
+# abiding by the rules of distribution of free software. You can use,
+# modify and/or redistribute the software under the terms of the CeCILL
+# license as circulated by CEA, CNRS and Inria at the following URL :
+# http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+# 
+# As a counterpart to the access to the source code and rights to copy,
+# modify and redistribute granted by the license, users are provided
+# only with a limited warranty and the software's author, the holder of
+# the economic rights, and the successive licensors have only limited
+# liability.
+# 
+# In this respect, the user's attention is drawn to the risks associated
+# with loading, using, modifying and/or developing or reproducing the
+# software by the user in light of its specific status of free software,
+# that may mean that it is complicated to manipulate, and that also
+# therefore means that it is reserved for developers and experienced
+# professionals having in-depth computer knowledge. Users are therefore
+# encouraged to load and test the software's suitability as regards
+# their requirements in conditions enabling the security of their
+# systems and/or data to be ensured and, more generally, to use and
+# operate it in the same conditions as regards security.
+# 
+# The fact that you are presently reading this means that you have had
+# knowledge of the CeCILL license and that you accept its terms.
+# ======================================================================
+# 
+objects   = token.o scanner.o parser.o infexpr.o lispexpr.o maple.o
+asobj1    = token.ao scanner.ao parser.ao infexpr.ao lispexpr.ao
+asobj2    = maple.ao
+asobjects = $(asobj1) $(asobj2)
+options   = -M2 -Fao -Fo -Q3 -Csmax=0 -Mno-mactext
+tex1	  = token.tex scanner.tex parser.tex infexpr.tex lispexpr.tex
+tex2      = maple.tex
+tex       = $(tex1) $(tex2)
+test      =
+testdir   = ../../../test
+libsumit  = ../../../lib/libsumit.a
+sumitasl  = ../../../lib/libsumit.al
+
+all: datestamp
+
+datestamp: $(objects)
+	ar rv $(libsumit) $(objects)
+	touch datestamp
+
+reader.o: reader.as
+	axiomxl $(options) reader.as
+	ar rv $(sumitasl) reader.ao
+
+token.o: token.as ../extree.o ../operators/OPprefix.o
+	axiomxl $(options) token.as
+	ar rv $(sumitasl) token.ao
+
+scanner.o: scanner.as token.o ../operators/OPassign.o
+	axiomxl $(options) scanner.as
+	ar rv $(sumitasl) scanner.ao
+
+parser.o: parser.as ../extree.o
+	axiomxl $(options) parser.as
+	ar rv $(sumitasl) parser.ao
+
+infexpr.o: infexpr.as scanner.o parser.o
+	axiomxl $(options) infexpr.as
+	ar rv $(sumitasl) infexpr.ao
+
+lispexpr.o: lispexpr.as scanner.o parser.o
+	axiomxl $(options) lispexpr.as
+	ar rv $(sumitasl) lispexpr.ao
+
+maple.o: maple.as infexpr.o
+	axiomxl $(options) maple.as
+	ar rv $(sumitasl) maple.ao
+
+.PHONY: doc
+doc: $(tex)
+
+reader.tex: reader.as
+	as2doc reader
+
+token.tex: token.as
+	as2doc token
+
+scanner.tex: scanner.as
+	as2doc scanner
+
+parser.tex: parser.as
+	as2doc parser
+
+infexpr.tex: infexpr.as
+	as2doc infexpr
+
+lispexpr.tex: lispexpr.as
+	as2doc lispexpr
+
+maple.tex: maple.as
+	as2doc maple
+
+.PHONY: clean
+clean:
+	-rm $(objects) $(asobjects) $(tex) $(test)
+

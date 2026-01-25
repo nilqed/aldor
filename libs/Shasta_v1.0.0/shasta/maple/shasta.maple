@@ -1,0 +1,287 @@
+# ======================================================================
+# This code was written all or part by Dr. Manuel Bronstein from
+# Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+# decided to publish this code under the CeCILL open source license in
+# memory of Dr. Manuel Bronstein.
+# 
+# This software is governed by the CeCILL license under French law and
+# abiding by the rules of distribution of free software. You can use,
+# modify and/or redistribute the software under the terms of the CeCILL
+# license as circulated by CEA, CNRS and Inria at the following URL :
+# http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+# 
+# As a counterpart to the access to the source code and rights to copy,
+# modify and redistribute granted by the license, users are provided
+# only with a limited warranty and the software's author, the holder of
+# the economic rights, and the successive licensors have only limited
+# liability.
+# 
+# In this respect, the user's attention is drawn to the risks associated
+# with loading, using, modifying and/or developing or reproducing the
+# software by the user in light of its specific status of free software,
+# that may mean that it is complicated to manipulate, and that also
+# therefore means that it is reserved for developers and experienced
+# professionals having in-depth computer knowledge. Users are therefore
+# encouraged to load and test the software's suitability as regards
+# their requirements in conditions enabling the security of their
+# systems and/or data to be ensured and, more generally, to use and
+# operate it in the same conditions as regards security.
+# 
+# The fact that you are presently reading this means that you have had
+# knowledge of the CeCILL license and that you accept its terms.
+# ======================================================================
+# 
+# Maple file to create the shasta.m stub
+
+unprotect(`shasta`,`ShastaFileName`);
+shasta := `shasta`:
+ShastaFileName := `/tmp/shasta`:
+ShastaRemoveFiles := true;
+ShastaShowTime := false;
+ShastaOutputFormat := `maple`:
+
+shasta[adjoint] := ShastaAdjoint;
+shasta[apply] := ShastaApply;
+shasta[decompose] := ShastaDecompose;
+shasta[dispersion] := ShastaDispersion;
+shasta[efactor] := ShastaEFactor;
+shasta[eigenring] := ShastaEigenring;
+# shasta[exteriorKernel] := ShastaExteriorKernel;
+shasta[exteriorPower] := ShastaExteriorPower;
+# shasta[extPower] := ShastaExtPower;
+shasta[hyper] := ShastaHyper;
+shasta[leftGcd] := ShastaLeftGcd;
+shasta[leftLcm] := ShastaLeftLcm;
+# shasta[liouvillianSolution] := ShastaLiouvillianSolution;
+shasta[Loewy] := ShastaLoewy;
+shasta[mult] := ShastaMult;
+shasta[normalize] := ShastaNormalize;
+shasta[makeIntegral] := ShastaMakeIntegral;
+# shasta[parametricKernel] := ShastaParametricKernel;
+shasta[polynomialKernel] := ShastaPolynomialKernel;
+shasta[polynomialSolution] := ShastaPolynomialSolution;
+shasta[rationalKernel] := ShastaRationalKernel;
+shasta[rationalSolution] := ShastaRationalSolution;
+shasta[rightGcd] := ShastaRightGcd;
+shasta[rightLcm] := ShastaRightLcm;
+shasta[rightQuotient] := ShastaRightQuotient;
+shasta[sections] := ShastaSections;
+shasta[spread] := ShastaSpread;
+
+`shasta/init` := proc() local uniqueID; global ShastaFileName;
+    uniqueID := ssystem(`date +%H%M%S`)[2];
+   ShastaFileName :=
+	cat(ShastaFileName, substring(uniqueID, 1..length(uniqueID) - 1));
+   end;
+
+ShastaInput := proc() global ShastaFileName;
+	fopen(cat(ShastaFileName, `.in`), WRITE, TEXT); end;
+
+ShastaLaunch := proc(D, x)
+   local fout, cmd, ans, nin, nout, time, gct;
+   global ShastaFileName, ShastaShowTime, ShastaOutputFormat, ShastaRemoveFiles;
+   cmd := cat(`shasta -q -e`, D, ` -n`, x);
+   if ShastaShowTime or ShastaOutputFormat = `` then
+	cmd := cat(cmd, ` -t`); fi;
+   nin := cat(ShastaFileName, `.in`);
+   nout := cat(ShastaFileName, `.out`);
+   # Use csh to get away from sh's stack limits
+   system(cat(`csh -c '`, cmd,` < `, nin, ` >! `, nout, `'`));
+   fout := fopen(nout, READ,TEXT);
+   if ShastaOutputFormat = `maple` then ans := fscanf(fout, `%a`); fi;
+   if ShastaShowTime or ShastaOutputFormat = `` then
+	time := fscanf(fout, `%d`); gct := fscanf(fout, `%d`);
+	if ShastaShowTime then
+		printf(`Shasta time = %d msecs (of which %d for gc)\n`,
+			time[1], gct[1]); fi;
+   fi;
+   fclose(fout);
+   if ShastaOutputFormat = `` then ans := time; fi;
+   if ShastaRemoveFiles then system(cat(`rm -f `, nin, ` `, nout)); fi;
+   ans[1]; end;
+
+ShastaPrefix := proc(L, D, x, str) local fin; global ShastaOutputFormat;
+   fin := ShastaInput();
+   fprintf(fin,`%s(%s%a));\n`, ShastaOutputFormat, str, L);
+   fclose(fin);
+   ShastaLaunch(D, x); end;
+ShastaAdjoint := proc(L, D, x) ShastaPrefix(L, D, x, `adjoint(`); end;
+ShastaHyper := proc(L, D, x) eval(ShastaPrefix(L, D, x,`hyper(`)); end;
+ShastaLoewy := proc(L, D, x) eval(ShastaPrefix(L, D, x, `Loewy(`)); end;
+ShastaMakeIntegral := proc(L, D, x) ShastaPrefix(L, D, x,`makeIntegral(`);end;
+ShastaNormalize := proc(L, D, x) ShastaPrefix(L, D, x, `normalize(`); end;
+ShastaLiouvillianSolution := proc(L, D, x)
+	eval(ShastaPrefix(L, D, x,`liouvillianSolution(`)); end;
+
+ShastaPrefix2 := proc(L1, L2, D, x, str) local fin; global ShastaOutputFormat;
+   fin := ShastaInput();
+   fprintf(fin,`%s(%s%a,%a));\n`, ShastaOutputFormat, str, L1, L2);
+   fclose(fin);
+   ShastaLaunch(D, x); end;
+ShastaLeftGcd := proc(L1,L2, D, x) ShastaPrefix2(L1,L2,D, x, `leftGcd(`); end;
+ShastaLeftLcm := proc(L1,L2, D, x) ShastaPrefix2(L1,L2,D, x, `leftLcm(`); end;
+ShastaRightGcd := proc(L1,L2, D, x) ShastaPrefix2(L1,L2,D,x,`rightGcd(`); end;
+ShastaRightLcm := proc(L1,L2, D, x) ShastaPrefix2(L1,L2,D,x,`rightLcm(`); end;
+ShastaApply := proc(L, f, D, x) ShastaPrefix2(L, f, D, x, `apply(`); end;
+ShastaExteriorKernel := proc(L, n, D, x)
+   eval(ShastaPrefix2(L, n, D, x, `exteriorKernel(`)); end;
+ShastaExtPower := proc(L, n, D, x)
+   eval(ShastaPrefix2(L, n, D, x, `extPower(`)); end;
+ShastaExteriorPower := proc(L, n, D, x)
+   ShastaPrefix2(L, n, D, x, `exteriorPower(`); end;
+ShastaSections := proc(L, n, D, x)
+   eval(ShastaPrefix2(L, n, D, x, `sections(`)); end;
+
+ShastaDispersion := proc(p) local D, x;
+   D := args[nargs-1]; x := args[nargs];
+   if nargs = 3 then ShastaPrefix(args[1], D, x, `dispersion(`);
+   else ShastaPrefix2(args[1], args[2], D, x, `dispersion(`);  fi; end;
+
+ShastaSpread := proc(p) local D, x;
+   D := args[nargs-1]; x := args[nargs];
+   if nargs = 3 then eval(ShastaPrefix(args[1], D, x, `spread(`));
+   else eval(ShastaPrefix2(args[1], args[2], D, x, `spread(`));  fi; end;
+
+ShastaMult := proc(L) local D, x, fin, i; global ShastaOutputFormat;
+   fin := ShastaInput();
+   fprintf(fin,`%s((%a)`, ShastaOutputFormat, L);
+   D := args[nargs-1]; x := args[nargs];
+   for i from 2 to nargs-2 do fprintf(fin,` * (%a)`,args[i]); od;
+   fprintf(fin,`);\n`);
+   fclose(fin);
+   ShastaLaunch(D, x); end;
+
+ShastaRightQuotient := proc(L1, L2, D, x) local fin; global ShastaOutputFormat;
+   fin := ShastaInput();
+   fprintf(fin,`%s((%a)/(%a));\n`, ShastaOutputFormat, L1, L2);
+   fclose(fin);
+   ShastaLaunch(D, x); end;
+
+ShastaPolynomialSolution := proc(L, f, D, x) local v;
+   v := eval(ShastaPrefix2(L, f, D, x, `polynomialSolution(`));
+   if linalg[vectdim](v) = 0 then eval(v) else v[1]; fi; end;
+
+ShastaRationalSolution := proc(L, f, D, x) local v;
+   v := eval(ShastaPrefix2(L, f, D, x, `rationalSolution(`));
+   if linalg[vectdim](v) = 0 then eval(v) else v[1]; fi; end;
+
+ShastaParametricKernel := proc(L)
+   local D, x, fin, i, r, c, mat; global ShastaOutputFormat;
+   fin := ShastaInput();
+   fprintf(fin,`%s(parametricKernel(%a`, ShastaOutputFormat, L);
+   D := args[nargs-1]; x := args[nargs];
+   for i from 2 to nargs-2 do fprintf(fin,`,%a`,args[i]); od;
+   fprintf(fin,`));\n`);
+   fclose(fin);
+   mat := eval(ShastaLaunch(D, x));
+   r := linalg[rowdim](mat); c := linalg[coldim](mat);
+   [[seq(mat[r,i],i=1..c+3-nargs)], linalg[submatrix](mat, 1..(r-1), 1..c)];
+   end;
+
+ShastaPolynomialKernel := proc(L) ShastaRationalKernel(L,1,args[2..nargs]); end;
+
+ShastaRationalKernel := proc(L) local D, x, fin, i; global ShastaOutputFormat;
+   fin := ShastaInput();
+   fprintf(fin,`%s(kernel(`, ShastaOutputFormat);
+   ShastaPrintMatrixOrOperator(fin, L);
+   D := args[nargs-1]; x := args[nargs];
+   for i from 2 to nargs-2 do fprintf(fin,`,%a`,args[i]); od;
+   fprintf(fin,`));\n`);
+   fclose(fin);
+   eval(ShastaLaunch(D, x));
+   end;
+
+ShastaEigenring := proc(L, D, x) local fin, ans; global ShastaOutputFormat;
+   fin := ShastaInput();
+   fprintf(fin,`%s(eigenring(`, ShastaOutputFormat);
+   ShastaPrintMatrixOrOperator(fin, L);
+   fprintf(fin,`));\n`);
+   fclose(fin);
+   ans := eval(ShastaLaunch(D, x));
+   if (type(L, matrix)) then ShastaEigenringResult(L, ans) else eval(ans); fi;
+   end;
+
+ShastaEigenringResult := proc(mat, eigen) local i, n, dim;
+   n := linalg[coldim](mat);
+   dim := iquo(linalg[coldim](eigen), n);
+   if dim = 1 then eigen else
+	[seq(linalg[submatrix](eigen, 1..n, (1+(i-1)*n)..(i*n)), i = 1..dim)];
+   fi;
+   end;
+
+ShastaPrintMatrixOrOperator := proc(fin, L) local i, j;
+   if (type(L, matrix)) then
+	fprintf(fin,`system(%a`,L[1,1]);
+	for j from 2 to linalg[coldim](L) do fprintf(fin,`,%a`,L[1,j]); od;
+	for i from 2 to linalg[rowdim](L) do
+	    for j to linalg[coldim](L) do fprintf(fin,`,%a`,L[i,j]); od;
+	od;
+	fprintf(fin,`)`);
+   else fprintf(fin, `%a`, L);
+   fi;
+   end;
+
+ShastaDecompose := proc(L, D, x) local fin, ans, i; global ShastaOutputFormat;
+   fin := ShastaInput();
+   fprintf(fin,`%s(decompose(%a));\n`, ShastaOutputFormat, L);
+   fclose(fin);
+   ans := eval(ShastaLaunch(D, x));
+   if type(ans, vector) then		# decomposable
+	if degree(ans[1], D) > 0 then	# over rationals
+		`LeftLcm`(seq(ans[i], i = 1..linalg[vectdim](ans)));
+	else ShastaAlgDecomp(D, x, ans); fi;
+   else ans;
+   fi;
+   end;
+
+ShastaAlgDecomp := proc(D, x, v) local algops, i;
+   algops := ShastaAlgSubs(D, x, v[1], v[2]/v[3]);
+   if degree(v[1], x) = 2 then
+	`LeftLcm`(algops, seq(v[i], i = 4..linalg[vectdim](v)));
+   else `LeftLcm`(algops, `and conjugates`); fi;
+   end;
+
+ShastaAlgSubs := proc(D, x, h, f) local rt, i;
+   if degree(h, x) = 2 then
+	rt := [solve(h,x)];
+	seq(eval(D + subs(D=x, subs(x=rt[i], f))), i = 1..2);
+   else
+	rt := RootOf(h, x);
+	eval(D + subs(D=x, subs(x=rt, f)));
+   fi;
+   end;
+
+ShastaEFactor := proc(L, D, x)
+   local fin, ans, h, alg, rat, i; global ShastaOutputFormat;
+   fin := ShastaInput();
+   fprintf(fin,`%s(factor(%a));\n`, ShastaOutputFormat, L);
+   fclose(fin);
+   ans := eval(ShastaLaunch(D, x));
+   if type(ans, vector) then		# reducible
+	if ans[1] >= 0 then ShastaRatFactor(ans);
+	else
+		h := ans[2];
+		alg := ShastaAlgSubs(D, x, ans[2], ans[3]/ans[4]);
+		rat := seq(ans[i], i=5..linalg[vectdim](ans));
+		if ans[1] = -1 then
+			if degree(h, x) = 2 then `LeftLcm`(alg, rat);
+			else `LeftLcm`(alg, `and conjugates`); fi;
+		elif ans[1] = -4 then linalg[vector](2,[rat,`LeftLcm`(alg)]);
+		else linalg[vector](3, [rat[1], `LeftLcm`(alg), rat[2]]); fi;
+	fi;
+   else ans;
+   fi;
+   end;
+
+ShastaRatFactor := proc(ans) local m, d, i;
+   m := ans[1]; d := linalg[vectdim](ans);
+   if m = 0 then `LeftLcm`(seq(ans[i], i = 2..d));
+   elif m = 1 then linalg[vector](d-1, [seq(ans[i], i = 2..d)]);
+   elif m = 2 then `LeftLcm`(ans[2], linalg[vector](2, [ans[3], ans[4]]));
+   elif m = 3 then linalg[vector](2, [ans[2], `LeftLcm`(ans[3], ans[4])]);
+   else linalg[vector](3, [ans[2], `LeftLcm`(ans[3], ans[4]), ans[5]]);
+   fi;
+   end;
+
+save `shasta.m`;
+done;

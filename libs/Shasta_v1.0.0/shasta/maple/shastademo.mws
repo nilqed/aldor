@@ -1,0 +1,103 @@
+{VERSION 3 0 "DEC ALPHA UNIX" "3.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{CSTYLE "" -1 256 "terminal" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "
+" -1 257 "terminal" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 258 "
+terminal" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 259 "terminal" 
+0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 
+-1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }
+{PSTYLE "Maple Output" 0 11 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 
+0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "" 11 12 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }1 0 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }{PSTYLE "" 0 256 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 1 
+0 0 0 0 0 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 256 "" 0 "" {TEXT -1 16 "IMPORTANT: the  " }
+{TEXT 256 7 "shasta " }{TEXT -1 66 " executable must be in your path b
+efore you can execute this demo." }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 
+50 "To start, we tell maple about the location of the " }{TEXT 258 8 "
+shasta.m" }{TEXT -1 31 " file, which is located in the " }{TEXT 259 5 
+"maple" }{TEXT -1 139 " directory of shasta.\n Replace the '.' by the \+
+appropriate directory on your system. The following line is only valid
+ if you are using maple" }}{PARA 0 "" 0 "" {TEXT -1 10 "from the  " }
+{TEXT 257 5 "maple" }{TEXT -1 105 "  directory of shasta. Alternativel
+y, you can add a line to this effect in your .mapleinit file, and then
+" }}{PARA 0 "" 0 "" {TEXT -1 24 "run maple from anywhere." }}{PARA 0 "
+> " 0 "" {MPLTEXT 1 0 32 "restart; libname := `.`,libname:" }}}{EXCHG 
+{PARA 0 "" 0 "" {TEXT -1 77 "We then load the shasta interface, bringi
+ng the shasta  functions into scope:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 
+0 13 "with(shasta);" }}{PARA 12 "" 1 "" {XPPMATH 20 "6#79%&LoewyG%(adj
+ointG%&applyG%*decomposeG%+dispersionG%(efactorG%*eigenringG%.exterior
+PowerG%&hyperG%(leftGcdG%(leftLcmG%-makeIntegralG%%multG%*normalizeG%1
+polynomialKernelG%3polynomialSolutionG%/rationalKernelG%1rationalSolut
+ionG%)rightGcdG%)rightLcmG%.rightQuotientG%)sectionsG%'spreadG" }}}
+{EXCHG {PARA 0 "" 0 "" {TEXT -1 93 "Difference operators are entered s
+imply as polynomials in the shift and independent variable:" }{TEXT 
+-1 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 47 "L := (n+2)*E^2 + (n^2+3*n
++2)*E - n^2 - 3*n - 2;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"LG,,*&,&
+%\"nG\"\"\"\"\"#F)F))%\"EGF*\"\"\"F)*&,(*$)F(F*F-F)F(\"\"$F*F)F)F,F)F)
+F0!\"\"F(!\"$!\"#F)" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 131 "When call
+ing a shasta  function, e.g. adjoint, add the shift operator  name and
+ independent variable name to the shasta parameters:" }{TEXT -1 0 "" }
+}{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "tL := adjoint(L,E,n);" }}{PARA 11 
+"" 1 "" {XPPMATH 20 "6#>%#tLG,(*&,(*$)%\"nG\"\"#\"\"\"!\"\"F*!\"$!\"#
+\"\"\"F0)%\"EGF+F,F0*&,&F(F0F*F0F0F2F0F0F*F0" }}}{EXCHG {PARA 0 "" 0 "
+" {TEXT -1 101 "The functions 'polynomialKernel' and  'rationalKernel'
+ always  return arrays, potentially empty ones:" }{TEXT -1 0 "" }}
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "rationalKernel(L,E,n);" }}{PARA 11 
+"" 1 "" {XPPMATH 20 "6#-%'vectorG6#7\"" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 28 "K := rationalKernel(tL,E,n);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"KG-%'vectorG6#7#*&\"\"\"F*%\"nG!\"\"" }}}{EXCHG 
+{PARA 0 "" 0 "" {TEXT -1 80 "We can verify that the first entry of K i
+s indeed a solution of the adjoint of L" }{TEXT -1 0 "" }}{PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 19 "apply(tL,K[1],E,n);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#\"\"!" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 139 "Since th
+e adjoint of L has a rational solution, L must be reducible, which imp
+lies in this case that it must have a hypergeometric solution" }{TEXT 
+-1 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "f := hyper(L,E,n);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"fG,&%\"nG!\"\"F'\"\"\"" }}}{EXCHG 
+{PARA 0 "" 0 "" {TEXT -1 125 "hyper returns either [] if there are no \+
+hypergeometric solutions, or f(n) = y(n+1)/y(n) where y is a hypergeom
+etric solution." }}{PARA 0 "" 0 "" {TEXT -1 75 "In that case, y can be
+ recovered from f by calling rsolve on y(n+1)=f*y(n):" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 27 "rsolve(y(n+1)=f*y(n),y(n));" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#*()!\"\"%\"nG\"\"\"-%&GAMMAG6#,&F&F'F'F'F'-%\"yG6#\"\"!
+F'" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 55 "We could also find that L i
+s reducible by factoring it:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "l :
+= efactor(L,E,n);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"lG-%'vectorG6
+#7$,(*&,&%\"nG\"\"\"\"\"#F-F-%\"EGF-F-F,!\"\"!\"#F-,(F/F-F,F-F-F-" }}}
+{EXCHG {PARA 0 "" 0 "" {TEXT -1 71 "The above means that L is the prod
+uct of those 2 first-order operators." }{TEXT -1 0 "" }}{PARA 0 "> " 
+0 "" {MPLTEXT 1 0 24 "L - mult(l[1],l[2],E,n);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#\"\"!" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 146 "It also \+
+means that L is not a least common left multiple of first order operat
+ors, since 'efactor' always decomposes as an LCLM whenever possible:" 
+}{TEXT -1 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 62 "efactor(E^3+(-n-2)
+*E^2+(3*n^2+9*n+6)*E-3*n^3-9*n^2-6*n, E, n);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#-%(LeftLcmG6%,&%\"EG\"\"\"*(%\"IGF(-%%sqrtG6#\"\"$\"\"
+\"%\"nGF(!\"\",&F'F(F)F(,&F'F(F0F1" }}}{EXCHG {PARA 0 "" 0 "" {TEXT 
+-1 75 "Systems Y(n+1) = A(n)Y(n) are solved by passing the matrix A(n)
+ as argument" }{TEXT -1 0 "" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 295 "A :
+= linalg[matrix](4,4,[(n-1)/(n+5), (7*n^2+4*n+n^3)/(n+5), -n-1, (1-n)*
+(n^2+5*n+5)/(n+5),\n        (n-1)/(n*(n+1)*(n+5)), (n-1)/((n+1)*(n+5))
+, 0, (n-1)/((n+1)*(n+5)),\n        (n-1)/(n+5), n*(n-1)/(n+5), -n, -(n
+^3+3*n^2-5*n-5)/(n+5),\n        (1-n)/(n*(n+5)), (1-n)/(n+5), 1, (n+4)
+*(n-1)/(n+5)]);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"AG-%'matrixG6#7
+&7&*&,&%\"nG\"\"\"!\"\"F-\"\"\",&F,F-\"\"&F-!\"\"*&,(*$)F,\"\"#F/\"\"(
+F,\"\"%*$)F,\"\"$F/F-F/F0F2,&F,F.F.F-*&*&,&F-F-F,F.F-,(F5F-F,F1F1F-F-F
+/F0F27&*&F+F/*(F,\"\"\",&F,F-F-F-\"\"\"F0\"\"\"F2*&F+F/*&FF\"\"\"F0\"
+\"\"F2\"\"!FI7&F**&*&F,F-F+F-F/F0F2,$F,F.,$*&,*F:F-F5F<F,!\"&FUF-F/F0F
+2F.7&*&F@F/*&F,\"\"\"F0\"\"\"F2*&F@F/F0F2F-*&*&,&F,F-F9F-F-F+F/F/F0F2
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "K := rationalKernel(A,E
+,n);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"KG-%'matrixG6#7&7$*&,2*$)%
+\"nG\"\"(\"\"\"#\"\"\"\"$W\"*$)F.\"\"'F0#F2\"#;*$)F.\"\"&F0F1*$)F.\"\"
+%F0#\"#8\"#[*$)F.\"\"$F0#\"$R#\"#s*$)F.\"\"#F0#\"#6FDF.#FJFDFJF2F0,.F4
+F2F9\"\"*F<\"#DFB\"#:FH!#EF.!#C!\"\",$F.#!\"\"\"$?(7$,$*&F0F0,(F<F2FBF
+6FH\"\")FTFM\"\"!7$*&,.F9F1F<#F2\"#=FB#FWF8FH#!#<\"#OF.#\"#BFao#FDFJF2
+F0,,F<F2FB\"#5FH\"#NF.\"#]\"#CF2FT,&F.FV#F2\"$g$F27$*&,(FH#FWF3F.#FWFi
+o#F2FOF2F0,(FHF2F.F6FgnF2FT#F2FX" }}}{EXCHG {PARA 0 "" 0 "" {TEXT -1 
+41 "We can verify that K is indeed a solution" }{TEXT -1 0 "" }}{PARA 
+0 "> " 0 "" {MPLTEXT 1 0 50 "map(normal, evalm(subs(n=n+1,evalm(K)) - \+
+A &* K));" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#-%'matrixG6#7&7$\"\"!F(F'
+F'F'" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{MARK "16 0 0
+" 0 }{VIEWOPTS 1 1 0 1 1 1803 }

@@ -1,0 +1,58 @@
+{VERSION 3 0 "DEC ALPHA UNIX" "3.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 
+0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Maple Output" 0 11 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }{PSTYLE "" 11 12 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 
+0 0 0 0 0 0 0 }1 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restart;" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "with(shasta);" }}{PARA 12 "" 1 "" 
+{XPPMATH 20 "6#75%(adjointG%&applyG%+dispersionG%.exteriorPowerG%&hype
+rG%(leftGcdG%(leftLcmG%4liouvillianSolutionG%-makeIntegralG%*normalize
+G%1polynomialKernelG%3polynomialSolutionG%/rationalKernelG%1rationalSo
+lutionG%)rightGcdG%)rightLcmG%.rightQuotientG%)sectionsG%'spreadG" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 645 "B3 := matrix([[-(16*n^4+8*n
+^3-4*n^2)/(-16*n^4-8*n^3+4*n^2+2*n), -8*n^3/(-16*n^4-8*n^3+4*n^2+2*n),
+ -(-4*n^2-2*n+1)/(-16*n^4-8*n^3+4*n^2+2*n), 2*n/(-16*n^4-8*n^3+4*n^2+2
+*n)], [-4*n^2/(-16*n^4-8*n^3+4*n^2+2*n), -16*n^4/(-16*n^4-8*n^3+4*n^2+
+2*n), 1/(-16*n^4-8*n^3+4*n^2+2*n), 4*n^2/(-16*n^4-8*n^3+4*n^2+2*n)], [
+-(8*n^3+4*n^2-2*n)/(16*n^4+8*n^3-4*n^2-2*n), -4*n^2/(16*n^4+8*n^3-4*n^
+2-2*n), -(4*n^2+4*n-1-16*n^4-16*n^3)/(16*n^4+8*n^3-4*n^2-2*n), -(-4*n^
+2+2*n-8*n^3)/(16*n^4+8*n^3-4*n^2-2*n)], [-2*n/(16*n^4+8*n^3-4*n^2-2*n)
+, -8*n^3/(16*n^4+8*n^3-4*n^2-2*n), -(-4*n^2-2*n+1)/(16*n^4+8*n^3-4*n^2
+-2*n), -(-16*n^4-8*n^3+4*n^2)/(16*n^4+8*n^3-4*n^2-2*n)]]);" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#>%#B3G-%'matrixG6#7&7&,$*&,(*$)%\"nG\"\"%\"
+\"\"\"#;*$)F/\"\"$F1\"\")*$)F/\"\"#F1!\"%F1,*F-!#;F3!\")F7F0F/F9!\"\"!
+\"\",$*&*$F4F1F1F;F>F=,$*&,(F7F:F/!\"#\"\"\"FGF1F;F>F?,$*&F/F1F;F>F97&
+,$*&*$F8F1F1F;F>F:,$*&*$F.F1F1F;F>F<*&F1F1F;F>,$FLF07&,$*&,(F3F6F7F0F/
+FFF1,*F-F2F3F6F7F:F/FFF>F?,$*&*$F8F1F1FWF>F:,$*&,,F7F0F/F0F?FGF-F<F3F<
+F1FWF>F?,$*&,(F7F:F/F9F3F=F1FWF>F?7&,$*&F/F1FWF>FF,$*&*$F4F1F1FWF>F=,$
+*&FEF1FWF>F?,$*&,(F-F<F3F=F7F0F1FWF>F?" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 21 "A := map(normal, B3);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%\"AG-%'matrixG6#7&7&,$*&*&%\"nG\"\"\",(*$)F-\"\"#\"\"\"\"\"%F-
+F2!\"\"F.F.F3,**$)F-\"\"$F3\"\")F0F4F-!\"#F5F.!\"\"F2,$*&*$F1F3F3F6F<F
+4,$*&F/F3*&F-\"\"\"F6\"\"\"F<#F5F2,$*&F3F3F6F<F57&,$*&F-F3F6F<F2,$*&*$
+F8F3F3F6F<F:,$*&F3F3*&F-\"\"\"F6\"\"\"F<FE,$FJF;7&,$*&F/F3F6F<F5FS,$*&
+,,F0!\"%F-FZF.F.*$)F-F4F3\"#;F7FgnF3*&F-\"\"\"F6\"\"\"F<#F.F2FV7&FF,$F
+>FZ,$FAF[oF*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "den := 4*n^
+2-4*n+1;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$denG,(*$)%\"nG\"\"#\"\"
+\"\"\"%F(!\"%\"\"\"F-" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 94 "nu
+m := matrix([[2*n-1,4*n*(n-1)+1],[1-2*n,0],[4*n*(n-1)+2*n,0],[-4*n*(n-
+1)-2*n,4*n*(n-1)+1]]);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$numG-%'ma
+trixG6#7&7$,&%\"nG\"\"#!\"\"\"\"\",&*&F+F.,&F+F.F-F.F.\"\"%F.F.7$,&F.F
+.F+!\"#\"\"!7$,&F0F2F+F,F67$,&F0!\"%F+F5F/" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 39 "sol := map(normal, evalm(1/den * num));" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#>%$solG-%'matrixG6#7&7$*&\"\"\"F+,&%\"nG\"\"
+#!\"\"\"\"\"!\"\"F07$,$F*F/\"\"!7$,$*&F-F+F,F1F.F47$,$F7!\"#F0" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 54 "map(normal, evalm(subs(n=n+1
+,evalm(sol)) - A &* sol));" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#-%'matri
+xG6#7&7$\"\"!F(F'F'F'" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "K \+
+:= rationalKernel(A,E,n);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"KG-%'
+matrixG6#7&7$,$*&\"\"\"F,,&%\"nG\"\"\"#!\"\"\"\"#F/!\"\"#F/F2F/7$,$F+F
+0\"\"!7$*&F.F,F-F3F77$,$F9F1F/" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 50 "map(normal, evalm(subs(n=n+1,evalm(K)) - A &* K));" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#-%'matrixG6#7&7$\"\"!F(F'F'F'" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{MARK "10 0 0" 0 }{VIEWOPTS 1 
+1 0 1 1 1803 }

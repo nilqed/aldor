@@ -1,0 +1,477 @@
+# ======================================================================
+# This code was written all or part by Dr. Manuel Bronstein from
+# Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+# decided to publish this code under the CeCILL open source license in
+# memory of Dr. Manuel Bronstein.
+# 
+# This software is governed by the CeCILL license under French law and
+# abiding by the rules of distribution of free software. You can use,
+# modify and/or redistribute the software under the terms of the CeCILL
+# license as circulated by CEA, CNRS and Inria at the following URL :
+# http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+# 
+# As a counterpart to the access to the source code and rights to copy,
+# modify and redistribute granted by the license, users are provided
+# only with a limited warranty and the software's author, the holder of
+# the economic rights, and the successive licensors have only limited
+# liability.
+# 
+# In this respect, the user's attention is drawn to the risks associated
+# with loading, using, modifying and/or developing or reproducing the
+# software by the user in light of its specific status of free software,
+# that may mean that it is complicated to manipulate, and that also
+# therefore means that it is reserved for developers and experienced
+# professionals having in-depth computer knowledge. Users are therefore
+# encouraged to load and test the software's suitability as regards
+# their requirements in conditions enabling the security of their
+# systems and/or data to be ensured and, more generally, to use and
+# operate it in the same conditions as regards security.
+# 
+# The fact that you are presently reading this means that you have had
+# knowledge of the CeCILL license and that you accept its terms.
+# ======================================================================
+# 
+# Maple file to create the bernina.m stub
+
+unprotect(`bernina`,`BerninaFileName`,`BerninaRemoveFiles`);
+bernina := `bernina`:
+BerninaFileName := `/tmp/bernina`:
+BerninaRemoveFiles := true;
+BerninaShowTime := false;
+BerninaOutputFormat := `maple`:
+
+bernina[adjoint] := BerninaAdjoint;
+bernina[allRationalExponents] := BerninaAllRationalExponents;
+bernina[apply] := BerninaApply;
+bernina[Darboux] := BerninaDarboux;
+bernina[decompose] := BerninaDecompose;
+bernina[dfactor] := BerninaDFactor;
+bernina[dualFirstIntegral] := BerninaDualFirstIntegral;
+bernina[eigenring] := BerninaEigenring;
+bernina[exponentialSolutions] := BerninaExponentialSolutions;
+bernina[exteriorKernel] := BerninaExteriorKernel;
+bernina[exteriorPower] := BerninaExteriorPower;
+# bernina[extPower] := BerninaExtPower;
+bernina[invariants] := BerninaInvariants;
+bernina[irreducible3] := BerninaIrr3;
+bernina[leftGcd] := BerninaLeftGcd;
+bernina[leftLcm] := BerninaLeftLcm;
+bernina[Loewy] := BerninaLoewy;
+bernina[normalize] := BerninaNormalize;
+bernina[makeIntegral] := BerninaMakeIntegral;
+bernina[mult] := BerninaMult;
+# bernina[parametricKernel] := BerninaParametricKernel;
+bernina[pCurvature] := BerninaPCurvature;
+bernina[polynomialKernel] := BerninaPolynomialKernel;
+bernina[polynomialSolution] := BerninaPolynomialSolution;
+bernina[radicalInvariants] := BerninaRadicalInvariants;
+bernina[radicalSolutions] := BerninaRadicalSolutions;
+bernina[rationalKernel] := BerninaRationalKernel;
+bernina[rationalSolution] := BerninaRationalSolution;
+bernina[rightGcd] := BerninaRightGcd;
+bernina[rightLcm] := BerninaRightLcm;
+bernina[rightQuotient] := BerninaRightQuotient;
+bernina[semiInvariants] := BerninaSemiInvariants;
+bernina[solve2] := BerninaSolve2;
+bernina[symmetricKernel] := BerninaSymmetricKernel;
+bernina[symmetricPower] := BerninaSymmetricPower;
+bernina[symmetricSquareRoot] := BerninaSymmetricSquareRoot;
+# bernina[symPower] := BerninaSymPower;
+
+`bernina/init` := proc() local uniqueID; global BerninaFileName;
+    uniqueID := ssystem(`date +%H%M%S`)[2];
+   BerninaFileName :=
+	cat(BerninaFileName, substring(uniqueID, 1..length(uniqueID) - 1));
+   end;
+
+BerninaInput := proc() global BerninaFileName;
+	fopen(cat(BerninaFileName, `.in`), WRITE, TEXT); end;
+
+BerninaLaunch := proc(D, x)
+  local fout, cmd, ans, nin, nout, time, gct;
+  global BerninaFileName,BerninaShowTime,BerninaOutputFormat,BerninaRemoveFiles;
+   cmd := cat(`bernina -q -d`, D, ` -x`, x);
+   if nargs = 3 then cmd := cat(cmd, ` -y`, args[3]); fi;
+   if BerninaShowTime or BerninaOutputFormat = `` then
+      cmd := cat(cmd, ` -t`); fi;
+   nin := cat(BerninaFileName, `.in`);
+   nout := cat(BerninaFileName, `.out`);
+   # Use csh to get away from sh's stack limits
+   system(cat(`csh -c '`, cmd,` < `, nin, ` >! `, nout, `'`));
+   fout := fopen(nout, READ,TEXT);
+   if BerninaOutputFormat = `maple` then ans := fscanf(fout, `%a`); fi;
+   if BerninaShowTime or BerninaOutputFormat = `` then
+	time := fscanf(fout, `%d`); gct := fscanf(fout, `%d`);
+	if BerninaShowTime then
+		printf(`Bernina time = %d msecs (of which %d for gc)\n`,
+			time[1], gct[1]); fi;
+   fi;
+   fclose(fout);
+   if BerninaOutputFormat = `` then ans := time; fi;
+   if BerninaRemoveFiles then system(cat(`rm -f `, nin, ` `, nout)); fi;
+   ans[1]; end;
+
+BerninaPrefix := proc(L, D, x, str) local fin; global BerninaOutputFormat;
+   fin := BerninaInput();
+   fprintf(fin,`%s(%s%a));\n`, BerninaOutputFormat, str, L);
+   fclose(fin);
+   BerninaLaunch(D, x); end;
+BerninaAdjoint := proc(L, D, x) BerninaPrefix(L, D, x, `adjoint(`); end;
+BerninaLoewy := proc(L, D, x) eval(BerninaPrefix(L, D, x, `Loewy(`)); end;
+BerninaNormalize := proc(L, D, x) BerninaPrefix(L, D, x, `normalize(`); end;
+BerninaMakeIntegral := proc(L, D, x) BerninaPrefix(L, D, x,`makeIntegral(`);end;
+BerninaSymmetricSquareRoot := proc(L, D, x)
+   BerninaPrefix(L, D, x,`symmetricSquareRoot(`);end;
+
+BerninaAllRationalExponents := proc(L, D, x)
+   if BerninaPrefix(L, D, x, `allRationalExponents(`) = 1 then true else false;
+   fi; end;
+
+BerninaPrefix2 := proc(L1, L2, D, x, str) local fin; global BerninaOutputFormat;
+   fin := BerninaInput();
+   fprintf(fin,`%s(%s%a,%a));\n`, BerninaOutputFormat, str, L1, L2);
+   fclose(fin);
+   BerninaLaunch(D, x); end;
+BerninaLeftGcd := proc(L1,L2, D, x) BerninaPrefix2(L1,L2,D, x, `leftGcd(`); end;
+BerninaLeftLcm := proc(L1,L2, D, x) BerninaPrefix2(L1,L2,D, x, `leftLcm(`); end;
+BerninaRightGcd := proc(L1,L2, D, x) BerninaPrefix2(L1,L2,D,x,`rightGcd(`); end;
+BerninaRightLcm := proc(L1,L2, D, x) BerninaPrefix2(L1,L2,D,x,`rightLcm(`); end;
+BerninaApply := proc(L, f, D, x) BerninaPrefix2(L, f, D, x, `apply(`); end;
+BerninaSymmetricKernel := proc(L, n, D, x)
+   eval(BerninaPrefix2(L, n, D, x, `symmetricKernel(`)); end;
+BerninaSymPower := proc(L, n, D, x)
+   eval(BerninaPrefix2(L, n, D, x, `symPower(`)); end;
+BerninaExtPower := proc(L, n, D, x)
+   eval(BerninaPrefix2(L, n, D, x, `extPower(`)); end;
+BerninaSymmetricPower := proc(L, n, D, x)
+   BerninaPrefix2(L, n, D, x, `symmetricPower(`); end;
+BerninaExteriorPower := proc(L, n, D, x)
+   BerninaPrefix2(L, n, D, x, `exteriorPower(`); end;
+BerninaDualFirstIntegral := proc(L, n, D, x)
+   eval(BerninaPrefix2(L, n, D, x, `dualFirstIntegral(`)); end;
+
+BerninaRightQuotient := proc(L1, L2, D, x)
+    local fin; global BerninaOutputFormat;
+    fin := BerninaInput();
+    fprintf(fin,`%s((%a)/(%a));\n`, BerninaOutputFormat, L1, L2);
+    fclose(fin);
+    BerninaLaunch(D, x); end;
+
+BerninaMult := proc(L) local D, x, fin, i; global BerninaOutputFormat;
+   fin := BerninaInput();
+   fprintf(fin,`%s((%a)`, BerninaOutputFormat, L);
+   D := args[nargs-1]; x := args[nargs];
+   for i from 2 to nargs-2 do fprintf(fin,` * (%a)`,args[i]); od;
+   fprintf(fin,`);\n`);
+   fclose(fin);
+   BerninaLaunch(D, x); end;
+
+BerninaPolynomialSolution := proc(L, f, D, x) local v;
+   v := eval(BerninaPrefix2(L, f, D, x, `polynomialSolution(`));
+   if linalg[vectdim](v) = 0 then eval(v) else v[1]; fi; end;
+
+BerninaRationalSolution := proc(L, f, D, x) local v;
+   v := eval(BerninaPrefix2(L, f, D, x, `rationalSolution(`));
+   if linalg[vectdim](v) = 0 then eval(v) else v[1]; fi; end;
+
+BerninaRadicalSolutions := proc(L)
+   local fin, v, y, i, D, x, n; global BerninaOutputFormat;
+   if nargs = 3 then n := 0; else n := args[2]; fi;
+   D := args[nargs-1]; x := args[nargs];
+   fin := BerninaInput();
+   fprintf(fin,`%s(radicalSolutions(%a,%a));\n`, BerninaOutputFormat, L, n);
+   fclose(fin);
+   y := BerninaNewName(x);
+   v := eval(BerninaLaunch(D, x, y));
+   [seq(BerninaRad2maple(v, i, y),i=1..linalg[rowdim](v))]; end;
+
+BerninaRad2maple := proc(mat, i, y) local p, n, rad, j;
+   rad := 1;
+   p := mat[i,1];
+   if p <> 0 then
+     n := iquo(1 + degree(p, y), 2);
+     for j to n do rad := rad * coeff(p, y, 2*j-1)^coeff(p, y, 2*j-2); od;
+   fi;
+   seq(rad * mat[i,j], j=2..BerninaRealDim(mat, i)); end;
+
+BerninaRealDim := proc(mat, i) local j, c;
+   c := linalg[coldim](mat);
+   for j to c do if mat[i,j] = 0 then RETURN(j-1); fi; od;
+   c; end;
+
+BerninaExponentialSolutions := proc(L, D, x)
+   local fin, v, y, i; global BerninaOutputFormat;
+   fin := BerninaInput();
+   fprintf(fin,`%s(exponentialSolutions(%a));\n`, BerninaOutputFormat, L);
+   fclose(fin);
+   y := BerninaNewName(x);
+   v := eval(BerninaLaunch(D, x, y));
+   [seq(BerninaExp2maple(v[i], x, y), i=1..linalg[vectdim](v))]; end;
+
+BerninaExp2maple := proc(p, x, y) local i;
+   convert([seq(_C[i] * coeff(p,y,i), i=1..degree(p,y))], `+`) *
+	exp(Int(coeff(p,y,0), x)); end;
+
+BerninaDarboux := proc(L, D, x, y) local fin; global BerninaOutputFormat;
+   fin := BerninaInput();
+   fprintf(fin,`%s(makeIntegral(Darboux(%a)));\n`, BerninaOutputFormat, L);
+   fclose(fin);
+   eval(BerninaLaunch(D, x, y)); end;
+
+BerninaSolve2 := proc(L, D, x, y) local fin, sol; global BerninaOutputFormat;
+   fin := BerninaInput();
+   fprintf(fin,`%s(solve2(%a));\n`, BerninaOutputFormat, L);
+   fclose(fin);
+   sol := eval(BerninaLaunch(D, x, y));
+   if linalg[vectdim](sol) <= 2 then map(numer, sol); else eval(sol); fi; end;
+
+BerninaExteriorKernel := proc(L, n, D, x)
+   local fin, C, r, c, j, y; global BerninaOutputFormat;
+   fin := BerninaInput();
+   fprintf(fin,`%s(exteriorKernel(%a,%d));\n`, BerninaOutputFormat, L, n);
+   fclose(fin);
+   y := BerninaNewName(x);
+   C := eval(BerninaLaunch(D, x, y));
+   c := linalg[coldim](C);
+   if c = 0 then []
+   else
+      r := linalg[rowdim](C) - 1;
+      [seq(BerninaColumnToExtKer(C, j, r, x), j = 1..c)];
+   fi; end;
+
+BerninaColumnToExtKer := proc(C, j, r, x) local e;
+   e := BerninaExpInt(C[r+1,j], x);
+   e * linalg[submatrix](C,1..r,j..j); end;
+
+BerninaInvariants := proc(L, n, D, x)
+   local fin, full; global BerninaOutputFormat;
+   fin := BerninaInput();
+   fprintf(fin,`%s(invariants(%a,%d));\n`, BerninaOutputFormat, L, n);
+   fclose(fin);
+   full := nargs = 5 and args[5] = 'canonical';
+   BerninaInvar(L, abs(n), D, x, full); end;
+
+BerninaRadicalInvariants := proc(L, n)
+   local m, D, x, fin, full; global BerninaOutputFormat;
+   if type(args[3],integer) then
+	m := args[3];
+	D := args[4];
+	x := args[5];
+	full := nargs = 6 and args[6] = 'canonical';
+   else
+	m := 0;
+	D := args[3];
+	x := args[4];
+	full := nargs = 5 and args[5] = 'canonical';
+   fi;
+   fin := BerninaInput();
+   fprintf(fin,`%s(radicalInvariants(%a,%d,%d));\n`,BerninaOutputFormat,L,n,m);
+   fclose(fin);
+   BerninaInvar(L, n, D, x, full); end;
+
+BerninaSemiInvariants := proc(L, n, D, x)
+   local fin, full; global BerninaOutputFormat;
+   fin := BerninaInput();
+   fprintf(fin,`%s(semiInvariants(%a,%d));\n`, BerninaOutputFormat, L, n);
+   fclose(fin);
+   full := nargs = 5 and args[5] = 'canonical';
+   BerninaInvar(L, n, D, x, full); end;
+
+BerninaIrr3 := proc(L, grp, D, x, u)
+   local fin, n, C, r, c, s, alpha, ric, i; global BerninaOutputFormat;
+   if grp then n := 1; else n := 0; fi;
+   fin := BerninaInput();
+   fprintf(fin,`%s(irreducible3(%a,%d));\n`, BerninaOutputFormat, L, n);
+   fclose(fin);
+   C := eval(BerninaLaunch(D, x, u));
+   if type(C, integer) then C;
+   elif type(C, vector) then
+	r := linalg[vectdim](C);
+	if r = 2 then C;
+	else
+		alpha := RootOf(C[2],x);
+		ric := 0;
+		for i to r-3 do ric := ric + C[i+3] * alpha^(i-1); od;
+		linalg[vector](2, [C[1], ric / subs(u = alpha, C[3])]);
+	fi;
+   else
+	r := linalg[rowdim](C); c := linalg[coldim](C);
+	if irem(c, 2) = 1 then s := C[1, c]; else s := 0; fi;
+	[C[r, 1], s,
+	    BerninaInvarC(L,iquo(isqrt(8*r-7)-3,2),D,x,true,type(C[r,1],integer),C)];
+   fi; end;
+
+BerninaInvar := proc(L, n, D, x, full)
+   BerninaInvarC(L, n, D, x, full, false, eval(BerninaLaunch(D, x))); end;
+
+BerninaInvarC := proc(L, n, D, x, full, noexp, C) local c, r, m, polbasis, j;
+   c := iquo(linalg[coldim](C), 2);
+   if c = 0 then []
+   else
+      r := linalg[rowdim](C) - 1;
+      m := degree(L, D);
+      polbasis := BerninaPolBasis(m, n, x, r);
+      [seq(BerninaIntegralToInvariant(C, j, polbasis, r, x, full, noexp), j = 1..c)];
+   fi end;
+
+BerninaIntegralToInvariant := proc(C, j, basis, r, x, full, noexp) local i, s, t, e;
+   s := 0; t := 0;
+   for i to r do
+	s := s + C[i,2*j-1] * basis[i];
+	if full then t := t + C[i,2*j] * basis[i]; fi;
+   od;
+   if noexp then e := 1; else e := BerninaExpInt(C[r+1,2*j-1], x); fi;
+   if full then [s = C[1,2*j], e, t]; else s = e * C[1,2*j]; fi; end;
+
+BerninaExpInt := proc(f, x) if f = 0 then 1 else exp(Int(f, x)): fi; end;
+
+BerninaPolBasis := proc(m, n, x, s) local a;
+   a := linalg[vector](s);
+   BerninaEnumerate(a, 1, n, m, m, 1, x);
+   BerninaReverse(a, 1, s);
+   end;
+
+BerninaEnumerate := proc(a, frum, deg, vars, m, prefix, x) local ans, p, i, f;
+   if deg = 0 then a[frum] := prefix; ans := frum + 1;
+   elif vars = 1 then a[frum] := prefix * x[m]^deg; ans := frum + 1;
+   else f := frum; for i to deg+1 do
+      p := x[m+1-vars]^(i-1) * subs(x[m+1-vars] = 1, prefix);
+      f := BerninaEnumerate(a, f, deg + 1 - i, vars - 1, m, p, x);
+   od; ans := f; fi; ans; end;
+
+BerninaReverse := proc(a, frum, two) local x, f, t;
+   f := frum; t := two;
+   while f < t do
+      x := a[f]; a[f] := a[t]; a[t] := x;
+      f := f + 1; t := t - 1;
+   od; a; end;
+
+BerninaParametricKernel := proc(L)
+   local D, x, fin, i, r, c, mat; global BerninaOutputFormat;
+   fin := BerninaInput();
+   fprintf(fin,`%s(parametricKernel(%a`, BerninaOutputFormat, L);
+   D := args[nargs-1]; x := args[nargs];
+   for i from 2 to nargs-2 do fprintf(fin,`,%a`,args[i]); od;
+   fprintf(fin,`));\n`);
+   fclose(fin);
+   mat := eval(BerninaLaunch(D, x));
+   r := linalg[rowdim](mat); c := linalg[coldim](mat);
+   [[seq(mat[r,i],i=1..c+3-nargs)], linalg[submatrix](mat, 1..(r-1), 1..c)];
+   end;
+
+BerninaPolynomialKernel := proc(L)
+   BerninaRationalKernel(L,1,args[2..nargs]); end;
+
+BerninaMatrixOrOperator := proc(cmd, L)
+   local D, x, fin, i; global BerninaOutputFormat;
+   fin := BerninaInput();
+   fprintf(fin,`%s(%s(`, BerninaOutputFormat, cmd);
+   BerninaPrintMatrixOrOperator(fin, L);
+   D := args[nargs-1]; x := args[nargs];
+   for i from 3 to nargs-2 do fprintf(fin,`,%a`,args[i]); od;
+   fprintf(fin,`));\n`);
+   fclose(fin);
+   eval(BerninaLaunch(D, x));
+   end;
+BerninaRationalKernel := proc(L) BerninaMatrixOrOperator('kernel', args); end;
+BerninaPCurvature := proc(L) BerninaMatrixOrOperator('pCurvature', args); end;
+
+BerninaEigenring := proc(L) local ans;
+   ans := BerninaMatrixOrOperator('eigenring', args);
+   if type(L, matrix) and type(ans, matrix) then BerninaEigenringResult(L, ans)
+	else eval(ans); fi;
+   end;
+
+BerninaEigenringResult := proc(mat, eigen) local i, n, dim;
+   n := linalg[coldim](mat);
+   dim := iquo(linalg[coldim](eigen), n);
+   if dim = 1 then eval(eigen) else
+        [seq(linalg[submatrix](eigen, 1..n, (1+(i-1)*n)..(i*n)), i = 1..dim)];
+   fi; 
+   end;
+
+BerninaPrintMatrixOrOperator := proc(fin, L) local i, j;
+   if (type(L, matrix)) then
+      fprintf(fin,`system(%a`,L[1,1]);
+      for j from 2 to linalg[coldim](L) do fprintf(fin,`,%a`,L[1,j]); od;
+      for i from 2 to linalg[rowdim](L) do
+         for j to linalg[coldim](L) do fprintf(fin,`,%a`,L[i,j]); od;
+      od;
+      fprintf(fin,`)`);
+   else fprintf(fin, `%a`, L);
+   fi;
+   end;
+
+BerninaDecompose := proc(L, D, x)
+   local fin, ans, i, y; global BerninaOutputFormat;
+   fin := BerninaInput();
+   fprintf(fin,`%s(decompose(%a));\n`, BerninaOutputFormat, L);
+   fclose(fin);
+   y := BerninaNewName(x);
+   ans := eval(BerninaLaunch(D, x, y));
+   if type(ans, vector) then		# decomposable
+	if degree(ans[1], D) > 0 then	# over rationals
+		`LeftLcm`(seq(ans[i], i = 1..linalg[vectdim](ans)));
+	else BerninaAlgDecomp(D, x, y, ans); fi;
+   else ans;
+   fi;
+   end;
+
+BerninaAlgDecomp := proc(D, x, y, v) local algops, i;
+   algops := BerninaAlgSubs(D, x, y, v[1], v[2]/v[3]);
+   if degree(v[1], x) = 2 then
+	`LeftLcm`(algops, seq(subs(y=D, v[i]), i = 4..linalg[vectdim](v)));
+   else `LeftLcm`(algops, `and conjugates`); fi;
+   end;
+
+BerninaAlgSubs := proc(D, x, y, h, f) local rt, i;
+   if degree(h, x) = 2 then
+	rt := [solve(h,x)];
+	seq(eval(D + subs(y=x, subs(x=rt[i], f))), i = 1..2);
+   else
+	rt := RootOf(h, x);
+	eval(D + subs(y=x, subs(x=rt, f)));
+   fi;
+   end;
+
+BerninaDFactor := proc(L, D, x)
+   local fin, ans, h, alg, rat, i, y; global BerninaOutputFormat;
+   fin := BerninaInput();
+   fprintf(fin,`%s(factor(%a));\n`, BerninaOutputFormat, L);
+   fclose(fin);
+   y := BerninaNewName(x);
+   ans := eval(BerninaLaunch(D, x, y));
+   if type(ans, vector) then		# reducible
+	if ans[1] >= 0 then BerninaRatFactor(ans);
+	else
+		h := ans[2];
+		alg := BerninaAlgSubs(D, x, y, ans[2], ans[3]/ans[4]);
+		rat := seq(subs(y=D, ans[i]), i=5..linalg[vectdim](ans));
+		if ans[1] = -1 then
+			if degree(h, x) = 2 then `LeftLcm`(alg, rat);
+			else `LeftLcm`(alg, `and conjugates`); fi;
+		elif ans[1] = -4 then linalg[vector](2,[rat,`LeftLcm`(alg)]);
+		else linalg[vector](3, [rat[1], `LeftLcm`(alg), rat[2]]); fi;
+	fi;
+   else ans;
+   fi;
+   end;
+
+BerninaRatFactor := proc(ans) local m, d, i;
+   m := ans[1]; d := linalg[vectdim](ans);
+   if m = 0 then `LeftLcm`(seq(ans[i], i = 2..d));
+   elif m = 1 then linalg[vector](d-1, [seq(ans[i], i = 2..d)]);
+   elif m = 2 then `LeftLcm`(ans[2], linalg[vector](2, [ans[3], ans[4]]));
+   elif m = 3 then linalg[vector](2, [ans[2], `LeftLcm`(ans[3], ans[4])]);
+   else linalg[vector](3, [ans[2], `LeftLcm`(ans[3], ans[4]), ans[5]]);
+   fi;
+   end;
+
+BerninaNewName := proc(x) local y;
+   y := `tools/genglobal`(x);
+   if y = x then y := `tools/genglobal`(x); fi;
+   if type(y, name) then y; else cat(x,x); fi;
+   end;
+
+save `bernina.m`;
+done;

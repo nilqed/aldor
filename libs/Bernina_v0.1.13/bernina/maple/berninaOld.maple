@@ -1,0 +1,236 @@
+# ======================================================================
+# This code was written all or part by Dr. Manuel Bronstein from
+# Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+# decided to publish this code under the CeCILL open source license in
+# memory of Dr. Manuel Bronstein.
+# 
+# This software is governed by the CeCILL license under French law and
+# abiding by the rules of distribution of free software. You can use,
+# modify and/or redistribute the software under the terms of the CeCILL
+# license as circulated by CEA, CNRS and Inria at the following URL :
+# http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+# 
+# As a counterpart to the access to the source code and rights to copy,
+# modify and redistribute granted by the license, users are provided
+# only with a limited warranty and the software's author, the holder of
+# the economic rights, and the successive licensors have only limited
+# liability.
+# 
+# In this respect, the user's attention is drawn to the risks associated
+# with loading, using, modifying and/or developing or reproducing the
+# software by the user in light of its specific status of free software,
+# that may mean that it is complicated to manipulate, and that also
+# therefore means that it is reserved for developers and experienced
+# professionals having in-depth computer knowledge. Users are therefore
+# encouraged to load and test the software's suitability as regards
+# their requirements in conditions enabling the security of their
+# systems and/or data to be ensured and, more generally, to use and
+# operate it in the same conditions as regards security.
+# 
+# The fact that you are presently reading this means that you have had
+# knowledge of the CeCILL license and that you accept its terms.
+# ======================================================================
+# 
+# Maple file to create the berninaOld.m stub
+
+unprotect(`berninaOld`,`_berninaOldFileName`);
+berninaOld := `berninaOld`:
+_berninaOldFileName := `/tmp/berninaOld`:
+
+berninaOld[Darboux] := BerninaOldDarboux;
+berninaOld[dualFirstIntegral] := BerninaOldDualFirstIntegral;
+berninaOld[exteriorKernel] := BerninaOldExteriorKernel;
+berninaOld[exteriorPower] := BerninaOldExteriorPower;
+berninaOld[invariants] := BerninaOldInvariants;
+berninaOld[parametricKernel] := BerninaOldParametricKernel;
+berninaOld[pCurvature] := BerninaOldPCurvature;
+
+`berninaOld/init` := proc() local uniqueID; global _berninaOldFileName;
+    uniqueID := ssystem(`date +%H%M%S`)[2];
+   _berninaOldFileName :=
+	cat(_berninaOldFileName, substring(uniqueID, 1..length(uniqueID) - 1));
+   end;
+
+BerninaOldInput := proc() fopen(cat(_berninaOldFileName, `.in`), WRITE, TEXT); end;
+
+BerninaOldLaunch := proc(D, x) local fout, cmd, ans, nin, nout;
+   cmd := cat(`berninaOld -q -d`, D, ` -x`, x);
+   if nargs = 3 then cmd := cat(cmd, ` -y`, args[3]); fi;
+   nin := cat(_berninaOldFileName, `.in`);
+   nout := cat(_berninaOldFileName, `.out`);
+   system(cat(cmd,` < `, nin, ` > `, nout));
+   fout := fopen(nout, READ,TEXT);
+   ans := fscanf(fout, `%a`);
+   fclose(fout);
+   system(cat(`rm -f `, nin, ` `, nout));
+   ans[1]; end;
+
+BerninaOldPrefix := proc(L, D, x, str) local fin;
+   fin := BerninaOldInput();
+   fprintf(fin,`maple(%s%a));\n`, str, L);
+   fclose(fin);
+   BerninaOldLaunch(D, x); end;
+BerninaOldAdjoint := proc(L, D, x) BerninaOldPrefix(L, D, x, `adjoint(`); end;
+BerninaOldEigenring := proc(L,D,x) eval(BerninaOldPrefix(L, D, x, `eigenring(`)); end;
+BerninaOldNormalize := proc(L, D, x) BerninaOldPrefix(L, D, x, `normalize(`); end;
+BerninaOldMakeIntegral := proc(L, D, x) BerninaOldPrefix(L, D, x,`makeIntegral(`);end;
+BerninaOldDFactor := proc(L, D, x) BerninaOldPrefix(L, D, x, `factor(`); end;
+
+BerninaOldPrefix2 := proc(L1, L2, D, x, str) local fin;
+   fin := BerninaOldInput();
+   fprintf(fin,`maple(%s%a,%a));\n`, str, L1, L2);
+   fclose(fin);
+   BerninaOldLaunch(D, x); end;
+BerninaOldLeftGcd := proc(L1,L2, D, x) BerninaOldPrefix2(L1,L2,D, x, `leftGcd(`); end;
+BerninaOldLeftLcm := proc(L1,L2, D, x) BerninaOldPrefix2(L1,L2,D, x, `leftLcm(`); end;
+BerninaOldRightGcd := proc(L1,L2, D, x) BerninaOldPrefix2(L1,L2,D,x,`rightGcd(`); end;
+BerninaOldRightLcm := proc(L1,L2, D, x) BerninaOldPrefix2(L1,L2,D,x,`rightLcm(`); end;
+BerninaOldApply := proc(L, f, D, x) BerninaOldPrefix2(L, f, D, x, `apply(`); end;
+BerninaOldPFactor := proc(L, n, D, x) BerninaOldPrefix2(L, n, D, x, `factor(`); end;
+BerninaOldPCurvature := proc(L,n, D, x)
+   eval(BerninaOldPrefix2(L,n,D,x,`pCurvature(`)); end;
+BerninaOldSymmetricKernel := proc(L, n, D, x)
+   eval(BerninaOldPrefix2(L, n, D, x, `symmetricKernel(`)); end;
+BerninaOldExteriorKernel := proc(L, n, D, x)
+   eval(BerninaOldPrefix2(L, n, D, x, `exteriorKernel(`)); end;
+BerninaOldSymPower := proc(L, n, D, x)
+   eval(BerninaOldPrefix2(L, n, D, x, `symPower(`)); end;
+BerninaOldExtPower := proc(L, n, D, x)
+   eval(BerninaOldPrefix2(L, n, D, x, `extPower(`)); end;
+BerninaOldSymmetricPower := proc(L, n, D, x)
+   BerninaOldPrefix2(L, n, D, x, `symmetricPower(`); end;
+BerninaOldExteriorPower := proc(L, n, D, x)
+   BerninaOldPrefix2(L, n, D, x, `exteriorPower(`); end;
+BerninaOldDualFirstIntegral := proc(L, n, D, x)
+   eval(BerninaOldPrefix2(L, n, D, x, `dualFirstIntegral(`)); end;
+
+BerninaOldRightQuotient := proc(L1, L2, D, x) local fin;
+    fin := BerninaOldInput();
+    fprintf(fin,`maple((%a)/(%a));\n`, L1, L2);
+    fclose(fin);
+    BerninaOldLaunch(D, x); end;
+
+BerninaOldPolynomialSolution := proc(L, f, D, x) local v;
+   v := eval(BerninaOldPrefix2(L, f, D, x, `polynomialSolution(`));
+   if linalg[vectdim](v) = 0 then eval(v) else v[1]; fi; end;
+
+BerninaOldRationalSolution := proc(L, f, D, x) local v;
+   v := eval(BerninaOldPrefix2(L, f, D, x, `rationalSolution(`));
+   if linalg[vectdim](v) = 0 then eval(v) else v[1]; fi; end;
+
+BerninaOldRadicalSolutions := proc(L) local fin, v, y, i, D, x, n;
+   if nargs = 3 then n := 0; else n := args[2]; fi;
+   D := args[nargs-1]; x := args[nargs];
+   y := cat(x,x);
+   fin := BerninaOldInput();
+   fprintf(fin,`maple(radicalSolutions(%a,%a));\n`, L, n);
+   fclose(fin);
+   v := eval(BerninaOldLaunch(D, x, y));
+   [seq(BerninaOldRad2maple(v, i, y),i=1..linalg[rowdim](v))]; end;
+
+BerninaOldRad2maple := proc(mat, i, y) local p, n, rad, j;
+   rad := 1;
+   p := mat[i,1];
+   n := iquo(1 + degree(p, y), 2);
+   for j to n do rad := rad * coeff(p, y, 2*j-1)^coeff(p, y, 2*j-2); od;
+   seq(rad * mat[i,j], j=2..BerninaOldRealDim(mat, i)); end;
+
+BerninaOldRealDim := proc(mat, i) local j, c;
+   c := linalg[coldim](mat);
+   for j to c do if mat[i,j] = 0 then RETURN(j-1); fi; od;
+   c; end;
+
+BerninaOldExponentialSolutions := proc(L, D, x) local fin, v, y, i;
+   y := cat(x,x);
+   fin := BerninaOldInput();
+   fprintf(fin,`maple(exponentialSolutions(%a));\n`, L);
+   fclose(fin);
+   v := eval(BerninaOldLaunch(D, x, y));
+   [seq(BerninaOldExp2maple(v[i], x, y), i=1..linalg[vectdim](v))]; end;
+
+BerninaOldExp2maple := proc(p, x, y) local xp, i;
+   convert([seq(_C[i] * coeff(p,y,i), i=1..degree(p,y))], `+`) *
+	exp(Int(coeff(p,y,0), x)); end;
+
+BerninaOldDarboux := proc(L, D, x, y) local fin;
+   fin := BerninaOldInput();
+   fprintf(fin,`maple(makeIntegral(Darboux(%a)));\n`, L);
+   fclose(fin);
+   eval(BerninaOldLaunch(D, x, y)); end;
+
+BerninaOldInvariants := proc(L, n, D, x, y) local fin, C, c, r, m, polbasis, j;
+   fin := BerninaOldInput();
+   fprintf(fin,`maple(invariants(%a,%d));\n`, L, n);
+   fclose(fin);
+   C := eval(BerninaOldLaunch(D, x, y));
+   c := linalg[coldim](C);
+   if c = 0 then []
+   else
+      r := linalg[rowdim](C) - 2;
+      m := degree(L, D);
+      polbasis := BerninaOldPolBasis(m, n, x, r);
+      [seq(BerninaOldIntegralToInvariant(C, j, polbasis, r), j = 1..c)];
+   fi end;
+
+BerninaOldIntegralToInvariant := proc(C, j, basis, r) local i, s;
+   s := 0;
+   for i to r do s := s + C[i,j] * basis[i]; od;
+   [s = C[r+1,j], C[r+2,j]]; end;
+
+BerninaOldPolBasis := proc(m, n, x, s) local a;
+   a := linalg[vector](s);
+   BerninaOldEnumerate(a, 1, n, m, m, 1, x);
+   BerninaOldReverse(a, 1, s);
+   end;
+
+BerninaOldEnumerate := proc(a, frum, deg, vars, m, prefix, x) local ans, p, i, f;
+   if deg = 0 then a[frum] := prefix; ans := frum + 1;
+   elif vars = 1 then a[frum] := prefix * x[m]^deg; ans := frum + 1;
+   else f := frum; for i to deg+1 do
+      p := x[m+1-vars]^(i-1) * subs(x[m+1-vars] = 1, prefix);
+      f := BerninaOldEnumerate(a, f, deg + 1 - i, vars - 1, m, p, x);
+   od; ans := f; fi; ans; end;
+
+BerninaOldReverse := proc(a, frum, two) local x, f, t;
+   f := frum; t := two;
+   while f < t do
+      x := a[f]; a[f] := a[t]; a[t] := x;
+      f := f + 1; t := t - 1;
+   od; a; end;
+
+BerninaOldParametricKernel := proc(L) local D, x, fin, i, n, r, c, mat;
+   fin := BerninaOldInput();
+   fprintf(fin,`maple(parametricKernel(%a`, L);
+   D := args[nargs-1]; x := args[nargs];
+   for i from 2 to nargs-2 do fprintf(fin,`,%a`,args[i]); od;
+   fprintf(fin,`));\n`);
+   fclose(fin);
+   mat := eval(BerninaOldLaunch(D, x));
+   r := linalg[rowdim](mat); c := linalg[coldim](mat);
+   [[seq(mat[r,i],i=1..c+3-nargs)], linalg[submatrix](mat, 1..(r-1), 1..c)];
+   end;
+
+BerninaOldPolynomialKernel := proc(L)
+   BerninaOldRationalKernel(L,1,args[2..nargs]); end;
+
+BerninaOldRationalKernel := proc(L) local D, x, fin, i, j;
+   fin := BerninaOldInput();
+   fprintf(fin,`maple(kernel(`);
+   if (type(L, matrix)) then
+      fprintf(fin,`system(%a`,L[1,1]);
+      for j from 2 to linalg[coldim](L) do fprintf(fin,`,%a`,L[1,j]); od;
+      for i from 2 to linalg[rowdim](L) do
+         for j to linalg[coldim](L) do fprintf(fin,`,%a`,L[i,j]); od;
+      od;
+      fprintf(fin,`)`);
+   else fprintf(fin, `%a`, L);
+   fi;
+   D := args[nargs-1]; x := args[nargs];
+   for i from 2 to nargs-2 do fprintf(fin,`,%a`,args[i]); od;
+   fprintf(fin,`));\n`);
+   fclose(fin);
+   eval(BerninaOldLaunch(D, x));
+   end;
+
+save `berninaOld.m`;
+done;

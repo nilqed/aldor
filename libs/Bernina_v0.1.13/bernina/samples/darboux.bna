@@ -1,0 +1,38 @@
+/* darboux.bna:  various examples of Darboux curves */
+
+/* Reducible and completely reducible, one curve of degree 2 */
+red := D^2 + 3/16/x^2;
+d := Darboux(red);
+tex(d);
+
+/* Reducible, not completely reducible, one curve of degree 1, alg. sols */
+ncred1 := D^2 + (x^3-1)/(x^3+1)/x * D - x/(x^3+1);
+d := Darboux(ncred1);
+tex(d);
+
+/* Reducible, not completely reducible, one curve of degree 1, tr. sols */
+ncred2 := D^2 - (8*x^3-5*x+1)/(1-x^2)/x^2 * D + 3*(1-4*x^2)/(1-x^2)/x^2;
+d := Darboux(ncred2);
+tex(d);
+
+/* Reducible, not completely reducible, one curve of degree 1, tr. sols */
+ncred3 := (D + (x^2 + 2)/(x^7 - 3)) * (D + (x + 5)/(x^8 + 4));
+d := Darboux(ncred3);
+tex(d);
+
+/* Irreducible, one curve of degree 4 which is a pure square */
+imp1 := D^2 - 2/(2*x-1) * D
+     + (27*x^4-54*x^3+5*x^2+22*x+27)*(2*x-1)^2 / (144*x^2*(x-1)^2*(x^2-x-1)^2);
+d := Darboux(imp1);
+tex(d);
+
+/* Irreducible, two curves of degree 4 that are pure squares */
+imp2 := D^2 - 2/(2*x-1) * D
+         + 3*(2*x-1)^2*(x^4-2*x^3+x+1) / (16*x^2*(x-1)^2*(x^2-x-1)^2);
+d := Darboux(imp2);
+tex(d);
+
+/* Irreducible, one irreducible curve of degree 6 */
+alg := D^2 - (-3/16/x^2 - 2/9/(x-1)^2 + 3/(16*x*(x-1)));
+d := Darboux(alg);
+tex(d);

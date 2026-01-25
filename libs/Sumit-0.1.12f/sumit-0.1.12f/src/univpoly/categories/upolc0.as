@@ -1,0 +1,888 @@
+-- ======================================================================
+-- This code was written all or part by Dr. Manuel Bronstein from
+-- Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+-- decided to publish this code under the CeCILL open source license in
+-- memory of Dr. Manuel Bronstein.
+-- 
+-- This software is governed by the CeCILL license under French law and
+-- abiding by the rules of distribution of free software. You can use,
+-- modify and/or redistribute the software under the terms of the CeCILL
+-- license as circulated by CEA, CNRS and Inria at the following URL :
+-- http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+-- 
+-- As a counterpart to the access to the source code and rights to copy,
+-- modify and redistribute granted by the license, users are provided
+-- only with a limited warranty and the software's author, the holder of
+-- the economic rights, and the successive licensors have only limited
+-- liability.
+-- 
+-- In this respect, the user's attention is drawn to the risks associated
+-- with loading, using, modifying and/or developing or reproducing the
+-- software by the user in light of its specific status of free software,
+-- that may mean that it is complicated to manipulate, and that also
+-- therefore means that it is reserved for developers and experienced
+-- professionals having in-depth computer knowledge. Users are therefore
+-- encouraged to load and test the software's suitability as regards
+-- their requirements in conditions enabling the security of their
+-- systems and/or data to be ensured and, more generally, to use and
+-- operate it in the same conditions as regards security.
+-- 
+-- The fact that you are presently reading this means that you have had
+-- knowledge of the CeCILL license and that you accept its terms.
+-- ======================================================================
+-- 
+----------------------------- upolc0.as ----------------------------------
+#include "sumit"
+
+macro {
+	I == SingleInteger;
+	Z == Integer;
+	ARR == PrimitiveArray;
+}
+
+#if ASDOC
+\thistype{UnivariatePolynomialCategory0}
+\History{Manuel Bronstein}{20/5/94}{created}
+\History{Manuel Bronstein}{21/9/95}{added Zippel's multiple gcd}
+\History{Thom Mulders}{27/5/97}{added bidirectional exact quotient}
+\Usage{\this~R: Category}
+\Params{ {\em R} & SumitRing & The coefficient ring of the polynomials\\ }
+\Descr{\this~is the internal category of univariate polynomials with
+coefficients in an arbitrary ring R. One should use instead the associated
+category {\em UnivariatePolynomialCategory} which has the same exports than
+this one, but which provides default implementations.}
+\begin{exports}
+\category{UnivariateFreeAlgebraCategory~R}\\
+apply: & (\%, R) $\to$ R & Evaluate a polynomial\\
+apply: & (\%, \%) $\to$ \% & Evaluate a polynomial\\
+equal?: & (\%, \%, \%, Integer) $\to$ Boolean & Truncated equality\\
+Horner: & (\%, R) $\to$ (\%, R) & Horner division by $x - a$\\
+ordinaryPoint: & \% $\to$ Integer & Point where a polynomial is nonzero\\
+values: & (\%, R) $\to$ Generator R & Generate values of a polynomial\\
+\end{exports}
+\begin{exports}[if $R$ has OrderedRing then]
+height: & \% $\to$ R & Max norm over all the coefficients\\
+\end{exports}
+\begin{exports}[if $R$ has CommutativeRing then]
+\category{DifferentialRing}\\
+lift: & (Derivation R, \%) $\to$ Derivation \% & Extend a derivation\\
+\end{exports}
+\begin{exports}[if $R$ has CommutativeRing and $R$ has QRing then]
+integrate: & \% $\to$ \% & Integration\\
+\end{exports}
+\begin{exports}[if $R$ has IntegralDomain then]
+\category{IntegralDomain}\\
+pseudoDivide: & (\%, \%) $\to$ (\%, \%) & Polynomial pseudo-division\\
+pseudoRemainder: & (\%, \%) $\to$ \% & Pseudo-remainder\\
+pseudoRemainder!: & (\%, \%) $\to$ \% & Pseudo-remainder\\
+resultant: & (\%, \%) $\to$ R & Resultant of 2 polynomials\\
+\end{exports}
+\begin{exports}[if $R$ has GcdDomain then]
+\category{GcdDomain}\\
+squareFree: & \% $\to$ (R, Product \%) & Squarefree factorisation\\
+squareFreePart: & \% $\to$ \% & Squarefree part\\
+\end{exports}
+\begin{exports}[if $R$ has Field then]
+\category{SumitEuclideanDomain}\\
+\end{exports}
+\begin{exports}[if $R$ has Specializable then]
+\category{Specializable}\\
+\end{exports}
+#endif
+
+UnivariatePolynomialCategory0(R:SumitRing):Category ==
+	UnivariateFreeAlgebraCategory R with {
+	apply: (%, R) -> R;
+	apply: (%, %) -> %;
+#if ASDOC
+\aspage{apply}
+\Usage{ \name(p, a)\\ \name(p, q)\\ p~a\\ p~q }
+\Signatures{
+\name: & (\%, R) $\to$ R\\
+\name: & (\%, \%) $\to$ \%\\
+}
+\Params{
+{\em p} & \% & A polynomial\\
+{\em q} & \% & A polynomial\\
+{\em a} & R & A scalar\\
+}
+\Retval{
+Returns
+$$
+p(a) = \sum_{i=0}^n a_i a^i
+$$
+or
+$$
+p(q) = \sum_{i=0}^n a_i q^i
+$$
+where $p = \sum_{i=0}^n a_i x^i$.}
+#endif
+	equal?: (%, %, %, Z) -> Boolean;
+#if ASDOC
+\aspage{equal?}
+\Usage{\name(a, b, c, n)}
+\Signature{(\%, \%, \%, Integer)}{Boolean}
+\Params{
+{\em a, b, c} & \% & Polynomials \\
+{\em n} & Integer & The order of truncation\\
+}
+\Retval{Returns \true~if $a = b c \pmod{x^n}$, \false~otherwise.}
+#endif
+	if R has OrderedRing then height: % -> R;
+#if ASDOC
+\aspage{height}
+\Usage{\name~p}
+\Signature{\%}{R}
+\Params{ {\em p} & \% & A polynomial\\ }
+\Retval{Returns
+$$
+\vert\vert p \vert\vert_\infty = \max_{i=0}^n\left(\vert a_i \vert\right)
+$$
+where $p = \sum_{i=0}^n a_i x^i$.}
+#endif
+	Horner: (%, R) -> (%, R);
+#if ASDOC
+\aspage{Horner}
+\Usage{\name(p, a)}
+\Params{
+{\em p} & \% & A polynomial\\
+{\em a} & R & A point\\
+}
+\Retval{Returns $(q, p(a))$ such that $p = q (x - a) + p(a)$.}
+#endif
+	if R has CommutativeRing then {
+		DifferentialRing;
+		if R has QRing then integrate: % -> %;
+#if ASDOC
+\aspage{integrate}
+\Usage{\name~p}
+\Params{ {\em p} & \% & A polynomial\\ }
+\Retval{Returns $\int p(x) dx$.}
+#endif
+		lift: (Derivation R, %) -> Derivation %;
+#if ASDOC
+\aspage{lift}
+\Usage{\name(D, x')}
+\Signature{(Derivation R, \%)}{Derivation \%}
+\Params{
+{\em D} & Derivation R & A derivation on R\\
+{\em x'} & \% & The desired derivative of x\\
+}
+\Retval{Returns the unique extension of the derivation $D$ such that
+$D x = x'$.}
+#endif
+	}
+	ordinaryPoint: % -> Z;
+#if ASDOC
+\aspage{ordinaryPoint}
+\Usage{\name~p}
+\Signature{\%}{Integer}
+\Params{ {\em p} & \% & A nonzero polynomial\\ }
+\Retval{Returns an integer $n$ such that $p(n) \ne 0$.}
+#endif
+	if R has IntegralDomain then {
+		IntegralDomain;
+		pseudoDivide: (%, %) -> (%, %);
+#if ASDOC
+\aspage{pseudoDivide}
+\Usage{\name(a, b)}
+\Signature{(\%, \%)}{(\%, \%)}
+\Params{
+{\em a} & \% & A polynomial\\
+{\em b} & \% & A nonzero polynomial\\
+}
+\Retval{Returns $(q, r)$ such that $c^n a = b q + r$ and either $r = 0$
+or $\deg(r) < \deg(b)$, where $c$ is the leading coefficient of $b$ and
+$n = \deg(a) - \deg(b) + 1$.}
+\seealso{pseudoRemainder(\this)}
+#endif
+		pseudoRemainder: (%, %) -> %;
+		pseudoRemainder!: (%, %) -> %;
+#if ASDOC
+\aspage{pseudoRemainder}
+\Usage{\name(a, b)\\ \name!(a, b)}
+\Signature{(\%, \%)}{\%}
+\Params{
+{\em a} & \% & A polynomial\\
+{\em b} & \% & A nonzero polynomial\\
+}
+\Retval{Returns $r$ such that $c^n a = b q + r$ and either $r = 0$
+or $\deg(r) < \deg(b)$, where $c$ is the leading coefficient of $b$ and
+$n = \deg(a) - \deg(b) + 1$.}
+\Remarks{When using \name!($a,b$), the storage used by a is allowed to be
+destroyed or reused, so a is lost after this call.
+This may cause a to be destroyed, so do not use this unless a has been locally
+allocated, and is thus guaranteed not to share space with other polynomials.}
+\seealso{pseudoDivide(\this)}
+#endif
+		resultant: (%, %) -> R;
+#if ASDOC
+\aspage{resultant}
+\Usage{\name(p, q)}
+\Signature{(\%, \%)}{R}
+\Params{
+{\em p} & \% & A polynomial\\
+{\em q} & \% & A polynomial\\
+}
+\Retval{Returns the resultant of p and q.}
+#endif
+	}
+	if R has GcdDomain then {
+		GcdDomain;
+		squareFree: % -> (R, Product %);
+#if ASDOC
+\aspage{squareFree}
+\Usage{\name~p}
+\Signature{\%}{(R, Product \%)}
+\Params{ {\em p} & \% & A polynomial\\ }
+\Retval{Returns $(c, p_1^{e_1} \cdots p_n^{e_n})$ such that
+each $p_i$ is squarefree, the $p_i$'s have no common factors, and
+$$
+p = c\;\prod_{i=1}^n p_i^{e_i}\,.
+$$
+}
+\seealso{squareFreePart(\this)}
+#endif
+		squareFreePart: % -> %;
+#if ASDOC
+\aspage{squareFreePart}
+\Usage{\name~p}
+\Signature{\%}{\%}
+\Params{ {\em p} & \% & A polynomial\\ }
+\Retval{Returns $p^\ast$ such that $p^\ast$ is squarefree, $p^\ast \mid p$
+and every irreducible factor of $p$ divides $p^\ast$.
+}
+\seealso{squareFree(\this)}
+#endif
+	}
+	values: (%, R) -> Generator R;
+#if ASDOC
+\aspage{values}
+\Usage{\name(p, a)}
+\Signature{(\%,R)}{Generator R}
+\Params{
+{\em p} & \% & A polynomial\\
+{\em a} & R & A scalar\\
+}
+\Retval{Returns a generator generating the
+sequence $p(a), p(a+1), p(a+2),\ldots$}
+\Remarks{\name~uses arrays of differences and can be more efficient
+that repeated Horner evaluation.}
+#endif
+	if R has Field then SumitEuclideanDomain;
+	if R has Specializable then Specializable;
+	default {
+		equal?(a:%, b:%, c:%, n:Z):Boolean == {
+			n <= 0 => true;
+			(coef, deg) := trailingMonomial(a - b * c);
+			deg = -1 or deg >= n;
+		}
+
+		-- Horner's division of p by x - a,
+		-- returns c q and p(a) s.t.  p = q (x - a) + p(a)
+		local horner(p:%, c:R, a:R):(%, R) == {
+			import from Z;
+			ASSERT(~zero? c);
+			one? c => Horner(p, a);
+			zero? p => (0, 0);
+			zero? a => (shift(p, -1), coefficient(p, 0));
+			v := leadingCoefficient p;
+			q:% := 0;
+			for i in prev degree p .. 0 by -1 repeat {
+				q := add!(q, c * v, i);
+				v := a * v + coefficient(p, i);
+			}
+			(q, v);
+		}
+
+		Horner(p:%, a:R):(%, R) == {
+			import from Z;
+			zero? p => (0, 0);
+			zero? a => (shift(p, -1), coefficient(p, 0));
+			v := leadingCoefficient p;
+			q:% := 0;
+			for i in prev degree p .. 0 by -1 repeat {
+				q := add!(q, v, i);
+				v := a * v + coefficient(p, i);
+			}
+			(q, v);
+		}
+
+		-- uses Horner's rule
+		apply(p:%, a:R):R == {
+			import from Z;
+			zero? p => 0;
+			zero? a => coefficient(p, 0);
+			v := leadingCoefficient p;
+			for i in prev degree p .. 0 by -1 repeat
+				v := a * v + coefficient(p, i);
+			v;
+		}
+
+		-- uses Horner's rule
+		apply(p:%, q:%):% == {
+			import from Z;
+			zero? p => 0;
+			zero? q => coefficient(p, 0)::%;
+			v := leadingCoefficient(p)::%;
+			for i in degree p - 1 .. 0 by -1 repeat
+				v := add!(times!(v, q), coefficient(p, i)::%);
+			v;
+		}
+
+		-- returns p x^n, always makes a copy, also for n = 0
+		local shift(p:%, n:Z):% == {
+			q:% := 0;
+			pos?:Boolean := n >= 0;
+			for term in p repeat {
+				(a, d) := term;
+				e := d + n;
+				if pos? or e >= 0 then q := add!(q, a, e);
+			}
+			q;
+		}
+
+		-- returns c p x^n, always makes a copy, also for n = 0
+		local shift(p:%, c:R, n:Z):% == {
+			zero? c => 0;
+			one? c => shift(p, n);
+			q:% := 0;
+			pos?:Boolean := n >= 0;
+			for term in p repeat {
+				(a, d) := term;
+				e := d + n;
+				if pos? or e >= 0 then q := add!(q, c * a, e);
+			}
+			q;
+		}
+
+		-- tries 0,1,-1,2,-2,... until a good point is found
+		ordinaryPoint(p:%):Z == {
+			import from R;
+			~zero? p(0@R) => 0;
+			n:Z := 1;
+			repeat {
+				a := n::R;
+				~zero? p a => return n;
+				~zero? p(-a) => return(-n);
+				n := next n;
+			}
+		}
+
+		values(p:%, a:R):Generator R == {
+			import from ARR R, I, Z;
+			zero? p or zero?(dp := degree p) =>
+				generate { repeat yield leadingCoefficient p; }
+			d := retract dp;
+			d1 := next d;
+			v:ARR R := new d1;
+			generate {
+				for i in 1..d1 repeat {
+					v.i := p(a + i::R - 1);
+					yield(v.i);
+				}
+				for i in d..1 by -1 repeat {
+					for j in 1..i repeat v.j := v(j+1)-v.j;
+				}
+				repeat {
+					for i in 2..d1 repeat v.i := v.i+v(i-1);
+					yield v.d1;
+				}
+			}
+		}
+
+		if R has OrderedRing then {
+			height(p:%):R == {
+				h:R := 0;
+				for term in p repeat {
+					(c, n) := term;
+					a := abs c;
+					if a > h then h := a;
+				}
+				h;
+			}
+		}
+
+		if R has CommutativeRing then {
+			if R has QRing then {
+				integrate(p:%):% == {
+					import from Z, R;
+					q:% := 0;
+					for term in p repeat {
+						(c, n) := term;
+						m := next n;
+						q := add!(q, inv(m) * c, m);
+					}
+					q;
+				}
+			}
+
+			canonicalUnitNormal?:Boolean == canonicalUnitNormal?$R;
+
+			karatsubaCutoff:SingleInteger == {
+				kx := karatsubaCutoff$R;
+				zero? kx => 0;
+				max(5, kx quo 2);
+			} where { kx:SingleInteger; }
+
+			-- returns true if a = u x^n and u is a unit,
+			-- false otherwise
+			local umonom?(a:%):Boolean == {
+				import from R;
+				ASSERT(~zero? a);
+				monomial? a and unit? leadingCoefficient a;
+			}
+
+			-- returns u^{-1} if a = u x^n and u is a unit,
+			-- failed otherwise
+			local umonom(a:%):Partial R == {
+				import from R;
+				ASSERT(~zero? a);
+				monomial? a => reciprocal leadingCoefficient a;
+				failed;
+			}
+
+			-- returns (q, u, u^{-1}) s.t. p = u q
+			unitNormal(p:%):(%,%,%) == {
+				import from R;
+				(y, u, uinv) := unitNormal leadingCoefficient p;
+				(uinv * p, u::%, uinv::%);
+			}
+
+			differentiate(p:%):% == {
+				import from Z, R;
+				h:% := 0;
+				for term in p repeat {
+					(c, n) := term;
+					if n > 0 then
+						h := add!(h, n::R * c, n - 1);
+				}
+				h;
+			}
+
+			lift(D:Derivation R, xp:%):Derivation % == {
+				derivation((p:%):% +-> diff(p, D, xp));
+			}
+
+			local diff(p:%, D:Derivation R, xp:%):% == {
+				import from Z, R;
+				h:% := 0;
+				for term in p repeat {
+					(c, n) := term;
+					h := add!(h, D c, n);
+					if n > 0 then
+						h := add!(h, n::R * c, n-1, xp);
+				}
+				h;
+			}
+
+			quotient(p:%, q:%):% == {
+				import from Z, R, Partial R;
+				ASSERT(~zero? q);
+				zero? p => 0;
+				one? q => p;
+				(a, n) := trailingMonomial q;
+				quot!(copy p, q, divideBy(leadingCoefficient q),
+					divideBy a, n);
+			}
+
+			-- computes p / q, destroying p but not q
+			local quot!(p:%,q:%,divByLq:R->R,divByTq:R->R,tdeg:Z):%_
+				== {
+				import from R;
+				ASSERT(~zero? p);
+				ASSERT(~zero? q);
+				ASSERT(~one? q);
+				qt:% := 0;
+				zero?(dq := degree q) => {
+					for term in p repeat {
+						(a, n) := term;
+						qt := add!(qt, divByLq a, n);
+					}
+					qt;
+				}
+				dp := degree p;
+				d := dp - dq;
+				dr := (next d) quo 2;
+				low := dq + dr;
+				while d >= dr repeat {
+					c := divByLq(leadingCoefficient p);
+					qt := add!(qt, c, d);
+					p := add!(p, -c, d, q, low, dp);
+					dp := degree p;
+					d := dp - dq;
+				}
+				high := prev(tdeg + dr);
+				(a, n) := trailingMonomial p;
+				d := n - tdeg;
+				while d < dr and a ~= 0 repeat {
+					c := divByTq a;
+					qt := add!(qt, c, d);
+					p := add!(p, -c, d, q, n, high);
+					(a, n) := trailingMonomial p;
+					d := n-tdeg;
+				}
+				qt;
+			}
+
+			-- returns p x^n / c, always makes a copy
+			local shift(c:R, p:%, n:Z):Partial % == {
+				import from Partial R;
+				ASSERT(~zero? c);
+				ASSERT(~unit? c);
+				q:% := 0;
+				pos?:Boolean := n >= 0;
+				for term in p repeat {
+					(a, d) := term;
+					u := exactQuotient(a, c);
+					failed? u => return failed;
+					e := d + n;
+					if pos? or e >= 0 then
+						q := add!(q, retract u, e);
+				}
+				[q];
+			}
+
+			exactQuotient(p:%, q:%):Partial % == {
+				import from Z, R, Partial R;
+				ASSERT(~zero? q);
+				zero? p => [0];
+				one? q => [p];
+				-- check first whether trailing degrees divide
+				(cp, dp) := trailingMonomial p;
+				(cq, dq) := trailingMonomial q;
+				dp < dq => failed;
+				u := reciprocal(lq := leadingCoefficient q);
+				inv? := ~failed? u;
+				-- special case where q = lq x^dq
+				(dgq := degree q) = dq => {
+					inv? => [shift(p, retract u, -dq)];
+					shift(lq, p, -dq);
+				}
+				-- special case where q = a x + b
+				inv? and one? dgq => {
+					ilq := retract u;
+					(qt, v) := horner(p, ilq,
+							- ilq*coefficient(q,0));
+					zero? v => [qt];
+					failed;
+				}
+				-- general case
+				a := copy p;
+				uqt:Partial % := {
+					inv? => [exquo!(retract u, a, q)];
+					-- R cannot be a field at this point
+					failed? exactQuotient(cp, cq) =>
+						return failed;
+					exquo!(a, q);
+				}
+				failed? uqt => failed;
+				equal?(p, retract uqt, q, dgq) => uqt;
+				failed;
+			}
+
+			-- ilq = inverse of leading coeff of q
+			-- does not necessarily return an exact quotient
+			-- computes a candidate p / q, destroying p but not q
+			local exquo!(ilq:R, p:%, q:%):% == {
+				import from Z, R;
+				dq := degree q;
+				quot:% := 0;
+				dp := degree p;
+				while (d := dp - dq) >= 0 repeat {
+					c := ilq * leadingCoefficient p;
+					quot := add!(quot, c, d);
+					p := add!(p, - c, d, q, dq, dp);
+					dp := degree p;
+				}
+				quot;
+			}
+
+			-- should not be used when lq is a unit
+			-- does not necessarily return an exact quotient
+			-- computes a candidate p / q, destroying p but not q
+			local exquo!(p:%, q:%):Partial % == {
+				import from Z, R, Partial R;
+				dq := degree q;
+				lq := leadingCoefficient q;
+				ASSERT(~unit? lq);
+				quot:% := 0;
+				dp := degree p;
+				while (d := dp - dq) >= 0 repeat {
+					c := exactQuotient(leadingCoefficient p,
+	 							lq);
+					failed? c => return failed;
+					cc := retract c;
+					quot := add!(quot, cc, d);
+					p := add!(p, - cc, d, q, dq, dp);
+					dp := degree p;
+				}
+				[quot];
+			}
+		}
+
+		if R has IntegralDomain then {
+			pseudoDivide(a:%,b:%):(%,%) == pseudoDivide!(copy a, b);
+			pseudoRemainder(a:%,b:%):%==pseudoRemainder!(copy a,b);
+
+			pseudoRemainder!(a:%,b:%): % == {
+				import from Z, R;
+				zero? a => 0;
+				da := degree a; db := degree b;
+				lb := leadingCoefficient b;
+				N := da-db+1;
+				b := reductum b;
+				while a and (d := da - db) >= 0 repeat {
+					la := leadingCoefficient a;
+					a:= add!(times!(lb,reductum a),-la,d,b);
+					da := degree a;
+					N := prev N;
+				}
+				zero? N => a;
+				times!(lb^N, a);
+			}
+
+			local pseudoDivide!(a:%,b:%): (%,%) == {
+				import from Z, R;
+				zero? a => (0,0);
+				da := degree a; db := degree b;
+				lb := leadingCoefficient b;
+				N := da-db+1;
+				b := reductum b;
+				q:% := 0;
+				while a and (d := da - db) >= 0 repeat {
+					la := leadingCoefficient a;
+					a:= add!(times!(lb,reductum a),-la,d,b);
+					q := add!(times!(lb, q), la, d);
+					da := degree a;
+					N := prev N;
+				}
+				zero? N => (q, a);
+				f := lb^N;
+				(times!(f, q), times!(f, a));
+			}
+
+			local trailingDegree(q:%):Z == {
+				ASSERT(~zero? q);
+				(c, d) := trailingMonomial q;
+				d;
+			}
+
+			-- order at x^n of q
+			local umonomorder(n:Z)(q:%):Z == {
+				ASSERT(~zero? q);
+				ASSERT(n > 1);
+				(c, d) := trailingMonomial q;
+				d quo n;
+			}
+
+			-- return the multiplicity n of a as a root of q
+			-- as well as c^n q / (x - a)^n
+			local computeRootOrder(c:R, a:R)(q:%):(Z, %) == {
+				import from Z;
+				ASSERT(~zero? q);
+				ASSERT(~zero? a);
+				n:Z := 0;
+				lastq := q;
+				(q, v) := horner(lastq, c, a);
+				while zero? v repeat {
+					n := next n;
+					lastq := q;
+					(q, v) := horner(lastq, c, a);
+				}
+				ASSERT(~zero? v);
+				(n, lastq);
+			}
+
+			-- return the multiplicity of a as a root of q
+			local rootOrder(a:R)(q:%):Z == {
+				(n, q) := computeRootOrder(1, a)(q);
+				n;
+			}
+
+			-- redefined: special cases p = u x^n or p = a x + b
+			order(p:%):% -> Z == {
+				import from Z, R, Partial R;
+				d := degree p;
+				ASSERT(~zero? p and ~zero? d);
+				-- special case where p = u x^n
+				umonom? p => {
+					one? d => trailingDegree;
+					umonomorder d;
+				}
+				-- special case where p = a x + b, a unit
+				one? d and ~failed?(_
+					u := reciprocal leadingCoefficient p) =>
+						rootOrder(- coefficient(p,0) *_
+								retract u);
+				-- general case
+				generalOrder p;
+			}
+
+			local generalOrder(p:%)(q:%):Z == {
+				(n, q) := computeOrder(p)(q);
+				n;
+			}
+
+			-- order at u^{-1} x^n of q
+			local umonomorderquo(u:R, n:Z)(q:%):(Z, %) == {
+				ASSERT(~zero? q);
+				(c, d) := trailingMonomial q;
+				zero?(m := d quo n) => (m, q);
+				(m, shift(q, u, -m * n));
+			}
+
+			-- redefined: special cases p = u x^n or p = a x + b
+			orderquo(p:%):% -> (Z, %) == {
+				import from Z, R, Partial R;
+				d := degree p;
+				ASSERT(~zero? p and ~zero? d);
+				-- special case where p = u x^n
+				~failed?(u := umonom p) =>
+						umonomorderquo(retract u, d);
+				-- special case where p = a x + b, a unit
+				one? d and ~failed?(_
+					u:=reciprocal leadingCoefficient p) => {
+						a := retract u;
+						computeRootOrder(a,
+							- coefficient(p,0) * a);
+				}
+				-- general case
+				computeOrder p;
+			}
+
+			-- order of q at p
+			local computeOrder(p:%)(q:%):(Z, %) == {
+				import from Partial %;
+				ASSERT(~zero? p and ~zero? q and ~zero? degree p
+							and ~umonom? p);
+				n:Z := 0;
+				while ~failed?(u := exactQuotient(q,p)) repeat {
+					n := next n;
+					q := retract u;
+				}
+				(n, q);
+			}
+		}
+
+		if R has GcdDomain then {
+			exactFactors(a:%):List % == {
+				import from Product %;
+				l:List % := empty();
+				(c, p) := squareFree a;
+				for term in p repeat {
+					(b, e) := term; l := cons(b, l);
+				}
+				l;
+			}
+
+			squareFreePart(a:%):% == {
+				(g, aa, dummy) :=
+					gcdquo(a,differentiate a)$(%@GcdDomain);
+				aa;
+			}
+		}
+
+		if R has Field then {
+			(a:%) rem (b:%):% == {
+				import from Z, R;
+				one? degree b =>
+					a(- coefficient(b, 0) /
+						leadingCoefficient b)::%;
+				remainder!(copy a, b);
+			}
+
+			divide(p:%, q:%):(%, %)	== {
+				import from Z, R;
+				one? degree q => {
+					a := inv leadingCoefficient q;
+					(q, v) := horner(p, a,
+							- coefficient(q,0) * a);
+					(q, v::%);
+				}
+				divide!(copy p, q, 0);
+			}
+
+			(a:%) quo (b:%):% == {
+				(q, r) := divide(a, b);
+				q;
+			}
+
+			euclideanSize(a:%):Z == {
+				ASSERT(~zero? a);
+				degree a;
+			}
+
+			-- destroys p
+			remainder!(p:%, q:%):% == {
+				import from Z, R;
+				ASSERT(~zero? q);
+				zero? p or zero?(dq := degree q) => 0;
+				one? p => p;
+				polynom? := ~monomial? q;
+				ilq:R := 1;
+				if polynom? then ilq:= inv leadingCoefficient q;
+				while p repeat {
+					dp := degree p;
+					(d := dp - dq) < 0 => return p;
+					c := leadingCoefficient p;
+					if polynom? then {
+						c := c * ilq;
+						p := add!(p, - c, d, q);
+					}
+					else p := add!(p, -c, dp);
+				}
+				0;
+			}
+
+			-- destroys p and quot
+			divide!(p:%, q:%, quot:%):(%, %) == {
+				import from Z, R;
+				ASSERT(~zero? q);
+				zero? p => (0, 0);
+				dq := degree q;
+				ilq := inv leadingCoefficient q;
+				p = 1 => { zero? dq => (ilq::%, 0); (0, p) };
+				first?:Boolean := true;
+				while p repeat {
+					d := degree p - dq;
+					d < 0 => return (quot, p);
+					c := leadingCoefficient p * ilq;
+					quot := {
+						first? => monomial!(quot, c, d);
+						add!(quot, c, d);
+					}
+					p := add!(p, - c, d, q);
+					if first? then first? := false;
+				}
+				(quot, 0);
+			}
+		}
+
+		if R has Specializable then {
+			specialization(F:Field):PartialFunction(%, F) == {
+				import from Z, R;
+				import from PartialFunction(R, F), F, Partial F;
+				f := partialMapping(specialization(F)$R);
+				-- F is a Field so it may not have random()
+				x := random()$Z :: F;
+				-- uses Horner's evaluation specializing the
+				-- coefficients as we go along, which is more
+				-- efficient than computing f p x
+				partialFunction((p:%):Partial(F) +-> {
+					zero? p => [0];
+					zero? x => f coefficient(p, 0);
+					failed?(vv := f leadingCoefficient p) =>
+						failed;
+					v := retract vv;
+					for i in prev degree p..0 by -1 repeat {
+						failed?(u:=f coefficient(p,i))=>
+							return failed;
+						v := x * v + retract u;
+					}
+					[v];
+				})
+			}
+		}
+	}
+}

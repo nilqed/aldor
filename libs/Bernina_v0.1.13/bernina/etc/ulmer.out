@@ -1,0 +1,75 @@
+idefix{bronstei} 41: bernina < ../samples/ulmer.bna
+
+                                                          /\    
+      -----  IT                                          /| \    
+      \              B E R N I N A   0.1.8a             / |  \    
+       \                                               |   \  \   
+       /                 A Sum^it server               |    |  \  
+      /                                                /     \  \ 
+      -----                                           /      |   \
+                   Use ^D to terminate session       /       /    \
+
+
+Input format = infix
+Independent variable = x
+Derivation = D
+Second variable for Darboux curves = y
+
+2 -->                                                   18.03.97	19.03.97
+annihilator::symmetricPower: optimized for p at		   134		   116
+annihilator: optimized for factors at			   600		   583
+ffsympow::removeRowContents: done at			   100		    83
+annihilator: dependence at				  3267		  3250
+annihilator: non-primitive operator at			  3517		  3500
+primpart: primitive part at				   833		   966
+
+4 --> (((x)^(6))+((x)^(5))+(-(((5)/(3))*((x)^(4))))+(-(((131)/(108))*((x)^(3))))+(((227)/(216))*((x)^(2)))+(((3)/(8))*(x))+(-((1)/(4))))/(((x)^(2))+(-x));
+
+5 --> \frac{x^{6}+x^{5}-\frac{5}{3}\,x^{4}-\frac{131}{108}\,x^{3}+\frac{227}{216}\,x^{2}+\frac{3}{8}\,x-\frac{1}{4}}{x^{2}-x}
+
+                 0.1.9		linprog
+                18.03.97	19.03.97
+optimization   =     0.6"	   0.6"
+linear algebra =     2.6"	   2.6"
+content        =     0.9"	   1.1"
+----------------------------------------------------------------------------
+TOTAL(mat+ker) =     8"		   8"
+
+
+idefix{bronstei} 41: bernina < ../samples/ulmer4.bna
+
+                                                          /\    
+      -----  IT                                          /| \    
+      \              B E R N I N A   0.1.8a             / |  \    
+       \                                               |   \  \   
+       /                 A Sum^it server               |    |  \  
+      /                                                /     \  \ 
+      -----                                           /      |   \
+                   Use ^D to terminate session       /       /    \
+
+
+Input format = infix
+Independent variable = x
+Derivation = D
+Second variable for Darboux curves = y
+
+2 -->                                                   18.03.97	19.03.97
+annihilator::symmetricPower: optimized for p at		   200		   134
+annihilator: optimized for factors at			  2267		  2034
+ffsympow::removeRowContents: done at			   400		   416
+annihilator: dependence at				 49783		 48350
+annihilator: non-primitive operator at			 50650		 49184
+primpart: primitive part at				  4033		  3950
+
+4 --> (((x)^(6))+((x)^(5))+(-(((5)/(3))*((x)^(4))))+(-(((131)/(108))*((x)^(3))))+(((227)/(216))*((x)^(2)))+(((3)/(8))*(x))+(-((1)/(4))))/(((x)^(2))+(-x));
+
+5 --> \frac{x^{6}+x^{5}-\frac{5}{3}\,x^{4}-\frac{131}{108}\,x^{3}+\frac{227}{216}\,x^{2}+\frac{3}{8}\,x-\frac{1}{4}}{x^{2}-x}
+
+                 0.1.9		linprog
+                18.03.97	19.03.97
+optimization   =     2.3"	   2"
+linear algebra =    47"		  46"
+content        =     4"		   4"
+----------------------------------------------------------------------------
+TOTAL(mat+ker) =  1'08		1'07
+

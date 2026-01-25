@@ -1,0 +1,438 @@
+-- ======================================================================
+-- This code was written all or part by Dr. Manuel Bronstein from
+-- Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+-- decided to publish this code under the CeCILL open source license in
+-- memory of Dr. Manuel Bronstein.
+-- 
+-- This software is governed by the CeCILL license under French law and
+-- abiding by the rules of distribution of free software. You can use,
+-- modify and/or redistribute the software under the terms of the CeCILL
+-- license as circulated by CEA, CNRS and Inria at the following URL :
+-- http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+-- 
+-- As a counterpart to the access to the source code and rights to copy,
+-- modify and redistribute granted by the license, users are provided
+-- only with a limited warranty and the software's author, the holder of
+-- the economic rights, and the successive licensors have only limited
+-- liability.
+-- 
+-- In this respect, the user's attention is drawn to the risks associated
+-- with loading, using, modifying and/or developing or reproducing the
+-- software by the user in light of its specific status of free software,
+-- that may mean that it is complicated to manipulate, and that also
+-- therefore means that it is reserved for developers and experienced
+-- professionals having in-depth computer knowledge. Users are therefore
+-- encouraged to load and test the software's suitability as regards
+-- their requirements in conditions enabling the security of their
+-- systems and/or data to be ensured and, more generally, to use and
+-- operate it in the same conditions as regards security.
+-- 
+-- The fact that you are presently reading this means that you have had
+-- knowledge of the CeCILL license and that you accept its terms.
+-- ======================================================================
+-- 
+------------------------------ sit_linrctl.as ------------------------------
+-- Copyright (c) Manuel Bronstein 2000
+-- Copyright (c) INRIA 2000, Version 0.1.12
+-- Logiciel Sum^it (c) INRIA 2000, dans sa version 0.1.12
+-----------------------------------------------------------------------------
+
+#include "sumit"
+
+#if ALDOC
+\thistype{LinearOrdinaryRecurrenceTools}
+\History{Manuel Bronstein}{5/6/2000}{created}
+\Usage{import from \this(R, F, $\iota$, RX, RXE)}
+\Params{
+{\em R} & \astype{IntegralDomain} & An integral domain\\
+{\em F} & \astype{Field} & A field containing R\\
+$\iota$ & $R \to F$ & An injection from R into F\\
+{\em RX} & \astype{UnivariatePolynomialCategory} R & A polynomial ring over R\\
+{\em RXE}
+& \astype{LinearOrdinaryRecurrenceCategory} RX & A recurrence type over RX\\
+}
+\Descr{\this(R, F, $\iota$, RX, RXE) provides tools for viewing linear
+recurrences with polynomial coefficients as generators of sequences
+satisfying the corresponding recurrences.}
+\begin{exports}
+\asexp{kernel}: & RXE $\to$ \astype{Generator} V F & compute all solutions\\
+                & (RXE, Z) $\to$ \astype{Generator} V F &\\
+                & (RXE, A, V V F) $\to$ \astype{Generator} V F &\\
+                & (RXE, Z, A, V V F) $\to$ \astype{Generator} V F &\\
+\asexp{values}:
+& RXE $\to$ V F $\to$ \astype{Generator} F & compute a solution\\
+& (RXE, Z) $\to$ V F $\to$ \astype{Generator} F & \\
+& (RXE, Z) $\to$ (V F, \astype{Generator} F) $\to$ \astype{Generator} F &\\
+\end{exports}
+\begin{aswhere}
+A &==& \astype{PrimitiveArray} \astype{MachineInteger}\\
+V &==& \astype{Vector}\\
+Z &==& \astype{Integer}\\
+\end{aswhere}
+#endif
+
+macro {
+	G	== Generator;
+	PA	== PrimitiveArray;
+	A	== Array;
+	I	== MachineInteger;
+	Z	== Integer;
+	V	== Vector;
+	M	== DenseMatrix;
+}
+
+LinearOrdinaryRecurrenceTools(R:IntegralDomain, F:Field, inj: R -> F,
+				RX: UnivariatePolynomialCategory R,
+				RXE: LinearOrdinaryRecurrenceCategory RX):with {
+	kernel: RXE -> G V F;
+	kernel: (RXE, Z) -> G V F;
+	kernel: (RXE, PA I, V V F) -> G V F;
+	kernel: (RXE, Z, PA I, V V F) -> G V F;
+	kernel: (RXE, Z, PA I, V V F, V F, G F) -> G Cross(V F, F);
+	kernel: (RXE, Z, PA I, V V F, V V F, G V F, I) -> G Cross(V F, V F);
+#if ALDOC
+\aspage{kernel}
+\Usage{\name~L\\ \name(L, e)\\ \name(L, a, v)\\ \name(L, e, a, v)}
+\Signatures{
+\name: & RXE $\to$ \astype{Generator} \astype{Vector} F\\
+\name: & (RXE, \astype{Integer}) $\to$ \astype{Generator} \astype{Vector} F\\
+\name: & (RXE, A, \astype{Vector} \astype{Vector} F) $\to$
+\astype{Generator} \astype{Vector} F\\
+\name: & (RXE, \astype{Integer}, A, \astype{Vector} \astype{Vector} F) $\to$
+\astype{Generator} \astype{Vector} F\\
+}
+\begin{aswhere}
+A &==& \astype{PrimitiveArray} \astype{MachineInteger}\\
+\end{aswhere}
+\Params{
+{\em L} & \% & A linear recurrence\\
+{\em e} & \astype{Integer} & An optional shift (default is 0)\\
+{\em a} & \astype{PrimitiveArray} \astype{MachineInteger} &
+Will contain the singularities of $L$\\
+{\em v} & \astype{Vector} \astype{Vector} F &
+Will contain linear constraints\\
+}
+\Descr{Returns a generator for all the values generated by $L E^e$
+starting will all possible initial values.
+As vectors are being produced by the resulting generator,
+$a_0$ is being updated to contain the number $n$ of singularities
+encountered, while $a_1,\dots,a_n$ contain the indices of the
+encountered singularities, and $v.1,\dots,v.n$ contain the corresponding
+constraints on the initial values for the sequence to be a solution
+of $Ly = 0$.
+The kernel of $L$ is a subspace of the span of the sequence
+of vectors generated modulo the obtained constraints. It is
+exactly that space after all the singularities of $L$ have been
+encountered. It is possible to give \asfunc{FiniteLinearStructureType}{empty}
+as parameter for $a$ (resp.~$v$), in which case the singularities
+(resp.~constraints) are not computed. Note that the size of the
+vectors generated increase by one at each singularity.}
+#endif
+	values: RXE -> V F -> G F;
+	values: (RXE, Z) -> V F -> G F;
+	values: (RXE, Z) -> (V F, G F) -> G F;
+#if ALDOC
+\aspage{values}
+\Usage{\name(L)([$y_0,\dots,y_{m-1}$])\\ \name(L, e)([$y_0,\dots,y_{m-1}$])\\
+\name(L, e)([$y_0,\dots,y_{m-1}$], rhs)}
+\Signatures{
+\name: & RXE $\to$ \astype{Vector} F $\to$ \astype{Generator} F\\
+\name:
+& (RXE, \astype{Integer}) $\to$ \astype{Vector} F $\to$ \astype{Generator} F\\
+\name: & (RXE, \astype{Integer})
+$\to$ (\astype{Vector} F, \astype{Generator} F) $\to$ \astype{Generator} F\\
+}
+\Params{
+{\em L} & \% & A linear recurrence\\
+{\em e} & \astype{Integer} & An optional shift (default is 0)\\
+$y_i$ & F & Initial conditions\\
+{\em rhs} & \astype{Generator} F & An optional right-hand side (default is 0)\\
+}
+\Retval{Returns a generator for the sequence $y$ satisfying by
+$(L E^e) y = rhs$,
+starting with $y_0,y_1,\dots,y_{m-1}$. If $L$ is nonsingular,
+\ie if the leading coefficient of $L$ has no integer root $n \ge 0$,
+then the sequence generated is the only solution of $(L E^e) y = rhs$ with
+the given initial values.}
+\Remarks{This function causes a division by zero if a singularity
+of $L$ is encountered. Use \asexp{kernel} for singular recurrences.
+Note that even for nonsingular recurrences, \asexp{kernel} is more efficient
+for obtaining a basis of the solutions of $(L E^e) y = 0$ than calling
+\name{} repeatedly with several intitial conditions.}
+#endif
+} == add {
+	values(L:RXE):V F -> G F== { import from Z; values(L, 0); }
+	local genzero():G F	== { import from F; generate { repeat yield 0 }}
+
+	local genempty():G V F == {
+		import from V F;
+		generate { repeat yield empty }
+	}
+
+	values(L:RXE, e:Z):V F -> G F == {
+		f:(V F, G F) -> G F := values(L, e);
+		(v:V F):G F +-> f(v, genzero());
+	}
+
+	-- the equation to consider is really (L E^e y)|n = f|n for n >= 0
+	-- where genrhs yields f|0, f|1, ...
+	values(L:RXE, ee:Z):(V F, G F) -> G F == {
+		import from I, R, F, RX, G R;
+		e := machine ee;
+		if (td := trailingDegree L) > 0 then {
+			L := shift(L, -td);
+			e := e + machine td;
+		}
+		assert(zero? trailingDegree L);
+		m := machine degree L;	-- order of the steady-state recurrence
+		r := m + e;		-- order of L*E^e
+		assert(m > 0);		-- 0-th order is only for singular recs
+		a:V F := zero m;
+		b:V F := zero m;
+		g:PA G R := new m;
+		m1 := prev m;
+		-- TEMPORARY: LOOP-INLINING BUG 1203
+		-- for i in 0..m1 repeat {
+		ii:I := 0; while ii < m repeat {
+			g.ii := values(coefficient(L, ii::Z), 0);
+			ii := next ii;
+		}
+		lc := values(leadingCoefficient L, 0);
+		(y:V F, genrhs:G F):G F +-> generate {
+			assert(#y = r);
+			-- TEMPORARY: LOOP-INLINING BUG 1203
+			-- for n in 1..e repeat yield y.n;
+			n:I := 1; while n <= e repeat { yield y.n; n := next n }
+			-- TEMPORARY: LOOP-INLINING BUG 1203
+			-- for n in 1..m repeat {
+			n := 1; while n <= m repeat {
+				if (nn := n + e) > 0 then {
+					a.n := y.nn;
+					yield(a.n);
+				}
+				else a.n := 0;
+				n := next n;
+			}
+			for rh in genrhs repeat {
+				-- TEMPORARY: LOOP-INLINING BUG 1203
+				-- for i in 1..m repeat b.i:= inj next!(g(prev i));
+				i:I := 1; while i <= m repeat {
+					b.i := inj next!(g(prev i));
+					i := next i;
+				}
+				d := next! lc;
+				v := (rh - dot(a, b)) / inj(d);
+				yield v;
+				-- TEMPORARY: LOOP-INLINING BUG 1203
+				-- for i in 1..m1 repeat a.i := a(next i);
+				i := 1; while i < m repeat {
+					a.i := a(next i);
+					i := next i;
+				}
+				a.m := v;
+			}
+		}
+	}
+
+	-- the vectors in a are not necessarily of the same size
+	-- on exit, v.i = row(a, i) x b
+	local dot(a:PA V F, b:V F, r:I):V F == {
+		import from F;
+		m := #b;
+		v := zero r;
+		for j in 1..m repeat {
+			j1 := prev j;
+			n := #(a.j1);
+			assert(n <= r);
+			for i in 1..n repeat v.i := add!(v.i, b.j * a.j1.i);
+		}
+		v;
+	}
+
+	local minus!(v:V F, f:F):V F == {
+		import from I, Boolean;
+		n := #v;
+		if ~zero? f then for i in 1..n repeat v.i := minus!(v.i, f);
+		v;
+	}
+
+	-- yields [x] where g would yield x
+	local vectorize(g:G F):G V F == generate {
+		import from I, V F;
+		v := zero 1;
+		for x in g repeat { v.1 := x; yield v }
+	}
+
+	-- yields all the values of g, then 0 forever
+	local forever(g:G V F, n:I):G V F == generate {
+		import from V F;
+		for v in g repeat yield v;
+		w := zero n;
+		repeat yield w;
+	}
+
+	kernel(L:RXE):G V F == {
+		import from PA I, V V F;
+		kernel(L, empty, empty);
+	}
+
+	kernel(L:RXE, e:Z):G V F == {
+		import from PA I, V V F;
+		kernel(L, e, empty, empty);
+	}
+
+	kernel(L:RXE, sing:PA I, constraints:V V F):G V F == {
+		import from Z;
+		kernel(L, 0, sing, constraints);
+	}
+
+	kernel(L:RXE, e:Z, sing:PA I, constraints:V V F):G V F == generate {
+		import from I, V F, G Cross(V F, V F);
+		gen := kernel(L, e, sing, constraints, empty, genempty(), 0);
+		for pair in gen repeat {
+			(v, w) := pair;
+			assert(zero? #w);
+			yield v;
+		}
+	}
+
+	kernel(L:RXE, e:Z, sing:PA I, constraints:V V F, chrs:V F,
+		gn:G F):G Cross(V F, F) == generate {
+			import from I, G Cross(V F, V F);
+			vchrs:V V F := zero 1;
+			vchrs.1 := chrs;
+			gen:= kernel(L,e,sing,constraints,vchrs,vectorize gn,1);
+			for pair in gen repeat {
+				(v, w) := pair;
+				assert(one? #w);
+				yield(v, w.1);
+			}
+	}
+
+	-- the equation to consider is really (L E^e y)|n = f|n for n >= 0
+	-- where genrhs yields f|0, f|1, ...
+	-- sing must be either empty or at least
+	--                     1 + max number of singularities of L
+	-- constraints and crhs must be either empty or at least
+	--                        max number of singularities of L
+	-- on exit:
+	--   sing.0 = #singularities encountered, sing.i = i-th singularity,
+	--   constraints.i = i-th constraint on the initial values (homogenuous)
+	--   crhs.j.i = right hand side of i-th constraint on j-th initial value
+	-- If ee > 0, then the first ee values of the sequences generated
+	-- in the kernel are completely free and independent, so the
+	-- first ee lines of the generated vectors would be an ee x ee
+	-- identity matrix followed by 0's forever.
+	-- To save memory, we only return the 'bottom' part of those
+	-- vectors and let the client code add the implicit top
+	kernel(L:RXE, ee:Z, sing:PA I, constraints:V V F, crhs:V V F,
+		genrhs:G V F, nrhs:I):G Cross(V F, V F) == generate {
+		import from Boolean, Z, R, F, RX, G R, PA V F;
+		assert(nrhs >= 0);
+		e := machine ee;
+		if (td := trailingDegree L) > 0 then {
+			L := shift(L, -td);
+			e := e + machine td;
+		}
+		assert(zero? trailingDegree L);
+		m := machine degree L;	-- order of the steady-state recurrence
+		assert(m >= 0);		-- 0-th order recurrences allowed
+		a:PA V F := new m;	-- last m computed values (homogeneous)
+		inhom? := nrhs > 0;
+		ag:PA V F := { inhom? => new m; empty }
+		m1 := prev m;
+		-- TEMPORARY: LOOP-INLINING BUG 1203
+		-- for n in 1..e repeat {	-- free initial values if e > 0
+		n:I := 1; while n <= e repeat {
+			assert(e > 0);
+			-- v:V F := zero r;
+			-- v.n := 1;
+			-- yield(v, zero nrhs);
+			yield(zero m, zero nrhs);
+			n := next n;
+		}
+		-- r := m + e;			-- order of L*E^e
+		emin := min(e, 0);
+		r := m + emin;		-- order of L*E^e if e<0, of L otherwise
+		-- TEMPORARY: LOOP-INLINING BUG 1203
+		-- for n in 0..m1 repeat {	-- zeroes if e < 0 and initial values
+		n := 0; while n < m repeat {
+			a.n := zero r;
+			if inhom? then ag.n := zero nrhs;
+			-- if (nn := n + e) >= 0 then {
+			if (nn := n + emin) >= 0 then {
+				a.n.(next nn) := 1;
+				yield(a.n, zero nrhs);
+			}
+			n := next n;
+		}
+		b:V F := zero m;
+		g:PA G R := new m;
+		-- TEMPORARY: LOOP-INLINING BUG 1203
+		-- for i in 0..m1 repeat g.i := values(coefficient(L, i::Z), 0);
+		i:I := 0; while i < m repeat {
+			g.i := values(coefficient(L, i::Z), 0);
+			i := next i;
+		}
+		lc := values(leadingCoefficient L, 0);
+		nsing:I := 0;
+		if (sing? := ~empty? sing) then sing.0 := nsing;
+		const? := ~empty? constraints;
+		crhs? := const? and inhom? and ~empty? crhs;
+		n := e;
+		bg:V F := empty;
+		for rh in forever(genrhs, nrhs) repeat {
+			assert(nrhs = #rh);
+			-- TEMPORARY: LOOP-INLINING BUG 1203
+			-- for i in 1..m repeat b.i := inj next!(g(prev i));
+			i := 1; while i <= m repeat {
+				b.i := inj next!(g(prev i));
+				i := next i;
+			}
+			if zero?(d := next! lc) then {	-- singularity
+				nsing := next nsing;
+				if sing? then {
+					sing.0 := nsing;
+					sing.nsing := n;
+				}
+				if const? then {
+					constraints.nsing := dot(a,b,r);
+					if crhs? then {
+						w := dot(ag, b, nrhs);
+						-- TEMPORARY: LOOP-INLINING BUG 1203
+						-- for j in 1..nrhs repeat {
+						j:I:= 1; while j<=nrhs repeat {
+							crhs.j.nsing:= rh.j-w.j;
+							j := next j;
+						}
+					}
+				}
+				v:V F := zero(r := next r);
+				v.r := 1;
+				bg := zero nrhs;
+			}
+			else {
+				md1 := inv inj(-d);
+				v := times!(md1, dot(a, b, r));
+				if inhom? then
+					bg := times!(md1,
+						minus!(dot(ag, b, nrhs), rh));
+			}
+			TRACE("linctrl::kernel:yielding v = ", v);
+			yield(v, bg);
+			-- TEMPORARY: LOOP-INLINING BUG 1203
+			-- for i in 0..prev m1 repeat a.i := a(next i);
+			i := 0; while i < m1 repeat {
+				a.i := a(next i);
+				if inhom? then ag.i := ag(next i);
+				i := next i;
+			}
+			if m > 0 then {
+				a.m1 := v;
+				if inhom? then ag.m1 := bg;
+			}
+			-- TEMPORARY: LOOP-INLINING BUG 1203
+			n := next n;
+		}
+	}
+}

@@ -1,0 +1,102 @@
+% ======================================================================
+% This code was written all or part by Dr. Manuel Bronstein from
+% Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+% decided to publish this code under the CeCILL open source license in
+% memory of Dr. Manuel Bronstein.
+% 
+% This software is governed by the CeCILL license under French law and
+% abiding by the rules of distribution of free software. You can use,
+% modify and/or redistribute the software under the terms of the CeCILL
+% license as circulated by CEA, CNRS and Inria at the following URL :
+% http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+% 
+% As a counterpart to the access to the source code and rights to copy,
+% modify and redistribute granted by the license, users are provided
+% only with a limited warranty and the software's author, the holder of
+% the economic rights, and the successive licensors have only limited
+% liability.
+% 
+% In this respect, the user's attention is drawn to the risks associated
+% with loading, using, modifying and/or developing or reproducing the
+% software by the user in light of its specific status of free software,
+% that may mean that it is complicated to manipulate, and that also
+% therefore means that it is reserved for developers and experienced
+% professionals having in-depth computer knowledge. Users are therefore
+% encouraged to load and test the software's suitability as regards
+% their requirements in conditions enabling the security of their
+% systems and/or data to be ensured and, more generally, to use and
+% operate it in the same conditions as regards security.
+% 
+% The fact that you are presently reading this means that you have had
+% knowledge of the CeCILL license and that you accept its terms.
+% ======================================================================
+% 
+\section{Introduction}
+
+\subsection*{What is \salli?}
+\salli (the Standard ALdor LIbrary) is a compact replacement for the
+\axllib library that is provided by NAG together with the \aldor compiler.
+It provides a low-level interface between \aldor programmers and the
+abstract machine, allowing its users to start programming with a minimal
+set of basic types and data structures already built into the language.
+
+\subsection*{How do I get and install \salli?}
+You can download \salli by anonymous ftp from the SAFIR server at
+{\tt ftp-sop.inria.fr} in {\tt safir/salli},
+or from the URL:\\
+\vspace{-5mm}
+\begin{center}
+\url{http://www.inria.fr/cafe/Manuel.Bronstein/salli.html}
+\end{center}
+After downloading the file {\tt salli.tar.gz}, issue
+``{\tt gzip -dc salli.tar.gz | tar -xvf -}'' in order to unpack it.
+This will create the following directories:
+\begin{itemize}
+\item{\tt salli/doc}: this user guide,
+\item{\tt salli/lib}: the library,
+\item{\tt salli/include}: the required include files,
+\item{\tt salli/test}: some test files,
+\item{\tt salli/tutorial}: an \aldor and \salli tutorial.
+\end{itemize}
+Once the above file is unpacked, do the following:
+\begin{itemize}
+\item add the option {\tt -csys=XXX} to your AXIOMXLARGS environment variable,
+where {\tt XXX}
+depends on your hardware and operating system. Common values for {\tt XXX}
+are {\tt axposf1v4} for OSF1 V4.0 on a DEC Alpha, {\tt linux-486} for linux on
+a 486 or above PC, and {\tt sun4os55g-v8} for SunOS 5.5 on a SPARC v8 machine.
+See the file {\tt \$AXIOMXLROOT/include/axiomxl.conf} for other values;
+\item go to the {\tt salli/lib} directory and execute {\tt makesalli}.
+This requires a current \aldor compiler properly installed.
+\end{itemize}
+
+\subsection*{How do I use \salli in my programs?}
+Once \salli is properly built, you need to set the following environment
+variables before using it:
+\begin{itemize}
+\item the variable SALLIROOT should be set to the main {\tt salli} directory;
+\item {\tt \$SALLIROOT/include} should be appended to your INCPATH variable;
+\item {\tt \$SALLIROOT/lib} should be appended to your LIBPATH variable;
+\end{itemize}
+In your \aldor programs, use {\tt \#include "salli"} instead of
+{\tt \#include "axllib"}. When building your final executable, add the
+options {\tt -lsalli -y\$SALLIROOT/lib} to your compiler command line.
+If you are running \salli inside the compiler interactive loop, then
+add the line {\tt \#include "sallinterp"} after {\tt \#include "salli"},
+which will import various things for interactive use and make the interpreter
+loop print values automatically.
+If your program computes extensively with sofware integers
+(the {\astype{Integer} type) and if you have GNU MP installed,
+it is worthwhile to link your program with {\tt libgmp.a}
+rather than the built--in integers. In order to do this, simply
+add the options {\tt -cruntime=foam-gmp,gmp} to your compiler command line
+when building the final executable. As with any \aldor program, do not forget
+the {\tt -q3} option in order to optimize your programs, specially
+if performance is an issue.
+
+Before using \salli for the first time, please check your installation
+by running {\tt make} in the {\tt salli/test} directory, followed by
+running {\tt testall}.
+
+Please report any installation problem or bugs you encounter
+to {\tt salli@sophia.inria.fr}.

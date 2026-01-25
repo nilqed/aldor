@@ -1,0 +1,24 @@
+/* abp.bna: examples of polynomial solutions of large degree */
+
+/* Some low-degree tests first */
+n := 7;
+L := (1-x^2)*D^2 - 2*x*D + n*(n+1);
+K := kernel(L);
+tex(element(K, 1));
+
+/* One with a singularity at x=0 */
+n := 3;
+L := n*x*D^2 - x*D + n^2;
+K := kernel(L);
+tex(element(K, 1));
+
+/* Now repeat with high degrees, bernina uses the ABP95 algorithm */
+n := 5000;
+L := (1-x^2)*D^2 - 2*x*D + n*(n+1);
+K := kernel(L);
+tex(degree(element(K, 1)));
+
+n := 50;
+L := n*x*D^2 - x*D + n^2;
+K := kernel(L);
+tex(degree(element(K, 1)));

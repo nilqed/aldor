@@ -1,0 +1,7 @@
+/* liouv.sha:  various examples of Liouvillian solutions */
+
+L := (n+2)*(n^5+2*n^4+n^3-1)*E^2 + (n+1)*(5*n^2+8*n+4)*E
+	- n^2 * (n^5+7*n^4+19*n^3+25*n^2+16*n+3);
+y := liouvillianSolution(L);
+tex(y);
+

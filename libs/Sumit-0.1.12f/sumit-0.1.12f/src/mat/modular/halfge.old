@@ -1,0 +1,210 @@
+-- ======================================================================
+-- This code was written all or part by Dr. Manuel Bronstein from
+-- Inria-CAFE project team. After his sudden death on June 6, 2005, Inria
+-- decided to publish this code under the CeCILL open source license in
+-- memory of Dr. Manuel Bronstein.
+-- 
+-- This software is governed by the CeCILL license under French law and
+-- abiding by the rules of distribution of free software. You can use,
+-- modify and/or redistribute the software under the terms of the CeCILL
+-- license as circulated by CEA, CNRS and Inria at the following URL :
+-- http://www.cecill.info/licences/Licence_CeCILL_V2-en.html
+-- 
+-- As a counterpart to the access to the source code and rights to copy,
+-- modify and redistribute granted by the license, users are provided
+-- only with a limited warranty and the software's author, the holder of
+-- the economic rights, and the successive licensors have only limited
+-- liability.
+-- 
+-- In this respect, the user's attention is drawn to the risks associated
+-- with loading, using, modifying and/or developing or reproducing the
+-- software by the user in light of its specific status of free software,
+-- that may mean that it is complicated to manipulate, and that also
+-- therefore means that it is reserved for developers and experienced
+-- professionals having in-depth computer knowledge. Users are therefore
+-- encouraged to load and test the software's suitability as regards
+-- their requirements in conditions enabling the security of their
+-- systems and/or data to be ensured and, more generally, to use and
+-- operate it in the same conditions as regards security.
+-- 
+-- The fact that you are presently reading this means that you have had
+-- knowledge of the CeCILL license and that you accept its terms.
+-- ======================================================================
+-- 
+------------------------------ halfge.as ------------------------------------
+-- TO BE INCLUDED IN modpge.as
+-- Case of prime smaller than half-word, use * and rem for product
+
+	-- lazy version which normalizes only on potential overflow
+	local halfRowEch!(a:M, ra:Z, ca:Z, b:M, rb:Z, cb:Z, p:Z):(A,Z,A,Z) == {
+		macro PRODUCT(aa, bb, cc) == (((aa) * (bb)) rem (cc));
+		macro REMAINDER(aa, bb) == ((aa) rem (bb));
+		d:Z := 1;
+		pp:A := new ra;
+		for i in 1..ra repeat pp.i := i;
+		st:A := new(ra, next ca);
+		c:Z := 1; r:Z := 1;
+		p1 := prev p;
+		while r <= ra and c <= ca repeat {
+			r1 := next r; c1 := next c;
+			l := r;
+			while l <= ra and a(pp.l)(c) = 0 repeat l := next l;
+			if l <= ra then {
+				st.r := c;
+				if l ~= r then {
+					temp := pp.l;
+					pp.l := pp.r;
+					pp.r := temp;
+					d := -d;
+				}
+				assert(a(pp.r)(c) > 0);
+				assert(a(pp.r)(c) < p);
+				-- alpha = - a(pp.r)(c)^{-1} mod p
+				alpha := mod_/(p1, a(pp.r)(c), p);
+				-- value can overflow if entry > bound
+				bound := maxint - alpha * p1;
+				assert(bound > 0);
+				-- reduce pivoting row mod p in both a and b
+				for j in c1..ca repeat
+					a(pp.r)(j) := REMAINDER(a(pp.r)(j), p);
+				for j in 1..cb repeat
+					b(pp.r)(j) := REMAINDER(b(pp.r)(j), p);
+				for i in r1..ra repeat {
+					assert(a(pp.i)(c) > 0);
+					assert(a(pp.i)(c) < p);
+					f := PRODUCT(a(pp.i)(c), alpha, p);
+					for j in c1..ca repeat {
+						x := a(pp.i)(j);
+						if x > bound then
+							x := REMAINDER(x, p);
+						assert(x >= 0);
+						a(pp.i)(j) := x + f*a(pp.r)(j);
+					}
+					for j in 1..cb repeat {
+						x := b(pp.i)(j);
+						if x > bound then
+							x := REMAINDER(x, p);
+						assert(x >= 0);
+						b(pp.i)(j) := x + f*b(pp.r)(j);
+					}
+				}
+				r := r1;
+			}
+			c := c1;
+			-- normalize column c below r
+			for i in r1..ra repeat
+				a(pp.i)(c) := REMAINDER(a(pp.i)(c), p);
+		}
+		(pp, prev r, st, d);
+	}
+
+	-- version which normalizes the matrix every k loops
+	local halfRowEch!(a:M,ra:Z,ca:Z,b:M,rb:Z, cb:Z, k:Z, p:Z):(A,Z,A,Z) == {
+		macro PRODUCT(aa, bb, cc) == (((aa) * (bb)) rem (cc));
+		macro REMAINDER(aa, bb) == ((aa) rem (bb));
+		assert(k > 0);
+		d:Z := 1;
+		pp:A := new ra;
+		for i in 1..ra repeat pp.i := i;
+		st:A := new(ra, next ca);
+		c:Z := 1; r:Z := 1;
+		p1 := prev p;
+		loops:Z := 0;
+		while r <= ra and c <= ca repeat {
+			r1 := next r; c1 := next c;
+			l := r;
+			while l <= ra and a(pp.l)(c) = 0 repeat l := next l;
+			if l <= ra then {
+				st.r := c;
+				if l ~= r then {
+					temp := pp.l;
+					pp.l := pp.r;
+					pp.r := temp;
+					d := -d;
+				}
+				assert(a(pp.r)(c) > 0);
+				assert(a(pp.r)(c) < p);
+				-- alpha = - a(pp.r)(c)^{-1} mod p
+				alpha := mod_/(p1, a(pp.r)(c), p);
+				-- reduce pivoting row mod p in both a and b
+				for j in c1..ca repeat
+					a(pp.r)(j) := REMAINDER(a(pp.r)(j), p);
+				for j in 1..cb repeat
+					b(pp.r)(j) := REMAINDER(b(pp.r)(j), p);
+				for i in r1..ra repeat {
+					assert(a(pp.i)(c) > 0);
+					assert(a(pp.i)(c) < p);
+					f := PRODUCT(a(pp.i)(c), alpha, p);
+					for j in c1..ca repeat
+						a(pp.i)(j) :=
+							a(pp.i)(j)+f*a(pp.r)(j);
+					for j in 1..cb repeat
+						b(pp.i)(j) :=
+							b(pp.i)(j)+f*b(pp.r)(j);
+				}
+				r := r1;
+				loops := next loops;
+				if loops = k then {	-- normalize rest-matrix
+					for i in r..ra repeat {
+						-- column c1 is normalized later
+						for j in next(c1)..ca repeat
+						    a(pp.i)(j) :=
+							REMAINDER(a(pp.i)(j),p);
+						for j in 1..cb repeat
+						    b(pp.i)(j) :=
+							REMAINDER(b(pp.i)(j),p);
+					}
+					loops := 0;
+				}
+			}
+			c := c1;
+			-- normalize column c below r
+			for i in r1..ra repeat
+				a(pp.i)(c) := REMAINDER(a(pp.i)(c), p);
+		}
+		(pp, prev r, st, d);
+	}
+
+	local halfDeter(a:M, ra:Z, ca:Z, pp:A, r:Z, st:A, d:Z, p:Z):Z == {
+		macro PRODUCT(aa, bb, cc) == (((aa) * (bb)) rem (cc));
+		r < ra => 0;
+		det:Z := { d = 1 => 1; prev p };
+		for i in 1..r repeat
+			det := PRODUCT(det, a(pp.i)(i), p);
+		det;
+	}
+
+	local halfDep(gen:Generator A, n:Z, p:Z):(M, A, Z, Z) == {
+		macro PRODUCT(aa, bb, cc) == (((aa) * (bb)) rem (cc));
+		a:M := new n;
+		for i in 1..n repeat a.i := new(next n, 0);
+		pp:A := new n;
+		for i in 1..n repeat pp.i := i;
+		r:Z := 1;
+		independent?:Boolean := true;
+		while independent? for v in gen repeat {
+			for i in 1..n repeat a.i.r := v.i;
+			for j in 1..prev r repeat {
+				for i in next(j)..n repeat {
+					pr := PRODUCT(a(pp.i)(j),a(pp.j)(r),p);
+					a(pp.i)(r) := mod_-(a(pp.i)(r), pr, p);
+				}
+			}
+			l := r;
+			while l <= n and a(pp.l)(r) = 0 repeat l := next l;
+			if l = next(n) then {
+				independent? := false;
+				iterate;
+			} 
+			if l ~= r then {
+				temp := pp.l;
+				pp.l := pp.r;
+				pp.r := temp;
+			}
+			inv := mod_/(1, a(pp.r)(r), p);
+			for i in next(r)..n repeat
+				a(pp.i)(r) := PRODUCT(a(pp.i)(r), inv, p);
+			r := next r;
+		}
+		(a, pp, r, 1);
+	}
